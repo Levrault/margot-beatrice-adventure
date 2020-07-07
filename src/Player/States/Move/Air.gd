@@ -20,9 +20,6 @@ func unhandled_input(event: InputEvent) -> void:
 			_coyote_time.stop()
 			jump()
 
-	if event.is_action_pressed("attack"):
-		owner.attack_factory.create("attack_air")
-
 	_parent.unhandled_input(event)
 
 

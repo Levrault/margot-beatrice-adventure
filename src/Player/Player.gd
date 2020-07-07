@@ -1,10 +1,15 @@
 # Main controlled character
+tool
 class_name Player
 extends Actor
+
+enum Character {fox, squirrel, rabbit}
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP := Vector2(0, 10)
 const Collection: Script = preload("res://src/Utils/Collection.gd")
+
+export (Character) var skin_type := Character.fox setget set_character
 
 var is_active := true setget set_is_active
 var is_handling_input := true setget set_is_handling_input
@@ -12,11 +17,14 @@ var abilities := {"dash": false, "double_jump": false}
 
 onready var pass_through: Area2D = $PassThrough
 onready var state_machine: StateMachine = $StateMachine
-onready var skin: Node2D = $Skin
 onready var camera_rig: Position2D = $CameraRig
 onready var camera: Camera2D = $CameraRig/Camera
 onready var collider: CollisionShape2D = $CollisionShape2D
-onready var attack_factory: AttackFactory = $AttackFactory as AttackFactory
+
+onready var skin: Node2D = $SkinFox
+onready var skin_fox: Node2D = $SkinFox
+onready var skin_rabit: Node2D = $SkinRabbit
+onready var skin_squirrel: Node2D = $SkinSquirrel
 
 
 func _ready() -> void:
@@ -39,7 +47,16 @@ func set_is_active(value: bool) -> void:
 
 func horizontal_mirror(direction: int) -> void:
 	skin.scale.x = direction
-	attack_factory.scale.x = direction
+
+
+func set_character(new_character: int) -> void:
+	match new_character:
+		Character.fox:
+			skin = skin_fox
+		Character.squirrel:
+			skin = skin_squirrel
+		Character.rabbit:
+			skin = skin_rabit
 
 
 # Unlock acces to new state machine state

@@ -2,7 +2,7 @@ extends State
 
 const PASS_TROUGHT_LAYER := 2
 
-export var max_speed_default := Vector2(500.0, 1500.00)
+export var max_speed_default := Vector2(500.0, 1000.00)
 export var acceleration_default := Vector2(10000, 3000.0)
 export var decceleration_default := Vector2(10000, 3000.0)
 export var max_speed_fall := 1500.00
@@ -82,8 +82,6 @@ func physics_process(delta: float) -> void:
 
 
 func enter(msg: Dictionary = {}) -> void:
-	if "contact" in msg:
-		owner.skin.play("contact")
 	$Air.connect("jumped", $Idle.jump_input_buffering, "start")
 	owner.pass_through.connect("body_exited", self, "_on_PassThrough_exited")
 
