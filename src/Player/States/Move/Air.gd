@@ -26,6 +26,12 @@ func unhandled_input(event: InputEvent) -> void:
 func physics_process(delta: float) -> void:
 	_parent.physics_process(delta)
 
+	if (
+		_parent.velocity.y > 0
+		and owner.character_factory.selected_character != Character.Playable.squirrel
+	):
+		owner.skin.play("fall")
+
 	# Landing
 	if owner.is_on_floor():
 		owner.is_snapped_to_floor = true
@@ -37,9 +43,6 @@ func enter(msg: Dictionary = {}) -> void:
 	_parent.enter(msg)
 	_parent.acceleration.x = acceleration_x
 	owner.is_snapped_to_floor = false
-
-	if owner.abilities["double_jump"]:
-		max_jump_count = 2
 
 	if "coyote_time" in msg:
 		_coyote_time.start()

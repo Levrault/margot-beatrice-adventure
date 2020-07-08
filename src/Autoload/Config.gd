@@ -37,9 +37,7 @@ const DEFAULT_VALUES := {
 		"move_down": 83,
 		"move_left": 65,
 		"move_right": 68,
-		"jump": 32,
-		"attack": 69,
-		"dash": 70,
+		"jump": 32
 	},
 	"controller": {"rumble": true}
 }

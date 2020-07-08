@@ -2,10 +2,10 @@ extends State
 
 const PASS_TROUGHT_LAYER := 2
 
-export var max_speed_default := Vector2(500.0, 1000.00)
-export var acceleration_default := Vector2(10000, 3000.0)
+export var max_speed_default := Vector2(200.0, 675.00)
+export var acceleration_default := Vector2(10000, 1800.0)
 export var decceleration_default := Vector2(10000, 3000.0)
-export var max_speed_fall := 1500.00
+export var max_speed_fall := 900.00
 
 var acceleration := acceleration_default
 var decceleration := decceleration_default
