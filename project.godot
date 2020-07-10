@@ -116,9 +116,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Levrault-s-2D-platformer-starter"
+config/name="Margot Adventure"
 run/main_scene="res://src/UI/MainMenu.tscn"
-config/icon="res://project.png"
 
 [autoload]
 
@@ -129,6 +128,7 @@ LevelManager="*res://src/Autoload/LevelManager.gd"
 RoomManager="*res://src/Autoload/RoomManager.gd"
 Serialize="*res://src/Autoload/Serialize.gd"
 Game="*res://src/Autoload/Game.gd"
+Character="*res://src/Autoload/Character.gd"
 
 [debug]
 
@@ -232,7 +232,7 @@ move_down={
 }
 interaction={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
@@ -242,21 +242,9 @@ jump={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
-attack={
+character_wheel={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
- ]
-}
-sprint={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
- ]
-}
-dash={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
  ]
 }
 pause={
@@ -329,6 +317,7 @@ debug_free_camera_zoom_out={
 
 [locale]
 
+test="en"
 locale_filter=[ 0, [ "fr" ] ]
 translations=PoolStringArray( "res://i18n.en.translation", "res://i18n.fr.translation" )
 

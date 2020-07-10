@@ -4,6 +4,8 @@ extends Node2D
 
 signal animation_finished(anim_name)
 
+var current_anim := "DEFAULT"
+
 onready var anim: AnimationPlayer = $AnimationPlayer
 
 
@@ -13,6 +15,7 @@ func _ready() -> void:
 
 func play(anim_name: String) -> void:
 	assert(anim_name in anim.get_animation_list())
+	current_anim = anim_name
 	anim.play(anim_name)
 
 
