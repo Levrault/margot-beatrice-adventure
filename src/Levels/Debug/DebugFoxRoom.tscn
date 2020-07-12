@@ -31,6 +31,9 @@ character = 0
 [node name="StateMachine" parent="Player" index="3"]
 initial_state = NodePath("../../../DebugFoxRoom/Player/StateMachine/Spawn")
 
+[node name="JumpInputBuffering" parent="Player/StateMachine/Move/Idle" index="0"]
+wait_time = 0.075
+
 [node name="Air" parent="Player/StateMachine/Move" index="2"]
 jump_impulse = 900.0
 

@@ -3,10 +3,11 @@ extends State
 signal jumped
 
 export var acceleration_x := 5000.0
+export var min_jump_impulse := 450.0
 export var jump_impulse := 900.0
 export var max_jump_count := 1
 
-var _jump_count := 0
+var _jump_count := 1
 
 onready var _coyote_time: Timer = $CoyoteTime
 
@@ -19,6 +20,8 @@ func unhandled_input(event: InputEvent) -> void:
 		elif _coyote_time.time_left > 0.0:
 			_coyote_time.stop()
 			jump()
+	if event.is_action_released("jump") and abs(_parent.velocity.y) > min_jump_impulse:
+		_parent.velocity.y = -min_jump_impulse
 
 	_parent.unhandled_input(event)
 
