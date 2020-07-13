@@ -20,6 +20,7 @@ onready var camera: Camera2D = $CameraRig/Camera
 onready var collider: CollisionShape2D = $CollisionShape2D
 
 onready var character_factory := $CharacterFactory
+onready var npc_interaction := $NpcInteraction
 
 
 func _ready() -> void:
@@ -41,6 +42,8 @@ func set_is_active(value: bool) -> void:
 
 
 func horizontal_mirror(direction: int) -> void:
+	if direction == 0:
+		return
 	skin.scale.x = direction
 
 

@@ -13,6 +13,13 @@ func load(level: String) -> void:
 	level_name = level
 	if level == "demo":
 		rooms = {
+			"Room1": load("res://src/Levels/Demo/Room1.tscn"),
+			"Room2": load("res://src/Levels/Demo/Room2.tscn"),
+		}
+		Events.emit_signal("level_preload_finished")
+		return
+	if level == "debug":
+		rooms = {
 			"DebugDialogue": load("res://src/Levels/Debug/DebugDialogue.tscn"),
 			"DebugAttack": load("res://src/Levels/Debug/DebugAttack.tscn"),
 			"DebugSlopes": load("res://src/Levels/Debug/DebugSlopes.tscn"),

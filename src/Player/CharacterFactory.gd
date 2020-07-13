@@ -12,6 +12,8 @@ onready var characters: Node2D = $Characters
 
 func _ready() -> void:
 	yield(owner, "ready")
+	Events.connect("room_loaded", self, "_on_Room_loaded")
+
 	selected_character = character
 	wheel.hide()
 	wheel.next(Character.list[selected_character])
@@ -51,6 +53,14 @@ func _unhandled_input(event) -> void:
 		owner.is_handling_input = true
 		wheel.hide()
 		return
+
+
+func _on_Room_loaded() -> void:
+	if selected_character == Character.selected:
+		return
+	selected_character = Character.selected
+	wheel.next(Character.list[selected_character])
+	switch_to(Character.list[selected_character])
 
 
 func switch_to(new_character: String) -> void:

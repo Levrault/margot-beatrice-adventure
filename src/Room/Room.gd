@@ -23,6 +23,7 @@ func _ready():
 		)
 
 	Events.emit_signal("room_transition_ended")
+	Events.emit_signal("room_loaded")
 
 
 func _unhandled_input(event: InputEvent) -> void:

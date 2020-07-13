@@ -14,6 +14,7 @@ script = ExtResource( 3 )
 [node name="Debug" type="CanvasLayer" parent="."]
 
 [node name="DebugPanel" parent="Debug" instance=ExtResource( 4 )]
+visible = false
 reference_path = NodePath("../../Player/StateMachine")
 properties = PoolStringArray( "_state_name" )
 
@@ -57,5 +58,8 @@ __meta__ = {
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+
+[node name="CharacterFactory" parent="Player" index="2"]
+character = 0
 
 [editable path="Player"]
