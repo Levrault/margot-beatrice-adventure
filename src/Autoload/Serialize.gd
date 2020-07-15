@@ -3,7 +3,7 @@ extends Node
 
 const DEBUG_SAVE := "debug1"
 const PATH := "user://%s.save"
-const DEFAULT_DATA := {"level": "demo", "room": "DebugDialogue", "abilities": {}}
+const DEFAULT_DATA := {"level": "demo", "room": "Room1", "abilities": {}}
 var profile := "profile1" setget set_profile
 var _path := PATH % [profile]
 

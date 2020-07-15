@@ -22,9 +22,12 @@ func _ready() -> void:
 # Start, skip, end dialogue
 func _unhandled_input(event: InputEvent) -> void:
 	if _state == States.choosing:
-		return
+		# skip
+		if event.is_action_pressed("interaction") or event.is_action_pressed("jump"):
+			Events.emit_signal("dialogue_animation_skipped")
+			return
 
-	if event.is_action_pressed("interaction"):
+	if event.is_action_pressed("interaction") or event.is_action_pressed("jump"):
 		_interact()
 
 
@@ -57,6 +60,7 @@ func _interact() -> void:
 	# last dialogue/interaction was displayed, end the interaction
 	if _state == States.ending:
 		owner.is_handling_input = true
+		owner.character_factory.set_process_unhandled_input(true)
 		_npc.is_in_interaction = false
 		_state = States.pending
 		Events.emit_signal("dialogue_finished")
@@ -65,6 +69,7 @@ func _interact() -> void:
 	# interaction with npc has begun
 	if not _npc.is_in_interaction:
 		owner.is_handling_input = false
+		owner.character_factory.set_process_unhandled_input(false)
 		_npc.is_in_interaction = true
 		return
 

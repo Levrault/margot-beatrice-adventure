@@ -26,6 +26,7 @@ signal room_limit_changed(
 )
 signal room_transition_started
 signal room_transition_ended
+signal room_loaded
 
 # dialogue
 signal dialogue_started

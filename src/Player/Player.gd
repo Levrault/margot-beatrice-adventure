@@ -20,6 +20,7 @@ onready var camera: Camera2D = $CameraRig/Camera
 onready var collider: CollisionShape2D = $CollisionShape2D
 
 onready var character_factory := $CharacterFactory
+onready var npc_interaction := $NpcInteraction
 
 
 func _ready() -> void:
@@ -37,11 +38,14 @@ func set_is_active(value: bool) -> void:
 	is_active = value
 	if not collider:
 		return
-	collider.disabled = not value
+	collider.set_deferred("disabled", not value)
 
 
-func horizontal_mirror(direction: int) -> void:
-	skin.scale.x = direction
+func horizontal_mirror(direction: float) -> void:
+	print(direction)
+	if direction == 0:
+		return
+	skin.scale.x = sign(direction)
 
 
 # Unlock acces to new state machine state

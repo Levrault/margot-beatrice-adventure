@@ -4,11 +4,18 @@ extends KinematicBody2D
 
 export var conditions := {}
 export var is_auto_trigger := false
+export var is_visible := true
+export var is_self_destructible := false
 
 var is_interactable := false setget set_is_interactable
 var is_in_interaction := false setget set_is_in_interaction
 
 onready var dialogue_controller: DialogueController = $DialogueController as DialogueController
+
+func _ready() -> void:
+	if not is_visible:
+		$NpcSkin.queue_free()
+		$Label.queue_free()
 
 
 # Setter
@@ -16,7 +23,8 @@ onready var dialogue_controller: DialogueController = $DialogueController as Dia
 # @param {bool} value
 func set_is_interactable(value: bool) -> void:
 	is_interactable = value
-	$Talk.visible = value
+	if is_visible:
+		$Talk.visible = value
 
 
 # Setter
@@ -27,8 +35,11 @@ func set_is_in_interaction(value: bool) -> void:
 	if value:
 		dialogue_controller.load()
 		dialogue_controller.start()
-	else:
-		dialogue_controller.clear()
+		return
+	
+	dialogue_controller.clear()
+	if is_self_destructible:
+		queue_free()
 
 
 # When the NPC is interacting with the player

@@ -103,7 +103,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=7]
 resource_name = "spawn"
 length = 0.001
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
