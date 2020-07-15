@@ -16,7 +16,7 @@
 [ext_resource path="res://src/Player/SaveProgressInteraction.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 20 )
+extents = Vector2( 12, 13 )
 
 [sub_resource type="RayShape2D" id=2]
 length = 10.0
@@ -26,7 +26,7 @@ collision_mask = 6
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -20 )
+position = Vector2( 0, -13 )
 shape = SubResource( 1 )
 
 [node name="CameraRig" parent="." instance=ExtResource( 8 )]
@@ -66,7 +66,7 @@ one_shot = true
 script = ExtResource( 10 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 15 )]
-position = Vector2( 0, -20 )
+position = Vector2( 0, -13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource( 1 )
@@ -74,9 +74,11 @@ shape = SubResource( 1 )
 [node name="Stats" parent="." instance=ExtResource( 12 )]
 
 [node name="NpcInteraction" parent="." instance=ExtResource( 14 )]
+visible = false
 position = Vector2( 0, -20 )
 
 [node name="SaveProgressInteraction" parent="." instance=ExtResource( 18 )]
+visible = false
 position = Vector2( 0, -20 )
 
 [node name="PassThrough" type="Area2D" parent="."]

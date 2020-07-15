@@ -15,6 +15,7 @@ func load(level: String) -> void:
 		rooms = {
 			"Room1": load("res://src/Levels/Demo/Room1.tscn"),
 			"Room2": load("res://src/Levels/Demo/Room2.tscn"),
+			"Room3": load("res://src/Levels/Demo/Room3.tscn"),
 		}
 		Events.emit_signal("level_preload_finished")
 		return

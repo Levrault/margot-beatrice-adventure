@@ -59,6 +59,7 @@ default_field_to_focus = NodePath("../Control/ListOptionsMenu/Wrapper/Page/Conte
 
 [node name="Notification" parent="." instance=ExtResource( 15 )]
 pause_mode = 2
+visible = false
 
 [node name="DialogueBox" parent="." instance=ExtResource( 18 )]
 visible = false

@@ -38,7 +38,7 @@ func set_is_active(value: bool) -> void:
 	is_active = value
 	if not collider:
 		return
-	collider.disabled = not value
+	collider.set_deferred("disabled", not value)
 
 
 func horizontal_mirror(direction: int) -> void:
