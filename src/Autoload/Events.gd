@@ -9,6 +9,9 @@ signal notification_started(text, size)
 signal camera_offset_changed(offset)
 signal camera_offset_resetted
 
+# controller
+signal controller_changed(controller)
+
 # player
 signal player_moved(player)
 signal player_room_entered(position)
@@ -39,6 +42,7 @@ signal dialogue_animation_skipped
 signal dialogue_choices_changed(choices)
 signal dialogue_choices_displayed
 signal dialogue_choices_finished(choices)
+signal dialogue_choices_pressed
 signal dialogue_timed_out
 signal dialogue_timed(value)
 

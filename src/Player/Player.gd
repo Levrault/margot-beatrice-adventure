@@ -42,7 +42,6 @@ func set_is_active(value: bool) -> void:
 
 
 func horizontal_mirror(direction: float) -> void:
-	print(direction)
 	if direction == 0:
 		return
 	skin.scale.x = sign(direction)

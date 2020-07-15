@@ -117,7 +117,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Margot Adventure"
-run/main_scene="res://src/Main/Game.tscn"
+run/main_scene="res://src/UI/MainMenu.tscn"
 
 [autoload]
 
@@ -129,6 +129,7 @@ RoomManager="*res://src/Autoload/RoomManager.gd"
 Serialize="*res://src/Autoload/Serialize.gd"
 Game="*res://src/Autoload/Game.gd"
 Character="*res://src/Autoload/Character.gd"
+InputManager="*res://src/Autoload/InputManager.gd"
 
 [debug]
 
