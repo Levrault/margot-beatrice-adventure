@@ -6,11 +6,13 @@ export var max_speed_default := Vector2(200.0, 675.00)
 export var acceleration_default := Vector2(10000, 1800.0)
 export var decceleration_default := Vector2(10000, 3000.0)
 export var max_speed_fall := 900.00
+export var max_dash_count := 1
 
 var acceleration := acceleration_default
 var decceleration := decceleration_default
 var max_speed := max_speed_default
 var velocity := Vector2.ZERO
+var dash_count := 0
 
 var _is_move_down_key_pressed := false
 
@@ -60,12 +62,19 @@ func unhandled_input(event: InputEvent) -> void:
 		_is_move_down_key_pressed = false
 		return
 
+	if owner.character_factory.selected_character == Character.Playable.fox:
+		if event.is_action_pressed("dash") and dash_count < max_dash_count:
+			dash_count += 1
+			_state_machine.transition_to("Move/Dash")
+
 
 func physics_process(delta: float) -> void:
 	var direction := get_move_direction()
 
 	if not owner.is_handling_input:
 		direction.x = 0
+
+	owner.horizontal_mirror(direction.x)
 
 	velocity = calculate_velocity(
 		velocity, max_speed, acceleration, decceleration, delta, direction
@@ -74,8 +83,6 @@ func physics_process(delta: float) -> void:
 		velocity = owner.move_and_slide_with_snap(velocity, owner.SNAP, owner.FLOOR_NORMAL, true)
 	else:
 		velocity = owner.move_and_slide(velocity, owner.FLOOR_NORMAL)
-
-	owner.horizontal_mirror(direction.x)
 
 	Events.emit_signal("player_moved", owner)
 

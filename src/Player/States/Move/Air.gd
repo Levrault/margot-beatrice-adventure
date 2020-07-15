@@ -20,6 +20,8 @@ func unhandled_input(event: InputEvent) -> void:
 		elif _coyote_time.time_left > 0.0:
 			_coyote_time.stop()
 			jump()
+
+	# set a minimal air jump if button is release to soon 
 	if (
 		event.is_action_released("jump")
 		and abs(_parent.velocity.y) > min_jump_impulse
@@ -55,6 +57,8 @@ func enter(msg: Dictionary = {}) -> void:
 		_coyote_time.start()
 	if "impulse" in msg:
 		jump()
+	if "velocity" in msg:
+		_parent.velocity = msg.velocity
 
 
 func exit() -> void:

@@ -4,6 +4,11 @@
 
 [node name="DebugCharactersRoom" instance=ExtResource( 1 )]
 
+[node name="DebugPanel" parent="Debug" index="0"]
+visible = true
+reference_path = NodePath("../../Player/StateMachine/Move")
+properties = PoolStringArray( "velocity" )
+
 [node name="BoundsNW" parent="." index="2"]
 position = Vector2( -482.455, -269.695 )
 
@@ -13,10 +18,14 @@ tile_data = PoolIntArray( 1048550, 47, 196608, 1048551, 47, 196609, 1048552, 47,
 [node name="Player" parent="." index="10"]
 position = Vector2( -10.2291, 240.094 )
 
-[node name="CharacterFactory" parent="Player" index="2"]
-character = 0
-
 [node name="JumpInputBuffering" parent="Player/StateMachine/Move/Idle" index="0"]
 wait_time = 0.075
+
+[node name="Timer" parent="Player/StateMachine/Move/Dash" index="0"]
+wait_time = 0.25
+
+[node name="Cooldown" parent="Player/StateMachine/Move/Dash" index="1"]
+wait_time = 1.0
+one_shot = true
 
 [editable path="Player"]

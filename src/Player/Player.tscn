@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Player/CharacterFactory.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Libraries/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/Player/Camera/CameraRig.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Player/States/Spawn.gd" type="Script" id=9]
 [ext_resource path="res://src/Player/States/Die.gd" type="Script" id=10]
+[ext_resource path="res://src/Player/States/Move/Dash.gd" type="Script" id=11]
 [ext_resource path="res://src/Actor/Stats.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Player/NpcInteraction.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Combat/Hitbox.tscn" type="PackedScene" id=15]
@@ -61,6 +62,16 @@ max_jump_count = 0
 [node name="CoyoteTime" type="Timer" parent="StateMachine/Move/Air"]
 wait_time = 0.15
 one_shot = true
+
+[node name="Dash" type="Node" parent="StateMachine/Move"]
+script = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="StateMachine/Move/Dash"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Cooldown" type="Timer" parent="StateMachine/Move/Dash"]
+wait_time = 3.0
 
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource( 10 )
