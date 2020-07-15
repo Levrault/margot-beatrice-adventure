@@ -75,8 +75,7 @@ func physics_process(delta: float) -> void:
 	else:
 		velocity = owner.move_and_slide(velocity, owner.FLOOR_NORMAL)
 
-	if direction.x != 0:
-		owner.horizontal_mirror(direction.x)
+	owner.horizontal_mirror(direction.x)
 
 	Events.emit_signal("player_moved", owner)
 

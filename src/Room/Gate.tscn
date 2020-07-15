@@ -13,7 +13,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Spawn" type="Position2D" parent="."]
-position = Vector2( 52, 108 )
+position = Vector2( 52, 130 )
 __meta__ = {
 "_gizmo_extents_": 40.0
 }

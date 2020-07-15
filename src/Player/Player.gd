@@ -41,10 +41,11 @@ func set_is_active(value: bool) -> void:
 	collider.set_deferred("disabled", not value)
 
 
-func horizontal_mirror(direction: int) -> void:
+func horizontal_mirror(direction: float) -> void:
+	print(direction)
 	if direction == 0:
 		return
-	skin.scale.x = direction
+	skin.scale.x = sign(direction)
 
 
 # Unlock acces to new state machine state
