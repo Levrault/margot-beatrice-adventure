@@ -15,14 +15,17 @@ func enter(msg: Dictionary = {}) -> void:
 		owner.camera_rig.is_active = false
 
 	owner.skin.play("spawn")
-	if not has_user_signal("animation_finished"):
+
+	# check needed since skin value is changed on character change
+	if not owner.skin.is_connected("animation_finished", self, "_on_Skin_animation_finished"):
 		owner.skin.connect("animation_finished", self, "_on_Skin_animation_finished")
 
 
 func exit() -> void:
 	owner.is_active = true
 
-	if has_user_signal("animation_finished"):
+	# check needed since skin value is changed on character change
+	if owner.skin.is_connected("animation_finished", self, "_on_Skin_animation_finished"):
 		owner.skin.disconnect("animation_finished", self, "_on_Skin_animation_finished")
 
 

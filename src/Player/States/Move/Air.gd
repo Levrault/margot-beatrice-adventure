@@ -57,6 +57,7 @@ func enter(msg: Dictionary = {}) -> void:
 		_coyote_time.start()
 	if "impulse" in msg:
 		jump()
+		_parent.dash_count = 0
 	if "velocity" in msg:
 		_parent.velocity = msg.velocity
 

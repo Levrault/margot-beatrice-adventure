@@ -23,6 +23,10 @@ func enter(msg: Dictionary = {}) -> void:
 	_direction = get_move_direction()
 	if _direction == Vector2.ZERO:
 		_direction.x = owner.look_direction
+
+	if cooldown.is_connected("timeout", self, "_on_Cooldown_timeout"):
+		cooldown.disconnect("timeout", self, "_on_Cooldown_timeout")
+
 	timer.connect("timeout", self, "_on_Dash_timeout", [], CONNECT_ONESHOT)
 	timer.start()
 	owner.skin.play("dash")
