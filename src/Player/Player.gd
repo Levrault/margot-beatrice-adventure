@@ -12,6 +12,7 @@ var is_handling_input := true setget set_is_handling_input
 var abilities := {"dash": false, "double_jump": false}
 var skin: Node2D = null
 var initial_state_data := {}
+var look_direction := 1.0
 
 onready var pass_through: Area2D = $PassThrough
 onready var state_machine: StateMachine = $StateMachine
@@ -44,7 +45,8 @@ func set_is_active(value: bool) -> void:
 func horizontal_mirror(direction: float) -> void:
 	if direction == 0:
 		return
-	skin.scale.x = sign(direction)
+	look_direction = sign(direction)
+	skin.scale.x = look_direction
 
 
 # Unlock acces to new state machine state
