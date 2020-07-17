@@ -62,10 +62,9 @@ func unhandled_input(event: InputEvent) -> void:
 		_is_move_down_key_pressed = false
 		return
 
-	if owner.character_factory.selected_character == Character.Playable.fox:
-		if event.is_action_pressed("dash") and dash_count < max_dash_count:
-			dash_count += 1
-			_state_machine.transition_to("Move/Dash")
+	if event.is_action_pressed("dash") and dash_count < max_dash_count:
+		dash_count += 1
+		_state_machine.transition_to("Move/Dash")
 
 
 func physics_process(delta: float) -> void:
