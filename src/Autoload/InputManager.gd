@@ -8,10 +8,6 @@ var controller := KEYBOARD setget set_controller
 func _ready() -> void:
 	Input.connect("joy_connection_changed", self, "_on_joy_connection_changed")
 
-	# # set input
-	# if not Input.get_connected_joypads().empty():
-	# 	_on_joy_connection_changed(Input.get_connected_joypads()[0], true)
-
 
 # @param {int} device_id
 # @param {bool} connected
