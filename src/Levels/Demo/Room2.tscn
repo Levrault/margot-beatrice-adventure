@@ -37,21 +37,10 @@ conditions = {
 "has_already_been_meet": true
 }
 
-[node name="StateMachine" parent="Player" index="3"]
+[node name="StateMachine" parent="Player" index="4"]
 initial_state = NodePath("../../../Room2/Player/StateMachine/Spawn")
 
 [node name="FallLimitArea" parent="." index="11" instance=ExtResource( 3 )]
 position = Vector2( 264.902, 382.481 )
-
-[node name="Label" type="Label" parent="." index="12"]
-margin_left = 298.549
-margin_top = 35.5406
-margin_right = 466.549
-margin_bottom = 66.5406
-text = "Prend monsieur écureil pour 
-faire un saut assez long"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [editable path="Player"]
