@@ -25,30 +25,7 @@ tile_data = PoolIntArray( -1769488, 47, 4, -1769487, 47, 196609, -1769486, 47, 1
 [node name="TileMapPassThrough" parent="." index="7"]
 tile_data = PoolIntArray( 327669, 47, 196608, 327670, 47, 196609, 327671, 47, 196609, 327672, 47, 196609, 327673, 47, 196609, 327674, 47, 196609, 327675, 47, 196609, 327676, 47, 196610, 983029, 47, 196608, 983030, 47, 196609, 983031, 47, 196609, 983032, 47, 196609, 983033, 47, 196609, 983034, 47, 196609, 983035, 47, 196609, 983036, 47, 196610, 1572853, 47, 196608, 1572854, 47, 196609, 1572855, 47, 196609, 1572856, 47, 196609, 1572857, 47, 196609, 1572858, 47, 196609, 1572859, 47, 196609, 1572860, 47, 196610 )
 
-[node name="StateMachine" parent="Player" index="3"]
+[node name="StateMachine" parent="Player" index="4"]
 initial_state = NodePath("../../../Room3/Player/StateMachine/Spawn")
-
-[node name="Label" type="Label" parent="." index="11"]
-margin_left = 450.822
-margin_top = -262.874
-margin_right = 577.822
-margin_bottom = -248.874
-text = "Fin pour le moment"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="." index="12"]
-margin_left = -187.439
-margin_top = 429.35
-margin_right = -27.4387
-margin_bottom = 494.35
-text = "Prend madame lapine
-et appuie deux fois sur 
-saut pour faire un double
-faut"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [editable path="Player"]

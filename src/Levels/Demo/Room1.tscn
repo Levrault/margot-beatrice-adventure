@@ -47,7 +47,7 @@ visible = false
 [node name="Player" parent="." index="10"]
 position = Vector2( -240.085, 254.139 )
 
-[node name="StateMachine" parent="Player" index="3"]
+[node name="StateMachine" parent="Player" index="4"]
 initial_state = NodePath("../../../Room1/Player/StateMachine/Spawn")
 
 [editable path="NPCs/DemoLevelAuto1"]
