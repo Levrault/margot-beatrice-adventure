@@ -55,17 +55,27 @@ func enter(msg: Dictionary = {}) -> void:
 
 	if "coyote_time" in msg:
 		_coyote_time.start()
+		return
 	if "impulse" in msg:
 		jump()
 		_parent.dash_count = 0
+
+	if owner.character_factory.selected_character == Character.Playable.squirrel:
+		owner.attack_factory.create()
+		return
+
 	if "velocity" in msg:
 		_parent.velocity = msg.velocity
+		return
 
 
 func exit() -> void:
 	_jump_count = 0
 	_parent.acceleration = _parent.acceleration_default
 	_parent.exit()
+
+	if owner.attack_factory.is_attacking:
+		owner.attack_factory.destroy()
 
 
 func jump() -> void:

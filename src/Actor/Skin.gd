@@ -22,4 +22,5 @@ func play(anim_name: String) -> void:
 # Gate to let the owner and the skin node communicate
 # @param {String} anim_name
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+	print(anim_name)
 	emit_signal("animation_finished", anim_name)

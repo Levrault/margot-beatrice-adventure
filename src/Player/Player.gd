@@ -21,6 +21,7 @@ onready var camera: Camera2D = $CameraRig/Camera
 onready var collider: CollisionShape2D = $CollisionShape2D
 
 onready var character_factory := $CharacterFactory
+onready var attack_factory := $AttackFactory
 onready var npc_interaction := $NpcInteraction
 
 

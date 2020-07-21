@@ -21,6 +21,7 @@ linked_to = "GateToDebugAttack"
 
 [node name="GateToDebugSlopes" parent="Gates" index="1" instance=ExtResource( 3 )]
 position = Vector2( -614, 243 )
+facing = 1
 go_to_room = "DebugSlopes"
 linked_to = "GateToDebugAttack"
 
@@ -35,6 +36,9 @@ position = Vector2( -1, 220 )
 
 [node name="DummyEnemy3" parent="Enemies" index="2" instance=ExtResource( 2 )]
 position = Vector2( -243, 369 )
+
+[node name="Player" parent="." index="10"]
+position = Vector2( 61.0619, 332.249 )
 
 [node name="CharacterFactory" parent="Player" index="2"]
 character = 2

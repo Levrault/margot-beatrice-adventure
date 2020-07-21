@@ -19,10 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Libraries/AttackFactory/AttackFactory.gd"
 }, {
-"base": "Area2D",
+"base": "Reference",
 "class": "DamageSource",
 "language": "GDScript",
-"path": "res://src/Combat/DamageSource.gd"
+"path": "res://src/Combat/DamageSource/DamageSource.gd"
 }, {
 "base": "Node2D",
 "class": "DialogueController",
@@ -333,9 +333,11 @@ debug_free_camera_zoom_out={
 2d_physics/layer_4="Enemies"
 2d_physics/layer_5="Npcs"
 2d_physics/layer_6="Object"
-2d_physics/layer_7="Hitbox"
-2d_physics/layer_8="DamageSource"
+2d_physics/layer_7="HitboxPlayer"
+2d_physics/layer_8="DamageSourcePlayer"
 2d_physics/layer_9="SavePoint"
+2d_physics/layer_10="DamageSourceEnemies"
+2d_physics/layer_11="HitboxEnemies"
 
 [locale]
 
