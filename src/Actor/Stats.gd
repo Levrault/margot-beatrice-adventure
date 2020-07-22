@@ -1,11 +1,14 @@
 # Stats for the player or the monsters, to manage health, etc.
 # Attach an instance of Stats to any object to give it health and stats.
+# Since signal only talk to the owner, they don't need to be connected to
+# the event bus
 class_name Stats
 extends Node2D
 
 signal health_changed(old_value, new_value)
 signal health_depleted
 signal damage_taken
+signal is_invulnerable(value)
 
 export var max_health := 1.0 setget set_max_health
 export var attack: int = 1
@@ -57,6 +60,10 @@ func set_max_health(value: float) -> void:
 	max_health = max(1, value)
 
 
+func reset() -> void:
+	heal(max_health)
+
+
 # SAdd status effect e.g. poison
 # @param {int} id
 # @param {any} modifier - class, object...
@@ -74,8 +81,10 @@ func remove_modifier(id: int) -> void:
 # @param {float} time
 func set_invulnerable_for_seconds(time: float) -> void:
 	invulnerable = true
+	emit_signal("is_invulnerable", true)
 
 	var timer := get_tree().create_timer(time)
 	yield(timer, "timeout")
 
 	invulnerable = false
+	emit_signal("is_invulnerable", false)

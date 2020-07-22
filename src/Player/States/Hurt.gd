@@ -1,0 +1,55 @@
+# when owner is hurt, he's throwback on the opposite direction
+# and will be granted with some invinsible frame
+extends State
+
+export var throwback_force := Vector2(500, 500)
+
+onready var timer := $Timer
+
+
+func physics_process(delta: float) -> void:
+	var velocity = _parent.calculate_velocity(
+		_parent.velocity,
+		_parent.max_speed,
+		_parent.acceleration,
+		_parent.decceleration,
+		delta,
+		Vector2(owner.hit_direction, 1)
+	)
+	_parent.velocity = owner.move_and_slide(velocity, owner.FLOOR_NORMAL)
+
+	Events.emit_signal("player_moved", owner)
+
+	if owner.is_on_floor():
+		_state_machine.transition_to("Move/Idle", {contact = true})
+
+
+func enter(msg: Dictionary = {}) -> void:
+	owner.skin.play("hurt")
+	owner.hitbox.set_is_active(false)
+	owner.is_snapped_to_floor = false
+	owner.is_handling_input = false
+	owner.momentum.start()
+
+	if "impulse" in msg:
+		throwback()
+
+
+func exit() -> void:
+	owner.hitbox.set_is_active(true)
+	owner.is_handling_input = true
+	owner.is_snapped_to_floor = true
+	owner.stats.set_invulnerable_for_seconds(1)
+	_parent.velocity = Vector2.ZERO
+
+
+func throwback() -> void:
+	_parent.velocity.y = 0
+	var impulse := Vector2(throwback_force.x * owner.hit_direction, throwback_force.y)
+	_parent.velocity += calculate_throwback_velocity(impulse)
+
+
+func calculate_throwback_velocity(impulse: Vector2) -> Vector2:
+	return _parent.calculate_velocity(  # replace delta
+		_parent.velocity, _parent.max_speed, impulse, Vector2.ZERO, 1.0, Vector2.UP
+	)

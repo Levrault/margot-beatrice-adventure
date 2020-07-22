@@ -5,6 +5,8 @@ extends KinematicBody2D
 
 var is_snapped_to_floor := false
 
+var hit_direction := 1.0
+
 onready var stats: Stats = $Stats as Stats
 
 
