@@ -3,6 +3,8 @@ tool
 class_name Player
 extends Actor
 
+const PASS_TROUGHT_LAYER := 2
+
 const FLOOR_NORMAL := Vector2.UP
 const SNAP := Vector2(0, 10)
 const Collection: Script = preload("res://src/Utils/Collection.gd")

@@ -20,6 +20,7 @@ func physics_process(delta: float) -> void:
 
 
 func enter(msg: Dictionary = {}) -> void:
+	owner.set_collision_mask_bit(owner.PASS_TROUGHT_LAYER, false)
 	_direction = get_move_direction()
 	if _direction == Vector2.ZERO:
 		_direction.x = owner.look_direction
@@ -30,6 +31,10 @@ func enter(msg: Dictionary = {}) -> void:
 	timer.connect("timeout", self, "_on_Dash_timeout", [], CONNECT_ONESHOT)
 	timer.start()
 	owner.skin.play("dash")
+
+
+func exit() -> void:
+	owner.set_collision_mask_bit(owner.PASS_TROUGHT_LAYER, true)
 
 
 func _on_Dash_timeout() -> void:

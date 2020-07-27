@@ -26,7 +26,6 @@ linked_to = "GateToDebugAttack"
 
 [node name="GateToDebugSlopes" parent="Gates" index="1" instance=ExtResource( 3 )]
 position = Vector2( -614, 243 )
-facing = 1
 go_to_room = "DebugSlopes"
 linked_to = "GateToDebugAttack"
 
