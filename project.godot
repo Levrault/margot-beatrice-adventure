@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Combat/Hit.gd"
 }, {
+"base": "Area2D",
+"class": "Hitbox",
+"language": "GDScript",
+"path": "res://src/Combat/Hitbox/Hitbox.gd"
+}, {
 "base": "HBoxContainer",
 "class": "InputLine",
 "language": "GDScript",
@@ -48,6 +53,11 @@ _global_script_classes=[ {
 "class": "MenuSaveButton",
 "language": "GDScript",
 "path": "res://src/UI/Options/SavingButton/SavingButton.gd"
+}, {
+"base": "Node2D",
+"class": "Momentum",
+"language": "GDScript",
+"path": "res://src/Player/Momentum.gd"
 }, {
 "base": "Button",
 "class": "NavigationButton",
@@ -101,8 +111,10 @@ _global_script_class_icons={
 "DialogueController": "",
 "Gate": "",
 "Hit": "",
+"Hitbox": "",
 "InputLine": "",
 "MenuSaveButton": "",
+"Momentum": "",
 "NavigationButton": "",
 "NavigationRouter": "",
 "NavigationSwitch": "",

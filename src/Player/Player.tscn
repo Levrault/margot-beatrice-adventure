@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://src/Player/CharacterFactory.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Libraries/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -16,7 +16,10 @@
 [ext_resource path="res://src/Player/NpcInteraction.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Combat/Hitbox/HitboxPlayer.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Combat/DamageSource/DamageSource.gd" type="Script" id=16]
+[ext_resource path="res://src/Player/States/Hurt.gd" type="Script" id=17]
 [ext_resource path="res://src/Player/SaveProgressInteraction.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Player/Momentum.gd" type="Script" id=19]
+[ext_resource path="res://src/Actor/Effects.gd" type="Script" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 13 )
@@ -77,6 +80,11 @@ one_shot = true
 [node name="Cooldown" type="Timer" parent="StateMachine/Move/Dash"]
 wait_time = 3.0
 
+[node name="Hurt" type="Node" parent="StateMachine/Move"]
+script = ExtResource( 17 )
+
+[node name="Timer" type="Timer" parent="StateMachine/Move/Hurt"]
+
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource( 10 )
 
@@ -93,6 +101,11 @@ script = ExtResource( 16 )
 shape = SubResource( 2 )
 disabled = true
 
+[node name="Momentum" type="Node2D" parent="."]
+script = ExtResource( 19 )
+DURATION = 0.7
+STRENGTH = 0.8
+
 [node name="Hitbox" parent="." instance=ExtResource( 15 )]
 position = Vector2( 0, -13 )
 
@@ -100,6 +113,12 @@ position = Vector2( 0, -13 )
 shape = SubResource( 1 )
 
 [node name="Stats" parent="." instance=ExtResource( 12 )]
+max_health = 5.0
+
+[node name="Effects" type="Node2D" parent="."]
+script = ExtResource( 20 )
+
+[node name="Tween" type="Tween" parent="Effects"]
 
 [node name="NpcInteraction" parent="." instance=ExtResource( 14 )]
 visible = false

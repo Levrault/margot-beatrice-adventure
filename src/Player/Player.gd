@@ -19,7 +19,8 @@ onready var state_machine: StateMachine = $StateMachine
 onready var camera_rig: Position2D = $CameraRig
 onready var camera: Camera2D = $CameraRig/Camera
 onready var collider: CollisionShape2D = $CollisionShape2D
-
+onready var hitbox: Hitbox = $Hitbox as Hitbox
+onready var momentum: Momentum = $Momentum as Momentum
 onready var character_factory := $CharacterFactory
 onready var attack_factory := $AttackFactory
 onready var npc_interaction := $NpcInteraction
@@ -41,6 +42,16 @@ func set_is_active(value: bool) -> void:
 	if not collider:
 		return
 	collider.set_deferred("disabled", not value)
+
+
+func take_damage(source: Hit) -> void:
+	print_debug("take_damage")
+	.take_damage(source)
+	if stats.health > 0:
+		state_machine.transition_to("Move/Hurt", {impulse = true})
+		return
+
+	state_machine.transition_to("Die")
 
 
 func horizontal_mirror(direction: float) -> void:
@@ -77,4 +88,4 @@ func _on_Player_Room_entered(global_position: Vector2) -> void:
 
 
 func _on_Stats_health_depleated() -> void:
-	state_machine.transition_to("Spawn")
+	state_machine.transition_to("Die")
