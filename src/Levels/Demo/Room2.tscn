@@ -18,6 +18,7 @@ position = Vector2( 947.932, 199.36 )
 
 [node name="GateToRoom1" parent="Gates" index="0" instance=ExtResource( 2 )]
 position = Vector2( -237.588, -3.39413 )
+facing = 1
 go_to_room = "Room1"
 linked_to = "GateToRoom2"
 
@@ -37,10 +38,10 @@ conditions = {
 "has_already_been_meet": true
 }
 
-[node name="StateMachine" parent="Player" index="4"]
+[node name="StateMachine" parent="Player" index="3"]
 initial_state = NodePath("../../../Room2/Player/StateMachine/Spawn")
 
 [node name="FallLimitArea" parent="." index="11" instance=ExtResource( 3 )]
-position = Vector2( 264.902, 382.481 )
+position = Vector2( 266.37, 192.353 )
 
 [editable path="Player"]

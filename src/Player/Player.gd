@@ -47,7 +47,7 @@ func set_is_active(value: bool) -> void:
 func take_damage(source: Hit) -> void:
 	print_debug("take_damage")
 	.take_damage(source)
-	if stats.health > 0:
+	if stats.health > 0 and not source.is_instakill:
 		state_machine.transition_to("Move/Hurt", {impulse = true})
 		return
 

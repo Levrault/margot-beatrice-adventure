@@ -55,28 +55,7 @@ margin_left = -64.0
 margin_top = 64.0
 margin_right = 62.0
 margin_bottom = 95.0
-text = "Attack Debug Room
-Press E to attack"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="." index="12"]
-margin_left = 534.0
-margin_top = 290.0
-margin_right = 660.0
-margin_bottom = 321.0
-text = "Debug Dialogue Room"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label3" type="Label" parent="." index="13"]
-margin_left = -606.0
-margin_top = 300.0
-margin_right = -464.0
-margin_bottom = 331.0
-text = "Debug Slopes Room"
+text = "Sectionne l`écureuil pour attaquer"
 __meta__ = {
 "_edit_use_anchors_": false
 }

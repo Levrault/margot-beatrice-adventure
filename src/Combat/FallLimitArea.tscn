@@ -2,11 +2,10 @@
 
 [ext_resource path="res://src/Combat/DamageSource/DamageSourcePlayer.tscn" type="PackedScene" id=1]
 
-
-
 [sub_resource type="LineShape2D" id=1]
 
 [node name="FallLimitArea" instance=ExtResource( 1 )]
+collision_layer = 512
 is_instakill = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
