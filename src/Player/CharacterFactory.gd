@@ -106,3 +106,4 @@ func switch_to(new_character: String) -> void:
 
 	owner.horizontal_mirror(_direction)
 	owner.skin.play(anim_to_play)
+	Events.emit_signal("player_character_changed")

@@ -12,10 +12,14 @@ signal camera_offset_resetted
 # controller
 signal controller_changed(controller)
 
+# collectable
+signal collectable_collected(character)
+
 # player
 signal player_moved(player)
 signal player_room_entered(position)
 signal player_choice_started
+signal player_character_changed
 
 # level
 signal level_preload_finished

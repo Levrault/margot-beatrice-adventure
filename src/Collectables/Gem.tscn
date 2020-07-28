@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sprites/land/gem-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://src/Collectables/Collectable.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 5.42895
+
+[sub_resource type="Animation" id=3]
+resource_name = "DEFAULT"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[node name="Gem" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 4 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0.629055, 0.993248 )
+texture = ExtResource( 1 )
+hframes = 5
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "DEFAULT"
+anims/DEFAULT = SubResource( 3 )
