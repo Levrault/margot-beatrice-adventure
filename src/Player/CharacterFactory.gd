@@ -27,6 +27,7 @@ func _unhandled_input(event) -> void:
 	if not wheel.visible and event.is_action_pressed("character_wheel"):
 		owner.is_handling_input = false
 		wheel.show()
+		get_tree().paused = true
 		return
 
 	if not wheel.visible:
@@ -55,6 +56,7 @@ func _unhandled_input(event) -> void:
 		switch_to(Character.list[selected_character])
 		owner.is_handling_input = true
 		wheel.hide()
+		get_tree().paused = false
 		return
 
 

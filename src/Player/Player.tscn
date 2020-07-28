@@ -40,6 +40,7 @@ shape = SubResource( 1 )
 [node name="CameraRig" parent="." instance=ExtResource( 8 )]
 
 [node name="CharacterFactory" parent="." instance=ExtResource( 1 )]
+pause_mode = 2
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource( 2 )
