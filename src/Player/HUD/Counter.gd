@@ -1,0 +1,13 @@
+extends Label
+
+export (Character.Playable) var character = Character.Playable.fox
+
+
+func _ready() -> void:
+	Events.connect("collectable_collected", self, "_on_Collectable_collected")
+
+
+func _on_Collectable_collected(selected_character: int, score: int) -> void:
+	if selected_character != character:
+		return
+	text = "%s" % score

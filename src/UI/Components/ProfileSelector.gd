@@ -16,7 +16,6 @@ func _ready() -> void:
 		return
 
 	var data := Serialize.quick_read(selected_profile)
-	print(data)
 	button.text = "%s - %s" % [tr(data["level"]), tr(data["room"])]
 
 

@@ -5,7 +5,7 @@
 class_name Stats
 extends Node2D
 
-signal health_changed(old_value, new_value)
+signal health_changed(new_value, old_value)
 signal health_depleted
 signal damage_taken
 signal is_invulnerable(value)
@@ -25,7 +25,6 @@ func _ready() -> void:
 # Has take a hit
 # @param {Hit} hit
 func take_damage(hit: Hit) -> void:
-	print("take damage")
 	if invulnerable:
 		return
 
@@ -38,7 +37,9 @@ func take_damage(hit: Hit) -> void:
 	var old_health = health
 	health -= hit.damage
 	emit_signal("damage_taken")
+	print(health)
 	health = max(0, health)
+	print(health)
 	emit_signal("health_changed", health, old_health)
 	if health == 0:
 		emit_signal("health_depleted")

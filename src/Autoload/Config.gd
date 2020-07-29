@@ -152,8 +152,6 @@ func erase_action_events(action_name: String) -> void:
 # @param {String} key - key used in interface
 # @return {String} config data
 func config_to_field(key: String) -> String:
-	print(key)
-
 	if key == "use_vsync":
 		return "cfg_yes" if values["display"]["use_vsync"] else "cfg_no"
 

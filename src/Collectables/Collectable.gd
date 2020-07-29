@@ -21,7 +21,7 @@ func _on_Player_character_changed() -> void:
 
 
 func _on_Player_entered(body: Player) -> void:
-	Events.emit_signal("collectable_collected", Character.selected)
+	Character.update_score()
 	skin.hide()
 	feedback.anim.play("collected")
 

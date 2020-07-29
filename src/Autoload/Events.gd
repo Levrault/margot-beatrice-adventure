@@ -13,7 +13,7 @@ signal camera_offset_resetted
 signal controller_changed(controller)
 
 # collectable
-signal collectable_collected(character)
+signal collectable_collected(character, score)
 
 # player
 signal player_moved(player)

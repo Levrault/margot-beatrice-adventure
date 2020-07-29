@@ -8,7 +8,6 @@ func _on_Pressed() -> void:
 	var data = ._get_fields()
 
 	if data.has("use_vsync"):
-		print(data["use_vsync"])
 		data["use_vsync"] = (data["use_vsync"] == "cfg_yes")
 
 	if data.has("resolution"):

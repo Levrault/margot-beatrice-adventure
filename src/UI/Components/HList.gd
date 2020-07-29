@@ -93,7 +93,7 @@ func _set_selected_value(text: String) -> void:
 # Change focus
 # @param {bool} is_focused
 func _on_Focus_toggle(is_focused: bool) -> void:
-	print("%s has focus" % [get_name()])
+	print_debug("%s has focus" % [get_name()])
 	_is_focused = is_focused
 
 	# TODO: to remove when themed

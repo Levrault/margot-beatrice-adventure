@@ -7,7 +7,6 @@
 [node name="Room" instance=ExtResource( 1 )]
 
 [node name="DebugPanel" parent="Debug" index="0"]
-visible = true
 reference_path = NodePath("../../Player/StateMachine/Move")
 properties = PoolStringArray( "velocity" )
 
@@ -41,14 +40,6 @@ position = Vector2( 236.567, 287.831 )
 [node name="DummyEnemy3" parent="Enemies" index="2" instance=ExtResource( 2 )]
 position = Vector2( 109.477, 368.528 )
 
-[node name="Player" parent="." index="10"]
-position = Vector2( 236.506, 329.099 )
-
-[node name="CharacterFactory" parent="Player" index="2"]
-character = 2
-
-[node name="Timer" type="Timer" parent="Player/StateMachine/Move/Hurt" index="0"]
-
 [node name="Label" type="Label" parent="." index="11"]
 margin_left = -64.0
 margin_top = 64.0
@@ -58,5 +49,13 @@ text = "Sectionne l`écureuil pour attaquer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Player" parent="." index="12"]
+position = Vector2( 236.506, 329.099 )
+
+[node name="CharacterFactory" parent="Player" index="2"]
+character = 2
+
+[node name="Timer" type="Timer" parent="Player/StateMachine/Move/Hurt" index="0"]
 
 [editable path="Player"]

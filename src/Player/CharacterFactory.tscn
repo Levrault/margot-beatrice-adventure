@@ -821,6 +821,7 @@ position = Vector2( 1, -19 )
 
 [node name="Rabbit" type="Node2D" parent="Characters"]
 visible = false
+position = Vector2( 0, 2 )
 script = ExtResource( 6 )
 
 [node name="Skin" parent="Characters/Rabbit" instance=ExtResource( 3 )]

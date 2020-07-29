@@ -26,12 +26,17 @@ onready var momentum: Momentum = $Momentum as Momentum
 onready var character_factory := $CharacterFactory
 onready var attack_factory := $AttackFactory
 onready var npc_interaction := $NpcInteraction
+onready var life = $HUD.life_progress
+onready var effects := $Effects
 
 
 func _ready() -> void:
 	Events.connect("player_room_entered", self, "_on_Player_Room_entered")
 	stats.connect("health_depleted", self, "_on_Stats_health_depleated")
+	stats.connect("health_changed", life, "_on_Health_changed")
 	abilities = Collection.merge(abilities, Game.unlocked_abilities)
+	life.max_value = stats.max_health
+	life.value = stats.max_health
 
 
 func set_is_handling_input(value: bool) -> void:
@@ -47,10 +52,10 @@ func set_is_active(value: bool) -> void:
 
 
 func take_damage(source: Hit) -> void:
-	print_debug("take_damage")
 	.take_damage(source)
 	if stats.health > 0 and not source.is_instakill:
 		state_machine.transition_to("Move/Hurt", {impulse = true})
+		effects.damage_effect()
 		return
 
 	state_machine.transition_to("Die")

@@ -23,7 +23,7 @@ func _on_Menu_route_changed(id: String) -> void:
 		return
 
 	_is_current_route = true
-	print("%s route has been set" % [id])
+	print_debug("%s route has been set" % [id])
 
 
 func _on_Transiton_mid_animated() -> void:

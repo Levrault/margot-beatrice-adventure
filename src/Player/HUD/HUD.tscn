@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/portraits/Fox.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/PreviewHolder.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/health_bar_decoration.png" type="Texture" id=3]
+[ext_resource path="res://assets/portraits/Rabbit.png" type="Texture" id=4]
+[ext_resource path="res://assets/portraits/Squirrel.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/carrot.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/gem.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/acorn.png" type="Texture" id=8]
+[ext_resource path="res://assets/theme/hud.tres" type="Theme" id=9]
+[ext_resource path="res://src/Player/HUD/Counter.gd" type="Script" id=10]
+[ext_resource path="res://src/Player/HUD/PortraitSwitcher.gd" type="Script" id=11]
+[ext_resource path="res://assets/UI/health_bar.png" type="Texture" id=12]
+[ext_resource path="res://src/Player/HUD/HUD.gd" type="Script" id=13]
+[ext_resource path="res://src/Player/HUD/LifeProgress.gd" type="Script" id=14]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 13 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifeBarContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portrait" type="TextureRect" parent="Control/VBoxContainer/LifeBarContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fox" type="TextureRect" parent="Control/VBoxContainer/LifeBarContainer/Portrait"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 33.0
+margin_bottom = 33.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rabbit" type="TextureRect" parent="Control/VBoxContainer/LifeBarContainer/Portrait"]
+visible = false
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 33.0
+margin_bottom = 33.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Squirrel" type="TextureRect" parent="Control/VBoxContainer/LifeBarContainer/Portrait"]
+visible = false
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 33.0
+margin_bottom = 33.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/VBoxContainer/LifeBarContainer"]
+margin_left = 36.0
+margin_right = 100.0
+margin_bottom = 32.0
+
+[node name="LifeBar" type="TextureRect" parent="Control/VBoxContainer/LifeBarContainer/CenterContainer"]
+margin_top = 7.0
+margin_right = 64.0
+margin_bottom = 24.0
+texture = ExtResource( 3 )
+
+[node name="LifeProgress" type="TextureProgress" parent="Control/VBoxContainer/LifeBarContainer/CenterContainer/LifeBar"]
+margin_left = 14.0
+margin_right = 63.0
+margin_bottom = 17.0
+value = 100.0
+texture_progress = ExtResource( 12 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+COLOR = Color( 1, 1, 1, 1 )
+
+[node name="TweenProgress" type="Tween" parent="Control/VBoxContainer/LifeBarContainer/CenterContainer/LifeBar/LifeProgress"]
+
+[node name="TweenColor" type="Tween" parent="Control/VBoxContainer/LifeBarContainer/CenterContainer/LifeBar/LifeProgress"]
+
+[node name="CountersContainer" type="VBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 36.0
+margin_right = 100.0
+margin_bottom = 107.0
+
+[node name="GemCounter" type="HBoxContainer" parent="Control/VBoxContainer/CountersContainer"]
+margin_right = 100.0
+margin_bottom = 21.0
+
+[node name="Gem" type="TextureRect" parent="Control/VBoxContainer/CountersContainer/GemCounter"]
+margin_right = 16.0
+margin_bottom = 21.0
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/CountersContainer/GemCounter"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 26.0
+margin_bottom = 14.0
+text = "0"
+script = ExtResource( 10 )
+
+[node name="AcornCounter" type="HBoxContainer" parent="Control/VBoxContainer/CountersContainer"]
+margin_top = 25.0
+margin_right = 100.0
+margin_bottom = 46.0
+
+[node name="Acorn" type="TextureRect" parent="Control/VBoxContainer/CountersContainer/AcornCounter"]
+margin_right = 16.0
+margin_bottom = 21.0
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/CountersContainer/AcornCounter"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 26.0
+margin_bottom = 14.0
+text = "0"
+script = ExtResource( 10 )
+character = 2
+
+[node name="CarrotCounter" type="HBoxContainer" parent="Control/VBoxContainer/CountersContainer"]
+margin_top = 50.0
+margin_right = 100.0
+margin_bottom = 71.0
+
+[node name="Carrot" type="TextureRect" parent="Control/VBoxContainer/CountersContainer/CarrotCounter"]
+margin_right = 16.0
+margin_bottom = 21.0
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/CountersContainer/CarrotCounter"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 26.0
+margin_bottom = 14.0
+text = "0"
+script = ExtResource( 10 )
+character = 1

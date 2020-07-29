@@ -50,6 +50,6 @@ func throwback() -> void:
 
 
 func calculate_throwback_velocity(impulse: Vector2) -> Vector2:
-	return _parent.calculate_velocity(  # replace delta
+	return _parent.calculate_velocity(
 		_parent.velocity, _parent.max_speed, impulse, Vector2.ZERO, 1.0, Vector2.UP
 	)

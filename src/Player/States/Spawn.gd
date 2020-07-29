@@ -9,7 +9,6 @@ func _ready() -> void:
 
 
 func enter(msg: Dictionary = {}) -> void:
-	print_debug("spawn")
 	owner.position = _start_position
 	owner.is_active = false
 	owner.stats.reset()
