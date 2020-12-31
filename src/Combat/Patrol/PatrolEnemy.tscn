@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Libraries/StateMachine/StateMachine.gd" type="Script" id=1]
+[ext_resource path="res://src/Combat/Patrol/Patrol.gd" type="Script" id=2]
+
+[node name="PatrolEnemy" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Patrol" type="Node2D" parent="StateMachine"]
+script = ExtResource( 2 )
+
+[node name="RayCastWall" type="RayCast2D" parent="StateMachine/Patrol"]
+rotation = 1.5708
+
+[node name="RayCastFloor" type="RayCast2D" parent="StateMachine/Patrol"]
