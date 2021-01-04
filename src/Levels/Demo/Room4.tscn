@@ -16,6 +16,7 @@ position = Vector2( 1, 1 )
 position = Vector2( 782, 255 )
 
 [node name="GateToRoom3" parent="Gates" index="0" instance=ExtResource( 3 )]
+facing = 1
 go_to_room = "Room3"
 linked_to = "GateToRoom4"
 
@@ -28,31 +29,10 @@ tile_data = PoolIntArray( 65553, 47, 3, 131089, 47, 65539, 196625, 47, 65539, 26
 [node name="DummyEnemy" parent="Enemies" index="0" instance=ExtResource( 2 )]
 position = Vector2( 661.661, 224.67 )
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="11"]
 position = Vector2( 141.516, 183.732 )
 
 [node name="StateMachine" parent="Player" index="3"]
 initial_state = NodePath("../../../Room4/Player/StateMachine/Spawn")
-
-[node name="Label" type="Label" parent="." index="11"]
-margin_left = 461.893
-margin_top = 66.7865
-margin_right = 501.893
-margin_bottom = 80.7865
-text = "seul l'ecurueil pour attaquer l'enemie"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="." index="12"]
-margin_left = 28.8823
-margin_top = 60.4187
-margin_right = 268.882
-margin_bottom = 74.4187
-text = "Le renard, peut traverser 
-certaines surfaces"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [editable path="Player"]
