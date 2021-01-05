@@ -43,9 +43,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StateMachine" parent="Player" index="4"]
-initial_state = NodePath("../../../RoomTest4/Player/StateMachine/Spawn")
-
 [node name="Label2" type="Label" parent="." index="12"]
 margin_left = 120.0
 margin_top = 111.0
@@ -58,5 +55,8 @@ __meta__ = {
 
 [node name="SavePoint" parent="." index="13" instance=ExtResource( 4 )]
 position = Vector2( 169, 188 )
+
+[node name="StateMachine" parent="Player" index="3"]
+initial_state = NodePath("../../../RoomTest4/Player/StateMachine/Spawn")
 
 [editable path="Player"]

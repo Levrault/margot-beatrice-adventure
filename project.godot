@@ -128,7 +128,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Margot Adventure"
+config/name="Margot-Béatrice Adventure"
 run/main_scene="res://src/UI/MainMenu.tscn"
 
 [autoload]
