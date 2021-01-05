@@ -43,4 +43,4 @@ func _on_Transiton_mid_animated() -> void:
 					return
 
 	emit_signal("navigation_finished")
-	print("%s is now visible" % [get_name()])
+	print_debug("%s is now visible" % [get_name()])

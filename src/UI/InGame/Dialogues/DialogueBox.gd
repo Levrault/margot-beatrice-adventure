@@ -3,18 +3,22 @@ extends Control
 
 enum States { pending, questionning }
 
+var _choice_btn_scene := preload("res://src/UI/InGame/Dialogues/ChoicesBtn.tscn")
 var _message := ''
 var _is_last_dialogue := false
 var _state: int = States.pending
 
-onready var _text = $Panel/Wrapper/Contents/Text/Message
-onready var _name = $Panel/Wrapper/Contents/Text/Name
-onready var _portrait = $Panel/Wrapper/Contents/Portrait
-onready var _choices_panel = $Choices
-onready var _choices_contents = $Choices/Wrapper/Contents
-onready var _next = $Next
-onready var _end = $End
-onready var _timer = $Timer
+onready var _anim_dialogue := $AnimationPlayerDialogue
+onready var _anim_actions := $AnimationPlayerActions
+onready var _anim_choices := $AnimationPlayerChoices
+onready var _text := $Panel/Wrapper/Contents/Message
+onready var _name := $Panel/NameContent/MarginContainer/Name
+onready var _portrait := $Panel/Wrapper/Contents/Portrait
+onready var _choices_panel := $Choices
+onready var _choices_contents := $Choices
+onready var _next := $Next
+onready var _end := $End
+onready var _timer := $Timer
 
 
 func _ready() -> void:
@@ -37,24 +41,28 @@ func _ready() -> void:
 # that need to be displayed
 func next_action() -> void:
 	if _state == States.questionning:
-		_choices_panel.visible = true
+		_anim_choices.play("show")
 		_choices_contents.get_child(0).grab_focus()
 		Events.emit_signal("dialogue_choices_displayed")
 		_next.show()
+		_anim_actions.play("next")
 		return
 
 	if _is_last_dialogue and _state == States.pending:
 		Events.emit_signal("dialogue_last_text_displayed")
+		_next.hide()
 		_end.show()
+		_anim_actions.play("end")
 		return
 
 	Events.emit_signal("dialogue_text_displayed")
 	_next.show()
+	_anim_actions.play("next")
 
 
 # show dialogue box
 func _on_Dialogue_started() -> void:
-	visible = true
+	_anim_dialogue.play("show")
 
 
 # Convert text to bb_code, start text animation
@@ -74,7 +82,7 @@ func _on_Dialogue_changed(name: String, portrait: StreamTexture, message: String
 func _on_Choice_changed(choices: Array) -> void:
 	_state = States.questionning
 	for choice in choices:
-		var button: Button = Button.new()
+		var button: Button = _choice_btn_scene.instance()
 		button.text = choice["text"][TranslationServer.get_locale()]
 		button.connect("pressed", self, "_on_Choice_pressed", [choice["next"]])
 		_choices_contents.add_child(button)
@@ -91,10 +99,8 @@ func _on_Choice_pressed(next: String) -> void:
 
 # Reset dialogue
 func _on_Dialogue_finished() -> void:
-	hide()
+	_anim_dialogue.play("hide")
 	_timer.stop()
-	_next.hide()
-	_end.hide()
 	_choices_panel.hide()
 	_is_last_dialogue = false
 	_text.toggle_animation(false)

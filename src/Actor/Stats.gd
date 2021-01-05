@@ -37,9 +37,7 @@ func take_damage(hit: Hit) -> void:
 	var old_health = health
 	health -= hit.damage
 	emit_signal("damage_taken")
-	print(health)
 	health = max(0, health)
-	print(health)
 	emit_signal("health_changed", health, old_health)
 	if health == 0:
 		emit_signal("health_depleted")

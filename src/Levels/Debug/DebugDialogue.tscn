@@ -269,7 +269,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." index="17"]
-position = Vector2( 194.75, 0 )
+position = Vector2( 128.534, 155.741 )
 
 [node name="StateMachine" parent="Player" index="3"]
 initial_state = NodePath("../../../DebugDialogueRoom/Player/StateMachine/Spawn")

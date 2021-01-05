@@ -17,8 +17,6 @@ func set_color_normal(value: Color) -> void:
 # Animated ui change
 # @param {float} new_value
 func _on_Health_changed(new_value: float, old_value: float) -> void:
-	print(old_value)
-	print(new_value)
 	$TweenColor.interpolate_property(
 		self, "modulate", modulate, Color(255, 255, 255), 0.4, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN
 	)
