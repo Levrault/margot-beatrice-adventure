@@ -7,6 +7,7 @@ export var min_jump_impulse := 250.0
 export var jump_impulse := 900.0
 export var max_jump_count := 1
 
+var dust_scene = preload("res://src/Particules/Dust.tscn")
 var _jump_count := 1
 
 onready var _coyote_time: Timer = $CoyoteTime
@@ -17,6 +18,12 @@ func unhandled_input(event: InputEvent) -> void:
 		emit_signal("jumped")
 		if _jump_count < max_jump_count:
 			jump()
+
+			if _jump_count > 1:
+				var dust = dust_scene.instance()
+				owner.get_parent().add_child(dust)
+				dust.position = owner.position
+				dust.emitting = true
 		elif _coyote_time.time_left > 0.0:
 			_coyote_time.stop()
 			jump()
