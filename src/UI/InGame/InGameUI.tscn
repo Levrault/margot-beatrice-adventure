@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/UI/Options/GameOptionsMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/Options/KeyboardOptionsMenu.tscn" type="PackedScene" id=3]
@@ -12,7 +12,6 @@
 [ext_resource path="res://src/UI/Options/VideoOptionsMenu.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/UI/Options/ListOptionsMenu.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/UI/InGame/Dialogues/DialogueBox.tscn" type="PackedScene" id=18]
-[ext_resource path="res://src/Room/RoomTransition.tscn" type="PackedScene" id=19]
 
 [node name="UI" type="CanvasLayer"]
 layer = 100
@@ -22,9 +21,6 @@ pause_mode = 2
 visible = false
 
 [node name="DialogueBox" parent="." instance=ExtResource( 18 )]
-visible = false
-
-[node name="RoomTransition" parent="." instance=ExtResource( 19 )]
 visible = false
 
 [node name="Router" type="Control" parent="."]

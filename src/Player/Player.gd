@@ -32,6 +32,7 @@ onready var effects := $Effects
 
 func _ready() -> void:
 	Events.connect("player_room_entered", self, "_on_Player_Room_entered")
+	Events.connect("camera_anchor_changed", self, "_on_Camera_anchor_changed")
 	stats.connect("health_depleted", self, "_on_Stats_health_depleated")
 	stats.connect("health_changed", life, "_on_Health_changed")
 	abilities = Collection.merge(abilities, Game.unlocked_abilities)
@@ -96,3 +97,10 @@ func _on_Player_Room_entered(global_position: Vector2) -> void:
 
 func _on_Stats_health_depleated() -> void:
 	state_machine.transition_to("Die")
+
+
+func _on_Camera_anchor_changed() -> void:
+	owner.set_process(false)
+	self.is_handling_input = false
+	get_tree().paused = true
+	camera_rig.transit_to_new_room()
