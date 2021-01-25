@@ -1,6 +1,9 @@
 #Rig to move a child camera based on the player's input, to give them more forward visibility
 extends Position2D
 
+const TRANSITION_TIME := .475
+const TRANSITION_TIME_DASH := .3
+
 var is_active := true
 var initial_position := Vector2.ZERO
 
@@ -15,17 +18,13 @@ func _ready() -> void:
 
 func transit_to_new_room() -> void:
 	pause_mode = Node.PAUSE_MODE_PROCESS
-	var transition_time := .475
-	if owner.state_machine.state_name == "Dash":
-		transition_time = .3
-
 	_tween.connect("tween_started", self, "_on_Tween_started")
 	_tween.interpolate_property(
 		self,
 		"position",
 		to_local(RoomManager.previous_anchor.global_position),
 		to_local(RoomManager.anchor.global_position),
-		transition_time,
+		TRANSITION_TIME if owner.state_machine.state_name != "Dash" else TRANSITION_TIME_DASH,
 		Tween.TRANS_LINEAR,
 		Tween.TRANS_LINEAR
 	)
