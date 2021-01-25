@@ -1,13 +1,15 @@
 extends Node2D
 
 onready var player: Player = find_node("Player")
+onready var _anchors := $Anchors.get_children()
 
 
-func _exit_tree() -> void:
-	Events.emit_signal("room_transition_started")
+func _ready() -> void:
+	# Camara management
+	RoomManager.anchor = _anchors[0]
+	Events.connect("player_moved", self, "_on_Player_moved")
 
-
-func _ready():
+	# Current bound
 	RoomManager.bounds = {
 		'limit_left': $BoundsNW.global_position.x,
 		'limit_top': $BoundsNW.global_position.y,
@@ -44,7 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event.is_action_pressed("debug_accelerate_time"):
-		Engine.time_scale = Engine.time_scale + .1
+		Engine.time_scale = Engine.time_scale + .05
 		return
 
 	if event.is_action_pressed("debug_reset_time"):
@@ -59,3 +61,34 @@ func _unhandled_input(event: InputEvent) -> void:
 			add_child(free_camera)
 		else:
 			get_node("FreeCamera").queue_free()
+
+
+func _on_Player_moved(player: Player) -> void:
+	var nearest_anchor = _anchors[0]
+
+	for anchor in _anchors:
+		if (
+			anchor.position.distance_to(player.position)
+			< nearest_anchor.position.distance_to(player.position)
+		):
+			nearest_anchor = anchor
+
+	if RoomManager.anchor != nearest_anchor:
+		print_debug(
+			(
+				"%s camera's anchor has been changed to %s"
+				% [RoomManager.anchor.name, nearest_anchor.name]
+			)
+		)
+
+		# does the room movement is horizontal, vertical or diagonal
+		var transition = RoomManager.Transition.diagonal
+		if RoomManager.anchor.position.x == nearest_anchor.position.x:
+			transition = RoomManager.Transition.vertical
+		elif RoomManager.anchor.position.y == nearest_anchor.position.y:
+			transition = RoomManager.Transition.horizontal
+
+		print_debug("%s transition" % transition)
+		RoomManager.transition = transition
+		RoomManager.anchor = nearest_anchor
+		Events.emit_signal("camera_anchor_changed")

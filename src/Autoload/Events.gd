@@ -8,6 +8,7 @@ signal notification_started(text, size)
 # camera
 signal camera_offset_changed(offset)
 signal camera_offset_resetted
+signal camera_anchor_changed
 
 # controller
 signal controller_changed(controller)
