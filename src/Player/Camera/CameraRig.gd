@@ -18,12 +18,21 @@ func _ready() -> void:
 
 func transit_to_new_room() -> void:
 	pause_mode = Node.PAUSE_MODE_PROCESS
+
+	var to_position = RoomManager.anchor.global_position
+	print(to_position)
+
+	if not RoomManager.anchor.is_viewport_sized():
+		to_position = RoomManager.anchor.get_nearest_entrance_position(owner.position)
+
+	print(to_position)
+
 	_tween.connect("tween_started", self, "_on_Tween_started")
 	_tween.interpolate_property(
 		self,
 		"position",
 		to_local(RoomManager.previous_anchor.global_position),
-		to_local(RoomManager.anchor.global_position),
+		to_local(to_position),
 		TRANSITION_TIME if owner.state_machine.state_name != "Dash" else TRANSITION_TIME_DASH,
 		Tween.TRANS_LINEAR,
 		Tween.TRANS_LINEAR

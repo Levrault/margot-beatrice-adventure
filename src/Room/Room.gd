@@ -6,7 +6,7 @@ onready var _anchors := $Anchors.get_children()
 
 func _ready() -> void:
 	# Camara management
-	RoomManager.anchor = _anchors[0]
+	RoomManager.anchor = get_nearest_anchor()
 	Events.connect("player_moved", self, "_on_Player_moved")
 
 	# Current bound
@@ -63,15 +63,31 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_node("FreeCamera").queue_free()
 
 
-func _on_Player_moved(player: Player) -> void:
+func get_nearest_anchor() -> Position2D:
 	var nearest_anchor = _anchors[0]
-
 	for anchor in _anchors:
+		# bigger anchor, find nearest entrance
+		if not anchor.is_viewport_sized():
+			print(anchor.get_nearest_entrance_distance(player.position))
+			if (
+				anchor.get_nearest_entrance_distance(player.position)
+				< nearest_anchor.position.distance_to(player.position)
+			):
+				nearest_anchor = anchor
+			continue
+
+		# viewport sized room 
 		if (
 			anchor.position.distance_to(player.position)
 			< nearest_anchor.position.distance_to(player.position)
 		):
 			nearest_anchor = anchor
+
+	return nearest_anchor
+
+
+func _on_Player_moved(player: Player) -> void:
+	var nearest_anchor = get_nearest_anchor()
 
 	if RoomManager.anchor != nearest_anchor:
 		print_debug(
@@ -88,7 +104,6 @@ func _on_Player_moved(player: Player) -> void:
 		elif RoomManager.anchor.position.y == nearest_anchor.position.y:
 			transition = RoomManager.Transition.horizontal
 
-		print_debug("%s transition" % transition)
 		RoomManager.transition = transition
 		RoomManager.anchor = nearest_anchor
 		Events.emit_signal("camera_anchor_changed")
