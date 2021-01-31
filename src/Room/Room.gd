@@ -64,24 +64,51 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func get_nearest_anchor() -> Position2D:
-	var nearest_anchor = _anchors[0]
-	for anchor in _anchors:
-		# bigger anchor, find nearest entrance
-		if not anchor.is_viewport_sized():
-			print(anchor.get_nearest_entrance_distance(player.position))
-			if (
-				anchor.get_nearest_entrance_distance(player.position)
-				< nearest_anchor.position.distance_to(player.position)
-			):
-				nearest_anchor = anchor
-			continue
+	var non_sized_anchors := []
+	var sized_anchors := []
 
-		# viewport sized room 
+	for anchor in _anchors:
+		if not anchor.is_viewport_sized():
+			non_sized_anchors.append(anchor)
+			continue
+		sized_anchors.append(anchor)
+
+	var nearest_anchor = _anchors[0]
+	var nearest_entrance = null
+
+	if not non_sized_anchors.empty():
+		nearest_entrance = non_sized_anchors[0].get_nearest_entrance(player.position)
+
+	for anchor in sized_anchors:
+		# viewport sized room
 		if (
 			anchor.position.distance_to(player.position)
 			< nearest_anchor.position.distance_to(player.position)
 		):
 			nearest_anchor = anchor
+
+	# compare nearest to non screen sized room
+	for anchor in non_sized_anchors:
+		# bigger anchor, find nearest entrance
+		var entrance = anchor.get_nearest_entrance(player.position)
+
+		if not entrance:
+			continue
+
+		# if too far skip
+		if (
+			entrance.global_position.distance_to(player.global_position)
+			> nearest_anchor.position.distance_to(player.position)
+		):
+			continue
+
+		# entrance can be the nearest
+		if (
+			entrance.global_position.distance_to(player.global_position)
+			<= nearest_entrance.global_position.distance_to(player.global_position)
+		):
+			nearest_anchor = anchor
+			nearest_entrance = entrance
 
 	return nearest_anchor
 
@@ -89,21 +116,12 @@ func get_nearest_anchor() -> Position2D:
 func _on_Player_moved(player: Player) -> void:
 	var nearest_anchor = get_nearest_anchor()
 
-	if RoomManager.anchor != nearest_anchor:
-		print_debug(
-			(
-				"%s camera's anchor has been changed to %s"
-				% [RoomManager.anchor.name, nearest_anchor.name]
-			)
-		)
+	if RoomManager.anchor == nearest_anchor:
+		return
 
-		# does the room movement is horizontal, vertical or diagonal
-		var transition = RoomManager.Transition.diagonal
-		if RoomManager.anchor.position.x == nearest_anchor.position.x:
-			transition = RoomManager.Transition.vertical
-		elif RoomManager.anchor.position.y == nearest_anchor.position.y:
-			transition = RoomManager.Transition.horizontal
+	print_debug(
+		"%s camera's anchor has been changed to %s" % [RoomManager.anchor.name, nearest_anchor.name]
+	)
 
-		RoomManager.transition = transition
-		RoomManager.anchor = nearest_anchor
-		Events.emit_signal("camera_anchor_changed")
+	RoomManager.anchor = nearest_anchor
+	Events.emit_signal("camera_anchor_changed")
