@@ -2,8 +2,10 @@
 
 [ext_resource path="res://src/Room/CameraAnchor.gd" type="Script" id=2]
 
-[node name="Anchor" type="Position2D"]
+[node name="CameraAnchor" type="Position2D"]
 script = ExtResource( 2 )
+disposition = 0
+screen_size = Vector2( 480, 270 )
 color = Color( 0.984314, 0.992157, 0.00392157, 1 )
 
 [node name="BoundsNW" type="Position2D" parent="."]

@@ -6,7 +6,7 @@ onready var _anchors := $Anchors.get_children()
 
 func _ready() -> void:
 	# Camara management
-	RoomManager.anchor = _anchors[0]
+	RoomManager.anchor = get_nearest_anchor()
 	Events.connect("player_moved", self, "_on_Player_moved")
 
 	# Current bound
@@ -63,32 +63,65 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_node("FreeCamera").queue_free()
 
 
-func _on_Player_moved(player: Player) -> void:
-	var nearest_anchor = _anchors[0]
+func get_nearest_anchor() -> Position2D:
+	var non_sized_anchors := []
+	var sized_anchors := []
 
 	for anchor in _anchors:
+		if not anchor.is_viewport_sized():
+			non_sized_anchors.append(anchor)
+			continue
+		sized_anchors.append(anchor)
+
+	var nearest_anchor = _anchors[0]
+	var nearest_entrance = null
+
+	if not non_sized_anchors.empty():
+		nearest_entrance = non_sized_anchors[0].get_nearest_entrance(player.position)
+
+	for anchor in sized_anchors:
+		# viewport sized room
 		if (
 			anchor.position.distance_to(player.position)
 			< nearest_anchor.position.distance_to(player.position)
 		):
 			nearest_anchor = anchor
 
-	if RoomManager.anchor != nearest_anchor:
-		print_debug(
-			(
-				"%s camera's anchor has been changed to %s"
-				% [RoomManager.anchor.name, nearest_anchor.name]
-			)
-		)
+	# compare nearest to non screen sized room
+	for anchor in non_sized_anchors:
+		# bigger anchor, find nearest entrance
+		var entrance = anchor.get_nearest_entrance(player.position)
 
-		# does the room movement is horizontal, vertical or diagonal
-		var transition = RoomManager.Transition.diagonal
-		if RoomManager.anchor.position.x == nearest_anchor.position.x:
-			transition = RoomManager.Transition.vertical
-		elif RoomManager.anchor.position.y == nearest_anchor.position.y:
-			transition = RoomManager.Transition.horizontal
+		if not entrance:
+			continue
 
-		print_debug("%s transition" % transition)
-		RoomManager.transition = transition
-		RoomManager.anchor = nearest_anchor
-		Events.emit_signal("camera_anchor_changed")
+		# if too far skip
+		if (
+			entrance.global_position.distance_to(player.global_position)
+			> nearest_anchor.position.distance_to(player.position)
+		):
+			continue
+
+		# entrance can be the nearest
+		if (
+			entrance.global_position.distance_to(player.global_position)
+			<= nearest_entrance.global_position.distance_to(player.global_position)
+		):
+			nearest_anchor = anchor
+			nearest_entrance = entrance
+
+	return nearest_anchor
+
+
+func _on_Player_moved(player: Player) -> void:
+	var nearest_anchor = get_nearest_anchor()
+
+	if RoomManager.anchor == nearest_anchor:
+		return
+
+	print_debug(
+		"%s camera's anchor has been changed to %s" % [RoomManager.anchor.name, nearest_anchor.name]
+	)
+
+	RoomManager.anchor = nearest_anchor
+	Events.emit_signal("camera_anchor_changed")
