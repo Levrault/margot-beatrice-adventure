@@ -15,8 +15,8 @@
 [ext_resource path="res://src/Libraries/AttackFactory/AttackFactory.gd" type="Script" id=13]
 [ext_resource path="res://src/Player/NpcInteraction.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Combat/Hitbox/HitboxPlayer.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/Combat/DamageSource/DamageSource.gd" type="Script" id=16]
-[ext_resource path="res://src/Player/States/Hurt.gd" type="Script" id=17]
+[ext_resource path="res://src/Combat/DamageSource/DamageSourcePlayer.gd" type="Script" id=16]
+[ext_resource path="res://src/Player/States/Move/Hurt.gd" type="Script" id=17]
 [ext_resource path="res://src/Player/SaveProgressInteraction.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Player/Momentum.gd" type="Script" id=19]
 [ext_resource path="res://src/Actor/Effects.gd" type="Script" id=20]
@@ -113,8 +113,8 @@ disabled = true
 
 [node name="Momentum" type="Node2D" parent="."]
 script = ExtResource( 19 )
-DURATION = 0.7
-STRENGTH = 0.8
+DURATION = 0.25
+STRENGTH = 0.75
 
 [node name="Hitbox" parent="." instance=ExtResource( 15 )]
 position = Vector2( 0, -13 )

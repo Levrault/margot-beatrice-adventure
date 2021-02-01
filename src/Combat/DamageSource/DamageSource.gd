@@ -10,4 +10,4 @@ export var is_instakill := false
 
 
 func set_active(value: bool) -> void:
-	$CollisionShape2D.disabled = not value
+	$CollisionShape2D.set_deferred("disabled", not value)

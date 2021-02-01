@@ -87,6 +87,9 @@ conditions = {
 [node name="DummyEnemy" parent="Enemies" index="0" instance=ExtResource( 5 )]
 position = Vector2( -520, -160 )
 
+[node name="DummyEnemy2" parent="Enemies" index="1" instance=ExtResource( 5 )]
+position = Vector2( -376, -160 )
+
 [node name="Player" parent="." index="12"]
 position = Vector2( -680, -160 )
 
