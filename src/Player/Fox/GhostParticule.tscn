@@ -52,6 +52,7 @@ autoplay = "show"
 anims/show = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.686275 )
 position = Vector2( 0, -16 )
 texture = ExtResource( 1 )
 hframes = 28
