@@ -15,6 +15,7 @@ func _ready() -> void:
 	Events.connect("room_loaded", self, "_on_Room_loaded")
 
 	selected_character = character
+	Character.selected = character
 	wheel.hide()
 	wheel.next(Character.list[selected_character])
 	switch_to(Character.list[selected_character])
