@@ -14,7 +14,7 @@ func _ready() -> void:
 		self.profile = DEBUG_SAVE
 
 	if ProjectSettings.get_setting("game/load_save"):
-		load_game(profile)
+		load_profile(profile)
 
 
 func set_profile(new_profile: String) -> void:
@@ -23,12 +23,12 @@ func set_profile(new_profile: String) -> void:
 	_path = PATH % [new_profile]
 
 
-func save_game(data: Dictionary, should_send_signal: bool = true) -> void:
+func save_profile(data: Dictionary, should_send_signal: bool = true) -> void:
 	var save_dict = {"level": data["level"], "room": data["room"], "abilities": data["abilities"]}
-	var save_game = File.new()
-	save_game.open(_path, File.WRITE)
-	save_game.store_line(to_json(save_dict))
-	save_game.close()
+	var file_profile = File.new()
+	file_profile.open(_path, File.WRITE)
+	file_profile.store_line(to_json(save_dict))
+	file_profile.close()
 	print_debug("%s has been saved" % [profile])
 
 	if should_send_signal:
@@ -38,7 +38,7 @@ func save_game(data: Dictionary, should_send_signal: bool = true) -> void:
 func quick_read(selected_profile: String) -> Dictionary:
 	var save = File.new()
 	if not save.file_exists(_path):
-		save_game(DEFAULT_DATA, false)
+		save_profile(DEFAULT_DATA, false)
 		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
 	save.open(PATH % [selected_profile], File.READ)
 	var data: Dictionary = parse_json(save.get_line())
@@ -46,29 +46,19 @@ func quick_read(selected_profile: String) -> Dictionary:
 
 
 # is _path independent.
-func load_game(selected_profile: String) -> Dictionary:
+func load_profile(selected_profile: String) -> Dictionary:
 	var save = File.new()
 	if not save.file_exists(_path):
-		save_game(DEFAULT_DATA, false)
+		save_profile(DEFAULT_DATA, false)
 		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
 
 	save.open(_path, File.READ)
 	var data: Dictionary = parse_json(save.get_line())
 
-	# load level
-	if (
-		profile != DEBUG_SAVE
-		or (profile == DEBUG_SAVE and ProjectSettings.get_setting("game/load_level_from_save"))
-	):
-		print_debug("load level from save")
-		RoomManager.to_load = data["room"]
-		LevelManager.to_load = data["level"]
-	else:
-		LevelManager.to_load = ""
-		RoomManager.room_name = ""
 	# set abilities
 	Game.unlocked_abilities = data["abilities"]
 
 	save.close()
 	print_debug("%s has been loaded" % [profile])
+
 	return data

@@ -16,10 +16,10 @@ func _ready() -> void:
 		return
 
 	var data := Serialize.quick_read(selected_profile)
-	button.text = "%s - %s" % [tr(data["level"]), tr(data["room"])]
+	button.text = "%s" % [tr(data["room"])]
 
 
 func _on_Button_pressed() -> void:
 	Serialize.profile = selected_profile
-	Serialize.load_game(selected_profile)
-	get_tree().change_scene("res://src/Main/Game.tscn")
+	Serialize.load_profile(selected_profile)
+	get_tree().change_scene("res://src/UI/Worldmap/worldmap.tscn")

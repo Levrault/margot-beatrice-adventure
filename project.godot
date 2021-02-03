@@ -39,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Tools/Draw.gd"
 }, {
-"base": "Area2D",
-"class": "Gate",
-"language": "GDScript",
-"path": "res://src/Room/Gate.gd"
-}, {
 "base": "Reference",
 "class": "Hit",
 "language": "GDScript",
@@ -121,7 +116,6 @@ _global_script_class_icons={
 "DamageSource": "",
 "DialogueController": "",
 "Draw": "",
-"Gate": "",
 "Hit": "",
 "Hitbox": "",
 "InputLine": "",
@@ -148,7 +142,6 @@ run/main_scene="res://src/UI/MainMenu.tscn"
 Events="*res://src/Autoload/Events.gd"
 Menu="*res://src/Autoload/Menu.gd"
 Config="*res://src/Autoload/Config.gd"
-LevelManager="*res://src/Autoload/LevelManager.gd"
 RoomManager="*res://src/Autoload/RoomManager.gd"
 Serialize="*res://src/Autoload/Serialize.gd"
 Game="*res://src/Autoload/Game.gd"
