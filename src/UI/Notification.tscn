@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/UI/Notification.gd" type="Script" id=1]
 
@@ -15,7 +15,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 2 ),
 "update": 0,
-"values": [ Vector2( 10, -40 ) ]
+"values": [ Vector2( 90, -25 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 2.7, 3 ),
 "transitions": PoolRealArray( 2, 1, 0.5, 1 ),
 "update": 0,
-"values": [ Vector2( 10, -40 ), Vector2( 10, 0 ), Vector2( 10, 0 ), Vector2( 10, -40 ) ]
+"values": [ Vector2( 90, -25 ), Vector2( 90, 5 ), Vector2( 90, 5 ), Vector2( 490, 5 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Wrapper/MessageWrapper/Message:percent_visible")
@@ -40,10 +40,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.3, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ 0.0, 0.0, 1.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:visible")
@@ -57,6 +57,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true ]
 }
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.196078, 0.172549, 0.262745, 0.87451 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/theme/fonts/pixelmix.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = SubResource( 3 )
 
 [node name="Notification" type="Control"]
 anchor_right = 1.0
@@ -73,22 +88,23 @@ anims/push = SubResource( 2 )
 [node name="Wrapper" type="MarginContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -230.0
-margin_top = -40.0
-margin_right = 230.0
-rect_min_size = Vector2( 0, 40 )
+margin_left = -150.0
+margin_top = -25.0
+margin_right = 150.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 0, 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="Wrapper"]
-margin_right = 460.0
-margin_bottom = 40.0
-color = Color( 0.00784314, 0.309804, 0.372549, 1 )
+[node name="Panel" type="Panel" parent="Wrapper"]
+margin_right = 299.0
+margin_bottom = 20.0
+custom_styles/panel = SubResource( 5 )
 
 [node name="MessageWrapper" type="MarginContainer" parent="Wrapper"]
-margin_right = 460.0
-margin_bottom = 40.0
+margin_right = 299.0
+margin_bottom = 20.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -100,13 +116,16 @@ __meta__ = {
 [node name="Message" type="RichTextLabel" parent="Wrapper/MessageWrapper"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 455.0
-margin_bottom = 35.0
+margin_right = 294.0
+margin_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "Placeholder"
+visible_characters = 0
+percent_visible = 0.0
 meta_underlined = false
 text = "Placeholder"
