@@ -25,13 +25,7 @@ func set_is_saving(value: bool) -> void:
 
 
 func save() -> void:
-	Serialize.save_game(
-		{
-			abilities = player.abilities,
-			level = LevelManager.level_name,
-			room = RoomManager.room_name
-		}
-	)
+	Serialize.save_profile({abilities = player.abilities, room = RoomManager.room_name})
 
 
 func _on_Saved_successfull() -> void:
