@@ -30,7 +30,7 @@ func _ready() -> void:
 	if not is_viewport_sized():
 		_set_entrances_position()
 
-	# custom entrances 
+	# custom entrances
 	for child in get_children():
 		if child.is_in_group("room_entrance"):
 			entrances.append(child)
