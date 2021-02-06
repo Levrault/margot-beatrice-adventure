@@ -27,4 +27,5 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = 475.0
 margin_bottom = 265.0
+mouse_default_cursor_shape = 2
 text = "ui_profile_empty"

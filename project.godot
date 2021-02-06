@@ -142,10 +142,11 @@ run/main_scene="res://src/UI/MainMenu.tscn"
 Events="*res://src/Autoload/Events.gd"
 Menu="*res://src/Autoload/Menu.gd"
 Config="*res://src/Autoload/Config.gd"
-RoomManager="*res://src/Autoload/RoomManager.gd"
-Serialize="*res://src/Autoload/Serialize.gd"
+AsyncLoading="*res://src/Autoload/AsyncLoading.gd"
 Game="*res://src/Autoload/Game.gd"
+RoomManager="*res://src/Autoload/RoomManager.gd"
 Character="*res://src/Autoload/Character.gd"
+Serialize="*res://src/Autoload/Serialize.gd"
 InputManager="*res://src/Autoload/InputManager.gd"
 
 [debug]
