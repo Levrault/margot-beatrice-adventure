@@ -130,7 +130,7 @@ anims/run = SubResource( 6 )
 anims/up_to_fall = SubResource( 7 )
 
 [node name="Sprite" parent="." index="2"]
-position = Vector2( 8, -22 )
+position = Vector2( 8, -21 )
 texture = ExtResource( 2 )
 vframes = 17
 hframes = 6

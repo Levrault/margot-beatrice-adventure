@@ -16,10 +16,12 @@ func _ready() -> void:
 		return
 
 	var data := Serialize.quick_read(selected_profile)
-	button.text = "%s" % [tr(data["room"])]
+	button.text = "%s" % [tr(data["current_level"])]
 
 
 func _on_Button_pressed() -> void:
 	Serialize.profile = selected_profile
 	Serialize.load_profile(selected_profile)
-	get_tree().change_scene("res://src/UI/Worldmap/worldmap.tscn")
+	Menu.history.append(owner.get_name())
+	Menu.navigate_to("Worldmap")
+	print_debug("%s has change navigation history : %s" % [owner.get_name(), Menu.history])

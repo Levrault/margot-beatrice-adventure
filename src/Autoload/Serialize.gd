@@ -1,10 +1,52 @@
 # Load and save progression
 extends Node
 
+signal profile_loaded
+
 const DEBUG_SAVE := "debug1"
 const PATH := "user://%s.save"
-const DEFAULT_DATA := {"level": "demo", "room": "Room1", "abilities": {}}
+const DEFAULT_DATA := {
+	"progression": 0,
+	"last_played": "intro",
+	"current_level": "demo",
+	"unlocked_cinematics":
+	{
+		"res://src/Levels/Debug/DebugCinematic.tscn": true,
+	},
+	"unlocked_levels":
+	{
+		"res://src/Levels/Debug/DebugCamera.tscn":
+		{
+			"unlocked": true,
+			"collectables":
+			{
+				"gems": 4,
+				"acorns": 4,
+				"carrots": 4,
+			}
+		},
+	},
+	"unlocked_abilities":
+	{
+		"foxy": false,
+		"jazzy": false,
+		"nuts": false,
+	},
+	"unlocked_characters":
+	{
+		"fox": true,
+		"squirrel": false,
+		"rabbit": false,
+	},
+	"stats":
+	{
+		"game_over": 0,
+		"hits": 0,
+		"play_time": 0,
+	}
+}
 var profile := "profile1" setget set_profile
+var data := {}
 var _path := PATH % [profile]
 
 
@@ -24,7 +66,7 @@ func set_profile(new_profile: String) -> void:
 
 
 func save_profile(data: Dictionary, should_send_signal: bool = true) -> void:
-	var save_dict = {"level": data["level"], "room": data["room"], "abilities": data["abilities"]}
+	var save_dict = DEFAULT_DATA
 	var file_profile = File.new()
 	file_profile.open(_path, File.WRITE)
 	file_profile.store_line(to_json(save_dict))
@@ -35,6 +77,29 @@ func save_profile(data: Dictionary, should_send_signal: bool = true) -> void:
 		Events.emit_signal("game_saved")
 
 
+# is _path independent.
+func load_profile(selected_profile: String) -> void:
+	var save = File.new()
+
+	if not save.file_exists(_path):
+		save_profile(DEFAULT_DATA, false)
+		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
+
+	save.open(_path, File.READ)
+	data = parse_json(save.get_line())
+
+	# set abilities
+	Game.unlocked_abilities = data.unlocked_abilities
+	Game.unlocked_characters = data.unlocked_characters
+	Game.stats = data.stats
+
+	save.close()
+
+	emit_signal("profile_loaded")
+
+	print_debug("%s has been loaded" % [profile])
+
+
 func quick_read(selected_profile: String) -> Dictionary:
 	var save = File.new()
 	if not save.file_exists(_path):
@@ -42,23 +107,4 @@ func quick_read(selected_profile: String) -> Dictionary:
 		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
 	save.open(PATH % [selected_profile], File.READ)
 	var data: Dictionary = parse_json(save.get_line())
-	return data
-
-
-# is _path independent.
-func load_profile(selected_profile: String) -> Dictionary:
-	var save = File.new()
-	if not save.file_exists(_path):
-		save_profile(DEFAULT_DATA, false)
-		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
-
-	save.open(_path, File.READ)
-	var data: Dictionary = parse_json(save.get_line())
-
-	# set abilities
-	Game.unlocked_abilities = data["abilities"]
-
-	save.close()
-	print_debug("%s has been loaded" % [profile])
-
 	return data

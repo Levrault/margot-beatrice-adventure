@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/UI/Layout/MenuLayout.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/UI/Components/Button/QuitButton.gd" type="Script" id=2]
-[ext_resource path="res://src/UI/Navigation/NavigationButton.gd" type="Script" id=3]
+[ext_resource path="res://src/UI/Components/Button/QuitButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/Components/Button/NavigationButton.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/theme/fonts/pixelmix.ttf"
@@ -12,13 +12,6 @@ size = 8
 font_data = SubResource( 1 )
 
 [node name="TitleScreen" instance=ExtResource( 1 )]
-default_field_to_focus = NodePath("Wrapper/Page/Contents/Play")
-
-[node name="Page" parent="Wrapper" index="0"]
-margin_right = 465.0
-
-[node name="Title" parent="Wrapper/Page" index="0"]
-margin_right = 455.0
 
 [node name="Label" type="Label" parent="Wrapper/Page" index="1"]
 margin_top = 32.0
@@ -38,42 +31,19 @@ margin_right = 78.0
 size_flags_horizontal = 2
 alignment = 2
 
-[node name="Play" type="Button" parent="Wrapper/Page/Contents" index="0"]
+[node name="Play" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 4 )]
 margin_top = 13.0
-margin_right = 78.0
 margin_bottom = 33.0
-text = "ui_play"
-align = 0
-script = ExtResource( 3 )
-__meta__ = {
-"_editor_description_": ""
-}
 navigate_to = "ProfileMenu"
 is_default_focused = true
 
-[node name="Options" type="Button" parent="Wrapper/Page/Contents" index="1"]
+[node name="Options" parent="Wrapper/Page/Contents" index="1" instance=ExtResource( 4 )]
 margin_top = 43.0
-margin_right = 78.0
 margin_bottom = 63.0
 text = "ui_options"
-align = 0
-script = ExtResource( 3 )
-__meta__ = {
-"_editor_description_": ""
-}
 navigate_to = "ListOptionsMenu"
 
-[node name="Quit" type="Button" parent="Wrapper/Page/Contents" index="2"]
-margin_top = 73.0
-margin_right = 78.0
-margin_bottom = 93.0
-text = "ui_quit"
-align = 0
-script = ExtResource( 2 )
-__meta__ = {
-"_editor_description_": ""
-}
+[node name="Quit" parent="Wrapper/Page/Contents" index="2" instance=ExtResource( 2 )]
 
 [node name="MenuFooter" parent="Wrapper/Page" index="3"]
-margin_right = 455.0
 has_back_action = false

@@ -14,8 +14,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MenuBackInput" parent="." instance=ExtResource( 2 )]
+margin_left = 0.0
+margin_right = 68.0
+
 [node name="Accept" type="HBoxContainer" parent="."]
-margin_right = 81.0
+margin_left = 98.0
+margin_right = 179.0
 margin_bottom = 14.0
 
 [node name="Icon" type="Label" parent="Accept"]
@@ -28,5 +33,3 @@ margin_left = 21.0
 margin_right = 81.0
 margin_bottom = 14.0
 text = "ui_accept"
-
-[node name="MenuBackInput" parent="." instance=ExtResource( 2 )]

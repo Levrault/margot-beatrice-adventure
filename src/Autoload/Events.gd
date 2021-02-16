@@ -81,3 +81,7 @@ signal game_saved
 signal transition_started(anim_name)
 signal transition_mid_animated
 signal transition_finished
+
+# worldmap
+signal worldmap_level_selected(data)
+signal worldmap_level_hidden

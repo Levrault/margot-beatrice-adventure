@@ -2,10 +2,10 @@
 
 [ext_resource path="res://src/UI/InGame/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Components/MenuFooter.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/UI/Navigation/NavigationButton.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Components/Button/ResumeButton.gd" type="Script" id=4]
 [ext_resource path="res://src/UI/Components/Button/ReturnMainMenu.gd" type="Script" id=5]
-[ext_resource path="res://src/UI/Components/Button/QuitButton.gd" type="Script" id=6]
+[ext_resource path="res://src/UI/Components/Button/QuitButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UI/Components/Button/NavigationButton.tscn" type="PackedScene" id=7]
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
@@ -52,42 +52,45 @@ size_flags_vertical = 3
 
 [node name="Contents" type="VBoxContainer" parent="Wrapper/Page/CenterContainer"]
 margin_left = 177.0
-margin_top = 56.0
+margin_top = 44.0
 margin_right = 282.0
-margin_bottom = 148.0
+margin_bottom = 160.0
 size_flags_vertical = 3
 
-[node name="Resume" type="Button" parent="Wrapper/Page/CenterContainer/Contents"]
+[node name="NavigationButton" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 7 )]
 margin_right = 105.0
-margin_bottom = 20.0
-text = "ui_resume"
-script = ExtResource( 4 )
 
-[node name="Options" type="Button" parent="Wrapper/Page/CenterContainer/Contents"]
+[node name="Resume" type="Button" parent="Wrapper/Page/CenterContainer/Contents"]
 margin_top = 24.0
 margin_right = 105.0
 margin_bottom = 44.0
+text = "ui_resume"
+script = ExtResource( 4 )
+
+[node name="Options" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 1 )
+margin_top = 48.0
+margin_right = 105.0
+margin_bottom = 68.0
+mouse_default_cursor_shape = 0
 text = "ui_options"
-script = ExtResource( 3 )
+align = 1
 navigate_to = "ListOptionsMenu"
 is_default_focused = true
 
 [node name="ReturnMainMenu" type="Button" parent="Wrapper/Page/CenterContainer/Contents"]
-margin_top = 48.0
-margin_right = 105.0
-margin_bottom = 68.0
-text = "ui_main_menu"
-script = ExtResource( 5 )
-
-[node name="Quit" type="Button" parent="Wrapper/Page/CenterContainer/Contents"]
 margin_top = 72.0
 margin_right = 105.0
 margin_bottom = 92.0
-text = "ui_quit"
-script = ExtResource( 6 )
+text = "ui_main_menu"
+script = ExtResource( 5 )
+
+[node name="Quit" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 6 )]
+margin_top = 96.0
+margin_right = 105.0
+margin_bottom = 116.0
 
 [node name="MenuFooter" parent="Wrapper/Page" instance=ExtResource( 2 )]
 margin_top = 226.0
 margin_right = 460.0
 margin_bottom = 240.0
-has_back_action = true

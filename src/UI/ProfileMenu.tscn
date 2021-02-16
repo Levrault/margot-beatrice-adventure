@@ -35,7 +35,4 @@ margin_right = 455.0
 margin_bottom = 190.0
 selected_profile = "profile3"
 
-[node name="MenuFooter" parent="Wrapper/Page" index="2"]
-has_back_action = true
-
 [editable path="Wrapper/Page/Contents/ProfileSelector"]
