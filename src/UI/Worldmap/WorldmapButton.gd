@@ -48,13 +48,20 @@ func _on_Btn_pressed() -> void:
 
 
 func _on_Profile_loaded() -> void:
+	if is_connected("focus_entered", self, "_on_Focus_entered"):
+		disconnect("focus_entered", self, "_on_Focus_entered")
+	if is_connected("focus_exited", self, "_on_Focus_exited"):
+		disconnect("focus_exited", self, "_on_Focus_exited")
+	if is_connected("pressed", self, "_on_Btn_pressed"):
+		disconnect("pressed", self, "_on_Btn_pressed")
+
 	if type == Type.level:
 		var state = Serialize.data.unlocked_levels.get(path)
 		if state != null and state.get("unlocked"):
 			connect("focus_entered", self, "_on_Focus_entered")
 			connect("focus_exited", self, "_on_Focus_exited")
 			connect("pressed", self, "_on_Btn_pressed")
-			icon_container.queue_free()
+			icon_container.hide()
 			return
 
 	if type == Type.cinematic:
