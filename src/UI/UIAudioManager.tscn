@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/audio/UI/Back_tones/style1/back_style_1_echo_001.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/audio/UI/Error_tones/style5/error_style_5_echo_002.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/UI/Confirm_tones/style2/confirm_style_2_001.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/UI/Confirm_tones/style2/confirm_style_2_echo_001.ogg" type="AudioStream" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+onready var confirm_audio := $Confirm
+onready var confirm_echo_audio := $ConfirmEcho
+onready var back_audio := $Back
+onready var error_audio := $Error
+"
+
+[node name="UIAudioManager" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Sfx"
+
+[node name="ConfirmEcho" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Sfx"
+
+[node name="Back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Sfx"
+
+[node name="Error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Sfx"

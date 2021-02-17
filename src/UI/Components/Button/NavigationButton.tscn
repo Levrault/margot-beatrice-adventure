@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/UI/Navigation/NavigationButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/UI/Confirm_tones/style1/confirm_style_1_002.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/UI/Confirm_tones/style1/confirm_style_1_echo_002.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/UI/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
@@ -90,9 +93,16 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Focused" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="PressedEcho" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/DEFAULT = SubResource( 1 )
 anims/focused = SubResource( 2 )
 anims/unfocused = SubResource( 3 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

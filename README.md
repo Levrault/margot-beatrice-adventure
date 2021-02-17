@@ -16,3 +16,7 @@ Game made for my niece
 - [pixelmix font](https://www.dafont.com/fr/pixelmix.font)
 - [Joystick monospace](https://www.dafont.com/joystix.font)
 - [Minecraftia-Regular](https://www.dafont.com/joystix.font?text=Minecraftia-Regular)
+
+### SFX
+
+- [interface-sfx-pack-1](https://obsydianx.itch.io/interface-sfx-pack-1)
