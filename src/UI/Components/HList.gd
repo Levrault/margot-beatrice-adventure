@@ -13,6 +13,8 @@ var selected_value := "" setget _set_selected_value
 var _carousel_index: int = 0
 var _is_focused := false
 
+onready var _anim := $AnimationPlayer
+
 
 # Init mouse/keyboard/controller navigation
 # Set items display order
@@ -70,6 +72,7 @@ func _on_Previous_value() -> void:
 	if _carousel_index < 0:
 		_carousel_index = items.size() - 1
 
+	_anim.play("previous")
 	self.selected_value = items[_carousel_index]
 
 
@@ -80,6 +83,7 @@ func _on_Next_value() -> void:
 	if _carousel_index >= items.size():
 		_carousel_index = 0
 
+	_anim.play("next")
 	self.selected_value = items[_carousel_index]
 
 
