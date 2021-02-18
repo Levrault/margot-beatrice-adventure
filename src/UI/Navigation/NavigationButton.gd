@@ -4,6 +4,7 @@ class_name NavigationButton
 extends Button
 
 export var navigate_to := ""
+export var clear_history := false
 export var is_default_focused := false
 
 onready var _anim := $AnimationPlayer
@@ -31,6 +32,8 @@ func _on_Pressed() -> void:
 	owner.last_clicked_button = self
 	Menu.history.append(owner.get_name())
 	Menu.navigate_to(navigate_to)
+	if clear_history:
+		Menu.history.clear()
 	print_debug("%s has change navigation history : %s" % [owner.get_name(), Menu.history])
 
 

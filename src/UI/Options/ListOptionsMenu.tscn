@@ -57,6 +57,7 @@ margin_bottom = 180.0
 text = "ui_options_return_to_title_screen"
 flat = true
 navigate_to = "TitleScreen"
+clear_history = true
 
 [node name="MenuFooter" parent="Wrapper/Page" index="2"]
 has_back_action = true
