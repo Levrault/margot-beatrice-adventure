@@ -24,6 +24,8 @@ func initialize() -> void:
 		line.initialize(action, Config.values["keybinding"][action])
 		_inputLineContainer.add_child(line)
 
+	# focus_neighbour_bottom
+
 
 func _on_Navigation_finished() -> void:
 	_inputLineContainer.get_child(0).get_node("Button").grab_focus()

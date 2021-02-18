@@ -1,14 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/UI/Components/MenuBackInput.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Components/Button/MenuBackButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/Navigation/NavigationSwitch.gd" type="Script" id=2]
-[ext_resource path="res://src/UI/Options/SavingButton/SavingButton.gd" type="Script" id=3]
-
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="StyleBoxEmpty" id=1]
+[ext_resource path="res://src/UI/Components/Button/MenuSaveButton.tscn" type="PackedScene" id=4]
 
 [node name="OptionsLayout" type="Control"]
 anchor_right = 1.0
@@ -59,19 +53,10 @@ size_flags_horizontal = 3
 custom_constants/separation = 30
 alignment = 2
 
-[node name="MenuBackInput" parent="Wrapper/Page/OptionsFooter" instance=ExtResource( 1 )]
-margin_left = 283.0
+[node name="MenuBackButton" parent="Wrapper/Page/OptionsFooter" instance=ExtResource( 1 )]
+margin_left = 292.0
 margin_right = 351.0
-margin_bottom = 20.0
 
-[node name="MenuSaveButton" type="Button" parent="Wrapper/Page/OptionsFooter"]
+[node name="MenuSaveButton" parent="Wrapper/Page/OptionsFooter" instance=ExtResource( 4 )]
 margin_left = 381.0
 margin_right = 440.0
-margin_bottom = 20.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 1 )
-custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
-text = "ui_save"
-script = ExtResource( 3 )

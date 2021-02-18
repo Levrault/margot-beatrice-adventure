@@ -4,10 +4,6 @@
 [ext_resource path="res://src/UI/Components/HList.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/Options/SavingButton/AudioSavingButton.gd" type="Script" id=3]
 
-
-
-
-
 [node name="AudioOptionsMenu" instance=ExtResource( 1 )]
 default_field_to_focus = NodePath("Wrapper/Page/Contents/HBoxContainer3/HList")
 
@@ -32,7 +28,6 @@ key = "master_volume"
 items = [ "100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0" ]
 start_index = 10
 is_reverse_item = true
-focus = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Wrapper/Page/Contents" index="1"]
 margin_top = 88.0
@@ -52,7 +47,6 @@ key = "music_volume"
 items = [ "100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0" ]
 start_index = 10
 is_reverse_item = true
-focus = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Wrapper/Page/Contents" index="2"]
 margin_top = 120.0
@@ -68,11 +62,12 @@ text = "ui_sfx_volume"
 [node name="HList" parent="Wrapper/Page/Contents/HBoxContainer2" index="1" instance=ExtResource( 2 )]
 margin_left = 94.0
 margin_right = 440.0
+focus_neighbour_bottom = NodePath("../../../OptionsFooter/MenuSaveButton")
+focus_next = NodePath("../../../OptionsFooter/MenuSaveButton")
 key = "sfx_volume"
 items = [ "100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0" ]
 start_index = 10
 is_reverse_item = true
-focus = false
 
 [node name="MenuSaveButton" parent="Wrapper/Page/OptionsFooter" index="1"]
 script = ExtResource( 3 )

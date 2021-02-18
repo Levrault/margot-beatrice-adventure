@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/UI/WorldmapButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://src/UI/Worldmap/WorldmapButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/UI/lock.png" type="Texture" id=3]
 [ext_resource path="res://assets/UI/cinematic.png" type="Texture" id=4]
+[ext_resource path="res://assets/audio/UI/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=5]
 [ext_resource path="res://assets/UI/WorldmapFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/audio/UI/Confirm_tones/style5/confirm_style_5_echo_001.ogg" type="AudioStream" id=7]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 6 )
@@ -145,6 +147,12 @@ anims/DEFAULT = SubResource( 2 )
 anims/focused = SubResource( 3 )
 anims/unfocused = SubResource( 4 )
 next/unfocused = "DEFAULT"
+
+[node name="Focus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
 [node name="IconContainer" type="CenterContainer" parent="."]
 visible = false

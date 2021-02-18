@@ -37,7 +37,10 @@ const DEFAULT_VALUES := {
 		"move_down": 83,
 		"move_left": 65,
 		"move_right": 68,
-		"jump": 32
+		"jump": 32,
+		"dash": 49,
+		"interaction": 70,
+		"character_wheel": 69
 	},
 	"controller": {"rumble": true}
 }
@@ -97,13 +100,13 @@ func applied_config(section: String) -> void:
 	# audio
 	if section == "all" or section == "audio":
 		AudioServer.set_bus_volume_db(
-			AudioServer.get_bus_index("Master"), _get_new_volume(values["audio"]["master_volume"])
+			AudioServer.get_bus_index("Master"), get_new_volume(values["audio"]["master_volume"])
 		)
 		AudioServer.set_bus_volume_db(
-			AudioServer.get_bus_index("Sfx"), _get_new_volume(values["audio"]["sfx_volume"])
+			AudioServer.get_bus_index("Sfx"), get_new_volume(values["audio"]["sfx_volume"])
 		)
 		AudioServer.set_bus_volume_db(
-			AudioServer.get_bus_index("Music"), _get_new_volume(values["audio"]["music_volume"])
+			AudioServer.get_bus_index("Music"), get_new_volume(values["audio"]["music_volume"])
 		)
 
 	# game
@@ -187,7 +190,7 @@ func config_to_field(key: String) -> String:
 # Dumb way to convert db value to int
 # @param {String} value
 # @returns {float}
-func _get_new_volume(value: String) -> float:
+func get_new_volume(value: String) -> float:
 	match value:
 		"100":
 			return 0.0
