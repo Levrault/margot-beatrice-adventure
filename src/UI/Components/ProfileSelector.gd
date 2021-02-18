@@ -7,6 +7,7 @@ onready var button := $Wrapper/Button
 
 func _ready() -> void:
 	button.connect("pressed", self, "_on_Button_pressed")
+	button.connect("focus_entered", $Focus, "play")
 
 	# has save?
 	var save_game = File.new()
@@ -24,4 +25,5 @@ func _on_Button_pressed() -> void:
 	Serialize.load_profile(selected_profile)
 	Menu.history.append(owner.get_name())
 	Menu.navigate_to("Worldmap")
+	$Pressed.play()
 	print_debug("%s has change navigation history : %s" % [owner.get_name(), Menu.history])

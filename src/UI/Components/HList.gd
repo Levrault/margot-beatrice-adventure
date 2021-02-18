@@ -100,8 +100,8 @@ func _on_Focus_toggle(is_focused: bool) -> void:
 	print_debug("%s has focus" % [get_name()])
 	_is_focused = is_focused
 
-	# TODO: to remove when themed
 	if is_focused:
+		$Focus.play()
 		modulate = Color.red
 	else:
 		modulate = Color.white

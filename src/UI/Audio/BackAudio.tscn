@@ -4,4 +4,3 @@
 
 [node name="BackAudio" type="AudioStreamPlayer2D"]
 stream = ExtResource( 1 )
-bus = "Sfx"

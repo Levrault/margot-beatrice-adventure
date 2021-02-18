@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://src/UI/Navigation/NavigationButton.gd" type="Script" id=1]
-[ext_resource path="res://assets/audio/UI/Confirm_tones/style1/confirm_style_1_002.ogg" type="AudioStream" id=2]
-[ext_resource path="res://assets/audio/UI/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=4]
+[ext_resource path="res://src/UI/Options/SavingButton/SavingButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/UI/Confirm_tones/style1/confirm_style_1_echo_001.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/UI/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=3]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="Animation" id=6]
 resource_name = "DEFAULT"
 length = 0.001
 tracks/0/type = "value"
@@ -32,7 +38,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0.784314 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 resource_name = "focus"
 length = 0.5
 loop = true
@@ -62,7 +68,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 resource_name = "unfocus"
 length = 0.5
 step = 0.05
@@ -91,26 +97,31 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.784314 ) ]
 }
 
-[node name="NavigationButton" type="Button"]
-margin_right = 78.0
+[node name="MenuSaveButton" type="Button"]
+margin_right = 59.0
 margin_bottom = 20.0
-mouse_default_cursor_shape = 2
-text = "ui_play"
-align = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+text = "ui_save"
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
+"_edit_use_anchors_": false
 }
-
-[node name="FocusAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
 
 [node name="PressAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
+[node name="FocusAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "DEFAULT"
-anims/DEFAULT = SubResource( 1 )
-anims/focus = SubResource( 2 )
-anims/unfocus = SubResource( 3 )
+anims/DEFAULT = SubResource( 6 )
+anims/focus = SubResource( 4 )
+anims/unfocus = SubResource( 5 )
+next/DEFAULT = "DEFAULT"

@@ -26,6 +26,7 @@ func change_package_data() -> void:
 
 func _on_Focus_entered() -> void:
 	_package_data = {"title": title, "description": description}
+	$Focus.play()
 
 	if type == Type.level:
 		if gems > 0:
@@ -44,6 +45,7 @@ func _on_Focus_exited() -> void:
 
 
 func _on_Btn_pressed() -> void:
+	$Pressed.play()
 	AsyncLoading.goto_scene(path)
 
 

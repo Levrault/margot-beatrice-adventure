@@ -4,5 +4,3 @@
 
 [node name="ErrorAudio" type="AudioStreamPlayer2D"]
 stream = ExtResource( 1 )
-attenuation = 1.23114
-bus = "Sfx"

@@ -36,6 +36,8 @@ text = "ui_controller_rumble"
 [node name="Rumble" parent="Wrapper/Page/Contents/HBoxContainer" index="1" instance=ExtResource( 3 )]
 margin_left = 136.0
 margin_right = 440.0
+focus_neighbour_bottom = NodePath("../../../OptionsFooter/MenuSaveButton")
+focus_next = NodePath("../../../OptionsFooter/MenuSaveButton")
 key = "rumble"
 items = [ "cfg_yes", "cfg_no" ]
 
