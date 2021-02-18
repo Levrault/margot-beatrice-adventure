@@ -10,3 +10,4 @@ func _on_Pressed() -> void:
 
 	Config.applied_config(section)
 	Config.save(Config.values)
+	$PressAudio.play()

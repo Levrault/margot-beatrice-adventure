@@ -33,3 +33,4 @@ func _on_Pressed() -> void:
 	Config.values[section] = Collection.merge(Config.values[section], data)
 	Config.applied_config(section)
 	Config.save(Config.values)
+	$PressAudio.play()

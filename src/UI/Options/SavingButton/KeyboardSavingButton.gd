@@ -10,3 +10,4 @@ func _on_Pressed() -> void:
 
 	Config.values[section] = data
 	Config.save(Config.values)
+	$PressAudio.play()
