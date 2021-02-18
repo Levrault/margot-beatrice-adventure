@@ -95,7 +95,7 @@ text = "Intro"
 path = "res://src/Levels/Debug/DebugCinematic.tscn"
 type = 1
 title = "Intro"
-description = "ui_intro_cinematic_resume"
+description = "wm_intro_cinematic_resume"
 
 [node name="Trails2" type="Label" parent="Wrapper/Page/SelectorContainer/Contents"]
 margin_left = 131.0
@@ -119,7 +119,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 2
 path = "res://src/Levels/Debug/DebugCamera.tscn"
 title = "Level 1"
-description = "ui_level_1_resume"
+description = "wm_level_1_resume"
 gems = 10
 acorns = 10
 carrots = 10
@@ -443,6 +443,8 @@ custom_fonts/bold_italics_font = ExtResource( 6 )
 custom_fonts/italics_font = ExtResource( 6 )
 custom_fonts/bold_font = ExtResource( 6 )
 custom_fonts/normal_font = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium risus ipsum, ut pellentesque nibh rhoncus eget. Integer at mollis dolor. Sed augue ligula, tempus vitae euismod quis, luctus a nunc. Sed quis lacus ac nunc porta dapibus. Integer et erat pulvinar, posuere tellus sit amet, posuere leo. In hac habitasse platea dictumst. Cras vel vehicula quam."
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium risus ipsum, ut pellentesque nibh rhoncus eget. Integer at mollis dolor. Sed augue ligula, tempus vitae euismod quis, luctus a nunc. Sed quis lacus ac nunc porta dapibus. Integer et erat pulvinar, posuere tellus sit amet, posuere leo. In hac habitasse platea dictumst. Cras vel vehicula quam."
 __meta__ = {
 "_edit_use_anchors_": false

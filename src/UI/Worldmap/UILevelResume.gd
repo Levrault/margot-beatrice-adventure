@@ -23,8 +23,8 @@ func _ready() -> void:
 
 func _on_Worldmap_level_selected(data: Dictionary) -> void:
 	# _anim.play("show")
-	_title.text = data.title
-	_description.text = data.description
+	_title.text = tr(data.title)
+	_description.bbcode_text = tr(data.description)
 
 	if data.has("gems"):
 		_gems.text = "%s" % data.gems

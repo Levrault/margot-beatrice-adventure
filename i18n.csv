@@ -1,4 +1,5 @@
 ,en,fr
+dialogue_not_set,"Dialogue not set","Dialogue non défini"
 cfg_yes,"yes","oui"
 cfg_no,"no","non"
 cfg_fullscreen,"fullscreen","plein écran"
@@ -39,4 +40,5 @@ ui_sfx_volume,"SFX","SFX"
 ui_vsync,"VSYNC","VSYNC"
 ui_display_mode,"Display mode","Mode d'affichage"
 ui_display_resolution,"Display","Affichage"
-dialogue_not_set,"Dialogue not set","Dialogue non défini"
+wm_intro_cinematic_resume,"This is the [wave amp=30 freq=3]first cinematic[/wave]. You should implement a better description",""
+wm_level_1_resume,"This is the [wave amp=30 freq=3]level 1 resume[/wave]. You should implement a better description",""
