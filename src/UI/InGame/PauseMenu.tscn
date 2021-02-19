@@ -1,11 +1,187 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/UI/InGame/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Components/MenuFooter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/audio/UI/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/UI/Components/Button/ResumeButton.gd" type="Script" id=4]
 [ext_resource path="res://src/UI/Components/Button/ReturnMainMenu.gd" type="Script" id=5]
 [ext_resource path="res://src/UI/Components/Button/QuitButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UI/Components/Button/NavigationButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/audio/UI/Confirm_tones/style1/confirm_style_1_002.ogg" type="AudioStream" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "DEFAULT"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.784314 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "focus"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.25 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "unfocus"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.25 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.784314 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "DEFAULT"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.784314 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "focus"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.25 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "unfocus"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.25 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.784314 ) ]
+}
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
@@ -51,46 +227,90 @@ margin_bottom = 222.0
 size_flags_vertical = 3
 
 [node name="Contents" type="VBoxContainer" parent="Wrapper/Page/CenterContainer"]
-margin_left = 177.0
-margin_top = 44.0
-margin_right = 282.0
-margin_bottom = 160.0
+margin_left = 118.0
+margin_top = 56.0
+margin_right = 341.0
+margin_bottom = 148.0
 size_flags_vertical = 3
 
-[node name="NavigationButton" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 7 )]
-margin_right = 105.0
-
 [node name="Resume" type="Button" parent="Wrapper/Page/CenterContainer/Contents"]
-margin_top = 24.0
-margin_right = 105.0
-margin_bottom = 44.0
+margin_right = 79.0
+margin_bottom = 20.0
+focus_neighbour_bottom = NodePath("../Options")
+focus_next = NodePath("../Options")
+size_flags_horizontal = 0
 text = "ui_resume"
+align = 0
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="FocusAudio" type="AudioStreamPlayer" parent="Wrapper/Page/CenterContainer/Contents/Resume"]
+stream = ExtResource( 3 )
+
+[node name="PressAudio" type="AudioStreamPlayer" parent="Wrapper/Page/CenterContainer/Contents/Resume"]
+stream = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Wrapper/Page/CenterContainer/Contents/Resume"]
+autoplay = "DEFAULT"
+anims/DEFAULT = SubResource( 1 )
+anims/focus = SubResource( 2 )
+anims/unfocus = SubResource( 3 )
 
 [node name="Options" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 1 )
-margin_top = 48.0
-margin_right = 105.0
-margin_bottom = 68.0
+margin_top = 24.0
+margin_bottom = 44.0
+focus_neighbour_top = NodePath("../Resume")
+focus_neighbour_bottom = NodePath("../ReturnMainMenu")
+focus_next = NodePath("../ReturnMainMenu")
+focus_previous = NodePath("../Resume")
 mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
 text = "ui_options"
-align = 1
 navigate_to = "ListOptionsMenu"
 is_default_focused = true
 
 [node name="ReturnMainMenu" type="Button" parent="Wrapper/Page/CenterContainer/Contents"]
-margin_top = 72.0
-margin_right = 105.0
-margin_bottom = 92.0
-text = "ui_main_menu"
+margin_top = 48.0
+margin_right = 223.0
+margin_bottom = 68.0
+focus_neighbour_top = NodePath("../Options")
+focus_neighbour_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Options")
+size_flags_horizontal = 0
+text = "ui_options_return_to_title_screen"
+align = 0
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="FocusAudio" type="AudioStreamPlayer" parent="Wrapper/Page/CenterContainer/Contents/ReturnMainMenu"]
+stream = ExtResource( 3 )
+
+[node name="PressAudio" type="AudioStreamPlayer" parent="Wrapper/Page/CenterContainer/Contents/ReturnMainMenu"]
+stream = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Wrapper/Page/CenterContainer/Contents/ReturnMainMenu"]
+autoplay = "DEFAULT"
+anims/DEFAULT = SubResource( 4 )
+anims/focus = SubResource( 5 )
+anims/unfocus = SubResource( 6 )
 
 [node name="Quit" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 6 )]
-margin_top = 96.0
-margin_right = 105.0
-margin_bottom = 116.0
+margin_top = 72.0
+margin_right = 55.0
+margin_bottom = 92.0
+focus_neighbour_top = NodePath("../ReturnMainMenu")
+focus_previous = NodePath("../ReturnMainMenu")
+size_flags_horizontal = 0
 
 [node name="MenuFooter" parent="Wrapper/Page" instance=ExtResource( 2 )]
 margin_top = 226.0
 margin_right = 460.0
 margin_bottom = 240.0
+has_back_action = true

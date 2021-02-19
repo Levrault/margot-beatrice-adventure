@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://assets/theme/MainMenu.tres" type="Theme" id=1]
+[ext_resource path="res://assets/theme/Menu.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/Components/MenuFooter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/Worldmap/Worldmap.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Worldmap/WorldmapButton.tscn" type="PackedScene" id=4]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/UI/acorn.png" type="Texture" id=12]
 [ext_resource path="res://assets/UI/gem.png" type="Texture" id=13]
 [ext_resource path="res://assets/UI/carrot.png" type="Texture" id=14]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.133333, 0.12549, 0.203922, 1 )

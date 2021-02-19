@@ -1,4 +1,5 @@
-extends Button
+extends AnimatedButton
+
 
 func _ready():
 	connect("pressed", self, "_on_Pressed")
@@ -6,3 +7,4 @@ func _ready():
 
 func _on_Pressed() -> void:
 	Events.emit_signal("game_unpaused")
+	get_tree().paused = false

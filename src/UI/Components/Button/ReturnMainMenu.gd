@@ -1,4 +1,5 @@
-extends Button
+extends AnimatedButton
+
 
 func _ready():
 	connect("pressed", self, "_on_Pressed")

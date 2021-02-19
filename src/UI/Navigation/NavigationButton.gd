@@ -1,13 +1,11 @@
 # Enable to navigate between all the differents menu ui
 # by setting up wich menu need to be show (based on node name)
 class_name NavigationButton
-extends Button
+extends AnimatedButton
 
 export var navigate_to := ""
 export var clear_history := false
 export var is_default_focused := false
-
-onready var _anim := $AnimationPlayer
 
 
 # Focus itself if default focused and menu is visible
@@ -16,8 +14,6 @@ func _ready() -> void:
 
 	yield(owner, "ready")
 
-	connect("focus_entered", self, "_on_Focus_entered")
-	connect("focus_exited", self, "_on_Focus_exited")
 	if is_default_focused:
 		owner.last_clicked_button = self
 
@@ -35,12 +31,3 @@ func _on_Pressed() -> void:
 	if clear_history:
 		Menu.history.clear()
 	print_debug("%s has change navigation history : %s" % [owner.get_name(), Menu.history])
-
-
-func _on_Focus_entered() -> void:
-	_anim.play("focus")
-	$FocusAudio.play()
-
-
-func _on_Focus_exited() -> void:
-	_anim.play("unfocus")
