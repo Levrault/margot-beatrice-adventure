@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actor/Actor.gd"
 }, {
+"base": "Node2D",
+"class": "ActorSkin",
+"language": "GDScript",
+"path": "res://src/Actor/ActorSkin.gd"
+}, {
 "base": "Button",
 "class": "AnimatedButton",
 "language": "GDScript",
@@ -92,7 +97,12 @@ _global_script_classes=[ {
 "base": "Actor",
 "class": "Player",
 "language": "GDScript",
-"path": "res://src/Player/Player.gd"
+"path": "res://assets/Player.gd"
+}, {
+"base": "ActorSkin",
+"class": "PlayerSkin",
+"language": "GDScript",
+"path": "res://src/Player/PlayerSkin.gd"
 }, {
 "base": "Node2D",
 "class": "SavePoint",
@@ -116,6 +126,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
+"ActorSkin": "",
 "AnimatedButton": "",
 "AttackFactory": "res://assets/icons/attack_factory.svg",
 "CameraAnchor": "",
@@ -132,6 +143,7 @@ _global_script_class_icons={
 "NavigationSwitch": "",
 "Npc": "",
 "Player": "",
+"PlayerSkin": "",
 "SavePoint": "",
 "State": "res://assets/icons/state.svg",
 "StateMachine": "res://assets/icons/state_machine.svg",

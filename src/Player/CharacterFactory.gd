@@ -18,7 +18,8 @@ func _ready() -> void:
 	Character.selected = character
 	wheel.hide()
 	wheel.next(Character.list[selected_character])
-	switch_to(Character.list[selected_character])
+	owner.skin = characters.get_node(Character.list[selected_character]).skin
+	owner.skin.set_process(true)
 
 
 func _unhandled_input(event) -> void:
@@ -55,7 +56,6 @@ func _unhandled_input(event) -> void:
 
 	if event.is_action_pressed("jump"):
 		switch_to(Character.list[selected_character])
-		owner.is_handling_input = true
 		wheel.hide()
 		get_tree().paused = false
 		return
@@ -88,6 +88,14 @@ func _on_Room_loaded() -> void:
 
 func switch_to(new_character: String) -> void:
 	print_debug("Changed to %s" % new_character)
+
+	owner.skin.connect("shader_finished", self, "_on_Shader_teleport_in_finished", [new_character])
+	owner.skin.execute_shader("teleport_in")
+
+
+func _on_Shader_teleport_in_finished(anim_name: String, new_character: String) -> void:
+	owner.skin.disconnect("shader_finished", self, "_on_Shader_teleport_in_finished")
+
 	var anim_to_play := "idle"
 	for child in characters.get_children():
 		if not child.get_name() == new_character:
@@ -110,3 +118,11 @@ func switch_to(new_character: String) -> void:
 	owner.horizontal_mirror(_direction)
 	owner.skin.play(anim_to_play)
 	Events.emit_signal("player_character_changed")
+
+	owner.skin.connect("shader_finished", self, "_on_Shader_teleport_out_finished")
+	owner.skin.execute_shader("teleport_out")
+
+
+func _on_Shader_teleport_out_finished(anim_name: String) -> void:
+	owner.is_handling_input = true
+	owner.skin.disconnect("shader_finished", self, "_on_Shader_teleport_out_finished")

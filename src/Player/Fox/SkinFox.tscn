@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://src/Actor/Skin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/characters/fox/fox-Sheet.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -324,7 +324,7 @@ anims/jump = SubResource( 9 )
 anims/run = SubResource( 10 )
 anims/spawn = SubResource( 11 )
 
-[node name="Sprite" parent="." index="2"]
+[node name="Sprite" parent="." index="3"]
 texture = ExtResource( 2 )
 hframes = 20
 frame = 1
