@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/UI/WorldmapButton.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/theme/WorldmapButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://src/UI/Worldmap/WorldmapButton.gd" type="Script" id=2]
-[ext_resource path="res://assets/UI/WorldmapFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/theme/WorldmapFont.tres" type="DynamicFont" id=6]
+
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 6 )

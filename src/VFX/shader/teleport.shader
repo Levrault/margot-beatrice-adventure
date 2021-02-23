@@ -1,7 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
-
-[sub_resource type="Shader" id=1]
-code = "/*
+/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/teleport-effect
 
@@ -52,11 +49,4 @@ void fragment()
 	tex.a *= d2;
 	
 	COLOR = tex;
-}"
-
-[resource]
-shader = SubResource( 1 )
-shader_param/progress = 0.0
-shader_param/noise_desnity = 60.0
-shader_param/beam_size = 0.01
-shader_param/color = Color( 0, 1.02, 1.2, 1 )
+}

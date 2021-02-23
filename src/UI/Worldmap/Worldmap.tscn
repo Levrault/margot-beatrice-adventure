@@ -4,16 +4,18 @@
 [ext_resource path="res://src/UI/Components/MenuFooter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/Worldmap/Worldmap.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Worldmap/WorldmapButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/UI/worldmap.tres" type="Theme" id=5]
-[ext_resource path="res://assets/UI/WorldmapFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/theme/worldmap.tres" type="Theme" id=5]
+[ext_resource path="res://assets/theme/WorldmapFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://src/UI/Worldmap/UILevelResume.gd" type="Script" id=7]
 [ext_resource path="res://src/NPCs/MargotBeatrice/MargotBeatriceSkin.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Player/Rabbit/SkinRabbit.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Player/Fox/SkinFox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Player/Squirrel/SkinSquirrel.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/UI/acorn.png" type="Texture" id=12]
-[ext_resource path="res://assets/UI/gem.png" type="Texture" id=13]
-[ext_resource path="res://assets/UI/carrot.png" type="Texture" id=14]
+[ext_resource path="res://assets/UI/hud/acorn.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/hud/gem.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/hud/carrot.png" type="Texture" id=14]
+
+
 
 
 [sub_resource type="StyleBoxFlat" id=1]
