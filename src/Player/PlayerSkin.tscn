@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://src/Actor/Skin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actor/ActorSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/audio/jump.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/audio/attack.wav" type="AudioStream" id=3]
+[ext_resource path="res://src/VFX/teleport_effect.tres" type="Material" id=4]
+[ext_resource path="res://src/Player/PlayerSkin.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
@@ -66,18 +68,6 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath(".:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -239,10 +229,56 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="StreamTexture" id=6]
-load_path = "res://.import/Player.png-e589e73e3bcf93afdbd52739624fb792.stex"
+[sub_resource type="Animation" id=8]
+resource_name = "DEFAULT"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
-[node name="Skin" instance=ExtResource( 1 )]
+[sub_resource type="Animation" id=6]
+resource_name = "teleport_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "teleport_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[node name="PlayerSkin" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
 
 [node name="AudioStreamPlayer2D" parent="." index="0"]
 stream = ExtResource( 3 )
@@ -255,6 +291,11 @@ anims/die = SubResource( 3 )
 anims/jump = SubResource( 4 )
 anims/spawn = SubResource( 5 )
 
-[node name="Sprite" parent="." index="2"]
-position = Vector2( 0, -20 )
-texture = SubResource( 6 )
+[node name="ShaderAnim" type="AnimationPlayer" parent="." index="2"]
+autoplay = "DEFAULT"
+anims/DEFAULT = SubResource( 8 )
+anims/teleport_in = SubResource( 6 )
+anims/teleport_out = SubResource( 7 )
+
+[node name="Sprite" parent="." index="3"]
+material = ExtResource( 4 )

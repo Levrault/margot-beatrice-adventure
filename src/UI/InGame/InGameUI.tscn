@@ -15,7 +15,7 @@
 [ext_resource path="res://src/UI/Options/ListOptionsMenu.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/UI/InGame/Dialogues/DialogueBox.tscn" type="PackedScene" id=18]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
 length = 0.001
 step = 0.05
@@ -193,8 +193,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "open"
+[sub_resource type="Animation" id=3]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -320,9 +319,9 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Router"]
 autoplay = "DEFAULT"
-anims/DEFAULT = SubResource( 3 )
+anims/DEFAULT = SubResource( 1 )
 anims/close = SubResource( 2 )
-anims/open = SubResource( 1 )
+anims/open = SubResource( 3 )
 
 [node name="Canvas" parent="Router" instance=ExtResource( 6 )]
 visible = false

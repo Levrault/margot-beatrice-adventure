@@ -93,7 +93,4 @@ position = Vector2( -376, -160 )
 [node name="Player" parent="." index="12"]
 position = Vector2( -680, -160 )
 
-[node name="CharacterFactory" parent="Player" index="2"]
-character = 2
-
 [editable path="Player"]

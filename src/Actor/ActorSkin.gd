@@ -1,5 +1,6 @@
 # Should manage all the sprite/animation of an Actor
 # Create to be controller by the owner
+class_name ActorSkin
 extends Node2D
 
 signal animation_finished(anim_name)
