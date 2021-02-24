@@ -39,23 +39,23 @@ position = Vector2( 480, 0 )
 position = Vector2( 1200, 0 )
 screen_size = Vector2( 960, 270 )
 
-[node name="Anchor13" parent="Anchors" index="11" instance=ExtResource( 2 )]
+[node name="Anchor15" parent="Anchors" index="11" instance=ExtResource( 2 )]
+position = Vector2( 1192, 272 )
+screen_size = Vector2( 960, 270 )
+
+[node name="Anchor13" parent="Anchors" index="12" instance=ExtResource( 2 )]
 position = Vector2( 1200, -400 )
 screen_size = Vector2( 480, 540 )
-
-[node name="Anchor12" parent="Anchors" index="12" instance=ExtResource( 2 )]
-position = Vector2( 1192, 270 )
-screen_size = Vector2( 960, 270 )
 
 [node name="Anchor11" parent="Anchors" index="13" instance=ExtResource( 2 )]
 position = Vector2( 2160, -5 )
 screen_size = Vector2( 960, 270 )
 
 [node name="BoundsNW" parent="." index="3"]
-position = Vector2( -718, -406 )
+position = Vector2( -238, -134 )
 
 [node name="BoundsSE" parent="." index="4"]
-position = Vector2( -238, -136 )
+position = Vector2( 240, 136 )
 
 [node name="FallLimitArea" parent="FallLimits" index="0" instance=ExtResource( 3 )]
 position = Vector2( -8, 416 )
@@ -91,6 +91,6 @@ position = Vector2( -520, -160 )
 position = Vector2( -376, -160 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( -680, -160 )
+position = Vector2( 0, -8 )
 
 [editable path="Player"]

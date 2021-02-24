@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/characters/rabbit/Rabbit-Sheet.png" type="Texture" id=2]
-[ext_resource path="res://src/VFX/teleport_effect.tres" type="Material" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "climb"
@@ -182,7 +181,6 @@ anims/jump = SubResource( 7 )
 anims/run = SubResource( 8 )
 anims/spawn = SubResource( 9 )
 
-[node name="Sprite" parent="." index="2"]
-material = ExtResource( 3 )
+[node name="Sprite" parent="." index="3"]
 texture = ExtResource( 2 )
 hframes = 34

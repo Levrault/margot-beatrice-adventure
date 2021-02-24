@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Actor/ActorSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/audio/jump.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/audio/attack.wav" type="AudioStream" id=3]
-[ext_resource path="res://src/VFX/teleport_effect.tres" type="Material" id=4]
+[ext_resource path="res://src/VFX/shader/teleport.shader" type="Shader" id=4]
 [ext_resource path="res://src/Player/PlayerSkin.gd" type="Script" id=5]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
@@ -229,7 +230,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "DEFAULT"
 length = 0.001
 tracks/0/type = "value"
@@ -245,8 +246,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "teleport_in"
+[sub_resource type="Animation" id=7]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:material:shader_param/progress")
@@ -261,8 +261,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "teleport_out"
+[sub_resource type="Animation" id=8]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:material:shader_param/progress")
@@ -276,6 +275,13 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 1.0, 0.0 ]
 }
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 4 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = 0.01
+shader_param/color = Color( 0, 1.02, 1.2, 1 )
 
 [node name="PlayerSkin" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
@@ -293,9 +299,9 @@ anims/spawn = SubResource( 5 )
 
 [node name="ShaderAnim" type="AnimationPlayer" parent="." index="2"]
 autoplay = "DEFAULT"
-anims/DEFAULT = SubResource( 8 )
-anims/teleport_in = SubResource( 6 )
-anims/teleport_out = SubResource( 7 )
+anims/DEFAULT = SubResource( 6 )
+anims/teleport_in = SubResource( 7 )
+anims/teleport_out = SubResource( 8 )
 
 [node name="Sprite" parent="." index="3"]
-material = ExtResource( 4 )
+material = SubResource( 9 )
