@@ -8,6 +8,7 @@ onready var ring := $Ring
 func _ready():
 	yield(owner, "ready")
 	Events.connect("player_moved", self, "_on_Player_moved")
+	show()
 
 
 func _on_Player_moved(player: Player) -> void:
