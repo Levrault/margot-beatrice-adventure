@@ -30,17 +30,6 @@ visible = false
 
 [node name="Anchor" parent="Anchors" instance=ExtResource( 6 )]
 
-[node name="BoundsNW" type="Position2D" parent="."]
-__meta__ = {
-"_gizmo_extents_": 50.0
-}
-
-[node name="BoundsSE" type="Position2D" parent="."]
-position = Vector2( 480, 270 )
-__meta__ = {
-"_gizmo_extents_": 50.0
-}
-
 [node name="Gates" type="Node2D" parent="."]
 
 [node name="FallLimits" type="Node2D" parent="."]

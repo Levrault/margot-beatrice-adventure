@@ -12,23 +12,10 @@ func _ready() -> void:
 
 	# Camera management
 	RoomManager.anchor = get_nearest_anchor()
+	RoomManager.anchor.update_anchor_limit()
+
+	# track player
 	Events.connect("player_moved", self, "_on_Player_moved")
-
-	# Current bound
-	RoomManager.bounds = {
-		'limit_left': $BoundsNW.global_position.x,
-		'limit_top': $BoundsNW.global_position.y,
-		'limit_right': $BoundsSE.global_position.x,
-		'limit_bottom': $BoundsSE.global_position.y,
-	}
-	Events.emit_signal("room_limit_changed", RoomManager.bounds)
-
-	if RoomManager.gate_to_spawn != "":
-		Events.emit_signal(
-			"player_room_entered",
-			$Gates.get_node(RoomManager.gate_to_spawn).get_node("Spawn").global_position
-		)
-
 	Events.emit_signal("room_transition_ended")
 	Events.emit_signal("room_loaded")
 
