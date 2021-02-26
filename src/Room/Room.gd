@@ -1,11 +1,16 @@
 extends Node2D
 
+export (bool) var full_screen_shader := true
+
 onready var player: Player = find_node("Player")
 onready var _anchors := $Anchors.get_children()
 
 
 func _ready() -> void:
-	# Camara management
+	if not full_screen_shader:
+		$FullScreenShader.queue_free()
+
+	# Camera management
 	RoomManager.anchor = get_nearest_anchor()
 	Events.connect("player_moved", self, "_on_Player_moved")
 

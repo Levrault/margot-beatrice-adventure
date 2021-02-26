@@ -9,6 +9,7 @@ Game made for my niece
 - [Pixel health bar asset pack](https://adwitr.itch.io/pixel-health-bar-asset-pack)
 - [Sunny Land 2D Pixel Art Pack](https://ansimuz.itch.io/sunny-land-pixel-game-art) used for Foxy, Jazzy, Mr. Nuts and all the env
 - [GameFXexport](https://ppeldo.itch.io/2d-pixel-art-game-spellmagic-fx)
+- [OPP](https://www.openpixelproject.com/) for particules
 - [Warrior](https://clembod.itch.io/warrior-free-animation-set) used for Margot-Beatrice's character
 
 ### Fonts

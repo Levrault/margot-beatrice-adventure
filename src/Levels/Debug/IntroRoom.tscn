@@ -1,14 +1,91 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Room/RoomTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/StaticObjects/Bush.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Shader" id=1]
+resource_local_to_scene = true
+code = "// Source: https://godotshaders.com/shader/2d-wind-sway/
+// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
+// original script modified by HungryProton so that the assets are moving differently : https://pastebin.com/VL3AfV8D
+//
+// speed - The speed of the wind movement.
+// minStrength - The minimal strength of the wind movement.
+// maxStrength - The maximal strength of the wind movement.
+// strengthScale - Scalefactor for the wind strength.
+// interval - The time between minimal and maximal strength changes.
+// detail - The detail (number of waves) of the wind movement.
+// distortion - The strength of geometry distortion.
+// heightOffset - The height where the wind begins to move. By default 0.0.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+// Wind settings.
+uniform float speed = 1.0;
+uniform float collision_direction = 1.0;
+uniform float minStrength : hint_range(0.0, 1.0) = 0.05;
+uniform float maxStrength : hint_range(0.0, 1.0) = 0.01;
+uniform float strengthScale = 100.0;
+uniform float interval = 3.5;
+uniform float detail = 1.0;
+uniform float distortion : hint_range(0.0, 1.0);
+uniform float heightOffset : hint_range(0.0, 1.0);
+
+// With the offset value, you can if you want different moves for each asset. Just put a random value (1, 2, 3) in the editor. Don't forget to mark the material as unique if you use this
+uniform float offset = 0; 
+
+
+float getWind(vec2 vertex, vec2 uv, float time){
+    float diff = pow(maxStrength - minStrength, 2.0);
+    float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
+    float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
+    
+    return wind; 
+}
+
+void vertex() {
+    vec4 pos = WORLD_MATRIX * vec4(0.0, 0.0, 0.0, 1.0);
+	float time = TIME * speed + offset;
+	
+    VERTEX.x += getWind(VERTEX.xy, UV, time);
+
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/speed = 1.0
+shader_param/collision_direction = 1.0
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = 0.0
+shader_param/offset = 0.0
 
 [node name="IntroRoom" instance=ExtResource( 1 )]
+full_screen_shader = false
 
 [node name="DebugPanel" parent="Debug" index="0"]
 reference_path = NodePath("../../../IntroRoom/Player/StateMachine")
 
 [node name="TileMap" parent="." index="8"]
 tile_data = PoolIntArray( 0, 47, 4, 1, 47, 196609, 2, 47, 196609, 3, 47, 196609, 4, 47, 196609, 5, 47, 196609, 6, 47, 196609, 7, 47, 196609, 8, 47, 196609, 9, 47, 196609, 10, 47, 196609, 11, 47, 196609, 12, 47, 196609, 13, 47, 196609, 14, 47, 196609, 15, 47, 196609, 16, 47, 196609, 17, 47, 196609, 18, 47, 196609, 19, 47, 196609, 20, 47, 196609, 21, 47, 196609, 22, 47, 196609, 23, 47, 196609, 24, 47, 196609, 25, 47, 196609, 26, 47, 196609, 27, 47, 196609, 28, 47, 196609, 29, 47, 7, 65536, 47, 65539, 65565, 47, 65539, 131072, 47, 65539, 131101, 47, 65539, 196608, 47, 65539, 196637, 47, 65539, 262144, 47, 65539, 262173, 47, 65539, 327680, 47, 65539, 327709, 47, 65539, 393216, 47, 65539, 393245, 47, 65539, 458752, 47, 65539, 458781, 47, 65539, 524288, 47, 65539, 524317, 47, 65539, 589824, 47, 65539, 589853, 47, 65539, 655360, 47, 65539, 655389, 47, 65539, 720896, 47, 65539, 720925, 47, 65539, 786432, 47, 65539, 786461, 47, 65539, 851968, 47, 65539, 851997, 47, 65539, 917504, 47, 65539, 917533, 47, 65539, 983040, 47, 65539, 983069, 47, 65539, 1048576, 47, 196612, 1048577, 47, 196609, 1048578, 47, 196609, 1048579, 47, 196609, 1048580, 47, 196609, 1048581, 47, 196609, 1048582, 47, 196609, 1048583, 47, 196609, 1048584, 47, 196609, 1048585, 47, 196609, 1048586, 47, 196609, 1048587, 47, 196609, 1048588, 47, 196609, 1048589, 47, 196609, 1048590, 47, 196609, 1048591, 47, 196609, 1048592, 47, 196609, 1048593, 47, 196609, 1048594, 47, 196609, 1048595, 47, 196609, 1048596, 47, 196609, 1048597, 47, 196609, 1048598, 47, 196609, 1048599, 47, 196609, 1048600, 47, 196609, 1048601, 47, 196609, 1048602, 47, 196609, 1048603, 47, 196609, 1048604, 47, 196609, 1048605, 47, 196615 )
+
+[node name="Bush" parent="TileMap" index="0" instance=ExtResource( 2 )]
+material = SubResource( 2 )
+position = Vector2( 158, 242 )
+
+[node name="Bush2" parent="TileMap" index="1" instance=ExtResource( 2 )]
+material = SubResource( 2 )
+position = Vector2( 219, 242 )
+
+[node name="Bush3" parent="TileMap" index="2" instance=ExtResource( 2 )]
+material = SubResource( 2 )
+position = Vector2( 280, 242 )
 
 [node name="Player" parent="." index="13"]
 position = Vector2( 32, 256 )

@@ -24,6 +24,7 @@ properties = PoolStringArray( "_state_name" )
 layer = 2
 
 [node name="IrisShot" parent="FullScreenShader" instance=ExtResource( 7 )]
+visible = false
 
 [node name="Anchors" type="Node2D" parent="."]
 

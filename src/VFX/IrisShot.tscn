@@ -28,7 +28,7 @@ frame_5/delay_sec = 0.0
 frame_6/texture = ExtResource( 9 )
 frame_6/delay_sec = 0.0
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
 
 uniform vec2 target = vec2(0.5);
@@ -51,14 +51,13 @@ void fragment() {
 	COLOR.a = clamp(1f + dist - radius, 0f, 1f);
 }"
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 shader_param/target = Vector2( 0.5, 0.5 )
 shader_param/offset = Vector2( 0, -0.05 )
 shader_param/circle_size = 0.0
 
-[sub_resource type="Animation" id=3]
-resource_name = "DEFAULT"
+[sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:material:shader_param/circle_size")
@@ -73,8 +72,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "play"
+[sub_resource type="Animation" id=5]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:material:shader_param/circle_size")
@@ -139,7 +137,7 @@ __meta__ = {
 
 [node name="Ring" type="TextureRect" parent="."]
 show_behind_parent = true
-material = SubResource( 5 )
+material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 10 )
@@ -150,8 +148,8 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "DEFAULT"
-anims/DEFAULT = SubResource( 3 )
-anims/play = SubResource( 2 )
+anims/DEFAULT = SubResource( 4 )
+anims/play = SubResource( 5 )
 __meta__ = {
 "_editor_description_": ""
 }
