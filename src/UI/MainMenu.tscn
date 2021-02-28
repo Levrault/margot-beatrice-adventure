@@ -19,7 +19,6 @@
 [ext_resource path="res://src/UI/Audio/BackAudio.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/UI/Audio/ErrorAudio.tscn" type="PackedScene" id=18]
 
-
 [node name="MainMenu" type="Control"]
 pause_mode = 2
 anchor_right = 1.0

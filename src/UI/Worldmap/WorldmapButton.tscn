@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/theme/WorldmapFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/audio/UI/Confirm_tones/style5/confirm_style_5_echo_001.ogg" type="AudioStream" id=7]
 
-
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 6 )
 Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
