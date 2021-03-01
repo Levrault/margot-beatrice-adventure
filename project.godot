@@ -102,7 +102,7 @@ _global_script_classes=[ {
 "base": "Actor",
 "class": "Player",
 "language": "GDScript",
-"path": "res://assets/Player.gd"
+"path": "res://src/Player/Player.gd"
 }, {
 "base": "ActorSkin",
 "class": "PlayerSkin",
@@ -162,8 +162,8 @@ Menu="*res://src/Autoload/Menu.gd"
 Config="*res://src/Autoload/Config.gd"
 AsyncLoading="*res://src/Autoload/AsyncLoading.gd"
 Game="*res://src/Autoload/Game.gd"
-RoomManager="*res://src/Autoload/RoomManager.gd"
 Character="*res://src/Autoload/Character.gd"
+RoomManager="*res://src/Autoload/RoomManager.gd"
 Serialize="*res://src/Autoload/Serialize.gd"
 InputManager="*res://src/Autoload/InputManager.gd"
 

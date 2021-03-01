@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/UI/Audio/BackAudio.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/Options/GameOptionsMenu.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/UI/InGame/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/theme/Menu.tres" type="Theme" id=5]
 [ext_resource path="res://src/UI/Components/Canvas.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UI/InGame/LevelSummary.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/Navigation/InGameRouter.gd" type="Script" id=8]
 [ext_resource path="res://src/UI/Components/MenuTransition.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/UI/Options/ControllerOptionsMenu.tscn" type="PackedScene" id=12]
@@ -305,6 +306,9 @@ visible = false
 [node name="DialogueBox" parent="." instance=ExtResource( 18 )]
 visible = false
 
+[node name="LevelSummary" parent="." instance=ExtResource( 7 )]
+visible = false
+
 [node name="Router" type="Control" parent="."]
 pause_mode = 2
 anchor_right = 1.0
@@ -326,12 +330,6 @@ anims/open = SubResource( 3 )
 [node name="Canvas" parent="Router" instance=ExtResource( 6 )]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 229.0
-margin_top = 126.0
-margin_right = -229.0
-margin_bottom = -126.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -345,13 +343,13 @@ margin_bottom = 20.0
 
 [node name="CenterContainer" parent="Router/PauseMenu/Wrapper/Page" index="1"]
 margin_top = 24.0
-margin_bottom = 216.0
+margin_bottom = 204.0
 
 [node name="Contents" parent="Router/PauseMenu/Wrapper/Page/CenterContainer" index="0"]
 margin_left = 15.0
-margin_top = 50.0
+margin_top = 20.0
 margin_right = 444.0
-margin_bottom = 142.0
+margin_bottom = 160.0
 
 [node name="Resume" parent="Router/PauseMenu/Wrapper/Page/CenterContainer/Contents" index="0"]
 margin_right = 117.0
@@ -366,7 +364,7 @@ margin_right = 429.0
 margin_right = 91.0
 
 [node name="MenuFooter" parent="Router/PauseMenu/Wrapper/Page" index="2"]
-margin_top = 220.0
+margin_top = 208.0
 
 [node name="AudioOptionsMenu" parent="Router" instance=ExtResource( 14 )]
 visible = false

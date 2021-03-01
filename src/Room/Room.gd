@@ -18,6 +18,7 @@ func _ready() -> void:
 	Events.connect("player_moved", self, "_on_Player_moved")
 	Events.emit_signal("room_transition_ended")
 	Events.emit_signal("room_loaded")
+	count_collectable()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -53,6 +54,23 @@ func _unhandled_input(event: InputEvent) -> void:
 			add_child(free_camera)
 		else:
 			get_node("FreeCamera").queue_free()
+
+
+func count_collectable() -> void:
+	var gems := 0
+	var acorns := 0
+	var carrots := 0
+	for collectable in $Collectables.get_children():
+		if collectable.character == Character.Playable.fox:
+			gems += 1
+			continue
+		if collectable.character == Character.Playable.squirrel:
+			acorns += 1
+			continue
+		if collectable.character == Character.Playable.rabbit:
+			carrots += 1
+			continue
+	Events.emit_signal("collectable_max_value_counted", gems, acorns, carrots)
 
 
 func get_nearest_anchor() -> Position2D:
@@ -106,6 +124,9 @@ func get_nearest_anchor() -> Position2D:
 
 
 func _on_Player_moved(player: Player) -> void:
+	if RoomManager.is_anchor_locked:
+		return
+
 	var nearest_anchor = get_nearest_anchor()
 
 	if RoomManager.anchor == nearest_anchor:
