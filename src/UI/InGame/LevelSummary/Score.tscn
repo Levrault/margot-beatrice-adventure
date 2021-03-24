@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/InGame/LevelSummary/Score.gd" type="Script" id=1]
+
+[node name="Score" type="HBoxContainer"]
+margin_top = 18.0
+margin_right = 400.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 53.0
+margin_bottom = 14.0
+text = "ui_gems"
+
+[node name="Dots" type="Label" parent="."]
+margin_left = 57.0
+margin_right = 362.0
+margin_bottom = 14.0
+rect_clip_content = true
+size_flags_horizontal = 3
+text = "........................................................................................................"
+clip_text = true
+
+[node name="ScoreContainer" type="HBoxContainer" parent="."]
+margin_left = 366.0
+margin_right = 400.0
+margin_bottom = 14.0
+
+[node name="Score" type="Label" parent="ScoreContainer"]
+margin_right = 5.0
+margin_bottom = 14.0
+text = "-"
+
+[node name="Dash" type="Label" parent="ScoreContainer"]
+margin_left = 9.0
+margin_right = 14.0
+margin_bottom = 14.0
+text = "/"
+
+[node name="MaxScore" type="Label" parent="ScoreContainer"]
+margin_left = 18.0
+margin_right = 34.0
+margin_bottom = 14.0
+text = "10"
+
+[node name="Tween" type="Tween" parent="."]

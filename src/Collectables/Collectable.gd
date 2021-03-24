@@ -12,6 +12,8 @@ func _ready() -> void:
 	Events.connect("player_character_changed", self, "_on_Player_character_changed")
 	feedback.anim.connect("animation_finished", self, "_on_Feedback_animation_finished")
 
+	_on_Player_character_changed()
+
 
 func _on_Player_character_changed() -> void:
 	if character != Character.selected:
@@ -23,6 +25,7 @@ func _on_Player_character_changed() -> void:
 func _on_Player_entered(body: Player) -> void:
 	Character.update_score()
 	skin.hide()
+	collision.call_deferred("set", "disabled", true)
 	feedback.anim.play("collected")
 
 

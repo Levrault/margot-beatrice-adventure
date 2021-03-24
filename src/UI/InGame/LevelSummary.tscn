@@ -1,0 +1,312 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/UI/InGame/LevelSummary/Score.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/InGame/LevelSummary/Chronometer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/Components/Canvas.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/theme/Menu.tres" type="Theme" id=4]
+[ext_resource path="res://src/UI/InGame/LevelSummary.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( -2, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -270 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Chronometer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Gems")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("MarginContainer/VBoxContainer/Footer/Next")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+
+[node name="LevelSummary" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show = SubResource( 1 )
+
+[node name="Canvas" parent="." instance=ExtResource( 3 )]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 28
+custom_constants/margin_top = 32
+custom_constants/margin_left = 28
+custom_constants/margin_bottom = 37
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 28.0
+margin_top = 32.0
+margin_right = 452.0
+margin_bottom = 233.0
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 424.0
+margin_bottom = 20.0
+text = "ui_score"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 424.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_top = 10
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 10
+
+[node name="Wrapper" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 40.0
+margin_top = 10.0
+margin_right = 384.0
+margin_bottom = 143.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper"]
+margin_right = 344.0
+margin_bottom = 109.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Chronometer" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 344.0
+margin_bottom = 20.0
+text = "00s 000ms"
+align = 1
+
+[node name="Gems" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 24.0
+margin_right = 344.0
+margin_bottom = 49.0
+size_flags_vertical = 3
+
+[node name="Acorns" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 53.0
+margin_right = 344.0
+margin_bottom = 79.0
+size_flags_vertical = 3
+selected = 2
+
+[node name="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns" index="0"]
+margin_top = 3.0
+margin_right = 117.0
+margin_bottom = 23.0
+text = "ui_acorns"
+
+[node name="Dots" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns" index="1"]
+margin_left = 121.0
+margin_top = 3.0
+margin_right = 280.0
+margin_bottom = 23.0
+
+[node name="ScoreContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns" index="2"]
+margin_left = 284.0
+margin_right = 344.0
+margin_bottom = 26.0
+
+[node name="Score" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns/ScoreContainer" index="0"]
+margin_top = 3.0
+margin_right = 13.0
+margin_bottom = 23.0
+
+[node name="Dash" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns/ScoreContainer" index="1"]
+margin_left = 17.0
+margin_top = 3.0
+margin_right = 30.0
+margin_bottom = 23.0
+
+[node name="MaxScore" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns/ScoreContainer" index="2"]
+margin_left = 34.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 23.0
+
+[node name="Carrots" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 83.0
+margin_right = 344.0
+margin_bottom = 109.0
+size_flags_vertical = 3
+selected = 1
+
+[node name="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots" index="0"]
+margin_top = 3.0
+margin_right = 130.0
+margin_bottom = 23.0
+text = "ui_carrots"
+
+[node name="Dots" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots" index="1"]
+margin_left = 134.0
+margin_top = 3.0
+margin_right = 280.0
+margin_bottom = 23.0
+
+[node name="ScoreContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots" index="2"]
+margin_left = 284.0
+margin_right = 344.0
+margin_bottom = 26.0
+
+[node name="Score" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots/ScoreContainer" index="0"]
+margin_top = 3.0
+margin_right = 13.0
+margin_bottom = 23.0
+
+[node name="Dash" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots/ScoreContainer" index="1"]
+margin_left = 17.0
+margin_top = 3.0
+margin_right = 30.0
+margin_bottom = 23.0
+
+[node name="MaxScore" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots/ScoreContainer" index="2"]
+margin_left = 34.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 23.0
+
+[node name="Grades" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper"]
+margin_top = 113.0
+margin_right = 344.0
+margin_bottom = 133.0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/Grades"]
+margin_left = 105.0
+margin_right = 209.0
+margin_bottom = 20.0
+text = "ui_grade"
+
+[node name="Grade" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/Grades"]
+margin_left = 213.0
+margin_right = 239.0
+margin_bottom = 20.0
+text = "A+"
+
+[node name="Footer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 181.0
+margin_right = 424.0
+margin_bottom = 201.0
+alignment = 1
+
+[node name="Worldmap" type="Button" parent="MarginContainer/VBoxContainer/Footer"]
+margin_right = 138.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Worldmap"
+
+[node name="Restart" type="Button" parent="MarginContainer/VBoxContainer/Footer"]
+margin_left = 142.0
+margin_right = 281.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Restart"
+
+[node name="Next" type="Button" parent="MarginContainer/VBoxContainer/Footer"]
+margin_left = 285.0
+margin_right = 424.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Next"
+
+[editable path="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns"]
+
+[editable path="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots"]

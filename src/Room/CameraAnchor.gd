@@ -35,7 +35,6 @@ func _ready() -> void:
 		if child.is_in_group("room_entrance"):
 			entrances.append(child)
 
-
 	boundsNW.position = Vector2(-screen_size.x / 2, -screen_size.y / 2)
 	boundsSE.position = Vector2(screen_size.x / 2, screen_size.y / 2)
 

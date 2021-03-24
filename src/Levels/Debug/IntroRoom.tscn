@@ -1,9 +1,53 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Room/RoomTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/StaticObjects/Bush.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/VFX/shader/wind_sway.shader" type="Shader" id=3]
+[ext_resource path="res://src/Collectables/Acorn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Collectables/Gem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Collectables/Carrot.tscn" type="PackedScene" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = 0.0
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = 0.0
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = 0.0
+shader_param/offset = 0.0
 
 [node name="IntroRoom" instance=ExtResource( 1 )]
+full_screen_shader = false
 
 [node name="DebugPanel" parent="Debug" index="0"]
 reference_path = NodePath("../../../IntroRoom/Player/StateMachine")
@@ -11,22 +55,64 @@ reference_path = NodePath("../../../IntroRoom/Player/StateMachine")
 [node name="Anchor" parent="Anchors" index="0"]
 position = Vector2( 241, 136 )
 
-[node name="TileMap" parent="." index="6"]
-tile_data = PoolIntArray( 0, 47, 4, 1, 47, 196609, 2, 47, 196609, 3, 47, 196609, 4, 47, 196609, 5, 47, 196609, 6, 47, 196609, 7, 47, 196609, 8, 47, 196609, 9, 47, 196609, 10, 47, 196609, 11, 47, 196609, 12, 47, 196609, 13, 47, 196609, 14, 47, 196609, 15, 47, 196609, 16, 47, 196609, 17, 47, 196609, 18, 47, 196609, 19, 47, 196609, 20, 47, 196609, 21, 47, 196609, 22, 47, 196609, 23, 47, 196609, 24, 47, 196609, 25, 47, 196609, 26, 47, 196609, 27, 47, 196609, 28, 47, 196609, 29, 47, 7, 65536, 47, 65539, 65565, 47, 65539, 131072, 47, 65539, 131101, 47, 65539, 196608, 47, 65539, 196637, 47, 65539, 262144, 47, 65539, 262173, 47, 65539, 327680, 47, 65539, 327709, 47, 65539, 393216, 47, 65539, 393245, 47, 65539, 458752, 47, 65539, 458781, 47, 65539, 524288, 47, 65539, 524317, 47, 65539, 589824, 47, 65539, 589853, 47, 65539, 655360, 47, 65539, 655389, 47, 65539, 720896, 47, 65539, 720925, 47, 65539, 786432, 47, 65539, 786461, 47, 65539, 851968, 47, 65539, 851997, 47, 65539, 917504, 47, 65539, 917533, 47, 65539, 983040, 47, 65539, 983069, 47, 65539, 1048576, 47, 196612, 1048577, 47, 196609, 1048578, 47, 196609, 1048579, 47, 196609, 1048580, 47, 196609, 1048581, 47, 196609, 1048582, 47, 196609, 1048583, 47, 196609, 1048584, 47, 196609, 1048585, 47, 196609, 1048586, 47, 196609, 1048587, 47, 196609, 1048588, 47, 196609, 1048589, 47, 196609, 1048590, 47, 196609, 1048591, 47, 196609, 1048592, 47, 196609, 1048593, 47, 196609, 1048594, 47, 196609, 1048595, 47, 196609, 1048596, 47, 196609, 1048597, 47, 196609, 1048598, 47, 196609, 1048599, 47, 196609, 1048600, 47, 196609, 1048601, 47, 196609, 1048602, 47, 196609, 1048603, 47, 196609, 1048604, 47, 196609, 1048605, 47, 196615 )
+[node name="TileMap" parent="." index="5"]
+tile_data = PoolIntArray( 0, 47, 4, 1, 47, 196609, 2, 47, 196609, 3, 47, 196609, 4, 47, 196609, 5, 47, 196609, 6, 47, 196609, 7, 47, 196609, 8, 47, 196609, 9, 47, 196609, 10, 47, 196609, 11, 47, 196609, 12, 47, 196609, 13, 47, 196609, 14, 47, 196609, 15, 47, 196609, 16, 47, 196609, 17, 47, 196609, 18, 47, 196609, 19, 47, 196609, 20, 47, 196609, 21, 47, 196609, 22, 47, 196609, 23, 47, 196609, 24, 47, 196609, 25, 47, 196609, 26, 47, 196609, 27, 47, 196609, 28, 47, 196609, 29, 47, 7, 65536, 47, 65539, 65565, 47, 65539, 131072, 47, 65539, 131101, 47, 65539, 196608, 47, 65539, 196637, 47, 65539, 262144, 47, 65539, 262173, 47, 65539, 327680, 47, 65539, 327709, 47, 65539, 393216, 47, 65539, 393245, 47, 65539, 458752, 47, 65539, 458781, 47, 65539, 524288, 47, 65539, 524317, 47, 65539, 589824, 47, 65539, 589853, 47, 196612, 589854, 47, 196609, 589855, 47, 196609, 589856, 47, 196609, 589857, 47, 196609, 589858, 47, 196609, 589859, 47, 196610, 655360, 47, 65539, 720896, 47, 65539, 786432, 47, 65539, 851968, 47, 65539, 917504, 47, 65539, 983040, 47, 65539, 1048576, 47, 196612, 1048577, 47, 196609, 1048578, 47, 196609, 1048579, 47, 196609, 1048580, 47, 196609, 1048581, 47, 196609, 1048582, 47, 196609, 1048583, 47, 196609, 1048584, 47, 196609, 1048585, 47, 196609, 1048586, 47, 196609, 1048587, 47, 196609, 1048588, 47, 196609, 1048589, 47, 196609, 1048590, 47, 196609, 1048591, 47, 196609, 1048592, 47, 196609, 1048593, 47, 196609, 1048594, 47, 196609, 1048595, 47, 196609, 1048596, 47, 196609, 1048597, 47, 196609, 1048598, 47, 196609, 1048599, 47, 196609, 1048600, 47, 196609, 1048601, 47, 196609, 1048602, 47, 196609, 1048603, 47, 196609, 1048604, 47, 196609, 1048605, 47, 196609, 1048606, 47, 196609, 1048607, 47, 196609, 1048608, 47, 196609, 1048609, 47, 196609, 1048610, 47, 196609, 1048611, 47, 196610 )
 
 [node name="Bush" parent="TileMap" index="0" instance=ExtResource( 2 )]
+material = SubResource( 1 )
 position = Vector2( 158, 242 )
 
 [node name="Bush2" parent="TileMap" index="1" instance=ExtResource( 2 )]
+material = SubResource( 2 )
 position = Vector2( 219, 242 )
 
 [node name="Bush3" parent="TileMap" index="2" instance=ExtResource( 2 )]
+material = SubResource( 3 )
 position = Vector2( 280, 242 )
 
-[node name="Player" parent="." index="11"]
+[node name="EndOfLevel" parent="TileMap" index="3"]
+position = Vector2( 429, 204 )
+
+[node name="Area2D" parent="TileMap/EndOfLevel" index="1"]
+position = Vector2( 50, 1 )
+
+[node name="Sign" parent="TileMap/EndOfLevel" index="2"]
+position = Vector2( 82, 52 )
+
+[node name="Support" parent="TileMap/EndOfLevel/Sign" index="0"]
+position = Vector2( -64, -17.5 )
+scale = Vector2( 1, 2.91666 )
+
+[node name="Head" parent="TileMap/EndOfLevel/Sign" index="1"]
+position = Vector2( -64, -25 )
+
+[node name="Gem" parent="Collectables" index="0" instance=ExtResource( 5 )]
+position = Vector2( 123, 240 )
+
+[node name="Gem2" parent="Collectables" index="1" instance=ExtResource( 5 )]
+position = Vector2( 162, 241 )
+
+[node name="Gem3" parent="Collectables" index="2" instance=ExtResource( 5 )]
+position = Vector2( 211, 243 )
+
+[node name="Gem4" parent="Collectables" index="3" instance=ExtResource( 5 )]
+position = Vector2( 244, 242 )
+
+[node name="Gem5" parent="Collectables" index="4" instance=ExtResource( 5 )]
+position = Vector2( 281, 242 )
+
+[node name="Carrot" parent="Collectables" index="5" instance=ExtResource( 6 )]
+position = Vector2( 121, 206 )
+
+[node name="Acorn" parent="Collectables" index="6" instance=ExtResource( 4 )]
+position = Vector2( 152, 205 )
+
+[node name="Player" parent="." index="10"]
 position = Vector2( 32, 256 )
 
 [node name="StateMachine" parent="Player" index="3"]
 initial_state = NodePath("../../../IntroRoom/Player/StateMachine/Spawn")
+
+[editable path="TileMap/EndOfLevel"]
 
 [editable path="Player"]

@@ -2,9 +2,6 @@
 # @see https://www.youtube.com/watch?v=S6PbC4Vqim4
 extends Node
 
-# notification
-signal notification_started(text, size)
-
 # camera
 signal camera_offset_changed(offset)
 signal camera_offset_resetted
@@ -15,26 +12,7 @@ signal controller_changed(controller)
 
 # collectable
 signal collectable_collected(character, score)
-
-# player
-signal player_moved(player)
-signal player_room_entered(position)
-signal player_choice_started
-signal player_character_changed
-
-# level
-signal level_preload_finished
-
-# room
-signal room_limit_changed(
-	left,
-	top,
-	right,
-	bottom,
-)
-signal room_transition_started
-signal room_transition_ended
-signal room_loaded
+signal collectable_max_value_counted(gems, acorns, carrots)
 
 # dialogue
 signal dialogue_started
@@ -55,6 +33,9 @@ signal dialogue_timed(value)
 signal cinematic_started
 signal cinematic_ended
 
+# serialize
+signal game_saved
+
 # in-game interfaces
 signal game_paused
 signal game_unpaused
@@ -62,14 +43,34 @@ signal game_unpaused
 # menu
 signal menu_route_changed(route)
 
+# notification
+signal notification_started(text, size)
+
+# player
+signal player_moved(player)
+signal player_room_entered(position)
+signal player_choice_started
+signal player_character_changed
+
 # input
 signal keybinding_started(scancode)
 signal keybinding_canceled
 signal keybinding_resetted
 signal keybinding_key_selected(scancode)
 
-# serialize
-signal game_saved
+# level
+signal level_finished
+
+# room
+signal room_limit_changed(
+	left,
+	top,
+	right,
+	bottom,
+)
+signal room_transition_started
+signal room_transition_ended
+signal room_loaded
 
 # transitions
 signal transition_started(anim_name)

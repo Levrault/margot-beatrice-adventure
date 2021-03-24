@@ -17,3 +17,7 @@ func update_score() -> void:
 
 func get_selected_character_name() -> String:
 	return list[selected]
+
+
+func get_character_name(id: int) -> String:
+	return list[id]
