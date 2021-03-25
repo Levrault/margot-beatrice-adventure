@@ -11,6 +11,7 @@ Game made for my niece
 - [GameFXexport](https://ppeldo.itch.io/2d-pixel-art-game-spellmagic-fx)
 - [OPP](https://www.openpixelproject.com/) for particules
 - [Warrior](https://clembod.itch.io/warrior-free-animation-set) used for Margot-Beatrice's character
+- [Pixel adventure](https://pixelfrog-assets.itch.io/pixel-adventure-1)
 
 ### Fonts
 

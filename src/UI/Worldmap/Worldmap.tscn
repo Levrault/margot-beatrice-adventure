@@ -15,16 +15,16 @@
 [ext_resource path="res://assets/UI/hud/gem.png" type="Texture" id=13]
 [ext_resource path="res://assets/UI/hud/carrot.png" type="Texture" id=14]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.133333, 0.12549, 0.203922, 1 )
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 anti_aliasing = false
 
-[sub_resource type="Theme" id=6]
-Panel/styles/panel = SubResource( 5 )
+[sub_resource type="Theme" id=2]
+Panel/styles/panel = SubResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.133333, 0.12549, 0.203922, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -190,7 +190,7 @@ margin_top = -4.0
 margin_right = -0.0100098
 margin_bottom = 1.982
 rect_min_size = Vector2( 0, 16 )
-theme = SubResource( 6 )
+theme = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -416,7 +416,7 @@ margin_bottom = 116.0
 rect_min_size = Vector2( 0, 98 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

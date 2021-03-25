@@ -9,7 +9,6 @@ export (Direction) var direction := Direction.right
 
 onready var _head = $Sign/Head
 
-
 func _ready() -> void:
 	Events.connect("game_saved", self, "_on_Saved_successfull")
 	$Area2D.connect("body_entered", self, "_on_body_entered")

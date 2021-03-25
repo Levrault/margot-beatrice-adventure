@@ -42,6 +42,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Statics" type="Node2D" parent="TileMap"]
+
+[node name="Traps" type="Node2D" parent="TileMap"]
+
 [node name="EndOfLevel" parent="TileMap" instance=ExtResource( 8 )]
 
 [node name="TileMapPassThrough" type="TileMap" parent="."]

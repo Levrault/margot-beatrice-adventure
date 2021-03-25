@@ -46,9 +46,6 @@ func _on_Focus_exited() -> void:
 
 func _on_Btn_pressed() -> void:
 	$Pressed.play()
-	RoomManager.max_score[Character.Playable.fox] = _package_data["gems"]
-	RoomManager.max_score[Character.Playable.rabbit] = _package_data["acorns"]
-	RoomManager.max_score[Character.Playable.squirrel] = _package_data["carrots"]
 	AsyncLoading.goto_scene(path)
 
 
