@@ -23,7 +23,6 @@
 [ext_resource path="res://src/Player/DebugUtilities.gd" type="Script" id=22]
 [ext_resource path="res://src/Player/CameraDebugUtilities.gd" type="Script" id=23]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 13 )
 
