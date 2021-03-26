@@ -4,8 +4,6 @@
 [ext_resource path="res://src/VFX/wind_sway.tres" type="Material" id=2]
 [ext_resource path="res://src/Objects/Statics/Bush.gd" type="Script" id=4]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 11.0
 height = 14.0
@@ -33,7 +31,7 @@ texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1, 3 )

@@ -1,7 +1,7 @@
 extends Area2D
 
-signal player_entered
-signal player_exited
+signal player_entered(body)
+signal player_exited(body)
 
 
 func _ready() -> void:
@@ -10,8 +10,8 @@ func _ready() -> void:
 
 
 func _on_Body_entered(body: Player) -> void:
-	emit_signal("player_entered")
+	emit_signal("player_entered", body)
 
 
 func _on_Body_exited(body: Player) -> void:
-	emit_signal("player_exited")
+	emit_signal("player_exited", body)

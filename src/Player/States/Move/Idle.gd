@@ -13,6 +13,8 @@ func physics_process(delta: float) -> void:
 		_state_machine.transition_to("Move/Run")
 	elif not owner.is_on_floor():
 		_state_machine.transition_to("Move/Air", {coyote_time = true})
+	else:
+		move.physics_process(delta)
 
 
 func enter(msg: Dictionary = {}) -> void:
