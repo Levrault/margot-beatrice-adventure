@@ -2,7 +2,8 @@
 
 [ext_resource path="res://assets/objects/traps/falling_platform.png" type="Texture" id=1]
 [ext_resource path="res://src/Combat/PlayerDetector.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Objects/Traps/FallingPlatform.gd" type="Script" id=3]
+[ext_resource path="res://src/Objects/Platforms/FallingPlatform.gd" type="Script" id=3]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "fall"

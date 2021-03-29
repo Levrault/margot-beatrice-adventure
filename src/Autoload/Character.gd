@@ -1,18 +1,18 @@
 extends Node
 
-enum Playable { fox, rabbit, squirrel }
+enum Playable { FOX, RABBIT, SQUIRREL }
 var list := ["Fox", "Rabbit", "Squirrel"]
-var selected = Playable.fox
+var selected = Playable.FOX
 var score := {
-	Playable.fox: 0,
-	Playable.rabbit: 0,
-	Playable.squirrel: 0,
+	Playable.FOX: 0,
+	Playable.RABBIT: 0,
+	Playable.SQUIRREL: 0,
 }
 
 var hitboxes = {
-	Playable.fox: "FoxCollisionShape",
-	Playable.rabbit: "RabbitCollisionShape",
-	Playable.squirrel: "SquirrelCollisionShape",
+	Playable.FOX: "FoxCollisionShape",
+	Playable.RABBIT: "RabbitCollisionShape",
+	Playable.SQUIRREL: "SquirrelCollisionShape",
 }
 
 

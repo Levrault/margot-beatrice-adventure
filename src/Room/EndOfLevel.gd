@@ -3,11 +3,12 @@ tool
 extends Node2D
 class_name EndOfLevel
 
-enum Direction { right, left, top, bottom }
+enum Direction { RIGHT, LEFT, TOP, BOTTOM }
 
-export (Direction) var direction := Direction.right
+export (Direction) var direction := Direction.RIGHT
 
 onready var _head = $Sign/Head
+
 
 func _ready() -> void:
 	Events.connect("game_saved", self, "_on_Saved_successfull")
@@ -18,26 +19,26 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if direction == Direction.right:
+	if direction == Direction.RIGHT:
 		_head.scale.y = 1
 		_head.scale.x = 1
 		_head.rotation_degrees = 0
 		_head.frame = 0
 		return
 
-	if direction == Direction.left:
+	if direction == Direction.LEFT:
 		_head.scale.y = 1
 		_head.scale.x = -1
 		_head.frame = 0
 		return
 
-	if direction == Direction.top:
+	if direction == Direction.TOP:
 		_head.scale.x = 1
 		_head.scale.y = 1
 		_head.frame = 1
 		return
 
-	if direction == Direction.bottom:
+	if direction == Direction.BOTTOM:
 		_head.scale.x = 1
 		_head.scale.y = -1
 		_head.frame = 1

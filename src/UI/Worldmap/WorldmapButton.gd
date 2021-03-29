@@ -1,9 +1,9 @@
 extends Button
 
-enum Type { level, cinematic, locked }
+enum Type { LEVEL, CINEMATIC, LOCKED }
 
 export (String) var path := ""
-export (Type) var type := Type.level
+export (Type) var type := Type.LEVEL
 export (String) var title := "Placeholder"
 export (String, MULTILINE) var description := "Placeholder"
 export (int) var gems := 0
@@ -28,7 +28,7 @@ func _on_Focus_entered() -> void:
 	_package_data = {"title": title, "description": description}
 	$Focus.play()
 
-	if type == Type.level:
+	if type == Type.LEVEL:
 		if gems > 0:
 			_package_data["gems"] = gems
 		if acorns > 0:
@@ -57,7 +57,7 @@ func _on_Profile_loaded() -> void:
 	if is_connected("pressed", self, "_on_Btn_pressed"):
 		disconnect("pressed", self, "_on_Btn_pressed")
 
-	if type == Type.level:
+	if type == Type.LEVEL:
 		var state = Serialize.data.unlocked_levels.get(path)
 		if state != null and state.get("unlocked"):
 			connect("focus_entered", self, "_on_Focus_entered")
@@ -66,7 +66,7 @@ func _on_Profile_loaded() -> void:
 			icon_container.hide()
 			return
 
-	if type == Type.cinematic:
+	if type == Type.CINEMATIC:
 		if Serialize.data.unlocked_cinematics.get(path):
 			connect("focus_entered", self, "_on_Focus_entered")
 			connect("focus_exited", self, "_on_Focus_exited")
@@ -79,7 +79,7 @@ func _on_Profile_loaded() -> void:
 	icon_container.show()
 	icon_container.get_node("Lock").show()
 	text = ""
-	type = Type.locked
+	type = Type.LOCKED
 	disabled = true
 	focus_mode = FOCUS_NONE
 	mouse_default_cursor_shape = CURSOR_ARROW

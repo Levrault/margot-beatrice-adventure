@@ -1,12 +1,12 @@
 # Receive and display dialogue between player and Npc
 extends Control
 
-enum States { pending, questionning }
+enum States { PENDING, QUESTIONNING }
 
 var _choice_btn_scene := preload("res://src/UI/InGame/Dialogues/ChoicesBtn.tscn")
 var _message := ''
 var _is_last_dialogue := false
-var _state: int = States.pending
+var _state: int = States.PENDING
 
 onready var _anim_dialogue := $AnimationPlayerDialogue
 onready var _anim_actions := $AnimationPlayerActions
@@ -40,7 +40,7 @@ func _ready() -> void:
 # Show/hide action button and manage when this is the last dialogue box
 # that need to be displayed
 func next_action() -> void:
-	if _state == States.questionning:
+	if _state == States.QUESTIONNING:
 		_anim_choices.play("show")
 		_choices_contents.get_child(0).grab_focus()
 		Events.emit_signal("dialogue_choices_displayed")
@@ -48,7 +48,7 @@ func next_action() -> void:
 		_anim_actions.play("next")
 		return
 
-	if _is_last_dialogue and _state == States.pending:
+	if _is_last_dialogue and _state == States.PENDING:
 		Events.emit_signal("dialogue_last_text_displayed")
 		_next.hide()
 		_end.show()
@@ -80,7 +80,7 @@ func _on_Dialogue_changed(name: String, portrait: StreamTexture, message: String
 # Add and display player's choice
 # @param {Array} choices
 func _on_Choice_changed(choices: Array) -> void:
-	_state = States.questionning
+	_state = States.QUESTIONNING
 	for choice in choices:
 		var button: Button = _choice_btn_scene.instance()
 		button.text = choice["text"][TranslationServer.get_locale()]
@@ -91,7 +91,7 @@ func _on_Choice_changed(choices: Array) -> void:
 func _on_Choice_pressed(next: String) -> void:
 	for choice in _choices_contents.get_children():
 		choice.queue_free()
-	_state = States.pending
+	_state = States.PENDING
 	_choices_panel.hide()
 	Events.emit_signal("dialogue_choices_finished", next)
 	Events.emit_signal("dialogue_choices_pressed")

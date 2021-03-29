@@ -1,6 +1,6 @@
 extends Label
 
-export (Character.Playable) var character = Character.Playable.fox
+export (Character.Playable) var character = Character.Playable.FOX
 
 
 func _ready() -> void:
