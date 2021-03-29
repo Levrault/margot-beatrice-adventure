@@ -9,6 +9,12 @@ var score := {
 	Playable.squirrel: 0,
 }
 
+var hitboxes = {
+	Playable.fox: "FoxCollisionShape",
+	Playable.rabbit: "RabbitCollisionShape",
+	Playable.squirrel: "SquirrelCollisionShape",
+}
+
 
 func update_score() -> void:
 	score[selected] += 1

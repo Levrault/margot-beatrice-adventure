@@ -1,7 +1,8 @@
 extends Area2D
 class_name Hitbox
 
-onready var collider: CollisionShape2D = $CollisionShape2D
+export (String) var collider_name := "CollisionShape2D" setget set_collider_name
+onready var collider: CollisionShape2D = get_node(collider_name)
 
 var is_active := true setget set_is_active
 
@@ -13,6 +14,21 @@ func _ready() -> void:
 func set_is_active(value: bool) -> void:
 	is_active = value
 	collider.set_deferred("disabled", not value)
+
+
+func set_collider_name(node_name: String) -> void:
+	if has_node(collider_name):
+		get_node(collider_name).disabled = true
+	if has_node(node_name):
+		get_node(node_name).disabled = false
+
+	print_debug(
+		(
+			"player hitbox %s changed to %s"
+			% [collider_name, node_name]
+		)
+	)
+	collider_name = node_name
 
 
 func _on_Area_entered(damage_source: Area2D) -> void:

@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Combat/PlayerDetector.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/Traps/FallingPlatform.gd" type="Script" id=3]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "fall"
 length = 0.001
 tracks/0/type = "value"
@@ -34,7 +34,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "off"
 length = 2.0
 tracks/0/type = "value"
@@ -62,7 +62,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "on"
 length = 0.2
 loop = true
@@ -80,7 +80,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "respawn"
 length = 0.6
 step = 0.05
@@ -111,10 +111,10 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 2.5 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 1 )
 
 [node name="FallingPlatform" type="KinematicBody2D"]
@@ -135,10 +135,10 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "on"
-anims/fall = SubResource( 5 )
-anims/off = SubResource( 4 )
-anims/on = SubResource( 7 )
-anims/respawn = SubResource( 6 )
+anims/fall = SubResource( 1 )
+anims/off = SubResource( 2 )
+anims/on = SubResource( 3 )
+anims/respawn = SubResource( 4 )
 next/off = "fall"
 next/respawn = "on"
 
@@ -152,11 +152,11 @@ hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -2.513 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="PlayerDetector" parent="." instance=ExtResource( 2 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 0, -6.01711 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )

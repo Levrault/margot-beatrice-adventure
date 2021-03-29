@@ -20,7 +20,7 @@ onready var pass_through: Area2D = $PassThrough
 onready var state_machine: StateMachine = $StateMachine
 onready var camera_rig: Position2D = $CameraRig
 onready var camera: Camera2D = $CameraRig/Camera
-onready var collider: CollisionShape2D = $CollisionShape2D
+onready var collider: CollisionShape2D = $FoxCollisionShape
 onready var hitbox: Hitbox = $Hitbox as Hitbox
 onready var momentum: Momentum = $Momentum as Momentum
 onready var character_factory := $CharacterFactory
@@ -33,6 +33,7 @@ onready var effects := $Effects
 func _ready() -> void:
 	Events.connect("player_room_entered", self, "_on_Player_Room_entered")
 	Events.connect("camera_anchor_changed", self, "_on_Camera_anchor_changed")
+	Events.connect("player_character_changed", self, "_on_Player_character_changed")
 	stats.connect("health_depleted", self, "_on_Stats_health_depleated")
 	stats.connect("health_changed", life, "_on_Health_changed")
 	abilities = Collection.merge(abilities, Game.unlocked_abilities)
@@ -93,6 +94,18 @@ func change_state_data(character_data: Dictionary) -> void:
 
 func _on_Player_Room_entered(global_position: Vector2) -> void:
 	self.global_position = global_position
+
+
+func _on_Player_character_changed() -> void:
+	collider.disabled = true
+	print_debug(
+		(
+			"player collision %s changed to %s"
+			% [collider.name, Character.hitboxes[Character.selected]]
+		)
+	)
+	collider = get_node(Character.hitboxes[Character.selected])
+	collider.disabled = false
 
 
 func _on_Stats_health_depleated() -> void:

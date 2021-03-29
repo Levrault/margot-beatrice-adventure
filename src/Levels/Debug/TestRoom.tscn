@@ -98,6 +98,7 @@ delay = 0.75
 
 [node name="EndOfLevel" parent="TileMap" index="2"]
 position = Vector2( 920, 208 )
+direction = 0
 
 [node name="Area2D" parent="TileMap/EndOfLevel" index="1"]
 position = Vector2( 50, 1 )

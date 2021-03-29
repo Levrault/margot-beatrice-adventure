@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 12.5 )
+
+[node name="SquirrelCollisionShape" type="CollisionShape2D"]
+position = Vector2( 1.7, -0.6 )
+shape = SubResource( 9 )

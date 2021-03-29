@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/characters/fox/fox-preview-Sheet.png" type="Texture" id=10]
 [ext_resource path="res://src/Player/CharacterWheel.gd" type="Script" id=11]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 length = 0.001
 step = 0.05
 tracks/0/type = "value"
@@ -124,7 +124,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0.498039 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -236,7 +236,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0.498039 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.498039 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -348,7 +348,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.498039 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -460,7 +460,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0.498039 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -572,7 +572,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0.498039 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -684,7 +684,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.498039 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -874,10 +874,10 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Wheel"]
 autoplay = "DEFAULT"
-anims/DEFAULT = SubResource( 1 )
-anims/fox_next = SubResource( 2 )
-anims/fox_prev = SubResource( 3 )
-anims/rabbit_next = SubResource( 4 )
-anims/rabbit_prev = SubResource( 5 )
-anims/squirrel_next = SubResource( 6 )
-anims/squirrel_prev = SubResource( 7 )
+anims/DEFAULT = SubResource( 2 )
+anims/fox_next = SubResource( 3 )
+anims/fox_prev = SubResource( 4 )
+anims/rabbit_next = SubResource( 5 )
+anims/rabbit_prev = SubResource( 6 )
+anims/squirrel_next = SubResource( 7 )
+anims/squirrel_prev = SubResource( 8 )
