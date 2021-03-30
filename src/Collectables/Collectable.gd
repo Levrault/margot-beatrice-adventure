@@ -1,6 +1,6 @@
 extends Area2D
 
-export (Character.Playable) var character = Character.Playable.fox
+export (Character.Playable) var character = Character.Playable.FOX
 
 onready var collision := $CollisionShape2D
 onready var skin := $Sprite

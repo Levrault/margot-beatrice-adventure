@@ -4,6 +4,7 @@ class_name Actor
 extends KinematicBody2D
 
 var is_snapped_to_floor := false
+var stop_on_slope := true
 
 var hit_direction := 1.0
 

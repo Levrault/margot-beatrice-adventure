@@ -1,8 +1,8 @@
 extends Node2D
 
-export (Character.Playable) var character = Character.Playable.fox
+export (Character.Playable) var character = Character.Playable.FOX
 
-var selected_character = Character.Playable.fox
+var selected_character = Character.Playable.FOX
 var character_data := {}
 var _direction := 1
 

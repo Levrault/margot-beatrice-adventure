@@ -50,6 +50,11 @@ _global_script_classes=[ {
 "path": "res://src/Tools/Draw.gd"
 }, {
 "base": "Node2D",
+"class": "DrawingUtils",
+"language": "GDScript",
+"path": "res://src/Autoload/DrawingUtils.gd"
+}, {
+"base": "Node2D",
 "class": "EndOfLevel",
 "language": "GDScript",
 "path": "res://src/Room/EndOfLevel.gd"
@@ -99,6 +104,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/NPCs/Npc.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Platform",
+"language": "GDScript",
+"path": "res://src/Objects/Platforms/Platform.gd"
+}, {
 "base": "Actor",
 "class": "Player",
 "language": "GDScript",
@@ -133,6 +143,7 @@ _global_script_class_icons={
 "DamageSource": "",
 "DialogueController": "",
 "Draw": "",
+"DrawingUtils": "",
 "EndOfLevel": "",
 "Hit": "",
 "Hitbox": "",
@@ -143,6 +154,7 @@ _global_script_class_icons={
 "NavigationRouter": "",
 "NavigationSwitch": "",
 "Npc": "",
+"Platform": "",
 "Player": "",
 "PlayerSkin": "",
 "State": "res://assets/icons/state.svg",

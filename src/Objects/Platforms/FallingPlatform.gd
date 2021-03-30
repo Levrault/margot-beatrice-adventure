@@ -12,7 +12,7 @@ export var delay := 0.0
 
 var initial_position := Vector2.ZERO
 var _is_falling := false
-var _velocity := Vector2(0, 400)
+var _velocity := Vector2(0, 200)
 var _has_player := false
 
 onready var _tween := $Tween
@@ -41,7 +41,7 @@ func _ready():
 	floating_animation()
 
 
-func _process(delta):
+func _physics_process(delta):
 	if not _is_falling:
 		return
 

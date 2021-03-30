@@ -44,7 +44,7 @@ func physics_process(delta: float) -> void:
 
 	if (
 		_parent.velocity.y > 0
-		and owner.character_factory.selected_character != Character.Playable.squirrel
+		and owner.character_factory.selected_character != Character.Playable.SQUIRREL
 	):
 		owner.skin.play("fall")
 
@@ -67,7 +67,7 @@ func enter(msg: Dictionary = {}) -> void:
 		jump()
 		_parent.dash_count = 0
 
-	if owner.character_factory.selected_character == Character.Playable.squirrel:
+	if owner.character_factory.selected_character == Character.Playable.SQUIRREL:
 		owner.attack_factory.create()
 		return
 

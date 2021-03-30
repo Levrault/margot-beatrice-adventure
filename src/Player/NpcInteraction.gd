@@ -2,19 +2,19 @@
 # have with them
 extends Area2D
 
-enum States { idle, pending, continuing, choosing, ending }
+enum States { IDLE, PENDING, CONTINUING, CHOOSING, ENDING }
 
 var _npc: Npc = null
-var _state = States.idle
+var _state = States.IDLE
 
 
 # Init detect zone and linh change state to the dialogueBox
 func _ready() -> void:
-	Events.connect("dialogue_last_text_displayed", self, "_on_State_changed", [States.ending])
-	Events.connect("dialogue_text_displayed", self, "_on_State_changed", [States.continuing])
-	Events.connect("dialogue_choices_displayed", self, "_on_State_changed", [States.choosing])
-	Events.connect("dialogue_choices_pressed", self, "_on_State_changed", [States.pending])
-	Events.connect("dialogue_timed_out", self, "_on_State_changed", [States.pending])
+	Events.connect("dialogue_last_text_displayed", self, "_on_State_changed", [States.ENDING])
+	Events.connect("dialogue_text_displayed", self, "_on_State_changed", [States.CONTINUING])
+	Events.connect("dialogue_choices_displayed", self, "_on_State_changed", [States.CHOOSING])
+	Events.connect("dialogue_choices_pressed", self, "_on_State_changed", [States.PENDING])
+	Events.connect("dialogue_timed_out", self, "_on_State_changed", [States.PENDING])
 	connect("body_entered", self, "_on_Npc_entered")
 	connect("body_exited", self, "_on_Npc_exited")
 	set_process_unhandled_input(false)
@@ -26,7 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_interact()
 		return
 	# allow jump to display next when dialogue is enable
-	if not _state == States.idle and event.is_action_pressed("jump"):
+	if not _state == States.IDLE and event.is_action_pressed("jump"):
 		_interact()
 		return
 
@@ -58,11 +58,11 @@ func _on_State_changed(value: int) -> void:
 
 func _interact() -> void:
 	# last dialogue/interaction was displayed, end the interaction
-	if _state == States.ending:
+	if _state == States.ENDING:
 		owner.is_handling_input = true
 		owner.character_factory.set_process_unhandled_input(true)
 		_npc.is_in_interaction = false
-		_state = States.idle
+		_state = States.IDLE
 		Events.emit_signal("dialogue_finished")
 		return
 
@@ -71,15 +71,15 @@ func _interact() -> void:
 		owner.is_handling_input = false
 		owner.character_factory.set_process_unhandled_input(false)
 		_npc.is_in_interaction = true
-		_state = States.pending
+		_state = States.PENDING
 		return
 
-	if _state == States.continuing:
+	if _state == States.CONTINUING:
 		_npc.next_interaction()
-		_state = States.pending
+		_state = States.PENDING
 		return
 
-	if _state == States.choosing:
+	if _state == States.CHOOSING:
 		return
 
 	# call next interaction

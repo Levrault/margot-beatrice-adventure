@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-export (Character.Playable) var selected = Character.Playable.fox
+export (Character.Playable) var selected = Character.Playable.FOX
 
 onready var _score := $ScoreContainer/Score
 onready var _max_value := $ScoreContainer/MaxScore
@@ -12,13 +12,13 @@ func _ready():
 
 
 func _on_Collectable_max_value_counted(gems: int, acorns: int, carrots: int) -> void:
-	if selected == Character.Playable.fox:
+	if selected == Character.Playable.FOX:
 		_max_value.text = String(gems)
 		return
-	if selected == Character.Playable.squirrel:
+	if selected == Character.Playable.SQUIRREL:
 		_max_value.text = String(acorns)
 		return
-	if selected == Character.Playable.rabbit:
+	if selected == Character.Playable.RABBIT:
 		_max_value.text = String(carrots)
 		return
 
