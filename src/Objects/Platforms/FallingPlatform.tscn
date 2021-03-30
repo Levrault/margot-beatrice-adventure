@@ -1,9 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/objects/traps/falling_platform.png" type="Texture" id=1]
+[ext_resource path="res://assets/objects/platform/falling_platform.png" type="Texture" id=1]
 [ext_resource path="res://src/Combat/PlayerDetector.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/Platforms/FallingPlatform.gd" type="Script" id=3]
-
 
 [sub_resource type="Animation" id=1]
 resource_name = "fall"
@@ -125,6 +124,7 @@ motion/sync_to_physics = true
 script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
+process_mode = 0
 one_shot = true
 
 [node name="FallingTimer" type="Timer" parent="."]
@@ -145,6 +145,7 @@ next/respawn = "on"
 
 [node name="Tween" type="Tween" parent="."]
 repeat = true
+playback_process_mode = 0
 playback/repeat = true
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -6,7 +6,7 @@ extends Actor
 const PASS_TROUGHT_LAYER := 2
 
 const FLOOR_NORMAL := Vector2.UP
-const SNAP := Vector2(0, 10)
+const SNAP := Vector2(0, 20)
 const Collection: Script = preload("res://src/Utils/Collection.gd")
 
 var is_active := true setget set_is_active

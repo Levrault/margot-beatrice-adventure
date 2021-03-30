@@ -77,7 +77,9 @@ func physics_process(delta: float) -> void:
 		velocity, max_speed, acceleration, decceleration, delta, direction
 	)
 	if owner.is_snapped_to_floor:
-		velocity = owner.move_and_slide_with_snap(velocity, owner.SNAP, owner.FLOOR_NORMAL, true)
+		velocity = owner.move_and_slide_with_snap(
+			velocity, owner.SNAP, owner.FLOOR_NORMAL, owner.stop_on_slope
+		)
 	else:
 		velocity = owner.move_and_slide(velocity, owner.FLOOR_NORMAL)
 
