@@ -41,7 +41,7 @@ tracks/0/keys = {
 extents = Vector2( 15, 2.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 15.0025, 0.901604 )
+extents = Vector2( 15, 1 )
 
 [node name="Platform" type="KinematicBody2D"]
 collision_layer = 4
@@ -72,5 +72,5 @@ one_way_collision = true
 [node name="PlayerDetector" parent="." instance=ExtResource( 3 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-position = Vector2( -0.0787468, -2.91357 )
+position = Vector2( -0.0787468, -2.14188 )
 shape = SubResource( 4 )
