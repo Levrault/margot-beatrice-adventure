@@ -17,7 +17,7 @@ func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		emit_signal("jumped")
 		if _jump_count < max_jump_count:
-			jump()
+			jump(jump_impulse)
 
 			if _jump_count > 1:
 				var dust = dust_scene.instance()
@@ -26,7 +26,7 @@ func unhandled_input(event: InputEvent) -> void:
 				dust.emitting = true
 		elif _coyote_time.time_left > 0.0:
 			_coyote_time.stop()
-			jump()
+			jump(jump_impulse)
 
 	# set a minimal air jump if button is release to soon 
 	if (
@@ -64,8 +64,12 @@ func enter(msg: Dictionary = {}) -> void:
 		_coyote_time.start()
 		return
 	if "impulse" in msg:
-		jump()
+		jump(jump_impulse)
 		_parent.dash_count = 0
+	if "bouncing_force" in msg:
+		jump(msg.bouncing_force)
+		_parent.dash_count = 0
+		_jump_count = -1
 
 	if owner.character_factory.selected_character == Character.Playable.SQUIRREL:
 		owner.attack_factory.create()
@@ -85,10 +89,10 @@ func exit() -> void:
 		owner.attack_factory.destroy()
 
 
-func jump() -> void:
+func jump(force: float) -> void:
 	owner.skin.play("jump")
 	_parent.velocity.y = 0
-	_parent.velocity += calculate_jump_velocity(jump_impulse)
+	_parent.velocity += calculate_jump_velocity(force)
 	_jump_count += 1
 
 

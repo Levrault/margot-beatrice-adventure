@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/VFX/shader/wind_sway.shader" type="Shader" id=1]
 [ext_resource path="res://src/Room/RoomTemplate.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/Objects/Platforms/FallingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Objects/Platforms/Platform.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Objects/Platforms/Waypoints.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/Traps/JumpTrap.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -107,6 +108,12 @@ position = Vector2( 208, 208 )
 
 [node name="Platform" parent="TileMap/Traps" index="7" instance=ExtResource( 10 )]
 position = Vector2( 328, 192 )
+
+[node name="JumpTrap" parent="TileMap/Traps" index="8" instance=ExtResource( 12 )]
+position = Vector2( 192, 256 )
+
+[node name="JumpTrap2" parent="TileMap/Traps" index="9" instance=ExtResource( 12 )]
+position = Vector2( 224, 256 )
 
 [node name="EndOfLevel" parent="TileMap" index="2"]
 position = Vector2( 920, 208 )
