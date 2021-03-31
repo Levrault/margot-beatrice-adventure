@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/Room/EndOfLevel.gd" type="Script" id=1]
-[ext_resource path="res://assets/objects/end_of_level-Sheet.png" type="Texture" id=2]
-[ext_resource path="res://assets/objects/end_of_level_support.png" type="Texture" id=3]
+[ext_resource path="res://src/Objects/Statics/EndOfLevel.gd" type="Script" id=1]
+[ext_resource path="res://assets/objects/static/end_of_level-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/objects/static/end_of_level_support.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "start"

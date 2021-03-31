@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "EndOfLevel",
 "language": "GDScript",
-"path": "res://src/Room/EndOfLevel.gd"
+"path": "res://src/Objects/Statics/EndOfLevel.gd"
 }, {
 "base": "Reference",
 "class": "Hit",
