@@ -1,7 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/sprites/land/gem-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://src/Collectables/Collectable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/objects/collectables/gem-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/Collectables/Collectable.tscn" type="PackedScene" id=2]
+
+
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 5.42895

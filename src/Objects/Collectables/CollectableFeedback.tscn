@@ -1,7 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/sprites/item-feedback-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://src/Collectables/CollectableFeedback.gd" type="Script" id=2]
+[ext_resource path="res://assets/objects/collectables/item-feedback-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/Collectables/CollectableFeedback.gd" type="Script" id=2]
+
+
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"

@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/Collectables/Collectable.gd" type="Script" id=1]
-[ext_resource path="res://src/Collectables/CollectableFeedback.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Objects/Collectables/Collectable.gd" type="Script" id=1]
+[ext_resource path="res://src/Objects/Collectables/CollectableFeedback.tscn" type="PackedScene" id=2]
+
 
 [node name="Collectable" type="Area2D"]
 scale = Vector2( 1.5, 1.5 )
