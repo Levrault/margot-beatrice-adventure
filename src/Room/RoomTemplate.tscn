@@ -17,10 +17,37 @@ script = ExtResource( 3 )
 
 [node name="Debug" type="CanvasLayer" parent="."]
 
+[node name="DebugPanel3" parent="Debug" instance=ExtResource( 4 )]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_right = -8.0
+margin_bottom = -206.0
+reference_path = NodePath("../../Player")
+properties = PoolStringArray( "is_on_moving_platform", "is_snapped_to_floor", "stop_on_slope" )
+
 [node name="DebugPanel" parent="Debug" instance=ExtResource( 4 )]
-visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = 72.0
+margin_right = -8.0
+margin_bottom = -134.0
 reference_path = NodePath("../../Player/StateMachine")
-properties = PoolStringArray( "_state_name" )
+properties = PoolStringArray( "state_name" )
+
+[node name="DebugPanel2" parent="Debug" instance=ExtResource( 4 )]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = 144.0
+margin_right = -8.0
+margin_bottom = -86.0
+reference_path = NodePath("../../Player/StateMachine/Move")
+properties = PoolStringArray( "velocity" )
 
 [node name="FullScreenShader" type="CanvasLayer" parent="."]
 layer = 2

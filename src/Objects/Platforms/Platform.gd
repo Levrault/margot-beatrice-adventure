@@ -28,6 +28,9 @@ func set_wait_time(value: float) -> void:
 	wait_time = value
 	if not _timer:
 		yield(self, "ready")
+
+	if wait_time == 0:
+		wait_time = 0.01
 	_timer.wait_time = wait_time
 
 
@@ -47,10 +50,8 @@ func _on_Tween_all_completed() -> void:
 func _on_Player_entered(body: Player) -> void:
 	body.is_snapped_to_floor = true
 	body.stop_on_slope = false
-	print("entered")
 
 
 func _on_Player_exited(body: Player) -> void:
 	body.is_snapped_to_floor = false
 	body.stop_on_slope = true
-	print("exited")

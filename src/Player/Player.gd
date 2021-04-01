@@ -11,12 +11,14 @@ const Collection: Script = preload("res://src/Utils/Collection.gd")
 
 var is_active := true setget set_is_active
 var is_handling_input := true setget set_is_handling_input
+var is_on_moving_platform := false setget set_is_on_moving_platform
 var abilities := {"dash": false, "double_jump": false}
 var skin: Node2D = null
 var initial_state_data := {}
 var look_direction := 1.0
 
 onready var pass_through: Area2D = $PassThrough
+onready var moving_platform_detector: Area2D = $MovingPlatformDetector
 onready var state_machine: StateMachine = $StateMachine
 onready var camera_rig: Position2D = $CameraRig
 onready var camera: Camera2D = $CameraRig/Camera
@@ -34,8 +36,11 @@ func _ready() -> void:
 	Events.connect("player_room_entered", self, "_on_Player_Room_entered")
 	Events.connect("camera_anchor_changed", self, "_on_Camera_anchor_changed")
 	Events.connect("player_character_changed", self, "_on_Player_character_changed")
+	moving_platform_detector.connect("body_entered", self, "_on_Moving_platform_entered")
+	moving_platform_detector.connect("body_exited", self, "_on_Moving_platform_exited")
 	stats.connect("health_depleted", self, "_on_Stats_health_depleated")
 	stats.connect("health_changed", life, "_on_Health_changed")
+
 	abilities = Collection.merge(abilities, Game.unlocked_abilities)
 	life.max_value = stats.max_health
 	life.value = stats.max_health
@@ -44,6 +49,13 @@ func _ready() -> void:
 func set_is_handling_input(value: bool) -> void:
 	$StateMachine.set_process_unhandled_input(value)
 	is_handling_input = value
+
+
+func set_is_on_moving_platform(value: bool) -> void:
+	is_on_moving_platform = value
+
+	if value:
+		print("in")
 
 
 func set_is_active(value: bool) -> void:
@@ -117,3 +129,11 @@ func _on_Camera_anchor_changed() -> void:
 	self.is_handling_input = false
 	get_tree().paused = true
 	camera_rig.transit_to_new_room()
+
+
+func _on_Moving_platform_entered(body: Area2D) -> void:
+	is_on_moving_platform = true
+
+
+func _on_Moving_platform_exited(body: Area2D) -> void:
+	is_on_moving_platform = false

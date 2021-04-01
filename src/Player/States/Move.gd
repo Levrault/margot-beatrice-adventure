@@ -49,6 +49,7 @@ func unhandled_input(event: InputEvent) -> void:
 			_state_machine.transition_to("Move/Air", {impulse = true})
 			return
 		if _is_move_down_key_pressed and event.is_action_pressed("jump"):
+			owner.is_on_moving_platform = false
 			owner.set_collision_mask_bit(owner.PASS_TROUGHT_LAYER, false)
 			_state_machine.transition_to("Move/Air")
 			return
@@ -76,7 +77,11 @@ func physics_process(delta: float) -> void:
 	velocity = calculate_velocity(
 		velocity, max_speed, acceleration, decceleration, delta, direction
 	)
+
 	if owner.is_snapped_to_floor:
+		if owner.is_on_moving_platform and (_state_machine.state_name != "Air" and velocity.y > 0):
+			velocity.y = 0
+
 		velocity = owner.move_and_slide_with_snap(
 			velocity, owner.SNAP, owner.FLOOR_NORMAL, owner.stop_on_slope
 		)

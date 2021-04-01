@@ -386,6 +386,7 @@ debug_free_camera_zoom_out={
 2d_physics/layer_9="EndOfLevel"
 2d_physics/layer_10="DamageSourceEnemies"
 2d_physics/layer_11="HitboxEnemies"
+2d_physics/layer_12="Platforms"
 
 [locale]
 
