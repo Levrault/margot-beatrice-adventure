@@ -54,6 +54,7 @@ shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
 
 [node name="TestRoom" instance=ExtResource( 2 )]
+full_screen_shader = false
 
 [node name="Anchor" parent="Anchors" index="0"]
 position = Vector2( 241, 136 )

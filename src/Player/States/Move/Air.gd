@@ -8,7 +8,9 @@ export var jump_impulse := 900.0
 export var max_jump_count := 1
 
 var dust_scene = preload("res://src/Particules/Dust.tscn")
+
 var _jump_count := 1
+var _is_controlled := true
 
 onready var _coyote_time: Timer = $CoyoteTime
 
@@ -17,7 +19,7 @@ func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		emit_signal("jumped")
 		if _jump_count < max_jump_count:
-			jump(jump_impulse)
+			jump(jump_impulse / 2)
 
 			if _jump_count > 1:
 				var dust = dust_scene.instance()
@@ -30,7 +32,8 @@ func unhandled_input(event: InputEvent) -> void:
 
 	# set a minimal air jump if button is release to soon 
 	if (
-		event.is_action_released("jump")
+		_is_controlled
+		and event.is_action_released("jump")
 		and abs(_parent.velocity.y) > min_jump_impulse
 		and not _parent.velocity.y > 0
 	):
@@ -67,9 +70,11 @@ func enter(msg: Dictionary = {}) -> void:
 		jump(jump_impulse)
 		_parent.dash_count = 0
 	if "bouncing_force" in msg:
+		if owner.character_factory.selected_character == Character.Playable.RABBIT:
+			_jump_count = 0
 		jump(msg.bouncing_force)
 		_parent.dash_count = 0
-		_jump_count = -1
+		_is_controlled = false
 
 	if owner.character_factory.selected_character == Character.Playable.SQUIRREL:
 		owner.attack_factory.create()
@@ -81,6 +86,7 @@ func enter(msg: Dictionary = {}) -> void:
 
 
 func exit() -> void:
+	_is_controlled = true
 	_jump_count = 0
 	_parent.acceleration = _parent.acceleration_default
 	_parent.exit()
