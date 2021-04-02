@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/VFX/shader/wind_sway.shader" type="Shader" id=1]
 [ext_resource path="res://src/Room/RoomTemplate.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/Objects/Platforms/Platform.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Objects/Platforms/Waypoints.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Objects/Traps/JumpTrap.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/VFX/GodRay.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -53,7 +54,6 @@ shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
 
 [node name="TestRoom" instance=ExtResource( 2 )]
-full_screen_shader = false
 
 [node name="Anchor" parent="Anchors" index="0"]
 position = Vector2( 241, 136 )
@@ -142,6 +142,10 @@ scale = Vector2( 1, 2.91666 )
 
 [node name="Head" parent="TileMap/EndOfLevel/Sign" index="1"]
 position = Vector2( -64, -25 )
+
+[node name="GodRay" parent="TileMap/VFX" index="0" instance=ExtResource( 13 )]
+position = Vector2( 220.465, 121.726 )
+scale = Vector2( -2.33482, 4.68254 )
 
 [node name="Gem" parent="Collectables" index="0" instance=ExtResource( 3 )]
 position = Vector2( 123, 240 )

@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -152.0
 margin_right = -8.0
-margin_bottom = -206.0
+margin_bottom = -182.0
 reference_path = NodePath("../../Player")
 properties = PoolStringArray( "is_on_moving_platform", "is_snapped_to_floor", "stop_on_slope" )
 
@@ -32,7 +32,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -152.0
-margin_top = 72.0
+margin_top = 96.0
 margin_right = -8.0
 margin_bottom = -134.0
 reference_path = NodePath("../../Player/StateMachine")
@@ -78,6 +78,8 @@ __meta__ = {
 
 [node name="EndOfLevel" parent="TileMap" instance=ExtResource( 8 )]
 direction = 0
+
+[node name="VFX" type="Node2D" parent="TileMap"]
 
 [node name="TileMapPassThrough" type="TileMap" parent="."]
 self_modulate = Color( 0.768627, 0.278431, 0.278431, 1 )
