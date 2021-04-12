@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/objects/collectables/carrot-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Collectables/Collectable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/audio/Pickup/carrot.wav" type="AudioStream" id=3]
 
-
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.26915, 10 )
 
 [sub_resource type="Animation" id=2]
@@ -29,7 +28,7 @@ tracks/0/keys = {
 character = 1
 
 [node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )
@@ -38,3 +37,7 @@ hframes = 4
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "DEFAULT"
 anims/DEFAULT = SubResource( 2 )
+
+[node name="SFXPlayer" parent="." index="4"]
+stream = ExtResource( 3 )
+attenuation = 1.86607

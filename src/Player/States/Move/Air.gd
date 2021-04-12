@@ -13,12 +13,15 @@ var _jump_count := 1
 var _is_controlled := true
 
 onready var _coyote_time: Timer = $CoyoteTime
+onready var _impulse_sfx := $Impulse
+onready var _bounce_sfx := $Bounce
 
 
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		emit_signal("jumped")
 		if _jump_count < max_jump_count:
+			_impulse_sfx.play_sound()
 			jump(jump_impulse / 2)
 
 			if _jump_count > 1:
@@ -28,6 +31,7 @@ func unhandled_input(event: InputEvent) -> void:
 				dust.emitting = true
 		elif _coyote_time.time_left > 0.0:
 			_coyote_time.stop()
+			_impulse_sfx.play_sound()
 			jump(jump_impulse)
 
 	# set a minimal air jump if button is release to soon 
@@ -67,9 +71,11 @@ func enter(msg: Dictionary = {}) -> void:
 		_coyote_time.start()
 		return
 	if "impulse" in msg:
+		_impulse_sfx.play_sound()
 		jump(jump_impulse)
 		_parent.dash_count = 0
 	if "bouncing_force" in msg:
+		_bounce_sfx.play_sound()
 		if owner.character_factory.selected_character == Character.Playable.RABBIT:
 			_jump_count = 0
 		jump(msg.bouncing_force)

@@ -27,6 +27,7 @@ func _on_Player_entered(body: Player) -> void:
 	skin.hide()
 	collision.call_deferred("set", "disabled", true)
 	feedback.anim.play("collected")
+	$SFXPlayer.play_sound()
 
 
 func _on_Feedback_animation_finished(anim_name: String) -> void:
