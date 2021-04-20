@@ -54,9 +54,6 @@ func set_is_handling_input(value: bool) -> void:
 func set_is_on_moving_platform(value: bool) -> void:
 	is_on_moving_platform = value
 
-	if value:
-		print("in")
-
 
 func set_is_active(value: bool) -> void:
 	is_active = value

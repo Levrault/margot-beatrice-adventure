@@ -103,7 +103,6 @@ mode = 1
 
 [node name="Platform" parent="TileMap/Traps/Waypoints4" index="0" instance=ExtResource( 10 )]
 position = Vector2( 208, 208 )
-speed = 50.0
 wait_time = 0.0
 
 [node name="Waypoints3" parent="TileMap/Traps" index="6" instance=ExtResource( 11 )]
@@ -145,8 +144,7 @@ scale = Vector2( 1, 2.91666 )
 position = Vector2( -64, -25 )
 
 [node name="GodRay" parent="TileMap/VFX" index="0" instance=ExtResource( 13 )]
-position = Vector2( 220.465, 121.726 )
-scale = Vector2( -2.33482, 4.68254 )
+position = Vector2( 220.465, 102.827 )
 
 [node name="Gem" parent="Collectables" index="0" instance=ExtResource( 3 )]
 position = Vector2( 123, 240 )

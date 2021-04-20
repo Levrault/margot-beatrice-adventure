@@ -1,8 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/UI/Options/SavingButton/SavingButton.gd" type="Script" id=1]
-[ext_resource path="res://assets/audio/UI/Confirm_tones/style1/confirm_style_1_echo_001.ogg" type="AudioStream" id=2]
-[ext_resource path="res://assets/audio/UI/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/Confirm_tones/style1/confirm_style_1_echo_001.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=3]
+
+
 
 [sub_resource type="StyleBoxEmpty" id=1]
 

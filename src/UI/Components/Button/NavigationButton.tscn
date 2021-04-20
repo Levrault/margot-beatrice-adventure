@@ -1,8 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/UI/Navigation/NavigationButton.gd" type="Script" id=1]
-[ext_resource path="res://assets/audio/UI/Confirm_tones/style1/confirm_style_1_002.ogg" type="AudioStream" id=2]
-[ext_resource path="res://assets/audio/UI/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/Confirm_tones/style1/confirm_style_1_002.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=4]
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
