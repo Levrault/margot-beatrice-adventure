@@ -16,6 +16,7 @@ var abilities := {"dash": false, "double_jump": false}
 var skin: Node2D = null
 var initial_state_data := {}
 var look_direction := 1.0
+var life := 1
 
 onready var pass_through: Area2D = $PassThrough
 onready var moving_platform_detector: Area2D = $MovingPlatformDetector
@@ -28,7 +29,7 @@ onready var momentum: Momentum = $Momentum as Momentum
 onready var character_factory := $CharacterFactory
 onready var attack_factory := $AttackFactory
 onready var npc_interaction := $NpcInteraction
-onready var life = $HUD.life_progress
+onready var life_bar = $HUD.life_progress
 onready var effects := $Effects
 
 
@@ -39,11 +40,11 @@ func _ready() -> void:
 	moving_platform_detector.connect("body_entered", self, "_on_Moving_platform_entered")
 	moving_platform_detector.connect("body_exited", self, "_on_Moving_platform_exited")
 	stats.connect("health_depleted", self, "_on_Stats_health_depleated")
-	stats.connect("health_changed", life, "_on_Health_changed")
+	stats.connect("health_changed", life_bar, "_on_Health_changed")
 
 	abilities = Collection.merge(abilities, Game.unlocked_abilities)
-	life.max_value = stats.max_health
-	life.value = stats.max_health
+	life_bar.max_value = stats.max_health
+	life_bar.value = stats.max_health
 
 
 func set_is_handling_input(value: bool) -> void:
