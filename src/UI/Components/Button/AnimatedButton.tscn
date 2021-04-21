@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/UI/Components/Button/QuitButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=1]
+[ext_resource path="res://src/UI/Components/Button/ButtonBehavior.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/Confirm_tones/style1/confirm_style_1_002.ogg" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
@@ -77,23 +79,28 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.784314 ) ]
 }
 
-[node name="Quit" type="Button"]
-margin_top = 73.0
-margin_right = 78.0
-margin_bottom = 93.0
-mouse_default_cursor_shape = 2
-text = "ui_quit"
+[node name="AnimatedButton" type="Button"]
+margin_right = 79.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+text = "tbt:button"
 align = 0
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "unfocused"
-anims/DEFAULT = SubResource( 1 )
-anims/focused = SubResource( 2 )
-anims/unfocused = SubResource( 3 )
+[node name="ButtonBehavior" type="Node2D" parent="."]
+script = ExtResource( 2 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="FocusAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="PressAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "DEFAULT"
+anims/DEFAULT = SubResource( 1 )
+anims/focus = SubResource( 2 )
+anims/unfocus = SubResource( 3 )

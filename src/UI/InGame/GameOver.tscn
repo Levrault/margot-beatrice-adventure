@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/theme/Menu.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/InGame/GameOver.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/Components/Button/RestartLevel.gd" type="Script" id=3]
+[ext_resource path="res://src/UI/Components/Button/ReturnMainMenu.gd" type="Script" id=4]
+[ext_resource path="res://src/UI/Components/Button/AnimatedButton.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "show"
@@ -158,7 +160,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 1.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -292,6 +294,7 @@ anims/wave = SubResource( 4 )
 next/show = "wave"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
@@ -314,9 +317,9 @@ __meta__ = {
 
 [node name="G" type="Label" parent="Control"]
 margin_left = 77.854
-margin_top = -3.81469e-05
+margin_top = 240.0
 margin_right = 112.854
-margin_bottom = 51.0
+margin_bottom = 291.0
 custom_fonts/font = SubResource( 3 )
 text = "G"
 align = 1
@@ -326,61 +329,69 @@ __meta__ = {
 
 [node name="A" type="Label" parent="Control"]
 margin_left = 113.152
+margin_top = 240.0
 margin_right = 148.155
-margin_bottom = 51.0
+margin_bottom = 291.0
 custom_fonts/font = SubResource( 3 )
 text = "A"
 align = 1
 
 [node name="M" type="Label" parent="Control"]
 margin_left = 147.889
+margin_top = 240.0
 margin_right = 182.889
-margin_bottom = 51.0001
+margin_bottom = 291.0
 custom_fonts/font = SubResource( 3 )
 text = "M"
 align = 1
 
 [node name="E" type="Label" parent="Control"]
 margin_left = 183.344
+margin_top = 240.0
 margin_right = 218.344
-margin_bottom = 51.0001
+margin_bottom = 291.0
 custom_fonts/font = SubResource( 3 )
 text = "E"
 align = 1
 
 [node name="O" type="Label" parent="Control"]
 margin_left = 253.037
+margin_top = 240.0
 margin_right = 288.037
-margin_bottom = 51.0
+margin_bottom = 291.0
 custom_fonts/font = SubResource( 3 )
 text = "o"
 align = 1
 
 [node name="V" type="Label" parent="Control"]
 margin_left = 288.265
+margin_top = 240.0
 margin_right = 323.265
-margin_bottom = 51.0
+margin_bottom = 291.0
 custom_fonts/font = SubResource( 3 )
 text = "v"
 align = 1
 
 [node name="E2" type="Label" parent="Control"]
 margin_left = 323.135
+margin_top = 240.0
 margin_right = 358.135
-margin_bottom = 51.0
+margin_bottom = 291.0
 custom_fonts/font = SubResource( 3 )
 text = "e"
 align = 1
 
 [node name="R" type="Label" parent="Control"]
 margin_left = 358.483
+margin_top = 240.0
 margin_right = 393.483
-margin_bottom = 51.0
+margin_bottom = 291.0
 custom_fonts/font = SubResource( 3 )
 text = "r"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -400,16 +411,17 @@ margin_right = 452.0
 margin_bottom = 52.0
 alignment = 1
 
-[node name="Worldmap" type="Button" parent="MarginContainer/Footer"]
+[node name="Worldmap" parent="MarginContainer/Footer" instance=ExtResource( 5 )]
 margin_right = 210.0
-margin_bottom = 20.0
 size_flags_horizontal = 3
-text = "Worldmap"
+text = "ui_worldmap"
+align = 1
+script = ExtResource( 4 )
 
-[node name="RestartLevel" type="Button" parent="MarginContainer/Footer"]
+[node name="RestartLevel" parent="MarginContainer/Footer" instance=ExtResource( 5 )]
 margin_left = 214.0
 margin_right = 424.0
-margin_bottom = 20.0
 size_flags_horizontal = 3
-text = "Restart"
+text = "ui_restart"
+align = 1
 script = ExtResource( 3 )

@@ -1,4 +1,4 @@
-extends AnimatedButton
+extends Button
 
 
 func _ready():

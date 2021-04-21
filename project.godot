@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actor/ActorSkin.gd"
 }, {
-"base": "Button",
-"class": "AnimatedButton",
-"language": "GDScript",
-"path": "res://src/UI/Components/Button/AnimatedButton.gd"
-}, {
 "base": "Node2D",
 "class": "AttackFactory",
 "language": "GDScript",
@@ -137,7 +132,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Actor": "",
 "ActorSkin": "",
-"AnimatedButton": "",
 "AttackFactory": "res://assets/icons/attack_factory.svg",
 "CameraAnchor": "",
 "DamageSource": "",

@@ -1,7 +1,7 @@
 # Enable to navigate between all the differents menu ui
 # by setting up wich menu need to be show (based on node name)
 class_name NavigationButton
-extends AnimatedButton
+extends Button
 
 export var navigate_to := ""
 export var clear_history := false
