@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/UI/Navigation/NavigationButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/audio/Confirm_tones/style1/confirm_style_1_002.ogg" type="AudioStream" id=2]
+[ext_resource path="res://src/UI/Components/Button/ButtonBehavior.gd" type="Script" id=3]
 [ext_resource path="res://assets/audio/Cursor_tones/cursor_style_2.ogg" type="AudioStream" id=4]
-
-
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
@@ -104,6 +103,10 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
+[node name="Behavior" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+script = ExtResource( 3 )
 
 [node name="FocusAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

@@ -40,6 +40,9 @@ signal game_saved
 signal game_paused
 signal game_unpaused
 
+# game over
+signal game_over
+
 # menu
 signal menu_route_changed(route)
 

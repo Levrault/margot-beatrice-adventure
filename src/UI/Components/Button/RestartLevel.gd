@@ -6,5 +6,4 @@ func _ready():
 
 
 func _on_Pressed() -> void:
-	Events.emit_signal("game_unpaused")
-	get_tree().paused = false
+	get_tree().reload_current_scene()
