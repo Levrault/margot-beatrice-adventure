@@ -98,4 +98,3 @@ script = ExtResource( 3 )
 margin_top = 214.0
 margin_right = 460.0
 margin_bottom = 228.0
-has_back_action = true

@@ -171,5 +171,4 @@ position = Vector2( 152, 205 )
 position = Vector2( 72, 160 )
 
 [editable path="TileMap/EndOfLevel"]
-
 [editable path="Player"]

@@ -403,5 +403,4 @@ text = "ui_options_return_to_pause_screen"
 navigate_to = "PauseMenu"
 
 [editable path="Router/PauseMenu"]
-
 [editable path="Router/ListOptionsMenu"]
