@@ -308,5 +308,4 @@ size_flags_horizontal = 3
 text = "Next"
 
 [editable path="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Acorns"]
-
 [editable path="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Carrots"]

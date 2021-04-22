@@ -14,16 +14,23 @@ func _ready() -> void:
 	RoomManager.anchor = get_nearest_anchor()
 	RoomManager.anchor.update_anchor_limit()
 
+	if RoomManager.path.empty():
+		print_debug("RoomManager.path is not set, %s was set instead" % [filename])
+		RoomManager.path = filename
+
 	# track player
 	Events.connect("player_moved", self, "_on_Player_moved")
 	Events.emit_signal("room_transition_ended")
 	Events.emit_signal("room_loaded")
 	count_collectable()
 
+	Events.emit_signal("level_started")
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_restart_level"):
-		get_tree().reload_current_scene()
+		print_debug("--Level Restarted by debug command--")
+		AsyncLoading.goto_scene(filename)
 		return
 
 	if event.is_action_pressed("debug_spawn"):

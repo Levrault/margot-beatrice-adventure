@@ -7,12 +7,8 @@ onready var _tween := $Tween
 
 
 func _ready():
-	yield(get_tree().get_root(), "ready")
-
 	Events.connect("level_finished", self, "_on_Level_finished")
-
-	# time to completed the level
-	_level_started_time = OS.get_ticks_msec()
+	Events.connect("level_started", self, "_on_Level_started")
 
 
 # convert milisecondes to readable string
@@ -54,3 +50,7 @@ func start_tween() -> void:
 
 func _on_Level_finished() -> void:
 	_elapsed_time = OS.get_ticks_msec() - _level_started_time
+
+
+func _on_Level_started() -> void:
+	_level_started_time = OS.get_ticks_msec()

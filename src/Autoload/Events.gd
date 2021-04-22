@@ -62,6 +62,7 @@ signal keybinding_resetted
 signal keybinding_key_selected(scancode)
 
 # level
+signal level_started
 signal level_finished
 
 # room
