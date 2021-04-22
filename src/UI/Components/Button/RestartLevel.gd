@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_Pressed() -> void:
-	get_tree().reload_current_scene()
+	AsyncLoading.goto_scene(RoomManager.path)

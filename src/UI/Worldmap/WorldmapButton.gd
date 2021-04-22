@@ -46,6 +46,7 @@ func _on_Focus_exited() -> void:
 
 func _on_Btn_pressed() -> void:
 	$Pressed.play()
+	RoomManager.path = path
 	AsyncLoading.goto_scene(path)
 
 
