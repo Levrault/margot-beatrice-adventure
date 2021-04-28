@@ -181,3 +181,4 @@ script = ExtResource( 22 )
 
 [node name="CameraDebugUtilities" type="Node2D" parent="DebugUtilities"]
 script = ExtResource( 23 )
+is_active = false
