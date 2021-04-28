@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/vfx/iris_shot/level_intro006.png" type="Texture" id=9]
 [ext_resource path="res://assets/vfx/iris_shot/white.png" type="Texture" id=10]
 
-[sub_resource type="AnimatedTexture" id=2]
+[sub_resource type="AnimatedTexture" id=1]
 flags = 2
 frames = 7
 frame_0/texture = ExtResource( 7 )
@@ -28,7 +28,7 @@ frame_5/delay_sec = 0.0
 frame_6/texture = ExtResource( 9 )
 frame_6/delay_sec = 0.0
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
 
 uniform vec2 target = vec2(0.5);
@@ -51,13 +51,13 @@ void fragment() {
 	COLOR.a = clamp(1f + dist - radius, 0f, 1f);
 }"
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 shader_param/target = Vector2( 0.5, 0.5 )
 shader_param/offset = Vector2( 0, -0.05 )
 shader_param/circle_size = 1.0
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:material:shader_param/circle_size")
@@ -72,7 +72,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "shot_in"
 length = 0.9
 tracks/0/type = "value"
@@ -156,7 +156,7 @@ tracks/2/keys = {
 material = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 2 )
+texture = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -164,7 +164,7 @@ __meta__ = {
 
 [node name="Ring" type="TextureRect" parent="."]
 show_behind_parent = true
-material = SubResource( 4 )
+material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 10 )
@@ -175,8 +175,8 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "DEFAULT"
-anims/DEFAULT = SubResource( 5 )
-anims/shot_in = SubResource( 7 )
+anims/DEFAULT = SubResource( 4 )
+anims/shot_in = SubResource( 5 )
 anims/shot_out = SubResource( 6 )
 __meta__ = {
 "_editor_description_": ""

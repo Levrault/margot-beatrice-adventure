@@ -64,6 +64,7 @@ signal keybinding_key_selected(scancode)
 # level
 signal level_started
 signal level_finished
+signal level_completion_time_emitted(time)
 
 # room
 signal room_limit_changed(

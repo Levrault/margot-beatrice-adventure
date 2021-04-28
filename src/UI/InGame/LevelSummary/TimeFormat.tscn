@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://src/UI/InGame/LevelSummary/Chronometer.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/InGame/LevelSummary/TimeFormat.gd" type="Script" id=1]
 
 [node name="Chronometer" type="Label"]
 margin_right = 320.0
