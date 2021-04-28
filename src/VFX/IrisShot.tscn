@@ -55,7 +55,7 @@ void fragment() {
 shader = SubResource( 3 )
 shader_param/target = Vector2( 0.5, 0.5 )
 shader_param/offset = Vector2( 0, -0.05 )
-shader_param/circle_size = 0.0
+shader_param/circle_size = 1.0
 
 [sub_resource type="Animation" id=5]
 length = 0.001
