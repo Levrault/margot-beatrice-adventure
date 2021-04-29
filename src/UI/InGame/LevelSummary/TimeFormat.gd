@@ -7,21 +7,27 @@ onready var _tween := $Tween
 
 
 func _ready():
-	Events.connect("level_finished", self, "_on_Level_finished")
-	Events.connect("level_started", self, "_on_Level_started")
+	Events.connect("level_completion_time_emitted", self, "_on_Level_completion_time_emitted")
 
 
 # convert milisecondes to readable string
 # eg. 1085587 will be 18Min 5s 587ms
 # eg. 5587 will be 5s 587ms
-func format_time(current_time: int) -> void:
+func format_time(current_time: float) -> void:
+	current_time = stepify(current_time, 0.001)
+
+	# if the level has take more than one hour
+	if current_time > 3600:
+		print("one hour")
+		text = tr("ui_time_take_too_long")
+		return
+
 	# only ms
-	if current_time < 1000:
+	if current_time < 1:
 		text = tr("ui_time_format_ss_ms") % [0, current_time]
 		return
 
-	var string_time := String(current_time)
-
+	var string_time := String(current_time).replace('.', '')
 	var ms := string_time.substr(string_time.length() - 3, string_time.length())
 	string_time = string_time.substr(0, string_time.length() - 3)
 	var ss := string_time
@@ -48,9 +54,6 @@ func start_tween() -> void:
 	_tween.start()
 
 
-func _on_Level_finished() -> void:
-	_elapsed_time = OS.get_ticks_msec() - _level_started_time
-
-
-func _on_Level_started() -> void:
-	_level_started_time = OS.get_ticks_msec()
+func _on_Level_completion_time_emitted(time: float) -> void:
+	print_debug("level finished in %s" % String(time))
+	_elapsed_time = stepify(time, 0.001)

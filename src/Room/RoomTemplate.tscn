@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/tileset_placeholder_16x16.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/VFX/IrisShot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Statics/EndOfLevel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Room/TileMap.gd" type="Script" id=9]
+[ext_resource path="res://src/Room/Chronometer.gd" type="Script" id=10]
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 3 )
@@ -55,6 +56,9 @@ layer = 2
 [node name="IrisShot" parent="FullScreenShader" instance=ExtResource( 7 )]
 visible = false
 
+[node name="Chronometer" type="Node2D" parent="."]
+script = ExtResource( 10 )
+
 [node name="Anchors" type="Node2D" parent="."]
 
 [node name="Anchor" parent="Anchors" instance=ExtResource( 6 )]
@@ -77,7 +81,6 @@ __meta__ = {
 [node name="Traps" type="Node2D" parent="TileMap"]
 
 [node name="EndOfLevel" parent="TileMap" instance=ExtResource( 8 )]
-direction = 0
 
 [node name="VFX" type="Node2D" parent="TileMap"]
 
@@ -101,5 +104,4 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
 [editable path="TileMap/EndOfLevel"]
-
 [editable path="Player"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/UI/InGame/LevelSummary/Score.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/UI/InGame/LevelSummary/Chronometer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/InGame/LevelSummary/TimeFormat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/VFX/blur.tres" type="Material" id=3]
 [ext_resource path="res://assets/theme/Menu.tres" type="Theme" id=4]
 [ext_resource path="res://src/UI/InGame/LevelSummary.gd" type="Script" id=5]
@@ -35,7 +35,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/Chronometer")
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer/TimeFormat")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -234,7 +234,7 @@ margin_bottom = 109.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Chronometer" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer" instance=ExtResource( 2 )]
+[node name="TimeFormat" parent="MarginContainer/VBoxContainer/MarginContainer/Wrapper/VBoxContainer" instance=ExtResource( 2 )]
 margin_right = 344.0
 margin_bottom = 20.0
 text = "00s 000ms"
