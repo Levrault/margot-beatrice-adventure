@@ -6,6 +6,8 @@ onready var _anim := $AnimationPlayer
 
 
 func _ready() -> void:
+	Events.connect("level_started", self, "set_process_input", [true])
+	Events.connect("level_finished", self, "set_process_input", [false])
 	Events.connect("game_unpaused", self, "_on_Game_unpaused")
 	Menu.history.clear()
 
