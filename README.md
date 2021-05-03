@@ -12,6 +12,7 @@ Game made for my niece
 - [OPP](https://www.openpixelproject.com/) for particules
 - [Warrior](https://clembod.itch.io/warrior-free-animation-set) used for Margot-Beatrice's character
 - [Pixel adventure](https://pixelfrog-assets.itch.io/pixel-adventure-1)
+- [Evil Wizard 2](https://luizmelo.itch.io/evil-wizard-2)
 
 ### Fonts
 
