@@ -39,8 +39,12 @@ func _on_Timeout() -> void:
 
 
 func _on_Player_entered(body: Player) -> void:
+	if body.state_machine.state_name == "Dash":
+		return
 	body.state_machine.transition_to("Move/Floating")
 
 
 func _on_Player_exited(body: Player) -> void:
+	if body.state_machine.state_name == "Dash":
+		return
 	body.state_machine.transition_to("Move/Air", {bouncing_force = 300.0, mute_sfx = false})

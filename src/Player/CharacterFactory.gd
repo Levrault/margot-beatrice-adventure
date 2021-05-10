@@ -13,6 +13,8 @@ onready var characters: Node2D = $Characters
 func _ready() -> void:
 	yield(owner, "ready")
 	Events.connect("room_loaded", self, "_on_Room_loaded")
+	Events.connect("game_paused", self, "_on_Game_paused")
+	Events.connect("game_unpaused", self, "_on_Game_unpaused")
 
 	selected_character = character
 	Character.selected = character
@@ -126,3 +128,11 @@ func _on_Shader_teleport_in_finished(anim_name: String, new_character: String) -
 func _on_Shader_teleport_out_finished(anim_name: String) -> void:
 	owner.is_handling_input = true
 	owner.skin.disconnect("shader_finished", self, "_on_Shader_teleport_out_finished")
+
+
+func _on_Game_paused() -> void:
+	pause_mode = Node.PAUSE_MODE_INHERIT
+
+
+func _on_Game_unpaused() -> void:
+	pause_mode = Node.PAUSE_MODE_PROCESS

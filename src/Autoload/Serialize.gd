@@ -11,11 +11,11 @@ const DEFAULT_DATA := {
 	"current_level": "demo",
 	"unlocked_cinematics":
 	{
-		"res://src/Levels/Debug/DebugCinematic.tscn": true,
+		"res://src/Levels/Debug/DebugCinematic.tscn": false,
 	},
 	"unlocked_levels":
 	{
-		"res://src/Levels/Debug/DebugCamera.tscn":
+		"res://src/Levels/Debug/TestRoom.tscn":
 		{
 			"unlocked": true,
 			"collectables":

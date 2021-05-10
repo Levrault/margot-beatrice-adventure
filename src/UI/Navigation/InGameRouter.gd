@@ -19,6 +19,7 @@ func _input(event: InputEvent) -> void:
 		if not is_active:
 			is_active = true
 			get_tree().paused = true
+			Events.emit_signal("game_paused")
 			_anim.play("open")
 			return
 		_on_Game_unpaused()

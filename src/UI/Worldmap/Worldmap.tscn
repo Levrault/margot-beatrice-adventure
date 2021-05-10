@@ -26,7 +26,6 @@ Panel/styles/panel = SubResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.133333, 0.12549, 0.203922, 1 )
-corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
@@ -40,7 +39,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-default_field_to_focus = NodePath("Wrapper/Page/SelectorContainer/Contents/CinematicIntro")
+default_field_to_focus = NodePath("Wrapper/Page/SelectorContainer/Contents/TestRoom")
 
 [node name="Wrapper" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -83,11 +82,39 @@ size_flags_horizontal = 3
 custom_constants/separation = 0
 alignment = 1
 
+[node name="TestRoom" parent="Wrapper/Page/SelectorContainer/Contents" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 33.0
+margin_right = 90.0
+margin_bottom = 36.0
+rect_scale = Vector2( 1, 1 )
+size_flags_horizontal = 1
+size_flags_vertical = 2
+text = "TestRoom"
+path = "res://src/Levels/Debug/TestRoom.tscn"
+title = "TestRoom"
+description = "Put all my debug shit here"
+gems = 10
+acorns = 10
+carrots = 10
+
+[node name="Trails5" type="Label" parent="Wrapper/Page/SelectorContainer/Contents"]
+margin_left = 90.0
+margin_right = 116.0
+margin_bottom = 36.0
+size_flags_vertical = 5
+text = "--"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CinematicIntro" parent="Wrapper/Page/SelectorContainer/Contents" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 74.0
-margin_right = 131.0
+margin_left = 116.0
+margin_right = 173.0
 margin_bottom = 36.0
 rect_scale = Vector2( 1, 1 )
 size_flags_horizontal = 1
@@ -99,8 +126,8 @@ title = "Intro"
 description = "wm_intro_cinematic_resume"
 
 [node name="Trails2" type="Label" parent="Wrapper/Page/SelectorContainer/Contents"]
-margin_left = 131.0
-margin_right = 157.0
+margin_left = 173.0
+margin_right = 199.0
 margin_bottom = 36.0
 size_flags_vertical = 5
 text = "--"
@@ -112,13 +139,13 @@ __meta__ = {
 [node name="WorldmapButton3" parent="Wrapper/Page/SelectorContainer/Contents" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 157.0
-margin_right = 214.0
+margin_left = 199.0
+margin_right = 256.0
 margin_bottom = 36.0
 rect_scale = Vector2( 1, 1 )
 size_flags_horizontal = 1
 size_flags_vertical = 2
-path = "res://src/Levels/Debug/DebugCamera.tscn"
+path = "res://src/Levels/Debug/TestRoom.tscn"
 title = "Level 1"
 description = "wm_level_1_resume"
 gems = 10
@@ -126,8 +153,8 @@ acorns = 10
 carrots = 10
 
 [node name="Trails3" type="Label" parent="Wrapper/Page/SelectorContainer/Contents"]
-margin_left = 214.0
-margin_right = 240.0
+margin_left = 256.0
+margin_right = 282.0
 margin_bottom = 36.0
 size_flags_vertical = 5
 text = "--"
@@ -139,8 +166,8 @@ __meta__ = {
 [node name="WorldmapButton4" parent="Wrapper/Page/SelectorContainer/Contents" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 240.0
-margin_right = 297.0
+margin_left = 282.0
+margin_right = 339.0
 margin_bottom = 36.0
 rect_scale = Vector2( 1, 1 )
 size_flags_horizontal = 1
@@ -150,9 +177,9 @@ description = "Placeholder 3"
 
 [node name="Trails4" type="Label" parent="Wrapper/Page/SelectorContainer/Contents"]
 modulate = Color( 1, 1, 1, 0.156863 )
-margin_left = 297.0
+margin_left = 339.0
 margin_top = 8.0
-margin_right = 323.0
+margin_right = 365.0
 margin_bottom = 28.0
 text = "--"
 __meta__ = {
@@ -163,8 +190,8 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0.517647 )
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 323.0
-margin_right = 380.0
+margin_left = 365.0
+margin_right = 422.0
 margin_bottom = 36.0
 rect_scale = Vector2( 1, 1 )
 size_flags_horizontal = 1
@@ -455,7 +482,6 @@ __meta__ = {
 margin_top = 217.0
 margin_right = 455.0
 margin_bottom = 237.0
-has_back_action = true
 
 [node name="Characters" type="Control" parent="."]
 margin_left = 102.0

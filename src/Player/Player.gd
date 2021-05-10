@@ -11,7 +11,7 @@ const Collection: Script = preload("res://src/Utils/Collection.gd")
 
 var is_active := true setget set_is_active
 var is_handling_input := true setget set_is_handling_input
-var is_on_moving_platform := false setget set_is_on_moving_platform
+var is_on_moving_platform := false
 var abilities := {"dash": false, "double_jump": false}
 var skin: Node2D = null
 var initial_state_data := {}
@@ -50,10 +50,6 @@ func _ready() -> void:
 func set_is_handling_input(value: bool) -> void:
 	$StateMachine.set_process_unhandled_input(value)
 	is_handling_input = value
-
-
-func set_is_on_moving_platform(value: bool) -> void:
-	is_on_moving_platform = value
 
 
 func set_is_active(value: bool) -> void:

@@ -172,7 +172,7 @@ position = Vector2( 121, 206 )
 position = Vector2( 152, 205 )
 
 [node name="Player" parent="." index="11"]
-position = Vector2( 680, 168 )
+position = Vector2( 32, 168 )
 
 [editable path="TileMap/EndOfLevel"]
 [editable path="Player"]

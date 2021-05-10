@@ -5,26 +5,26 @@
 [ext_resource path="res://assets/particules/dust_particule_small.png" type="Texture" id=3]
 [ext_resource path="res://src/Combat/PlayerDetector.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Gradient" id=10]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 1.79366e-43, 0.895455, 0.986364 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 0.972549, 0.972549, 0.972549, 0 )
 
-[sub_resource type="GradientTexture" id=11]
-gradient = SubResource( 10 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 1.4, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
 [sub_resource type="Curve" id=5]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 1.4, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.210227 ), 0.0, 0.0, 0, 0, Vector2( 0.711934, 1 ), 1.4, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=6]
 curve = SubResource( 5 )
 
-[sub_resource type="Curve" id=7]
-_data = [ Vector2( 0, 0.210227 ), 0.0, 0.0, 0, 0, Vector2( 0.711934, 1 ), 1.4, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=8]
-curve = SubResource( 7 )
-
-[sub_resource type="ParticlesMaterial" id=9]
+[sub_resource type="ParticlesMaterial" id=7]
 emission_shape = 2
 emission_box_extents = Vector3( 2, 1, 1 )
 flag_disable_z = true
@@ -33,13 +33,12 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 damping = 4.0
 damping_random = 0.5
-damping_curve = SubResource( 6 )
+damping_curve = SubResource( 4 )
 scale_random = 0.24
-scale_curve = SubResource( 8 )
-color_ramp = SubResource( 11 )
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 2 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "off"
+[sub_resource type="Animation" id=8]
 length = 0.001
 loop = true
 tracks/0/type = "value"
@@ -67,8 +66,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "on"
+[sub_resource type="Animation" id=9]
 length = 0.2
 loop = true
 step = 0.05
@@ -85,8 +83,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "transition_to_off"
+[sub_resource type="Animation" id=10]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -125,8 +122,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "transition_to_on"
+[sub_resource type="Animation" id=11]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -176,17 +172,17 @@ on_time = 4.0
 position = Vector2( 0, -11 )
 emitting = false
 lifetime = 3.0
-process_material = SubResource( 9 )
+process_material = SubResource( 7 )
 texture = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "off"
-anims/off = SubResource( 1 )
-anims/on = SubResource( 2 )
-anims/transition_to_off = SubResource( 3 )
-anims/transition_to_on = SubResource( 4 )
+anims/off = SubResource( 8 )
+anims/on = SubResource( 9 )
+anims/transition_to_off = SubResource( 10 )
+anims/transition_to_on = SubResource( 11 )
 next/transition_to_off = "off"
 next/transition_to_on = "on"
 
