@@ -71,11 +71,13 @@ func enter(msg: Dictionary = {}) -> void:
 		_coyote_time.start()
 		return
 	if "impulse" in msg:
-		_impulse_sfx.play_sound()
+		if not "mute_sfx" in msg:
+			_impulse_sfx.play_sound()
 		jump(jump_impulse)
 		_parent.dash_count = 0
 	if "bouncing_force" in msg:
-		_bounce_sfx.play_sound()
+		if not "mute_sfx" in msg:
+			_bounce_sfx.play_sound()
 		if owner.character_factory.selected_character == Character.Playable.RABBIT:
 			_jump_count = 0
 		jump(msg.bouncing_force)

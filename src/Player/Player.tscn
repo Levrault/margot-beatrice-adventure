@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/Player/CharacterFactory.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Libraries/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://assets/audio/Jump/jump_01.wav" type="AudioStream" id=26]
 [ext_resource path="res://src/SFX/SFXPlayer.tscn" type="PackedScene" id=27]
 [ext_resource path="res://assets/audio/Jump/bounce_01.wav" type="AudioStream" id=28]
+[ext_resource path="res://src/Player/States/Move/Floating.gd" type="Script" id=29]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -102,6 +103,9 @@ stream = ExtResource( 26 )
 [node name="Bounce" parent="StateMachine/Move/Air" instance=ExtResource( 27 )]
 stream = ExtResource( 28 )
 max_pitch_scale = 1.0
+
+[node name="Floating" type="Node" parent="StateMachine/Move"]
+script = ExtResource( 29 )
 
 [node name="Dash" type="Node" parent="StateMachine/Move"]
 script = ExtResource( 11 )

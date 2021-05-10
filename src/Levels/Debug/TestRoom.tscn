@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/VFX/shader/wind_sway.shader" type="Shader" id=1]
 [ext_resource path="res://src/Room/RoomTemplate.tscn" type="PackedScene" id=2]
@@ -11,8 +11,9 @@
 [ext_resource path="res://src/Objects/Platforms/FallingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Objects/Platforms/Platform.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Objects/Platforms/Waypoints.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/Objects/Traps/JumpTrap.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Objects/Traps/Trampoline.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/VFX/GodRay.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Objects/Traps/Fan.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -54,6 +55,7 @@ shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
 
 [node name="TestRoom" instance=ExtResource( 2 )]
+full_screen_shader = false
 
 [node name="Anchor" parent="Anchors" index="0"]
 position = Vector2( 241, 136 )
@@ -117,14 +119,17 @@ wait_time = 0.0
 [node name="Platform" parent="TileMap/Traps" index="7" instance=ExtResource( 10 )]
 position = Vector2( 328, 192 )
 
-[node name="JumpTrap" parent="TileMap/Traps" index="8" instance=ExtResource( 12 )]
+[node name="Trampoline" parent="TileMap/Traps" index="8" instance=ExtResource( 12 )]
 position = Vector2( 192, 256 )
 
-[node name="JumpTrap2" parent="TileMap/Traps" index="9" instance=ExtResource( 12 )]
+[node name="Trampoline2" parent="TileMap/Traps" index="9" instance=ExtResource( 12 )]
 position = Vector2( 224, 256 )
 
-[node name="JumpTrap3" parent="TileMap/Traps" index="10" instance=ExtResource( 12 )]
+[node name="Trampoline3" parent="TileMap/Traps" index="10" instance=ExtResource( 12 )]
 position = Vector2( 32, 256 )
+
+[node name="Fan" parent="TileMap/Traps" index="11" instance=ExtResource( 14 )]
+position = Vector2( 720, 208 )
 
 [node name="EndOfLevel" parent="TileMap" index="2"]
 position = Vector2( 920, 208 )
@@ -167,7 +172,7 @@ position = Vector2( 121, 206 )
 position = Vector2( 152, 205 )
 
 [node name="Player" parent="." index="11"]
-position = Vector2( 64, 248 )
+position = Vector2( 680, 168 )
 
 [editable path="TileMap/EndOfLevel"]
 [editable path="Player"]
