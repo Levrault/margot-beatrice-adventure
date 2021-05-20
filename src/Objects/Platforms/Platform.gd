@@ -1,3 +1,4 @@
+tool
 extends KinematicBody2D
 class_name Platform
 
@@ -11,10 +12,13 @@ onready var _player_detector := $PlayerDetector
 
 
 func _ready() -> void:
-	if Engine.editor_hint:
+	if not _waypoints is Line2D:
 		return
 
-	if not _waypoints is Line2D:
+	# be sure we start at the first point 
+	position = _waypoints.get_start_position()
+
+	if Engine.editor_hint:
 		return
 
 	_player_detector.connect("player_entered", self, "_on_Player_entered")

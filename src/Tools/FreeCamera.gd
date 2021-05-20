@@ -1,6 +1,6 @@
 extends Camera2D
 
-const SPEED := .5
+const SPEED := 4.0
 
 
 func _unhandled_input(event: InputEvent) -> void:
