@@ -5,7 +5,9 @@ signal profile_loaded
 
 const DEBUG_SAVE := "debug1"
 const PATH := "user://%s.save"
-const DEFAULT_DATA := {
+
+var default_data := {
+	"game_version": ProjectSettings.get_setting("game/game_version"),
 	"progression": 0,
 	"last_played": "intro",
 	"current_level": "demo",
@@ -66,7 +68,7 @@ func set_profile(new_profile: String) -> void:
 
 
 func save_profile(data: Dictionary, should_send_signal: bool = true) -> void:
-	var save_dict = DEFAULT_DATA
+	var save_dict = default_data
 	var file_profile = File.new()
 	file_profile.open(_path, File.WRITE)
 	file_profile.store_line(to_json(save_dict))
@@ -82,7 +84,7 @@ func load_profile(selected_profile: String) -> void:
 	var save = File.new()
 
 	if not save.file_exists(_path):
-		save_profile(DEFAULT_DATA, false)
+		save_profile(default_data, false)
 		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
 
 	save.open(_path, File.READ)
@@ -97,13 +99,14 @@ func load_profile(selected_profile: String) -> void:
 
 	emit_signal("profile_loaded")
 
+	print_debug("save_file version is %s" % [data.game_version])
 	print_debug("%s has been loaded" % [profile])
 
 
 func quick_read(selected_profile: String) -> Dictionary:
 	var save = File.new()
 	if not save.file_exists(_path):
-		save_profile(DEFAULT_DATA, false)
+		save_profile(default_data, false)
 		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
 	save.open(PATH % [selected_profile], File.READ)
 	var data: Dictionary = parse_json(save.get_line())

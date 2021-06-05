@@ -195,6 +195,7 @@ window/stretch/aspect="keep"
 debug=true
 load_save=true
 load_level_from_save=false
+game_version="1.0.0"
 
 [importer_defaults]
 
