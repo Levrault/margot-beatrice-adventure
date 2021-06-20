@@ -38,7 +38,7 @@ const DEFAULT_VALUES := {
 		"move_left": 65,
 		"move_right": 68,
 		"jump": 32,
-		"dash": 49,
+		"dash": 17,
 		"interaction": 70,
 		"character_wheel": 69
 	},

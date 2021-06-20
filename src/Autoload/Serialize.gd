@@ -28,12 +28,6 @@ var default_data := {
 			}
 		},
 	},
-	"unlocked_abilities":
-	{
-		"foxy": false,
-		"jazzy": false,
-		"nuts": false,
-	},
 	"unlocked_characters":
 	{
 		"fox": true,
@@ -90,8 +84,7 @@ func load_profile(selected_profile: String) -> void:
 	save.open(_path, File.READ)
 	data = parse_json(save.get_line())
 
-	# set abilities
-	Game.unlocked_abilities = data.unlocked_abilities
+	# set character
 	Game.unlocked_characters = data.unlocked_characters
 	Game.stats = data.stats
 

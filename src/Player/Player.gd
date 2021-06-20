@@ -12,7 +12,6 @@ const Collection: Script = preload("res://src/Utils/Collection.gd")
 var is_active := true setget set_is_active
 var is_handling_input := true setget set_is_handling_input
 var is_on_moving_platform := false
-var abilities := {"dash": false, "double_jump": false}
 var skin: Node2D = null
 var initial_state_data := {}
 var look_direction := 1.0
@@ -42,7 +41,6 @@ func _ready() -> void:
 	stats.connect("health_depleted", self, "_on_Stats_health_depleated")
 	stats.connect("health_changed", life_bar, "_on_Health_changed")
 
-	abilities = Collection.merge(abilities, Game.unlocked_abilities)
 	life_bar.max_value = stats.max_health
 	life_bar.value = stats.max_health
 
@@ -74,14 +72,6 @@ func horizontal_mirror(direction: float) -> void:
 		return
 	look_direction = sign(direction)
 	skin.scale.x = look_direction
-
-
-# Unlock acces to new state machine state
-# @param {String} ability_name
-func unlock_ability(ability_name: String) -> void:
-	if abilities.has(ability_name):
-		abilities[ability_name] = true
-		print_debug("unlock %s abilities" % [ability_name])
 
 
 func change_state_data(character_data: Dictionary) -> void:
