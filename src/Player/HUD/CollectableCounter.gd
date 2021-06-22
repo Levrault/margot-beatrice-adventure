@@ -10,4 +10,5 @@ func _ready() -> void:
 func _on_Collectable_collected(selected_character: int, score: int) -> void:
 	if selected_character != character:
 		return
+	owner.content.show()
 	text = "%s" % score

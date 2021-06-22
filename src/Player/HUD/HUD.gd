@@ -1,3 +1,4 @@
 extends CanvasLayer
 
-onready var life_progress := $Control/VBoxContainer/LifeBarContainer/CenterContainer/LifeBar/LifeProgress
+onready var life_progress := $Content/VBoxContainer/LifeBar/LifeProgress
+onready var content := $Content
