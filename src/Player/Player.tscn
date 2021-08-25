@@ -51,6 +51,7 @@ position = Vector2( -1.39131, -10.4248 )
 disabled = true
 
 [node name="Hitbox" parent="." instance=ExtResource( 15 )]
+collision_mask = 4608
 
 [node name="FoxCollisionShape" parent="Hitbox" instance=ExtResource( 25 )]
 position = Vector2( -2.45148, -10.4682 )
@@ -180,6 +181,7 @@ shape = SubResource( 2 )
 [node name="HUD" parent="." instance=ExtResource( 21 )]
 
 [node name="DebugUtilities" type="Node2D" parent="."]
+visible = false
 position = Vector2( 0, -12 )
 script = ExtResource( 22 )
 

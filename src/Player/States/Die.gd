@@ -6,7 +6,6 @@ func enter(msg: Dictionary = {}) -> void:
 	if owner.camera_rig:
 		owner.camera_rig.is_active = false
 
-	print_debug("die")
 	owner.skin.play("die")
 	owner.skin.connect("animation_finished", self, "_on_Skin_animation_finished")
 

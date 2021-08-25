@@ -53,7 +53,7 @@ func enter(msg: Dictionary = {}) -> void:
 
 
 func exit() -> void:
-	owner.set_collision_mask_bit(owner.PASS_TROUGHT_LAYER, true)
+	owner.set_collision_mask_bit(Layer.PASS_TROUGHT_LAYER, true)
 	_timer_ghost.disconnect("timeout", self, "_on_Ghost_timeout")
 	_speed = 0.0
 	_direction = Vector2.ZERO
@@ -66,7 +66,7 @@ func _on_Skin_animation_finished(anim_name: String) -> void:
 	owner.skin.disconnect("animation_finished", self, "_on_Skin_animation_finished")
 
 	_is_anticipation_over = true
-	owner.set_collision_mask_bit(owner.PASS_TROUGHT_LAYER, false)
+	owner.set_collision_mask_bit(Layer.PASS_TROUGHT_LAYER, false)
 
 	if _cooldown.is_connected("timeout", self, "_on_Cooldown_timeout"):
 		_cooldown.disconnect("timeout", self, "_on_Cooldown_timeout")

@@ -1,4 +1,5 @@
 extends State
+class_name Move
 
 export var max_speed_default := Vector2(200.0, 675.00)
 export var acceleration_default := Vector2(10000, 1800.0)
@@ -50,7 +51,7 @@ func unhandled_input(event: InputEvent) -> void:
 			return
 		if _is_move_down_key_pressed and event.is_action_pressed("jump"):
 			owner.is_on_moving_platform = false
-			owner.set_collision_mask_bit(owner.PASS_TROUGHT_LAYER, false)
+			owner.set_collision_mask_bit(Layer.PASS_TROUGHT_LAYER, false)
 			_state_machine.transition_to("Move/Air")
 			return
 
@@ -102,4 +103,4 @@ func exit() -> void:
 
 
 func _on_PassThrough_exited(body) -> void:
-	owner.set_collision_mask_bit(owner.PASS_TROUGHT_LAYER, true)
+	owner.set_collision_mask_bit(Layer.PASS_TROUGHT_LAYER, true)
