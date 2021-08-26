@@ -17,7 +17,7 @@ func _on_Player_entered(body: Player) -> void:
 
 func _on_Player_exited(body: Player) -> void:
 	_anim.disconnect("animation_finished", self, "_on_Animation_finished")
-	_damage_source.set_active(false)
+	_damage_source.is_active = false
 
 	# player has exited while hit was playing
 	if _anim.current_animation == "hit":
@@ -31,5 +31,5 @@ func _on_Player_exited(body: Player) -> void:
 func _on_Animation_finished(anim_name: String) -> void:
 	if anim_name == "hit":
 		_anim.play("on")
-		_damage_source.set_active(true)
+		_damage_source.is_active = true
 		print(_damage_source)

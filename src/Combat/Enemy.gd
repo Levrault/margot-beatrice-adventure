@@ -2,6 +2,8 @@ extends Actor
 class_name Enemy
 
 onready var state_machine: StateMachine = $StateMachine
+onready var damage_source: DamageSource = $DamageSource
+onready var hitbox: Hitbox = $Hitbox
 
 
 func _ready() -> void:

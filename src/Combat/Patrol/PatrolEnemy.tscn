@@ -24,6 +24,7 @@ collision_layer = 520
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource( 1 )
+initial_state = NodePath("Patrol")
 
 [node name="Patrol" type="Node2D" parent="StateMachine"]
 script = ExtResource( 2 )

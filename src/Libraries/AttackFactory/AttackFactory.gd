@@ -14,11 +14,11 @@ func create() -> void:
 	if is_attacking:
 		return
 	is_attacking = true
-	damage_source.set_active(true)
+	damage_source.is_active = true
 	owner.hitbox.set_collision_mask_bit(Layer.DAMAGE_SOURCE_ENEMY_LAYER, false)
 
 
 func destroy() -> void:
 	is_attacking = false
-	damage_source.set_active(false)
+	damage_source.is_active = false
 	owner.hitbox.set_collision_mask_bit(Layer.DAMAGE_SOURCE_ENEMY_LAYER, true)

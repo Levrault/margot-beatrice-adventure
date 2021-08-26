@@ -18,7 +18,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=4]
 resource_name = "hurt"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
@@ -53,7 +53,7 @@ tracks/0/keys = {
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/die = SubResource( 3 )
-anims/hurt = SubResource( 1 )
+anims/hurt = SubResource( 4 )
 anims/patrol = SubResource( 2 )
 
 [node name="Sprite" parent="." index="1"]

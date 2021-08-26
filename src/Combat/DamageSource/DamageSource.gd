@@ -8,6 +8,9 @@ extends Area2D
 export var damage := 1
 export var is_instakill := false
 
+var is_active := true setget set_active
+
 
 func set_active(value: bool) -> void:
+	is_active = value
 	$CollisionShape2D.set_deferred("disabled", not value)
