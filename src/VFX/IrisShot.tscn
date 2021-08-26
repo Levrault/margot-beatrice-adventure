@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/VFX/IrisShot.gd" type="Script" id=1]
-[ext_resource path="res://src/VFX/irish_shot.tres" type="Material" id=2]
+[ext_resource path="res://src/VFX/resources/irish_shot.tres" type="Material" id=2]
 [ext_resource path="res://assets/vfx/iris_shot/level_intro004.png" type="Texture" id=3]
 [ext_resource path="res://assets/vfx/iris_shot/level_intro002.png" type="Texture" id=4]
 [ext_resource path="res://assets/vfx/iris_shot/level_intro003.png" type="Texture" id=5]

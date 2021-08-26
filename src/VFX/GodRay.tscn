@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/vfx/white_texture_64x64.png" type="Texture" id=1]
-[ext_resource path="res://src/VFX/god_ray.tres" type="Material" id=2]
+[ext_resource path="res://src/VFX/resources/god_ray.tres" type="Material" id=2]
 
 [node name="GodRay" type="Sprite"]
 modulate = Color( 0.666667, 0.666667, 0.666667, 1 )

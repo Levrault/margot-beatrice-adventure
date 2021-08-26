@@ -12,6 +12,7 @@ var is_in_interaction := false setget set_is_in_interaction
 
 onready var dialogue_controller: DialogueController = $DialogueController as DialogueController
 
+
 func _ready() -> void:
 	if not is_visible:
 		$NpcSkin.queue_free()
@@ -36,7 +37,7 @@ func set_is_in_interaction(value: bool) -> void:
 		dialogue_controller.load()
 		dialogue_controller.start()
 		return
-	
+
 	dialogue_controller.clear()
 	if is_self_destructible:
 		queue_free()

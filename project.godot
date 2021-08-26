@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Objects/Statics/EndOfLevel.gd"
 }, {
+"base": "Actor",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Combat/Enemy.gd"
+}, {
 "base": "Reference",
 "class": "Hit",
 "language": "GDScript",
@@ -78,6 +83,11 @@ _global_script_classes=[ {
 "class": "Momentum",
 "language": "GDScript",
 "path": "res://src/Player/Momentum.gd"
+}, {
+"base": "State",
+"class": "Move",
+"language": "GDScript",
+"path": "res://src/Player/States/Move.gd"
 }, {
 "base": "Button",
 "class": "NavigationButton",
@@ -139,11 +149,13 @@ _global_script_class_icons={
 "Draw": "",
 "DrawingUtils": "",
 "EndOfLevel": "",
+"Enemy": "",
 "Hit": "",
 "Hitbox": "",
 "InputLine": "",
 "MenuSaveButton": "",
 "Momentum": "",
+"Move": "",
 "NavigationButton": "",
 "NavigationRouter": "",
 "NavigationSwitch": "",
@@ -172,6 +184,7 @@ Character="*res://src/Autoload/Character.gd"
 RoomManager="*res://src/Autoload/RoomManager.gd"
 Serialize="*res://src/Autoload/Serialize.gd"
 InputManager="*res://src/Autoload/InputManager.gd"
+Layer="*res://src/Autoload/Layer.gd"
 
 [debug]
 
@@ -379,9 +392,10 @@ debug_free_camera_zoom_out={
 2d_physics/layer_7="HitboxPlayer"
 2d_physics/layer_8="DamageSourcePlayer"
 2d_physics/layer_9="EndOfLevel"
-2d_physics/layer_10="DamageSourceEnemies"
+2d_physics/layer_10="DamageSourceEnemy"
 2d_physics/layer_11="HitboxEnemies"
 2d_physics/layer_12="Platforms"
+2d_physics/layer_13="DamageSourceTraps"
 
 [locale]
 

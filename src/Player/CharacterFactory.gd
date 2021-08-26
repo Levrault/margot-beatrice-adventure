@@ -37,7 +37,7 @@ func _unhandled_input(event) -> void:
 	if not wheel.visible:
 		return
 
-	# prevent axis navigation to emit multiples press event 
+	# prevent axis navigation to emit multiples press event
 	if InputManager.controller == InputManager.XBOX:
 		# use input with a deadzone of 1, see project settings
 		if event.is_action_pressed("move_character_wheel_left"):

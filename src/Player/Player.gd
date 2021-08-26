@@ -3,8 +3,6 @@ tool
 class_name Player
 extends Actor
 
-const PASS_TROUGHT_LAYER := 2
-
 const FLOOR_NORMAL := Vector2.UP
 const SNAP := Vector2(0, 20)
 const Collection: Script = preload("res://src/Utils/Collection.gd")
@@ -12,10 +10,8 @@ const Collection: Script = preload("res://src/Utils/Collection.gd")
 var is_active := true setget set_is_active
 var is_handling_input := true setget set_is_handling_input
 var is_on_moving_platform := false
-var skin: Node2D = null
 var initial_state_data := {}
-var look_direction := 1.0
-var life := 1
+var life := 3
 
 onready var pass_through: Area2D = $PassThrough
 onready var moving_platform_detector: Area2D = $MovingPlatformDetector

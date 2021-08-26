@@ -22,12 +22,7 @@ func set_collider_name(node_name: String) -> void:
 	if has_node(node_name):
 		get_node(node_name).disabled = false
 
-	print_debug(
-		(
-			"player hitbox %s changed to %s"
-			% [collider_name, node_name]
-		)
-	)
+	print_debug("player hitbox %s changed to %s" % [collider_name, node_name])
 	collider_name = node_name
 
 
