@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Actor",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://src/Combat/Enemy.gd"
+"path": "res://src/Enemies/Enemy.gd"
 }, {
 "base": "Reference",
 "class": "Hit",

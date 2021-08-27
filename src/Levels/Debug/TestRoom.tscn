@@ -15,7 +15,7 @@
 [ext_resource path="res://src/VFX/GodRay.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Objects/Traps/Fan.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Objects/Platforms/PlatformAlt.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/Combat/Patrol/Opossum/Opossum.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Enemies/Patrol/Opossum/Opossum.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
