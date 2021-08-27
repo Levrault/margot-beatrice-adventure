@@ -1,0 +1,16 @@
+extends State
+
+
+func enter(msg: Dictionary = {}) -> void:
+	owner.skin.play("attack")
+	owner.skin.connect("animation_finished", self, "_on_Skin_animation_finished")
+	owner.skin.connect("damage_source_enabled", owner.damage_source, "set_active", [true])
+
+
+func exit() -> void:
+	owner.skin.disconnect("damage_source_enabled", owner.damage_source, "set_active")
+
+
+func _on_Skin_animation_finished(anim_name: String) -> void:
+	_state_machine.transition_to("Cooldown")
+	owner.skin.disconnect("animation_finished", self, "_on_Skin_animation_finished")
