@@ -2,12 +2,14 @@ extends Area2D
 class_name Hitbox
 
 export (String) var collider_name := "CollisionShape2D" setget set_collider_name
-onready var collider: CollisionShape2D = get_node(collider_name)
+onready var collider: CollisionShape2D = get_node_or_null(collider_name)
 
 var is_active := true setget set_is_active
 
 
 func _ready() -> void:
+	if (collider == null):
+		queue_free()
 	connect("area_entered", self, "_on_Area_entered")
 
 

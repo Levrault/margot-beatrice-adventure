@@ -4,6 +4,8 @@ class_name ActorSkin
 extends Node2D
 
 signal animation_finished(anim_name)
+signal damage_source_enabled
+signal damage_source_disabled
 
 var current_anim := "DEFAULT"
 

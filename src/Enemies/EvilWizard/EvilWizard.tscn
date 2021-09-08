@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Actor/Actor.gd" type="Script" id=1]
-[ext_resource path="res://src/Combat/EvilWizard/EvilWizardSkin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Enemies/EvilWizard/EvilWizardSkin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Actor/Stats.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
