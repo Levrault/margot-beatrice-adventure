@@ -81,51 +81,16 @@ func count_collectable() -> void:
 
 
 func get_nearest_anchor() -> Position2D:
-	var non_sized_anchors := []
-	var sized_anchors := []
-
-	for anchor in _anchors:
-		if not anchor.is_viewport_sized():
-			non_sized_anchors.append(anchor)
-			continue
-		sized_anchors.append(anchor)
-
 	var nearest_anchor = _anchors[0]
 	var nearest_entrance = null
 
-	if not non_sized_anchors.empty():
-		nearest_entrance = non_sized_anchors[0].get_nearest_entrance(player.position)
-
-	for anchor in sized_anchors:
+	for anchor in _anchors:
 		# viewport sized room
 		if (
 			anchor.position.distance_to(player.position)
 			< nearest_anchor.position.distance_to(player.position)
 		):
 			nearest_anchor = anchor
-
-	# compare nearest to non screen sized room
-	for anchor in non_sized_anchors:
-		# bigger anchor, find nearest entrance
-		var entrance = anchor.get_nearest_entrance(player.position)
-
-		if not entrance:
-			continue
-
-		# if too far skip
-		if (
-			entrance.global_position.distance_to(player.global_position)
-			> nearest_anchor.position.distance_to(player.position)
-		):
-			continue
-
-		# entrance can be the nearest
-		if (
-			entrance.global_position.distance_to(player.global_position)
-			<= nearest_entrance.global_position.distance_to(player.global_position)
-		):
-			nearest_anchor = anchor
-			nearest_entrance = entrance
 
 	return nearest_anchor
 

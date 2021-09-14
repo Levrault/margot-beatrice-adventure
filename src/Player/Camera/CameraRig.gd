@@ -22,14 +22,6 @@ func transit_to_new_room() -> void:
 	var previous_to_position = RoomManager.previous_anchor.global_position
 	var to_position = RoomManager.anchor.global_position
 
-	if not RoomManager.previous_anchor.is_viewport_sized():
-		previous_to_position = RoomManager.previous_anchor.get_nearest_entrance(
-			owner.global_position
-		).global_position
-
-	if not RoomManager.anchor.is_viewport_sized():
-		to_position = RoomManager.anchor.get_nearest_entrance(owner.global_position).global_position
-
 	_tween.connect("tween_started", self, "_on_Tween_started")
 	_tween.interpolate_property(
 		self,

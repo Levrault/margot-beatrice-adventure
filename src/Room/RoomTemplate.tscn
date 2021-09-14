@@ -5,7 +5,7 @@
 [ext_resource path="res://src/Room/Room.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Debug/DebugPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI/InGame/InGameUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Room/CameraAnchor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/VFX/IrisShot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Statics/EndOfLevel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Room/TileMap.gd" type="Script" id=9]
@@ -59,10 +59,6 @@ visible = false
 [node name="Chronometer" type="Node2D" parent="."]
 script = ExtResource( 10 )
 
-[node name="Anchors" type="Node2D" parent="."]
-
-[node name="Anchor" parent="Anchors" instance=ExtResource( 6 )]
-
 [node name="FallLimits" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -77,6 +73,8 @@ __meta__ = {
 }
 
 [node name="Statics" type="Node2D" parent="TileMap"]
+
+[node name="Platforms" type="Node2D" parent="TileMap"]
 
 [node name="Traps" type="Node2D" parent="TileMap"]
 
@@ -100,6 +98,10 @@ __meta__ = {
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Collectables" type="Node2D" parent="."]
+
+[node name="Anchors" type="Node2D" parent="."]
+
+[node name="Anchor" parent="Anchors" instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 

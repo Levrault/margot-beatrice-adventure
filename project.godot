@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Position2D",
 "class": "CameraAnchor",
 "language": "GDScript",
-"path": "res://src/Room/CameraAnchor.gd"
+"path": "res://src/Camera/CameraAnchor.gd"
 }, {
 "base": "Area2D",
 "class": "DamageSource",
@@ -176,6 +176,7 @@ run/main_scene="res://src/UI/MainMenu.tscn"
 [autoload]
 
 Events="*res://src/Autoload/Events.gd"
+Inspector="*res://src/Autoload/Inspector.gd"
 Menu="*res://src/Autoload/Menu.gd"
 Config="*res://src/Autoload/Config.gd"
 AsyncLoading="*res://src/Autoload/AsyncLoading.gd"
