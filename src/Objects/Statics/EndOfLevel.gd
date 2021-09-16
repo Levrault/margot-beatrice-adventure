@@ -50,6 +50,6 @@ func _on_Saved_successfull() -> void:
 
 
 func _on_body_entered(body: Player) -> void:
-	RoomManager.is_anchor_locked = true
+	SceneManager.is_anchor_locked = true
 	body.is_handling_input = false
 	Events.emit_signal("level_finished")

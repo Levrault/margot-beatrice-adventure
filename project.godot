@@ -138,6 +138,11 @@ _global_script_classes=[ {
 "class": "Stats",
 "language": "GDScript",
 "path": "res://src/Actor/Stats.gd"
+}, {
+"base": "Line2D",
+"class": "Waypoints",
+"language": "GDScript",
+"path": "res://src/Waypoints/Waypoints.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -165,7 +170,8 @@ _global_script_class_icons={
 "PlayerSkin": "",
 "State": "res://assets/icons/state.svg",
 "StateMachine": "res://assets/icons/state_machine.svg",
-"Stats": ""
+"Stats": "",
+"Waypoints": ""
 }
 
 [application]
@@ -182,7 +188,7 @@ Config="*res://src/Autoload/Config.gd"
 AsyncLoading="*res://src/Autoload/AsyncLoading.gd"
 Game="*res://src/Autoload/Game.gd"
 Character="*res://src/Autoload/Character.gd"
-RoomManager="*res://src/Autoload/RoomManager.gd"
+SceneManager="*res://src/Autoload/SceneManager.gd"
 Serialize="*res://src/Autoload/Serialize.gd"
 InputManager="*res://src/Autoload/InputManager.gd"
 Layer="*res://src/Autoload/Layer.gd"

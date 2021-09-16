@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Actor/ActorSkin.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/VFX/shader/teleport.shader" type="Shader" id=4]
+[ext_resource path="res://assets/shaders/teleport.shader" type="Shader" id=4]
 [ext_resource path="res://src/Player/PlayerSkin.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]

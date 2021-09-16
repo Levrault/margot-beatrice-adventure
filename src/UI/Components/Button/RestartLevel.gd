@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_Pressed() -> void:
-	AsyncLoading.goto_scene(RoomManager.path)
+	AsyncLoading.goto_scene(SceneManager.path)

@@ -73,7 +73,7 @@ func physics_process(delta: float) -> void:
 	if not owner.is_handling_input:
 		direction.x = 0
 
-	owner.horizontal_mirror(direction.x)
+	owner.flip(direction.x)
 
 	velocity = calculate_velocity(
 		velocity, max_speed, acceleration, decceleration, delta, direction

@@ -24,10 +24,11 @@ func _ready() -> void:
 
 
 func update_anchor_limit() -> void:
-	RoomManager.bounds = {
+	SceneManager.bounds = {
 		'limit_left': boundsNW.global_position.x,
 		'limit_top': boundsNW.global_position.y,
 		'limit_right': boundsSE.global_position.x,
 		'limit_bottom': boundsSE.global_position.y,
 	}
-	Events.emit_signal("room_limit_changed", RoomManager.bounds)
+	Events.emit_signal("room_limit_changed", SceneManager.bounds)
+	Events.emit_signal("room_transition_ended")

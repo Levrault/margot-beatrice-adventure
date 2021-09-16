@@ -167,7 +167,7 @@ tracks/1/keys = {
 
 [node name="SkinSquirrel" instance=ExtResource( 2 )]
 
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" parent="." index="0"]
 anims/DEFAULT = SubResource( 1 )
 anims/die = SubResource( 2 )
 anims/duck = SubResource( 3 )
@@ -177,6 +177,6 @@ anims/jump = SubResource( 6 )
 anims/run = SubResource( 7 )
 anims/spawn = SubResource( 8 )
 
-[node name="Sprite" parent="." index="3"]
+[node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )
 hframes = 22

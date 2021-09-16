@@ -47,7 +47,7 @@ func _physics_process(delta):
 
 	position += _velocity * delta
 
-	if position.y > RoomManager.bounds.limit_bottom:
+	if position.y > SceneManager.bounds.limit_bottom:
 		_is_falling = false
 		visible = false
 		_respawn_timer.start()

@@ -18,8 +18,7 @@ func unhandled_input(event: InputEvent) -> void:
 
 func physics_process(delta: float) -> void:
 	if not $RayCastFloor.is_colliding() or $RayCastWall.is_colliding():
-		owner.look_direction *= -1
-		owner.scale.x *= -1
+		owner.flip()
 	velocity = Move.calculate_velocity(
 		velocity, max_speed, acceleration, decceleration, delta, Vector2(owner.look_direction, 1.0)
 	)

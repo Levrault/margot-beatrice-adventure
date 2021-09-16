@@ -15,7 +15,7 @@ func _ready() -> void:
 	if not _waypoints is Line2D:
 		return
 
-	# be sure we start at the first point 
+	# be sure we start at the first point
 	position = _waypoints.get_start_position()
 
 	if Engine.editor_hint:
