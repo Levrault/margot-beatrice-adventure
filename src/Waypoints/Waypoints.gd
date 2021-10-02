@@ -60,6 +60,7 @@ func get_start_position() -> Vector2:
 
 func reset() -> void:
 	_active_point_index = 0
+	_direction = 1
 
 
 func get_current_point_position() -> Vector2:

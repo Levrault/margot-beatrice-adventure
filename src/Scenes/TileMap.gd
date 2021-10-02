@@ -1,9 +1,6 @@
 # source https://github.com/GDQuest/godot-demos/blob/master/2018/03-30-astar-pathfinding/pathfind_astar.gd
 extends TileMap
 
-const BASE_LINE_WIDTH = 3.0
-const DRAW_COLOR = Color('#fff')
-
 export var map_size := Vector2(16, 16)
 
 var path_start_position = Vector2() setget _set_path_start_position
@@ -14,7 +11,7 @@ var _tile_range_reference := Vector2.ZERO
 
 onready var astar_node = AStar2D.new()
 onready var obstacles = get_used_cells()
-onready var _half_cell_size = cell_size / 2
+onready var half_cell_size = cell_size / 2
 
 
 func _ready():
@@ -23,9 +20,6 @@ func _ready():
 
 	Events.connect("room_transition_ended", self, "_on_Room_transition_ended")
 	SceneManager.tilemap = self
-
-
-#	astar_connect_walkable_cells_diagonal(astar_add_walkable_cells(obstacles))
 
 
 # Loops through all cells within the map's bounds and
@@ -111,7 +105,7 @@ func find_path(world_start, world_end):
 	_recalculate_path()
 	var path_world = []
 	for point in _point_path:
-		var point_world = map_to_world(Vector2(point.x, point.y)) + _half_cell_size
+		var point_world = map_to_world(Vector2(point.x, point.y)) + half_cell_size
 		path_world.append(point_world)
 	return path_world
 
@@ -120,23 +114,6 @@ func _recalculate_path():
 	var start_point_index = calculate_point_index(path_start_position)
 	var end_point_index = calculate_point_index(path_end_position)
 	_point_path = astar_node.get_point_path(start_point_index, end_point_index)
-	update()
-
-
-func _draw():
-	if not _point_path:
-		return
-
-	var point_start = _point_path[0]
-	var last_point = map_to_world(Vector2(point_start.x, point_start.y)) + _half_cell_size
-	for index in range(1, len(_point_path)):
-		var current_point = (
-			map_to_world(Vector2(_point_path[index].x, _point_path[index].y))
-			+ _half_cell_size
-		)
-		draw_line(last_point, current_point, DRAW_COLOR, BASE_LINE_WIDTH, true)
-		draw_circle(current_point, BASE_LINE_WIDTH * 2.0, DRAW_COLOR)
-		last_point = current_point
 
 
 func _on_Room_transition_ended() -> void:

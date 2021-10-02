@@ -32,3 +32,4 @@ func update_anchor_limit() -> void:
 	}
 	Events.emit_signal("room_limit_changed", SceneManager.bounds)
 	Events.emit_signal("room_transition_ended")
+	get_tree().paused = false

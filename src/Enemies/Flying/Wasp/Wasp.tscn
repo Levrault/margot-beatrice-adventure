@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Enemies/Flying/FlyingEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Flying/Wasp/WaspSkin.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/VFX/ExclamationPoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Enemies/Flying/Wasp/Wasp.gd" type="Script" id=10]
 [ext_resource path="res://src/Enemies/Flying/States/Idle.gd" type="Script" id=11]
+[ext_resource path="res://src/Tools/AStartHightlightTool.gd" type="Script" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -55,13 +56,6 @@ initial_state = NodePath("Idle")
 [node name="Idle" type="Node2D" parent="StateMachine" index="0"]
 script = ExtResource( 11 )
 
-[node name="Tween" type="Tween" parent="StateMachine/Idle" index="0"]
-playback_process_mode = 0
-
-[node name="Timer" type="Timer" parent="StateMachine/Idle" index="1"]
-process_mode = 0
-one_shot = true
-
 [node name="Patrol" type="Node2D" parent="StateMachine" index="1"]
 script = ExtResource( 4 )
 
@@ -86,7 +80,10 @@ margin_bottom = -14.0
 [node name="Follow" type="Node2D" parent="StateMachine" index="3"]
 script = ExtResource( 8 )
 
-[node name="Timer" type="Timer" parent="StateMachine/Follow" index="0"]
+[node name="AStartHightlightTool" type="Node2D" parent="StateMachine/Follow" index="0"]
+script = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="StateMachine/Follow" index="1"]
 wait_time = 0.5
 
 [node name="Die" type="Node2D" parent="StateMachine" index="4"]

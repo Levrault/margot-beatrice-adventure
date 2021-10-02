@@ -60,4 +60,3 @@ func _get_a_star_path() -> void:
 		_state_machine.transition_to("Idle")
 		return
 	target_point_world = path[0]
-

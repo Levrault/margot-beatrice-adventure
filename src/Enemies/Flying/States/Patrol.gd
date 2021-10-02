@@ -29,30 +29,27 @@ func enter(msg: Dictionary = {}) -> void:
 	_waypoints.reset()
 
 	owner.skin.play("idle")
-	print(_timer.wait_time)
 	_timer.start()
 
 
 func exit() -> void:
-	_tween.stop_all()
-	_tween.reset_all()
-	_timer.stop()
-
 	owner.set_sync_to_physics(false)
 	owner.player_detector.disconnect("player_entered", self, "_on_Player_entered")
 	_timer.disconnect("timeout", self, "_on_Timeout")
 	_tween.disconnect("tween_all_completed", self, "_on_Tween_all_completed")
 
+	_tween.stop_all()
+	_tween.remove_all()
+	_timer.stop()
+
 
 func _on_Timeout() -> void:
 	var target_position: Vector2 = _waypoints.get_next_point_position()
 	var distance_to_target: float = owner.position.distance_to(target_position)
-	if (
-		(target_position.x < owner.position.x and owner.look_direction != -1)
-		or (target_position.x > owner.position.x and owner.look_direction != 1)
-	):
-		owner.flip()
-
+	if target_position.x < owner.position.x:
+		owner.flip(-1)
+	elif target_position.x > owner.position.x:
+		owner.flip(1)
 
 	_tween.interpolate_property(
 		owner,

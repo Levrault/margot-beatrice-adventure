@@ -48,7 +48,6 @@ func _on_Tween_started(object: Object, key: NodePath) -> void:
 func _on_Tween_all_completed() -> void:
 	position = initial_position
 	SceneManager.anchor.update_anchor_limit()
-	get_tree().paused = false
 	owner.set_process(true)
 	pause_mode = Node.PAUSE_MODE_INHERIT
 	owner.is_handling_input = true
