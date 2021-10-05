@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/Actor/ActorSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/enemies/carniplant-sheet.png" type="Texture" id=2]
-[ext_resource path="res://src/VFX/resources/squish.tres" type="Material" id=3]
+[ext_resource path="res://assets/shaders/squish.tres" type="Material" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "attack"
@@ -141,4 +141,3 @@ next/cooldown = "attack_comeback"
 material = ExtResource( 3 )
 texture = ExtResource( 2 )
 hframes = 7
-frame = 6

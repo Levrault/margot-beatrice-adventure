@@ -39,3 +39,11 @@ func transition_to(target_state_path: String, msg: Dictionary = {}) -> void:
 func set_state(value: State) -> void:
 	state = value
 	state_name = state.name
+
+
+func reset(msg = {}) -> void:
+	transition_to(get_node(initial_state).get_name(), msg)
+
+
+func get_current_state_node() -> State:
+	return get_node(initial_state) as State

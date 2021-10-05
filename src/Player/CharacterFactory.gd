@@ -117,7 +117,7 @@ func _on_Shader_teleport_in_finished(anim_name: String, new_character: String) -
 
 		owner.skin = child.skin
 
-	owner.horizontal_mirror(_direction)
+	owner.flip(_direction)
 	owner.skin.play(anim_to_play)
 	Events.emit_signal("player_character_changed")
 

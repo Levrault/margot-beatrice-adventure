@@ -63,7 +63,7 @@ func take_damage(source: Hit) -> void:
 	state_machine.transition_to("Die")
 
 
-func horizontal_mirror(direction: float) -> void:
+func flip(direction: float) -> void:
 	if direction == 0:
 		return
 	look_direction = sign(direction)

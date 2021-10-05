@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _draw() -> void:
-	var anchor_position := to_local(RoomManager.anchor.global_position)
+	var anchor_position := to_local(SceneManager.anchor.global_position)
 	draw_line(anchor_position, position, color, 1)
 	draw_circle(anchor_position, 5, color)
 	draw_circle(position, 2, color)

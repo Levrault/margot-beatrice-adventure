@@ -17,10 +17,11 @@ func _ready() -> void:
 
 
 func transit_to_new_room() -> void:
+	Events.emit_signal("room_transition_started")
 	pause_mode = Node.PAUSE_MODE_PROCESS
 
-	var previous_to_position = RoomManager.previous_anchor.global_position
-	var to_position = RoomManager.anchor.global_position
+	var previous_to_position = SceneManager.previous_anchor.global_position
+	var to_position = SceneManager.anchor.global_position
 
 	_tween.connect("tween_started", self, "_on_Tween_started")
 	_tween.interpolate_property(
@@ -46,8 +47,7 @@ func _on_Tween_started(object: Object, key: NodePath) -> void:
 
 func _on_Tween_all_completed() -> void:
 	position = initial_position
-	RoomManager.anchor.update_anchor_limit()
-	get_tree().paused = false
+	SceneManager.anchor.update_anchor_limit()
 	owner.set_process(true)
 	pause_mode = Node.PAUSE_MODE_INHERIT
 	owner.is_handling_input = true

@@ -8,7 +8,7 @@ var is_active := true setget set_is_active
 
 
 func _ready() -> void:
-	if (collider == null):
+	if collider == null:
 		queue_free()
 	connect("area_entered", self, "_on_Area_entered")
 

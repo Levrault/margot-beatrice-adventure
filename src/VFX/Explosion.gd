@@ -11,7 +11,7 @@ func _ready() -> void:
 # Start explosion
 func start() -> void:
 	show()
-	$AnimationPlayer.play("Explode")
+	$AnimationPlayer.play("explode")
 	$AudioStreamPlayer2D.play()
 
 
@@ -19,6 +19,6 @@ func start() -> void:
 # @emit exploded
 # @param {String} anim_name
 func _on_Animation_finished(anim_name: String) -> void:
-	assert(anim_name == "Explode")
+	assert(anim_name == "explode")
 	emit_signal("exploded")
 	hide()

@@ -50,6 +50,7 @@ signal menu_route_changed(route)
 signal notification_started(text, size)
 
 # player
+signal player_targeted(player)
 signal player_moved(player)
 signal player_room_entered(position)
 signal player_choice_started

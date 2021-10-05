@@ -3,7 +3,7 @@
 class_name Actor
 extends KinematicBody2D
 
-export (int, -1, 1) var look_direction := 1.0
+export (int, -1, 1) var look_direction := 1
 
 var skin: Node2D = null
 var is_snapped_to_floor := false

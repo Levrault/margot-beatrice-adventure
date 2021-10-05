@@ -34,7 +34,7 @@ func unhandled_input(event: InputEvent) -> void:
 			_impulse_sfx.play_sound()
 			jump(jump_impulse)
 
-	# set a minimal air jump if button is release to soon 
+	# set a minimal air jump if button is release to soon
 	if (
 		_is_controlled
 		and event.is_action_released("jump")
@@ -49,11 +49,12 @@ func unhandled_input(event: InputEvent) -> void:
 func physics_process(delta: float) -> void:
 	_parent.physics_process(delta)
 
-	if (
-		_parent.velocity.y > 0
-		and owner.character_factory.selected_character != Character.Playable.SQUIRREL
-	):
-		owner.skin.play("fall")
+	if _parent.velocity.y > 0:
+		if owner.character_factory.selected_character != Character.Playable.SQUIRREL:
+			owner.skin.play("fall")
+		else:
+			owner.skin.play("jump")
+			owner.attack_factory.create()
 
 	# Landing
 	if owner.is_on_floor():

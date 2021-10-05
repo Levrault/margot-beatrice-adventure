@@ -1,5 +1,6 @@
 tool
 extends Line2D
+class_name Waypoints
 
 enum Mode { CYCLE, PING_PONG }
 
@@ -9,8 +10,6 @@ export var triangle_radius := 8.0
 
 var _active_point_index := 0
 var _direction := 1
-var chain_small_scene := preload("res://src/Objects/Platforms/ChainSmall.tscn")
-var chain_big_scene := preload("res://src/Objects/Platforms/ChainBig.tscn")
 
 
 func _ready() -> void:
@@ -19,17 +18,15 @@ func _ready() -> void:
 	if not Engine.editor_hint:
 		self_modulate = Color(1, 1, 1, 0)
 
-	if not get_child(0) is Platform or get_child_count() == 0:
-		printerr("Missing Platform node for %s: %s" % [name, get_path()])
+	if (not get_child(0) is Platform and not get_child(0) is Enemy) or get_child_count() == 0:
+		printerr("Missing Platform or Enemy node for %s: %s" % [name, get_path()])
 
-	# set chain texture to link waypoints 
+	# set chain texture to link waypoints
 	if not points.size() > 1:
 		return
 
 	if Engine.editor_hint:
 		return
-
-	_init_chains_path()
 
 
 func _draw() -> void:
@@ -61,6 +58,11 @@ func get_start_position() -> Vector2:
 	return points[0]
 
 
+func reset() -> void:
+	_active_point_index = 0
+	_direction = 1
+
+
 func get_current_point_position() -> Vector2:
 	return points[_active_point_index]
 
@@ -80,41 +82,3 @@ func get_next_point_position():
 func set_mode(value: int) -> void:
 	mode = value
 	update()
-
-
-func _init_chains_path() -> void:
-	var previous_point := points[0]
-	for point in points:
-		# add visual points for each "stop"
-		var new_chain_big = chain_big_scene.instance()
-		add_child(new_chain_big)
-		new_chain_big.position = point
-
-		if point == points[0]:
-			continue
-
-		_chain_factory(
-			{
-				position = (point + previous_point) / 2,
-				height = round(previous_point.distance_to(point)),
-				angle = round(rad2deg(previous_point.angle_to_point(point)))
-			}
-		)
-		previous_point = point
-
-	if mode == Mode.CYCLE:
-		_chain_factory(
-			{
-				position = (points[-1] + points[0]) / 2,
-				height = round(points[-1].distance_to(points[0])),
-				angle = round(rad2deg(points[-1].angle_to_point(points[0])))
-			}
-		)
-
-
-func _chain_factory(data: Dictionary) -> void:
-	var new_chain_small = chain_small_scene.instance()
-	add_child(new_chain_small)
-	new_chain_small.position = data.position
-	new_chain_small.region_rect = Rect2(0, 0, data.height - 8, 8)
-	new_chain_small.rotation_degrees = data.angle

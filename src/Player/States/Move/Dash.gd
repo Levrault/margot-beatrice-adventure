@@ -33,7 +33,7 @@ func physics_process(delta: float) -> void:
 	if not _is_input_registred:
 		_is_input_registred = true
 		_direction = get_move_direction()
-		owner.horizontal_mirror(_direction.x)
+		owner.flip(_direction.x)
 		# if not input were touch in the enter param, try to get them again
 		if _direction == Vector2.ZERO:
 			_direction.x = owner.look_direction
