@@ -65,7 +65,7 @@ tile_data = PoolIntArray( -1114082, 47, 0, -1114081, 47, 5, -1114080, 47, 196609
 map_size = Vector2( 30, 17 )
 
 [node name="Player" parent="TileMap" index="0"]
-position = Vector2( 992, -16 )
+position = Vector2( 456, 256 )
 
 [node name="Bush" parent="TileMap/Statics" index="0" instance=ExtResource( 4 )]
 material = SubResource( 1 )
@@ -136,16 +136,19 @@ points = PoolVector2Array( 0, 0, 120, 0 )
 
 [node name="Wasp" parent="TileMap/Enemies/Waypoints" index="0" instance=ExtResource( 20 )]
 
-[node name="Carniplant" parent="TileMap/Enemies" index="1" instance=ExtResource( 17 )]
+[node name="Wasp" parent="TileMap/Enemies" index="1" instance=ExtResource( 20 )]
+position = Vector2( 816, -88 )
+
+[node name="Carniplant" parent="TileMap/Enemies" index="2" instance=ExtResource( 17 )]
 position = Vector2( 856, 256 )
 
-[node name="Opposum" parent="TileMap/Enemies" index="2" instance=ExtResource( 16 )]
+[node name="Opposum" parent="TileMap/Enemies" index="3" instance=ExtResource( 16 )]
 position = Vector2( 1192, 112 )
 
-[node name="Opposum2" parent="TileMap/Enemies" index="3" instance=ExtResource( 16 )]
+[node name="Opposum2" parent="TileMap/Enemies" index="4" instance=ExtResource( 16 )]
 position = Vector2( 1224, 256 )
 
-[node name="Opposum3" parent="TileMap/Enemies" index="4" instance=ExtResource( 16 )]
+[node name="Opposum3" parent="TileMap/Enemies" index="5" instance=ExtResource( 16 )]
 position = Vector2( 1080, 240 )
 
 [node name="GodRay" parent="TileMap/VFX" index="0" instance=ExtResource( 13 )]

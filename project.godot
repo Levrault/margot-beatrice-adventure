@@ -59,6 +59,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Enemies/Enemy.gd"
 }, {
+"base": "FrustumCulling",
+"class": "EnemyFrustumCulling",
+"language": "GDScript",
+"path": "res://src/Enemies/EnemyFrustumCulling.gd"
+}, {
+"base": "Node2D",
+"class": "FrustumCulling",
+"language": "GDScript",
+"path": "res://src/Generics/FrustumCulling.gd"
+}, {
 "base": "Reference",
 "class": "Hit",
 "language": "GDScript",
@@ -155,6 +165,8 @@ _global_script_class_icons={
 "DrawingUtils": "",
 "EndOfLevel": "",
 "Enemy": "",
+"EnemyFrustumCulling": "",
+"FrustumCulling": "",
 "Hit": "",
 "Hitbox": "",
 "InputLine": "",

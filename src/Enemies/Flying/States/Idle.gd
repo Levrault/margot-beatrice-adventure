@@ -4,7 +4,7 @@ extends State
 func enter(msg: Dictionary = {}) -> void:
 	owner.player_detector.connect("player_entered", self, "_on_Player_entered")
 	owner.skin.play("idle")
-	if owner.get_parent() is Waypoints and owner.is_screen_visible:
+	if owner.get_parent() is Waypoints and owner.frustrum_culling.is_screen_visible:
 		_state_machine.transition_to("Patrol")
 		return
 
