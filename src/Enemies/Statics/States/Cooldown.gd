@@ -10,11 +10,11 @@ func enter(msg: Dictionary = {}) -> void:
 
 func exit() -> void:
 	owner.skin.disconnect("damage_source_disabled", owner.damage_source, "set_active")
+	owner.skin.disconnect("animation_finished", self, "_on_Skin_animation_finished")
 	$Timer.disconnect("timeout", self, "_on_Timeout")
 
 
 func _on_Skin_animation_finished(anim_name: String) -> void:
-	owner.skin.disconnect("animation_finished", self, "_on_Skin_animation_finished")
 	owner.skin.play("idle")
 	$Timer.start()
 
