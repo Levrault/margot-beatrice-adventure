@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Enemies/Flying/FlyingEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Flying/Wasp/WaspSkin.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/Enemies/Flying/Wasp/Wasp.gd" type="Script" id=10]
 [ext_resource path="res://src/Enemies/Flying/States/Idle.gd" type="Script" id=11]
 [ext_resource path="res://src/Tools/AStartHightlightTool.gd" type="Script" id=12]
+[ext_resource path="res://src/Enemies/Flying/FlyingFrustumCulling.gd" type="Script" id=13]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -92,3 +93,6 @@ script = ExtResource( 6 )
 [node name="ExplosionAir" parent="StateMachine/Die" index="0" instance=ExtResource( 5 )]
 visible = false
 scale = Vector2( 1.8, 1.8 )
+
+[node name="FrustumCulling" parent="." index="7"]
+script = ExtResource( 13 )
