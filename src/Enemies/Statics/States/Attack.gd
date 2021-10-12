@@ -14,4 +14,3 @@ func exit() -> void:
 
 func _on_Skin_animation_finished(anim_name: String) -> void:
 	_state_machine.transition_to("Cooldown")
-	owner.skin.disconnect("animation_finished", self, "_on_Skin_animation_finished")

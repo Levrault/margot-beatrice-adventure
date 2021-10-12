@@ -10,6 +10,7 @@ extents = Vector2( 29, 26 )
 extents = Vector2( 29, 31 )
 
 [node name="Carniplant" instance=ExtResource( 1 )]
+scale = Vector2( 0.7, 0.7 )
 
 [node name="Skin" parent="." index="0" instance=ExtResource( 2 )]
 position = Vector2( 33, -48 )

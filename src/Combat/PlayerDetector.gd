@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func set_disabled(value: bool) -> void:
-	get_node("CollisionShape2D").disabled = value
+	get_node("CollisionShape2D").set_deferred("disabled", value)
 
 
 func _on_Body_entered(body: Player) -> void:
