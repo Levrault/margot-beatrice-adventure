@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/theme/Menu.tres" type="Theme" id=1]
-[ext_resource path="res://src/UI/Components/MenuFooter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/0Legacy/Components/MenuFooter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/Worldmap/Worldmap.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Worldmap/WorldmapButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/theme/worldmap.tres" type="Theme" id=5]

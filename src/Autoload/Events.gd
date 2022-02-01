@@ -43,9 +43,6 @@ signal game_unpaused
 # game over
 signal game_over
 
-# menu
-signal menu_route_changed(route)
-
 # notification
 signal notification_started(text, size)
 
@@ -86,3 +83,47 @@ signal transition_finished
 # worldmap
 signal worldmap_level_selected(data)
 signal worldmap_level_hidden
+
+
+############
+#### UI ####
+############
+
+# config
+signal config_file_saved
+signal config_file_loade
+
+# field
+signal field_description_changed(description)
+signal focused_row_changed(row)
+
+# fieldset
+signal fieldset_cleared(fieldset)
+signal fieldset_inner_field_navigated(focused_field)
+
+# gamepad binding
+signal gamepad_listening_started
+signal gamepad_layout_changed
+
+# keybinding
+signal key_listening_started(field, button, scancode)
+
+# navigation
+signal navigation_disabled
+signal navigation_enabled
+
+# menu
+signal menu_route_changed(route)
+signal menu_transition_started(anim_name)
+signal menu_transition_mid_animated
+signal menu_transition_finished
+
+# overlay
+signal overlay_displayed
+signal overlay_hidden
+
+# save icon
+signal save_notification_enabled
+
+# user
+signal user_has_changed_gamepad_bindind

@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/UI/InGame/PauseMenu.gd" type="Script" id=1]
-[ext_resource path="res://src/UI/Components/MenuFooter.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/UI/Components/Button/QuitButton.gd" type="Script" id=3]
-[ext_resource path="res://src/UI/Components/Button/ResumeButton.gd" type="Script" id=4]
-[ext_resource path="res://src/UI/Components/Button/ReturnMainMenu.gd" type="Script" id=5]
-[ext_resource path="res://src/UI/Components/Button/NavigationButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/UI/Components/Button/AnimatedButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/UI/0Legacy/Components/MenuFooter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/0Legacy/Components/Button/QuitButton.gd" type="Script" id=3]
+[ext_resource path="res://src/UI/0Legacy/Components/Button/ResumeButton.gd" type="Script" id=4]
+[ext_resource path="res://src/UI/0Legacy/Components/Button/ReturnMainMenu.gd" type="Script" id=5]
+[ext_resource path="res://src/UI/0Legacy/Components/Button/NavigationButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UI/0Legacy/Components/Button/AnimatedButton.tscn" type="PackedScene" id=9]
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
