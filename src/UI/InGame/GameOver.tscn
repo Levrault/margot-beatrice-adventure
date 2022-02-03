@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/theme/Menu.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/InGame/GameOver.gd" type="Script" id=2]
-[ext_resource path="res://src/UI/0Legacy/Components/Button/RestartLevel.gd" type="Script" id=3]
-[ext_resource path="res://src/UI/0Legacy/Components/Button/ReturnMainMenu.gd" type="Script" id=4]
-[ext_resource path="res://src/UI/0Legacy/Components/Button/AnimatedButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "show"
@@ -152,20 +150,6 @@ tracks/11/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/12/type = "method"
-tracks/12/path = NodePath("MarginContainer/Footer/RestartLevel")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 1.8 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "grab_focus"
-} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -392,6 +376,7 @@ align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false
+modulate = Color( 1, 1, 1, 0.4 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -412,16 +397,11 @@ margin_bottom = 52.0
 alignment = 1
 
 [node name="Worldmap" parent="MarginContainer/Footer" instance=ExtResource( 5 )]
-margin_right = 210.0
-size_flags_horizontal = 3
-text = "ui_worldmap"
-align = 1
-script = ExtResource( 4 )
+margin_left = 48.0
+margin_right = 217.0
+text = "todo worldmap"
 
-[node name="RestartLevel" parent="MarginContainer/Footer" instance=ExtResource( 5 )]
-margin_left = 214.0
-margin_right = 424.0
-size_flags_horizontal = 3
-text = "ui_restart"
-align = 1
-script = ExtResource( 3 )
+[node name="Restart" parent="MarginContainer/Footer" instance=ExtResource( 5 )]
+margin_left = 221.0
+margin_right = 375.0
+text = "todo restart"

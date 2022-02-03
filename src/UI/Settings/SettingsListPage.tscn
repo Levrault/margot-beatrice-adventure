@@ -9,32 +9,41 @@
 text = "commons.settings"
 
 [node name="Contents" parent="Wrapper/Page" index="1"]
-margin_right = 94.0
+margin_right = 121.0
 size_flags_horizontal = 0
 
-[node name="Audio" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 2 )]
-margin_top = 59.0
-margin_right = 94.0
-margin_bottom = 79.0
+[node name="Accessibility" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 2 )]
+margin_top = 44.0
+margin_right = 121.0
+margin_bottom = 64.0
+text = "accessibility.title"
+flat = true
+align = 1
+navigate_to = "AccessibilitySettingsPage"
+is_default_focused = true
+
+[node name="Audio" parent="Wrapper/Page/Contents" index="1" instance=ExtResource( 2 )]
+margin_top = 74.0
+margin_right = 121.0
+margin_bottom = 94.0
 text = "audio.title"
 flat = true
 align = 1
 navigate_to = "AudioSettingsPage"
-is_default_focused = true
 
-[node name="Display" parent="Wrapper/Page/Contents" index="1" instance=ExtResource( 2 )]
-margin_top = 89.0
-margin_right = 94.0
-margin_bottom = 109.0
+[node name="Display" parent="Wrapper/Page/Contents" index="2" instance=ExtResource( 2 )]
+margin_top = 104.0
+margin_right = 121.0
+margin_bottom = 124.0
 text = "display.title"
 flat = true
 align = 1
 navigate_to = "DisplaySettingsPage"
 
-[node name="Controls" parent="Wrapper/Page/Contents" index="2" instance=ExtResource( 2 )]
-margin_top = 119.0
-margin_right = 94.0
-margin_bottom = 139.0
+[node name="Controls" parent="Wrapper/Page/Contents" index="3" instance=ExtResource( 2 )]
+margin_top = 134.0
+margin_right = 121.0
+margin_bottom = 154.0
 text = "controls.title"
 flat = true
 align = 1

@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/UI/Settings/SettingsPageTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Settings/Fields/CheckboxField.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/Settings/Fields/HListField.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Settings/Fields/FieldSet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/Commons/Scroll/ScrollContent.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UI/Settings/Fields/SliderField.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UI/Settings/Updater/Updater.gd" type="Script" id=7]
+
+[node name="AccessibilitySettingsPage" instance=ExtResource( 1 )]
+
+[node name="Form" parent="." index="0"]
+engine_file_section = "accessibility"
+section_title = "accessibility.title"
+
+[node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 5 )]
+margin_top = 0.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
+margin_right = 440.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+
+[node name="NumberOfLifes" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="0" instance=ExtResource( 4 )]
+margin_right = 440.0
+margin_bottom = 32.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/NumberOfLifes/MarginContainer" index="0"]
+margin_right = 436.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/NumberOfLifes/MarginContainer/FieldContainer" index="0"]
+margin_top = 5.0
+margin_right = 214.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "accessibility.number_of_lifes"
+
+[node name="NumberOfLifes" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/NumberOfLifes/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 218.0
+margin_right = 432.0
+margin_bottom = 24.0
+key = "number_of_lifes"
+description = "number_of_lifes_description"
+infinite_loop = false
+placeholder = "infinite"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/NumberOfLifes/MarginContainer/FieldContainer/NumberOfLifes" index="5"]
+script = ExtResource( 7 )
+
+[node name="PlayerDamage" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="1" instance=ExtResource( 4 )]
+margin_top = 36.0
+margin_right = 440.0
+margin_bottom = 68.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/PlayerDamage/MarginContainer" index="0"]
+margin_right = 436.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/PlayerDamage/MarginContainer/FieldContainer" index="0"]
+margin_top = 5.0
+margin_right = 214.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "accessibility.player_damage"
+
+[node name="PlayerDamage" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/PlayerDamage/MarginContainer/FieldContainer" index="1" instance=ExtResource( 2 )]
+margin_left = 218.0
+margin_right = 432.0
+margin_bottom = 24.0
+key = "player_damage"
+description = "accessibility.player_damage_description"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/PlayerDamage/MarginContainer/FieldContainer/PlayerDamage" index="3"]
+script = ExtResource( 7 )
+
+[node name="InvincibleTimeframe" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="2" instance=ExtResource( 4 )]
+margin_top = 72.0
+margin_right = 440.0
+margin_bottom = 104.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/InvincibleTimeframe/MarginContainer" index="0"]
+margin_right = 436.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/InvincibleTimeframe/MarginContainer/FieldContainer" index="0"]
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "accessibility.invincible_timeframe"
+
+[node name="InvincibleTimeframe" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/InvincibleTimeframe/MarginContainer/FieldContainer" index="1" instance=ExtResource( 6 )]
+margin_left = 258.0
+margin_right = 432.0
+margin_bottom = 24.0
+key = "invincible_timeframe"
+description = "accessibility.invincible_timeframe_description"
+placeholder = ".25"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/InvincibleTimeframe/MarginContainer/FieldContainer/InvincibleTimeframe" index="4"]
+script = ExtResource( 7 )
+
+[editable path="Wrapper/Page/Contents/ScrollContent/VBoxContainer/NumberOfLifes"]
+[editable path="Wrapper/Page/Contents/ScrollContent/VBoxContainer/PlayerDamage"]
+[editable path="Wrapper/Page/Contents/ScrollContent/VBoxContainer/InvincibleTimeframe"]

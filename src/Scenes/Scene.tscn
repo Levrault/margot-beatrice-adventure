@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/tileset_placeholder_16x16.tres" type="TileSet" id=2]
 [ext_resource path="res://src/Scenes/Scene.gd" type="Script" id=3]
-[ext_resource path="res://src/UI/InGame/InGameUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/VFX/IrisShot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Statics/EndOfLevel.tscn" type="PackedScene" id=8]
@@ -12,8 +11,6 @@
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 3 )
-
-[node name="UI" parent="." instance=ExtResource( 5 )]
 
 [node name="Debug" type="CanvasLayer" parent="."]
 

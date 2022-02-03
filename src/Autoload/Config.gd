@@ -111,4 +111,7 @@ func sync_with_engine_settings() -> void:
 			if not engine_settings[section].has(key):
 				values[section].erase(key)
 
+	# remove depreciated keyboard binding
+
+	# remove depreciated gamepad binding
 	save_file(values)
