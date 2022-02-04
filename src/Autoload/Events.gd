@@ -91,7 +91,7 @@ signal worldmap_level_hidden
 
 # config
 signal config_file_saved
-signal config_file_loade
+signal config_file_loaded
 
 # field
 signal field_description_changed(description)
