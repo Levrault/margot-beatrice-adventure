@@ -19,21 +19,29 @@ section_title = "gamepad.title"
 [node name="Breadcrumb" parent="Wrapper/Page" index="0"]
 breadcrumbs = [ "commons.settings", "gamepad.title" ]
 
+[node name="Contents" parent="Wrapper/Page" index="1"]
+margin_bottom = 200.0
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents" index="0"]
 margin_right = 440.0
-margin_bottom = 155.0
+margin_bottom = 174.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="GamepadLayout" parent="Wrapper/Page/Contents/VBoxContainer" index="0" instance=ExtResource( 6 )]
 margin_right = 440.0
+margin_bottom = 32.0
+
+[node name="MarginContainer" parent="Wrapper/Page/Contents/VBoxContainer/GamepadLayout" index="4"]
+custom_constants/margin_top = 3
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/VBoxContainer/GamepadLayout/MarginContainer" index="0"]
-margin_right = 436.0
+margin_top = 3.0
+margin_right = 432.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/VBoxContainer/GamepadLayout/MarginContainer/FieldContainer" index="0"]
 margin_top = 4.0
-margin_right = 214.0
+margin_right = 210.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 text = "gamepad.layout"
@@ -42,9 +50,9 @@ __meta__ = {
 }
 
 [node name="GamepadLayout" parent="Wrapper/Page/Contents/VBoxContainer/GamepadLayout/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
-margin_left = 218.0
-margin_right = 432.0
-margin_bottom = 22.0
+margin_left = 214.0
+margin_right = 424.0
+margin_bottom = 23.0
 key = "gamepad_layout"
 description = "gamepad.layout_description"
 placeholder = "default"
@@ -53,24 +61,32 @@ placeholder = "default"
 script = ExtResource( 2 )
 
 [node name="LayoutPreview" type="CenterContainer" parent="Wrapper/Page/Contents/VBoxContainer" index="1"]
-margin_top = 26.0
+margin_top = 36.0
 margin_right = 440.0
-margin_bottom = 126.0
+margin_bottom = 136.0
 
 [node name="GamepadLayoutPreview" parent="Wrapper/Page/Contents/VBoxContainer/LayoutPreview" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 70.0
-margin_right = 370.0
+margin_left = 80.0
+margin_right = 360.0
 margin_bottom = 100.0
 
 [node name="GamepadBindind" parent="Wrapper/Page/Contents/VBoxContainer" index="2" instance=ExtResource( 5 )]
-margin_top = 130.0
+margin_top = 140.0
 margin_right = 440.0
-margin_bottom = 150.0
+margin_bottom = 160.0
 mouse_default_cursor_shape = 0
 text = "rebind.gamepad"
-align = 1
 navigate_to = "GamepadRebindPage"
+
+[node name="HSeparator" parent="Wrapper/Page" index="2"]
+margin_top = 204.0
+margin_bottom = 208.0
+
+[node name="FieldDescription" parent="Wrapper/Page" index="3"]
+margin_top = 212.0
+rect_min_size = Vector2( 440, 0 )
+text = "FIELD Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
 
 [editable path="Wrapper/Page/Contents/VBoxContainer/GamepadLayout"]

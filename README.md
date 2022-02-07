@@ -13,6 +13,7 @@ Game made for my niece
 - [Warrior](https://clembod.itch.io/warrior-free-animation-set) used for Margot-Beatrice's character
 - [Pixel adventure](https://pixelfrog-assets.itch.io/pixel-adventure-1)
 - [Evil Wizard 2](https://luizmelo.itch.io/evil-wizard-2)
+- [Gamepads Assets - Pixelart by lightUP](https://julianoferreiradelima.itch.io/gamepads-assets-pixelart)
 
 ### Fonts
 
@@ -23,3 +24,4 @@ Game made for my niece
 ### SFX
 
 - [interface-sfx-pack-1](https://obsydianx.itch.io/interface-sfx-pack-1)
+- Kenney [sounds interface](https://www.kenney.nl/assets/interface-sounds) and [ui audio](https://www.kenney.nl/assets/ui-audio) pack.

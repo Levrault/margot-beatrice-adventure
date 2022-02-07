@@ -39,8 +39,10 @@ func show() -> void:
 	_countdown = default_countdown
 	progressbar.max_value = default_countdown
 	countdown_label.text = String(_countdown)
+	progressbar.value = _countdown
 	timer.start()
 	Events.emit_signal("overlay_displayed")
+	Events.call_deferred("emit_signal", "navigation_disabled")
 	.show()
 
 
@@ -55,11 +57,16 @@ func _on_Timeout() -> void:
 	timer.start()
 
 
+func hide() -> void:
+	.hide()
+	Events.emit_signal("overlay_hidden")
+	Events.emit_signal("navigation_enabled")
+
+
 func _on_Cancel_pressed() -> void:
 	_field.revert()
 	_field.grab_focus()
 	timer.stop()
-	Events.emit_signal("overlay_hidden")
 	hide()
 
 
@@ -67,5 +74,4 @@ func _on_Confirm_pressed() -> void:
 	timer.stop()
 	_field.grab_focus()
 	_field.save()
-	Events.emit_signal("overlay_hidden")
 	hide()

@@ -67,9 +67,8 @@ func initialize() -> void:
 	# bad type
 	if typeof(config_data) != TYPE_REAL and typeof(config_data) != TYPE_INT:
 		is_compatible_with_field = false
-
-	# out of bound
-	if config_data < min_value or config_data > max_value:
+	elif config_data < min_value or config_data > max_value:
+		# out of bound
 		is_in_range = false
 
 	if not is_compatible_with_field or not is_in_range:

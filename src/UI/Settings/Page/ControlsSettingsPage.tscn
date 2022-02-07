@@ -9,6 +9,7 @@
 [ext_resource path="res://src/UI/Commons/Scroll/ScrollContent.tscn" type="PackedScene" id=11]
 
 [node name="ControlsSettingsPage" instance=ExtResource( 1 )]
+default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer/GamepadVibration")
 
 [node name="Form" parent="." index="0"]
 engine_file_section = "controls"
@@ -19,58 +20,53 @@ breadcrumbs = [ "commons.settings", "controls.title" ]
 
 [node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 11 )]
 margin_top = 0.0
+margin_bottom = 157.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
+[node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 440.0
-margin_bottom = 155.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer" index="0"]
+margin_right = 436.0
+margin_bottom = 157.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SectionKeyboardTitle" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="0" instance=ExtResource( 4 )]
+[node name="SectionGamepadTitle" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="0" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 440.0
+margin_right = 436.0
 margin_bottom = 32.0
-text = "commons.keyboard"
-
-[node name="KeyboardBinding" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="1" instance=ExtResource( 2 )]
-margin_top = 36.0
-margin_right = 440.0
-margin_bottom = 56.0
-text = "rebind.keyboard"
-align = 1
-navigate_to = "KeyboardRebindPage"
-
-[node name="SectionGamepadTitle" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="2" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 60.0
-margin_right = 440.0
-margin_bottom = 92.0
 text = "commons.gamepad"
 
-[node name="GamepadVibration" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="3" instance=ExtResource( 3 )]
-margin_top = 96.0
-margin_right = 440.0
-margin_bottom = 128.0
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/GamepadVibration/MarginContainer" index="0"]
+[node name="GamepadVibration" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
+margin_top = 36.0
 margin_right = 436.0
+margin_bottom = 68.0
 
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer" index="0"]
-margin_top = 5.0
-margin_right = 238.0
-margin_bottom = 19.0
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer" index="0"]
+margin_right = 428.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer" index="0"]
+margin_top = 3.0
+margin_right = 226.0
+margin_bottom = 17.0
 size_flags_horizontal = 3
 text = "controls.gamepad_vibration"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GamepadVibration" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer" index="1" instance=ExtResource( 5 )]
-margin_left = 242.0
-margin_right = 432.0
-margin_bottom = 24.0
+[node name="GamepadVibration" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer" index="1" instance=ExtResource( 5 )]
+margin_left = 230.0
+margin_right = 420.0
+margin_bottom = 20.0
 key = "gamepad_vibration"
 description = "controls.gamepad_vibration_description"
 max_value = 1.0
@@ -78,15 +74,29 @@ nb_of_step = 20
 percentage_mode = true
 placeholder = "100%"
 
-[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer/GamepadVibration" index="2"]
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer/GamepadVibration" index="2"]
 script = ExtResource( 9 )
 
-[node name="GamepadLayout" parent="Wrapper/Page/Contents/ScrollContent/VBoxContainer" index="4" instance=ExtResource( 2 )]
-margin_top = 132.0
-margin_right = 440.0
-margin_bottom = 152.0
+[node name="GamepadLayout" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="2" instance=ExtResource( 2 )]
+margin_top = 72.0
+margin_right = 436.0
+margin_bottom = 92.0
 text = "controls.gamepad_layout"
-align = 1
 navigate_to = "GamepadLayoutSettingsPage"
 
-[editable path="Wrapper/Page/Contents/ScrollContent/VBoxContainer/GamepadVibration"]
+[node name="SectionKeyboardTitle" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="3" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 436.0
+margin_bottom = 128.0
+text = "commons.keyboard"
+
+[node name="KeyboardBinding" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="4" instance=ExtResource( 2 )]
+margin_top = 132.0
+margin_right = 436.0
+margin_bottom = 152.0
+text = "rebind.keyboard"
+navigate_to = "KeyboardRebindPage"
+
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration"]

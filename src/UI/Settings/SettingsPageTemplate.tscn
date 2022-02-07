@@ -24,33 +24,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_clip_content = true
 custom_constants/margin_right = 20
-custom_constants/margin_top = 15
+custom_constants/margin_top = 5
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 15
 __meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="Page" type="VBoxContainer" parent="Wrapper"]
 margin_left = 20.0
-margin_top = 15.0
+margin_top = 5.0
 margin_right = 460.0
 margin_bottom = 255.0
 size_flags_horizontal = 3
 
 [node name="Breadcrumb" type="HBoxContainer" parent="Wrapper/Page"]
 margin_right = 440.0
-margin_bottom = 14.0
+margin_bottom = 22.0
 script = ExtResource( 4 )
 breadcrumbs = [ "ui_options" ]
 
 [node name="BreachcrumbRoot" parent="Wrapper/Page/Breadcrumb" instance=ExtResource( 5 )]
-margin_right = 85.0
+margin_right = 165.0
+margin_bottom = 22.0
 
 [node name="Contents" type="VBoxContainer" parent="Wrapper/Page"]
-margin_top = 18.0
+margin_top = 26.0
 margin_right = 440.0
-margin_bottom = 173.0
+margin_bottom = 183.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 6
@@ -60,14 +62,14 @@ __meta__ = {
 }
 
 [node name="HSeparator" type="HSeparator" parent="Wrapper/Page"]
-margin_top = 177.0
+margin_top = 187.0
 margin_right = 440.0
-margin_bottom = 181.0
+margin_bottom = 191.0
 
 [node name="FieldDescription" type="Label" parent="Wrapper/Page"]
-margin_top = 185.0
+margin_top = 195.0
 margin_right = 440.0
-margin_bottom = 216.0
+margin_bottom = 226.0
 rect_min_size = Vector2( 440, 31 )
 text = "FIELD Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a purus mi. Mauris semper at velit nec consectetur"
 valign = 1
@@ -75,9 +77,9 @@ autowrap = true
 script = ExtResource( 3 )
 
 [node name="Footer" type="HBoxContainer" parent="Wrapper/Page"]
-margin_top = 220.0
+margin_top = 230.0
 margin_right = 440.0
-margin_bottom = 240.0
+margin_bottom = 250.0
 size_flags_horizontal = 3
 alignment = 2
 

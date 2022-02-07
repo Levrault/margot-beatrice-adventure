@@ -13,7 +13,7 @@ func _ready() -> void:
 		breadcrumb_root.text = ""
 		return
 
-	breadcrumb_root.text = tr(root).capitalize()
+	breadcrumb_root.text = tr(root).capitalize() + "·"
 	for element in breadcrumbs:
 		var new_label = BREADCRUMB_LABEL_SCENE.instance()
 		add_child(new_label)

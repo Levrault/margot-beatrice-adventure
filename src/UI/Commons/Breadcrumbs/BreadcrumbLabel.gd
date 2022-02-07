@@ -4,11 +4,19 @@ extends Label
 
 var active := false setget set_active
 
+onready var anim := $AnimationPlayer
+
 
 func _ready() -> void:
-	modulate.a = 1.0 if active else .5
+	if active:
+		anim.play("active")
+	else:
+		anim.play("inactive")
 
 
 func set_active(value: bool) -> void:
 	active = value
-	modulate.a = 1.0 if active else .3
+	if active:
+		anim.play("active")
+	else:
+		anim.play("inactive")

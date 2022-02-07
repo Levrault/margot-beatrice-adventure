@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UI/Commons/Layout/PageLayout.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationButton.tscn" type="PackedScene" id=2]
+
+[node name="SettingsListPage" instance=ExtResource( 1 )]
+default_field_to_focus = NodePath("Wrapper/Page/CenterContainer/Contents/Accessibility")
+
+[node name="Title" parent="Wrapper/Page" index="0"]
+text = "commons.settings"
+
+[node name="Contents" parent="Wrapper/Page/CenterContainer" index="0"]
+margin_left = 135.0
+margin_top = 44.0
+margin_right = 305.0
+margin_bottom = 154.0
+
+[node name="Accessibility" parent="Wrapper/Page/CenterContainer/Contents" index="0" instance=ExtResource( 2 )]
+margin_right = 170.0
+rect_min_size = Vector2( 170, 0 )
+text = "accessibility.title"
+navigate_to = "AccessibilitySettingsPage"
+is_default_focused = true
+
+[node name="Audio" parent="Wrapper/Page/CenterContainer/Contents" index="1" instance=ExtResource( 2 )]
+margin_top = 30.0
+margin_right = 170.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 170, 0 )
+text = "audio.title"
+navigate_to = "AudioSettingsPage"
+
+[node name="Display" parent="Wrapper/Page/CenterContainer/Contents" index="2" instance=ExtResource( 2 )]
+margin_top = 60.0
+margin_right = 170.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 170, 0 )
+text = "display.title"
+navigate_to = "DisplaySettingsPage"
+
+[node name="Controls" parent="Wrapper/Page/CenterContainer/Contents" index="3" instance=ExtResource( 2 )]
+margin_top = 90.0
+margin_right = 170.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 170, 0 )
+text = "controls.title"
+navigate_to = "ControlsSettingsPage"

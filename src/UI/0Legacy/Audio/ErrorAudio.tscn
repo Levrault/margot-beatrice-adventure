@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://assets/audio/Error_tones/style5/error_style_5_echo_002.ogg" type="AudioStream" id=1]
-
-
-
-[node name="ErrorAudio" type="AudioStreamPlayer2D"]
-stream = ExtResource( 1 )

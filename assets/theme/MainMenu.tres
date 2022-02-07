@@ -1,0 +1,182 @@
+[gd_resource type="Theme" load_steps=42 format=2]
+
+[ext_resource path="res://assets/theme/generic_box_focus.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/theme/joystix_10.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/theme/generic_box_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/UI/button/ui_button_disabled.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/slider/ui_grabber_normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/slider/ui_grabber_highlight.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/dropdown/ui_arrow.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/slider/ui_slider_normal.png" type="Texture" id=8]
+[ext_resource path="res://assets/UI/slider/ui_slider_grabbed_area.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/slider/ui_slider_grabbed_area_highlight.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/dropdown/ui_dropdown_normal.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/dropdown/ui_dropdown_focus.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/checkbox/ui_checkbox_check.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/button/ui_button_normal.png" type="Texture" id=14]
+[ext_resource path="res://assets/UI/radio/ui_radio_unchecked.png" type="Texture" id=15]
+[ext_resource path="res://assets/UI/radio/ui_radio_checked.png" type="Texture" id=16]
+[ext_resource path="res://assets/UI/checkbox/ui_checkbox_unchecked.png" type="Texture" id=17]
+[ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_scroll.png" type="Texture" id=18]
+[ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_grabber.png" type="Texture" id=19]
+[ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_grabber_focus.png" type="Texture" id=20]
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 24, 24 )
+margin_left = 7.0
+margin_right = 7.0
+margin_top = 7.0
+margin_bottom = 7.0
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[sub_resource type="StyleBoxEmpty" id=25]
+
+[sub_resource type="StyleBoxEmpty" id=26]
+
+[sub_resource type="StyleBoxEmpty" id=27]
+
+[sub_resource type="StyleBoxEmpty" id=28]
+
+[sub_resource type="StyleBoxEmpty" id=29]
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 9 )
+region_rect = Rect2( 1, 0, 6, 6 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 7, 6 )
+margin_left = 3.0
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 8, 6 )
+margin_left = 1.0
+margin_right = 1.0
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 18, 18 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 18, 18 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 18, 18 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=23]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 18, 18 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=30]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 24, 24 )
+margin_left = 7.0
+margin_right = 7.0
+margin_top = 7.0
+margin_bottom = 7.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id=35]
+texture = ExtResource( 18 )
+region_rect = Rect2( 1, 1, 5, 5 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=36]
+texture = ExtResource( 19 )
+region_rect = Rect2( 1, 1, 5, 5 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=32]
+texture = ExtResource( 19 )
+region_rect = Rect2( 2, 2, 3, 3 )
+
+[sub_resource type="StyleBoxTexture" id=33]
+texture = ExtResource( 20 )
+region_rect = Rect2( 1, 2, 5, 3 )
+
+[sub_resource type="StyleBoxTexture" id=34]
+texture = ExtResource( 20 )
+region_rect = Rect2( 1, 2, 5, 3 )
+
+[sub_resource type="StyleBoxTexture" id=31]
+texture = ExtResource( 18 )
+region_rect = Rect2( 1, 1, 5, 5 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[resource]
+default_font = ExtResource( 2 )
+Button/colors/font_color_focus = Color( 0.984314, 0.94902, 0.211765, 1 )
+Button/colors/font_color_hover = Color( 0.984314, 0.94902, 0.211765, 1 )
+Button/colors/font_color_pressed = Color( 0.984314, 0.94902, 0.211765, 1 )
+Button/styles/disabled = SubResource( 6 )
+Button/styles/focus = ExtResource( 1 )
+Button/styles/hover = ExtResource( 1 )
+Button/styles/normal = ExtResource( 3 )
+Button/styles/pressed = ExtResource( 1 )
+CheckBox/icons/checked = ExtResource( 13 )
+CheckBox/icons/unchecked = ExtResource( 17 )
+CheckBox/styles/disabled = SubResource( 24 )
+CheckBox/styles/focus = SubResource( 25 )
+CheckBox/styles/hover = SubResource( 26 )
+CheckBox/styles/hover_pressed = SubResource( 27 )
+CheckBox/styles/normal = SubResource( 28 )
+CheckBox/styles/pressed = SubResource( 29 )
+HSlider/icons/grabber = ExtResource( 5 )
+HSlider/icons/grabber_highlight = ExtResource( 6 )
+HSlider/styles/grabber_area = SubResource( 8 )
+HSlider/styles/grabber_area_highlight = SubResource( 9 )
+HSlider/styles/slider = SubResource( 7 )
+OptionButton/colors/font_color_focus = Color( 0.984314, 0.94902, 0.211765, 1 )
+OptionButton/colors/font_color_hover = Color( 0.984314, 0.94902, 0.211765, 1 )
+OptionButton/constants/arrow_margin = 2
+OptionButton/constants/hseparation = 0
+OptionButton/icons/arrow = ExtResource( 7 )
+OptionButton/styles/focus = SubResource( 11 )
+OptionButton/styles/hover = SubResource( 12 )
+OptionButton/styles/normal = SubResource( 10 )
+OptionButton/styles/pressed = SubResource( 23 )
+PopupMenu/colors/font_color_hover = Color( 0.984314, 0.94902, 0.211765, 1 )
+PopupMenu/constants/vseparation = 8
+PopupMenu/icons/radio_checked = ExtResource( 16 )
+PopupMenu/icons/radio_unchecked = ExtResource( 15 )
+PopupMenu/styles/panel = SubResource( 30 )
+ProgressBar/styles/bg = SubResource( 35 )
+ProgressBar/styles/fg = SubResource( 36 )
+VScrollBar/styles/grabber = SubResource( 32 )
+VScrollBar/styles/grabber_highlight = SubResource( 33 )
+VScrollBar/styles/grabber_pressed = SubResource( 34 )
+VScrollBar/styles/scroll = SubResource( 31 )
+WindowDialog/styles/panel = ExtResource( 3 )
