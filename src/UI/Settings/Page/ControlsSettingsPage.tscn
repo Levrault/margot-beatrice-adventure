@@ -54,9 +54,9 @@ margin_bottom = 68.0
 margin_right = 428.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 226.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "controls.gamepad_vibration"
 __meta__ = {
@@ -66,7 +66,7 @@ __meta__ = {
 [node name="GamepadVibration" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer" index="1" instance=ExtResource( 5 )]
 margin_left = 230.0
 margin_right = 420.0
-margin_bottom = 20.0
+margin_bottom = 32.0
 key = "gamepad_vibration"
 description = "controls.gamepad_vibration_description"
 max_value = 1.0

@@ -47,14 +47,15 @@ size_flags_vertical = 3
 margin_right = 436.0
 margin_bottom = 32.0
 rect_clip_content = false
+is_hidden_on_focus = true
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump/MarginContainer" index="0"]
 margin_right = 428.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 208.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "input.jump"
 __meta__ = {
@@ -64,6 +65,7 @@ __meta__ = {
 [node name="Jump" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
 margin_left = 212.0
 margin_right = 420.0
+margin_bottom = 32.0
 action = "jump"
 description = "input.jump_description"
 placeholder = "A"
@@ -73,14 +75,15 @@ margin_top = 36.0
 margin_right = 436.0
 margin_bottom = 68.0
 rect_clip_content = false
+is_hidden_on_focus = true
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction/MarginContainer" index="0"]
 margin_right = 428.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 208.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "input.interaction"
 __meta__ = {
@@ -90,6 +93,7 @@ __meta__ = {
 [node name="Interaction" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
 margin_left = 212.0
 margin_right = 420.0
+margin_bottom = 32.0
 action = "interaction"
 description = "input.interaction_description"
 placeholder = "X"
@@ -99,14 +103,15 @@ margin_top = 72.0
 margin_right = 436.0
 margin_bottom = 104.0
 rect_clip_content = false
+is_hidden_on_focus = true
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/CharacterWheel/MarginContainer" index="0"]
 margin_right = 428.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/CharacterWheel/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 208.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "input.character_wheel"
 __meta__ = {
@@ -116,6 +121,7 @@ __meta__ = {
 [node name="CharacterWheel" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/CharacterWheel/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
 margin_left = 212.0
 margin_right = 420.0
+margin_bottom = 32.0
 action = "character_wheel"
 description = "input.character_wheel_description"
 placeholder = "Y"
@@ -125,14 +131,15 @@ margin_top = 108.0
 margin_right = 436.0
 margin_bottom = 140.0
 rect_clip_content = false
+is_hidden_on_focus = true
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash/MarginContainer" index="0"]
 margin_right = 428.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 208.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "input.dash"
 __meta__ = {
@@ -142,6 +149,7 @@ __meta__ = {
 [node name="Dash" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
 margin_left = 212.0
 margin_right = 420.0
+margin_bottom = 32.0
 action = "dash"
 description = "input.dash_description"
 placeholder = "B"

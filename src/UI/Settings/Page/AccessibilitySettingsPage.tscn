@@ -38,24 +38,20 @@ size_flags_horizontal = 3
 margin_right = 436.0
 margin_bottom = 32.0
 
-[node name="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/NumberOfLifes" index="4"]
-custom_constants/margin_top = 3
-
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/NumberOfLifes/MarginContainer" index="0"]
-margin_top = 3.0
 margin_right = 428.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/NumberOfLifes/MarginContainer/FieldContainer" index="0"]
-margin_top = 4.0
+margin_top = 9.0
 margin_right = 208.0
-margin_bottom = 18.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "accessibility.number_of_lifes"
 
 [node name="NumberOfLifes" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/NumberOfLifes/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
 margin_left = 212.0
 margin_right = 420.0
-margin_bottom = 23.0
+margin_bottom = 32.0
 key = "number_of_lifes"
 description = "number_of_lifes_description"
 infinite_loop = false
@@ -71,19 +67,18 @@ margin_bottom = 68.0
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PlayerDamage/MarginContainer" index="0"]
 margin_right = 428.0
-margin_bottom = 30.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PlayerDamage/MarginContainer/FieldContainer" index="0"]
-margin_top = 5.0
+margin_top = 9.0
 margin_right = 208.0
-margin_bottom = 19.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "accessibility.player_damage"
 
 [node name="PlayerDamage" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PlayerDamage/MarginContainer/FieldContainer" index="1" instance=ExtResource( 2 )]
 margin_left = 212.0
 margin_right = 420.0
-margin_bottom = 24.0
+margin_bottom = 32.0
 key = "player_damage"
 description = "accessibility.player_damage_description"
 
@@ -99,16 +94,16 @@ margin_bottom = 104.0
 margin_right = 428.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/InvincibleTimeframe/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 242.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "accessibility.invincible_timeframe"
 
 [node name="InvincibleTimeframe" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/InvincibleTimeframe/MarginContainer/FieldContainer" index="1" instance=ExtResource( 6 )]
 margin_left = 246.0
 margin_right = 420.0
-margin_bottom = 20.0
+margin_bottom = 32.0
 key = "invincible_timeframe"
 description = "accessibility.invincible_timeframe_description"
 min_value = 0.2

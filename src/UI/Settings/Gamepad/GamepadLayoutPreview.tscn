@@ -44,8 +44,8 @@ default_font = ExtResource( 19 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -200.0
-margin_bottom = -170.0
-rect_min_size = Vector2( 280, 100 )
+margin_bottom = -160.0
+rect_min_size = Vector2( 280, 110 )
 theme = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -55,28 +55,26 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1.0
-margin_bottom = -1.0
 custom_styles/panel = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Gamepad" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonBottom" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 9 )
 script = ExtResource( 21 )
 
@@ -91,10 +89,10 @@ __meta__ = {
 }
 
 [node name="ButtonLeft" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 17 )
 script = ExtResource( 22 )
 
@@ -109,10 +107,10 @@ __meta__ = {
 }
 
 [node name="ButtonRight" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 18 )
 script = ExtResource( 23 )
 
@@ -127,10 +125,10 @@ __meta__ = {
 }
 
 [node name="ButtonTop" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 13 )
 script = ExtResource( 24 )
 
@@ -145,10 +143,10 @@ __meta__ = {
 }
 
 [node name="DPadDown" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 12 )
 script = ExtResource( 25 )
 
@@ -165,10 +163,10 @@ __meta__ = {
 }
 
 [node name="DPadLeft" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 6 )
 script = ExtResource( 26 )
 
@@ -185,10 +183,10 @@ __meta__ = {
 }
 
 [node name="DPadRight" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 16 )
 script = ExtResource( 27 )
 
@@ -205,10 +203,10 @@ __meta__ = {
 }
 
 [node name="DPadUp" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 8 )
 script = ExtResource( 28 )
 
@@ -225,10 +223,10 @@ __meta__ = {
 }
 
 [node name="LB" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 7 )
 script = ExtResource( 29 )
 
@@ -245,10 +243,10 @@ __meta__ = {
 }
 
 [node name="LT" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 10 )
 script = ExtResource( 30 )
 
@@ -265,10 +263,10 @@ __meta__ = {
 }
 
 [node name="RB" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 3 )
 script = ExtResource( 31 )
 
@@ -283,10 +281,10 @@ __meta__ = {
 }
 
 [node name="RT" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 15 )
 script = ExtResource( 32 )
 
@@ -301,10 +299,10 @@ __meta__ = {
 }
 
 [node name="Select" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 5 )
 script = ExtResource( 33 )
 
@@ -320,10 +318,10 @@ __meta__ = {
 }
 
 [node name="Start" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 11 )
 script = ExtResource( 34 )
 
@@ -339,10 +337,10 @@ __meta__ = {
 }
 
 [node name="StickLeft" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 4 )
 script = ExtResource( 35 )
 
@@ -359,10 +357,10 @@ __meta__ = {
 }
 
 [node name="StickRight" type="TextureRect" parent="Panel"]
-margin_left = 65.0
-margin_top = 8.0
-margin_right = 217.0
-margin_bottom = 97.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 216.0
+margin_bottom = 101.0
 texture = ExtResource( 14 )
 script = ExtResource( 36 )
 
@@ -372,69 +370,6 @@ margin_top = 65.0
 margin_right = 194.0
 margin_bottom = 73.0
 text = "Stick"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 125, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Block" type="Label" parent="VBoxContainer"]
-margin_right = 280.0
-margin_bottom = 8.0
-text = "Block"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Attack" type="Label" parent="VBoxContainer"]
-margin_top = 12.0
-margin_right = 280.0
-margin_bottom = 20.0
-text = "Attack"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Evade" type="Label" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 280.0
-margin_bottom = 32.0
-text = "Evade"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Jump" type="Label" parent="VBoxContainer"]
-margin_top = 36.0
-margin_right = 280.0
-margin_bottom = 44.0
-text = "Jump"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Run" type="Label" parent="VBoxContainer"]
-margin_top = 48.0
-margin_right = 280.0
-margin_bottom = 56.0
-text = "Run"
-align = 1
-autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

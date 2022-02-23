@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/UI/Settings/Fields/FieldSet.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Audio/Navigation/UiFocusSfx.tscn" type="PackedScene" id=2]
@@ -124,6 +124,46 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0.705882 ) ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "fieldset_panel_hidden"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Fieldset" type="Control"]
 modulate = Color( 1, 1, 1, 0.705882 )
 margin_right = 480.0
@@ -142,6 +182,7 @@ autoplay = "RESET"
 anims/RESET = SubResource( 3 )
 anims/fieldset_focus_entered = SubResource( 1 )
 anims/fieldset_focus_exited = SubResource( 2 )
+anims/fieldset_panel_hidden = SubResource( 4 )
 
 [node name="UiFocusSfx" parent="." instance=ExtResource( 2 )]
 
@@ -169,18 +210,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 custom_constants/margin_right = 8
-custom_constants/margin_top = 6
 custom_constants/margin_left = 8
-custom_constants/margin_bottom = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarginContainer"]
 margin_left = 8.0
-margin_top = 6.0
 margin_right = 472.0
-margin_bottom = 26.0
+margin_bottom = 32.0
 rect_clip_content = true
 __meta__ = {
 "_editor_description_": ""

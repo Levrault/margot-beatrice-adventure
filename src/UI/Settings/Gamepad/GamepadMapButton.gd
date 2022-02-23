@@ -8,7 +8,7 @@ export var key := ""
 
 # Global constant joystick value e.g. JOY_XBOX_B
 var assigned_to := ""
-# equivalent name as a string return by input class get_joy_x function 
+# equivalent name as a string return by input class get_joy_x function
 var joy_string := ""
 # gamepad type (xbox, dualshock, nintendo)
 var type := "xbox"

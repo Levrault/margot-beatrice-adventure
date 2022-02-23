@@ -70,9 +70,8 @@ margin_bottom = 191.0
 margin_top = 195.0
 margin_right = 440.0
 margin_bottom = 226.0
-rect_min_size = Vector2( 440, 31 )
+rect_min_size = Vector2( 440, 27 )
 text = "FIELD Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a purus mi. Mauris semper at velit nec consectetur"
-valign = 1
 autowrap = true
 script = ExtResource( 3 )
 
