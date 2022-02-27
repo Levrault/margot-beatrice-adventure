@@ -20,7 +20,7 @@ breadcrumbs = [ "commons.settings", "audio.title" ]
 
 [node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 6 )]
 margin_top = 0.0
-margin_bottom = 147.0
+margin_bottom = 157.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 428.0
@@ -48,14 +48,16 @@ margin_bottom = 32.0
 margin_right = 416.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 77.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 text = "audio.locale"
 
 [node name="Locale" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale/MarginContainer/FieldContainer" index="1" instance=ExtResource( 2 )]
 margin_left = 81.0
+margin_top = 6.0
 margin_right = 408.0
+margin_bottom = 26.0
 key = "locale"
 description = "audio.locale_description"
 placeholder = "en"
@@ -72,16 +74,16 @@ margin_bottom = 70.0
 margin_right = 416.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/MasterVolume/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 226.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "audio.master_volume"
 
 [node name="MasterVolume" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/MasterVolume/MarginContainer/FieldContainer" index="1" instance=ExtResource( 1 )]
 margin_left = 230.0
 margin_right = 408.0
-margin_bottom = 20.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 150, 0 )
 key = "master_volume"
 description = "audio.master_volume_description"
@@ -103,16 +105,16 @@ margin_bottom = 108.0
 margin_right = 416.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/MusicVolume/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 226.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "audio.music_volume"
 
 [node name="MusicVolume" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/MusicVolume/MarginContainer/FieldContainer" index="1" instance=ExtResource( 1 )]
 margin_left = 230.0
 margin_right = 408.0
-margin_bottom = 20.0
+margin_bottom = 32.0
 key = "music_volume"
 description = "audio.music_volume_description"
 min_value = -50.0
@@ -133,16 +135,16 @@ margin_bottom = 146.0
 margin_right = 416.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SfXVolume/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 226.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "audio.sfx_volume"
 
 [node name="SfxVolume" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SfXVolume/MarginContainer/FieldContainer" index="1" instance=ExtResource( 1 )]
 margin_left = 230.0
 margin_right = 408.0
-margin_bottom = 20.0
+margin_bottom = 32.0
 key = "sfx_volume"
 description = "audio.sfx_volume_description"
 min_value = -50.0
@@ -163,16 +165,16 @@ margin_bottom = 184.0
 margin_right = 416.0
 
 [node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/UiVolume/MarginContainer/FieldContainer" index="0"]
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 226.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 size_flags_horizontal = 3
 text = "audio.ui_volume"
 
 [node name="UiVolume" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/UiVolume/MarginContainer/FieldContainer" index="1" instance=ExtResource( 1 )]
 margin_left = 230.0
 margin_right = 408.0
-margin_bottom = 20.0
+margin_bottom = 32.0
 key = "ui_volume"
 description = "audio.ui_volume_description"
 min_value = -50.0
