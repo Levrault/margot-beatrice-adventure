@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/UI/Settings/Updater/WindowModeUpdater.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Settings/Updater/VSyncUpdater.gd" type="Script" id=2]
@@ -9,12 +9,173 @@
 [ext_resource path="res://src/UI/Settings/Fields/CheckboxField.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/Settings/Fields/DropDownField.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UI/Settings/Filter/ResolutionFilter.gd" type="Script" id=9]
+[ext_resource path="res://src/UI/Settings/Updater/LocaleUpdater.gd" type="Script" id=10]
+[ext_resource path="res://src/UI/Commons/Scroll/ScrollContent.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fieldset_focus_entered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fieldset_focus_exited"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fieldset_panel_hidden"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="DisplaySettingsPage" instance=ExtResource( 6 )]
-default_field_to_focus = NodePath("Wrapper/Page/Contents/VSync/MarginContainer/FieldContainer/Vsync")
+default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer/FieldContainer/Vsync")
 
 [node name="Form" parent="." index="0"]
-engine_file_section = "video"
+engine_file_section = "display"
 section_title = "display.title"
 
 [node name="Breadcrumb" parent="Wrapper/Page" index="0"]
@@ -27,15 +188,131 @@ text = "Breadcrumb"
 [node name="Contents" parent="Wrapper/Page" index="1"]
 custom_constants/separation = 20
 
-[node name="VSync" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 5 )]
-margin_top = 10.0
+[node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 11 )]
+margin_top = 0.0
+margin_bottom = 157.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 440.0
-margin_bottom = 42.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+__meta__ = {
+"_editor_description_": ""
+}
 
-[node name="FieldContainer" parent="Wrapper/Page/Contents/VSync/MarginContainer" index="0"]
-margin_right = 432.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer" index="0"]
+margin_right = 436.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+alignment = 1
+__meta__ = {
+"_editor_description_": ""
+}
 
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/VSync/MarginContainer/FieldContainer" index="0"]
+[node name="Locale" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="0" instance=ExtResource( 5 )]
+margin_top = 5.0
+margin_right = 436.0
+margin_bottom = 37.0
+
+[node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale" index="0"]
+anims/RESET = SubResource( 1 )
+anims/fieldset_focus_entered = SubResource( 2 )
+anims/fieldset_focus_exited = SubResource( 3 )
+anims/fieldset_panel_hidden = SubResource( 4 )
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale/MarginContainer" index="0"]
+margin_right = 428.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 77.0
+margin_bottom = 23.0
+text = "audio.locale"
+
+[node name="Locale" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale/MarginContainer/FieldContainer" index="1" instance=ExtResource( 8 )]
+margin_left = 81.0
+margin_top = 6.0
+margin_right = 420.0
+margin_bottom = 26.0
+key = "locale"
+description = "audio.locale_description"
+placeholder = "English"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale/MarginContainer/FieldContainer/Locale" index="1"]
+script = ExtResource( 10 )
+
+[node name="WindowMode" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="1" instance=ExtResource( 5 )]
+margin_top = 43.0
+margin_right = 436.0
+margin_bottom = 75.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/WindowMode/MarginContainer" index="0"]
+margin_right = 428.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/WindowMode/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 140.0
+margin_bottom = 23.0
+text = "display.window_mode"
+
+[node name="WindowMode" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/WindowMode/MarginContainer/FieldContainer" index="1" instance=ExtResource( 8 )]
+margin_left = 144.0
+margin_top = 6.0
+margin_right = 420.0
+margin_bottom = 26.0
+key = "window_mode"
+description = "display.window_mode_description"
+placeholder = "borderless"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/WindowMode/MarginContainer/FieldContainer/WindowMode" index="1"]
+script = ExtResource( 1 )
+confirmation_dialog_path = NodePath("../../../../../../../../../../../ConfirmFieldValueDialogWindowsMode")
+
+[node name="Resolution" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="2" instance=ExtResource( 5 )]
+margin_top = 81.0
+margin_right = 436.0
+margin_bottom = 113.0
+focus_neighbour_bottom = NodePath("../../OptionsFooter/ApplySettingsButton")
+focus_next = NodePath("../../OptionsFooter/ApplySettingsButton")
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer" index="0"]
+margin_right = 428.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 163.0
+margin_bottom = 23.0
+text = "display.screen_resolution"
+
+[node name="ScreenResolution" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer/FieldContainer" index="1" instance=ExtResource( 8 )]
+margin_left = 167.0
+margin_top = 6.0
+margin_right = 420.0
+margin_bottom = 26.0
+key = "screen_resolution"
+description = "display.screen_resolution_description"
+placeholder = "1920x1080 (16:9)"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer/FieldContainer/ScreenResolution" index="1"]
+script = ExtResource( 3 )
+confirmation_dialog_path = NodePath("../../../../../../../../../../../ConfirmFieldValueDialogScreenResolution")
+
+[node name="Filter" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer/FieldContainer/ScreenResolution" index="6"]
+script = ExtResource( 9 )
+
+[node name="VSync" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="3" instance=ExtResource( 5 )]
+margin_top = 119.0
+margin_right = 436.0
+margin_bottom = 151.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer" index="0"]
+margin_right = 428.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer/FieldContainer" index="0"]
 margin_top = 9.0
 margin_right = 85.0
 margin_bottom = 23.0
@@ -44,81 +321,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Vsync" parent="Wrapper/Page/Contents/VSync/MarginContainer/FieldContainer" index="1" instance=ExtResource( 7 )]
+[node name="Vsync" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer/FieldContainer" index="1" instance=ExtResource( 7 )]
 margin_left = 89.0
-margin_right = 424.0
+margin_right = 420.0
 margin_bottom = 32.0
 key = "use_vsync"
 description = "display.vsync_description"
 
-[node name="Updater" type="Node" parent="Wrapper/Page/Contents/VSync/MarginContainer/FieldContainer/Vsync" index="1"]
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer/FieldContainer/Vsync" index="1"]
 script = ExtResource( 2 )
 
-[node name="Resolution" parent="Wrapper/Page/Contents" index="1" instance=ExtResource( 5 )]
-margin_top = 62.0
-margin_right = 440.0
-margin_bottom = 94.0
-focus_neighbour_bottom = NodePath("../../OptionsFooter/ApplySettingsButton")
-focus_next = NodePath("../../OptionsFooter/ApplySettingsButton")
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/Resolution/MarginContainer" index="0"]
-margin_right = 432.0
-
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/Resolution/MarginContainer/FieldContainer" index="0"]
-margin_top = 9.0
-margin_right = 163.0
-margin_bottom = 23.0
-text = "display.screen_resolution"
-
-[node name="ScreenResolution" parent="Wrapper/Page/Contents/Resolution/MarginContainer/FieldContainer" index="1" instance=ExtResource( 8 )]
-margin_left = 167.0
-margin_top = 6.0
-margin_right = 424.0
-margin_bottom = 26.0
-key = "screen_resolution"
-description = "display.screen_resolution_description"
-placeholder = "1920x1080 (16:9)"
-
-[node name="Updater" type="Node" parent="Wrapper/Page/Contents/Resolution/MarginContainer/FieldContainer/ScreenResolution" index="1"]
-script = ExtResource( 3 )
-confirmation_dialog_path = NodePath("../../../../../../../../ConfirmFieldValueDialogScreenResolution")
-
-[node name="Filter" type="Node" parent="Wrapper/Page/Contents/Resolution/MarginContainer/FieldContainer/ScreenResolution" index="6"]
-script = ExtResource( 9 )
-
-[node name="WindowMode" parent="Wrapper/Page/Contents" index="2" instance=ExtResource( 5 )]
-margin_top = 114.0
-margin_right = 440.0
-margin_bottom = 146.0
-
-[node name="FieldContainer" parent="Wrapper/Page/Contents/WindowMode/MarginContainer" index="0"]
-margin_right = 432.0
-
-[node name="Label" type="Label" parent="Wrapper/Page/Contents/WindowMode/MarginContainer/FieldContainer" index="0"]
-margin_top = 9.0
-margin_right = 140.0
-margin_bottom = 23.0
-text = "display.window_mode"
-
-[node name="WindowMode" parent="Wrapper/Page/Contents/WindowMode/MarginContainer/FieldContainer" index="1" instance=ExtResource( 8 )]
-margin_left = 144.0
-margin_top = 6.0
-margin_right = 424.0
-margin_bottom = 26.0
-key = "window_mode"
-description = "display.window_mode_description"
-placeholder = "borderless"
-
-[node name="Updater" type="Node" parent="Wrapper/Page/Contents/WindowMode/MarginContainer/FieldContainer/WindowMode" index="1"]
-script = ExtResource( 1 )
-confirmation_dialog_path = NodePath("../../../../../../../../ConfirmFieldValueDialogWindowsMode")
-
 [node name="ConfirmFieldValueDialogScreenResolution" parent="." index="2" instance=ExtResource( 4 )]
-field_path = NodePath("../Wrapper/Page/Contents/Resolution/MarginContainer/FieldContainer/ScreenResolution")
+field_path = NodePath("../Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution/MarginContainer/FieldContainer/ScreenResolution")
 
 [node name="ConfirmFieldValueDialogWindowsMode" parent="." index="3" instance=ExtResource( 4 )]
-field_path = NodePath("../Wrapper/Page/Contents/WindowMode/MarginContainer/FieldContainer/WindowMode")
+field_path = NodePath("../Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/WindowMode/MarginContainer/FieldContainer/WindowMode")
 
-[editable path="Wrapper/Page/Contents/VSync"]
-[editable path="Wrapper/Page/Contents/Resolution"]
-[editable path="Wrapper/Page/Contents/WindowMode"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/WindowMode"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Resolution"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync"]

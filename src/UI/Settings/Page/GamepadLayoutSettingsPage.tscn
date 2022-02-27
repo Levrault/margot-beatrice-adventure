@@ -421,7 +421,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "controls.gamepad_stick_layout"
+text = "gamepad.stick_layout"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -431,7 +431,7 @@ margin_left = 206.0
 margin_right = 408.0
 margin_bottom = 32.0
 key = "gamepad_stick_layout"
-description = "controls.gamepad_stick_layout_description"
+description = "gamepad.stick_layout_description"
 placeholder = "left stick"
 
 [node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadStickLayout/MarginContainer/FieldContainer/GamepadStickLayout" index="5"]
