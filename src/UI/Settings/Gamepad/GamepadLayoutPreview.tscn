@@ -43,9 +43,9 @@ default_font = ExtResource( 19 )
 [node name="GamepadLayoutPreview" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -200.0
+margin_right = -100.0
 margin_bottom = -160.0
-rect_min_size = Vector2( 280, 110 )
+rect_min_size = Vector2( 380, 110 )
 theme = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -61,20 +61,28 @@ __meta__ = {
 }
 
 [node name="Gamepad" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonBottom" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 9 )
 script = ExtResource( 21 )
 
@@ -89,10 +97,14 @@ __meta__ = {
 }
 
 [node name="ButtonLeft" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 17 )
 script = ExtResource( 22 )
 
@@ -107,10 +119,14 @@ __meta__ = {
 }
 
 [node name="ButtonRight" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 18 )
 script = ExtResource( 23 )
 
@@ -125,10 +141,14 @@ __meta__ = {
 }
 
 [node name="ButtonTop" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 13 )
 script = ExtResource( 24 )
 
@@ -143,10 +163,14 @@ __meta__ = {
 }
 
 [node name="DPadDown" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 12 )
 script = ExtResource( 25 )
 
@@ -163,10 +187,14 @@ __meta__ = {
 }
 
 [node name="DPadLeft" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 6 )
 script = ExtResource( 26 )
 
@@ -183,10 +211,14 @@ __meta__ = {
 }
 
 [node name="DPadRight" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 16 )
 script = ExtResource( 27 )
 
@@ -203,10 +235,14 @@ __meta__ = {
 }
 
 [node name="DPadUp" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 8 )
 script = ExtResource( 28 )
 
@@ -223,10 +259,14 @@ __meta__ = {
 }
 
 [node name="LB" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 7 )
 script = ExtResource( 29 )
 
@@ -243,10 +283,14 @@ __meta__ = {
 }
 
 [node name="LT" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 10 )
 script = ExtResource( 30 )
 
@@ -263,10 +307,14 @@ __meta__ = {
 }
 
 [node name="RB" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 3 )
 script = ExtResource( 31 )
 
@@ -281,10 +329,14 @@ __meta__ = {
 }
 
 [node name="RT" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 15 )
 script = ExtResource( 32 )
 
@@ -299,10 +351,14 @@ __meta__ = {
 }
 
 [node name="Select" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 5 )
 script = ExtResource( 33 )
 
@@ -318,10 +374,14 @@ __meta__ = {
 }
 
 [node name="Start" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 11 )
 script = ExtResource( 34 )
 
@@ -337,10 +397,14 @@ __meta__ = {
 }
 
 [node name="StickLeft" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 4 )
 script = ExtResource( 35 )
 
@@ -357,10 +421,14 @@ __meta__ = {
 }
 
 [node name="StickRight" type="TextureRect" parent="Panel"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 101.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -44.5
+margin_right = 76.0
+margin_bottom = 44.5
 texture = ExtResource( 14 )
 script = ExtResource( 36 )
 
