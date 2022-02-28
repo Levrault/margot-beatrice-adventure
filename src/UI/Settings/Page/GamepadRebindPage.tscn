@@ -21,7 +21,7 @@ section_title = "gamepad.title"
 [node name="RequiredFieldUnmapped" parent="Form" index="1" instance=ExtResource( 6 )]
 
 [node name="Breadcrumb" parent="Wrapper/Page" index="0"]
-breadcrumbs = [ "commons.settings", "rebind.gamepad" ]
+breadcrumbs = [ "rebind.gamepad" ]
 
 [node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 7 )]
 margin_top = 0.0

@@ -25,7 +25,7 @@ section_title = "commons.keyboard"
 [node name="RequiredFieldUnmapped" parent="Form" index="1" instance=ExtResource( 7 )]
 
 [node name="Breadcrumb" parent="Wrapper/Page" index="0"]
-breadcrumbs = [ "commons.settings", "rebind.keyboard" ]
+breadcrumbs = [ "rebind.keyboard" ]
 
 [node name="Control" type="Control" parent="Wrapper/Page/Contents" index="0"]
 margin_right = 440.0

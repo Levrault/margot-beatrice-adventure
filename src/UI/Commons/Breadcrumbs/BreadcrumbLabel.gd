@@ -3,6 +3,7 @@
 extends Label
 
 var active := false setget set_active
+var translation_key := ""
 
 onready var anim := $AnimationPlayer
 

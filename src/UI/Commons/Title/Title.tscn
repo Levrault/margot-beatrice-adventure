@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://src/UI/Commons/Title/Title.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/joystick_18.tres" type="DynamicFont" id=2]
 
 [node name="Title" type="Label"]
@@ -9,7 +8,6 @@ margin_bottom = 14.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
 text = "ui_title_placeholder"
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
