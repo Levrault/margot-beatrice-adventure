@@ -172,7 +172,7 @@ tracks/2/keys = {
 }
 
 [node name="DisplaySettingsPage" instance=ExtResource( 6 )]
-default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/VSync/MarginContainer/FieldContainer/Vsync")
+default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Locale/MarginContainer/FieldContainer/Locale")
 
 [node name="Form" parent="." index="0"]
 engine_file_section = "display"

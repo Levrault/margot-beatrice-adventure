@@ -7,6 +7,7 @@
 [ext_resource path="res://src/UI/Settings/Updater/VolumeUpdater.gd" type="Script" id=7]
 
 [node name="AudioSettingsPage" instance=ExtResource( 4 )]
+default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/MasterVolume/MarginContainer/FieldContainer/MasterVolume")
 
 [node name="Form" parent="." index="0"]
 engine_file_section = "audio"

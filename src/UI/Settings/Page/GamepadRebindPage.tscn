@@ -16,10 +16,6 @@ script = ExtResource( 5 )
 engine_file_section = "gamepad_bindind"
 section_title = "gamepad.title"
 
-[node name="GamepadMapListenerDialog" parent="Form" index="0" instance=ExtResource( 2 )]
-
-[node name="RequiredFieldUnmapped" parent="Form" index="1" instance=ExtResource( 6 )]
-
 [node name="Breadcrumb" parent="Wrapper/Page" index="0"]
 breadcrumbs = [ "rebind.gamepad" ]
 
@@ -153,6 +149,10 @@ margin_bottom = 32.0
 action = "dash"
 description = "input.dash_description"
 placeholder = "B"
+
+[node name="RequiredFieldUnmapped" parent="." index="2" instance=ExtResource( 6 )]
+
+[node name="GamepadMapListenerDialog" parent="." index="3" instance=ExtResource( 2 )]
 
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction"]
