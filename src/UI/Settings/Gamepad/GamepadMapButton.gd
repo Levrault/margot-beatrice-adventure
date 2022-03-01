@@ -16,7 +16,7 @@ var type := "xbox"
 
 func _ready() -> void:
 	connect("pressed", self, "_on_Pressed")
-	type = InputManager.DEVICE_XBOX_CONTROLLER
+	type = InputManager.default_gamepad
 
 
 # assign a new value based on a constant string from keylist.cfg
@@ -26,7 +26,7 @@ func assign_with_constant(value: String) -> void:
 		return
 
 	assigned_to = value
-	text = assigned_to
+	#text = assigned_to
 
 	if InputManager.is_motion_event(value):
 		joy_string = Input.get_joy_axis_string(EngineSettings.keylist.gamepad[value])
@@ -35,6 +35,7 @@ func assign_with_constant(value: String) -> void:
 		joy_string = Input.get_joy_button_string(EngineSettings.keylist.gamepad[value])
 		InputManager.addJoyButtonEvent(owner.action, value)
 
+	icon = InputManager.get_device_icon_texture_from_action(value, type)
 	owner.values[key] = {
 		joy_value = EngineSettings.keylist.gamepad[assigned_to],
 		device_joy_string = assigned_to,

@@ -19,13 +19,15 @@ section_title = "gamepad.title"
 [node name="Breadcrumb" parent="Wrapper/Page" index="0"]
 breadcrumbs = [ "rebind.gamepad" ]
 
+[node name="Contents" parent="Wrapper/Page" index="1"]
+margin_bottom = 181.0
+
 [node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 7 )]
 margin_top = 0.0
-margin_bottom = 157.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 440.0
-margin_bottom = 157.0
+margin_bottom = 155.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 4
@@ -35,7 +37,7 @@ __meta__ = {
 
 [node name="KeyMapTable" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer" index="0"]
 margin_right = 436.0
-margin_bottom = 157.0
+margin_bottom = 155.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -43,7 +45,6 @@ size_flags_vertical = 3
 margin_right = 436.0
 margin_bottom = 32.0
 rect_clip_content = false
-is_hidden_on_focus = true
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump/MarginContainer" index="0"]
 margin_right = 428.0
@@ -64,14 +65,12 @@ margin_right = 420.0
 margin_bottom = 32.0
 action = "jump"
 description = "input.jump_description"
-placeholder = "A"
 
 [node name="Interaction" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="1" instance=ExtResource( 3 )]
 margin_top = 36.0
 margin_right = 436.0
 margin_bottom = 68.0
 rect_clip_content = false
-is_hidden_on_focus = true
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction/MarginContainer" index="0"]
 margin_right = 428.0
@@ -92,14 +91,12 @@ margin_right = 420.0
 margin_bottom = 32.0
 action = "interaction"
 description = "input.interaction_description"
-placeholder = "X"
 
 [node name="CharacterWheel" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="2" instance=ExtResource( 3 )]
 margin_top = 72.0
 margin_right = 436.0
 margin_bottom = 104.0
 rect_clip_content = false
-is_hidden_on_focus = true
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/CharacterWheel/MarginContainer" index="0"]
 margin_right = 428.0
@@ -120,14 +117,12 @@ margin_right = 420.0
 margin_bottom = 32.0
 action = "character_wheel"
 description = "input.character_wheel_description"
-placeholder = "Y"
 
 [node name="Dash" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="3" instance=ExtResource( 3 )]
 margin_top = 108.0
 margin_right = 436.0
 margin_bottom = 140.0
 rect_clip_content = false
-is_hidden_on_focus = true
 
 [node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash/MarginContainer" index="0"]
 margin_right = 428.0
@@ -148,7 +143,26 @@ margin_right = 420.0
 margin_bottom = 32.0
 action = "dash"
 description = "input.dash_description"
-placeholder = "B"
+
+[node name="HSeparator" parent="Wrapper/Page" index="2"]
+margin_top = 185.0
+margin_bottom = 189.0
+
+[node name="FieldDescription" parent="Wrapper/Page" index="3"]
+margin_top = 193.0
+margin_bottom = 224.0
+
+[node name="Footer" parent="Wrapper/Page" index="4"]
+margin_top = 228.0
+
+[node name="ResetToDefaultButton" parent="Wrapper/Page/Footer" index="0"]
+margin_left = 130.0
+margin_right = 293.0
+margin_bottom = 22.0
+
+[node name="PreviousPagePage" parent="Wrapper/Page/Footer" index="1"]
+margin_left = 297.0
+margin_bottom = 22.0
 
 [node name="RequiredFieldUnmapped" parent="." index="2" instance=ExtResource( 6 )]
 

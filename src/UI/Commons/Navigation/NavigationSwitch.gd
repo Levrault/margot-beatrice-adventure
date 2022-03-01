@@ -1,5 +1,5 @@
-# Switch when a NavigationButton is click
 # @category: Navigation
+# Switch when a NavigationButton is click
 class_name NavigationSwitch
 extends Control
 
