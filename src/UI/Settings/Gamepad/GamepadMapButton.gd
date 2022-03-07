@@ -26,7 +26,7 @@ func assign_with_constant(value: String) -> void:
 		return
 
 	assigned_to = value
-	#text = assigned_to
+	text = ""
 
 	if InputManager.is_motion_event(value):
 		joy_string = Input.get_joy_axis_string(EngineSettings.keylist.gamepad[value])
@@ -49,6 +49,7 @@ func clear() -> void:
 	text = "_"
 	assigned_to = ""
 	joy_string = ""
+	icon = null;
 	owner.values[key] = ""
 
 

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=43 format=2]
+[gd_resource type="Theme" load_steps=45 format=2]
 
 [ext_resource path="res://assets/theme/generic_box_focus.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/theme/joystix_10.tres" type="DynamicFont" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_scroll.png" type="Texture" id=18]
 [ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_grabber.png" type="Texture" id=19]
 [ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_grabber_focus.png" type="Texture" id=20]
+[ext_resource path="res://assets/UI/window_dialog/ui_window_dialog.png" type="Texture" id=21]
 
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 4 )
@@ -139,6 +140,15 @@ margin_right = 1.0
 margin_top = 1.0
 margin_bottom = 1.0
 
+[sub_resource type="StyleBoxTexture" id=38]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 1, 24, 47 )
+margin_left = 7.0
+margin_right = 7.0
+margin_top = 30.0
+margin_bottom = 5.0
+expand_margin_top = 24.0
+
 [resource]
 default_font = ExtResource( 2 )
 Button/colors/font_color_focus = Color( 0.984314, 0.94902, 0.211765, 1 )
@@ -184,4 +194,5 @@ VScrollBar/styles/grabber = SubResource( 32 )
 VScrollBar/styles/grabber_highlight = SubResource( 33 )
 VScrollBar/styles/grabber_pressed = SubResource( 34 )
 VScrollBar/styles/scroll = SubResource( 31 )
-WindowDialog/styles/panel = ExtResource( 3 )
+WindowDialog/colors/title_color = Color( 0.984314, 0.94902, 0.211765, 1 )
+WindowDialog/styles/panel = SubResource( 38 )

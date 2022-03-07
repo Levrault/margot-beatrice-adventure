@@ -145,15 +145,15 @@ func get_device_button_from_action(action: String, for_device: String) -> String
 	return result
 
 
-func get_device_icon_texture_from_action(joy_string: String, for_device: String) -> AtlasTexture:
+func get_device_icon_texture_from_action(input: String, for_device: String) -> AtlasTexture:
 	if for_device == InputManager.DEVICE_MOUSE:
 		for_device = InputManager.DEVICE_KEYBOARD
 	if for_device == InputManager.DEVICE_KEYBOARD:
-		joy_string = "KEY_" + joy_string.to_upper()
+		input = "KEY_" + input.to_upper()
 
 	var texture = AtlasTexture.new()
 	texture.atlas = load(ICON_ATLAS_TEXTURE_PATH)
-	var atlas_region = atlas_map[for_device][joy_string]
+	var atlas_region = atlas_map[for_device][input]
 	texture.region = Rect2(atlas_region[0], atlas_region[1], atlas_region[2], atlas_region[3])
 	return texture
 
