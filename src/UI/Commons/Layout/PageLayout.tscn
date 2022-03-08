@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UI/Commons/Button/PreviousPageButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/Commons/Title/Title.tscn" type="PackedScene" id=3]
+
+[node name="MenuLayout" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrapper" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 15
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Page" type="VBoxContainer" parent="Wrapper"]
+margin_left = 20.0
+margin_top = 15.0
+margin_right = 460.0
+margin_bottom = 255.0
+size_flags_horizontal = 3
+
+[node name="Title" parent="Wrapper/Page" instance=ExtResource( 3 )]
+
+[node name="CenterContainer" type="CenterContainer" parent="Wrapper/Page"]
+margin_top = 18.0
+margin_right = 440.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Contents" type="VBoxContainer" parent="Wrapper/Page/CenterContainer"]
+margin_left = 220.0
+margin_top = 99.0
+margin_right = 220.0
+margin_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Footer" type="HBoxContainer" parent="Wrapper/Page"]
+margin_top = 220.0
+margin_right = 440.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuBackInput" parent="Wrapper/Page/Footer" instance=ExtResource( 1 )]
+margin_left = 331.0
+margin_right = 440.0

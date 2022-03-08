@@ -1,0 +1,268 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/UI/Settings/SettingsPageTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Settings/Fields/FieldSet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/Settings/Keymap/KeyMapField.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Commons/Scroll/ScrollContent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/Settings/Keymap/KeyMapListenerDialog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UI/Settings/Form/KeyboardRebindForm.gd" type="Script" id=6]
+[ext_resource path="res://src/UI/Settings/Dialog/RequiredFieldUnmapped.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UI/Settings/Keymap/KeyboardRebindHelper.gd" type="Script" id=8]
+
+[node name="KeyboardRebindPage" instance=ExtResource( 1 )]
+default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveUp/MarginContainer/FieldContainer/MoveUp")
+
+[node name="KeyboardRebindHelper" type="Node" parent="." index="0"]
+script = ExtResource( 8 )
+
+[node name="Form" parent="." index="1"]
+script = ExtResource( 6 )
+engine_file_section = "keyboard_and_mouse_bindind"
+section_title = "commons.keyboard"
+
+[node name="Breadcrumb" parent="Wrapper/Page" index="0"]
+breadcrumbs = [ "rebind.keyboard" ]
+
+[node name="Contents" parent="Wrapper/Page" index="1"]
+margin_bottom = 181.0
+
+[node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 4 )]
+margin_top = 0.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
+margin_right = 428.0
+margin_bottom = 326.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="KeyMapTable" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer" index="0"]
+margin_right = 424.0
+margin_bottom = 326.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="MoveUp" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="0" instance=ExtResource( 2 )]
+margin_right = 424.0
+margin_bottom = 32.0
+rect_clip_content = false
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveUp/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveUp/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.move_up"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MoveUp" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveUp/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "move_up"
+description = "input.move_up_description"
+placeholder = "W"
+
+[node name="MoveDown" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="1" instance=ExtResource( 2 )]
+margin_top = 42.0
+margin_right = 424.0
+margin_bottom = 74.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveDown/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveDown/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "input.move_down"
+
+[node name="MoveDown" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveDown/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "move_down"
+description = "input.move_down_description"
+placeholder = "S"
+
+[node name="MoveRight" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="2" instance=ExtResource( 2 )]
+margin_top = 84.0
+margin_right = 424.0
+margin_bottom = 116.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveRight/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveRight/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.move_left"
+
+[node name="MoveLeft" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveRight/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "move_left"
+description = "input.move_left_description"
+placeholder = "A"
+
+[node name="MoveLeft" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="3" instance=ExtResource( 2 )]
+margin_top = 126.0
+margin_right = 424.0
+margin_bottom = 158.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveLeft/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveLeft/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.move_right"
+
+[node name="MoveRight" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveLeft/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "move_right"
+description = "input.move_right_description"
+placeholder = "D"
+
+[node name="Jump" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="4" instance=ExtResource( 2 )]
+margin_top = 168.0
+margin_right = 424.0
+margin_bottom = 200.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.jump"
+
+[node name="Jump" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "jump"
+description = "input.jump_description"
+placeholder = "SPACE"
+
+[node name="Dash" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="5" instance=ExtResource( 2 )]
+margin_top = 210.0
+margin_right = 424.0
+margin_bottom = 242.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.run"
+
+[node name="Dash" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "dash"
+description = "input.dash_description"
+placeholder = "shift"
+
+[node name="Interaction" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="6" instance=ExtResource( 2 )]
+margin_top = 252.0
+margin_right = 424.0
+margin_bottom = 284.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.attack"
+
+[node name="Interaction" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "interaction"
+description = "input.interaction_description"
+placeholder = "left mouse button"
+
+[node name="CharacterWheel" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="7" instance=ExtResource( 2 )]
+margin_top = 294.0
+margin_right = 424.0
+margin_bottom = 326.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/CharacterWheel/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/CharacterWheel/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.block"
+
+[node name="CharacterWheel" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/CharacterWheel/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "character_wheel"
+description = "input.character_wheel_description"
+placeholder = "right mouse button"
+
+[node name="HSeparator" parent="Wrapper/Page" index="2"]
+margin_top = 185.0
+margin_bottom = 189.0
+
+[node name="FieldDescription" parent="Wrapper/Page" index="3"]
+margin_top = 193.0
+margin_bottom = 224.0
+
+[node name="Footer" parent="Wrapper/Page" index="4"]
+margin_top = 228.0
+
+[node name="ResetToDefaultButton" parent="Wrapper/Page/Footer" index="0"]
+margin_left = 130.0
+margin_right = 293.0
+margin_bottom = 22.0
+
+[node name="PreviousPagePage" parent="Wrapper/Page/Footer" index="1"]
+margin_left = 297.0
+margin_bottom = 22.0
+
+[node name="KeyMapListenerDialog" parent="." index="3" instance=ExtResource( 5 )]
+
+[node name="RequiredFieldUnmapped" parent="." index="4" instance=ExtResource( 7 )]
+
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveUp"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveDown"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveRight"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/MoveLeft"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/CharacterWheel"]

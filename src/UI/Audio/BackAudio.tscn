@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://assets/audio/Back_tones/style1/back_style_1_echo_001.ogg" type="AudioStream" id=1]
-
-[node name="BackAudio" type="AudioStreamPlayer2D"]
-stream = ExtResource( 1 )

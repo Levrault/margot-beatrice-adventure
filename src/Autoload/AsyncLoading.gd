@@ -1,7 +1,7 @@
 # Singleton that manage level
 extends Node
 
-var loading_screen_scene: Resource = preload("res://src/UI/LoadingScreen.tscn")
+var loading_screen_scene: Resource = preload("res://src/UI/LoadingScreen/LoadingScreen.tscn")
 var loading_screen: Node
 
 var loader: ResourceInteractiveLoader

@@ -1,0 +1,488 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://src/UI/Settings/SettingsPageTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Settings/Updater/GamepadLayoutUpdater.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/Settings/Gamepad/GamepadLayoutPreview.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Settings/Fields/HListField.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UI/Settings/Fields/FieldSet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UI/Settings/Form/GamepadLayoutForm.gd" type="Script" id=7]
+[ext_resource path="res://src/UI/Settings/Updater/GameStickLayoutUpdater.gd" type="Script" id=8]
+[ext_resource path="res://src/UI/Commons/Scroll/ScrollContent.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/UI/Settings/Updater/GamepadVibrationUpdater.gd" type="Script" id=10]
+[ext_resource path="res://src/UI/Settings/Fields/SliderField.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fieldset_focus_entered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fieldset_focus_exited"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fieldset_panel_hidden"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fieldset_focus_entered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "fieldset_focus_exited"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "fieldset_panel_hidden"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="GamepadLayoutSettingsPage" instance=ExtResource( 1 )]
+default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadLayout/MarginContainer/FieldContainer/GamepadLayout")
+
+[node name="Form" parent="." index="0"]
+script = ExtResource( 7 )
+engine_file_section = "gamepad_layout"
+section_title = "gamepad.title"
+
+[node name="Breadcrumb" parent="Wrapper/Page" index="0"]
+breadcrumbs = [ "commons.settings", "gamepad.title" ]
+
+[node name="Contents" parent="Wrapper/Page" index="1"]
+custom_constants/separation = 2
+
+[node name="ScrollContent" parent="Wrapper/Page/Contents" index="0" instance=ExtResource( 9 )]
+margin_top = 0.0
+margin_bottom = 157.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
+margin_right = 428.0
+margin_bottom = 234.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer" index="0"]
+margin_right = 424.0
+margin_bottom = 234.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 2
+
+[node name="GamepadLayout" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="0" instance=ExtResource( 6 )]
+margin_right = 424.0
+margin_bottom = 32.0
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadLayout/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadLayout/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "gamepad.layout"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GamepadLayout" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadLayout/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+key = "gamepad_layout"
+description = "gamepad.layout_description"
+placeholder = "default"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadLayout/MarginContainer/FieldContainer/GamepadLayout" index="4"]
+script = ExtResource( 2 )
+
+[node name="LayoutPreview" type="CenterContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="1"]
+margin_top = 34.0
+margin_right = 424.0
+margin_bottom = 144.0
+
+[node name="GamepadLayoutPreview" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/LayoutPreview" index="0" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 22.0
+margin_right = 402.0
+margin_bottom = 110.0
+
+[node name="GamepadStickLayout" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="2" instance=ExtResource( 6 )]
+margin_top = 146.0
+margin_right = 424.0
+margin_bottom = 178.0
+
+[node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadStickLayout" index="0"]
+anims/RESET = SubResource( 1 )
+anims/fieldset_focus_entered = SubResource( 2 )
+anims/fieldset_focus_exited = SubResource( 3 )
+anims/fieldset_panel_hidden = SubResource( 4 )
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadStickLayout/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadStickLayout/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "gamepad.stick_layout"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GamepadStickLayout" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadStickLayout/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+key = "gamepad_stick_layout"
+description = "gamepad.stick_layout_description"
+placeholder = "left stick"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadStickLayout/MarginContainer/FieldContainer/GamepadStickLayout" index="5"]
+script = ExtResource( 8 )
+
+[node name="GamepadVibration" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="3" instance=ExtResource( 6 )]
+margin_top = 180.0
+margin_right = 424.0
+margin_bottom = 212.0
+
+[node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration" index="0"]
+anims/RESET = SubResource( 5 )
+anims/fieldset_focus_entered = SubResource( 6 )
+anims/fieldset_focus_exited = SubResource( 7 )
+anims/fieldset_panel_hidden = SubResource( 8 )
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 214.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "gamepad.vibration"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GamepadVibration" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer" index="1" instance=ExtResource( 11 )]
+margin_left = 218.0
+margin_right = 408.0
+margin_bottom = 32.0
+key = "gamepad_vibration"
+description = "gamepad.vibration_description"
+max_value = 1.0
+nb_of_step = 20
+percentage_mode = true
+placeholder = "100%"
+
+[node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration/MarginContainer/FieldContainer/GamepadVibration" index="2"]
+script = ExtResource( 10 )
+
+[node name="GamepadBindind" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="4" instance=ExtResource( 5 )]
+margin_top = 214.0
+margin_right = 424.0
+margin_bottom = 234.0
+mouse_default_cursor_shape = 0
+text = "rebind.gamepad"
+navigate_to = "GamepadRebindPage"
+
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadLayout"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadStickLayout"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadVibration"]
