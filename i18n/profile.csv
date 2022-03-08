@@ -1,0 +1,5 @@
+,en,fr
+profile.completed,"{percentage}% completed","{percentage}% complété"
+profile.new_game,"new game","nouvelle partie"
+profile.playtime,"playtime {hours}h{minutes}","temps de jeu {hours}h{minutes}"
+profile.level,"level {level}","niveau {level}"

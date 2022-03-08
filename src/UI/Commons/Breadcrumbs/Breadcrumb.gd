@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func initialize() -> void:
-	var elements :Array = breadcrumbs.duplicate();
+	var elements: Array = breadcrumbs.duplicate()
 	var root = elements.pop_front()
 	if root == null:
 		breadcrumb_root.text = ""
@@ -34,4 +34,3 @@ func initialize() -> void:
 func translate() -> void:
 	for child in get_children():
 		child.text = tr(child.translation_key)
-

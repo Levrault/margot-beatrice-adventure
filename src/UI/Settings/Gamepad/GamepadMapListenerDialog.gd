@@ -17,11 +17,17 @@ onready var bound_to_icon := bound_to_container.get_node("HBoxContainer/Icon")
 
 onready var unbinding_action_container := $MarginContainer/VBoxContainer/UnbingActionContainer
 onready var unbinding_action_icon := unbinding_action_container.get_node("HBoxContainer/Icon")
-onready var unbinding_action_from_action_label := unbinding_action_container.get_node("HBoxContainer/FromAction")
+onready var unbinding_action_from_action_label := unbinding_action_container.get_node(
+	"HBoxContainer/FromAction"
+)
 
 onready var change_binding_to_new_action_container := $MarginContainer/VBoxContainer/ChangeBindingToNewActionContainer
-onready var change_binding_to_new_action_icon := change_binding_to_new_action_container.get_node("BindingContainer/HBoxContainer/Icon")
-onready var change_binding_to_new_action_label := change_binding_to_new_action_container.get_node("LabelContainer/ToNewAction")
+onready var change_binding_to_new_action_icon := change_binding_to_new_action_container.get_node(
+	"BindingContainer/HBoxContainer/Icon"
+)
+onready var change_binding_to_new_action_label := change_binding_to_new_action_container.get_node(
+	"LabelContainer/ToNewAction"
+)
 
 onready var cancel_binding_container := $MarginContainer/VBoxContainer/CancelBindingContainer
 onready var cancel_binding_icon := cancel_binding_container.get_node("HBoxContainer/Icon")
@@ -29,10 +35,14 @@ onready var cancel_binding_icon := cancel_binding_container.get_node("HBoxContai
 onready var hold_to_unbind_container := $MarginContainer/VBoxContainer/HoldToUnbindContainer
 onready var hold_to_icon_unbind := hold_to_unbind_container.get_node("HBoxContainer/IconUnbind")
 onready var hold_to_icon_action := hold_to_unbind_container.get_node("HBoxContainer/IconAction")
-onready var hold_to_icon_from_action_label := hold_to_unbind_container.get_node("HBoxContainer/FromAction")
+onready var hold_to_icon_from_action_label := hold_to_unbind_container.get_node(
+	"HBoxContainer/FromAction"
+)
 
 onready var release_to_cancel_unbind_container := $MarginContainer/VBoxContainer/ReleaseToCancelUnbindContainer
-onready var release_to_cancel_unbind_icon := release_to_cancel_unbind_container.get_node("HBoxContainer/Icon")
+onready var release_to_cancel_unbind_icon := release_to_cancel_unbind_container.get_node(
+	"HBoxContainer/Icon"
+)
 
 onready var buttons_container := $MarginContainer/VBoxContainer/HBoxContainer
 onready var cancel_button := buttons_container.get_node("CancelContainer/Cancel")
@@ -92,7 +102,6 @@ func _input(event: InputEvent) -> void:
 
 # change ui depending on the context
 func update_ui_for(step: int, data := {}):
-
 	# set icone
 	var ui_unbind_texture = InputManager.get_device_icon_texture_from_action(
 		InputManager.get_device_button_from_action("ui_unbind", _button.type), _button.type
@@ -119,7 +128,9 @@ func update_ui_for(step: int, data := {}):
 
 	if step == Step.remap:
 		window_title = tr("rebind.binding_action").format({action = _field.action})
-		bound_to_icon.texture = InputManager.get_device_icon_texture_from_action(_button.assigned_to, _button.type)
+		bound_to_icon.texture = InputManager.get_device_icon_texture_from_action(
+			_button.assigned_to, _button.type
+		)
 		bound_to_container.show()
 		unbinding_action_container.hide()
 		change_binding_to_new_action_container.hide()
@@ -133,8 +144,12 @@ func update_ui_for(step: int, data := {}):
 	if step == Step.conflict:
 		set_process_input(false)
 		window_title = tr("rebind.change_binding")
-		change_binding_to_new_action_label.text = tr("rebind.to_new_action").format({new_action = _field.action, previous_action = _conflicted_field.action})
-		change_binding_to_new_action_icon.texture = InputManager.get_device_icon_texture_from_action(_conflicted_field.default_button.assigned_to, _button.type)
+		change_binding_to_new_action_label.text = tr("rebind.to_new_action").format(
+			{new_action = _field.action, previous_action = _conflicted_field.action}
+		)
+		change_binding_to_new_action_icon.texture = InputManager.get_device_icon_texture_from_action(
+			_conflicted_field.default_button.assigned_to, _button.type
+		)
 		bound_to_container.hide()
 		unbinding_action_container.hide()
 		change_binding_to_new_action_container.show()
@@ -147,8 +162,12 @@ func update_ui_for(step: int, data := {}):
 		return
 
 	if step == Step.unbind:
-		unbinding_action_icon.texture = InputManager.get_device_icon_texture_from_action(_button.assigned_to, _button.type)
-		unbinding_action_from_action_label.text = tr("rebind.from_action").format({action = _field.action})
+		unbinding_action_icon.texture = InputManager.get_device_icon_texture_from_action(
+			_button.assigned_to, _button.type
+		)
+		unbinding_action_from_action_label.text = tr("rebind.from_action").format(
+			{action = _field.action}
+		)
 		bound_to_container.hide()
 		unbinding_action_container.show()
 		change_binding_to_new_action_container.hide()

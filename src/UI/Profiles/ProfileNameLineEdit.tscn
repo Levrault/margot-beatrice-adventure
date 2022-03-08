@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UI/Profiles/ProfileNameLineEdit.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/Audio/Negative/UiErrorSfx.tscn" type="PackedScene" id=2]
+
+[node name="ProfileName" type="LineEdit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -135.0
+margin_right = -104.0
+margin_bottom = -109.0
+grow_horizontal = 2
+rect_clip_content = true
+max_length = 15
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+placeholder_text = "________________"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UiErrorSfx" parent="." instance=ExtResource( 2 )]

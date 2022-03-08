@@ -49,7 +49,7 @@ func clear() -> void:
 	text = "_"
 	assigned_to = ""
 	joy_string = ""
-	icon = null;
+	icon = null
 	owner.values[key] = ""
 
 

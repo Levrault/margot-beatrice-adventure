@@ -60,7 +60,7 @@ func _on_Gamepad_layout_changed() -> void:
 
 
 func _on_Gamepad_stick_layout_changed(joy_actions: Array, translation_key: String) -> void:
-		# clear current layout
+	# clear current layout
 	for data in gamepad_data_sticks_list:
 		data.action = ""
 

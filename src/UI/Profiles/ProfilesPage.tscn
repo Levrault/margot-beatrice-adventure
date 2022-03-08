@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/UI/title/title.png" type="Texture" id=1]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/Profiles/Profile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Commons/Overlay/Overlay.gd" type="Script" id=5]
+[ext_resource path="res://src/UI/Settings/Form/Form.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UI/Commons/Button/PreviousPageButton.tscn" type="PackedScene" id=8]
+
+[node name="ProfilesPage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Form" parent="." instance=ExtResource( 6 )]
+
+[node name="Wrapper" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Page" type="VBoxContainer" parent="Wrapper"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 460.0
+margin_bottom = 255.0
+rect_pivot_offset = Vector2( 896, -24 )
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Wrapper/Page"]
+margin_right = 440.0
+margin_bottom = 71.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Wrapper/Page/HBoxContainer"]
+margin_left = 51.0
+margin_right = 389.0
+margin_bottom = 71.0
+texture = ExtResource( 1 )
+
+[node name="Contents" type="VBoxContainer" parent="Wrapper/Page"]
+margin_top = 75.0
+margin_right = 440.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Profile0" parent="Wrapper/Page/Contents" instance=ExtResource( 3 )]
+margin_top = 8.0
+margin_bottom = 48.0
+
+[node name="Profile1" parent="Wrapper/Page/Contents" instance=ExtResource( 3 )]
+margin_top = 54.0
+margin_bottom = 94.0
+
+[node name="Profile2" parent="Wrapper/Page/Contents" instance=ExtResource( 3 )]
+margin_top = 100.0
+margin_bottom = 140.0
+
+[node name="Footer" type="HBoxContainer" parent="Wrapper/Page"]
+margin_top = 228.0
+margin_right = 440.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="PreviousPagePage" parent="Wrapper/Page/Footer" instance=ExtResource( 8 )]
+margin_left = 297.0
+margin_right = 440.0
+margin_bottom = 22.0
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.301961 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
