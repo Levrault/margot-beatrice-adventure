@@ -12,7 +12,7 @@ var buttons := []
 var is_current_route := false
 
 # Settings page will have a form node
-onready var form: Form = get_node_or_null("Form")
+onready var form = get_node_or_null("Form")
 
 
 func _ready() -> void:

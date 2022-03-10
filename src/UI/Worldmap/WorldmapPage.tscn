@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/Commons/Breadcrumbs/BreadcrumbLabel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Commons/Overlay/Overlay.gd" type="Script" id=5]
+[ext_resource path="res://src/UI/Commons/Button/PreviousPageButton.tscn" type="PackedScene" id=8]
+
+[node name="WordmapPage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrapper" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Page" type="VBoxContainer" parent="Wrapper"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 460.0
+margin_bottom = 255.0
+rect_pivot_offset = Vector2( 896, -24 )
+size_flags_horizontal = 3
+
+[node name="Breadcrumb" type="HBoxContainer" parent="Wrapper/Page"]
+margin_right = 440.0
+margin_bottom = 22.0
+script = ExtResource( 1 )
+breadcrumbs = [ "wordmap.title" ]
+
+[node name="BreachcrumbRoot" parent="Wrapper/Page/Breadcrumb" instance=ExtResource( 3 )]
+margin_right = 165.0
+margin_bottom = 22.0
+
+[node name="Contents" type="VBoxContainer" parent="Wrapper/Page"]
+margin_top = 26.0
+margin_right = 440.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Footer" type="HBoxContainer" parent="Wrapper/Page"]
+margin_top = 228.0
+margin_right = 440.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="PreviousPagePage" parent="Wrapper/Page/Footer" instance=ExtResource( 8 )]
+margin_left = 297.0
+margin_right = 440.0
+margin_bottom = 22.0
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.301961 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

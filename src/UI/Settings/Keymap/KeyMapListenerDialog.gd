@@ -76,9 +76,7 @@ func update_ui_for(step: int, data := {}):
 	if step == Step.remap:
 		var key := OS.get_scancode_string(_current_event_identifier)
 		window_title = tr("rebind.binding_action").format({action = _field.action})
-		message.text = tr("rebind.bound_to_key").format(
-			{key = key}
-		)
+		message.text = tr("rebind.bound_to_key").format({key = key})
 		unbind_message.text = tr("rebind.hold_to_unbind").format(
 			{
 				unbind_action_key = unbind_action_key,

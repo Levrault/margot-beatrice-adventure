@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Profiles/ProfileKeyButton.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI/profile/ui_key_selected.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 19, 18 )
+margin_left = 8.0
+margin_right = 8.0
+margin_top = 8.0
+margin_bottom = 7.0
+
+[node name="ProfileKeyButton" instance=ExtResource( 1 )]
+margin_right = 0.0
+margin_bottom = 0.0
+custom_constants/hseparation = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+flat = true
+script = ExtResource( 2 )

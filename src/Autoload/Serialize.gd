@@ -1,106 +1,111 @@
 # Load and save progression
 extends Node
 
-signal profile_loaded
+const PROFILE_TEMPLATE_PATH := "res://engine/profile_template.cfg"
+const PROFILE_SLOTS := ["profile0", "profile1", "profile2"]
+const SAVE_PATH := "user://%s.save"
 
-const DEBUG_SAVE := "debug1"
-const PATH := "user://%s.save"
-
-var default_data := {
-	"game_version": ProjectSettings.get_setting("game/game_version"),
-	"progression": 0,
-	"last_played": "intro",
-	"current_level": "demo",
-	"unlocked_cinematics":
-	{
-		"res://src/Levels/Debug/DebugCinematic.tscn": false,
-	},
-	"unlocked_levels":
-	{
-		"res://src/Levels/Debug/TestRoom.tscn":
-		{
-			"unlocked": true,
-			"collectables":
-			{
-				"gems": 4,
-				"acorns": 4,
-				"carrots": 4,
-			}
-		},
-	},
-	"unlocked_characters":
-	{
-		"fox": true,
-		"squirrel": false,
-		"rabbit": false,
-	},
-	"stats":
-	{
-		"game_over": 0,
-		"hits": 0,
-		"play_time": 0,
-	}
-}
-var profile := "profile1" setget set_profile
-var data := {}
-var _path := PATH % [profile]
+var profiles := {}
+var template := {}
 
 
 func _ready() -> void:
-	# force debug profile
-	if ProjectSettings.get_setting("game/debug"):
-		self.profile = DEBUG_SAVE
-
-	if ProjectSettings.get_setting("game/load_save"):
-		load_profile(profile)
+	initialize()
+	load_profiles()
 
 
-func set_profile(new_profile: String) -> void:
-	print_debug(new_profile)
-	profile = new_profile
-	_path = PATH % [new_profile]
+# Create all profile slots
+func initialize() -> void:
+	var profile_template := ConfigFile.new()
+	var err = profile_template.load(PROFILE_TEMPLATE_PATH)
+	if err == ERR_FILE_NOT_FOUND:
+		printerr("%s was not found" % [PROFILE_TEMPLATE_PATH])
+		return
+	if err != OK:
+		printerr("%s has encounter an error: %s" % [PROFILE_TEMPLATE_PATH, err])
+		return
+
+	for section in profile_template.get_sections():
+		template[section] = {}
+		for key in profile_template.get_section_keys(section):
+			template[section][key] = profile_template.get_value(section, key, null)
+
+	for profile in PROFILE_SLOTS:
+		var profile_file = File.new()
+		if profile_file.file_exists(SAVE_PATH % profile):
+			continue
+		profile_file.open(SAVE_PATH % profile, File.WRITE)
+		profile_file.store_line(to_json(template.duplicate(true)))
+		profile_file.close()
+	print_debug("Profiles are created")
 
 
-func save_profile(data: Dictionary, should_send_signal: bool = true) -> void:
-	var save_dict = default_data
-	var file_profile = File.new()
-	file_profile.open(_path, File.WRITE)
-	file_profile.store_line(to_json(save_dict))
-	file_profile.close()
-	print_debug("%s has been saved" % [profile])
-
-	if should_send_signal:
-		Events.emit_signal("game_saved")
+func load_profiles() -> void:
+	for profile in PROFILE_SLOTS:
+		var profile_file = File.new()
+		profile_file.open(SAVE_PATH % profile, File.READ)
+		profiles[profile] = sync(profile, parse_json(profile_file.get_line()), template.duplicate(true))
+	print_debug("Profiles are loaded : ", profiles)
 
 
-# is _path independent.
-func load_profile(selected_profile: String) -> void:
-	var save = File.new()
+# sync current profile with profile_template
+func sync(slot:String, profile: Dictionary, template: Dictionary) -> Dictionary:
+	var has_changed := false
+	# sync new data
+	for section in template.keys():
+		if not profile.has(section):
+			profile[section] = {}
 
-	if not save.file_exists(_path):
-		save_profile(default_data, false)
-		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
+		for key in template[section].keys():
+			if not profile[section].has(key):
+				profile[section][key] = template[section][key]
+				has_changed = true
+				continue
 
-	save.open(_path, File.READ)
-	data = parse_json(save.get_line())
+			if typeof(template[section][key]) == TYPE_DICTIONARY:
+				for inner_key in template[section][key].keys():
+					if not profile[section][key].has(inner_key):
+						profile[section][key][inner_key] = template[section][key][inner_key]
+						has_changed = true
+				continue
 
-	# set character
-	Game.unlocked_characters = data.unlocked_characters
-	Game.stats = data.stats
+	# remove unused data
+	for section in profile.keys():
+		if not template.has(section):
+			profile.erase(section)
+			continue
+		for key in profile[section].keys():
+			if not template[section].has(key):
+				profile[section].erase(key)
+				has_changed = true
+				continue
 
-	save.close()
+			if typeof(profile[section][key]) == TYPE_DICTIONARY:
+				for inner_key in profile[section][key].keys():
+					if not template[section][key].has(inner_key):
+						profile[section][key].erase(inner_key)
+						has_changed = true
+				continue
 
-	emit_signal("profile_loaded")
+	if has_changed:
+		save_profile(slot, profile)
+	return profile
 
-	print_debug("save_file version is %s" % [data.game_version])
-	print_debug("%s has been loaded" % [profile])
+
+func save_profile(profile_name: String, values: Dictionary) -> void:
+	var profile_file := File.new()
+	if not profile_file.file_exists(SAVE_PATH % profile_name):
+		printerr("%s save file doesn't exist" % profile_name)
+		return
+
+	profile_file.open(SAVE_PATH % profile_name, File.WRITE)
+	profile_file.store_line(to_json(values))
+	profile_file.close()
 
 
-func quick_read(selected_profile: String) -> Dictionary:
-	var save = File.new()
-	if not save.file_exists(_path):
-		save_profile(default_data, false)
-		print_debug("LOADING FAILED: create a new save data for %s" % [selected_profile])
-	save.open(PATH % [selected_profile], File.READ)
-	var data: Dictionary = parse_json(save.get_line())
-	return data
+func erase(profile_name: String) -> void:
+	var profile_file := File.new()
+	profile_file.open(SAVE_PATH % profile_name, File.WRITE)
+	profile_file.store_line(to_json(template.duplicate(true)))
+	profile_file.close()
+	print_debug("%s save has been erased")

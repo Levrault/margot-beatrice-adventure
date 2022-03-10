@@ -1,0 +1,780 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/UI/title/title.png" type="Texture" id=1]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
+[ext_resource path="res://assets/theme/generic_box_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://src/UI/Profiles/ProfileKeyButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/Commons/Overlay/Overlay.gd" type="Script" id=5]
+[ext_resource path="res://src/UI/Settings/Form/Form.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/theme/MainMenu.tres" type="Theme" id=7]
+[ext_resource path="res://src/UI/Commons/Button/PreviousPageButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/UI/Settings/Form/NewProfileForm.gd" type="Script" id=9]
+[ext_resource path="res://src/UI/Profiles/ProfileDelKeyButton.gd" type="Script" id=10]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/UI/profile/ui_key_selected.png" type="Texture" id=12]
+[ext_resource path="res://src/UI/Profiles/ProfileConfirmKeyButton.gd" type="Script" id=13]
+[ext_resource path="res://src/UI/Profiles/ProfileNameLineEdit.tscn" type="PackedScene" id=14]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 19, 18 )
+margin_left = 8.0
+margin_right = 8.0
+margin_top = 8.0
+margin_bottom = 7.0
+
+[node name="NewProfilePage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 7 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+default_field_to_focus = NodePath("Wrapper/Page/Contents/Panel/Keyboard/Row1/A")
+
+[node name="Form" parent="." instance=ExtResource( 6 )]
+script = ExtResource( 9 )
+text_input_node_path = NodePath("../Wrapper/Page/Contents/Panel/ProfileName")
+confirm_button_node_path = NodePath("../Wrapper/Page/Contents/Panel/Keyboard/Row5/Confirm")
+previous_page_button_node_path = NodePath("../Wrapper/Page/Footer/PreviousPagePage")
+
+[node name="Wrapper" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Page" type="VBoxContainer" parent="Wrapper"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 460.0
+margin_bottom = 255.0
+rect_pivot_offset = Vector2( 896, -24 )
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Wrapper/Page"]
+margin_right = 440.0
+margin_bottom = 71.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Wrapper/Page/HBoxContainer"]
+margin_left = 51.0
+margin_right = 389.0
+margin_bottom = 71.0
+texture = ExtResource( 1 )
+
+[node name="Contents" type="CenterContainer" parent="Wrapper/Page"]
+margin_top = 75.0
+margin_right = 440.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Wrapper/Page/Contents"]
+margin_left = 70.0
+margin_top = 6.0
+margin_right = 370.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 300, 128 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="ProfileName" parent="Wrapper/Page/Contents/Panel" instance=ExtResource( 14 )]
+margin_left = -76.0
+margin_top = -57.0
+margin_right = 60.0
+margin_bottom = -31.0
+
+[node name="Keyboard" type="VBoxContainer" parent="Wrapper/Page/Contents/Panel"]
+margin_left = 58.0
+margin_top = 31.0
+margin_right = 288.0
+margin_bottom = 117.0
+custom_constants/separation = -11
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row1" type="HBoxContainer" parent="Wrapper/Page/Contents/Panel/Keyboard"]
+margin_right = 230.0
+margin_bottom = 26.0
+custom_constants/separation = -6
+
+[node name="A" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_right = 22.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../J")
+focus_neighbour_top = NodePath("../../Row5/0")
+focus_neighbour_right = NodePath("../B")
+focus_neighbour_bottom = NodePath("../../Row2/K")
+focus_next = NodePath("../B")
+focus_previous = NodePath("../../../ProfileName")
+text = "A"
+
+[node name="B" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 16.0
+margin_right = 38.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../A")
+focus_neighbour_top = NodePath("../../Row5/1")
+focus_neighbour_right = NodePath("../C")
+focus_neighbour_bottom = NodePath("../../Row2/L")
+focus_next = NodePath("../C")
+focus_previous = NodePath("../A")
+text = "B"
+
+[node name="C" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 32.0
+margin_right = 54.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../B")
+focus_neighbour_top = NodePath("../../Row5/2")
+focus_neighbour_right = NodePath("../D")
+focus_neighbour_bottom = NodePath("../../Row2/M")
+focus_next = NodePath("../D")
+focus_previous = NodePath("../B")
+text = "C"
+
+[node name="D" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 48.0
+margin_right = 70.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../C")
+focus_neighbour_top = NodePath("../../Row5/3")
+focus_neighbour_right = NodePath("../E")
+focus_neighbour_bottom = NodePath("../../Row2/N")
+focus_next = NodePath("../E")
+focus_previous = NodePath("../C")
+text = "D"
+
+[node name="E" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 64.0
+margin_right = 86.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../D")
+focus_neighbour_top = NodePath("../../Row5/4")
+focus_neighbour_right = NodePath("../F")
+focus_neighbour_bottom = NodePath("../../Row2/O")
+focus_next = NodePath("../F")
+focus_previous = NodePath("../D")
+text = "E"
+
+[node name="F" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 80.0
+margin_right = 102.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../E")
+focus_neighbour_top = NodePath("../../Row5/5")
+focus_neighbour_right = NodePath("../G")
+focus_neighbour_bottom = NodePath("../../Row2/P")
+focus_next = NodePath("../G")
+focus_previous = NodePath("../E")
+text = "F"
+
+[node name="G" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 96.0
+margin_right = 118.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../F")
+focus_neighbour_top = NodePath("../../Row5/6")
+focus_neighbour_right = NodePath("../H")
+focus_neighbour_bottom = NodePath("../../Row2/Q")
+focus_next = NodePath("../H")
+focus_previous = NodePath("../F")
+text = "G"
+
+[node name="H" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 112.0
+margin_right = 134.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../G")
+focus_neighbour_top = NodePath("../../Row5/7")
+focus_neighbour_right = NodePath("../I")
+focus_neighbour_bottom = NodePath("../../Row2/R")
+focus_next = NodePath("../I")
+focus_previous = NodePath("../G")
+text = "H"
+
+[node name="I" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_right = 150.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../H")
+focus_neighbour_top = NodePath("../../Row5/8")
+focus_neighbour_right = NodePath("../J")
+focus_neighbour_bottom = NodePath("../../Row2/S")
+focus_next = NodePath("../J")
+focus_previous = NodePath("../H")
+text = "I"
+
+[node name="J" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
+margin_left = 144.0
+margin_right = 166.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../I")
+focus_neighbour_top = NodePath("../../Row5/9")
+focus_neighbour_right = NodePath("../A")
+focus_neighbour_bottom = NodePath("../../Row2/T")
+focus_next = NodePath("../../Row2/K")
+focus_previous = NodePath("../I")
+text = "J"
+
+[node name="Row2" type="HBoxContainer" parent="Wrapper/Page/Contents/Panel/Keyboard"]
+margin_top = 15.0
+margin_right = 230.0
+margin_bottom = 41.0
+custom_constants/separation = -6
+
+[node name="K" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_right = 22.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../T")
+focus_neighbour_top = NodePath("../../Row1/A")
+focus_neighbour_right = NodePath("../L")
+focus_neighbour_bottom = NodePath("../../Row3/U")
+focus_next = NodePath("../L")
+focus_previous = NodePath("../../Row1/J")
+text = "K"
+
+[node name="L" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 16.0
+margin_right = 38.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../K")
+focus_neighbour_top = NodePath("../../Row1/B")
+focus_neighbour_right = NodePath("../M")
+focus_neighbour_bottom = NodePath("../../Row3/V")
+focus_next = NodePath("../M")
+focus_previous = NodePath("../K")
+text = "L"
+
+[node name="M" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 32.0
+margin_right = 54.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../L")
+focus_neighbour_top = NodePath("../../Row1/C")
+focus_neighbour_right = NodePath("../N")
+focus_neighbour_bottom = NodePath("../../Row3/W")
+focus_next = NodePath("../N")
+focus_previous = NodePath("../L")
+text = "M"
+
+[node name="N" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 48.0
+margin_right = 70.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../M")
+focus_neighbour_top = NodePath("../../Row1/D")
+focus_neighbour_right = NodePath("../O")
+focus_neighbour_bottom = NodePath("../../Row3/X")
+focus_next = NodePath("../O")
+focus_previous = NodePath("../M")
+text = "N"
+
+[node name="O" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 64.0
+margin_right = 86.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../N")
+focus_neighbour_top = NodePath("../../Row1/E")
+focus_neighbour_right = NodePath("../P")
+focus_neighbour_bottom = NodePath("../../Row3/Y")
+focus_next = NodePath("../P")
+focus_previous = NodePath("../N")
+text = "O"
+
+[node name="P" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 80.0
+margin_right = 102.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../O")
+focus_neighbour_top = NodePath("../../Row1/F")
+focus_neighbour_right = NodePath("../Q")
+focus_neighbour_bottom = NodePath("../../Row3/Z")
+focus_next = NodePath("../Q")
+focus_previous = NodePath("../O")
+text = "P"
+
+[node name="Q" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 96.0
+margin_right = 118.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../P")
+focus_neighbour_top = NodePath("../../Row1/G")
+focus_neighbour_right = NodePath("../R")
+focus_neighbour_bottom = NodePath("../../Row3/É")
+focus_next = NodePath("../R")
+focus_previous = NodePath("../P")
+text = "Q"
+
+[node name="R" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 112.0
+margin_right = 134.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../Q")
+focus_neighbour_top = NodePath("../../Row1/H")
+focus_neighbour_right = NodePath("../S")
+focus_neighbour_bottom = NodePath("../../Row3/È")
+focus_next = NodePath("../S")
+focus_previous = NodePath("../Q")
+text = "R"
+
+[node name="S" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_right = 150.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../R")
+focus_neighbour_top = NodePath("../../Row1/I")
+focus_neighbour_right = NodePath("../T")
+focus_neighbour_bottom = NodePath("../../Row3/Ê")
+focus_next = NodePath("../T")
+focus_previous = NodePath("../R")
+text = "S"
+
+[node name="T" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
+margin_left = 144.0
+margin_right = 166.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../S")
+focus_neighbour_top = NodePath("../../Row1/J")
+focus_neighbour_right = NodePath("../K")
+focus_neighbour_bottom = NodePath("../../Row3/À")
+focus_next = NodePath("../../Row3/U")
+focus_previous = NodePath("../S")
+text = "T"
+
+[node name="Row3" type="HBoxContainer" parent="Wrapper/Page/Contents/Panel/Keyboard"]
+margin_top = 30.0
+margin_right = 230.0
+margin_bottom = 56.0
+custom_constants/separation = -6
+
+[node name="U" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_right = 22.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../À")
+focus_neighbour_top = NodePath("../../Row2/K")
+focus_neighbour_right = NodePath("../V")
+focus_neighbour_bottom = NodePath("../../Row4/Ç")
+focus_next = NodePath("../V")
+focus_previous = NodePath("../../Row2/T")
+text = "U"
+
+[node name="V" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 16.0
+margin_right = 38.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../U")
+focus_neighbour_top = NodePath("../../Row2/L")
+focus_neighbour_right = NodePath("../W")
+focus_neighbour_bottom = NodePath("../../Row4/-")
+focus_next = NodePath("../W")
+focus_previous = NodePath("../U")
+text = "V"
+
+[node name="W" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 32.0
+margin_right = 54.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../V")
+focus_neighbour_top = NodePath("../../Row2/M")
+focus_neighbour_right = NodePath("../X")
+focus_neighbour_bottom = NodePath("../../Row4/_")
+focus_next = NodePath("../X")
+focus_previous = NodePath("../V")
+text = "W"
+
+[node name="X" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 48.0
+margin_right = 70.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../W")
+focus_neighbour_top = NodePath("../../Row2/N")
+focus_neighbour_right = NodePath("../Y")
+focus_neighbour_bottom = NodePath("../../Row4/,")
+focus_next = NodePath("../Y")
+focus_previous = NodePath("../W")
+text = "X"
+
+[node name="Y" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 64.0
+margin_right = 86.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../X")
+focus_neighbour_top = NodePath("../../Row2/O")
+focus_neighbour_right = NodePath("../Z")
+focus_neighbour_bottom = NodePath("../../Row4/!")
+focus_next = NodePath("../Z")
+focus_previous = NodePath("../X")
+text = "Y"
+
+[node name="Z" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 80.0
+margin_right = 102.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../Y")
+focus_neighbour_top = NodePath("../../Row2/P")
+focus_neighbour_right = NodePath("../É")
+focus_neighbour_bottom = NodePath("../../Row4/\?")
+focus_next = NodePath("../É")
+focus_previous = NodePath("../Y")
+text = "Z"
+
+[node name="É" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 96.0
+margin_right = 118.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../Z")
+focus_neighbour_top = NodePath("../../Row2/Q")
+focus_neighbour_right = NodePath("../È")
+focus_neighbour_bottom = NodePath("../../Row4/(")
+focus_next = NodePath("../È")
+focus_previous = NodePath("../Z")
+text = "É"
+
+[node name="È" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 112.0
+margin_right = 134.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../É")
+focus_neighbour_top = NodePath("../../Row2/R")
+focus_neighbour_right = NodePath("../Ê")
+focus_neighbour_bottom = NodePath("../../Row4/)")
+focus_next = NodePath("../Ê")
+focus_previous = NodePath("../É")
+text = "È"
+
+[node name="Ê" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_right = 150.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../È")
+focus_neighbour_top = NodePath("../../Row2/S")
+focus_neighbour_right = NodePath("../À")
+focus_neighbour_bottom = NodePath("../../Row4/[")
+focus_next = NodePath("../À")
+focus_previous = NodePath("../È")
+text = "Ê"
+
+[node name="À" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
+margin_left = 144.0
+margin_right = 166.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../Ê")
+focus_neighbour_top = NodePath("../../Row2/T")
+focus_neighbour_right = NodePath("../U")
+focus_neighbour_bottom = NodePath("../../Row4/]")
+focus_next = NodePath("../../Row4/Ç")
+focus_previous = NodePath("../Ê")
+text = "À"
+
+[node name="Row4" type="HBoxContainer" parent="Wrapper/Page/Contents/Panel/Keyboard"]
+margin_top = 45.0
+margin_right = 230.0
+margin_bottom = 71.0
+custom_constants/separation = -6
+
+[node name="Ç" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_right = 22.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../Del")
+focus_neighbour_top = NodePath("../../Row3/U")
+focus_neighbour_right = NodePath("../-")
+focus_neighbour_bottom = NodePath("../../Row5/0")
+focus_next = NodePath("../-")
+focus_previous = NodePath("../../Row3/À")
+text = "Ç"
+
+[node name="-" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 16.0
+margin_right = 38.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../Ç")
+focus_neighbour_top = NodePath("../../Row3/V")
+focus_neighbour_right = NodePath("../_")
+focus_neighbour_bottom = NodePath("../../Row5/1")
+focus_next = NodePath("../_")
+focus_previous = NodePath("../Ç")
+text = "-"
+
+[node name="_" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 32.0
+margin_right = 54.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../-")
+focus_neighbour_top = NodePath("../../Row3/W")
+focus_neighbour_right = NodePath("../,")
+focus_neighbour_bottom = NodePath("../../Row5/2")
+focus_next = NodePath("../,")
+focus_previous = NodePath("../-")
+text = "_"
+
+[node name="," parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 48.0
+margin_right = 70.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../_")
+focus_neighbour_top = NodePath("../../Row3/X")
+focus_neighbour_right = NodePath("../!")
+focus_neighbour_bottom = NodePath("../../Row5/3")
+focus_next = NodePath("../!")
+focus_previous = NodePath("../_")
+text = ","
+
+[node name="!" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 64.0
+margin_right = 86.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../,")
+focus_neighbour_top = NodePath("../../Row3/Y")
+focus_neighbour_right = NodePath("../\?")
+focus_neighbour_bottom = NodePath("../../Row5/4")
+focus_next = NodePath("../\?")
+focus_previous = NodePath("../,")
+text = "!"
+
+[node name="\?" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 80.0
+margin_right = 102.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../!")
+focus_neighbour_top = NodePath("../../Row3/Z")
+focus_neighbour_right = NodePath("../(")
+focus_neighbour_bottom = NodePath("../../Row5/5")
+focus_next = NodePath("../(")
+focus_previous = NodePath("../!")
+text = "?"
+
+[node name="(" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 96.0
+margin_right = 118.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../\?")
+focus_neighbour_top = NodePath("../../Row3/É")
+focus_neighbour_right = NodePath("../)")
+focus_neighbour_bottom = NodePath("../../Row5/6")
+focus_next = NodePath("../)")
+focus_previous = NodePath("../\?")
+text = "("
+
+[node name=")" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 112.0
+margin_right = 134.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../(")
+focus_neighbour_top = NodePath("../../Row3/È")
+focus_neighbour_right = NodePath("../[")
+focus_neighbour_bottom = NodePath("../../Row5/7")
+focus_next = NodePath("../[")
+focus_previous = NodePath("../(")
+text = ")"
+
+[node name="[" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_right = 150.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../)")
+focus_neighbour_top = NodePath("../../Row3/Ê")
+focus_neighbour_right = NodePath("../]")
+focus_neighbour_bottom = NodePath("../../Row5/8")
+focus_next = NodePath("../]")
+focus_previous = NodePath("../)")
+text = "["
+
+[node name="]" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 144.0
+margin_right = 166.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../[")
+focus_neighbour_top = NodePath("../../Row3/À")
+focus_neighbour_right = NodePath("../Del")
+focus_neighbour_bottom = NodePath("../../Row5/9")
+focus_next = NodePath("../../Row5/0")
+focus_previous = NodePath("../[")
+text = "]"
+
+[node name="Del" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
+margin_left = 160.0
+margin_right = 222.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../]")
+focus_neighbour_top = NodePath("../../Row5/Confirm")
+focus_neighbour_bottom = NodePath("../../Row5/Confirm")
+focus_next = NodePath("../../Row5/Confirm")
+focus_previous = NodePath("../../Row5/9")
+text = "DELETE"
+align = 2
+script = ExtResource( 10 )
+
+[node name="Row5" type="HBoxContainer" parent="Wrapper/Page/Contents/Panel/Keyboard"]
+margin_top = 60.0
+margin_right = 230.0
+margin_bottom = 86.0
+custom_constants/separation = -6
+
+[node name="0" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_right = 22.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../Confirm")
+focus_neighbour_top = NodePath("../../Row4/Ç")
+focus_neighbour_right = NodePath("../1")
+focus_neighbour_bottom = NodePath("../../Row1/A")
+focus_next = NodePath("../1")
+focus_previous = NodePath("../../Row4/]")
+text = "0"
+
+[node name="1" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 16.0
+margin_right = 38.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../0")
+focus_neighbour_top = NodePath("../../Row4/-")
+focus_neighbour_right = NodePath("../2")
+focus_neighbour_bottom = NodePath("../../Row1/B")
+focus_next = NodePath("../2")
+focus_previous = NodePath("../0")
+text = "1"
+
+[node name="2" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 32.0
+margin_right = 54.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../1")
+focus_neighbour_top = NodePath("../../Row4/_")
+focus_neighbour_right = NodePath("../3")
+focus_neighbour_bottom = NodePath("../../Row1/C")
+focus_next = NodePath("../3")
+focus_previous = NodePath("../1")
+text = "2"
+
+[node name="3" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 48.0
+margin_right = 70.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../2")
+focus_neighbour_top = NodePath("../../Row4/,")
+focus_neighbour_right = NodePath("../4")
+focus_neighbour_bottom = NodePath("../../Row1/D")
+focus_next = NodePath("../4")
+focus_previous = NodePath("../2")
+text = "3"
+
+[node name="4" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 64.0
+margin_right = 86.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../3")
+focus_neighbour_top = NodePath("../../Row4/!")
+focus_neighbour_right = NodePath("../5")
+focus_neighbour_bottom = NodePath("../../Row1/E")
+focus_next = NodePath("../5")
+focus_previous = NodePath("../3")
+text = "4"
+
+[node name="5" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 80.0
+margin_right = 102.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../4")
+focus_neighbour_top = NodePath("../../Row4/\?")
+focus_neighbour_right = NodePath("../6")
+focus_neighbour_bottom = NodePath("../../Row1/F")
+focus_next = NodePath("../6")
+focus_previous = NodePath("../4")
+text = "5"
+
+[node name="6" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 96.0
+margin_right = 118.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../5")
+focus_neighbour_top = NodePath("../../Row4/(")
+focus_neighbour_right = NodePath("../7")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath("../7")
+focus_previous = NodePath("../5")
+text = "6"
+
+[node name="7" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 112.0
+margin_right = 134.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../6")
+focus_neighbour_top = NodePath("../../Row4/)")
+focus_neighbour_right = NodePath("../8")
+focus_neighbour_bottom = NodePath("../../Row1/H")
+focus_next = NodePath("../8")
+focus_previous = NodePath("../6")
+text = "7"
+
+[node name="8" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_right = 150.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../7")
+focus_neighbour_top = NodePath("../../Row4/[")
+focus_neighbour_right = NodePath("../9")
+focus_neighbour_bottom = NodePath("../../Row1/I")
+focus_next = NodePath("../9")
+focus_previous = NodePath("../7")
+text = "8"
+
+[node name="9" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
+margin_left = 144.0
+margin_right = 166.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../8")
+focus_neighbour_top = NodePath("../../Row4/]")
+focus_neighbour_right = NodePath("../Confirm")
+focus_neighbour_bottom = NodePath("../../Row1/J")
+focus_next = NodePath("../../Row4/Del")
+focus_previous = NodePath("../8")
+text = "9"
+
+[node name="Confirm" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 11 )]
+margin_left = 160.0
+margin_right = 230.0
+margin_bottom = 26.0
+focus_neighbour_left = NodePath("../9")
+focus_neighbour_top = NodePath("../../Row4/Del")
+focus_neighbour_bottom = NodePath("../../Row4/Del")
+focus_next = NodePath("../../../ProfileName")
+focus_previous = NodePath("../../Row4/Del")
+custom_constants/hseparation = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+text = "CONFIRM"
+flat = true
+align = 2
+script = ExtResource( 13 )
+navigate_to = "WorldmapPage"
+
+[node name="Footer" type="HBoxContainer" parent="Wrapper/Page"]
+margin_top = 220.0
+margin_right = 440.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="PreviousPagePage" parent="Wrapper/Page/Footer" instance=ExtResource( 8 )]
+margin_left = 296.0
+margin_right = 440.0
+margin_bottom = 30.0
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.301961 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

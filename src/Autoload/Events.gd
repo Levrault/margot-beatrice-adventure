@@ -126,6 +126,10 @@ signal navigation_enabled
 signal overlay_displayed
 signal overlay_hidden
 
+# profile
+signal new_profile_page_displayed(for_profile, data)
+signal new_profile_created(profile)
+
 # Required field unmapped
 signal required_field_unmapped_displayed(unmapped_fields)
 
