@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/UI/worldmap/placeholder_27x48.png" type="Texture" id=1]
+[ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/theme/generic_box_transparent_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/theme/generic_box_transparent_focus.tres" type="StyleBox" id=4]
+[ext_resource path="res://src/UI/Worldmap/Level.gd" type="Script" id=5]
+[ext_resource path="res://assets/UI/lock/lock.png" type="Texture" id=6]
+[ext_resource path="res://assets/theme/generic_box_normal.tres" type="StyleBox" id=7]
+
+[sub_resource type="Theme" id=1]
+Button/styles/disabled = ExtResource( 7 )
+Button/styles/focus = ExtResource( 4 )
+Button/styles/hover = ExtResource( 4 )
+Button/styles/normal = ExtResource( 3 )
+
+[node name="LoadLevel" type="Control"]
+margin_right = 27.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 27, 48 )
+rect_pivot_offset = Vector2( 636, 18 )
+theme = SubResource( 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Preview" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 27, 48 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.247059, 0.247059, 0.454902, 0.658824 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadLevelButton" parent="." instance=ExtResource( 2 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 2.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 31, 52 )
+focus_mode = 0
+disabled = true
+
+[node name="Lock" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -4.5
+margin_top = -6.0
+margin_right = 4.5
+margin_bottom = 6.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

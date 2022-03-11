@@ -1,73 +1,235 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/BreadcrumbLabel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Worldmap/Preview.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI/Commons/Overlay/Overlay.gd" type="Script" id=5]
+[ext_resource path="res://assets/theme/MainMenu.tres" type="Theme" id=6]
+[ext_resource path="res://src/UI/Worldmap/Level.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/Commons/Button/PreviousPageButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/UI/hud/acorn.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/hud/gem.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/hud/carrot.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/worldmap/placeholder_160x90.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/worldmap/placeholder_160x90_2.png" type="Texture" id=13]
+[ext_resource path="res://src/UI/Worldmap/LevelName.gd" type="Script" id=14]
+[ext_resource path="res://src/UI/Worldmap/WorldmapCollected.gd" type="Script" id=15]
 
-[node name="WordmapPage" type="Control"]
+[node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 6 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+default_field_to_focus = NodePath("ScrollContainer/MarginContainer/HBoxContainer/Level0/LoadLevelButton")
 
-[node name="Wrapper" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_clip_content = true
-custom_constants/margin_right = 20
-custom_constants/margin_top = 5
-custom_constants/margin_left = 20
-custom_constants/margin_bottom = 15
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="Page" type="VBoxContainer" parent="Wrapper"]
+[node name="Breadcrumb" type="HBoxContainer" parent="."]
 margin_left = 20.0
 margin_top = 5.0
 margin_right = 460.0
-margin_bottom = 255.0
-rect_pivot_offset = Vector2( 896, -24 )
-size_flags_horizontal = 3
-
-[node name="Breadcrumb" type="HBoxContainer" parent="Wrapper/Page"]
-margin_right = 440.0
-margin_bottom = 22.0
+margin_bottom = 27.0
 script = ExtResource( 1 )
-breadcrumbs = [ "wordmap.title" ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+breadcrumbs = [ "worldmap.title" ]
 
-[node name="BreachcrumbRoot" parent="Wrapper/Page/Breadcrumb" instance=ExtResource( 3 )]
+[node name="BreachcrumbRoot" parent="Breadcrumb" instance=ExtResource( 3 )]
 margin_right = 165.0
 margin_bottom = 22.0
 
-[node name="Contents" type="VBoxContainer" parent="Wrapper/Page"]
-margin_top = 26.0
-margin_right = 440.0
-margin_bottom = 224.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 6
+[node name="LevelName" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -104.0
+margin_right = 40.0
+margin_bottom = -90.0
+grow_horizontal = 2
+text = "level name"
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Preview" parent="." instance=ExtResource( 4 )]
+margin_top = 51.0
+margin_bottom = -129.0
+
+[node name="CollectablesContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = 12.0
+margin_right = 74.0
+margin_bottom = 26.0
+grow_horizontal = 2
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Footer" type="HBoxContainer" parent="Wrapper/Page"]
-margin_top = 228.0
-margin_right = 440.0
-margin_bottom = 250.0
+[node name="AcornsPercentageContainer" type="HBoxContainer" parent="CollectablesContainer"]
+margin_right = 46.0
+margin_bottom = 14.0
+size_flags_horizontal = 0
+
+[node name="Icon" type="TextureRect" parent="CollectablesContainer/AcornsPercentageContainer"]
+margin_right = 10.0
+margin_bottom = 14.0
+texture = ExtResource( 9 )
+
+[node name="WorldmapCollected" type="Label" parent="CollectablesContainer/AcornsPercentageContainer"]
+margin_left = 14.0
+margin_top = 1.0
+margin_right = 46.0
+margin_bottom = 13.0
+text = "100%"
+script = ExtResource( 15 )
+signal_to_connect = "worldmap_acorns_percentage_changed"
+
+[node name="CarrotsPercentageContainer" type="HBoxContainer" parent="CollectablesContainer"]
+margin_left = 50.0
+margin_right = 97.0
+margin_bottom = 14.0
+size_flags_horizontal = 0
+
+[node name="Icon" type="TextureRect" parent="CollectablesContainer/CarrotsPercentageContainer"]
+margin_right = 11.0
+margin_bottom = 14.0
+texture = ExtResource( 11 )
+
+[node name="WorldmapCollected" type="Label" parent="CollectablesContainer/CarrotsPercentageContainer"]
+margin_left = 15.0
+margin_top = 1.0
+margin_right = 47.0
+margin_bottom = 13.0
+text = "100%"
+script = ExtResource( 15 )
+signal_to_connect = "worldmap_carrots_percentage_changed"
+
+[node name="GemsPercentageContainer" type="HBoxContainer" parent="CollectablesContainer"]
+margin_left = 101.0
+margin_right = 148.0
+margin_bottom = 14.0
+size_flags_horizontal = 0
+
+[node name="Icon" type="TextureRect" parent="CollectablesContainer/GemsPercentageContainer"]
+margin_right = 11.0
+margin_bottom = 14.0
+texture = ExtResource( 10 )
+
+[node name="WorldmapCollected" type="Label" parent="CollectablesContainer/GemsPercentageContainer"]
+margin_left = 15.0
+margin_top = 1.0
+margin_right = 47.0
+margin_bottom = 13.0
+text = "100%"
+script = ExtResource( 15 )
+signal_to_connect = "worldmap_gems_percentage_changed"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = 26.0
+margin_right = 89.0
+margin_bottom = 86.0
+grow_horizontal = 2
+rect_min_size = Vector2( 178, 60 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+margin_right = 252.0
+margin_bottom = 52.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 248.0
+margin_bottom = 52.0
+
+[node name="Level0" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+locked = false
+level_title = "level.title0"
+preview_texture = ExtResource( 12 )
+max_gems = 4
+max_carrots = 4
+max_acorns = 4
+level_path = "res://src/Levels/Sunnyland/Level0.tscn"
+
+[node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/HBoxContainer/Level0" index="3"]
+focus_mode = 2
+disabled = false
+
+[node name="Lock" parent="ScrollContainer/MarginContainer/HBoxContainer/Level0" index="4"]
+visible = false
+
+[node name="Level1" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 31.0
+margin_right = 58.0
+locked = false
+level_title = "level.title1"
+preview_texture = ExtResource( 13 )
+max_gems = 6
+max_carrots = 3
+max_acorns = 7
+
+[node name="Level2" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 62.0
+margin_right = 89.0
+level_title = "level.title2"
+
+[node name="Level3" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 93.0
+margin_right = 120.0
+
+[node name="Level4" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 124.0
+margin_right = 151.0
+
+[node name="Level5" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 155.0
+margin_right = 182.0
+
+[node name="Level6" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 186.0
+margin_right = 213.0
+
+[node name="Level7" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 217.0
+margin_right = 244.0
+
+[node name="Footer" type="HBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 225.0
+margin_right = 460.0
+margin_bottom = 255.0
 size_flags_horizontal = 3
 alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PreviousPagePage" parent="Wrapper/Page/Footer" instance=ExtResource( 8 )]
-margin_left = 297.0
+[node name="PreviousPagePage" parent="Footer" instance=ExtResource( 8 )]
+margin_left = 296.0
 margin_right = 440.0
-margin_bottom = 22.0
+margin_bottom = 30.0
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
@@ -78,3 +240,5 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level0"]

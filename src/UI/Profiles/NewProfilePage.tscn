@@ -116,6 +116,7 @@ focus_neighbour_right = NodePath("../B")
 focus_neighbour_bottom = NodePath("../../Row2/K")
 focus_next = NodePath("../B")
 focus_previous = NodePath("../../../ProfileName")
+shortcut_in_tooltip = true
 text = "A"
 
 [node name="B" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -128,6 +129,7 @@ focus_neighbour_right = NodePath("../C")
 focus_neighbour_bottom = NodePath("../../Row2/L")
 focus_next = NodePath("../C")
 focus_previous = NodePath("../A")
+shortcut_in_tooltip = true
 text = "B"
 
 [node name="C" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -140,6 +142,7 @@ focus_neighbour_right = NodePath("../D")
 focus_neighbour_bottom = NodePath("../../Row2/M")
 focus_next = NodePath("../D")
 focus_previous = NodePath("../B")
+shortcut_in_tooltip = true
 text = "C"
 
 [node name="D" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -152,6 +155,7 @@ focus_neighbour_right = NodePath("../E")
 focus_neighbour_bottom = NodePath("../../Row2/N")
 focus_next = NodePath("../E")
 focus_previous = NodePath("../C")
+shortcut_in_tooltip = true
 text = "D"
 
 [node name="E" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -164,6 +168,7 @@ focus_neighbour_right = NodePath("../F")
 focus_neighbour_bottom = NodePath("../../Row2/O")
 focus_next = NodePath("../F")
 focus_previous = NodePath("../D")
+shortcut_in_tooltip = true
 text = "E"
 
 [node name="F" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -176,6 +181,7 @@ focus_neighbour_right = NodePath("../G")
 focus_neighbour_bottom = NodePath("../../Row2/P")
 focus_next = NodePath("../G")
 focus_previous = NodePath("../E")
+shortcut_in_tooltip = true
 text = "F"
 
 [node name="G" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -188,6 +194,7 @@ focus_neighbour_right = NodePath("../H")
 focus_neighbour_bottom = NodePath("../../Row2/Q")
 focus_next = NodePath("../H")
 focus_previous = NodePath("../F")
+shortcut_in_tooltip = true
 text = "G"
 
 [node name="H" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -200,6 +207,7 @@ focus_neighbour_right = NodePath("../I")
 focus_neighbour_bottom = NodePath("../../Row2/R")
 focus_next = NodePath("../I")
 focus_previous = NodePath("../G")
+shortcut_in_tooltip = true
 text = "H"
 
 [node name="I" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -212,6 +220,7 @@ focus_neighbour_right = NodePath("../J")
 focus_neighbour_bottom = NodePath("../../Row2/S")
 focus_next = NodePath("../J")
 focus_previous = NodePath("../H")
+shortcut_in_tooltip = true
 text = "I"
 
 [node name="J" parent="Wrapper/Page/Contents/Panel/Keyboard/Row1" instance=ExtResource( 4 )]
@@ -224,6 +233,7 @@ focus_neighbour_right = NodePath("../A")
 focus_neighbour_bottom = NodePath("../../Row2/T")
 focus_next = NodePath("../../Row2/K")
 focus_previous = NodePath("../I")
+shortcut_in_tooltip = true
 text = "J"
 
 [node name="Row2" type="HBoxContainer" parent="Wrapper/Page/Contents/Panel/Keyboard"]
@@ -241,6 +251,7 @@ focus_neighbour_right = NodePath("../L")
 focus_neighbour_bottom = NodePath("../../Row3/U")
 focus_next = NodePath("../L")
 focus_previous = NodePath("../../Row1/J")
+shortcut_in_tooltip = true
 text = "K"
 
 [node name="L" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -253,6 +264,7 @@ focus_neighbour_right = NodePath("../M")
 focus_neighbour_bottom = NodePath("../../Row3/V")
 focus_next = NodePath("../M")
 focus_previous = NodePath("../K")
+shortcut_in_tooltip = true
 text = "L"
 
 [node name="M" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -265,6 +277,7 @@ focus_neighbour_right = NodePath("../N")
 focus_neighbour_bottom = NodePath("../../Row3/W")
 focus_next = NodePath("../N")
 focus_previous = NodePath("../L")
+shortcut_in_tooltip = true
 text = "M"
 
 [node name="N" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -277,6 +290,7 @@ focus_neighbour_right = NodePath("../O")
 focus_neighbour_bottom = NodePath("../../Row3/X")
 focus_next = NodePath("../O")
 focus_previous = NodePath("../M")
+shortcut_in_tooltip = true
 text = "N"
 
 [node name="O" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -289,6 +303,7 @@ focus_neighbour_right = NodePath("../P")
 focus_neighbour_bottom = NodePath("../../Row3/Y")
 focus_next = NodePath("../P")
 focus_previous = NodePath("../N")
+shortcut_in_tooltip = true
 text = "O"
 
 [node name="P" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -301,6 +316,7 @@ focus_neighbour_right = NodePath("../Q")
 focus_neighbour_bottom = NodePath("../../Row3/Z")
 focus_next = NodePath("../Q")
 focus_previous = NodePath("../O")
+shortcut_in_tooltip = true
 text = "P"
 
 [node name="Q" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -313,6 +329,7 @@ focus_neighbour_right = NodePath("../R")
 focus_neighbour_bottom = NodePath("../../Row3/É")
 focus_next = NodePath("../R")
 focus_previous = NodePath("../P")
+shortcut_in_tooltip = true
 text = "Q"
 
 [node name="R" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -325,6 +342,7 @@ focus_neighbour_right = NodePath("../S")
 focus_neighbour_bottom = NodePath("../../Row3/È")
 focus_next = NodePath("../S")
 focus_previous = NodePath("../Q")
+shortcut_in_tooltip = true
 text = "R"
 
 [node name="S" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -337,6 +355,7 @@ focus_neighbour_right = NodePath("../T")
 focus_neighbour_bottom = NodePath("../../Row3/Ê")
 focus_next = NodePath("../T")
 focus_previous = NodePath("../R")
+shortcut_in_tooltip = true
 text = "S"
 
 [node name="T" parent="Wrapper/Page/Contents/Panel/Keyboard/Row2" instance=ExtResource( 4 )]
@@ -349,6 +368,7 @@ focus_neighbour_right = NodePath("../K")
 focus_neighbour_bottom = NodePath("../../Row3/À")
 focus_next = NodePath("../../Row3/U")
 focus_previous = NodePath("../S")
+shortcut_in_tooltip = true
 text = "T"
 
 [node name="Row3" type="HBoxContainer" parent="Wrapper/Page/Contents/Panel/Keyboard"]
@@ -366,6 +386,7 @@ focus_neighbour_right = NodePath("../V")
 focus_neighbour_bottom = NodePath("../../Row4/Ç")
 focus_next = NodePath("../V")
 focus_previous = NodePath("../../Row2/T")
+shortcut_in_tooltip = true
 text = "U"
 
 [node name="V" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -378,6 +399,7 @@ focus_neighbour_right = NodePath("../W")
 focus_neighbour_bottom = NodePath("../../Row4/-")
 focus_next = NodePath("../W")
 focus_previous = NodePath("../U")
+shortcut_in_tooltip = true
 text = "V"
 
 [node name="W" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -390,6 +412,7 @@ focus_neighbour_right = NodePath("../X")
 focus_neighbour_bottom = NodePath("../../Row4/_")
 focus_next = NodePath("../X")
 focus_previous = NodePath("../V")
+shortcut_in_tooltip = true
 text = "W"
 
 [node name="X" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -402,6 +425,7 @@ focus_neighbour_right = NodePath("../Y")
 focus_neighbour_bottom = NodePath("../../Row4/,")
 focus_next = NodePath("../Y")
 focus_previous = NodePath("../W")
+shortcut_in_tooltip = true
 text = "X"
 
 [node name="Y" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -414,6 +438,7 @@ focus_neighbour_right = NodePath("../Z")
 focus_neighbour_bottom = NodePath("../../Row4/!")
 focus_next = NodePath("../Z")
 focus_previous = NodePath("../X")
+shortcut_in_tooltip = true
 text = "Y"
 
 [node name="Z" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -426,6 +451,7 @@ focus_neighbour_right = NodePath("../É")
 focus_neighbour_bottom = NodePath("../../Row4/\?")
 focus_next = NodePath("../É")
 focus_previous = NodePath("../Y")
+shortcut_in_tooltip = true
 text = "Z"
 
 [node name="É" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -438,6 +464,7 @@ focus_neighbour_right = NodePath("../È")
 focus_neighbour_bottom = NodePath("../../Row4/(")
 focus_next = NodePath("../È")
 focus_previous = NodePath("../Z")
+shortcut_in_tooltip = true
 text = "É"
 
 [node name="È" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -450,6 +477,7 @@ focus_neighbour_right = NodePath("../Ê")
 focus_neighbour_bottom = NodePath("../../Row4/)")
 focus_next = NodePath("../Ê")
 focus_previous = NodePath("../É")
+shortcut_in_tooltip = true
 text = "È"
 
 [node name="Ê" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -462,6 +490,7 @@ focus_neighbour_right = NodePath("../À")
 focus_neighbour_bottom = NodePath("../../Row4/[")
 focus_next = NodePath("../À")
 focus_previous = NodePath("../È")
+shortcut_in_tooltip = true
 text = "Ê"
 
 [node name="À" parent="Wrapper/Page/Contents/Panel/Keyboard/Row3" instance=ExtResource( 4 )]
@@ -474,6 +503,7 @@ focus_neighbour_right = NodePath("../U")
 focus_neighbour_bottom = NodePath("../../Row4/]")
 focus_next = NodePath("../../Row4/Ç")
 focus_previous = NodePath("../Ê")
+shortcut_in_tooltip = true
 text = "À"
 
 [node name="Row4" type="HBoxContainer" parent="Wrapper/Page/Contents/Panel/Keyboard"]
@@ -491,6 +521,7 @@ focus_neighbour_right = NodePath("../-")
 focus_neighbour_bottom = NodePath("../../Row5/0")
 focus_next = NodePath("../-")
 focus_previous = NodePath("../../Row3/À")
+shortcut_in_tooltip = true
 text = "Ç"
 
 [node name="-" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -503,6 +534,7 @@ focus_neighbour_right = NodePath("../_")
 focus_neighbour_bottom = NodePath("../../Row5/1")
 focus_next = NodePath("../_")
 focus_previous = NodePath("../Ç")
+shortcut_in_tooltip = true
 text = "-"
 
 [node name="_" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -515,6 +547,7 @@ focus_neighbour_right = NodePath("../,")
 focus_neighbour_bottom = NodePath("../../Row5/2")
 focus_next = NodePath("../,")
 focus_previous = NodePath("../-")
+shortcut_in_tooltip = true
 text = "_"
 
 [node name="," parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -527,6 +560,7 @@ focus_neighbour_right = NodePath("../!")
 focus_neighbour_bottom = NodePath("../../Row5/3")
 focus_next = NodePath("../!")
 focus_previous = NodePath("../_")
+shortcut_in_tooltip = true
 text = ","
 
 [node name="!" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -539,6 +573,7 @@ focus_neighbour_right = NodePath("../\?")
 focus_neighbour_bottom = NodePath("../../Row5/4")
 focus_next = NodePath("../\?")
 focus_previous = NodePath("../,")
+shortcut_in_tooltip = true
 text = "!"
 
 [node name="\?" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -551,6 +586,7 @@ focus_neighbour_right = NodePath("../(")
 focus_neighbour_bottom = NodePath("../../Row5/5")
 focus_next = NodePath("../(")
 focus_previous = NodePath("../!")
+shortcut_in_tooltip = true
 text = "?"
 
 [node name="(" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -563,6 +599,7 @@ focus_neighbour_right = NodePath("../)")
 focus_neighbour_bottom = NodePath("../../Row5/6")
 focus_next = NodePath("../)")
 focus_previous = NodePath("../\?")
+shortcut_in_tooltip = true
 text = "("
 
 [node name=")" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -575,6 +612,7 @@ focus_neighbour_right = NodePath("../[")
 focus_neighbour_bottom = NodePath("../../Row5/7")
 focus_next = NodePath("../[")
 focus_previous = NodePath("../(")
+shortcut_in_tooltip = true
 text = ")"
 
 [node name="[" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -587,6 +625,7 @@ focus_neighbour_right = NodePath("../]")
 focus_neighbour_bottom = NodePath("../../Row5/8")
 focus_next = NodePath("../]")
 focus_previous = NodePath("../)")
+shortcut_in_tooltip = true
 text = "["
 
 [node name="]" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -599,6 +638,7 @@ focus_neighbour_right = NodePath("../Del")
 focus_neighbour_bottom = NodePath("../../Row5/9")
 focus_next = NodePath("../../Row5/0")
 focus_previous = NodePath("../[")
+shortcut_in_tooltip = true
 text = "]"
 
 [node name="Del" parent="Wrapper/Page/Contents/Panel/Keyboard/Row4" instance=ExtResource( 4 )]
@@ -610,6 +650,7 @@ focus_neighbour_top = NodePath("../../Row5/Confirm")
 focus_neighbour_bottom = NodePath("../../Row5/Confirm")
 focus_next = NodePath("../../Row5/Confirm")
 focus_previous = NodePath("../../Row5/9")
+shortcut_in_tooltip = true
 text = "DELETE"
 align = 2
 script = ExtResource( 10 )
@@ -629,6 +670,7 @@ focus_neighbour_right = NodePath("../1")
 focus_neighbour_bottom = NodePath("../../Row1/A")
 focus_next = NodePath("../1")
 focus_previous = NodePath("../../Row4/]")
+shortcut_in_tooltip = true
 text = "0"
 
 [node name="1" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -641,6 +683,7 @@ focus_neighbour_right = NodePath("../2")
 focus_neighbour_bottom = NodePath("../../Row1/B")
 focus_next = NodePath("../2")
 focus_previous = NodePath("../0")
+shortcut_in_tooltip = true
 text = "1"
 
 [node name="2" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -653,6 +696,7 @@ focus_neighbour_right = NodePath("../3")
 focus_neighbour_bottom = NodePath("../../Row1/C")
 focus_next = NodePath("../3")
 focus_previous = NodePath("../1")
+shortcut_in_tooltip = true
 text = "2"
 
 [node name="3" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -665,6 +709,7 @@ focus_neighbour_right = NodePath("../4")
 focus_neighbour_bottom = NodePath("../../Row1/D")
 focus_next = NodePath("../4")
 focus_previous = NodePath("../2")
+shortcut_in_tooltip = true
 text = "3"
 
 [node name="4" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -677,6 +722,7 @@ focus_neighbour_right = NodePath("../5")
 focus_neighbour_bottom = NodePath("../../Row1/E")
 focus_next = NodePath("../5")
 focus_previous = NodePath("../3")
+shortcut_in_tooltip = true
 text = "4"
 
 [node name="5" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -689,6 +735,7 @@ focus_neighbour_right = NodePath("../6")
 focus_neighbour_bottom = NodePath("../../Row1/F")
 focus_next = NodePath("../6")
 focus_previous = NodePath("../4")
+shortcut_in_tooltip = true
 text = "5"
 
 [node name="6" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -701,6 +748,7 @@ focus_neighbour_right = NodePath("../7")
 focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath("../7")
 focus_previous = NodePath("../5")
+shortcut_in_tooltip = true
 text = "6"
 
 [node name="7" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -713,6 +761,7 @@ focus_neighbour_right = NodePath("../8")
 focus_neighbour_bottom = NodePath("../../Row1/H")
 focus_next = NodePath("../8")
 focus_previous = NodePath("../6")
+shortcut_in_tooltip = true
 text = "7"
 
 [node name="8" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -725,6 +774,7 @@ focus_neighbour_right = NodePath("../9")
 focus_neighbour_bottom = NodePath("../../Row1/I")
 focus_next = NodePath("../9")
 focus_previous = NodePath("../7")
+shortcut_in_tooltip = true
 text = "8"
 
 [node name="9" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 4 )]
@@ -737,6 +787,7 @@ focus_neighbour_right = NodePath("../Confirm")
 focus_neighbour_bottom = NodePath("../../Row1/J")
 focus_next = NodePath("../../Row4/Del")
 focus_previous = NodePath("../8")
+shortcut_in_tooltip = true
 text = "9"
 
 [node name="Confirm" parent="Wrapper/Page/Contents/Panel/Keyboard/Row5" instance=ExtResource( 11 )]

@@ -8,6 +8,4 @@ extends NavigationButton
 # Set itself at last clicked button
 func _on_Pressed() -> void:
 	._on_Pressed()
-	Events.emit_signal(
-		"new_profile_page_displayed", Serialize.PROFILE_SLOTS[owner.get_index()], owner.data
-	)
+	Events.emit_signal("new_profile_page_displayed", Serialize.PROFILE_SLOTS[owner.get_index()])

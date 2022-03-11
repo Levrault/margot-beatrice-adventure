@@ -45,7 +45,6 @@ func load_profiles() -> void:
 		var profile_file = File.new()
 		profile_file.open(SAVE_PATH % profile, File.READ)
 		profiles[profile] = sync(profile, parse_json(profile_file.get_line()), template.duplicate(true))
-	print_debug("Profiles are loaded : ", profiles)
 
 
 # sync current profile with profile_template
@@ -101,11 +100,15 @@ func save_profile(profile_name: String, values: Dictionary) -> void:
 	profile_file.open(SAVE_PATH % profile_name, File.WRITE)
 	profile_file.store_line(to_json(values))
 	profile_file.close()
+	print_debug("%s has been saved" % profile_name)
 
 
 func erase(profile_name: String) -> void:
-	var profile_file := File.new()
+	Directory.new().remove(SAVE_PATH % profile_name)
+
+	var profile_file = File.new()
 	profile_file.open(SAVE_PATH % profile_name, File.WRITE)
 	profile_file.store_line(to_json(template.duplicate(true)))
 	profile_file.close()
+	profiles[profile_name] = template.duplicate(true)
 	print_debug("%s save has been erased")
