@@ -16,6 +16,7 @@ margin_right = 132.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
+shortcut_in_tooltip = false
 shortcut = SubResource( 2 )
 text = "commons.reset_default"
 script = ExtResource( 1 )

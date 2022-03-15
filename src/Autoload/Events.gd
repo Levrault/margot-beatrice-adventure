@@ -127,7 +127,9 @@ signal overlay_displayed
 signal overlay_hidden
 
 # profile
-signal new_profile_page_displayed(for_profile, data)
+signal erase_profile_dialog_displayed(for_profile, button)
+signal erase_profile_dialog_confirm_button_pressed
+signal new_profile_page_displayed(for_profile)
 signal new_profile_created(profile)
 
 # Required field unmapped
@@ -138,3 +140,12 @@ signal save_notification_enabled
 
 # user
 signal user_has_changed_gamepad_bindind
+
+# worldmap
+signal worldmap_level_name_changed(new_text)
+signal worldmap_preview_changed(new_texture)
+signal worldmap_best_time_changed(best_time)
+signal worldmap_preview_animation_activated
+signal worldmap_acorns_percentage_changed(value, max_value)
+signal worldmap_carrots_percentage_changed(value, max_value)
+signal worldmap_gems_percentage_changed(value, max_value)

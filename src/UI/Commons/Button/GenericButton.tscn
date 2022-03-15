@@ -8,6 +8,7 @@
 margin_right = 12.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false,

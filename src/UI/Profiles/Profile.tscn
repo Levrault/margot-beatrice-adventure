@@ -4,7 +4,7 @@
 [ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UI/Profiles/NewProfileNavigationButton.gd" type="Script" id=4]
-[ext_resource path="res://src/UI/Profiles/LoadProfileButton.gd" type="Script" id=5]
+[ext_resource path="res://src/UI/Profiles/LoadProfileNavigationButton.gd" type="Script" id=5]
 [ext_resource path="res://src/UI/Profiles/EraseProfileButton.gd" type="Script" id=6]
 
 [node name="Profile" type="HBoxContainer"]
@@ -22,6 +22,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
 size_flags_horizontal = 3
 script = ExtResource( 5 )
+navigate_to = "WorldmapPage"
 
 [node name="MarginContainer" type="MarginContainer" parent="LoadProfile"]
 anchor_right = 1.0

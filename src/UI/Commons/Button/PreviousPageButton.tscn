@@ -20,6 +20,7 @@ region = Rect2( 80, 144, 32, 16 )
 margin_right = 59.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
 shortcut = SubResource( 2 )
 text = "commons.back"
 icon = SubResource( 3 )

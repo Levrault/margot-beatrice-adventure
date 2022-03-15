@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=45 format=2]
+[gd_resource type="Theme" load_steps=44 format=2]
 
 [ext_resource path="res://assets/theme/generic_box_focus.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/theme/joystix_10.tres" type="DynamicFont" id=2]
@@ -17,10 +17,13 @@
 [ext_resource path="res://assets/UI/radio/ui_radio_unchecked.png" type="Texture" id=15]
 [ext_resource path="res://assets/UI/radio/ui_radio_checked.png" type="Texture" id=16]
 [ext_resource path="res://assets/UI/checkbox/ui_checkbox_unchecked.png" type="Texture" id=17]
-[ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_scroll.png" type="Texture" id=18]
-[ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_grabber.png" type="Texture" id=19]
-[ext_resource path="res://assets/UI/v_scroll/ui_v_scroll_grabber_focus.png" type="Texture" id=20]
+[ext_resource path="res://assets/theme/scrollbar/scroll.tres" type="StyleBox" id=18]
+[ext_resource path="res://assets/theme/scrollbar/grabber_highlight.tres" type="StyleBox" id=19]
+[ext_resource path="res://assets/theme/scrollbar/grabber.tres" type="StyleBox" id=20]
 [ext_resource path="res://assets/UI/window_dialog/ui_window_dialog.png" type="Texture" id=21]
+[ext_resource path="res://assets/theme/scrollbar/grabber_pressed.tres" type="StyleBox" id=22]
+[ext_resource path="res://assets/UI/scrollbar/ui_v_scroll_scroll.png" type="Texture" id=23]
+[ext_resource path="res://assets/UI/scrollbar/ui_v_scroll_grabber.png" type="Texture" id=24]
 
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 4 )
@@ -105,7 +108,7 @@ expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id=35]
-texture = ExtResource( 18 )
+texture = ExtResource( 23 )
 region_rect = Rect2( 1, 1, 5, 5 )
 margin_left = 1.0
 margin_right = 1.0
@@ -113,27 +116,7 @@ margin_top = 1.0
 margin_bottom = 1.0
 
 [sub_resource type="StyleBoxTexture" id=36]
-texture = ExtResource( 19 )
-region_rect = Rect2( 1, 1, 5, 5 )
-margin_left = 1.0
-margin_right = 1.0
-margin_top = 1.0
-margin_bottom = 1.0
-
-[sub_resource type="StyleBoxTexture" id=32]
-texture = ExtResource( 19 )
-region_rect = Rect2( 2, 2, 3, 3 )
-
-[sub_resource type="StyleBoxTexture" id=33]
-texture = ExtResource( 20 )
-region_rect = Rect2( 1, 2, 5, 3 )
-
-[sub_resource type="StyleBoxTexture" id=34]
-texture = ExtResource( 20 )
-region_rect = Rect2( 1, 2, 5, 3 )
-
-[sub_resource type="StyleBoxTexture" id=31]
-texture = ExtResource( 18 )
+texture = ExtResource( 24 )
 region_rect = Rect2( 1, 1, 5, 5 )
 margin_left = 1.0
 margin_right = 1.0
@@ -167,6 +150,10 @@ CheckBox/styles/hover = SubResource( 26 )
 CheckBox/styles/hover_pressed = SubResource( 27 )
 CheckBox/styles/normal = SubResource( 28 )
 CheckBox/styles/pressed = SubResource( 29 )
+HScrollBar/styles/grabber = ExtResource( 20 )
+HScrollBar/styles/grabber_highlight = ExtResource( 19 )
+HScrollBar/styles/grabber_pressed = ExtResource( 22 )
+HScrollBar/styles/scroll = ExtResource( 18 )
 HSeparator/constants/separation = 2
 HSeparator/styles/separator = SubResource( 37 )
 HSlider/icons/grabber = ExtResource( 5 )
@@ -192,9 +179,9 @@ PopupMenu/icons/radio_unchecked = ExtResource( 15 )
 PopupMenu/styles/panel = SubResource( 30 )
 ProgressBar/styles/bg = SubResource( 35 )
 ProgressBar/styles/fg = SubResource( 36 )
-VScrollBar/styles/grabber = SubResource( 32 )
-VScrollBar/styles/grabber_highlight = SubResource( 33 )
-VScrollBar/styles/grabber_pressed = SubResource( 34 )
-VScrollBar/styles/scroll = SubResource( 31 )
+VScrollBar/styles/grabber = ExtResource( 20 )
+VScrollBar/styles/grabber_highlight = ExtResource( 19 )
+VScrollBar/styles/grabber_pressed = ExtResource( 22 )
+VScrollBar/styles/scroll = ExtResource( 18 )
 WindowDialog/colors/title_color = Color( 0.984314, 0.94902, 0.211765, 1 )
 WindowDialog/styles/panel = SubResource( 38 )

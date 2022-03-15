@@ -11,4 +11,5 @@ func _on_Pressed() -> void:
 	owner.form.save()
 	Menu.navigate_to(navigate_to)
 	Events.emit_signal("new_profile_created", owner.form.profile)
+	Game.current_profile = owner.form.profile
 	owner.form.reset()

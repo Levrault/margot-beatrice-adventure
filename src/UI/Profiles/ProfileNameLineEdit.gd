@@ -2,6 +2,7 @@ extends LineEdit
 
 signal blocked
 
+
 func _ready():
 	connect("text_changed", self, "_on_Text_changed")
 	connect("text_entered", self, "_on_Text_entered")

@@ -4,6 +4,7 @@ class_name NavigationSwitch
 extends Control
 
 signal navigation_finished
+signal navigation_exited
 
 export var default_field_to_focus: NodePath
 

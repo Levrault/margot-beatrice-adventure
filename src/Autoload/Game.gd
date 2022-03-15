@@ -1,9 +1,16 @@
 extends Node
 
+var current_profile := "profile0"
+
 var unlocked_characters := {
 	"fox": true,
 	"squirrel": false,
 	"rabbit": false,
 }
 
-var stats := {}
+# stats per level
+var stats := {
+	"game_over": 0,
+	"hits": 0,
+	"play_time": 0
+}
