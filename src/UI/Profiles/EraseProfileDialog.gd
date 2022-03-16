@@ -33,7 +33,9 @@ func _on_Erase_profile_dialog_displayed(for_profile: String, button: GenericButt
 	show()
 	profile_to_erase = for_profile
 	associated_erase_button = button
-	label.text = tr("profile.erase_profile").format({profile = Serialize.profiles[profile_to_erase].profile.name})
+	label.text = tr("profile.erase_profile").format(
+		{profile = Serialize.profiles[profile_to_erase].profile.name}
+	)
 
 
 func _on_Cancel_pressed() -> void:

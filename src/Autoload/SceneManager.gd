@@ -10,7 +10,6 @@ var bounds := {}
 var previous_anchor: CameraAnchor = null
 var anchor: CameraAnchor = null setget set_anchor
 var is_anchor_locked := false
-var path := ""
 var tilemap: TileMap = null
 
 

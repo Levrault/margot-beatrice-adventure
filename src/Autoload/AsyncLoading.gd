@@ -4,15 +4,15 @@ extends Node
 var loading_screen_scene: Resource = preload("res://src/UI/LoadingScreen/LoadingScreen.tscn")
 var loading_screen: Node
 
-var loader: ResourceInteractiveLoader
-var scene_path := ""
+var loader: ResourceInteractiveLoader = null
 var wait_frames: int = 1
 var time_max: int = 100  # msec
 var current_scene = null
-var root: Node
+var root: Node = null
 
 
 func _ready() -> void:
+	pause_mode = PAUSE_MODE_PROCESS
 	root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
@@ -29,8 +29,8 @@ func goto_scene(path):  # Game requests to switch to this scene.
 	if loader == null:  # Check for errors.
 		show_error()
 		return
-	set_process(true)
 
+	set_process(true)
 	current_scene.queue_free()  # Get rid of the old scene.
 	loading_screen = loading_screen_scene.instance()
 	root.add_child(loading_screen)

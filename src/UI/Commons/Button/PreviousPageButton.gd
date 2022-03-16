@@ -3,6 +3,7 @@
 # Check if the form is valid
 # @category: Button
 extends Button
+class_name PreviousPageButton
 
 # custom signal when the button can't trigger navigation
 signal blocked

@@ -1,6 +1,5 @@
 extends Control
 
-
 var go_to_scene_path := ""
 
 

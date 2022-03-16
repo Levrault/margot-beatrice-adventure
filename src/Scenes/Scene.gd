@@ -14,10 +14,6 @@ func _ready() -> void:
 	SceneManager.anchor = get_nearest_anchor()
 	SceneManager.anchor.update_anchor_limit()
 
-	if SceneManager.path.empty():
-		print_debug("SceneManager.path is not set, %s was set instead" % [filename])
-		SceneManager.path = filename
-
 	# track player
 	Events.connect("player_moved", self, "_on_Player_moved")
 	Events.emit_signal("room_loaded")
