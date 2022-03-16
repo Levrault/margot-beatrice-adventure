@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/UI/Settings/Page/SettingsListPage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/TitleScreen/TitleScreenPage.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://src/UI/Profiles/NewProfilePage.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/UI/Worldmap/WorldmapPage.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/theme/MainMenu.tres" type="Theme" id=16]
+[ext_resource path="res://src/UI/LoadingScreen/LoadingTransition.tscn" type="PackedScene" id=17]
 
 [node name="MainMenu" type="Control"]
 pause_mode = 2
@@ -73,3 +74,5 @@ visible = false
 [node name="MenuTransition" parent="." instance=ExtResource( 8 )]
 
 [node name="SaveNotification" parent="." instance=ExtResource( 10 )]
+
+[node name="LoadingTransition" parent="." instance=ExtResource( 17 )]

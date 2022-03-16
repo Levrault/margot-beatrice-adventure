@@ -109,6 +109,9 @@ signal gamepad_stick_layout_changed(joy_actions, translation_key)
 # keybinding
 signal key_listening_started(field, button, scancode)
 
+# loading
+signal loading_transtion_started(go_to_scene)
+
 # locale
 signal locale_changed
 

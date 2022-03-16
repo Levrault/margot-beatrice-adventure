@@ -90,4 +90,4 @@ func _on_Navigation_finished() -> void:
 
 
 func _on_Load_level_button_pressed() -> void:
-	AsyncLoading.goto_scene(level_path)
+	Events.emit_signal("loading_transtion_started", level_path)

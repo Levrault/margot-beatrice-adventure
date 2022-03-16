@@ -87,7 +87,6 @@ margin_right = 440.0
 margin_bottom = 22.0
 
 [node name="EraseProfileDialog" parent="." instance=ExtResource( 4 )]
-visible = false
 margin_left = -200.0
 margin_top = -50.0
 margin_right = 200.0

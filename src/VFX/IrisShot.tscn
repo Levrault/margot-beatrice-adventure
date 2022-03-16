@@ -12,7 +12,6 @@
 [ext_resource path="res://assets/vfx/iris_shot/white.png" type="Texture" id=10]
 
 [sub_resource type="AnimatedTexture" id=1]
-flags = 2
 frames = 7
 frame_0/texture = ExtResource( 7 )
 frame_1/texture = ExtResource( 8 )
