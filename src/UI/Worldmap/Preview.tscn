@@ -120,22 +120,23 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -80.0
-margin_top = 17.0
-margin_right = -40.0
-margin_bottom = 45.0
+margin_top = 18.0
+margin_right = 51.0
+margin_bottom = 46.0
+custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Best" type="Label" parent="Overlay/Time"]
-margin_right = 40.0
+margin_right = 131.0
 margin_bottom = 14.0
-text = "best"
+text = "worldmap.best_time"
 
 [node name="Time" type="Label" parent="Overlay/Time"]
-margin_top = 18.0
-margin_right = 40.0
-margin_bottom = 32.0
+margin_top = 14.0
+margin_right = 131.0
+margin_bottom = 28.0
 text = "120.0"
 script = ExtResource( 5 )
 
