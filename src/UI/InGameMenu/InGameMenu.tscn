@@ -1,0 +1,85 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://src/UI/InGameMenu/Pause.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/Settings/Page/AudioSettingsPage.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/theme/MainMenu.tres" type="Theme" id=3]
+[ext_resource path="res://src/UI/LoadingScreen/LoadingTransition.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/Settings/Page/DisplaySettingsPage.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UI/Commons/Notifications/SaveNotification.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UI/Settings/Page/GamepadRebindPage.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UI/Settings/Page/AccessibilitySettingsPage.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/UI/Settings/Page/SettingsListPage.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/UI/Settings/Page/GamepadLayoutSettingsPage.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/UI/Settings/Page/KeyboardRebindPage.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/UI/Commons/Transition/UiTransition.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/UI/Profiles/NewProfilePage.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationRouter.gd" type="Script" id=14]
+[ext_resource path="res://src/UI/InGameMenu/InGameScreenPage.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/shaders/blur.shader" type="Shader" id=16]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 16 )
+shader_param/lod = 0.8
+
+[node name="InGameMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 815, -34 )
+theme = ExtResource( 3 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.247059, 0.247059, 0.454902, 0.658824 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundOverlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.247059, 0.247059, 0.454902, 0.658824 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InGameScreenPage" parent="." instance=ExtResource( 15 )]
+
+[node name="NewProfilePage" parent="." instance=ExtResource( 13 )]
+visible = false
+
+[node name="AccessibilitySettingsPage" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="AudioSettingsPage" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="DisplaySettingsPage" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="GamepadLayoutSettingsPage" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="GamepadRebindPage" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="KeyboardRebindPage" parent="." instance=ExtResource( 11 )]
+visible = false
+
+[node name="SettingsListPage" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="MenuTransition" parent="." instance=ExtResource( 12 )]
+
+[node name="SaveNotification" parent="." instance=ExtResource( 6 )]
+
+[node name="LoadingTransition" parent="." instance=ExtResource( 4 )]

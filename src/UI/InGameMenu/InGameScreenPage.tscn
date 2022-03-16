@@ -1,20 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/UI/title/title.png" type="Texture" id=1]
-[ext_resource path="res://src/UI/Commons/Button/QuitButton.gd" type="Script" id=2]
-[ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Commons/Button/InGamePreviousPageButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Commons/Button/ResumeButton.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/Commons/Button/ReturnMenuButton.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=5]
-[ext_resource path="res://src/UI/Commons/Button/PreviousPageButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/UI/title/title.png" type="Texture" id=6]
+[ext_resource path="res://src/UI/Commons/Button/QuitButton.gd" type="Script" id=7]
+[ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=8]
 
-[node name="TitleScreen" type="Control"]
+[node name="InGameScreenPage" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-default_field_to_focus = NodePath("Wrapper/Page/CenterContainer/Contents/Play")
+default_field_to_focus = NodePath("Wrapper/Page/CenterContainer/Contents/Resume")
 
 [node name="Wrapper" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -44,7 +46,7 @@ alignment = 1
 margin_left = 51.0
 margin_right = 389.0
 margin_bottom = 71.0
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Wrapper/Page"]
 margin_top = 75.0
@@ -54,10 +56,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Contents" type="VBoxContainer" parent="Wrapper/Page/CenterContainer"]
-margin_left = 135.0
-margin_top = 29.0
-margin_right = 305.0
-margin_bottom = 109.0
+margin_left = 132.0
+margin_top = 14.0
+margin_right = 308.0
+margin_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -66,28 +68,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 4 )]
-margin_right = 170.0
-rect_min_size = Vector2( 170, 0 )
-text = "commons.play"
-navigate_to = "ProfilesPage"
-is_default_focused = true
+[node name="Resume" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 5 )]
+margin_right = 176.0
+text = "commons.resume"
+script = ExtResource( 2 )
 
 [node name="Settings" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 4 )]
 margin_top = 30.0
-margin_right = 170.0
+margin_right = 176.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 170, 0 )
 text = "commons.settings"
 navigate_to = "SettingsListPage"
 
-[node name="Quit" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 3 )]
+[node name="ReturnMenu" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 5 )]
 margin_top = 60.0
-margin_right = 170.0
+margin_right = 176.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 170, 0 )
-text = "commons.quit"
-script = ExtResource( 2 )
+text = "commons.return_menu"
+script = ExtResource( 3 )
+
+[node name="QuitToDesktop" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 5 )]
+margin_top = 90.0
+margin_right = 176.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 170, 0 )
+text = "commons.return_desktop"
+script = ExtResource( 7 )
 
 [node name="Footer" type="HBoxContainer" parent="Wrapper/Page"]
 margin_top = 218.0
@@ -100,7 +108,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PreviousPageButton" parent="Wrapper/Page/Footer" instance=ExtResource( 6 )]
+[node name="InGamePreviousPageButton" parent="Wrapper/Page/Footer" instance=ExtResource( 1 )]
 margin_left = 297.0
 margin_right = 440.0
 margin_bottom = 22.0

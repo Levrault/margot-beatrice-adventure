@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://src/UI/InGame/Dialogues/DialogueBox.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/Dialogues/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://assets/portraits/NPCDummy.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/hud/Stop.png" type="Texture" id=3]
 [ext_resource path="res://src/UI/Commons/RichTextLabel/AutoScrollLabel.tscn" type="PackedScene" id=4]

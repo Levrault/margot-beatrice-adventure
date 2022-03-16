@@ -106,6 +106,9 @@ signal gamepad_listening_started
 signal gamepad_layout_changed
 signal gamepad_stick_layout_changed(joy_actions, translation_key)
 
+# in-game
+signal in_game_menu_hidden
+
 # keybinding
 signal key_listening_started(field, button, scancode)
 

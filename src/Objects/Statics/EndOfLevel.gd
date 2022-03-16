@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 
 
 func _on_Saved_successfull() -> void:
-	print("in")
+	print_debug("_on_Saved_successfull")
 
 
 func _on_body_entered(body: Player) -> void:
