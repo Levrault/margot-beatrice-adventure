@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/shaders/wind_sway.shader" type="Shader" id=1]
 [ext_resource path="res://src/Scenes/Scene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/Collectables/Collectables.gd" type="Script" id=3]
 [ext_resource path="res://src/Objects/Statics/Bush.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/NPCs/NpcDummy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/Collectables/Acorn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Traps/Fire.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Objects/Platforms/FallingPlatform.tscn" type="PackedScene" id=9]
@@ -15,8 +17,10 @@
 [ext_resource path="res://src/Objects/Platforms/PlatformAlt.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Enemies/Patrol/Opossum/Opossum.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Enemies/Statics/Carniplant/Carniplant.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Objects/Collectables/Carrot.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Waypoints/Waypoints.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/Enemies/Flying/Wasp/Wasp.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Objects/Collectables/Gem.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -58,6 +62,7 @@ shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
 
 [node name="TestScene" instance=ExtResource( 2 )]
+full_screen_shader = false
 
 [node name="UI" parent="." index="2"]
 layer = 2
@@ -67,7 +72,7 @@ tile_data = PoolIntArray( -1114082, 47, 0, -1114081, 47, 5, -1114080, 47, 196609
 map_size = Vector2( 30, 17 )
 
 [node name="Player" parent="TileMap" index="0"]
-position = Vector2( 456, 256 )
+position = Vector2( 1785, 249 )
 
 [node name="Bush" parent="TileMap/Statics" index="0" instance=ExtResource( 4 )]
 material = SubResource( 1 )
@@ -156,8 +161,37 @@ position = Vector2( 1080, 240 )
 [node name="GodRay" parent="TileMap/VFX" index="0" instance=ExtResource( 13 )]
 position = Vector2( 220.465, 102.827 )
 
+[node name="NpcDummy" parent="TileMap/NPCs" index="0" instance=ExtResource( 5 )]
+position = Vector2( 1595, 257 )
+z_index = -1
+conditions = {
+"has_already_been_meet": true
+}
+
+[node name="NpcDummy2" parent="TileMap/NPCs" index="1" instance=ExtResource( 5 )]
+position = Vector2( 1699, 257 )
+z_index = -1
+conditions = {
+"has_already_been_meet": true
+}
+
 [node name="Collectables" parent="TileMap" index="7"]
 script = ExtResource( 3 )
+
+[node name="Gem" parent="TileMap/Collectables" index="0" instance=ExtResource( 21 )]
+position = Vector2( 1791.07, 201.863 )
+
+[node name="Gem2" parent="TileMap/Collectables" index="1" instance=ExtResource( 21 )]
+position = Vector2( 1800, 202 )
+
+[node name="Gem3" parent="TileMap/Collectables" index="2" instance=ExtResource( 21 )]
+position = Vector2( 1811, 204 )
+
+[node name="Acorn" parent="TileMap/Collectables" index="3" instance=ExtResource( 6 )]
+position = Vector2( 1787.86, 171.133 )
+
+[node name="Carrot" parent="TileMap/Collectables" index="4" instance=ExtResource( 18 )]
+position = Vector2( 1786.02, 132.149 )
 
 [node name="EndOfLevel" parent="TileMap" index="8"]
 position = Vector2( 1877.14, 205.308 )

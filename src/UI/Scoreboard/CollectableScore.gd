@@ -5,6 +5,7 @@ export (Character.Playable) var selected = Character.Playable.FOX
 onready var _score := $ScoreContainer/Score
 onready var _max_value := $ScoreContainer/MaxScore
 onready var _tween = $Tween
+onready var _sfx := $SFXCollectable
 
 
 func _ready():
@@ -34,6 +35,7 @@ func start_tween() -> void:
 		Tween.TRANS_LINEAR
 	)
 	_tween.start()
+	_sfx.play()
 
 
 func _format_text(value: int) -> void:

@@ -38,6 +38,5 @@ hframes = 4
 autoplay = "DEFAULT"
 anims/DEFAULT = SubResource( 2 )
 
-[node name="SFXPlayer" parent="." index="4"]
+[node name="SFXCollectable" parent="." index="4"]
 stream = ExtResource( 3 )
-attenuation = 1.86607

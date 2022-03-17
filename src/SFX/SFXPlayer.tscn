@@ -3,4 +3,5 @@
 [ext_resource path="res://src/SFX/SFXPlayer.gd" type="Script" id=1]
 
 [node name="SFXPlayer" type="AudioStreamPlayer2D"]
+bus = "SFX"
 script = ExtResource( 1 )

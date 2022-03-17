@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UI/Scoreboard/CollectableScore.gd" type="Script" id=1]
+[ext_resource path="res://assets/UI/hud/gem.png" type="Texture" id=2]
+[ext_resource path="res://src/SFX/SFXCollectable.tscn" type="PackedScene" id=3]
+
+[node name="CollectablesScore" type="HBoxContainer"]
+margin_top = 18.0
+margin_right = 400.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="SFXCollectable" parent="." instance=ExtResource( 3 )]
+
+[node name="Icon" type="TextureRect" parent="."]
+margin_right = 21.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 21, 28 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 7.0
+margin_right = 134.0
+margin_bottom = 21.0
+text = "collectable.gems"
+
+[node name="Dots" type="Label" parent="."]
+margin_left = 138.0
+margin_top = 7.0
+margin_right = 359.0
+margin_bottom = 21.0
+rect_clip_content = true
+size_flags_horizontal = 3
+text = "........................................................................................................"
+clip_text = true
+
+[node name="ScoreContainer" type="HBoxContainer" parent="."]
+margin_left = 363.0
+margin_right = 400.0
+margin_bottom = 28.0
+
+[node name="Score" type="Label" parent="ScoreContainer"]
+margin_top = 7.0
+margin_right = 8.0
+margin_bottom = 21.0
+text = "0"
+
+[node name="Dash" type="Label" parent="ScoreContainer"]
+margin_left = 12.0
+margin_top = 7.0
+margin_right = 17.0
+margin_bottom = 21.0
+text = "/"
+
+[node name="MaxScore" type="Label" parent="ScoreContainer"]
+margin_left = 21.0
+margin_top = 7.0
+margin_right = 37.0
+margin_bottom = 21.0
+text = "10"

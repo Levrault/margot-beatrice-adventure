@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Objects/Collectables/Collectable.gd" type="Script" id=1]
 [ext_resource path="res://src/Objects/Collectables/CollectableFeedback.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/SFX/SFXPlayer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/audio/Pickup/gem.wav" type="AudioStream" id=4]
-
+[ext_resource path="res://src/SFX/SFXCollectable.tscn" type="PackedScene" id=5]
 
 [node name="Collectable" type="Area2D"]
 scale = Vector2( 1.5, 1.5 )
@@ -19,6 +17,4 @@ script = ExtResource( 1 )
 
 [node name="CollectableFeedback" parent="." instance=ExtResource( 2 )]
 
-[node name="SFXPlayer" parent="." instance=ExtResource( 3 )]
-stream = ExtResource( 4 )
-attenuation = 2.0
+[node name="SFXCollectable" parent="." instance=ExtResource( 5 )]
