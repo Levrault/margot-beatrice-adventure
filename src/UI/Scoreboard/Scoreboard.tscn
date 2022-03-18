@@ -1,0 +1,745 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/shaders/blur.tres" type="Material" id=1]
+[ext_resource path="res://src/UI/Scoreboard/CollectableScore.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/Scoreboard/TimeFormat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Scoreboard/Scoreboard.gd" type="Script" id=4]
+[ext_resource path="res://src/VFX/IrisShot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/theme/MainMenu.tres" type="Theme" id=6]
+[ext_resource path="res://assets/theme/generic_box_normal.tres" type="StyleBox" id=7]
+[ext_resource path="res://assets/theme/joystick_18.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/UI/hud/acorn.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/hud/carrot.png" type="Texture" id=10]
+[ext_resource path="res://src/UI/Scoreboard/Rank.gd" type="Script" id=11]
+[ext_resource path="res://src/UI/Scoreboard/GameoverContainer.gd" type="Script" id=12]
+[ext_resource path="res://src/UI/Scoreboard/HitsTakenContainer.gd" type="Script" id=13]
+[ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=14]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Footer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Footer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Panel/Rank:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Panel/CollectablesContainer/Gems:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Panel/CollectablesContainer/Acorns:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Panel/CollectablesContainer/Carrots:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Panel/GameoverContainer:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Panel/HitsTakenContainer:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Panel/CollectablesContainer/Carrots:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "show"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Panel/TimeFormat")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("IrisShot")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Blur:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Blur:material:shader_param/lod")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.5 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Panel/CollectablesContainer/Gems")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Panel/CollectablesContainer/Acorns")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Panel/CollectablesContainer/Carrots")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("Panel/GameoverContainer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Panel/HitsTakenContainer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 1.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("Panel/Rank")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 2.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_tween"
+} ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Panel:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Panel:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Footer:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Footer:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 2.1, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Panel/Rank:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Panel/CollectablesContainer/Gems:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Panel/CollectablesContainer/Acorns:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Panel/GameoverContainer:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Panel/HitsTakenContainer:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Panel/CollectablesContainer/Carrots:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 1.3, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/22/type = "method"
+tracks/22/path = NodePath("Footer/Continue")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/theme/fonts/joystix monospace.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = SubResource( 2 )
+
+[node name="Scoreboard" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+anims/RESET = SubResource( 4 )
+anims/show = SubResource( 1 )
+
+[node name="IrisShot" parent="." instance=ExtResource( 5 )]
+auto_start = false
+auto_queue_free = false
+type = "shot_in"
+
+[node name="Blur" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -158.0
+margin_top = -110.0
+margin_right = 158.0
+margin_bottom = 80.0
+custom_styles/panel = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -120.5
+margin_top = 15.0
+margin_right = 116.5
+margin_bottom = 37.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 8 )
+text = "scoreboard.title"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollectablesContainer" type="VBoxContainer" parent="Panel"]
+margin_left = 23.0
+margin_top = 37.0
+margin_right = 290.0
+margin_bottom = 117.0
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gems" parent="Panel/CollectablesContainer" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 0.0
+margin_right = 267.0
+margin_bottom = 28.0
+
+[node name="Acorns" parent="Panel/CollectablesContainer" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 27.0
+margin_right = 267.0
+margin_bottom = 53.0
+size_flags_vertical = 3
+selected = 2
+
+[node name="Icon" parent="Panel/CollectablesContainer/Acorns" index="2"]
+margin_right = 20.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 20, 26 )
+texture = ExtResource( 9 )
+
+[node name="Label" parent="Panel/CollectablesContainer/Acorns" index="3"]
+margin_left = 24.0
+margin_right = 168.0
+margin_bottom = 19.0
+text = "collectable.acorns"
+
+[node name="Dots" parent="Panel/CollectablesContainer/Acorns" index="4"]
+margin_left = 172.0
+margin_right = 223.0
+margin_bottom = 19.0
+
+[node name="ScoreContainer" parent="Panel/CollectablesContainer/Acorns" index="5"]
+margin_left = 227.0
+margin_right = 267.0
+margin_bottom = 26.0
+
+[node name="Score" parent="Panel/CollectablesContainer/Acorns/ScoreContainer" index="0"]
+margin_bottom = 19.0
+
+[node name="Dash" parent="Panel/CollectablesContainer/Acorns/ScoreContainer" index="1"]
+margin_right = 20.0
+margin_bottom = 19.0
+
+[node name="MaxScore" parent="Panel/CollectablesContainer/Acorns/ScoreContainer" index="2"]
+margin_left = 24.0
+margin_right = 40.0
+margin_bottom = 19.0
+
+[node name="Carrots" parent="Panel/CollectablesContainer" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 52.0
+margin_right = 267.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+selected = 1
+
+[node name="Icon" parent="Panel/CollectablesContainer/Carrots" index="2"]
+texture = ExtResource( 10 )
+
+[node name="Label" parent="Panel/CollectablesContainer/Carrots" index="3"]
+margin_top = 8.0
+margin_right = 177.0
+margin_bottom = 20.0
+text = "collectable.carrots"
+
+[node name="Dots" parent="Panel/CollectablesContainer/Carrots" index="4"]
+margin_left = 181.0
+margin_top = 8.0
+margin_right = 223.0
+margin_bottom = 20.0
+
+[node name="ScoreContainer" parent="Panel/CollectablesContainer/Carrots" index="5"]
+margin_left = 227.0
+margin_right = 267.0
+
+[node name="Score" parent="Panel/CollectablesContainer/Carrots/ScoreContainer" index="0"]
+margin_top = 8.0
+margin_bottom = 20.0
+
+[node name="Dash" parent="Panel/CollectablesContainer/Carrots/ScoreContainer" index="1"]
+margin_top = 8.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="MaxScore" parent="Panel/CollectablesContainer/Carrots/ScoreContainer" index="2"]
+margin_left = 24.0
+margin_top = 8.0
+margin_right = 40.0
+margin_bottom = 20.0
+
+[node name="GameoverContainer" type="HBoxContainer" parent="Panel"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 29.0
+margin_top = 129.0
+margin_right = 177.0
+margin_bottom = 141.0
+alignment = 2
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Panel/GameoverContainer"]
+
+[node name="Label" type="Label" parent="Panel/GameoverContainer"]
+margin_right = 160.0
+margin_bottom = 12.0
+text = "scoreboard.game_over"
+
+[node name="Score" type="Label" parent="Panel/GameoverContainer"]
+margin_left = 164.0
+margin_right = 172.0
+margin_bottom = 12.0
+text = "0"
+
+[node name="HitsTakenContainer" type="HBoxContainer" parent="Panel"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 29.0
+margin_top = 146.0
+margin_right = 177.0
+margin_bottom = 158.0
+alignment = 2
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Panel/HitsTakenContainer"]
+
+[node name="Label" type="Label" parent="Panel/HitsTakenContainer"]
+margin_right = 160.0
+margin_bottom = 12.0
+text = "scoreboard.hit_taken"
+
+[node name="Score" type="Label" parent="Panel/HitsTakenContainer"]
+margin_left = 164.0
+margin_right = 172.0
+margin_bottom = 12.0
+text = "0"
+
+[node name="TimeFormat" parent="Panel" instance=ExtResource( 3 )]
+margin_left = 117.0
+margin_top = 160.0
+margin_right = 201.0
+margin_bottom = 172.0
+text = "00s 000ms"
+
+[node name="Rank" type="Label" parent="Panel"]
+visible = false
+margin_left = 245.0
+margin_top = 111.0
+margin_right = 295.0
+margin_bottom = 183.0
+grow_horizontal = 0
+custom_fonts/font = SubResource( 3 )
+text = "A"
+align = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Footer" type="HBoxContainer" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -213.0
+margin_top = 96.0
+margin_right = 213.0
+margin_bottom = 122.0
+grow_horizontal = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Worldmap" parent="Footer" instance=ExtResource( 14 )]
+margin_right = 142.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+shortcut_in_tooltip = true
+text = "commons.worldmap"
+
+[node name="Restart" parent="Footer" instance=ExtResource( 14 )]
+margin_left = 146.0
+margin_right = 280.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+shortcut_in_tooltip = true
+text = "commons.restart"
+
+[node name="Continue" parent="Footer" instance=ExtResource( 14 )]
+margin_left = 284.0
+margin_right = 426.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+shortcut_in_tooltip = true
+text = "commons.continue"
+
+[editable path="Panel/CollectablesContainer/Acorns"]
+[editable path="Panel/CollectablesContainer/Carrots"]

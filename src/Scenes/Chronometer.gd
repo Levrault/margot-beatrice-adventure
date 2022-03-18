@@ -19,4 +19,5 @@ func _on_Level_started() -> void:
 
 func _on_Level_finished() -> void:
 	set_process(false)
+	print(time)
 	Events.emit_signal("level_completion_time_emitted", time)

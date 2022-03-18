@@ -30,6 +30,7 @@ func enter(msg: Dictionary = {}) -> void:
 	owner.is_snapped_to_floor = false
 	owner.is_handling_input = false
 	owner.momentum.start()
+	Game.stats.hits_taken += 1
 
 	if "impulse" in msg:
 		throwback()
