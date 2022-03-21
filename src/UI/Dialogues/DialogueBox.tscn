@@ -1,11 +1,15 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/UI/Dialogues/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://assets/portraits/NPCDummy.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/hud/Stop.png" type="Texture" id=3]
 [ext_resource path="res://src/UI/Commons/RichTextLabel/AutoScrollLabel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/UI/hud/ArrowDown.png" type="Texture" id=5]
+[ext_resource path="res://assets/theme/pixelmix_8.tres" type="DynamicFont" id=6]
 
+[sub_resource type="Theme" id=15]
+default_font = ExtResource( 6 )
+RichTextLabel/fonts/normal_font = null
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -258,17 +262,6 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=7]
-antialiased = false
-font_path = "res://assets/theme/fonts/Minecraftia-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=8]
-size = 10
-font_data = SubResource( 7 )
-
-[sub_resource type="Theme" id=9]
-default_font = SubResource( 8 )
-
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.133333, 0.12549, 0.203922, 1 )
 corner_radius_top_left = 8
@@ -298,6 +291,7 @@ anti_aliasing = false
 [node name="DialogueBox" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = SubResource( 15 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -326,7 +320,6 @@ margin_bottom = 90.0
 rect_pivot_offset = Vector2( 200, 35 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 9 )
 custom_styles/panel = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false

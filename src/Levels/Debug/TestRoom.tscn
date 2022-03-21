@@ -161,19 +161,9 @@ position = Vector2( 1080, 240 )
 [node name="GodRay" parent="TileMap/VFX" index="0" instance=ExtResource( 13 )]
 position = Vector2( 220.465, 102.827 )
 
-[node name="NpcDummy" parent="TileMap/NPCs" index="0" instance=ExtResource( 5 )]
+[node name="DummyLinear" parent="TileMap/NPCs" index="0" instance=ExtResource( 5 )]
 position = Vector2( 1595, 257 )
 z_index = -1
-conditions = {
-"has_already_been_meet": true
-}
-
-[node name="NpcDummy2" parent="TileMap/NPCs" index="1" instance=ExtResource( 5 )]
-position = Vector2( 1699, 257 )
-z_index = -1
-conditions = {
-"has_already_been_meet": true
-}
 
 [node name="Collectables" parent="TileMap" index="7"]
 script = ExtResource( 3 )

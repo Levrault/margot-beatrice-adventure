@@ -1,4 +1,6 @@
 # Non playable character
+# Adding dialogue
+# Set the same name for the npc and the dialogue json file
 class_name Npc
 extends KinematicBody2D
 

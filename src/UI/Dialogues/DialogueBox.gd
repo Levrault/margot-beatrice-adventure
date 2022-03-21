@@ -3,7 +3,7 @@ extends Control
 
 enum States { PENDING, QUESTIONNING }
 
-var _choice_btn_scene := preload("res://src/UI/InGame/Dialogues/ChoicesBtn.tscn")
+var _choice_btn_scene := preload("res://src/UI/Dialogues/ChoicesBtn.tscn")
 var _message := ''
 var _is_last_dialogue := false
 var _state: int = States.PENDING
