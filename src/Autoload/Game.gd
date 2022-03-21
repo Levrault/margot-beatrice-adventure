@@ -9,8 +9,4 @@ var unlocked_characters := {
 }
 
 # stats per level
-var stats := {
-	"game_over": 0,
-	"hits_taken": 0,
-	"play_time": 0
-}
+var stats := {"game_over": 0, "hits_taken": 0, "play_time": 0}

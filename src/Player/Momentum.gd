@@ -1,4 +1,4 @@
-# Slow down time with an ease out effect to set 'momentum' when something 
+# Slow down time with an ease out effect to set 'momentum' when something
 # great happen
 extends Node2D
 class_name Momentum

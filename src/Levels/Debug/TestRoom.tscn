@@ -163,7 +163,9 @@ position = Vector2( 220.465, 102.827 )
 
 [node name="DummyLinear" parent="TileMap/NPCs" index="0" instance=ExtResource( 5 )]
 position = Vector2( 1595, 257 )
-z_index = -1
+conditions = {
+"has_already_been_meet": true
+}
 
 [node name="Collectables" parent="TileMap" index="7"]
 script = ExtResource( 3 )

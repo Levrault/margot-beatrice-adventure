@@ -1,13 +1,16 @@
 extends Node2D
 
+const UNALLOWED_STATES := ["Hurt", "Die", "Spawn"]
+
 export (Character.Playable) var character = Character.Playable.FOX
 
-var selected_character = Character.Playable.FOX
+var selected_character = Character.Playable.FOX setget _set_selected_character
 var character_data := {}
 var _direction := 1
 
-onready var wheel = $Wheel
 onready var characters: Node2D = $Characters
+onready var momentum: Momentum = $Momentum
+onready var tween := $Tween
 
 
 func _ready() -> void:
@@ -18,86 +21,45 @@ func _ready() -> void:
 
 	selected_character = character
 	Character.selected = character
-	wheel.hide()
-	wheel.next(Character.list[selected_character])
 	owner.skin = characters.get_node(Character.list[selected_character]).skin
 	owner.skin.set_process(true)
 
 
 func _unhandled_input(event) -> void:
-	if not owner.is_on_floor():
+
+	if UNALLOWED_STATES.has(owner.state_machine.state_name):
 		return
 
-	if not wheel.visible and event.is_action_pressed("character_wheel"):
-		owner.is_handling_input = false
-		wheel.show()
-		get_tree().paused = true
+	if event.is_action_pressed("switch_to_squirrel") and selected_character != Character.Playable.SQUIRREL:
+		self.selected_character = Character.Playable.SQUIRREL
+		switch_to(Character.list[Character.Playable.SQUIRREL])
 		return
 
-	if not wheel.visible:
+	if event.is_action_pressed("switch_to_rabbit") and selected_character != Character.Playable.RABBIT:
+		self.selected_character = Character.Playable.RABBIT
+		switch_to(Character.list[Character.Playable.RABBIT])
 		return
 
-	# prevent axis navigation to emit multiples press event
-	if InputManager.controller == InputManager.XBOX:
-		# use input with a deadzone of 1, see project settings
-		if event.is_action_pressed("move_character_wheel_left"):
-			_next_character()
-			return
-
-		if event.is_action_pressed("move_character_wheel_right"):
-			_prev_character()
-			return
-
-	if InputManager.controller == InputManager.KEYBOARD:
-		if event.is_action_pressed("move_left"):
-			_next_character()
-			return
-		if event.is_action_pressed("move_right"):
-			_prev_character()
-			return
-
-	if event.is_action_pressed("jump"):
-		switch_to(Character.list[selected_character])
-		wheel.hide()
-		get_tree().paused = false
+	if event.is_action_pressed("switch_to_fox") and selected_character != Character.Playable.FOX:
+		self.selected_character = Character.Playable.FOX
+		switch_to(Character.list[Character.Playable.FOX])
 		return
 
 
-func _next_character() -> void:
-	selected_character += 1
-	if selected_character >= Character.list.size():
-		selected_character = 0
-	wheel.next(Character.list[selected_character])
-	Character.selected = selected_character
+func _set_selected_character(value: int) -> void:
+	selected_character = value
+	Character.selected = value
 
 
-func _prev_character() -> void:
-	owner.is_handling_input = false
-	selected_character -= 1
-	if selected_character < 0:
-		selected_character = Character.list.size() - 1
-	wheel.prev(Character.list[selected_character])
-	Character.selected = selected_character
-
-
-func _on_Room_loaded() -> void:
-	if selected_character == Character.selected:
-		return
-	selected_character = Character.selected
-	wheel.next(Character.list[selected_character])
-	switch_to(Character.list[selected_character])
+func exit() -> void:
+	owner.is_handling_input = true
+	tween.interpolate_property(owner.skin, "modulate:a", .1, 1, momentum.DURATION)
+	tween.start()
 
 
 func switch_to(new_character: String) -> void:
 	print_debug("Changed to %s" % new_character)
-
-	owner.skin.connect("shader_finished", self, "_on_Shader_teleport_in_finished", [new_character])
-	owner.skin.execute_shader("teleport_in")
-
-
-func _on_Shader_teleport_in_finished(anim_name: String, new_character: String) -> void:
-	owner.skin.disconnect("shader_finished", self, "_on_Shader_teleport_in_finished")
-
+	momentum.start()
 	var anim_to_play := "idle"
 	for child in characters.get_children():
 		if not child.get_name() == new_character:
@@ -118,21 +80,24 @@ func _on_Shader_teleport_in_finished(anim_name: String, new_character: String) -
 		owner.skin = child.skin
 
 	owner.flip(_direction)
+
+	if anim_to_play == "dash":
+		anim_to_play = "fall"
 	owner.skin.play(anim_to_play)
 	Events.emit_signal("player_character_changed")
-
-	owner.skin.connect("shader_finished", self, "_on_Shader_teleport_out_finished")
-	owner.skin.execute_shader("teleport_out")
+	exit()
 
 
-func _on_Shader_teleport_out_finished(anim_name: String) -> void:
-	owner.is_handling_input = true
-	owner.skin.disconnect("shader_finished", self, "_on_Shader_teleport_out_finished")
+func _on_Room_loaded() -> void:
+	if selected_character == Character.selected:
+		return
+	selected_character = Character.selected
+	switch_to(Character.list[selected_character])
 
 
 func _on_Game_paused() -> void:
-	pause_mode = Node.PAUSE_MODE_INHERIT
+	set_process_unhandled_input(false)
 
 
 func _on_Game_unpaused() -> void:
-	pause_mode = Node.PAUSE_MODE_PROCESS
+	set_process_unhandled_input(true)

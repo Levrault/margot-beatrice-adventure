@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/characters/squirrel/Squirrel-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://src/Player/PlayerSkin.tscn" type="PackedScene" id=2]
@@ -72,6 +72,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 18, 19 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "fall"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 16, 17 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -171,6 +188,7 @@ tracks/1/keys = {
 anims/DEFAULT = SubResource( 1 )
 anims/die = SubResource( 2 )
 anims/duck = SubResource( 3 )
+anims/fall = SubResource( 9 )
 anims/hurt = SubResource( 4 )
 anims/idle = SubResource( 5 )
 anims/jump = SubResource( 6 )
@@ -180,3 +198,4 @@ anims/spawn = SubResource( 8 )
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )
 hframes = 22
+frame = 14
