@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Actor/ActorSkin.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/shaders/teleport.shader" type="Shader" id=4]
 [ext_resource path="res://src/Player/PlayerSkin.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
@@ -230,58 +229,6 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = ExtResource( 4 )
-shader_param/progress = 0.0
-shader_param/noise_desnity = 60.0
-shader_param/beam_size = 0.01
-shader_param/color = Color( 0, 1.02, 1.2, 1 )
-
-[sub_resource type="Animation" id=8]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:material:shader_param/progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="Animation" id=9]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:material:shader_param/progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
-[sub_resource type="Animation" id=10]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:material:shader_param/progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 1.0, 0.0 ]
-}
-
 [node name="PlayerSkin" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
 
@@ -291,12 +238,3 @@ anims/contact = SubResource( 2 )
 anims/die = SubResource( 3 )
 anims/jump = SubResource( 5 )
 anims/spawn = SubResource( 6 )
-
-[node name="Sprite" parent="." index="1"]
-material = SubResource( 7 )
-
-[node name="ShaderAnim" type="AnimationPlayer" parent="." index="2"]
-autoplay = "DEFAULT"
-anims/DEFAULT = SubResource( 8 )
-anims/teleport_in = SubResource( 9 )
-anims/teleport_out = SubResource( 10 )

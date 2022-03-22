@@ -42,7 +42,7 @@ func _ready() -> void:
 
 
 func set_is_handling_input(value: bool) -> void:
-	$StateMachine.set_process_unhandled_input(value)
+	state_machine.set_process_unhandled_input(value)
 	is_handling_input = value
 
 

@@ -42,7 +42,7 @@ func next() -> void:
 
 # show next interactions
 func change() -> void:
-	var text: String = _current_dialogue["text"][Config.values.game.locale]
+	var text: String = _current_dialogue["text"][Config.values.display.locale]
 	Events.emit_signal(
 		"dialogue_changed",
 		_current_dialogue["name"],

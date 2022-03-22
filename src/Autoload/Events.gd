@@ -84,7 +84,6 @@ signal transition_finished
 signal worldmap_level_selected(data)
 signal worldmap_level_hidden
 
-
 ############
 #### UI ####
 ############

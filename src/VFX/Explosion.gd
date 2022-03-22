@@ -3,16 +3,19 @@ extends Node2D
 
 signal exploded
 
+onready var anim := $AnimationPlayer
+onready var audio := $AudioStreamPlayer2D
+
 
 func _ready() -> void:
-	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
+	anim.connect("animation_finished", self, "_on_Animation_finished")
 
 
 # Start explosion
 func start() -> void:
 	show()
-	$AnimationPlayer.play("explode")
-	$AudioStreamPlayer2D.play()
+	anim.play("explode")
+	audio.play()
 
 
 # @signal animation_finished

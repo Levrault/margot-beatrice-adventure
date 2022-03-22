@@ -39,6 +39,7 @@ shape = SubResource( 3 )
 cast_to = Vector2( 0, 15 )
 
 [node name="RayCastFloor" parent="StateMachine/Patrol" index="1"]
+position = Vector2( -1, 0 )
 cast_to = Vector2( 0, 15 )
 
 [node name="Hurt" parent="StateMachine" index="1"]
