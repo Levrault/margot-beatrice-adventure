@@ -346,6 +346,12 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+ogg_vorbis={
+"loop": false
+}
+mp3={
+"loop": false
+}
 
 [input]
 
