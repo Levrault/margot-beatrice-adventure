@@ -15,10 +15,5 @@ func exit() -> void:
 
 
 func _on_Skin_animation_finished(anim_name: String) -> void:
-	owner.life -= 1
 	Game.stats.game_over += 1
-
-	if owner.life > 0:
-		_state_machine.transition_to("Spawn")
-		return
-	Events.emit_signal("game_over")
+	_state_machine.transition_to("Spawn")
