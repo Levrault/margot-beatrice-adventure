@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("pause"):
 		pause()
 
 
