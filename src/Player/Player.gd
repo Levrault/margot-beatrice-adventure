@@ -66,6 +66,7 @@ func take_damage(source: Hit) -> void:
 func flip(direction: float) -> void:
 	if direction == 0:
 		return
+	# warning-ignore:narrowing_conversion
 	look_direction = sign(direction)
 	skin.scale.x = look_direction
 

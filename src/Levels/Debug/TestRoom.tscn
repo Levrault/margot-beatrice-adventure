@@ -72,7 +72,7 @@ tile_data = PoolIntArray( -1114082, 47, 0, -1114081, 47, 5, -1114080, 47, 196609
 map_size = Vector2( 30, 17 )
 
 [node name="Player" parent="TileMap" index="0"]
-position = Vector2( 1785, 249 )
+position = Vector2( 632, 256 )
 
 [node name="Bush" parent="TileMap/Statics" index="0" instance=ExtResource( 4 )]
 material = SubResource( 1 )

@@ -8,7 +8,7 @@ func unhandled_input(event: InputEvent) -> void:
 func physics_process(delta: float) -> void:
 	_parent.max_speed.x = _parent.max_speed_default.x
 	if owner.is_on_floor():
-		if _parent.velocity.length() < 1.0:
+		if _parent.velocity.length() < 1.0 and not owner.is_on_wall():
 			_state_machine.transition_to("Move/Idle")
 	else:
 		_state_machine.transition_to("Move/Air", {coyote_time = true})

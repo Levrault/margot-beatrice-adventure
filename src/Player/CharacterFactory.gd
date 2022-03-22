@@ -19,8 +19,7 @@ func _ready() -> void:
 	Events.connect("game_paused", self, "_on_Game_paused")
 	Events.connect("game_unpaused", self, "_on_Game_unpaused")
 
-	selected_character = character
-	Character.selected = character
+	self.selected_character = character
 	owner.skin = characters.get_node(Character.list[selected_character]).skin
 	owner.skin.set_process(true)
 
@@ -32,23 +31,21 @@ func _unhandled_input(event) -> void:
 
 	if event.is_action_pressed("switch_to_squirrel") and selected_character != Character.Playable.SQUIRREL:
 		self.selected_character = Character.Playable.SQUIRREL
-		switch_to(Character.list[Character.Playable.SQUIRREL])
 		return
 
 	if event.is_action_pressed("switch_to_rabbit") and selected_character != Character.Playable.RABBIT:
 		self.selected_character = Character.Playable.RABBIT
-		switch_to(Character.list[Character.Playable.RABBIT])
 		return
 
 	if event.is_action_pressed("switch_to_fox") and selected_character != Character.Playable.FOX:
 		self.selected_character = Character.Playable.FOX
-		switch_to(Character.list[Character.Playable.FOX])
 		return
 
 
 func _set_selected_character(value: int) -> void:
 	selected_character = value
 	Character.selected = value
+	switch_to(Character.list[value])
 
 
 func exit() -> void:
