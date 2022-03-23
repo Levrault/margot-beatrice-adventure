@@ -25,3 +25,7 @@ Game made for my niece
 
 - [interface-sfx-pack-1](https://obsydianx.itch.io/interface-sfx-pack-1)
 - Kenney [sounds interface](https://www.kenney.nl/assets/interface-sounds) and [ui audio](https://www.kenney.nl/assets/ui-audio) pack.
+
+
+### Shader
+- https://godotshaders.com/shader/simple-2d-dissolve/

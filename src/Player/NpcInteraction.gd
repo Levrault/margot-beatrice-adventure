@@ -1,4 +1,4 @@
-# Detect NPC and manage interactions the player can 
+# Detect NPC and manage interactions the player can
 # have with them
 extends Area2D
 

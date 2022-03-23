@@ -65,6 +65,8 @@ __meta__ = {
 
 [node name="Collectables" type="Node2D" parent="TileMap"]
 
+[node name="Interactables" type="Node2D" parent="TileMap"]
+
 [node name="EndOfLevel" parent="TileMap" instance=ExtResource( 8 )]
 
 [node name="TileMapPassThrough" type="TileMap" parent="."]
