@@ -10,7 +10,6 @@
 [ext_resource path="res://src/Player/Squirrel/SquirrelData.gd" type="Script" id=8]
 
 [node name="CharacterFactory" type="Node2D"]
-pause_mode = 1
 script = ExtResource( 7 )
 
 [node name="Tween" type="Tween" parent="."]
