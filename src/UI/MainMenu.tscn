@@ -29,7 +29,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 13 )]
+[node name="AutoScrollBackground" parent="." instance=ExtResource( 13 )]
 
 [node name="BackgroundOverlay" type="ColorRect" parent="."]
 anchor_right = 1.0

@@ -20,6 +20,7 @@ static func get_move_direction() -> Vector2:
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), 1.0
 	)
 
+
 static func calculate_velocity(
 	old_velocity: Vector2,
 	max_speed: Vector2,

@@ -484,4 +484,4 @@ translations=PoolStringArray( "res://i18n/audio.en.translation", "res://i18n/aud
 
 2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"
-quality/2d/use_pixel_snap=true
+quality/2d/use_pixel_snap=false

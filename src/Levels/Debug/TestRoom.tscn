@@ -121,7 +121,7 @@ void fragment()
 [sub_resource type="ShaderMaterial" id=11]
 resource_local_to_scene = true
 shader = SubResource( 10 )
-shader_param/progress = 1.0
+shader_param/progress = 0.0
 shader_param/noise_desnity = 60.0
 shader_param/beam_size = null
 shader_param/color = Color( 1, 1, 1, 1 )
@@ -129,7 +129,7 @@ shader_param/color = Color( 1, 1, 1, 1 )
 [sub_resource type="ShaderMaterial" id=12]
 resource_local_to_scene = true
 shader = SubResource( 10 )
-shader_param/progress = 1.0
+shader_param/progress = 0.0
 shader_param/noise_desnity = 60.0
 shader_param/beam_size = null
 shader_param/color = Color( 1, 1, 1, 1 )
@@ -192,7 +192,7 @@ void fragment()
 [sub_resource type="ShaderMaterial" id=14]
 resource_local_to_scene = true
 shader = SubResource( 13 )
-shader_param/progress = 1.0
+shader_param/progress = 0.0
 shader_param/noise_desnity = 60.0
 shader_param/beam_size = null
 shader_param/color = Color( 1, 1, 1, 1 )
