@@ -165,16 +165,36 @@ func get_device_button_from_action(action: String, for_device: String) -> String
 	return result
 
 
-func get_device_icon_texture_from_action(input: String, for_device: String) -> AtlasTexture:
+func get_device_icon_texture_from_action(input: String, for_device: String, alt := false) -> AtlasTexture:
 	if for_device == InputManager.DEVICE_MOUSE:
 		for_device = InputManager.DEVICE_KEYBOARD
 	if for_device == InputManager.DEVICE_KEYBOARD:
 		input = "KEY_" + input.to_upper()
 
+	if alt:
+		for_device += "_alt"
+
+	if not atlas_map.has(for_device) or not atlas_map[for_device].has(input):
+		return null
+
 	var texture = AtlasTexture.new()
 	texture.atlas = load(ICON_ATLAS_TEXTURE_PATH)
 	var atlas_region = atlas_map[for_device][input]
 	texture.region = Rect2(atlas_region[0], atlas_region[1], atlas_region[2], atlas_region[3])
+
+	return texture
+
+
+func get_device_icon_texture_fallback(for_device: String) -> AtlasTexture:
+	if for_device == InputManager.DEVICE_MOUSE:
+		for_device = InputManager.DEVICE_KEYBOARD
+
+	var texture = AtlasTexture.new()
+	texture.atlas = load(ICON_ATLAS_TEXTURE_PATH)
+
+	var atlas_region = atlas_map["fallback"]["TEMPLATE"]
+	texture.region = Rect2(atlas_region[0], atlas_region[1], atlas_region[2], atlas_region[3])
+
 	return texture
 
 
