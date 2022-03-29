@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/tileset_placeholder_16x16.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/VFX/IrisShot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Statics/EndOfLevel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Scenes/ParallaxBackground/InfiniteAutoScrollParralaxBackground.gd" type="Script" id=9]
 [ext_resource path="res://src/Scenes/Chronometer.gd" type="Script" id=10]
 [ext_resource path="res://src/UI/Dialogues/DialogueBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/UI/CharacterSwitching/OnTheFlyCharacterSwitching.tscn" type="PackedScene" id=12]
@@ -1082,24 +1083,26 @@ margin_top = -37.0
 margin_bottom = 20.0
 
 [node name="ParralaxBackground" type="ParallaxBackground" parent="."]
-follow_viewport_enable = true
+pause_mode = 2
+scroll_offset = Vector2( 0, 135 )
+scroll_base_scale = Vector2( 1, 0 )
+script = ExtResource( 9 )
 
 [node name="BackgroundParallaxLayer" type="ParallaxLayer" parent="ParralaxBackground"]
-position = Vector2( 160, -18 )
-motion_mirroring = Vector2( 1158, 0 )
+motion_mirroring = Vector2( 1536, 0 )
 script = ExtResource( 15 )
 
 [node name="Background" type="Sprite" parent="ParralaxBackground/BackgroundParallaxLayer"]
-position = Vector2( 400, 134.389 )
+position = Vector2( 0, 165 )
 texture = ExtResource( 13 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1158, 240 )
+region_rect = Rect2( 0, 0, 1536, 270 )
 
 [node name="MiddleGroundParallaxLayer" type="ParallaxLayer" parent="ParralaxBackground"]
 position = Vector2( 194, 184 )
 scale = Vector2( 0.7, 0.7 )
-motion_scale = Vector2( 0.1, 1 )
-motion_mirroring = Vector2( 1416, 0 )
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 480, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParralaxBackground/MiddleGroundParallaxLayer"]
 position = Vector2( 358.141, 45.1987 )
