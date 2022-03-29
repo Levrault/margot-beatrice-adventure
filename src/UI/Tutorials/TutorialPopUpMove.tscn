@@ -1,11 +1,41 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/UI/Tutorials/TutorialPopUp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Commons/TextureRect/AtlasIcon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/Tutorials/TutorialPopUpMove.gd" type="Script" id=3]
+[ext_resource path="res://src/UI/Commons/TextureRect/JoystickAtlasIcon.tscn" type="PackedScene" id=4]
 
 [node name="TutorialPopUpMove" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "tutorial.move"
 
-[node name="AtlasIcon" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+[node name="JoystickAtlasIcon" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 4 )]
+margin_left = 27.0
+margin_right = 43.0
 action = "move_left"
+
+[node name="AtlasIcon" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+visible = false
+margin_left = 37.0
+margin_right = 53.0
+action = "move_left"
+
+[node name="AtlasIconMoveUp" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="2" instance=ExtResource( 2 )]
+visible = false
+margin_left = 37.0
+margin_right = 53.0
+action = "move_up"
+
+[node name="AtlasIconMoveRight" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="3" instance=ExtResource( 2 )]
+visible = false
+margin_left = 47.0
+margin_right = 63.0
+action = "move_right"
+
+[node name="AtlasIconMoveDown" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="4" instance=ExtResource( 2 )]
+visible = false
+margin_left = 60.0
+margin_right = 76.0
+action = "move_down"

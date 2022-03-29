@@ -1,4 +1,5 @@
 extends TextureRect
+class_name AtlasIcon
 
 enum Icon { DEFAULT, ALT }
 
@@ -15,7 +16,7 @@ onready var label := $Label
 onready var timer := $Timer
 
 
-func _ready():
+func _ready() -> void:
 	InputManager.connect("device_changed", self, "_on_Device_changed")
 	timer.connect("timeout", self, "_on_Timeout")
 	_on_Device_changed(InputManager.device, 0)
@@ -46,10 +47,16 @@ func _on_Device_changed(device: String, device_index: int) -> void:
 		label.show()
 
 	if alt_icon_texture == null:
-		alt_icon_texture = InputManager.get_device_icon_texture_fallback(device)
+		timer.stop()
+		timer.disconnect("timeout", self, "_on_Timeout")
+	elif not timer.is_connected("timeout", self, "_on_Timeout"):
+		timer.stop()
+		timer.start()
+		timer.connect("timeout", self, "_on_Timeout")
 
 	texture = icon_texture
 	next_icon = Icon.ALT
+
 
 func _on_Timeout() -> void:
 	toggle_icon(next_icon)

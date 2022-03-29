@@ -1,4 +1,5 @@
 extends Control
+class_name TutorialPopUp
 
 
 export var duration := .75
@@ -12,7 +13,6 @@ onready var tween := $Tween
 
 func _ready():
 	Events.connect("room_limit_changed", self, "_on_Room_limit_changed")
-	tween.connect("tween_completed", self, "_on_Tween_completed")
 	tween.connect("tween_all_completed", self, "_on_Tween_all_completed")
 	panel_container.hide()
 	panel.hide()
@@ -31,5 +31,6 @@ func _on_Room_limit_changed(bounds: Dictionary) -> void:
 
 
 func _on_Tween_all_completed() -> void:
+	tween.disconnect("tween_all_completed", self, "_on_Tween_all_completed")
 	panel.hide()
 	panel_container.show()
