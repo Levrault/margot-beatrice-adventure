@@ -52,5 +52,4 @@ func _on_Device_changed(device: String, device_index: int) -> void:
 	next_icon = Icon.ALT
 
 func _on_Timeout() -> void:
-	print(next_icon)
 	toggle_icon(next_icon)

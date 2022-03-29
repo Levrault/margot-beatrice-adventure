@@ -13,4 +13,5 @@ anti_aliasing = false
 [resource]
 default_font = ExtResource( 1 )
 Panel/styles/panel = SubResource( 10 )
+PanelContainer/styles/panel = SubResource( 10 )
 RichTextLabel/fonts/normal_font = null

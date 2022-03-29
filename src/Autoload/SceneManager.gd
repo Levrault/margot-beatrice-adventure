@@ -16,3 +16,15 @@ var tilemap: TileMap = null
 func set_anchor(new_anchor: CameraAnchor) -> void:
 	previous_anchor = anchor
 	anchor = new_anchor
+
+
+func is_on_screen(object_position: Vector2) -> bool:
+	if object_position.y > bounds.limit_bottom:
+		return false
+	if object_position.y < bounds.limit_top:
+		return false
+	if object_position.x < bounds.limit_left:
+		return false
+	if object_position.x > bounds.limit_right:
+		return false
+	return true

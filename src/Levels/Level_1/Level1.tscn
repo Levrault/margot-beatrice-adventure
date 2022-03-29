@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Scenes/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Scenes/FallLimitArea.tscn" type="PackedScene" id=2]
@@ -6,10 +6,12 @@
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Scenes/ParallaxBackground/PlayerBasedParallaxLayer.gd" type="Script" id=5]
 [ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=6]
-[ext_resource path="res://src/UI/Commons/TextureRect/AtlasIcon.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/theme/Game.tres" type="Theme" id=8]
+[ext_resource path="res://src/UI/Tutorials/TutorialPopUpMove.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UI/Tutorials/TutorialPopUpJump.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Objects/Collectables/Gem.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Objects/Collectables/Carrot.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/UI/Tutorials/TutorialPopUp.gd" type="Script" id=11]
+[ext_resource path="res://src/UI/Tutorials/TutorialPopUpSwitchCharacter.tscn" type="PackedScene" id=12]
 
 [sub_resource type="GDScript" id=52]
 script/source = "# source https://github.com/GDQuest/godot-demos/blob/master/2018/03-30-astar-pathfinding/pathfind_astar.gd
@@ -190,131 +192,27 @@ script = SubResource( 52 )
 
 [node name="Tutorial" type="Node2D" parent="MiddleGroundTileMap" index="0"]
 
-[node name="Move" type="Control" parent="MiddleGroundTileMap/Tutorial" index="0"]
-margin_left = 243.0
-margin_top = 86.0
-margin_right = 243.0
-margin_bottom = 86.0
-theme = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TutorialPopUpMove" parent="MiddleGroundTileMap/Tutorial" index="0" instance=ExtResource( 7 )]
+margin_left = 263.0
+margin_top = 31.0
+margin_right = 263.0
+margin_bottom = 31.0
 
-[node name="Panel" type="Panel" parent="MiddleGroundTileMap/Tutorial/Move" index="0"]
-margin_left = -41.0
-margin_top = -59.0
-margin_right = 45.0
-margin_bottom = -26.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TutorialPopUpJump" parent="MiddleGroundTileMap/Tutorial" index="1" instance=ExtResource( 8 )]
+margin_left = 731.0
+margin_top = 27.0
+margin_right = 731.0
+margin_bottom = 27.0
 
-[node name="MarginContainer" type="MarginContainer" parent="MiddleGroundTileMap/Tutorial/Move/Panel" index="0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 4
-custom_constants/margin_top = 4
-custom_constants/margin_left = 4
-custom_constants/margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MiddleGroundTileMap/Tutorial/Move/Panel/MarginContainer" index="0"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 82.0
-margin_bottom = 32.0
-alignment = 1
-
-[node name="Label" type="Label" parent="MiddleGroundTileMap/Tutorial/Move/Panel/MarginContainer/VBoxContainer" index="0"]
-margin_right = 78.0
-margin_bottom = 8.0
-grow_horizontal = 2
-text = "tutorial.move"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MiddleGroundTileMap/Tutorial/Move/Panel/MarginContainer/VBoxContainer" index="1"]
-margin_top = 12.0
-margin_right = 78.0
-margin_bottom = 28.0
-alignment = 1
-
-[node name="AtlasIcon" parent="MiddleGroundTileMap/Tutorial/Move/Panel/MarginContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 7 )]
-margin_left = 31.0
-margin_right = 47.0
-action = "interaction"
-
-[node name="Jump" type="Control" parent="MiddleGroundTileMap/Tutorial" index="1"]
-margin_left = 720.0
-margin_top = 79.0
-margin_right = 720.0
-margin_bottom = 79.0
-theme = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="MiddleGroundTileMap/Tutorial/Jump" index="0"]
-margin_left = -41.0
-margin_top = -59.0
-margin_right = 45.0
-margin_bottom = -26.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="MiddleGroundTileMap/Tutorial/Jump/Panel" index="0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 4
-custom_constants/margin_top = 4
-custom_constants/margin_left = 4
-custom_constants/margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MiddleGroundTileMap/Tutorial/Jump/Panel/MarginContainer" index="0"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 82.0
-margin_bottom = 32.0
-alignment = 1
-
-[node name="Label" type="Label" parent="MiddleGroundTileMap/Tutorial/Jump/Panel/MarginContainer/VBoxContainer" index="0"]
-margin_right = 78.0
-margin_bottom = 8.0
-grow_horizontal = 2
-text = "tutorial.jump"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MiddleGroundTileMap/Tutorial/Jump/Panel/MarginContainer/VBoxContainer" index="1"]
-margin_top = 12.0
-margin_right = 78.0
-margin_bottom = 28.0
-alignment = 1
-
-[node name="AtlasIcon" parent="MiddleGroundTileMap/Tutorial/Jump/Panel/MarginContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 7 )]
-margin_left = 31.0
-margin_right = 47.0
-action = "jump"
-
-[node name="Label" parent="MiddleGroundTileMap/Tutorial/Jump/Panel/MarginContainer/VBoxContainer/HBoxContainer/AtlasIcon" index="2"]
-anchor_left = 0.153
-anchor_top = 0.142
-margin_left = 3.552
-margin_top = 0.728
-margin_right = 6.0
+[node name="TutorialPopUp" parent="MiddleGroundTileMap/Tutorial" index="2" instance=ExtResource( 12 )]
+margin_left = 1208.0
+margin_top = 30.0
+margin_right = 1208.0
+margin_bottom = 30.0
+script = ExtResource( 11 )
 
 [node name="Player" parent="MiddleGroundTileMap" index="1"]
-position = Vector2( 625, 238 )
+position = Vector2( 58, 211 )
 
 [node name="Gem" parent="MiddleGroundTileMap/Collectables" index="0" instance=ExtResource( 9 )]
 position = Vector2( 138, 229 )
@@ -395,7 +293,6 @@ position = Vector2( 1200, -137 )
 [node name="Anchor5" parent="Anchors" index="4" instance=ExtResource( 4 )]
 position = Vector2( 1680, -137 )
 
-[editable path="MiddleGroundTileMap/Tutorial/Jump/Panel/MarginContainer/VBoxContainer/HBoxContainer/AtlasIcon"]
 [editable path="MiddleGroundTileMap/EndOfLevel"]
 [editable path="FallLimits/FallLimitArea"]
 [editable path="FallLimits/FallLimitArea2"]
