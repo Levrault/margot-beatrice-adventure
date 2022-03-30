@@ -23,13 +23,17 @@ func _ready() -> void:
 	boundsSE.position = Vector2(screen_size.x / 2, screen_size.y / 2)
 
 
-func update_anchor_limit() -> void:
-	SceneManager.bounds = {
+func get_bounds() -> Dictionary:
+	return {
 		'limit_left': boundsNW.global_position.x,
 		'limit_top': boundsNW.global_position.y,
 		'limit_right': boundsSE.global_position.x,
 		'limit_bottom': boundsSE.global_position.y,
 	}
+
+
+func update_anchor_limit() -> void:
+	SceneManager.bounds = get_bounds()
 	Events.emit_signal("room_limit_changed", SceneManager.bounds)
 	Events.emit_signal("room_transition_ended")
 	get_tree().paused = false

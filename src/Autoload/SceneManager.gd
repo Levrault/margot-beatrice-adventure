@@ -1,6 +1,9 @@
 # Keep in memory all params of a room
 extends Node
 
+const CAMERA_TRANSITON_TIME := .3
+const CAMERA_TRANSITON_TIME_DURING_DASH := .2
+
 var room_size := Vector2(
 	ProjectSettings.get_setting("display/window/size/width"),
 	ProjectSettings.get_setting("display/window/size/height")
