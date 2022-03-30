@@ -163,6 +163,7 @@ func _set_path_end_position(value):
 extents = Vector2( 133.5, 10 )
 
 [node name="Room" instance=ExtResource( 1 )]
+position = Vector2( -1, 1 )
 full_screen_shader = false
 
 [node name="Background" parent="ParralaxBackground/BackgroundParallaxLayer" index="0"]
@@ -204,7 +205,7 @@ margin_right = 1208.0
 margin_bottom = -250.0
 
 [node name="Player" parent="MiddleGroundTileMap" index="1"]
-position = Vector2( 38.2873, 236.044 )
+position = Vector2( 990, 220 )
 
 [node name="Gem" parent="MiddleGroundTileMap/Collectables" index="0" instance=ExtResource( 9 )]
 position = Vector2( 138, 229 )
