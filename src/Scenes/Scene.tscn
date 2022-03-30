@@ -1144,6 +1144,8 @@ __meta__ = {
 
 [node name="Interactables" type="Node2D" parent="MiddleGroundTileMap"]
 
+[node name="Checkpoints" type="Node2D" parent="MiddleGroundTileMap"]
+
 [node name="EndOfLevel" parent="MiddleGroundTileMap" instance=ExtResource( 8 )]
 
 [node name="TileMapPassThrough" type="TileMap" parent="."]

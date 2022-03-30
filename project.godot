@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/UI/Settings/Fields/CheckboxField.gd"
 }, {
+"base": "Node2D",
+"class": "Checkpoint",
+"language": "GDScript",
+"path": "res://src/Scenes/checkpoints/Checkpoint.gd"
+}, {
 "base": "Area2D",
 "class": "DamageSource",
 "language": "GDScript",
@@ -251,6 +256,7 @@ _global_script_class_icons={
 "AttackFactory": "res://assets/icons/attack_factory.svg",
 "CameraAnchor": "",
 "CheckboxField": "res://assets/icons/check-square.svg",
+"Checkpoint": "",
 "DamageSource": "",
 "DialogueController": "",
 "Draw": "",

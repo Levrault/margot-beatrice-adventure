@@ -75,6 +75,9 @@ signal room_transition_started
 signal room_transition_ended
 signal room_loaded
 
+# spawn
+signal spawn_position_changed(new_position)
+
 # transitions
 signal transition_started(anim_name)
 signal transition_mid_animated
