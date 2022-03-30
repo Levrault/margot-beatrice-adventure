@@ -32,4 +32,3 @@ func _on_Animation_finished(anim_name: String) -> void:
 	if anim_name == "hit":
 		_anim.play("on")
 		_damage_source.is_active = true
-		print(_damage_source)

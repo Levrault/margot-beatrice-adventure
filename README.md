@@ -14,6 +14,7 @@ Game made for my niece
 - [Pixel adventure](https://pixelfrog-assets.itch.io/pixel-adventure-1)
 - [Evil Wizard 2](https://luizmelo.itch.io/evil-wizard-2)
 - [Gamepads Assets - Pixelart by lightUP](https://julianoferreiradelima.itch.io/gamepads-assets-pixelart)
+- [Laser (glowing circle) by gdquest](https://github.com/GDQuest/godot-visual-effects)
 
 ### Fonts
 
@@ -26,6 +27,3 @@ Game made for my niece
 - [interface-sfx-pack-1](https://obsydianx.itch.io/interface-sfx-pack-1)
 - Kenney [sounds interface](https://www.kenney.nl/assets/interface-sounds) and [ui audio](https://www.kenney.nl/assets/ui-audio) pack.
 
-
-### Shader
-- https://godotshaders.com/shader/simple-2d-dissolve/
