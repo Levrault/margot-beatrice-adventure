@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "DialogueController",
 "language": "GDScript",
-"path": "res://src/NPCs/DialogueController.gd"
+"path": "res://src/Dialogues/DialogueController.gd"
 }, {
 "base": "Node2D",
 "class": "Draw",
@@ -337,6 +337,8 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/width=480
 window/size/height=270
+window/size/test_width=1920
+window/size/test_height=1080
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -502,7 +504,7 @@ debug_free_camera_zoom_out={
 
 test="en"
 locale_filter=[ 0, [ "fr" ] ]
-translations=PoolStringArray( "res://i18n/audio.en.translation", "res://i18n/audio.fr.translation", "res://i18n/cfg.en.translation", "res://i18n/cfg.fr.translation", "res://i18n/commons.en.translation", "res://i18n/commons.fr.translation", "res://i18n/display.en.translation", "res://i18n/display.fr.translation", "res://i18n/gamepad.en.translation", "res://i18n/gamepad.fr.translation", "res://i18n/input.en.translation", "res://i18n/input.fr.translation", "res://i18n/mouse.en.translation", "res://i18n/mouse.fr.translation", "res://i18n/rebind.en.translation", "res://i18n/rebind.fr.translation", "res://i18n/accessibility.en.translation", "res://i18n/accessibility.fr.translation", "res://i18n/keyboard.en.translation", "res://i18n/keyboard.fr.translation", "res://i18n/profile.en.translation", "res://i18n/profile.fr.translation", "res://i18n/worldmap.en.translation", "res://i18n/worldmap.fr.translation", "res://i18n/level.en.translation", "res://i18n/level.fr.translation", "res://i18n/scoreboard.en.translation", "res://i18n/scoreboard.fr.translation", "res://i18n/collectable.en.translation", "res://i18n/collectable.fr.translation", "res://i18n/tutorial.en.translation", "res://i18n/tutorial.fr.translation" )
+translations=PoolStringArray( "res://i18n/audio.en.translation", "res://i18n/audio.fr.translation", "res://i18n/cfg.en.translation", "res://i18n/cfg.fr.translation", "res://i18n/commons.en.translation", "res://i18n/commons.fr.translation", "res://i18n/display.en.translation", "res://i18n/display.fr.translation", "res://i18n/gamepad.en.translation", "res://i18n/gamepad.fr.translation", "res://i18n/input.en.translation", "res://i18n/input.fr.translation", "res://i18n/mouse.en.translation", "res://i18n/mouse.fr.translation", "res://i18n/rebind.en.translation", "res://i18n/rebind.fr.translation", "res://i18n/accessibility.en.translation", "res://i18n/accessibility.fr.translation", "res://i18n/keyboard.en.translation", "res://i18n/keyboard.fr.translation", "res://i18n/profile.en.translation", "res://i18n/profile.fr.translation", "res://i18n/worldmap.en.translation", "res://i18n/worldmap.fr.translation", "res://i18n/level.en.translation", "res://i18n/level.fr.translation", "res://i18n/scoreboard.en.translation", "res://i18n/scoreboard.fr.translation", "res://i18n/collectable.en.translation", "res://i18n/collectable.fr.translation", "res://i18n/tutorial.en.translation", "res://i18n/tutorial.fr.translation", "res://i18n/in-game.en.translation", "res://i18n/in-game.fr.translation" )
 
 [rendering]
 

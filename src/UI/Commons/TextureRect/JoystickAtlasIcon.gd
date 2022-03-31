@@ -23,7 +23,8 @@ func _on_Device_changed(device: String, device_index: int) -> void:
 
 	if alt_icon_texture == null:
 		timer.stop()
-		timer.disconnect("timeout", self, "_on_Timeout")
+		if timer.is_connected("timeout", self, "_on_Timeout"):
+			timer.disconnect("timeout", self, "_on_Timeout")
 	elif not timer.is_connected("timeout", self, "_on_Timeout"):
 		timer.start()
 		timer.connect("timeout", self, "_on_Timeout")

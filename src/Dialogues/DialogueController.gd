@@ -11,15 +11,19 @@ var _portraits_res := {}
 var _dialogues := {}
 var _conditions := {}
 var _current_dialogue := {}
-
-onready var dialogue_json: Dictionary = JsonReader.get_json(
-	"res://assets/dialogues/%s.json" % [owner.get_name()]
-)
+var dialogue_json: Dictionary = {}
 
 
 # preload all portrait resources into memory
 func _ready() -> void:
+	load_json()
 	_load_portrait_in_memory()
+
+
+func load_json() -> void:
+	dialogue_json = JsonReader.get_json(
+		"res://assets/dialogues/%s.json" % [owner.get_name()]
+	)
 
 
 func start() -> void:

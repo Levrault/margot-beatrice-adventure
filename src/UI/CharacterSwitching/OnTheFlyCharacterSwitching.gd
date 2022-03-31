@@ -9,6 +9,8 @@ onready var timer := $Timer
 
 
 func _ready():
+	Events.connect("player_hud_disabled", self, "hide")
+	Events.connect("player_hud_enabled", self, "show")
 	Events.connect("player_character_changed", self, "_on_Player_character_changed")
 	InputManager.connect("device_changed", self, "_on_Device_changed")
 	timer.connect("timeout", self, "_on_Timeout")

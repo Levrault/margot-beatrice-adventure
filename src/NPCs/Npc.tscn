@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/NPCs/NpcSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/NPCs/Npc.gd" type="Script" id=2]
-[ext_resource path="res://src/NPCs/DialogueController.gd" type="Script" id=3]
+[ext_resource path="res://src/Dialogues/DialogueController.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )

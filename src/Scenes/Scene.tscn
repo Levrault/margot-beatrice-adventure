@@ -677,11 +677,9 @@ layer = 2
 
 [node name="IrisShot" parent="FullScreenShader" instance=ExtResource( 7 )]
 visible = false
+auto_start = false
 
 [node name="UI" type="CanvasLayer" parent="."]
-
-[node name="InGameMenu" parent="UI" instance=ExtResource( 4 )]
-visible = false
 
 [node name="LevelSummary" parent="UI" instance=ExtResource( 5 )]
 
@@ -691,6 +689,9 @@ visible = false
 [node name="OnTheFlyCharacterSwitching" parent="UI" instance=ExtResource( 12 )]
 margin_top = -37.0
 margin_bottom = 20.0
+
+[node name="InGameMenu" parent="UI" instance=ExtResource( 4 )]
+visible = false
 
 [node name="ParralaxBackground" type="ParallaxBackground" parent="."]
 pause_mode = 2
@@ -719,6 +720,8 @@ position = Vector2( 358.141, 45.1987 )
 texture = ExtResource( 14 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1416, 368 )
+
+[node name="Cinematics" type="Node2D" parent="."]
 
 [node name="BackgroundTilemap" type="TileMap" parent="."]
 z_index = -1

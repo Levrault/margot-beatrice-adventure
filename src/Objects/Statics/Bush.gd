@@ -8,6 +8,8 @@ func _ready():
 
 
 func _on_Body_entered(body: Player) -> void:
+	if !body:
+		return
 	$AnimationPlayer.play("shake")
 
 	var leaves = leaves_particules_scene.instance()

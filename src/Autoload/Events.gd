@@ -7,6 +7,12 @@ signal camera_offset_changed(offset)
 signal camera_offset_resetted
 signal camera_anchor_changed
 
+# cinematic
+signal cinematic_intro_started
+signal cinematic_intro_ended
+signal cinematic_started
+signal cinematic_ended
+
 # controller
 signal controller_changed(controller)
 
@@ -29,10 +35,6 @@ signal dialogue_choices_pressed
 signal dialogue_timed_out
 signal dialogue_timed(value)
 
-# cinematic
-signal cinematic_started
-signal cinematic_ended
-
 # serialize
 signal game_saved
 
@@ -52,6 +54,10 @@ signal player_moved(player)
 signal player_room_entered(position)
 signal player_choice_started
 signal player_character_changed
+signal player_input_disabled
+signal player_input_enabled
+signal player_hud_disabled
+signal player_hud_enabled
 
 # input
 signal keybinding_started(scancode)

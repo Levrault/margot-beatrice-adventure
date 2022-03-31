@@ -198,4 +198,3 @@ anims/spawn = SubResource( 8 )
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )
 hframes = 22
-frame = 14

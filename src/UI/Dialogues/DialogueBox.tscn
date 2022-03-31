@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/UI/Dialogues/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://assets/portraits/NPCDummy.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/UI/hud/ArrowDown.png" type="Texture" id=5]
 [ext_resource path="res://assets/theme/Game.tres" type="Theme" id=6]
 [ext_resource path="res://assets/theme/joystix_10.tres" type="DynamicFont" id=7]
+[ext_resource path="res://src/UI/Commons/TextureRect/InteractableAtlasIcon.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -335,13 +336,10 @@ margin_bottom = 50.0
 [node name="NameContent" type="Panel" parent="Panel"]
 margin_left = -23.2313
 margin_top = 61.3715
-margin_right = 88.7687
+margin_right = 128.769
 margin_bottom = 83.3715
 rect_pivot_offset = Vector2( 56, 11 )
 custom_styles/panel = SubResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/NameContent"]
 anchor_right = 1.0
@@ -350,19 +348,17 @@ custom_constants/margin_right = 4
 custom_constants/margin_top = 2
 custom_constants/margin_left = 4
 custom_constants/margin_bottom = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Name" type="Label" parent="Panel/NameContent/MarginContainer"]
 margin_left = 4.0
 margin_top = 5.0
-margin_right = 108.0
+margin_right = 148.0
 margin_bottom = 17.0
 custom_fonts/font = ExtResource( 7 )
 text = "Name"
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -411,3 +407,11 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InteractableAtlasIcon" parent="." instance=ExtResource( 8 )]
+margin_left = 417.0
+margin_top = 82.0
+margin_right = 433.0
+margin_bottom = 98.0
+grow_horizontal = 0
+action = "jump"
