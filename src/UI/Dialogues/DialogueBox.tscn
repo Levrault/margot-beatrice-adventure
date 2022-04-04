@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/UI/Dialogues/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://assets/portraits/NPCDummy.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/theme/Game.tres" type="Theme" id=6]
 [ext_resource path="res://assets/theme/joystix_10.tres" type="DynamicFont" id=7]
 [ext_resource path="res://src/UI/Commons/TextureRect/InteractableAtlasIcon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/audio/Click/click1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/SFX/SFXPlayer.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -332,6 +334,10 @@ margin_left = 52.0
 margin_top = 0.0
 margin_right = 380.0
 margin_bottom = 50.0
+
+[node name="SFXPlayer" parent="Panel/Wrapper/Contents/Message" instance=ExtResource( 10 )]
+stream = ExtResource( 9 )
+repeat_mode = false
 
 [node name="NameContent" type="Panel" parent="Panel"]
 margin_left = -23.2313

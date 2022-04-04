@@ -26,5 +26,9 @@ Game made for my niece
 ### SFX
 
 - [interface-sfx-pack-1](https://obsydianx.itch.io/interface-sfx-pack-1)
-- Kenney [sounds interface](https://www.kenney.nl/assets/interface-sounds) and [ui audio](https://www.kenney.nl/assets/ui-audio) pack.
+- [Kenney audio asset pack](https://www.kenney.nl/assets?q=audio)
+- [Spell Sounds Starter Pack by p0ss](https://opengameart.org/content/spell-sounds-starter-pack)
 
+### Music
+
+- All made by Patrick de Arteaga, listen more at [https://patrickdearteaga.com](https://patrickdearteaga.com)

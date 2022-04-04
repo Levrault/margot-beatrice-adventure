@@ -1,10 +1,12 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://src/Enemies/EvilWizard/EvilWizardSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=2]
 [ext_resource path="res://src/NPCs/MargotBeatrice/MargotBeatriceSkin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/tilesets/tileset_land_background.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/environment/land/back.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio/jingles/jingles_HIT11.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/wrap/warp2.ogg" type="AudioStream" id=7]
 [ext_resource path="res://src/Dialogues/CinematicDialogueController.gd" type="Script" id=8]
 [ext_resource path="res://src/Cinematics/Cinematic.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/environment/land/middle.png" type="Texture" id=10]
@@ -175,6 +177,30 @@ tracks/12/keys = {
 "update": 0,
 "values": [ Vector2( 393, -19 ) ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("AudioStreamPlayer:stream")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ null ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("AudioStreamPlayer:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "sequence_01"
@@ -275,6 +301,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -40, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("MusicController")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "assassin" ],
+"method": "change_track"
+} ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -449,6 +489,56 @@ tracks/8/keys = {
 "values": [ {
 "args": [  ],
 "method": "toggle_floating"
+} ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("AudioStreamPlayer:stream")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 7 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("AudioStreamPlayer:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("AudioStreamPlayer2:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath("MusicController")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
 } ]
 }
 
@@ -816,7 +906,10 @@ anims/sequence_07 = SubResource( 11 )
 next/fade = "sequence_01"
 next/sequence_07 = "skip"
 
-[node name="Environment" parent="." index="2"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource( 7 )
+
+[node name="Environment" parent="." index="5"]
 position = Vector2( 8, 72 )
 
 [node name="CaveBackground" type="TileMap" parent="Environment" index="0"]
@@ -896,7 +989,7 @@ position = Vector2( 649, -14 )
 material = SubResource( 10 )
 position = Vector2( 425, -14 )
 
-[node name="CinematicCamera" parent="." index="3"]
+[node name="CinematicCamera" parent="." index="6"]
 position = Vector2( 0, -8 )
 current = true
 zoom = Vector2( 0.75, 0.75 )
