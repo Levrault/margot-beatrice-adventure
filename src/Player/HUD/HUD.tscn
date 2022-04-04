@@ -21,9 +21,6 @@ margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 9 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tween" type="Tween" parent="Content"]
 
@@ -35,9 +32,6 @@ one_shot = true
 margin_right = 64.0
 margin_bottom = 35.0
 custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LifeBar" type="TextureRect" parent="Content/VBoxContainer"]
 margin_right = 64.0

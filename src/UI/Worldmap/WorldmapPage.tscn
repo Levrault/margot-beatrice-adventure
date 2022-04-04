@@ -21,9 +21,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 6 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 default_field_to_focus = NodePath("ScrollContainer/MarginContainer/HBoxContainer/Level0/LoadLevelButton")
 
 [node name="Breadcrumb" type="HBoxContainer" parent="."]
@@ -171,7 +168,7 @@ preview_texture = ExtResource( 12 )
 max_gems = 4
 max_carrots = 4
 max_acorns = 4
-level_path = "res://src/Levels/Debug/TestRoom.tscn"
+level_path = "res://src/Levels/Level_1/Level1.tscn"
 
 [node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/HBoxContainer/Level0" index="3"]
 focus_mode = 2

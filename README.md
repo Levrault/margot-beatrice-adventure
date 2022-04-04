@@ -15,6 +15,7 @@ Game made for my niece
 - [Evil Wizard 2](https://luizmelo.itch.io/evil-wizard-2)
 - [Gamepads Assets - Pixelart by lightUP](https://julianoferreiradelima.itch.io/gamepads-assets-pixelart)
 - [Laser (glowing circle) by gdquest](https://github.com/GDQuest/godot-visual-effects)
+- [Coin_Gems - La Red Games](https://laredgames.itch.io/gems-coins-free)
 
 ### Fonts
 

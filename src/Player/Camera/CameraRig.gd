@@ -9,6 +9,7 @@ onready var _tween := $Tween
 
 
 func _ready() -> void:
+	Events.connect("cinematic_intro_ended", self, "_on_Cinematic_ended")
 	_tween.connect("tween_all_completed", self, "_on_Tween_all_completed")
 	initial_position = position
 
@@ -48,3 +49,11 @@ func _on_Tween_all_completed() -> void:
 	owner.set_process(true)
 	pause_mode = Node.PAUSE_MODE_INHERIT
 	owner.is_handling_input = true
+
+
+func _on_Cinematic_started() -> void:
+	camera.current = false
+
+
+func _on_Cinematic_ended() -> void:
+	camera.current = true

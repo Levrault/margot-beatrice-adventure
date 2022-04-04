@@ -161,7 +161,7 @@ func get_device_button_from_action(action: String, for_device: String) -> String
 				return EngineSettings.get_gamepad_button_from_joy_string(
 					evt.button_index, Input.get_joy_button_string(evt.button_index), for_device
 				)
-	printerr("Not key were for found for %s on device %s" % [action, for_device])
+	printerr("No key were for found for %s on device %s" % [action, for_device])
 	return result
 
 

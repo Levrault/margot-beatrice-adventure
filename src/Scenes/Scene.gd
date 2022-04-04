@@ -1,23 +1,20 @@
 extends Node2D
 
 export (bool) var full_screen_shader := true
+export var introduction_cinematic_path = NodePath()
 
 onready var player: Player = find_node("Player")
 onready var _anchors := $Anchors.get_children()
 
 
 func _ready() -> void:
-	if not full_screen_shader:
-		$FullScreenShader.queue_free()
-
-	# Camera management
-	SceneManager.anchor = get_nearest_anchor()
-	SceneManager.anchor.update_anchor_limit()
-
-	# track player
-	Events.connect("player_moved", self, "_on_Player_moved")
-	Events.emit_signal("room_loaded")
-	Events.emit_signal("level_started")
+	# start cinematic
+	var introduction_cinematic = get_node_or_null(introduction_cinematic_path)
+	if introduction_cinematic != null:
+		Events.connect("cinematic_intro_ended", self, "initialize")
+		introduction_cinematic.initialize()
+		return
+	initialize()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -54,6 +51,21 @@ func _unhandled_input(event: InputEvent) -> void:
 			add_child(free_camera)
 		else:
 			get_node("FreeCamera").queue_free()
+
+
+func initialize() -> void:
+	if not full_screen_shader:
+		$FullScreenShader.queue_free()
+	else:
+		$FullScreenShader/IrisShot.play()
+	# Camera management
+	SceneManager.anchor = get_nearest_anchor()
+	SceneManager.anchor.update_anchor_limit()
+
+	# track player
+	Events.connect("player_moved", self, "_on_Player_moved")
+	Events.emit_signal("room_loaded")
+	Events.emit_signal("level_started")
 
 
 func get_nearest_anchor() -> Position2D:

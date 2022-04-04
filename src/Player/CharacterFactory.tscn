@@ -19,8 +19,6 @@ script = ExtResource( 1 )
 DURATION = 0.5
 STRENGTH = 0.5
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Fox" type="Node2D" parent="Characters"]

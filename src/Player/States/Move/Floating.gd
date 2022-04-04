@@ -9,7 +9,7 @@ var decceleration := decceleration_default
 var max_speed := max_speed_default
 var velocity := Vector2(0, -100)
 
-# Allow the player to float 
+# Allow the player to float
 # max_speed is positive instead of negative (see Move.gd)
 static func calculate_velocity(
 	old_velocity: Vector2,

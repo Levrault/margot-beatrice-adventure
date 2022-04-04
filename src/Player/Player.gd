@@ -32,6 +32,8 @@ func _ready() -> void:
 	Events.connect("player_room_entered", self, "_on_Player_Room_entered")
 	Events.connect("camera_anchor_changed", self, "_on_Camera_anchor_changed")
 	Events.connect("player_character_changed", self, "_on_Player_character_changed")
+	Events.connect("player_input_disabled", self, "set_is_handling_input", [false])
+	Events.connect("player_input_enabled", self, "set_is_handling_input", [true])
 	moving_platform_detector.connect("body_entered", self, "_on_Moving_platform_entered")
 	moving_platform_detector.connect("body_exited", self, "_on_Moving_platform_exited")
 	stats.connect("health_depleted", self, "_on_Stats_health_depleated")

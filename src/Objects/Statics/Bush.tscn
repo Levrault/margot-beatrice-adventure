@@ -27,6 +27,7 @@ tracks/0/keys = {
 
 [node name="Bush" type="Sprite"]
 material = ExtResource( 2 )
+z_index = -1
 texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
