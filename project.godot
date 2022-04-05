@@ -325,6 +325,7 @@ Character="*res://src/Autoload/Character.gd"
 SceneManager="*res://src/Autoload/SceneManager.gd"
 Serialize="*res://src/Autoload/Serialize.gd"
 Layer="*res://src/Autoload/Layer.gd"
+MusicPlayer="*res://src/Autoload/MusicPlayer.tscn"
 
 [debug]
 

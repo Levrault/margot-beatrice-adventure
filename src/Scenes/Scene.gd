@@ -2,6 +2,7 @@ extends Node2D
 
 export (bool) var full_screen_shader := true
 export var introduction_cinematic_path = NodePath()
+export var music_track := "lyonesse"
 
 onready var player: Player = find_node("Player")
 onready var _anchors := $Anchors.get_children()
@@ -66,6 +67,8 @@ func initialize() -> void:
 	Events.connect("player_moved", self, "_on_Player_moved")
 	Events.emit_signal("room_loaded")
 	Events.emit_signal("level_started")
+
+	MusicPlayer.change_track(music_track)
 
 
 func get_nearest_anchor() -> Position2D:

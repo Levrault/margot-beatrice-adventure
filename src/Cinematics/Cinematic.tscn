@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Cinematics/Cinematic.gd" type="Script" id=1]
 [ext_resource path="res://src/Cinematics/CinematicDialogues.gd" type="Script" id=2]
 [ext_resource path="res://src/Cinematics/CancelCinematic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/VFX/IrisShot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Music/MusicController.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -167,6 +168,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("MusicController")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "skip"
@@ -273,6 +288,7 @@ __meta__ = {
 [node name="Up" type="ColorRect" parent="CanvasLayer/CinematicBar"]
 anchor_right = 1.0
 margin_top = -40.0
+margin_right = 3360.0
 margin_bottom = -15.0
 rect_min_size = Vector2( 480, 25 )
 size_flags_horizontal = 0
@@ -286,8 +302,9 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -14.0
-margin_bottom = 11.0
+margin_top = 256.0
+margin_right = 3360.0
+margin_bottom = 281.0
 rect_min_size = Vector2( 480, 25 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -307,6 +324,11 @@ auto_queue_free = false
 anims/RESET = SubResource( 2 )
 anims/fade = SubResource( 1 )
 anims/skip = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Music"
+
+[node name="MusicController" parent="." instance=ExtResource( 5 )]
 
 [node name="Environment" type="Node2D" parent="."]
 

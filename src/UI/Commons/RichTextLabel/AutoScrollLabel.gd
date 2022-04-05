@@ -5,6 +5,7 @@ var _total_scroll_time := 0.0
 onready var _timer: Timer = $Timer
 onready var _scroll_timer: Timer = $Scroll
 onready var _delay: Timer = $Delay
+onready var _sfx_player := $SFXPlayer
 
 
 func _ready() -> void:
@@ -21,8 +22,8 @@ func toggle_animation(value: bool) -> void:
 		_timer.stop()
 		_delay.stop()
 		_scroll_timer.stop()
+		_sfx_player.stop()
 		return
-
 	get_v_scroll().value = 0
 	visible_characters = 0
 	_timer.start()
@@ -35,6 +36,7 @@ func _on_Text_animation() -> void:
 		_on_Skip_animation()
 		return
 	visible_characters += 1
+	_sfx_player.play_sound()
 
 
 # The player decide to skip the animation
@@ -42,6 +44,7 @@ func _on_Skip_animation() -> void:
 	_timer.stop()
 	_delay.stop()
 	_scroll_timer.stop()
+	_sfx_player.stop()
 	visible_characters = get_total_character_count()
 	get_v_scroll().value = get_v_scroll().max_value
 	owner.next_action()
