@@ -4,7 +4,7 @@ extends Node2D
 signal exploded
 
 onready var anim := $AnimationPlayer
-onready var audio := $AudioStreamPlayer2D
+onready var audio := $AudioStreamPlayer
 
 
 func _ready() -> void:

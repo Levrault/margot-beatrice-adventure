@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 export var min_pitch_scale := .95
 export var max_pitch_scale := 1.15
