@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://src/Scenes/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Scenes/FallLimitArea/FallLimitArea.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://src/Objects/Statics/Bush.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Cinematics/00_Intro/00_Intro.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Objects/Collectables/Acorn.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/Objects/Interactables/Switch.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Objects/Interactables/TileMapForSwitch.tscn" type="PackedScene" id=21]
 
 [sub_resource type="GDScript" id=52]
 script/source = "# source https://github.com/GDQuest/godot-demos/blob/master/2018/03-30-astar-pathfinding/pathfind_astar.gd
@@ -227,6 +229,69 @@ shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
 
+[sub_resource type="Shader" id=56]
+resource_local_to_scene = true
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 lincense. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=57]
+resource_local_to_scene = true
+shader = SubResource( 56 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 1, 1, 1, 1 )
+
 [sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 133.5, 10 )
 
@@ -236,6 +301,11 @@ extents = Vector2( 341, 10 )
 [node name="Scene" instance=ExtResource( 1 )]
 position = Vector2( -1, 1 )
 introduction_cinematic_path = NodePath("Cinematics/00_Intro")
+
+[node name="LevelSummary" parent="UI" index="0"]
+time_for_rank_100 = 30000.0
+time_for_rank_80 = 45000.0
+time_for_rank_60 = 60000.0
 
 [node name="Background" parent="ParralaxBackground/BackgroundParallaxLayer" index="0"]
 position = Vector2( 0, 135 )
@@ -379,6 +449,15 @@ position = Vector2( 2158, -135 )
 
 [node name="Acorn2" parent="MiddleGroundTileMap/Collectables" index="17" instance=ExtResource( 19 )]
 position = Vector2( 2477, 51 )
+
+[node name="Switch" parent="MiddleGroundTileMap/Interactables" index="0" instance=ExtResource( 20 )]
+position = Vector2( 2721, 152 )
+object_path = NodePath("../TilmapForSwitch")
+
+[node name="TilmapForSwitch" parent="MiddleGroundTileMap/Interactables" index="1" instance=ExtResource( 21 )]
+material = SubResource( 57 )
+tile_set = ExtResource( 6 )
+tile_data = PoolIntArray( 65693, 10, 0, 131229, 10, 0, 196765, 10, 0, 262301, 10, 0, 327837, 10, 0 )
 
 [node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 15 )]
 position = Vector2( 1515, -128 )

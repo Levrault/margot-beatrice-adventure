@@ -312,6 +312,8 @@ __meta__ = {
 }
 
 [node name="CancelCinematic" parent="CanvasLayer" instance=ExtResource( 3 )]
+margin_top = -24.0
+margin_bottom = -24.0
 
 [node name="IrisShot" parent="CanvasLayer" instance=ExtResource( 4 )]
 visible = false
