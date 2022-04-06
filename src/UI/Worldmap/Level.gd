@@ -40,6 +40,9 @@ func _set_locked(value: bool) -> void:
 		load_level_button.disabled = locked
 		lock.visible = locked
 
+		if not locked:
+			load_level_button.focus_mode = Control.FOCUS_ALL
+
 
 func _on_Focus_entered() -> void:
 	tween.interpolate_property(
@@ -54,6 +57,7 @@ func _on_Focus_entered() -> void:
 	tween.start()
 	Events.emit_signal("worldmap_preview_changed", preview_texture)
 	Events.emit_signal("worldmap_best_time_changed", data.best_time)
+	Events.emit_signal("worldmap_rank_changed", data.rank)
 	Events.emit_signal("worldmap_level_name_changed", level_title)
 	Events.emit_signal("worldmap_gems_percentage_changed", data.gems, max_gems)
 	Events.emit_signal("worldmap_acorns_percentage_changed", data.acorns, max_acorns)

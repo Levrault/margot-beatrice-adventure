@@ -183,7 +183,6 @@ visible = false
 [node name="Level2" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 31.0
 margin_right = 58.0
-locked = false
 level_title = "level.title1"
 preview_texture = ExtResource( 13 )
 max_gems = 6

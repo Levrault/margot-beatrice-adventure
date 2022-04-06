@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/tilesets/tileset_land_background.tres" type="TileSet" id=3]
 
 [node name="Level2" instance=ExtResource( 1 )]
+next_level = "level3"
 
 [node name="BackgroundTilemap" parent="." index="6"]
 tile_set = ExtResource( 3 )

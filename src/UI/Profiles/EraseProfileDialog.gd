@@ -48,7 +48,7 @@ func _on_Cancel_pressed() -> void:
 func _on_Confirm_pressed() -> void:
 	Events.connect("menu_transition_mid_animated", self, "_on_Menu_transition_mid_animated")
 	Events.emit_signal("menu_transition_started", "fade")
-	Serialize.erase(profile_to_erase)
+	Serialize.erase_profile(profile_to_erase)
 	hide()
 
 

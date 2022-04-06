@@ -159,6 +159,7 @@ signal user_has_changed_gamepad_bindind
 signal worldmap_level_name_changed(new_text)
 signal worldmap_preview_changed(new_texture)
 signal worldmap_best_time_changed(best_time)
+signal worldmap_rank_changed(rank)
 signal worldmap_preview_animation_activated
 signal worldmap_acorns_percentage_changed(value, max_value)
 signal worldmap_carrots_percentage_changed(value, max_value)

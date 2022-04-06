@@ -301,12 +301,16 @@ extents = Vector2( 133.5, 10 )
 [sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 341, 10 )
 
-[node name="Scene" instance=ExtResource( 4 )]
+[node name="Level1" instance=ExtResource( 4 )]
 position = Vector2( -1, 1 )
 introduction_cinematic_path = NodePath("Cinematics/00_Intro")
+next_level = "level2"
 
-[node name="Background" parent="ParralaxBackground/BackgroundParallaxLayer" index="0"]
-position = Vector2( 0, 135 )
+[node name="Scoreboard" parent="UI" index="3"]
+time_for_rank_100 = 55000.0
+time_for_rank_80 = 70000.0
+time_for_rank_60 = 90000.0
+next_level = "Level2"
 
 [node name="00_Intro" parent="Cinematics" index="0" instance=ExtResource( 8 )]
 position = Vector2( 437, -665 )
@@ -359,7 +363,7 @@ margin_right = 2119.0
 margin_bottom = 4.0
 
 [node name="Player" parent="MiddleGroundTileMap" index="1"]
-position = Vector2( 76, 240 )
+position = Vector2( 35, 240 )
 
 [node name="Bush" parent="MiddleGroundTileMap/Statics" index="0" instance=ExtResource( 12 )]
 material = SubResource( 55 )

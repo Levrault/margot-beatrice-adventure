@@ -239,6 +239,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actor/Stats.gd"
 }, {
+"base": "Label",
+"class": "TimeFormat",
+"language": "GDScript",
+"path": "res://src/UI/Scoreboard/TimeFormat.gd"
+}, {
 "base": "Control",
 "class": "TutorialPopUp",
 "language": "GDScript",
@@ -301,6 +306,7 @@ _global_script_class_icons={
 "State": "res://assets/icons/state.svg",
 "StateMachine": "res://assets/icons/state_machine.svg",
 "Stats": "",
+"TimeFormat": "",
 "TutorialPopUp": "",
 "Updater": "",
 "Waypoints": ""

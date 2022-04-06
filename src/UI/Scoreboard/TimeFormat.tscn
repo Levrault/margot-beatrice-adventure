@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/UI/Scoreboard/TimeFormat.gd" type="Script" id=1]
 
-[node name="Chronometer" type="Label"]
+[node name="TimeFormat" type="Label"]
 margin_right = 320.0
 margin_bottom = 14.0
 grow_horizontal = 0

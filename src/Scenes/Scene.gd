@@ -1,8 +1,31 @@
 extends Node2D
 
-export (bool) var full_screen_shader := true
+export var full_screen_shader := true
 export var introduction_cinematic_path = NodePath()
 export var music_track := "lyonesse"
+export (
+	String,
+	"level1",
+	"level2",
+	"level3",
+	"level4",
+	"level5",
+	"level6",
+	"level7",
+	"level8",
+	"level9",
+	"level10",
+	"level11",
+	"level12",
+	"level13",
+	"level14",
+	"level15",
+	"level16",
+	"level17",
+	"level18",
+	"level19",
+	"level20"
+) var next_level
 
 onready var player: Player = find_node("Player")
 onready var _anchors := $Anchors.get_children()

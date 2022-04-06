@@ -9,6 +9,7 @@ func _ready():
 
 
 func _on_Worldmap_gems_percentage_changed(value: int, max_value: int) -> void:
+	# warning-ignore:integer_division
 	var percentage = value * 100 / max_value if value > 0 else 0
 	var rounded_percentage = int(round(percentage))
 	text = String(rounded_percentage) + "%"

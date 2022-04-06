@@ -1,4 +1,5 @@
 extends Label
+class_name TimeFormat
 
 const TIME_FORMAT_SS_MS = "{ss}s {ms}ms"
 const TIME_FORMAT_MM_SS_MS = "{mm}m {ss}s {ms}ms"
@@ -16,13 +17,13 @@ func _ready():
 # convert milisecondes to readable string
 # eg. 1085587 will be 18Min 5s 587ms
 # eg. 5587 will be 5s 587ms
-func format_time(current_time: float) -> void:
+func format_time(current_time: float) -> String:
 	current_time = stepify(current_time, 0.001)
 
 	# only ms
 	if current_time < 1:
 		text = TIME_FORMAT_SS_MS.format({ss = 0, ms = current_time})
-		return
+		return text
 
 	# formatting time to string (force ms)
 	var time_string := format_time_to_string(current_time)
@@ -34,10 +35,11 @@ func format_time(current_time: float) -> void:
 
 	if mm == 0:
 		text = TIME_FORMAT_SS_MS.format({ss = ss, ms = ms})
-		return
+		return text
 
 	ss = String(fmod(float(ss), 60.0))
 	text = TIME_FORMAT_MM_SS_MS.format({mm = String(mm), ss = ss, ms = ms})
+	return text
 
 
 func start_tween() -> void:

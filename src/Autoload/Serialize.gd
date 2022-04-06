@@ -103,7 +103,7 @@ func save_profile(profile_name: String, values: Dictionary) -> void:
 	print_debug("%s has been saved" % profile_name)
 
 
-func erase(profile_name: String) -> void:
+func erase_profile(profile_name: String) -> void:
 	Directory.new().remove(SAVE_PATH % profile_name)
 
 	var profile_file = File.new()
@@ -112,3 +112,35 @@ func erase(profile_name: String) -> void:
 	profile_file.close()
 	profiles[profile_name] = template.duplicate(true)
 	print_debug("%s save has been erased")
+
+
+func save_best_score(profile_name: String, for_level:String, new_score: Dictionary) -> void:
+	var previous_score :Dictionary = profiles[profile_name].levels[for_level]
+	# it's a new score
+	if previous_score.rank.empty():
+		print_debug("%s:save_best_score - Previous rank is empty save new rank %s" % [profile_name, new_score.rank])
+	else:
+		# if previous score is better
+		if Game.rank[previous_score.rank].value > Game.rank[new_score.rank].value:
+			print_debug("%s:save_best_score - Previous rank is better %s vs %s" % [profile_name, previous_score.rank, new_score.rank])
+			return
+
+		# if rank are the same compare speed
+		if Game.rank[previous_score.rank].value == Game.rank[new_score.rank].value:
+			print_debug("%s:save_best_score - rank are the same %s vs %s" % [profile_name, previous_score.rank, new_score.rank])
+			if previous_score.best_time <= new_score.best_time:
+				print_debug("%s:save_best_score - previous time is better %s vs %s" % [profile_name, String(previous_score.best_time), String(new_score.best_time)])
+				return
+
+	var values = profiles[profile_name]
+	values.levels[for_level] = new_score
+	save_profile(profile_name, values)
+
+
+func unlock_next_level(profile_name: String, for_level:String) -> void:
+	if not profiles[profile_name].levels[for_level].locked:
+		print_debug("%s:unlock_next_level - level already unlocked")
+		return
+	var values = profiles[profile_name]
+	values.levels[for_level].locked = false
+	save_profile(profile_name, values)
