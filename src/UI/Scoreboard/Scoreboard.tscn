@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/shaders/blur.tres" type="Material" id=1]
 [ext_resource path="res://src/UI/Scoreboard/CollectableScore.tscn" type="PackedScene" id=2]
@@ -14,6 +14,10 @@
 [ext_resource path="res://src/UI/Scoreboard/GameoverContainer.gd" type="Script" id=12]
 [ext_resource path="res://src/UI/Scoreboard/HitsTakenContainer.gd" type="Script" id=13]
 [ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/audio/jingles/success-fanfare-trumpets.mp3" type="AudioStream" id=15]
+[ext_resource path="res://src/UI/Commons/Button/NextLevelButton.gd" type="Script" id=16]
+[ext_resource path="res://src/UI/Commons/Button/RestartLevelButton.gd" type="Script" id=17]
+[ext_resource path="res://src/UI/Commons/Button/ReturnToWorldmapButton.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -160,6 +164,18 @@ tracks/11/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("AudioStreamPlayer:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = false
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -459,6 +475,18 @@ tracks/22/keys = {
 "method": "grab_focus"
 } ]
 }
+tracks/23/type = "value"
+tracks/23/path = NodePath("AudioStreamPlayer:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://assets/theme/fonts/joystix monospace.ttf"
@@ -476,6 +504,9 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "RESET"
@@ -722,6 +753,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 shortcut_in_tooltip = true
 text = "commons.worldmap"
+script = ExtResource( 18 )
 
 [node name="Restart" parent="Footer" instance=ExtResource( 14 )]
 margin_left = 146.0
@@ -731,6 +763,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 shortcut_in_tooltip = true
 text = "commons.restart"
+script = ExtResource( 17 )
 
 [node name="Continue" parent="Footer" instance=ExtResource( 14 )]
 margin_left = 284.0
@@ -740,6 +773,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 shortcut_in_tooltip = true
 text = "commons.continue"
+script = ExtResource( 16 )
 
 [editable path="Panel/CollectablesContainer/Acorns"]
 [editable path="Panel/CollectablesContainer/Carrots"]

@@ -90,4 +90,4 @@ func _on_Navigation_finished() -> void:
 
 
 func _on_Load_level_button_pressed() -> void:
-	Events.emit_signal("loading_transtion_started", level_path)
+	Events.emit_signal("loading_transition_started", level_path)

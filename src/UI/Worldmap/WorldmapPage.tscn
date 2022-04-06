@@ -21,7 +21,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 6 )
 script = ExtResource( 2 )
-default_field_to_focus = NodePath("ScrollContainer/MarginContainer/HBoxContainer/Level0/LoadLevelButton")
+__meta__ = {
+"_edit_use_anchors_": false
+}
+default_field_to_focus = NodePath("ScrollContainer/MarginContainer/HBoxContainer/Level1/LoadLevelButton")
 
 [node name="Breadcrumb" type="HBoxContainer" parent="."]
 margin_left = 20.0
@@ -161,23 +164,23 @@ margin_top = 4.0
 margin_right = 248.0
 margin_bottom = 52.0
 
-[node name="Level0" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level1" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 locked = false
 level_title = "level.title0"
 preview_texture = ExtResource( 12 )
 max_gems = 4
 max_carrots = 4
 max_acorns = 4
-level_path = "res://src/Levels/Level_1/Level1.tscn"
+level_path = "res://src/Levels/Level1.tscn"
 
-[node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/HBoxContainer/Level0" index="3"]
+[node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="3"]
 focus_mode = 2
 disabled = false
 
-[node name="Lock" parent="ScrollContainer/MarginContainer/HBoxContainer/Level0" index="4"]
+[node name="Lock" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="4"]
 visible = false
 
-[node name="Level1" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level2" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 31.0
 margin_right = 58.0
 locked = false
@@ -186,29 +189,30 @@ preview_texture = ExtResource( 13 )
 max_gems = 6
 max_carrots = 3
 max_acorns = 7
+level_path = "res://src/Levels/Level2.tscn"
 
-[node name="Level2" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level3" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 62.0
 margin_right = 89.0
 level_title = "level.title2"
 
-[node name="Level3" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level4" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 93.0
 margin_right = 120.0
 
-[node name="Level4" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level5" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 124.0
 margin_right = 151.0
 
-[node name="Level5" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level6" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 155.0
 margin_right = 182.0
 
-[node name="Level6" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level7" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 186.0
 margin_right = 213.0
 
-[node name="Level7" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level8" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 217.0
 margin_right = 244.0
 
@@ -238,4 +242,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level0"]
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level1"]

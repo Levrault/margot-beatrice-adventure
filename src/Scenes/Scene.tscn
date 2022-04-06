@@ -701,28 +701,43 @@ pause_mode = 2
 scroll_offset = Vector2( 0, 135 )
 scroll_base_scale = Vector2( 1, 0 )
 script = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="BackgroundParallaxLayer" type="ParallaxLayer" parent="ParralaxBackground"]
 motion_mirroring = Vector2( 1536, 0 )
 script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Background" type="Sprite" parent="ParralaxBackground/BackgroundParallaxLayer"]
-position = Vector2( 0, 165 )
+position = Vector2( 0, 135 )
 texture = ExtResource( 13 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1536, 270 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="MiddleGroundParallaxLayer" type="ParallaxLayer" parent="ParralaxBackground"]
 position = Vector2( 194, 184 )
 scale = Vector2( 0.7, 0.7 )
 motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 480, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Sprite" type="Sprite" parent="ParralaxBackground/MiddleGroundParallaxLayer"]
 position = Vector2( 358.141, 45.1987 )
 texture = ExtResource( 14 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1416, 368 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Cinematics" type="Node2D" parent="."]
 
@@ -777,5 +792,6 @@ script = ExtResource( 10 )
 [node name="Anchors" type="Node2D" parent="."]
 
 [node name="Anchor" parent="Anchors" instance=ExtResource( 6 )]
+position = Vector2( 240, 135 )
 
 [editable path="MiddleGroundTileMap/EndOfLevel"]

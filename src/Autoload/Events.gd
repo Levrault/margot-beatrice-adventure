@@ -121,7 +121,7 @@ signal in_game_menu_hidden
 signal key_listening_started(field, button, scancode)
 
 # loading
-signal loading_transtion_started(go_to_scene)
+signal loading_transition_started(go_to_scene)
 
 # locale
 signal locale_changed

@@ -32,6 +32,7 @@ script = ExtResource( 1 )
 anims/start = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, -52 )
 collision_layer = 256
 collision_mask = 2147483649
 
@@ -39,6 +40,7 @@ collision_mask = 2147483649
 shape = SubResource( 2 )
 
 [node name="Sign" type="Node2D" parent="."]
+position = Vector2( 56, 0 )
 scale = Vector2( 2, 2 )
 
 [node name="Support" type="Sprite" parent="Sign"]
@@ -47,6 +49,6 @@ scale = Vector2( 1, 1.83333 )
 texture = ExtResource( 3 )
 
 [node name="Head" type="Sprite" parent="Sign"]
-position = Vector2( -64, -11 )
+position = Vector2( -64, -20 )
 texture = ExtResource( 2 )
 hframes = 2

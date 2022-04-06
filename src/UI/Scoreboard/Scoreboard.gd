@@ -4,6 +4,7 @@ extends Control
 export var time_for_rank_100 := 30000.0
 export var time_for_rank_80 := 45000.0
 export var time_for_rank_60 := 60000.0
+export var next_level := ""
 
 onready var _anim := $AnimationPlayer
 

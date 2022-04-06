@@ -28,6 +28,8 @@ Game made for my niece
 - [interface-sfx-pack-1](https://obsydianx.itch.io/interface-sfx-pack-1)
 - [Kenney audio asset pack](https://www.kenney.nl/assets?q=audio)
 - [Spell Sounds Starter Pack by p0ss](https://opengameart.org/content/spell-sounds-starter-pack)
+- [Success Fanfare Trumpets](https://freesound.org/people/FunWithSound/sounds/456966/)
+- [Swish - bamboo stick weapon swhoshes](https://opengameart.org/content/swish-bamboo-stick-weapon-swhoshes)
 
 ### Music
 

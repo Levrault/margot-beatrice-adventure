@@ -18,6 +18,7 @@ onready var _timer = $Timer
 onready var _timer_ghost := $TimerGhost
 onready var _cooldown := $Cooldown
 onready var _tween := $Tween
+onready var _sfx := $Woosh
 
 static func get_move_direction() -> Vector2:
 	return Vector2(
@@ -50,6 +51,7 @@ func enter(msg: Dictionary = {}) -> void:
 	owner.get_parent().add_child(particule)
 	particule.position = owner.position
 	particule.scale = owner.skin.scale
+	_sfx.play_sound()
 
 
 func exit() -> void:
