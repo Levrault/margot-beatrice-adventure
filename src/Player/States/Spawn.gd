@@ -1,16 +1,13 @@
 extends State
 
-var spawn_position := Vector2.ZERO
-
-
 func _ready() -> void:
 	yield(owner, "ready")
 	Events.connect("spawn_position_changed", self, "_on_Spawn_position_changed")
-	spawn_position = owner.position
+	owner.spawn_position = owner.position
 
 
 func enter(msg: Dictionary = {}) -> void:
-	owner.position = spawn_position
+	owner.position = owner.spawn_position
 	owner.is_active = false
 	owner.stats.reset()
 	if owner.camera_rig:
@@ -35,5 +32,9 @@ func _on_Skin_animation_finished(anim_name: String) -> void:
 	_state_machine.transition_to("Move/Idle")
 
 
-func _on_Spawn_position_changed(new_position: Vector2) -> void:
-	spawn_position = new_position
+func _on_Spawn_position_changed(new_position: Position2D) -> void:
+	if not SceneManager.is_on_screen(owner.spawn_position):
+		owner.spawn_position = new_position.global_position
+
+	if owner.global_position.distance_to(new_position.global_position) < owner.global_position.distance_to(owner.spawn_position):
+		owner.spawn_position = new_position.global_position

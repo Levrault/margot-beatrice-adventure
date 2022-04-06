@@ -2,21 +2,39 @@
 extends Node2D
 class_name Checkpoint
 
+var player_position := Vector2.ZERO
 
-onready var anim := $AnimationPlayer
-onready var player_detector := $PlayerDetector
 onready var spawn_position := $Position2D
 
 
 func _ready():
-	anim.play("Inactive")
-	player_detector.connect("player_entered", self, "_on_Player_enter")
+	Events.connect("room_transition_ended", self, "_on_Room_transition_ended")
+	Events.connect("player_moved", self, "_on_Player_moved")
+
+	if not ProjectSettings.get_setting("game/debug"):
+		spawn_position.get_node("Control/Label").hide()
+		return
 
 
-# Set new player checkpoint
-# @param {Player} body
-func _on_Player_enter(body: Player) -> void:
-	assert(body is Player)
-	player_detector.disconnect("player_entered", self, "_on_Player_enter")
-	anim.play("Transition")
-	Events.emit_signal("spawn_position_changed", spawn_position.global_position)
+func is_on_screen(bounds: Dictionary) -> bool:
+	if spawn_position.global_position.y > bounds.limit_bottom:
+		return false
+	if spawn_position.global_position.y < bounds.limit_top:
+		return false
+	if spawn_position.global_position.x < bounds.limit_left:
+		return false
+	if spawn_position.global_position.x > bounds.limit_right:
+		return false
+	return true
+
+
+func _on_Room_transition_ended() -> void:
+	var is_screen_visible = SceneManager.is_on_screen(global_position)
+	spawn_position.get_node("Control/Label").text = String(is_screen_visible)
+
+	if is_screen_visible:
+		Events.emit_signal("spawn_position_changed", spawn_position)
+
+
+func _on_Player_moved(player: Player) -> void:
+	player_position = player.global_position

@@ -12,6 +12,7 @@ var is_handling_input := true setget set_is_handling_input
 var is_on_moving_platform := false
 var initial_state_data := {}
 var life := 3
+var spawn_position := position
 
 onready var pass_through: Area2D = $PassThrough
 onready var moving_platform_detector: Area2D = $MovingPlatformDetector
@@ -53,7 +54,6 @@ func set_is_active(value: bool) -> void:
 	if not collider:
 		return
 	collider.set_deferred("disabled", not value)
-
 
 func take_damage(source: Hit) -> void:
 	.take_damage(source)
