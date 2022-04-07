@@ -57,9 +57,9 @@ size_flags_vertical = 3
 
 [node name="Contents" type="VBoxContainer" parent="Wrapper/Page/CenterContainer"]
 margin_left = 135.0
-margin_top = 29.0
+margin_top = 14.0
 margin_right = 305.0
-margin_bottom = 109.0
+margin_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -83,10 +83,18 @@ rect_min_size = Vector2( 170, 0 )
 text = "commons.settings"
 navigate_to = "SettingsListPage"
 
-[node name="Quit" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 3 )]
+[node name="Credits" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 4 )]
 margin_top = 60.0
 margin_right = 170.0
 margin_bottom = 80.0
+rect_min_size = Vector2( 170, 0 )
+text = "commons.credits"
+navigate_to = "CreditsPage"
+
+[node name="Quit" parent="Wrapper/Page/CenterContainer/Contents" instance=ExtResource( 3 )]
+margin_top = 90.0
+margin_right = 170.0
+margin_bottom = 110.0
 rect_min_size = Vector2( 170, 0 )
 text = "commons.quit"
 script = ExtResource( 2 )
