@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/UI/hud/acorn.png" type="Texture" id=9]
 [ext_resource path="res://assets/UI/hud/gem.png" type="Texture" id=10]
 [ext_resource path="res://assets/UI/hud/carrot.png" type="Texture" id=11]
-[ext_resource path="res://assets/UI/worldmap/placeholder_160x90.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/worldmap/Level1-1649369083.png" type="Texture" id=12]
 [ext_resource path="res://assets/UI/worldmap/placeholder_160x90_2.png" type="Texture" id=13]
 [ext_resource path="res://src/UI/Worldmap/LevelName.gd" type="Script" id=14]
 [ext_resource path="res://src/UI/Worldmap/WorldmapCollected.gd" type="Script" id=15]
@@ -21,9 +21,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 6 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 default_field_to_focus = NodePath("ScrollContainer/MarginContainer/HBoxContainer/Level1/LoadLevelButton")
 
 [node name="Breadcrumb" type="HBoxContainer" parent="."]

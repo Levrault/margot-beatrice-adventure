@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://src/Enemies/EvilWizard/EvilWizardSkin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://src/Player/Squirrel/SkinSquirrel.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Objects/Statics/Bush.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Objects/Statics/Tree0.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Objects/Statics/SacredGem.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -988,6 +989,9 @@ position = Vector2( 649, -14 )
 [node name="Bush3" parent="Environment/MiddleGround" index="10" instance=ExtResource( 17 )]
 material = SubResource( 10 )
 position = Vector2( 425, -14 )
+
+[node name="SacredGem" parent="Environment" index="5" instance=ExtResource( 19 )]
+position = Vector2( -8, -30 )
 
 [node name="CinematicCamera" parent="." index="6"]
 position = Vector2( 0, -8 )

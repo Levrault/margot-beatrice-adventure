@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/UI/button/ui_button_transparent_normal.png" type="Texture" id=1]
 [ext_resource path="res://src/UI/Worldmap/Preview.gd" type="Script" id=2]
-[ext_resource path="res://assets/UI/worldmap/placeholder_160x90.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/worldmap/Level1-1649369083.png" type="Texture" id=3]
 [ext_resource path="res://src/UI/Commons/Overlay/Overlay.gd" type="Script" id=4]
 [ext_resource path="res://src/UI/Worldmap/BestTime.gd" type="Script" id=5]
 [ext_resource path="res://src/UI/Scoreboard/TimeFormat.tscn" type="PackedScene" id=6]
@@ -97,9 +97,6 @@ margin_bottom = -134.0
 rect_min_size = Vector2( 160, 90 )
 texture = ExtResource( 3 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "RESET"
@@ -109,6 +106,10 @@ anims/fadeInOut = SubResource( 3 )
 [node name="Overlay" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 5.0
+margin_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 170, 100 )

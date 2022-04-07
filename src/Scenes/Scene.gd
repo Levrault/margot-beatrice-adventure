@@ -38,6 +38,9 @@ func _ready() -> void:
 
 	# start cinematic
 	var introduction_cinematic = get_node_or_null(introduction_cinematic_path)
+	
+	if not ProjectSettings.get_setting("game/debug"):
+		set_process_unhandled_input(false)
 
 	if ProjectSettings.get_setting("game/skip_cinematic"):
 		introduction_cinematic.queue_free()
@@ -63,8 +66,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		player.state_machine.transition_to("Die")
 		return
 
+	if event.is_action_pressed("debug_pause"):
+		if Engine.time_scale == 0.0:
+			Engine.time_scale = 1.0
+		else:
+			Engine.time_scale = 0.0
+		return
+
 	if event.is_action_pressed("debug_slow_time"):
-		Engine.time_scale = .1
+		if Engine.time_scale == 0.1:
+			Engine.time_scale = 1.0
+		else:
+			Engine.time_scale = 0.1
 		return
 
 	if event.is_action_pressed("debug_accelerate_time"):

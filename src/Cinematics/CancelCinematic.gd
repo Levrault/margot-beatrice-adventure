@@ -10,6 +10,8 @@ onready var progress_bar := $VBoxContainer/ProgressBar
 
 
 func _ready():
+	Events.connect("screenshot_started", self, "hide")
+	Events.connect("screenshot_ended", self, "show")
 	timer.connect("timeout", self, "_on_Timeout")
 	duration = timer.wait_time
 

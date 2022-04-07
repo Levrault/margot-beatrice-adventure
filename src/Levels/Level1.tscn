@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://src/Objects/Collectables/Acorn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/Tutorials/TutorialPopUpSwitchToSquirrel.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=19]
 [ext_resource path="res://assets/tilesets/tileset_land_background.tres" type="TileSet" id=20]
 [ext_resource path="res://src/Objects/Traps/Laser.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/Tools/ScreenshotCanvasTools.gd" type="Script" id=22]
 
 [sub_resource type="GDScript" id=52]
 script/source = "# source https://github.com/GDQuest/godot-demos/blob/master/2018/03-30-astar-pathfinding/pathfind_astar.gd
@@ -306,10 +307,17 @@ position = Vector2( -1, 1 )
 introduction_cinematic_path = NodePath("Cinematics/00_Intro")
 next_level = "level2"
 
+[node name="UI" parent="." index="2"]
+script = ExtResource( 22 )
+
 [node name="Scoreboard" parent="UI" index="3"]
 time_for_rank_100 = 55000.0
 time_for_rank_80 = 70000.0
 time_for_rank_60 = 90000.0
+
+[node name="Screenshot" parent="UI" index="4"]
+margin_left = 0.0
+margin_right = 0.0
 
 [node name="00_Intro" parent="Cinematics" index="0" instance=ExtResource( 8 )]
 position = Vector2( 437, -665 )

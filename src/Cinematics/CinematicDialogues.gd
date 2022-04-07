@@ -18,7 +18,7 @@ func _ready() -> void:
 
 # Start, skip, end dialogue
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed("jump") and dialogue_controller != null:
 		_interact()
 		return
 

@@ -2,6 +2,17 @@
 # @see https://www.youtube.com/watch?v=S6PbC4Vqim4
 extends Node
 
+############
+## DEBUG ##
+############
+signal screenshot_started
+signal screenshot_ended
+
+
+############
+### Game ###
+############
+
 # camera
 signal camera_offset_changed(offset)
 signal camera_offset_resetted
