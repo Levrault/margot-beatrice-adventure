@@ -168,9 +168,9 @@ margin_bottom = 52.0
 locked = false
 level_title = "level.title0"
 preview_texture = ExtResource( 12 )
-max_gems = 4
-max_carrots = 4
-max_acorns = 4
+max_gems = 18
+max_carrots = 7
+max_acorns = 10
 level_path = "res://src/Levels/Level1.tscn"
 
 [node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="3"]
