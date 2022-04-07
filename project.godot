@@ -352,10 +352,9 @@ window/stretch/aspect="keep"
 
 [game]
 
-debug=false
-load_save=true
-load_level_from_save=false
-game_version="1.0.0"
+debug=true
+game_version="0.1.0-alpha"
+skip_cinematic=false
 
 [importer_defaults]
 

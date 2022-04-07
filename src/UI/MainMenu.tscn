@@ -26,6 +26,9 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 815, -34 )
 theme = ExtResource( 16 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MusicController" type="Node2D" parent="."]
 script = ExtResource( 18 )

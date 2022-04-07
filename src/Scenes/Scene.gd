@@ -32,8 +32,16 @@ onready var _anchors := $Anchors.get_children()
 
 
 func _ready() -> void:
+
+	if not ProjectSettings.get_setting("game/debug"):
+		set_process_unhandled_input(false)
+
 	# start cinematic
 	var introduction_cinematic = get_node_or_null(introduction_cinematic_path)
+
+	if ProjectSettings.get_setting("game/skip_cinematic"):
+		introduction_cinematic.queue_free()
+		introduction_cinematic = null
 	if introduction_cinematic != null:
 		Events.connect("cinematic_intro_ended", self, "initialize")
 		introduction_cinematic.initialize()

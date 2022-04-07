@@ -77,8 +77,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GemsPercentageContainer" type="HBoxContainer" parent="CollectablesContainer"]
+margin_right = 47.0
+margin_bottom = 14.0
+size_flags_horizontal = 0
+
+[node name="Icon" type="TextureRect" parent="CollectablesContainer/GemsPercentageContainer"]
+margin_right = 11.0
+margin_bottom = 14.0
+texture = ExtResource( 10 )
+
+[node name="WorldmapCollected" type="Label" parent="CollectablesContainer/GemsPercentageContainer"]
+margin_left = 15.0
+margin_top = 1.0
+margin_right = 47.0
+margin_bottom = 13.0
+text = "100%"
+script = ExtResource( 15 )
+signal_to_connect = "worldmap_gems_percentage_changed"
+
 [node name="AcornsPercentageContainer" type="HBoxContainer" parent="CollectablesContainer"]
-margin_right = 46.0
+margin_left = 51.0
+margin_right = 97.0
 margin_bottom = 14.0
 size_flags_horizontal = 0
 
@@ -97,8 +117,8 @@ script = ExtResource( 15 )
 signal_to_connect = "worldmap_acorns_percentage_changed"
 
 [node name="CarrotsPercentageContainer" type="HBoxContainer" parent="CollectablesContainer"]
-margin_left = 50.0
-margin_right = 97.0
+margin_left = 101.0
+margin_right = 148.0
 margin_bottom = 14.0
 size_flags_horizontal = 0
 
@@ -115,26 +135,6 @@ margin_bottom = 13.0
 text = "100%"
 script = ExtResource( 15 )
 signal_to_connect = "worldmap_carrots_percentage_changed"
-
-[node name="GemsPercentageContainer" type="HBoxContainer" parent="CollectablesContainer"]
-margin_left = 101.0
-margin_right = 148.0
-margin_bottom = 14.0
-size_flags_horizontal = 0
-
-[node name="Icon" type="TextureRect" parent="CollectablesContainer/GemsPercentageContainer"]
-margin_right = 11.0
-margin_bottom = 14.0
-texture = ExtResource( 10 )
-
-[node name="WorldmapCollected" type="Label" parent="CollectablesContainer/GemsPercentageContainer"]
-margin_left = 15.0
-margin_top = 1.0
-margin_right = 47.0
-margin_bottom = 13.0
-text = "100%"
-script = ExtResource( 15 )
-signal_to_connect = "worldmap_gems_percentage_changed"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_left = 0.5
@@ -169,8 +169,8 @@ locked = false
 level_title = "level.title0"
 preview_texture = ExtResource( 12 )
 max_gems = 18
-max_carrots = 7
-max_acorns = 10
+max_acorns = 7
+max_carrots = 10
 level_path = "res://src/Levels/Level1.tscn"
 
 [node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="3"]
@@ -186,8 +186,8 @@ margin_right = 58.0
 level_title = "level.title1"
 preview_texture = ExtResource( 13 )
 max_gems = 6
-max_carrots = 3
 max_acorns = 7
+max_carrots = 3
 level_path = "res://src/Levels/Level2.tscn"
 
 [node name="Level3" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]

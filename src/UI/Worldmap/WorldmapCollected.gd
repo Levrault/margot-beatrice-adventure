@@ -5,10 +5,10 @@ export var signal_to_connect := ""
 
 
 func _ready():
-	Events.connect(signal_to_connect, self, "_on_Worldmap_gems_percentage_changed")
+	Events.connect(signal_to_connect, self, "_on_Worldmap_percentage_changed")
 
 
-func _on_Worldmap_gems_percentage_changed(value: int, max_value: int) -> void:
+func _on_Worldmap_percentage_changed(value: int, max_value: int) -> void:
 	# warning-ignore:integer_division
 	var percentage = value * 100 / max_value if value > 0 else 0
 	var rounded_percentage = int(round(percentage))

@@ -34,3 +34,4 @@ func _unhandled_input(event) -> void:
 
 func _on_Timeout() -> void:
 	owner.stop()
+	set_process_unhandled_input(false)

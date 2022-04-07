@@ -7,8 +7,8 @@ export var locked := true setget _set_locked
 export var level_title := ""
 export (Texture) var preview_texture = null
 export var max_gems := 0
-export var max_carrots := 0
 export var max_acorns := 0
+export var max_carrots := 0
 export var level_path := ""
 
 var data := {}
@@ -61,7 +61,7 @@ func _on_Focus_entered() -> void:
 	Events.emit_signal("worldmap_level_name_changed", level_title)
 	Events.emit_signal("worldmap_gems_percentage_changed", data.gems, max_gems)
 	Events.emit_signal("worldmap_acorns_percentage_changed", data.acorns, max_acorns)
-	Events.emit_signal("worldmap_carrots_percentage_changed", data.carrots, max_gems)
+	Events.emit_signal("worldmap_carrots_percentage_changed", data.carrots, max_carrots)
 
 
 func _on_Focus_exited() -> void:
