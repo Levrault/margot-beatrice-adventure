@@ -93,6 +93,30 @@ tracks/6/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("CanvasLayer/CinematicBar/Down:rect_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 480, 25 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CanvasLayer/CinematicBar/Up:rect_size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 480, 25 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -287,7 +311,6 @@ anchor_bottom = 1.0
 [node name="Up" type="ColorRect" parent="CanvasLayer/CinematicBar"]
 anchor_right = 1.0
 margin_top = -40.0
-margin_right = 2400.0
 margin_bottom = -15.0
 rect_min_size = Vector2( 480, 25 )
 size_flags_horizontal = 0
@@ -301,9 +324,8 @@ __meta__ = {
 anchor_top = 0.948
 anchor_right = 1.0
 anchor_bottom = 0.948
-margin_top = 256.0
-margin_right = 2400.0
-margin_bottom = 281.0
+margin_top = 0.0399933
+margin_bottom = 25.04
 rect_min_size = Vector2( 480, 25 )
 size_flags_horizontal = 0
 size_flags_vertical = 0

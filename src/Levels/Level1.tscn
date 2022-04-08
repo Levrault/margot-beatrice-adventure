@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/Objects/Collectables/Acorn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/Tutorials/TutorialPopUpSwitchToSquirrel.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/tilesets/tileset_land_background.tres" type="TileSet" id=20]
 [ext_resource path="res://src/Objects/Traps/Laser.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/Tools/ScreenshotCanvasTools.gd" type="Script" id=22]
+[ext_resource path="res://src/UI/Tutorials/TutorialSwitch.tscn" type="PackedScene" id=23]
 
 [sub_resource type="GDScript" id=52]
 script/source = "# source https://github.com/GDQuest/godot-demos/blob/master/2018/03-30-astar-pathfinding/pathfind_astar.gd
@@ -315,6 +316,10 @@ time_for_rank_100 = 55000.0
 time_for_rank_80 = 70000.0
 time_for_rank_60 = 90000.0
 
+[node name="Screenshot" parent="UI" index="4"]
+margin_left = 0.0
+margin_right = 0.0
+
 [node name="00_Intro" parent="Cinematics" index="0" instance=ExtResource( 8 )]
 position = Vector2( 437, -665 )
 
@@ -348,22 +353,28 @@ margin_right = 1162.0
 margin_bottom = 4.0
 
 [node name="TutorialPopUpDoubleJump" parent="MiddleGroundTileMap/Tutorial" index="3" instance=ExtResource( 3 )]
-margin_left = 1335.0
-margin_top = -266.0
-margin_right = 1335.0
-margin_bottom = -266.0
+margin_left = 1162.0
+margin_top = -120.0
+margin_right = 1162.0
+margin_bottom = -120.0
 
 [node name="TutorialPopUpSwitchToSquirrel" parent="MiddleGroundTileMap/Tutorial" index="4" instance=ExtResource( 2 )]
-margin_left = 2121.0
+margin_left = 2119.0
 margin_top = -266.0
-margin_right = 2121.0
+margin_right = 2119.0
 margin_bottom = -266.0
 
 [node name="TutorialPopUpDash" parent="MiddleGroundTileMap/Tutorial" index="5" instance=ExtResource( 5 )]
-margin_left = 2119.0
-margin_top = 4.0
-margin_right = 2119.0
-margin_bottom = 4.0
+margin_left = 2044.0
+margin_top = 2.0
+margin_right = 2044.0
+margin_bottom = 2.0
+
+[node name="TutorialSwitch" parent="MiddleGroundTileMap/Tutorial" index="6" instance=ExtResource( 23 )]
+margin_left = 2601.0
+margin_top = 5.0
+margin_right = 2601.0
+margin_bottom = 5.0
 
 [node name="Player" parent="MiddleGroundTileMap" index="1"]
 position = Vector2( 35, 240 )
