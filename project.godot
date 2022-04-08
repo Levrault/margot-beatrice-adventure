@@ -324,7 +324,6 @@ EngineSettings="*res://src/Autoload/EngineSettings.gd"
 InputManager="*res://src/Autoload/InputManager.gd"
 Config="*res://src/Autoload/Config.gd"
 Menu="*res://src/Autoload/Menu.gd"
-Inspector="res://src/Autoload/Inspector.gd"
 AsyncLoading="*res://src/Autoload/AsyncLoading.gd"
 Game="*res://src/Autoload/Game.gd"
 Character="*res://src/Autoload/Character.gd"
@@ -349,6 +348,10 @@ window/size/test_height=1080
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/editor_inspector/plugin.cfg" )
 
 [game]
 

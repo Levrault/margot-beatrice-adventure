@@ -17,14 +17,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	update()
 
-	if Engine.editor_hint:
-		if owner in Inspector.editor_interface.get_selection().get_selected_nodes():
-			drawing_color = selected_color
-			drawing_width = 4
-		else:
-			drawing_color = color
-			drawing_width = 2
-
 
 func _draw() -> void:
 	var half_screen = owner.screen_size / 2

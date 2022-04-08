@@ -38,7 +38,7 @@ func _ready() -> void:
 
 	# start cinematic
 	var introduction_cinematic = get_node_or_null(introduction_cinematic_path)
-	
+
 	if not ProjectSettings.get_setting("game/debug"):
 		set_process_unhandled_input(false)
 
