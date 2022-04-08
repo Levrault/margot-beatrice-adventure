@@ -97,6 +97,9 @@ margin_bottom = -134.0
 rect_min_size = Vector2( 160, 90 )
 texture = ExtResource( 3 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "RESET"
@@ -106,13 +109,13 @@ anims/fadeInOut = SubResource( 3 )
 [node name="Overlay" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -5.0
-margin_top = -5.0
-margin_right = 5.0
-margin_bottom = 5.0
+margin_left = -4.0
+margin_top = -4.0
+margin_right = 4.0
+margin_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 170, 100 )
+rect_min_size = Vector2( 168, 98 )
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -153,9 +156,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -19.0
-margin_top = -35.0
+margin_top = -41.0
 margin_right = 21.0
-margin_bottom = 23.0
+margin_bottom = 17.0
 grow_horizontal = 0
 custom_colors/font_color = Color( 0.984314, 0.94902, 0.211765, 1 )
 custom_fonts/font = ExtResource( 7 )
