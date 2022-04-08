@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://i18n/scoreboard.en.translation", "res://i18n/scoreboard.fr.translation" ]
+
+source_file="res://i18n/scoreboard.csv"
+dest_files=[ "res://i18n/scoreboard.en.translation", "res://i18n/scoreboard.fr.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

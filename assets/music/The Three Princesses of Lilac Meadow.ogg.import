@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The Three Princesses of Lilac Meadow.ogg-3408dc812076a12ed19e2da6fa1aeee6.oggstr"
+
+[deps]
+
+source_file="res://assets/music/The Three Princesses of Lilac Meadow.ogg"
+dest_files=[ "res://.import/The Three Princesses of Lilac Meadow.ogg-3408dc812076a12ed19e2da6fa1aeee6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

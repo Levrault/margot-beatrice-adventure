@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lyonesse.ogg-ca9cb6ca547b5ebad605e22eea5e7494.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Lyonesse.ogg"
+dest_files=[ "res://.import/Lyonesse.ogg-ca9cb6ca547b5ebad605e22eea5e7494.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

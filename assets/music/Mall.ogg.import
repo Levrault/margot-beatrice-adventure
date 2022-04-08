@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mall.ogg-62d757bdda9a64064fe977e9ba06c811.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Mall.ogg"
+dest_files=[ "res://.import/Mall.ogg-62d757bdda9a64064fe977e9ba06c811.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

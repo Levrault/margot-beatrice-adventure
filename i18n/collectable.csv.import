@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://i18n/collectable.en.translation", "res://i18n/collectable.fr.translation" ]
+
+source_file="res://i18n/collectable.csv"
+dest_files=[ "res://i18n/collectable.en.translation", "res://i18n/collectable.fr.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

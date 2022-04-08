@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/success-fanfare-trumpets.mp3-d91d32ff904ab40b99dc99dd29f3d580.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/jingles/success-fanfare-trumpets.mp3"
+dest_files=[ "res://.import/success-fanfare-trumpets.mp3-d91d32ff904ab40b99dc99dd29f3d580.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

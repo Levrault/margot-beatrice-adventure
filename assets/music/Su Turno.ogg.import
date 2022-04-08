@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Su Turno.ogg-5b90e6e45088010b69fd37010427fb2f.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Su Turno.ogg"
+dest_files=[ "res://.import/Su Turno.ogg-5b90e6e45088010b69fd37010427fb2f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

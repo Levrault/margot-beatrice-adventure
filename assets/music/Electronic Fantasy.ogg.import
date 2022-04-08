@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Electronic Fantasy.ogg-516f3ce8a3635fafc480d6975b92a04a.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Electronic Fantasy.ogg"
+dest_files=[ "res://.import/Electronic Fantasy.ogg-516f3ce8a3635fafc480d6975b92a04a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
