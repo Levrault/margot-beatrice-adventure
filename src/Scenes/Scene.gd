@@ -32,7 +32,6 @@ onready var _anchors := $Anchors.get_children()
 
 
 func _ready() -> void:
-
 	if not ProjectSettings.get_setting("game/debug"):
 		set_process_unhandled_input(false)
 
@@ -106,6 +105,7 @@ func initialize() -> void:
 	# Camera management
 	SceneManager.anchor = get_nearest_anchor()
 	SceneManager.anchor.update_anchor_limit()
+	SceneManager.is_anchor_locked = false
 
 	# track player
 	Events.connect("player_moved", self, "_on_Player_moved")

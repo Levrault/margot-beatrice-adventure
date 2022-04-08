@@ -17,6 +17,7 @@ var tilemap: TileMap = null
 
 
 func set_anchor(new_anchor: CameraAnchor) -> void:
+	print_debug("New anchor is %s" % [new_anchor.get_name()])
 	previous_anchor = anchor
 	anchor = new_anchor
 

@@ -115,6 +115,10 @@ func erase_profile(profile_name: String) -> void:
 
 
 func save_best_score(profile_name: String, for_level:String, new_score: Dictionary) -> void:
+
+	if not profiles[profile_name].levels.has(for_level):
+		return
+
 	var previous_score :Dictionary = profiles[profile_name].levels[for_level]
 	# it's a new score
 	if previous_score.rank.empty():
