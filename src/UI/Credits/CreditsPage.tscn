@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Button/PreviousPageButton.tscn" type="PackedScene" id=2]
@@ -3031,6 +3031,165 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=81]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=82]
+resource_name = "fieldset_focus_entered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=83]
+resource_name = "fieldset_focus_exited"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=84]
+resource_name = "fieldset_panel_hidden"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=69]
 length = 0.001
 tracks/0/type = "value"
@@ -3247,7 +3406,7 @@ margin_bottom = 193.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent"]
 margin_right = 428.0
-margin_bottom = 896.0
+margin_bottom = 932.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 4
@@ -3257,7 +3416,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer"]
 margin_right = 424.0
-margin_bottom = 896.0
+margin_bottom = 932.0
 size_flags_horizontal = 3
 
 [node name="Author" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
@@ -3804,18 +3963,45 @@ margin_right = 408.0
 margin_bottom = 32.0
 url = "https://opengameart.org/content/swish-bamboo-stick-weapon-swhoshes"
 
-[node name="Music" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="512SoundEffects8BitStyle" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 828.0
 margin_right = 424.0
 margin_bottom = 860.0
-text = "Music"
 
-[node name="PatrickDeArteaga" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/512SoundEffects8BitStyle" index="0"]
+anims/RESET = SubResource( 81 )
+anims/fieldset_focus_entered = SubResource( 82 )
+anims/fieldset_focus_exited = SubResource( 83 )
+anims/fieldset_panel_hidden = SubResource( 84 )
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/512SoundEffects8BitStyle/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/512SoundEffects8BitStyle/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 292.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "512-sound-effects-8-bit-style"
+
+[node name="CreditsField" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/512SoundEffects8BitStyle/MarginContainer/FieldContainer" index="1" instance=ExtResource( 8 )]
+margin_left = 296.0
+margin_right = 408.0
+margin_bottom = 32.0
+url = "https://opengameart.org/content/512-sound-effects-8-bit-style"
+
+[node name="Music" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 864.0
 margin_right = 424.0
 margin_bottom = 896.0
+text = "Music"
+
+[node name="PatrickDeArteaga" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 900.0
+margin_right = 424.0
+margin_bottom = 932.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PatrickDeArteaga" index="0"]
 anims/RESET = SubResource( 69 )
@@ -3880,4 +4066,5 @@ __meta__ = {
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SpellSoundsStarterPack"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SuccessFanfareTrumpets"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SwishBambooStickWeaponSwhoshes"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/512SoundEffects8BitStyle"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PatrickDeArteaga"]

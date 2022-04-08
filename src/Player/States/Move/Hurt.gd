@@ -5,6 +5,7 @@ extends State
 export var throwback_force := Vector2(500, 500)
 
 onready var timer := $Timer
+onready var sfx := $Impact
 
 
 func physics_process(delta: float) -> void:
@@ -31,6 +32,7 @@ func enter(msg: Dictionary = {}) -> void:
 	owner.is_handling_input = false
 	owner.momentum.start()
 	Game.stats.hits_taken += 1
+	sfx.play_sound()
 
 	if "impulse" in msg:
 		throwback()

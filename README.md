@@ -29,6 +29,7 @@ Game made for my niece
 - [Spell Sounds Starter Pack by p0ss](https://opengameart.org/content/spell-sounds-starter-pack)
 - [Success Fanfare Trumpets](https://freesound.org/people/FunWithSound/sounds/456966/)
 - [Swish - bamboo stick weapon swhoshes](https://opengameart.org/content/swish-bamboo-stick-weapon-swhoshes)
+- [512-sound-effects-8-bit-style](https://opengameart.org/content/512-sound-effects-8-bit-style)
 
 ### Music
 
