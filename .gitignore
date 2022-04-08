@@ -1,5 +1,6 @@
 /.vscode
-builds/
 .import/
-.DS_Store
+builds/
+
 *.translation
+.DS_Store
