@@ -11,7 +11,7 @@ var unlocked_characters := {
 # stats per level
 var stats := {"game_over": 0, "hits_taken": 0, "play_time": 0}
 var rank := {
-	"S": { 
+	"S": {
 		"value": 3,
 		"text": "S"
 	},
