@@ -447,7 +447,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.character_wheel"
+text = "input.switch_to_fox"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -457,7 +457,7 @@ margin_left = 206.0
 margin_right = 408.0
 margin_bottom = 32.0
 action = "switch_to_fox"
-description = "input.switch_to_fox"
+description = "input.switch_to_fox_description"
 
 [node name="SwitchToRabbit" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="4" instance=ExtResource( 3 )]
 margin_top = 144.0
@@ -479,7 +479,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.character_wheel"
+text = "input.switch_to_rabbit"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -489,7 +489,7 @@ margin_left = 206.0
 margin_right = 408.0
 margin_bottom = 32.0
 action = "switch_to_rabbit"
-description = "input.switch_to_rabbit"
+description = "input.switch_to_rabbit_description"
 
 [node name="SwitchToSquirrel" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="5" instance=ExtResource( 3 )]
 margin_top = 180.0
@@ -511,7 +511,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.character_wheel"
+text = "input.switch_to_squirrel"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -521,7 +521,7 @@ margin_left = 206.0
 margin_right = 408.0
 margin_bottom = 32.0
 action = "switch_to_squirrel"
-description = "input.switch_to_squirrel"
+description = "input.switch_to_squirrel_description"
 
 [node name="RequiredFieldUnmapped" parent="." index="2" instance=ExtResource( 6 )]
 

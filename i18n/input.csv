@@ -1,6 +1,4 @@
 ,en,fr
-input.character_wheel,"Character wheel","Roue des personnages"
-input.character_wheel_description,"CHARACTER WHEEL - set the input to display the character wheel","ROUE DES PERSONNAGES - définis la touche pour afficher la roue des personnages"
 input.dash,"Dash","Esquiver"
 input.dash_description,"EVADE - set the input to dash","Esquiver - définis la touche pour esquiver une esquive"
 input.interaction,"Interaction","Interaction"
@@ -18,5 +16,8 @@ input.move_right_description,"MOVE RIGHT - set the input to move right","DROITE 
 input.pause,"Pause","Pause"
 input.pause_description,"PAUSE - set the input to pause the game","PAUSE - définis la touche pour mettre en pause le jeu"
 input.switch_to_fox,"Switch to Foxy","Changer pour Foxy"
+input.switch_to_fox_description,"Switch to Foxy","CHANGER POUR FOXY - permet de contrôler Foxy"
 input.switch_to_squirrel,"Switch to Mr. Noix","Changer pour Mr. Noix"
+input.switch_to_squirrel_description,"Switch to Mr. Noix","CHANGER POUR MR. NOIX - permet de contrôler MR. NOIX"
 input.switch_to_rabbit,"Switch to Jazzy","Changer pour Jazzy"
+input.switch_to_rabbit_description,"Switch to Jazzy","CHANGER POUR JAZZY - permet de contrôler Jazzy"
