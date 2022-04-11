@@ -493,7 +493,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.run"
+text = "input.dash"
 
 [node name="Dash" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Dash/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
 margin_left = 206.0
@@ -516,7 +516,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.attack"
+text = "input.interaction"
 
 [node name="Interaction" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Interaction/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
 margin_left = 206.0
@@ -539,7 +539,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.block"
+text = "input.switch_to_fox"
 
 [node name="SwitchToFox" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/SwitchToFox/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
 margin_left = 206.0
@@ -568,7 +568,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.block"
+text = "input.switch_to_rabbit"
 
 [node name="SwitchToRabbit" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/SwitchToRabbit/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
 margin_left = 206.0
@@ -597,7 +597,7 @@ margin_top = 9.0
 margin_right = 202.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
-text = "input.block"
+text = "input.switch_to_squirrel"
 
 [node name="SwitchToRabbit" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/SwitchToSquirrel/MarginContainer/FieldContainer" index="1" instance=ExtResource( 3 )]
 margin_left = 206.0
