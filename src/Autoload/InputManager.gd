@@ -62,6 +62,7 @@ func _input(event: InputEvent) -> void:
 	if next_device != device or next_device_index != device_index:
 		self.device = next_device
 		device_index = next_device_index
+		print_debug("Device changed for %s" % device)
 		emit_signal("device_changed", device, device_index)
 
 
