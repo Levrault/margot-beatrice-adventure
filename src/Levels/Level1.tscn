@@ -316,10 +316,6 @@ time_for_rank_100 = 55000.0
 time_for_rank_80 = 70000.0
 time_for_rank_60 = 90000.0
 
-[node name="Screenshot" parent="UI" index="5"]
-margin_left = 0.0
-margin_right = 0.0
-
 [node name="00_Intro" parent="Cinematics" index="0" instance=ExtResource( 8 )]
 position = Vector2( 437, -665 )
 
