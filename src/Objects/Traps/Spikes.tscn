@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Combat/DamageSource/DamageSourceEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/environment/land/spikes.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.5, 4.5 )
+
+[node name="Spikes" type="Sprite"]
+texture = ExtResource( 2 )
+
+[node name="DamageSource" parent="." instance=ExtResource( 1 )]
+is_instakill = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSource"]
+position = Vector2( -0.5, 0.5 )
+shape = SubResource( 1 )

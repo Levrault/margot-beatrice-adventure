@@ -1,6 +1,7 @@
 extends Node
 
 var current_profile := "profile0"
+var current_level := ""
 
 var unlocked_characters := {
 	"fox": true,
