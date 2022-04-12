@@ -132,6 +132,7 @@ wait_time = 0.05
 one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 0.75
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

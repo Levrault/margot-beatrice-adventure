@@ -5,7 +5,7 @@
 
 extends KinematicBody2D
 
-const FALLING_TIMER := 0.75
+const FALLING_TIMER := 0.25
 
 export var flying_offset := Vector2(0, 4)
 export var delay := 0.0
