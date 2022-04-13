@@ -1,5 +1,6 @@
 extends TextureRect
 
+export var playback_speed := 1.0
 export var auto_start := true
 export var auto_queue_free := true
 export (String, "shot_in", "shot_out") var type = "shot_out"
@@ -13,6 +14,7 @@ onready var ring := $Ring
 func _ready():
 	yield(owner, "ready")
 	anim.connect("animation_finished", self, "_on_Animation_finished")
+	anim.playback_speed = playback_speed
 
 	if auto_start:
 		play()

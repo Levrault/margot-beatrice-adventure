@@ -24,7 +24,7 @@ margin_top = -7.0
 margin_right = 20.0
 margin_bottom = 7.0
 theme = ExtResource( 4 )
-text = "false"
+text = "spawn"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

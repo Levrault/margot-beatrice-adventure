@@ -1,7 +1,7 @@
 extends State
 
 export var speed := 50.0
-export var wait_time := 1.0 setget set_wait_time
+export var wait_time := 0.5 setget set_wait_time
 
 onready var _timer := $Timer
 onready var _tween := $Tween

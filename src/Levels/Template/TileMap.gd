@@ -1,7 +1,7 @@
 # source https://github.com/GDQuest/godot-demos/blob/master/2018/03-30-astar-pathfinding/pathfind_astar.gd
 extends TileMap
 
-export var map_size := Vector2(16, 16)
+export var map_size := Vector2(30, 16)
 
 var path_start_position = Vector2() setget _set_path_start_position
 var path_end_position = Vector2() setget _set_path_end_position
