@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Generics/FrustumCulling.gd" type="Script" id=1]
-[ext_resource path="res://src/Scenes/checkpoints/Checkpoint.gd" type="Script" id=2]
+[ext_resource path="res://src/Levels/Template/checkpoints/Checkpoint.gd" type="Script" id=2]
 [ext_resource path="res://assets/theme/MainMenu.tres" type="Theme" id=4]
 
 [node name="Checkpoint" type="Node2D"]

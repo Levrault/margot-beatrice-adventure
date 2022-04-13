@@ -92,13 +92,13 @@ margin_right = 91.0
 margin_bottom = 41.0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GamepadLayout"]
-margin_right = 42.0
+margin_right = 31.0
 margin_bottom = 11.0
-text = "gamepad	"
+text = "layout"
 
 [node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GamepadLayout"]
-margin_left = 46.0
-margin_right = 60.0
+margin_left = 35.0
+margin_right = 49.0
 margin_bottom = 11.0
 text = "0.0"
 

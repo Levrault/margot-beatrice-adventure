@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 
 onready var _player_detector := $PlayerDetector
 onready var _damage_source := $DamageSource

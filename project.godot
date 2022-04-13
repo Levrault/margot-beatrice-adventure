@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Checkpoint",
 "language": "GDScript",
-"path": "res://src/Scenes/checkpoints/Checkpoint.gd"
+"path": "res://src/Levels/Template/checkpoints/Checkpoint.gd"
 }, {
 "base": "Area2D",
 "class": "DamageSource",
