@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://src/UI/Settings/SettingsPageTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/Settings/Gamepad/GamepadMapListenerDialog.tscn" type="PackedScene" id=2]
@@ -326,6 +326,324 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "fieldset_focus_entered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "fieldset_focus_exited"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "fieldset_panel_hidden"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "fieldset_focus_entered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "fieldset_focus_exited"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "fieldset_panel_hidden"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="GamepadRebindPage" instance=ExtResource( 1 )]
 default_field_to_focus = NodePath("Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/Jump/MarginContainer/FieldContainer/Jump")
 
@@ -342,7 +660,7 @@ margin_top = 0.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent" index="0"]
 margin_right = 428.0
-margin_bottom = 212.0
+margin_bottom = 284.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 4
@@ -352,7 +670,7 @@ __meta__ = {
 
 [node name="KeyMapTable" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer" index="0"]
 margin_right = 424.0
-margin_bottom = 212.0
+margin_bottom = 284.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -523,6 +841,70 @@ margin_bottom = 32.0
 action = "switch_to_squirrel"
 description = "input.switch_to_squirrel_description"
 
+[node name="PrevCharacter" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="6" instance=ExtResource( 3 )]
+margin_top = 216.0
+margin_right = 424.0
+margin_bottom = 248.0
+rect_clip_content = false
+
+[node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/PrevCharacter" index="0"]
+anims/RESET = SubResource( 9 )
+anims/fieldset_focus_entered = SubResource( 10 )
+anims/fieldset_focus_exited = SubResource( 11 )
+anims/fieldset_panel_hidden = SubResource( 12 )
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/PrevCharacter/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/PrevCharacter/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.prev_character"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="PrevCharacter" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/PrevCharacter/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "prev_character"
+description = "input.prev_character_description"
+
+[node name="NextCharacter" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable" index="7" instance=ExtResource( 3 )]
+margin_top = 252.0
+margin_right = 424.0
+margin_bottom = 284.0
+rect_clip_content = false
+
+[node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/NextCharacter" index="0"]
+anims/RESET = SubResource( 13 )
+anims/fieldset_focus_entered = SubResource( 14 )
+anims/fieldset_focus_exited = SubResource( 15 )
+anims/fieldset_panel_hidden = SubResource( 16 )
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/NextCharacter/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/NextCharacter/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 202.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "input.next_character"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NextCharacter" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/NextCharacter/MarginContainer/FieldContainer" index="1" instance=ExtResource( 4 )]
+margin_left = 206.0
+margin_right = 408.0
+margin_bottom = 32.0
+action = "next_character"
+description = "input.next_character_description"
+
 [node name="RequiredFieldUnmapped" parent="." index="2" instance=ExtResource( 6 )]
 
 [node name="GamepadMapListenerDialog" parent="." index="3" instance=ExtResource( 2 )]
@@ -534,3 +916,5 @@ visible = false
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/SwitchToFox"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/SwitchToRabbit"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/SwitchToSquirrel"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/PrevCharacter"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/KeyMapTable/NextCharacter"]

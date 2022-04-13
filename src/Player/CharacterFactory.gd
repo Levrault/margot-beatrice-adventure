@@ -46,6 +46,20 @@ func _unhandled_input(event) -> void:
 		self.selected_character = Character.Playable.FOX
 		return
 
+	if event.is_action_pressed("next_character"):
+		if selected_character + 1 > Character.Playable.SQUIRREL: # last character
+			self.selected_character = Character.Playable.FOX
+			return
+		self.selected_character += 1
+		return
+
+	if event.is_action_pressed("prev_character"):
+		if selected_character - 1 < Character.Playable.FOX: # last character
+			self.selected_character = Character.Playable.SQUIRREL
+			return
+		self.selected_character -= 1
+		return
+
 
 func _set_selected_character(value: int) -> void:
 	selected_character = value
