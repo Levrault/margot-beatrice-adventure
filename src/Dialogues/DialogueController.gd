@@ -21,9 +21,7 @@ func _ready() -> void:
 
 
 func load_json() -> void:
-	dialogue_json = JsonReader.get_json(
-		"res://assets/dialogues/%s.json" % [owner.get_name()]
-	)
+	dialogue_json = JsonReader.get_json("res://assets/dialogues/%s.json" % [owner.get_name()])
 
 
 func start() -> void:

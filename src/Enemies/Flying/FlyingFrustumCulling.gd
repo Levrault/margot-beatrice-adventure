@@ -9,7 +9,6 @@ func _on_Room_transition_started() -> void:
 	owner.skin.anim.stop()
 
 
-
 func _on_Room_limit_changed(bounds: Dictionary) -> void:
 	._on_Room_limit_changed(bounds)
 	owner.player_detector.disabled = not is_screen_visible

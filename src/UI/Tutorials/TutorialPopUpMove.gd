@@ -1,6 +1,5 @@
 extends TutorialPopUp
 
-
 onready var joystick_action := $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/JoystickAtlasIcon
 onready var altas_move_left := $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/AtlasIcon
 onready var altas_move_up := $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/AtlasIconMoveUp

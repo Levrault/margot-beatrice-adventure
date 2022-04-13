@@ -16,17 +16,16 @@ const GAMEPAD_MOTION_REGEX := "_AXIS_|_ANALOG_"
 const ICON_ATLAS_TEXTURE_PATH := "res://assets/UI/icons/input_icons_atlas_texture.png"
 
 var all_gamepad_devices := [
-	DEVICE_XBOX_CONTROLLER,
-	DEVICE_SWITCH_CONTROLLER,
-	DEVICE_PLAYSTATION_CONTROLLER,
-	DEVICE_GENERIC
+	DEVICE_XBOX_CONTROLLER, DEVICE_SWITCH_CONTROLLER, DEVICE_PLAYSTATION_CONTROLLER, DEVICE_GENERIC
 ]
 
 var atlas_map := {}
 var default_gamepad: String = DEVICE_XBOX_CONTROLLER
 var device: String = default_gamepad setget _set_device
 var device_index: int = -1
-var gamepad_button_regex := {"xbox": "_XBOX_", "nintendo": "_DS_", "dualshock": "_SONY_", "generic": "_BUTTON_"}
+var gamepad_button_regex := {
+	"xbox": "_XBOX_", "nintendo": "_DS_", "dualshock": "_SONY_", "generic": "_BUTTON_"
+}
 
 var _motion_regex := RegEx.new()
 

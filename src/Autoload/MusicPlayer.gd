@@ -11,11 +11,12 @@ var playlist := {
 	"lyonesse": "res://assets/music/Lyonesse.ogg",
 	"mall": "res://assets/music/Mall.ogg",
 	"su_turno": "res://assets/music/Su Turno.ogg",
-	"the_three_princesses_of_lilac_meadows": "res://assets/music/The Three Princesses of Lilac Meadow.ogg",
+	"the_three_princesses_of_lilac_meadows":
+	"res://assets/music/The Three Princesses of Lilac Meadow.ogg",
 	"yellow_forest": "res://assets/music/Yellow Forest.ogg",
 }
 
-var current :String = "mall"
+var current: String = "mall"
 
 onready var tween := $Tween
 
@@ -29,13 +30,7 @@ func change_track(new_music: String) -> void:
 
 func transition() -> void:
 	tween.interpolate_property(
-		self,
-		"volume_db",
-		-80,
-		0,
-		TRANSITION_DURATION,
-		Tween.EASE_IN,
-		Tween.TRANS_LINEAR
+		self, "volume_db", -80, 0, TRANSITION_DURATION, Tween.EASE_IN, Tween.TRANS_LINEAR
 	)
 	tween.start()
 	play()

@@ -11,7 +11,7 @@ func _ready() -> void:
 	if not ProjectSettings.get_setting("game/debug"):
 		queue_free()
 
-	Events.connect("player_hud_enabled", self,  "set", ["should_disable_player_hud", true])
+	Events.connect("player_hud_enabled", self, "set", ["should_disable_player_hud", true])
 	Events.connect("player_hud_disabled", self, "set", ["should_disable_player_hud", false])
 
 
@@ -22,30 +22,32 @@ func _input(event: InputEvent) -> void:
 
 		if should_disable_player_hud:
 			Events.emit_signal("player_hud_disabled")
-		
+
 		yield(get_tree(), "idle_frame")
 		yield(get_tree(), "idle_frame")
 		call_deferred("screenshot")
 
 
 func screenshot() -> void:
-		# get data
-		var img = get_viewport().get_texture().get_data()
-		# wait two frames
-		yield(get_tree(), "idle_frame")
-		yield(get_tree(), "idle_frame")
+	# get data
+	var img = get_viewport().get_texture().get_data()
+	# wait two frames
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
 
-		# flip
-		img.flip_y()
+	# flip
+	img.flip_y()
 
-		img.resize(image_size.x, image_size.y, 0)
+	img.resize(image_size.x, image_size.y, 0)
 
-		# save to file
-		img.save_png("res://assets/UI/worldmap/%s-%s.png" % [owner.get_name(), String(OS.get_unix_time())])
-	
-		anim.play("TransitionIn")
+	# save to file
+	img.save_png(
+		"res://assets/UI/worldmap/%s-%s.png" % [owner.get_name(), String(OS.get_unix_time())]
+	)
 
-		Events.call_deferred("emit_signal", "screenshot_ended")
+	anim.play("TransitionIn")
 
-		if should_disable_player_hud:
-			Events.call_deferred("emit_signal", "player_hud_enabled")
+	Events.call_deferred("emit_signal", "screenshot_ended")
+
+	if should_disable_player_hud:
+		Events.call_deferred("emit_signal", "player_hud_enabled")

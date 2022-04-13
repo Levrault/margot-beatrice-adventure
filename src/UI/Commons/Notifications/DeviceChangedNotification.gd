@@ -1,6 +1,5 @@
 extends Control
 
-
 var current_device := InputManager.device
 onready var anim := $AnimationPlayer
 onready var label := $PanelContainer/MarginContainer/Label

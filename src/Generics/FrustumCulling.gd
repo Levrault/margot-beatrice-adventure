@@ -1,7 +1,6 @@
 extends Node2D
 class_name FrustumCulling
 
-
 var is_screen_visible = false
 var initial_position := Vector2.ZERO
 

@@ -7,9 +7,9 @@ const DURATION := 1.0
 
 export var action := ""
 
-var icon_texture :AtlasTexture = null
-var alt_icon_texture : AtlasTexture = null
-var next_icon :int = Icon.ALT
+var icon_texture: AtlasTexture = null
+var alt_icon_texture: AtlasTexture = null
+var next_icon: int = Icon.ALT
 
 onready var anim := $AnimationPlayer
 onready var label := $Label

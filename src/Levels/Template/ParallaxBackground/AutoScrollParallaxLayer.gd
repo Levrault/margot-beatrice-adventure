@@ -1,6 +1,5 @@
 extends ParallaxLayer
 
-
 export (Vector2) var velocity := Vector2(-15, 0)
 
 

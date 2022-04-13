@@ -8,7 +8,6 @@ extends Node
 signal screenshot_started
 signal screenshot_ended
 
-
 ############
 ### Game ###
 ############

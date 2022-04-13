@@ -25,15 +25,20 @@ func _ready() -> void:
 
 
 func _unhandled_input(event) -> void:
-
 	if UNALLOWED_STATES.has(owner.state_machine.state_name):
 		return
 
-	if event.is_action_pressed("switch_to_squirrel") and selected_character != Character.Playable.SQUIRREL:
+	if (
+		event.is_action_pressed("switch_to_squirrel")
+		and selected_character != Character.Playable.SQUIRREL
+	):
 		self.selected_character = Character.Playable.SQUIRREL
 		return
 
-	if event.is_action_pressed("switch_to_rabbit") and selected_character != Character.Playable.RABBIT:
+	if (
+		event.is_action_pressed("switch_to_rabbit")
+		and selected_character != Character.Playable.RABBIT
+	):
 		self.selected_character = Character.Playable.RABBIT
 		return
 

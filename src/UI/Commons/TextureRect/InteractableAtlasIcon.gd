@@ -4,7 +4,7 @@ extends AtlasIcon
 func _ready() -> void:
 	timer.stop()
 
-	
+
 func _unhandled_key_input(event) -> void:
 	if event.is_action_pressed(action):
 		texture = alt_icon_texture

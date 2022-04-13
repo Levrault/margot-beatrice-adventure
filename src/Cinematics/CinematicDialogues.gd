@@ -2,7 +2,7 @@ extends Node2D
 
 enum States { IDLE, PENDING, CONTINUING, CHOOSING, ENDING }
 
-var dialogue_controller =  null
+var dialogue_controller = null
 var _state = States.IDLE
 
 

@@ -27,7 +27,11 @@ func transit_to_new_room() -> void:
 		"position",
 		to_local(previous_to_position),
 		to_local(to_position),
-		SceneManager.CAMERA_TRANSITON_TIME if owner.state_machine.state_name != "Dash" else SceneManager.CAMERA_TRANSITON_TIME_DURING_DASH,
+		(
+			SceneManager.CAMERA_TRANSITON_TIME
+			if owner.state_machine.state_name != "Dash"
+			else SceneManager.CAMERA_TRANSITON_TIME_DURING_DASH
+		),
 		Tween.TRANS_CUBIC,
 		Tween.TRANS_LINEAR
 	)

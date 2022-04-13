@@ -1,5 +1,6 @@
 extends State
 
+
 func _ready() -> void:
 	yield(owner, "ready")
 	Events.connect("spawn_position_changed", self, "_on_Spawn_position_changed")
@@ -36,5 +37,8 @@ func _on_Spawn_position_changed(new_position: Position2D) -> void:
 	if not SceneManager.is_on_screen(owner.spawn_position):
 		owner.spawn_position = new_position.global_position
 
-	if owner.global_position.distance_to(new_position.global_position) < owner.global_position.distance_to(owner.spawn_position):
+	if (
+		owner.global_position.distance_to(new_position.global_position)
+		< owner.global_position.distance_to(owner.spawn_position)
+	):
 		owner.spawn_position = new_position.global_position

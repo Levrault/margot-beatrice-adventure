@@ -1,6 +1,5 @@
 extends Control
 
-
 onready var anchor = $PanelContainer/MarginContainer/VBoxContainer/Anchor/Value
 onready var gamepad = $PanelContainer/MarginContainer/VBoxContainer/Gamepad/Value
 onready var gamepad_layout = $PanelContainer/MarginContainer/VBoxContainer/GamepadLayout/Value
@@ -21,7 +20,9 @@ func _ready() -> void:
 
 
 func _on_Player_moved(player: Player) -> void:
-	player_position.text = String(Vector2(round(player.global_position.x), round(player.global_position.y)))
+	player_position.text = String(
+		Vector2(round(player.global_position.x), round(player.global_position.y))
+	)
 	player_state.text = String(player.state_machine.state_name)
 	hits_taken.text = String(Game.stats.hits_taken)
 	game_over.text = String(Game.stats.game_over)

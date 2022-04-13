@@ -6,10 +6,9 @@ extends DialogueController
 
 export var next_sequence := ""
 
+
 func load_json() -> void:
-	dialogue_json = JsonReader.get_json(
-		"res://assets/dialogues/%s.json" % [get_name()]
-	)
+	dialogue_json = JsonReader.get_json("res://assets/dialogues/%s.json" % [get_name()])
 
 
 func start() -> void:

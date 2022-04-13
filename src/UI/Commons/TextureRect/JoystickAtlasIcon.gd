@@ -2,6 +2,7 @@ extends AtlasIcon
 
 var joy_stick_action := "JOY_L3"
 
+
 func _ready():
 	Events.connect("gamepad_stick_layout_changed", self, "_on_Gamepad_stick_layout_changed")
 
@@ -11,10 +12,14 @@ func _on_Device_changed(device: String, device_index: int) -> void:
 
 	if InputManager.is_using_gamepad():
 		icon_texture = InputManager.get_device_icon_texture_from_action(joy_stick_action, device)
-		alt_icon_texture = InputManager.get_device_icon_texture_from_action(joy_stick_action, device, true)
+		alt_icon_texture = InputManager.get_device_icon_texture_from_action(
+			joy_stick_action, device, true
+		)
 	else:
 		icon_texture = InputManager.get_device_icon_texture_from_action(joy_string, device)
-		alt_icon_texture = InputManager.get_device_icon_texture_from_action(joy_string, device, true)
+		alt_icon_texture = InputManager.get_device_icon_texture_from_action(
+			joy_string, device, true
+		)
 
 	if icon_texture == null:
 		icon_texture = InputManager.get_device_icon_texture_fallback(device)

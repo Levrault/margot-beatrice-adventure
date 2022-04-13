@@ -1,6 +1,6 @@
 extends Tween
 
-enum Direction {UP, DOWN}
+enum Direction { UP, DOWN }
 
 export var floating_value := 2.0
 export var duration := 1.0
@@ -9,6 +9,7 @@ export var autostart := true
 
 var direction = Direction.UP
 var target = null
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +26,13 @@ func _ready():
 func toggle_floating() -> void:
 	if direction == Direction.DOWN:
 		direction = Direction.UP
-		interpolate_property(owner, "position", owner.position, Vector2(owner.position.x, owner.position.y - floating_value), duration)
+		interpolate_property(
+			owner,
+			"position",
+			owner.position,
+			Vector2(owner.position.x, owner.position.y - floating_value),
+			duration
+		)
 		start()
 		return
 

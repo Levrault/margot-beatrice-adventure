@@ -8,7 +8,6 @@ var rng = RandomNumberGenerator.new()
 
 
 func play_sound() -> void:
-
 	if not repeat_mode and playing:
 		return
 

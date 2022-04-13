@@ -11,6 +11,7 @@ var to = 0
 
 onready var tween := $Tween
 
+
 func _ready() -> void:
 	tween.connect("tween_completed", self, "_on_Tween_completed")
 	from = position

@@ -3,6 +3,7 @@ extends Control
 onready var tween := $Tween
 onready var timer := $Timer
 
+
 func _ready() -> void:
 	Events.connect("player_hud_disabled", self, "_on_Hud_disabled")
 	Events.connect("player_hud_enabled", self, "_on_Hud_enabled")
