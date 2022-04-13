@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/death_icon.png-e0b3143edaf957d4c9633553832e6bc7.stex"
+path="res://.import/Spiked Ball.png-485c3286138721d8712687773feef096.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/traps/death_icon.png"
-dest_files=[ "res://.import/death_icon.png-e0b3143edaf957d4c9633553832e6bc7.stex" ]
+source_file="res://assets/objects/traps/Spiked Ball.png"
+dest_files=[ "res://.import/Spiked Ball.png-485c3286138721d8712687773feef096.stex" ]
 
 [params]
 

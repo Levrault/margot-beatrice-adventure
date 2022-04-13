@@ -19,6 +19,11 @@ extents = Vector2( 123, 10 )
 [node name="Level4" instance=ExtResource( 1 )]
 next_level = "level5"
 
+[node name="Scoreboard" parent="UI" index="4"]
+time_for_rank_100 = 450000.0
+time_for_rank_80 = 600000.0
+time_for_rank_60 = 900000.0
+
 [node name="Screenshot" parent="UI" index="5"]
 margin_left = 0.0
 margin_right = 0.0
