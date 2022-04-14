@@ -1,0 +1,496 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/Levels/Template/Scene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Objects/Platforms/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Objects/Platforms/FallingPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/Traps/Fire.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Traps/Trampoline.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Waypoints/PlatformWaypoints.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Levels/Template/FallLimitArea/FallLimitArea.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Objects/Traps/Spikes.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Objects/Traps/SpikesSkull.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Levels/Template/checkpoints/Checkpoint.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Objects/Collectables/Carrot.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Objects/Collectables/Acorn.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Objects/Collectables/Gem.tscn" type="PackedScene" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 868.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 312, 10 )
+
+[node name="Scene" instance=ExtResource( 1 )]
+
+[node name="Scoreboard" parent="UI" index="4"]
+time_for_rank_100 = 60000.0
+time_for_rank_80 = 90000.0
+time_for_rank_60 = 120000.0
+
+[node name="Screenshot" parent="UI" index="5"]
+margin_left = 0.0
+margin_right = 0.0
+
+[node name="MiddleGroundTileMap" parent="." index="7"]
+tile_data = PoolIntArray( -3538915, 1, 0, -3538914, 1, 2, -3473379, 1, 65536, -3473378, 1, 65538, -3407843, 1, 65536, -3407842, 1, 65538, -3342307, 1, 65536, -3342306, 1, 65538, -3276771, 1, 65536, -3276770, 1, 65538, -3211235, 1, 65536, -3211234, 1, 65538, -3145699, 1, 65536, -3145698, 1, 65538, -3080163, 1, 65536, -3080162, 1, 65538, -3014627, 1, 65536, -3014626, 1, 65538, -3014598, 0, 0, -3014597, 0, 1, -3014596, 0, 1, -3014595, 0, 1, -3014594, 0, 1, -3014593, 0, 2, -2949091, 1, 65536, -2949090, 1, 65538, -2949062, 0, 65536, -2949061, 0, 65537, -2949060, 0, 65537, -2949059, 0, 65537, -2949058, 0, 65537, -2949057, 0, 65538, -2883555, 1, 65536, -2883554, 1, 65538, -2883526, 0, 131072, -2883525, 0, 0, -2883524, 0, 0, -2883523, 0, 131073, -2883522, 0, 131073, -2883521, 0, 131074, -2883499, 2, 0, -2883498, 2, 1, -2883497, 2, 1, -2883496, 2, 1, -2883495, 2, 2, -2818019, 1, 65536, -2818018, 1, 65538, -2818017, 28, 0, -2818016, 28, 0, -2817989, 0, 65536, -2817988, 0, 65538, -2752483, 1, 65536, -2752482, 1, 65538, -2752453, 0, 65536, -2752452, 0, 65538, -2686947, 1, 65536, -2686946, 1, 65538, -2686917, 0, 65536, -2686916, 0, 65538, -2621411, 1, 65536, -2621410, 1, 65538, -2621381, 0, 65536, -2621380, 0, 65538, -2555875, 1, 65536, -2555874, 1, 65538, -2555845, 0, 65536, -2555844, 0, 65538, -2490339, 1, 65536, -2490338, 1, 65538, -2490309, 0, 65536, -2490308, 0, 65538, -2424803, 1, 65536, -2424802, 1, 65538, -2424773, 0, 65536, -2424772, 0, 65538, -2359267, 1, 65536, -2359266, 1, 65538, -2359237, 0, 65536, -2359236, 0, 65538, -2293731, 1, 65536, -2293730, 1, 65538, -2293729, 38, 0, -2293728, 38, 0, -2293704, 30, 0, -2293703, 28, 0, -2293702, 28, 0, -2293701, 0, 65536, -2293700, 0, 65538, -2228195, 1, 65536, -2228194, 1, 65538, -2228193, 39, 0, -2228192, 40, 0, -2228191, 39, 0, -2228190, 40, 0, -2228189, 39, 0, -2228188, 40, 0, -2228187, 39, 0, -2228186, 40, 0, -2228185, 39, 0, -2228184, 40, 0, -2228183, 39, 0, -2228182, 40, 0, -2228181, 39, 0, -2228180, 40, 0, -2228179, 39, 0, -2228178, 40, 0, -2228177, 39, 0, -2228176, 40, 0, -2228175, 39, 0, -2228174, 40, 0, -2228173, 39, 0, -2228172, 40, 0, -2228171, 39, 0, -2228170, 40, 0, -2228165, 0, 65536, -2228164, 0, 65538, -2162659, 1, 65536, -2162658, 1, 65538, -2162629, 0, 65536, -2162628, 0, 65538, -2097123, 1, 65536, -2097122, 1, 65538, -2097093, 0, 65536, -2097092, 0, 65538, -2031587, 1, 65536, -2031586, 1, 65538, -2031557, 0, 65536, -2031556, 0, 65538, -1966051, 1, 65536, -1966050, 1, 65538, -1966021, 0, 65536, -1966020, 0, 65538, -1900515, 1, 65536, -1900514, 1, 65538, -1900488, 30, 0, -1900487, 28, 0, -1900486, 28, 0, -1900485, 0, 65536, -1900484, 0, 65538, -1834979, 1, 65536, -1834978, 1, 65538, -1834949, 0, 65536, -1834948, 0, 65538, -1769443, 1, 65536, -1769442, 1, 65538, -1769413, 0, 65536, -1769412, 0, 65538, -1703907, 1, 65536, -1703906, 1, 65538, -1703877, 0, 65536, -1703876, 0, 65538, -1638371, 1, 65536, -1638370, 1, 65538, -1638344, 30, 0, -1638343, 28, 0, -1638342, 28, 0, -1638341, 0, 65536, -1638340, 0, 65538, -1572835, 1, 65536, -1572834, 1, 65538, -1572805, 0, 65536, -1572804, 0, 65538, -1507299, 1, 65536, -1507298, 1, 65538, -1507269, 0, 65536, -1507268, 0, 65538, -1441763, 1, 65536, -1441762, 1, 65538, -1441733, 0, 65536, -1441732, 0, 65538, -1376227, 1, 65536, -1376226, 1, 65538, -1376197, 0, 65536, -1376196, 0, 65538, -1310691, 1, 65536, -1310690, 1, 65538, -1310666, 0, 0, -1310665, 0, 1, -1310664, 0, 1, -1310663, 0, 1, -1310662, 0, 1, -1310661, 0, 0, -1310660, 0, 65538, -1245155, 1, 65536, -1245154, 1, 65538, -1245130, 0, 65536, -1245129, 0, 65537, -1245128, 0, 65537, -1245127, 0, 65537, -1245126, 0, 65537, -1245125, 0, 65537, -1245124, 0, 65538, -1179619, 1, 65536, -1179618, 1, 65538, -1179594, 0, 65536, -1179593, 0, 65537, -1179592, 0, 65537, -1179591, 0, 65537, -1179590, 0, 65537, -1179589, 0, 65537, -1179588, 0, 65538, -1114083, 1, 65536, -1114082, 1, 0, -1114081, 1, 2, -1114076, 39, 0, -1114075, 40, 0, -1114074, 39, 0, -1114073, 40, 0, -1114072, 39, 0, -1114071, 40, 0, -1114070, 39, 0, -1114069, 40, 0, -1114068, 39, 0, -1114067, 40, 0, -1114066, 39, 0, -1114065, 40, 0, -1114064, 39, 0, -1114063, 40, 0, -1114062, 39, 0, -1114061, 40, 0, -1114060, 39, 0, -1114059, 40, 0, -1114058, 0, 131072, -1114057, 0, 131073, -1114056, 0, 131073, -1114055, 0, 131073, -1114054, 0, 131073, -1114053, 0, 131073, -1114052, 0, 131074, -1048547, 1, 65536, -1048546, 1, 65537, -1048545, 1, 65538, -1048517, 1, 0, -1048516, 1, 2, -983011, 1, 65536, -983010, 1, 65537, -983009, 1, 65538, -982981, 1, 65536, -982980, 1, 65538, -917475, 1, 65536, -917474, 1, 65537, -917473, 1, 65538, -917445, 1, 65536, -917444, 1, 65538, -851939, 1, 65536, -851938, 1, 65537, -851937, 1, 65538, -851909, 1, 65536, -851908, 1, 65538, -786403, 1, 65536, -786402, 1, 65537, -786401, 1, 65538, -786373, 1, 65536, -786372, 1, 65538, -720867, 1, 65536, -720866, 1, 65537, -720865, 1, 65538, -720837, 1, 65536, -720836, 1, 65538, -655331, 1, 65536, -655330, 1, 65537, -655329, 1, 65538, -655301, 1, 65536, -655300, 1, 65538, -589795, 1, 65536, -589794, 1, 65537, -589793, 1, 65538, -589765, 1, 65536, -589764, 1, 65538, -524259, 1, 65536, -524258, 1, 65537, -524257, 1, 65538, -524229, 1, 65536, -524228, 1, 65538, -393218, 0, 0, -393217, 0, 1, -458752, 0, 2, -458723, 1, 65536, -458722, 1, 65537, -458721, 1, 65538, -458693, 1, 65536, -458692, 1, 65538, -327682, 0, 65536, -327681, 0, 65537, -393216, 0, 65538, -393187, 1, 65536, -393186, 1, 65537, -393185, 1, 65538, -393157, 1, 65536, -393156, 1, 65538, -262146, 0, 65536, -262145, 0, 65537, -327680, 0, 65538, -327651, 1, 65536, -327650, 1, 65537, -327649, 1, 65538, -327621, 1, 65536, -327620, 1, 65538, -196610, 0, 65536, -196609, 0, 65537, -262144, 0, 65538, -262115, 1, 65536, -262114, 1, 65537, -262113, 1, 65538, -262085, 1, 65536, -262084, 1, 65538, -131074, 0, 65536, -131073, 0, 65537, -196608, 0, 65538, -196579, 1, 65536, -196578, 1, 65537, -196577, 1, 65538, -196549, 1, 65536, -196548, 1, 65538, -65538, 0, 65536, -65537, 0, 65537, -131072, 0, 65538, -131043, 1, 65536, -131042, 1, 65537, -131041, 1, 0, -131040, 1, 1, -131039, 1, 1, -131038, 1, 1, -131037, 1, 2, -131013, 1, 65536, -131012, 1, 65538, -2, 0, 65536, -1, 0, 65537, -65536, 0, 65538, -65507, 1, 65536, -65506, 1, 65537, -65505, 1, 65537, -65504, 1, 65537, -65503, 1, 65537, -65502, 1, 65537, -65501, 1, 65538, -65477, 1, 65536, -65476, 1, 65538, 65534, 0, 65536, 65535, 0, 65537, 0, 0, 65538, 29, 1, 131072, 30, 1, 131073, 31, 1, 131073, 32, 1, 131073, 33, 1, 131073, 34, 1, 131073, 35, 1, 131074, 36, 39, 0, 37, 41, 0, 38, 41, 0, 39, 41, 0, 40, 41, 0, 41, 41, 0, 42, 41, 0, 43, 41, 0, 44, 41, 0, 45, 41, 0, 46, 41, 0, 47, 41, 0, 48, 41, 0, 49, 41, 0, 50, 41, 0, 51, 40, 0, 59, 1, 65536, 60, 1, 65538, 131070, 0, 65536, 131071, 0, 65537, 65536, 0, 65538, 65595, 1, 65536, 65596, 1, 65538, 196606, 0, 65536, 196607, 0, 65537, 131072, 0, 65538, 131131, 1, 65536, 131132, 1, 65538, 262142, 0, 65536, 262143, 0, 65537, 196608, 0, 65538, 196667, 1, 65536, 196668, 1, 65538, 327678, 0, 65536, 327679, 0, 65537, 262144, 0, 65538, 262203, 1, 65536, 262204, 1, 65538, 393214, 0, 65536, 393215, 0, 65537, 327680, 0, 65538, 327739, 1, 65536, 327740, 1, 65538, 458750, 0, 65536, 458751, 0, 65537, 393216, 0, 65538, 393243, 2, 0, 393244, 2, 1, 393245, 2, 1, 393246, 2, 1, 393247, 2, 1, 393248, 2, 2, 393275, 1, 65536, 393276, 1, 65538, 524286, 0, 65536, 524287, 0, 65537, 458752, 0, 65538, 458811, 1, 65536, 458812, 1, 65538, 589822, 0, 65536, 589823, 0, 65537, 524288, 0, 0, 524289, 0, 1, 524290, 0, 2, 524298, 2, 0, 524299, 2, 2, 524308, 2, 0, 524309, 2, 2, 524347, 1, 65536, 524348, 1, 65538, 655358, 0, 65536, 655359, 0, 65537, 589824, 0, 65537, 589825, 0, 65537, 589826, 0, 65538, 589883, 1, 65536, 589884, 1, 65538, 720894, 0, 131072, 720895, 0, 131073, 655360, 0, 131073, 655361, 0, 131073, 655362, 0, 131074, 655419, 1, 65536, 655420, 1, 65538, 786431, 42, 0, 720897, 42, 0, 720955, 1, 65536, 720956, 1, 65538, 786491, 1, 65536, 786492, 1, 65538, 917503, 42, 0, 851969, 42, 0, 852011, 2, 0, 852012, 2, 2, 852027, 1, 65536, 852028, 1, 65538, 917539, 2, 0, 917540, 2, 2, 917563, 1, 65536, 917564, 1, 65538, 1048575, 42, 0, 983041, 42, 0, 983099, 1, 65536, 983100, 1, 65538, 1048635, 1, 131072, 1048636, 1, 131074 )
+
+[node name="Player" parent="MiddleGroundTileMap" index="0"]
+position = Vector2( 34, 127.5 )
+
+[node name="Trampoline" parent="MiddleGroundTileMap/Statics" index="0" instance=ExtResource( 7 )]
+position = Vector2( 511.993, -560 )
+
+[node name="FallingPlatform" parent="MiddleGroundTileMap/Platforms" index="0" instance=ExtResource( 4 )]
+position = Vector2( 784, 117 )
+
+[node name="FallingPlatform2" parent="MiddleGroundTileMap/Platforms" index="1" instance=ExtResource( 4 )]
+position = Vector2( 880, 115 )
+
+[node name="FallingPlatform3" parent="MiddleGroundTileMap/Platforms" index="2" instance=ExtResource( 4 )]
+position = Vector2( 744, -26.513 )
+
+[node name="FallingPlatform4" parent="MiddleGroundTileMap/Platforms" index="3" instance=ExtResource( 4 )]
+position = Vector2( 648, -26.513 )
+
+[node name="FallingPlatform11" parent="MiddleGroundTileMap/Platforms" index="4" instance=ExtResource( 4 )]
+position = Vector2( 623, -433.409 )
+
+[node name="FallingPlatform20" parent="MiddleGroundTileMap/Platforms" index="5" instance=ExtResource( 4 )]
+position = Vector2( 823.51, -433.409 )
+
+[node name="FallingPlatform13" parent="MiddleGroundTileMap/Platforms" index="6" instance=ExtResource( 4 )]
+position = Vector2( 511.993, -433.409 )
+
+[node name="FallingPlatform14" parent="MiddleGroundTileMap/Platforms" index="7" instance=ExtResource( 4 )]
+position = Vector2( 543.993, -433.409 )
+
+[node name="FallingPlatform15" parent="MiddleGroundTileMap/Platforms" index="8" instance=ExtResource( 4 )]
+position = Vector2( 591, -707 )
+
+[node name="FallingPlatform17" parent="MiddleGroundTileMap/Platforms" index="9" instance=ExtResource( 4 )]
+position = Vector2( 735, -707 )
+
+[node name="FallingPlatform19" parent="MiddleGroundTileMap/Platforms" index="10" instance=ExtResource( 4 )]
+position = Vector2( 878.01, -727 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms" index="11" instance=ExtResource( 2 )]
+position = Vector2( 880, 39 )
+
+[node name="Platform2" parent="MiddleGroundTileMap/Platforms" index="12" instance=ExtResource( 2 )]
+position = Vector2( 848, -12.5183 )
+
+[node name="Platform9" parent="MiddleGroundTileMap/Platforms" index="13" instance=ExtResource( 2 )]
+position = Vector2( 527.993, -271.002 )
+
+[node name="Platform3" parent="MiddleGroundTileMap/Platforms" index="14" instance=ExtResource( 2 )]
+position = Vector2( 880, -12 )
+
+[node name="Platform4" parent="MiddleGroundTileMap/Platforms" index="15" instance=ExtResource( 2 )]
+position = Vector2( 912, -12.0395 )
+
+[node name="Platform6" parent="MiddleGroundTileMap/Platforms" index="16" instance=ExtResource( 2 )]
+position = Vector2( 528, -167.521 )
+
+[node name="Platform7" parent="MiddleGroundTileMap/Platforms" index="17" instance=ExtResource( 2 )]
+position = Vector2( 560, -167.521 )
+
+[node name="Platform8" parent="MiddleGroundTileMap/Platforms" index="18" instance=ExtResource( 2 )]
+position = Vector2( 733, -434.964 )
+
+[node name="Platform10" parent="MiddleGroundTileMap/Platforms" index="19" instance=ExtResource( 2 )]
+position = Vector2( 701, -434.964 )
+
+[node name="PlatformWaypoints" parent="MiddleGroundTileMap/Platforms" index="20" instance=ExtResource( 8 )]
+position = Vector2( 1144, -616 )
+points = PoolVector2Array( 0, 0, 0, -120 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints" index="0" instance=ExtResource( 2 )]
+
+[node name="PlatformWaypoints2" parent="MiddleGroundTileMap/Platforms" index="21" instance=ExtResource( 8 )]
+position = Vector2( 1288, -615.521 )
+points = PoolVector2Array( 0, 0, 0, -120 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints2" index="0" instance=ExtResource( 2 )]
+
+[node name="Fire" parent="MiddleGroundTileMap/Traps" index="0" instance=ExtResource( 6 )]
+position = Vector2( 720, -304 )
+
+[node name="Fire11" parent="MiddleGroundTileMap/Traps" index="1" instance=ExtResource( 6 )]
+position = Vector2( 704, -304 )
+
+[node name="Fire12" parent="MiddleGroundTileMap/Traps" index="2" instance=ExtResource( 6 )]
+position = Vector2( 752, -304 )
+
+[node name="Fire13" parent="MiddleGroundTileMap/Traps" index="3" instance=ExtResource( 6 )]
+position = Vector2( 688, -304 )
+
+[node name="Fire15" parent="MiddleGroundTileMap/Traps" index="4" instance=ExtResource( 6 )]
+position = Vector2( 672, -304 )
+
+[node name="Fire14" parent="MiddleGroundTileMap/Traps" index="5" instance=ExtResource( 6 )]
+position = Vector2( 768, -304 )
+
+[node name="Fire2" parent="MiddleGroundTileMap/Traps" index="6" instance=ExtResource( 6 )]
+position = Vector2( 736, -304 )
+
+[node name="Fire3" parent="MiddleGroundTileMap/Traps" index="7" instance=ExtResource( 6 )]
+position = Vector2( 792, -544 )
+
+[node name="Fire4" parent="MiddleGroundTileMap/Traps" index="8" instance=ExtResource( 6 )]
+position = Vector2( 776, -544 )
+
+[node name="Fire5" parent="MiddleGroundTileMap/Traps" index="9" instance=ExtResource( 6 )]
+position = Vector2( 728, -544 )
+
+[node name="Fire6" parent="MiddleGroundTileMap/Traps" index="10" instance=ExtResource( 6 )]
+position = Vector2( 712, -544 )
+
+[node name="Fire7" parent="MiddleGroundTileMap/Traps" index="11" instance=ExtResource( 6 )]
+position = Vector2( 664, -544 )
+
+[node name="Fire8" parent="MiddleGroundTileMap/Traps" index="12" instance=ExtResource( 6 )]
+position = Vector2( 648, -544 )
+
+[node name="Fire9" parent="MiddleGroundTileMap/Traps" index="13" instance=ExtResource( 6 )]
+position = Vector2( 600, -544 )
+
+[node name="Fire10" parent="MiddleGroundTileMap/Traps" index="14" instance=ExtResource( 6 )]
+position = Vector2( 584, -544 )
+
+[node name="Pikes" type="Node2D" parent="MiddleGroundTileMap/Traps" index="15"]
+position = Vector2( 528, -256 )
+
+[node name="Spikes" parent="MiddleGroundTileMap/Traps/Pikes" index="0" instance=ExtResource( 10 )]
+position = Vector2( 56, 251 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps/Pikes" index="1" instance=ExtResource( 10 )]
+position = Vector2( 72, 251 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Pikes" index="2" instance=ExtResource( 10 )]
+position = Vector2( 88, 251 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Pikes" index="3" instance=ExtResource( 10 )]
+position = Vector2( 104, 251 )
+
+[node name="SpikesSkull" parent="MiddleGroundTileMap/Traps/Pikes" index="4" instance=ExtResource( 11 )]
+position = Vector2( 121, 250 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Pikes" index="5" instance=ExtResource( 10 )]
+position = Vector2( 138, 251 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps/Pikes" index="6" instance=ExtResource( 10 )]
+position = Vector2( 154, 251 )
+
+[node name="Spikes9" parent="MiddleGroundTileMap/Traps/Pikes" index="7" instance=ExtResource( 10 )]
+position = Vector2( 219, 251 )
+
+[node name="SpikesSkull3" parent="MiddleGroundTileMap/Traps/Pikes" index="8" instance=ExtResource( 11 )]
+position = Vector2( 236, 250 )
+
+[node name="Spikes10" parent="MiddleGroundTileMap/Traps/Pikes" index="9" instance=ExtResource( 10 )]
+position = Vector2( 253, 251 )
+
+[node name="Spikes11" parent="MiddleGroundTileMap/Traps/Pikes" index="10" instance=ExtResource( 10 )]
+position = Vector2( 269, 251 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps/Pikes" index="11" instance=ExtResource( 10 )]
+position = Vector2( 170, 251 )
+
+[node name="Spikes8" parent="MiddleGroundTileMap/Traps/Pikes" index="12" instance=ExtResource( 10 )]
+position = Vector2( 186, 251 )
+
+[node name="SpikesSkull4" parent="MiddleGroundTileMap/Traps/Pikes" index="13" instance=ExtResource( 11 )]
+position = Vector2( 286, 250 )
+
+[node name="Spikes12" parent="MiddleGroundTileMap/Traps/Pikes" index="14" instance=ExtResource( 10 )]
+position = Vector2( 296.01, 251 )
+
+[node name="SpikesSkull2" parent="MiddleGroundTileMap/Traps/Pikes" index="15" instance=ExtResource( 11 )]
+position = Vector2( 203, 250 )
+
+[node name="SpikesSkull6" parent="MiddleGroundTileMap/Traps/Pikes" index="16" instance=ExtResource( 11 )]
+position = Vector2( 264, 251 )
+
+[node name="Pikes2" type="Node2D" parent="MiddleGroundTileMap/Traps" index="16"]
+position = Vector2( 529.01, -528.002 )
+
+[node name="Spikes" parent="MiddleGroundTileMap/Traps/Pikes2" index="0" instance=ExtResource( 10 )]
+position = Vector2( 58.4336, 251 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps/Pikes2" index="1" instance=ExtResource( 10 )]
+position = Vector2( 72, 251 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Pikes2" index="2" instance=ExtResource( 10 )]
+position = Vector2( 88, 251 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Pikes2" index="3" instance=ExtResource( 10 )]
+position = Vector2( 104, 251 )
+
+[node name="SpikesSkull" parent="MiddleGroundTileMap/Traps/Pikes2" index="4" instance=ExtResource( 11 )]
+position = Vector2( 121, 250 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Pikes2" index="5" instance=ExtResource( 10 )]
+position = Vector2( 138, 251 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps/Pikes2" index="6" instance=ExtResource( 10 )]
+position = Vector2( 154, 251 )
+
+[node name="Spikes9" parent="MiddleGroundTileMap/Traps/Pikes2" index="7" instance=ExtResource( 10 )]
+position = Vector2( 219, 251 )
+
+[node name="SpikesSkull3" parent="MiddleGroundTileMap/Traps/Pikes2" index="8" instance=ExtResource( 11 )]
+position = Vector2( 236, 250 )
+
+[node name="Spikes10" parent="MiddleGroundTileMap/Traps/Pikes2" index="9" instance=ExtResource( 10 )]
+position = Vector2( 253, 251 )
+
+[node name="Spikes11" parent="MiddleGroundTileMap/Traps/Pikes2" index="10" instance=ExtResource( 10 )]
+position = Vector2( 269, 251 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps/Pikes2" index="11" instance=ExtResource( 10 )]
+position = Vector2( 170, 251 )
+
+[node name="Spikes8" parent="MiddleGroundTileMap/Traps/Pikes2" index="12" instance=ExtResource( 10 )]
+position = Vector2( 186, 251 )
+
+[node name="SpikesSkull4" parent="MiddleGroundTileMap/Traps/Pikes2" index="13" instance=ExtResource( 11 )]
+position = Vector2( 286, 250 )
+
+[node name="Spikes12" parent="MiddleGroundTileMap/Traps/Pikes2" index="14" instance=ExtResource( 10 )]
+position = Vector2( 303, 251 )
+
+[node name="Spikes13" parent="MiddleGroundTileMap/Traps/Pikes2" index="15" instance=ExtResource( 10 )]
+position = Vector2( 319, 251 )
+
+[node name="Spikes17" parent="MiddleGroundTileMap/Traps/Pikes2" index="16" instance=ExtResource( 10 )]
+position = Vector2( 329.016, 251 )
+
+[node name="SpikesSkull2" parent="MiddleGroundTileMap/Traps/Pikes2" index="17" instance=ExtResource( 11 )]
+position = Vector2( 203, 250 )
+
+[node name="SpikesSkull6" parent="MiddleGroundTileMap/Traps/Pikes2" index="18" instance=ExtResource( 11 )]
+position = Vector2( 264, 251 )
+
+[node name="Pikes3" type="Node2D" parent="MiddleGroundTileMap/Traps" index="17"]
+position = Vector2( 480, -800 )
+
+[node name="Spikes" parent="MiddleGroundTileMap/Traps/Pikes3" index="0" instance=ExtResource( 10 )]
+position = Vector2( 56, 251 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps/Pikes3" index="1" instance=ExtResource( 10 )]
+position = Vector2( 72, 251 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Pikes3" index="2" instance=ExtResource( 10 )]
+position = Vector2( 88, 251 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Pikes3" index="3" instance=ExtResource( 10 )]
+position = Vector2( 104, 251 )
+
+[node name="Spikes14" parent="MiddleGroundTileMap/Traps/Pikes3" index="4" instance=ExtResource( 10 )]
+position = Vector2( 343.01, 251 )
+
+[node name="Spikes15" parent="MiddleGroundTileMap/Traps/Pikes3" index="5" instance=ExtResource( 10 )]
+position = Vector2( 359.01, 251 )
+
+[node name="Spikes16" parent="MiddleGroundTileMap/Traps/Pikes3" index="6" instance=ExtResource( 10 )]
+position = Vector2( 375.01, 251 )
+
+[node name="Spikes18" parent="MiddleGroundTileMap/Traps/Pikes3" index="7" instance=ExtResource( 10 )]
+position = Vector2( 391.01, 251 )
+
+[node name="SpikesSkull" parent="MiddleGroundTileMap/Traps/Pikes3" index="8" instance=ExtResource( 11 )]
+position = Vector2( 121, 250 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Pikes3" index="9" instance=ExtResource( 10 )]
+position = Vector2( 138, 251 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps/Pikes3" index="10" instance=ExtResource( 10 )]
+position = Vector2( 154, 251 )
+
+[node name="Spikes9" parent="MiddleGroundTileMap/Traps/Pikes3" index="11" instance=ExtResource( 10 )]
+position = Vector2( 219, 251 )
+
+[node name="SpikesSkull3" parent="MiddleGroundTileMap/Traps/Pikes3" index="12" instance=ExtResource( 11 )]
+position = Vector2( 236, 250 )
+
+[node name="Spikes10" parent="MiddleGroundTileMap/Traps/Pikes3" index="13" instance=ExtResource( 10 )]
+position = Vector2( 253, 251 )
+
+[node name="Spikes11" parent="MiddleGroundTileMap/Traps/Pikes3" index="14" instance=ExtResource( 10 )]
+position = Vector2( 269, 251 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps/Pikes3" index="15" instance=ExtResource( 10 )]
+position = Vector2( 170, 251 )
+
+[node name="Spikes8" parent="MiddleGroundTileMap/Traps/Pikes3" index="16" instance=ExtResource( 10 )]
+position = Vector2( 186, 251 )
+
+[node name="SpikesSkull4" parent="MiddleGroundTileMap/Traps/Pikes3" index="17" instance=ExtResource( 11 )]
+position = Vector2( 286, 250 )
+
+[node name="Spikes12" parent="MiddleGroundTileMap/Traps/Pikes3" index="18" instance=ExtResource( 10 )]
+position = Vector2( 303, 251 )
+
+[node name="Spikes13" parent="MiddleGroundTileMap/Traps/Pikes3" index="19" instance=ExtResource( 10 )]
+position = Vector2( 319, 251 )
+
+[node name="Spikes17" parent="MiddleGroundTileMap/Traps/Pikes3" index="20" instance=ExtResource( 10 )]
+position = Vector2( 329.016, 251 )
+
+[node name="SpikesSkull2" parent="MiddleGroundTileMap/Traps/Pikes3" index="21" instance=ExtResource( 11 )]
+position = Vector2( 203, 250 )
+
+[node name="SpikesSkull6" parent="MiddleGroundTileMap/Traps/Pikes3" index="22" instance=ExtResource( 11 )]
+position = Vector2( 264, 251 )
+
+[node name="Gem" parent="MiddleGroundTileMap/Collectables" index="0" instance=ExtResource( 15 )]
+position = Vector2( 107, 55 )
+
+[node name="Gem2" parent="MiddleGroundTileMap/Collectables" index="1" instance=ExtResource( 15 )]
+position = Vector2( 264, 54 )
+
+[node name="Gem3" parent="MiddleGroundTileMap/Collectables" index="2" instance=ExtResource( 15 )]
+position = Vector2( 456, 75.5 )
+
+[node name="Gem4" parent="MiddleGroundTileMap/Collectables" index="3" instance=ExtResource( 15 )]
+position = Vector2( 577, 196 )
+
+[node name="Gem5" parent="MiddleGroundTileMap/Collectables" index="4" instance=ExtResource( 15 )]
+position = Vector2( 704, 176 )
+
+[node name="Gem9" parent="MiddleGroundTileMap/Collectables" index="5" instance=ExtResource( 15 )]
+position = Vector2( 695.06, -80 )
+
+[node name="Gem10" parent="MiddleGroundTileMap/Collectables" index="6" instance=ExtResource( 15 )]
+position = Vector2( 719.06, -336 )
+
+[node name="Gem11" parent="MiddleGroundTileMap/Collectables" index="7" instance=ExtResource( 15 )]
+position = Vector2( 696, -336 )
+
+[node name="Gem12" parent="MiddleGroundTileMap/Collectables" index="8" instance=ExtResource( 15 )]
+position = Vector2( 741.843, -336 )
+
+[node name="Acorn" parent="MiddleGroundTileMap/Collectables" index="9" instance=ExtResource( 14 )]
+position = Vector2( 525.993, -48 )
+
+[node name="Acorn2" parent="MiddleGroundTileMap/Collectables" index="10" instance=ExtResource( 14 )]
+position = Vector2( 548.711, -48 )
+
+[node name="Acorn3" parent="MiddleGroundTileMap/Collectables" index="11" instance=ExtResource( 14 )]
+position = Vector2( 823.01, -464 )
+
+[node name="Acorn5" parent="MiddleGroundTileMap/Collectables" index="12" instance=ExtResource( 14 )]
+position = Vector2( 717.843, -464 )
+
+[node name="Acorn6" parent="MiddleGroundTileMap/Collectables" index="13" instance=ExtResource( 14 )]
+position = Vector2( 623, -464 )
+
+[node name="Acorn7" parent="MiddleGroundTileMap/Collectables" index="14" instance=ExtResource( 14 )]
+position = Vector2( 529.01, -464 )
+
+[node name="Carrot2" parent="MiddleGroundTileMap/Collectables" index="15" instance=ExtResource( 13 )]
+position = Vector2( 689, -632 )
+
+[node name="Carrot3" parent="MiddleGroundTileMap/Collectables" index="16" instance=ExtResource( 13 )]
+position = Vector2( 753.286, -632 )
+
+[node name="Carrot4" parent="MiddleGroundTileMap/Collectables" index="17" instance=ExtResource( 13 )]
+position = Vector2( 624, -632 )
+
+[node name="Carrot5" parent="MiddleGroundTileMap/Collectables" index="18" instance=ExtResource( 13 )]
+position = Vector2( 665, -792 )
+
+[node name="Carrot6" parent="MiddleGroundTileMap/Collectables" index="19" instance=ExtResource( 13 )]
+position = Vector2( 816, -792 )
+
+[node name="Carrot7" parent="MiddleGroundTileMap/Collectables" index="20" instance=ExtResource( 13 )]
+position = Vector2( 1146, -770.5 )
+
+[node name="Carrot8" parent="MiddleGroundTileMap/Collectables" index="21" instance=ExtResource( 13 )]
+position = Vector2( 1286, -768 )
+
+[node name="Carrot9" parent="MiddleGroundTileMap/Collectables" index="22" instance=ExtResource( 13 )]
+position = Vector2( 784.01, 91 )
+
+[node name="Carrot10" parent="MiddleGroundTileMap/Collectables" index="23" instance=ExtResource( 13 )]
+position = Vector2( 880, 89 )
+
+[node name="Carrot11" parent="MiddleGroundTileMap/Collectables" index="24" instance=ExtResource( 13 )]
+position = Vector2( 543.993, -197.186 )
+
+[node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 12 )]
+position = Vector2( 456, 76 )
+
+[node name="Checkpoint2" parent="MiddleGroundTileMap/Checkpoints" index="1" instance=ExtResource( 12 )]
+position = Vector2( 506.366, 76 )
+
+[node name="Checkpoint3" parent="MiddleGroundTileMap/Checkpoints" index="2" instance=ExtResource( 12 )]
+position = Vector2( 880.007, 20 )
+
+[node name="Checkpoint4" parent="MiddleGroundTileMap/Checkpoints" index="3" instance=ExtResource( 12 )]
+position = Vector2( 880.007, -34.4244 )
+
+[node name="Checkpoint5" parent="MiddleGroundTileMap/Checkpoints" index="4" instance=ExtResource( 12 )]
+position = Vector2( 542.03, -197.186 )
+
+[node name="Checkpoint6" parent="MiddleGroundTileMap/Checkpoints" index="5" instance=ExtResource( 12 )]
+position = Vector2( 519.416, -292.926 )
+
+[node name="Checkpoint7" parent="MiddleGroundTileMap/Checkpoints" index="6" instance=ExtResource( 12 )]
+position = Vector2( 519.416, -292.926 )
+
+[node name="Checkpoint8" parent="MiddleGroundTileMap/Checkpoints" index="7" instance=ExtResource( 12 )]
+position = Vector2( 922.536, -482.447 )
+
+[node name="Checkpoint9" parent="MiddleGroundTileMap/Checkpoints" index="8" instance=ExtResource( 12 )]
+position = Vector2( 920.879, -575 )
+
+[node name="Checkpoint10" parent="MiddleGroundTileMap/Checkpoints" index="9" instance=ExtResource( 12 )]
+position = Vector2( 940.879, -756 )
+
+[node name="Checkpoint11" parent="MiddleGroundTileMap/Checkpoints" index="10" instance=ExtResource( 12 )]
+position = Vector2( 985.475, -756 )
+
+[node name="EndOfLevel" parent="MiddleGroundTileMap" index="10"]
+position = Vector2( 1440, -704 )
+
+[node name="FallLimitArea" parent="FallLimits" index="0" instance=ExtResource( 9 )]
+position = Vector2( 480, 270 )
+
+[node name="CollisionShape2D" parent="FallLimits/FallLimitArea" index="0"]
+position = Vector2( 2, 0 )
+shape = SubResource( 1 )
+
+[node name="Fog" parent="FallLimits/FallLimitArea" index="1"]
+region_rect = Rect2( 0, 0, 1152, 69 )
+
+[node name="FallLimitArea2" parent="FallLimits" index="1" instance=ExtResource( 9 )]
+position = Vector2( 1224, -540 )
+
+[node name="CollisionShape2D" parent="FallLimits/FallLimitArea2" index="0"]
+position = Vector2( 56, 0 )
+shape = SubResource( 2 )
+
+[node name="Fog" parent="FallLimits/FallLimitArea2" index="1"]
+position = Vector2( -16, 0 )
+region_rect = Rect2( 0, 0, 484, 69 )
+
+[node name="Anchor2" parent="Anchors" index="1" instance=ExtResource( 5 )]
+position = Vector2( 720, 135 )
+
+[node name="Anchor3" parent="Anchors" index="2" instance=ExtResource( 5 )]
+position = Vector2( 720, -135 )
+
+[node name="Anchor4" parent="Anchors" index="3" instance=ExtResource( 5 )]
+position = Vector2( 720, -405 )
+
+[node name="Anchor5" parent="Anchors" index="4" instance=ExtResource( 5 )]
+position = Vector2( 720, -675 )
+
+[node name="Anchor6" parent="Anchors" index="5" instance=ExtResource( 5 )]
+position = Vector2( 1200, -675 )
+
+[editable path="MiddleGroundTileMap/EndOfLevel"]
+[editable path="FallLimits/FallLimitArea"]
+[editable path="FallLimits/FallLimitArea2"]
