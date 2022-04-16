@@ -25,14 +25,15 @@ func _ready() -> void:
 # Has take a hit
 # @param {Hit} hit
 func take_damage(hit: Hit) -> void:
-	if invulnerable:
-		return
-
-	print_debug("%s has taken damage of : %x" % [owner.get_name(), hit.damage])
-
 	if hit.is_instakill:
 		emit_signal("health_depleted")
 		return
+
+	if invulnerable:
+		print_debug("%s is invulnerable" % [owner.get_name()])
+		return
+
+	print_debug("%s has taken damage of : %x" % [owner.get_name(), hit.damage])
 
 	var old_health = health
 	health -= hit.damage

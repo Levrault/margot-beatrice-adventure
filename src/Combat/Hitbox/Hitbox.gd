@@ -33,5 +33,5 @@ func _on_Area_entered(damage_source: Area2D) -> void:
 	if damage_source.global_position.x > global_position.x:
 		direction = -1
 	owner.hit_direction = direction
-	if not owner.stats.invulnerable:
+	if not owner.stats.invulnerable or damage_source.is_instakill:
 		owner.take_damage(Hit.new(damage_source))
