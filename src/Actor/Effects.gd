@@ -6,17 +6,13 @@ const FLASH_DURATION := .2
 onready var tween := $Tween
 
 
-func _ready() -> void:
-	yield(owner, "ready")
-	owner.stats.connect("is_invulnerable", self, "_on_Invulnerable_stop")
-
-
 # Start flash animation when owner take damage
 func damage_effect() -> void:
 	tween.repeat = true
-	tween.interpolate_property(
-		owner.skin, "modulate", owner.skin.modulate, Color.darkred, FLASH_DURATION
-	)
+	for character in owner.characters.get_children():
+		tween.interpolate_property(
+			character.skin, "modulate", character.skin.modulate, Color.darkred, FLASH_DURATION
+		)
 	tween.start()
 
 
@@ -26,7 +22,8 @@ func _on_Invulnerable_stop(is_invulnerable: bool) -> void:
 	if is_invulnerable:
 		return
 	tween.repeat = false
-	tween.interpolate_property(
-		owner.skin, "modulate", owner.skin.modulate, Color(1, 1, 1), FLASH_DURATION
-	)
+	for character in owner.characters.get_children():
+		tween.interpolate_property(
+			character.skin, "modulate", character.skin.modulate, Color(1, 1, 1), FLASH_DURATION
+		)
 	tween.start()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/error_style_1_006.ogg-1eecaf8bae4664667ed73dcf64e145ba.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Error_tones/style1/error_style_1_006.ogg"
+dest_files=[ "res://.import/error_style_1_006.ogg-1eecaf8bae4664667ed73dcf64e145ba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

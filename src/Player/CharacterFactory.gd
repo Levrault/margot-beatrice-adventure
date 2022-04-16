@@ -11,6 +11,7 @@ var _direction := 1
 onready var characters: Node2D = $Characters
 onready var momentum: Momentum = $Momentum
 onready var tween := $Tween
+onready var effects := $Effects
 
 
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 	Events.connect("room_loaded", self, "_on_Room_loaded")
 	Events.connect("game_paused", self, "_on_Game_paused")
 	Events.connect("game_unpaused", self, "_on_Game_unpaused")
+	owner.stats.connect("is_invulnerable", effects, "_on_Invulnerable_stop")
 
 	self.selected_character = character
 	owner.skin = characters.get_node(Character.list[selected_character]).skin

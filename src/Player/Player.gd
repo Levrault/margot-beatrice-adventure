@@ -26,7 +26,6 @@ onready var character_factory := $CharacterFactory
 onready var attack_factory := $AttackFactory
 onready var npc_interaction := $NpcInteraction
 onready var life_bar = $HUD.life_progress
-onready var effects := $Effects
 
 
 func _ready() -> void:
@@ -60,7 +59,7 @@ func take_damage(source: Hit) -> void:
 	.take_damage(source)
 	if stats.health > 0 and not source.is_instakill:
 		state_machine.transition_to("Move/Hurt", {impulse = true})
-		effects.damage_effect()
+		character_factory.effects.damage_effect()
 		return
 
 	state_machine.transition_to("Die")

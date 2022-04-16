@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/back_style_3_007.ogg-e1850c116ccebcf2fb7d7a6abb9f31b8.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Back_tones/style3/back_style_3_007.ogg"
+dest_files=[ "res://.import/back_style_3_007.ogg-e1850c116ccebcf2fb7d7a6abb9f31b8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

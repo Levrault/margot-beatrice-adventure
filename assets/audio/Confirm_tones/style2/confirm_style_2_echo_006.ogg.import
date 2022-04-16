@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/confirm_style_2_echo_006.ogg-d0a6f2504415f9fb5a8e85e3535c1337.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Confirm_tones/style2/confirm_style_2_echo_006.ogg"
+dest_files=[ "res://.import/confirm_style_2_echo_006.ogg-d0a6f2504415f9fb5a8e85e3535c1337.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
