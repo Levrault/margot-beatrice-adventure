@@ -19,6 +19,15 @@ func _ready() -> void:
 	InputManager.connect("device_changed", self, "_on_Device_changed")
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("toggle_debug_panel"):
+		if visible:
+			hide()
+		else:
+			show()
+		return
+
+
 func _on_Player_moved(player: Player) -> void:
 	player_position.text = String(
 		Vector2(round(player.global_position.x), round(player.global_position.y))
