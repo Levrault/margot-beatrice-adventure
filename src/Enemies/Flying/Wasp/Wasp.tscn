@@ -18,7 +18,6 @@
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 16.0
-height = 28.0
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 135.204
@@ -28,13 +27,15 @@ scale = Vector2( 0.5, 0.5 )
 collision_layer = 8
 collision_mask = 2
 script = ExtResource( 10 )
+look_direction = -1
 
 [node name="CollisionShape2D" parent="." index="0"]
 rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Skin" parent="." index="1" instance=ExtResource( 2 )]
-visible = true
+position = Vector2( 4, 2 )
+scale = Vector2( 2, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSource" index="0"]
 position = Vector2( 0, 4 )
@@ -71,9 +72,9 @@ one_shot = true
 script = ExtResource( 7 )
 
 [node name="ExclamationPoint" parent="StateMachine/Alert" index="0" instance=ExtResource( 9 )]
-margin_left = -2.0
+margin_left = -30.0
 margin_top = -74.0
-margin_right = 58.0
+margin_right = 30.0
 margin_bottom = -14.0
 
 [node name="Timer" type="Timer" parent="StateMachine/Alert" index="1"]
