@@ -6,6 +6,8 @@
 [ext_resource path="res://src/Enemies/Patrol/States/Die.gd" type="Script" id=8]
 
 [node name="PatrolEnemy" instance=ExtResource( 1 )]
+collision_layer = 8
+collision_mask = 2
 
 [node name="StateMachine" parent="." index="4"]
 initial_state = NodePath("Patrol")
@@ -16,17 +18,15 @@ script = ExtResource( 2 )
 [node name="RayCastWall" type="RayCast2D" parent="StateMachine/Patrol" index="0"]
 rotation = 1.5708
 enabled = true
+cast_to = Vector2( 0, 15 )
 collision_mask = 6
 
 [node name="RayCastFloor" type="RayCast2D" parent="StateMachine/Patrol" index="1"]
 enabled = true
+cast_to = Vector2( 0, 15 )
 collision_mask = 6
 
-[node name="Hurt" type="Node2D" parent="StateMachine" index="1"]
-
-[node name="Timer" type="Timer" parent="StateMachine/Hurt" index="0"]
-
-[node name="Die" type="Node2D" parent="StateMachine" index="2"]
+[node name="Die" type="Node2D" parent="StateMachine" index="1"]
 script = ExtResource( 8 )
 
 [node name="Explosion" parent="StateMachine/Die" index="0" instance=ExtResource( 7 )]

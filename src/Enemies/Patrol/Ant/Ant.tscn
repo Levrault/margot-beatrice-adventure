@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Enemies/Patrol/PatrolEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Enemies/Patrol/Ant/AntSkin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Enemies/Patrol/Ant/Ant.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 5.5 )
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.5
+height = 11.0
+
+[node name="Ant" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+look_direction = -1
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 1, -5.5 )
+shape = SubResource( 2 )
+
+[node name="DamageSource" parent="." index="2"]
+position = Vector2( -3, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSource" index="0"]
+position = Vector2( 2, -9 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Hitbox" parent="." index="3"]
+position = Vector2( -3, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 2, -9 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Skin" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( -5, -15 )
+
+[node name="Patrol" parent="StateMachine" index="0"]
+max_speed_default = Vector2( 125, 275 )
+
+[node name="Explosion" parent="StateMachine/Die" index="0"]
+position = Vector2( 0, 0 )
