@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Enemies/Flying/FlyingEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Flying/Wasp/WaspSkin.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Enemies/Flying/FlyingFrustumCulling.gd" type="Script" id=13]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -39,5 +38,5 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" parent="PlayerDetector" index="0"]
 shape = SubResource( 3 )
 
-[node name="FrustumCulling" parent="." index="7"]
-script = ExtResource( 13 )
+[node name="Patrol" parent="StateMachine" index="1"]
+wait_time = 0.2
