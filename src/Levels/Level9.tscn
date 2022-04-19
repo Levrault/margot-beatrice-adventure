@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/Levels/Template/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://src/Objects/Traps/Trampoline.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Objects/Traps/Fire.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Objects/Traps/Spikes.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Enemies/Patrol/Ant/Ant.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Shader" id=1]
 resource_local_to_scene = true
@@ -153,17 +154,17 @@ position = Vector2( 1336, 412 )
 [node name="Wasp" parent="MiddleGroundTileMap/Enemies" index="0" instance=ExtResource( 3 )]
 position = Vector2( 283, 156 )
 
-[node name="Opposum" parent="MiddleGroundTileMap/Enemies" index="1" instance=ExtResource( 7 )]
-position = Vector2( 1608, 400 )
-
-[node name="Opposum2" parent="MiddleGroundTileMap/Enemies" index="2" instance=ExtResource( 7 )]
+[node name="Opposum2" parent="MiddleGroundTileMap/Enemies" index="1" instance=ExtResource( 7 )]
 position = Vector2( 1760, 400 )
 
-[node name="Opposum3" parent="MiddleGroundTileMap/Enemies" index="3" instance=ExtResource( 7 )]
+[node name="Opposum3" parent="MiddleGroundTileMap/Enemies" index="2" instance=ExtResource( 7 )]
 position = Vector2( 1768, 480 )
 
-[node name="Opposum4" parent="MiddleGroundTileMap/Enemies" index="4" instance=ExtResource( 7 )]
-position = Vector2( 1609, 480 )
+[node name="Ant" parent="MiddleGroundTileMap/Enemies" index="3" instance=ExtResource( 16 )]
+position = Vector2( 1586, 478.99 )
+
+[node name="Ant2" parent="MiddleGroundTileMap/Enemies" index="4" instance=ExtResource( 16 )]
+position = Vector2( 1624, 399 )
 
 [node name="Gem" parent="MiddleGroundTileMap/Collectables" index="0" instance=ExtResource( 11 )]
 position = Vector2( 160, 180 )

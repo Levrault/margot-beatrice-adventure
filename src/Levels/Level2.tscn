@@ -218,37 +218,13 @@ tile_data = PoolIntArray( -1441733, 0, 0, -1441732, 0, 1, -1441731, 0, 2, -13761
 [node name="Player" parent="MiddleGroundTileMap" index="0"]
 position = Vector2( 29, 144 )
 
-[node name="Switch" parent="MiddleGroundTileMap/Statics" index="0" instance=ExtResource( 12 )]
-position = Vector2( 429, 632 )
-object_path = NodePath("../TilmapForSwitch")
-
-[node name="TilmapForSwitch" parent="MiddleGroundTileMap/Statics" index="1" instance=ExtResource( 11 )]
-material = SubResource( 2 )
-tile_data = PoolIntArray( 2818077, 10, 0, 2883613, 10, 0, 2949149, 10, 0, 3014685, 10, 0, 3080221, 10, 0 )
-
-[node name="Switch2" parent="MiddleGroundTileMap/Statics" index="2" instance=ExtResource( 12 )]
-position = Vector2( 416, 760 )
-object_path = NodePath("../TilmapForSwitch2")
-
-[node name="TilmapForSwitch2" parent="MiddleGroundTileMap/Statics" index="3" instance=ExtResource( 11 )]
-material = SubResource( 6 )
-tile_data = PoolIntArray( 2359311, 10, 0, 2424847, 10, 0, 2490383, 10, 0, 2555919, 10, 0 )
-
-[node name="Switch3" parent="MiddleGroundTileMap/Statics" index="4" instance=ExtResource( 12 )]
-position = Vector2( 1175, 618 )
-object_path = NodePath("../TilmapForSwitch3")
-
-[node name="TilmapForSwitch3" parent="MiddleGroundTileMap/Statics" index="5" instance=ExtResource( 11 )]
-material = SubResource( 4 )
-tile_data = PoolIntArray( 2949205, 10, 0, 2949206, 10, 0, 2949207, 10, 0, 2949208, 10, 0 )
-
-[node name="Trampoline" parent="MiddleGroundTileMap/Statics" index="6" instance=ExtResource( 14 )]
+[node name="Trampoline" parent="MiddleGroundTileMap/Statics" index="0" instance=ExtResource( 14 )]
 position = Vector2( 737, 720 )
 
-[node name="Trampoline2" parent="MiddleGroundTileMap/Statics" index="7" instance=ExtResource( 14 )]
+[node name="Trampoline2" parent="MiddleGroundTileMap/Statics" index="1" instance=ExtResource( 14 )]
 position = Vector2( 1185, 176 )
 
-[node name="Trampoline3" parent="MiddleGroundTileMap/Statics" index="8" instance=ExtResource( 14 )]
+[node name="Trampoline3" parent="MiddleGroundTileMap/Statics" index="2" instance=ExtResource( 14 )]
 position = Vector2( 1073, 112 )
 
 [node name="room1" type="Node2D" parent="MiddleGroundTileMap/Traps" index="0"]
@@ -559,6 +535,30 @@ position = Vector2( 131, 739 )
 
 [node name="Acorn7" parent="MiddleGroundTileMap/Collectables" index="32" instance=ExtResource( 7 )]
 position = Vector2( 159, 739 )
+
+[node name="Switch" parent="MiddleGroundTileMap/Interactables" index="0" instance=ExtResource( 12 )]
+position = Vector2( 429, 632 )
+object_path = NodePath("../TilmapForSwitch")
+
+[node name="TilmapForSwitch" parent="MiddleGroundTileMap/Interactables" index="1" instance=ExtResource( 11 )]
+material = SubResource( 2 )
+tile_data = PoolIntArray( 2818077, 10, 0, 2883613, 10, 0, 2949149, 10, 0, 3014685, 10, 0, 3080221, 10, 0 )
+
+[node name="Switch2" parent="MiddleGroundTileMap/Interactables" index="2" instance=ExtResource( 12 )]
+position = Vector2( 416, 760 )
+object_path = NodePath("../TilmapForSwitch2")
+
+[node name="TilmapForSwitch2" parent="MiddleGroundTileMap/Interactables" index="3" instance=ExtResource( 11 )]
+material = SubResource( 6 )
+tile_data = PoolIntArray( 2359311, 10, 0, 2424847, 10, 0, 2490383, 10, 0, 2555919, 10, 0 )
+
+[node name="Switch3" parent="MiddleGroundTileMap/Interactables" index="4" instance=ExtResource( 12 )]
+position = Vector2( 1175, 618 )
+object_path = NodePath("../TilmapForSwitch3")
+
+[node name="TilmapForSwitch3" parent="MiddleGroundTileMap/Interactables" index="5" instance=ExtResource( 11 )]
+material = SubResource( 4 )
+tile_data = PoolIntArray( 2949205, 10, 0, 2949206, 10, 0, 2949207, 10, 0, 2949208, 10, 0 )
 
 [node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 16 )]
 position = Vector2( 440, 378 )

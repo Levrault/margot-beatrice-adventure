@@ -145,25 +145,25 @@ position = Vector2( 712, 656 )
 position = Vector2( 728, 656 )
 
 [node name="Carniplant" parent="MiddleGroundTileMap/Enemies" index="0" instance=ExtResource( 3 )]
-position = Vector2( 1006, 256 )
+position = Vector2( 1000, 256 )
+scale = Vector2( -1, 1 )
 
 [node name="Carniplant2" parent="MiddleGroundTileMap/Enemies" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1416, 176 )
-scale = Vector2( -0.7, 0.7 )
 
 [node name="Carniplant3" parent="MiddleGroundTileMap/Enemies" index="2" instance=ExtResource( 3 )]
 position = Vector2( 1416, 496 )
-scale = Vector2( -0.7, 0.7 )
 
 [node name="Carniplant6" parent="MiddleGroundTileMap/Enemies" index="3" instance=ExtResource( 3 )]
 position = Vector2( 1320, 512 )
-scale = Vector2( -0.7, 0.7 )
 
 [node name="Carniplant4" parent="MiddleGroundTileMap/Enemies" index="4" instance=ExtResource( 3 )]
 position = Vector2( 1000, 496 )
+scale = Vector2( -1, 1 )
 
 [node name="Carniplant5" parent="MiddleGroundTileMap/Enemies" index="5" instance=ExtResource( 3 )]
 position = Vector2( 1080, 512 )
+scale = Vector2( -1, 1 )
 
 [node name="Gem" parent="MiddleGroundTileMap/Collectables" index="0" instance=ExtResource( 10 )]
 position = Vector2( 231, 160 )
