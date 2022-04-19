@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/audio/Explosions/active_fire.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 7.96053, 4.1856 )
+extents = Vector2( 7.96053, 8 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "hit"
@@ -119,7 +119,7 @@ collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -12.3573 )
+position = Vector2( 0, -8 )
 shape = SubResource( 6 )
 one_way_collision = true
 
@@ -140,6 +140,7 @@ hframes = 8
 frame = 1
 
 [node name="PlayerDetector" parent="." instance=ExtResource( 3 )]
+collision_mask = 2147483657
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 0, -16 )

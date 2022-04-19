@@ -5,7 +5,7 @@
 [ext_resource path="res://src/Levels/Template/FallLimitArea/Fog.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 123, 10 )
+extents = Vector2( 246, 10 )
 
 [node name="FallLimitArea" instance=ExtResource( 1 )]
 collision_layer = 4096
@@ -16,6 +16,7 @@ shape = SubResource( 1 )
 
 [node name="Fog" type="Sprite" parent="." index="1"]
 modulate = Color( 1, 1, 1, 0.384314 )
+position = Vector2( 0, -16 )
 z_index = -1
 texture = ExtResource( 2 )
 region_enabled = true

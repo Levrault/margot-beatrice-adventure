@@ -8,15 +8,14 @@ onready var _anim := $AnimationPlayer
 func _ready():
 	_player_detector.connect("player_entered", self, "_on_Player_entered")
 	_player_detector.connect("player_exited", self, "_on_Player_exited")
+	_anim.connect("animation_finished", self, "_on_Animation_finished")
 
 
 func _on_Player_entered(body: Player) -> void:
-	_anim.connect("animation_finished", self, "_on_Animation_finished")
 	_anim.play("hit")
 
 
 func _on_Player_exited(body: Player) -> void:
-	_anim.disconnect("animation_finished", self, "_on_Animation_finished")
 	_damage_source.is_active = false
 
 	# player has exited while hit was playing
