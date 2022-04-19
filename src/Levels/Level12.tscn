@@ -1,0 +1,377 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://src/Levels/Template/Scene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Levels/Template/FallLimitArea/FallLimitArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Objects/Traps/Spikes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Objects/Traps/Trampoline.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/Platforms/FallingPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Waypoints/Waypoints.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Objects/Platforms/Platform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Enemies/Flying/Gator/Gator.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Levels/Template/checkpoints/Checkpoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Objects/Collectables/Acorn.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/Collectables/Gem.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Objects/Collectables/Carrot.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Objects/Platforms/PlatformAlt.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Waypoints/PlatformWaypoints.tscn" type="PackedScene" id=15]
+
+[node name="Level12" instance=ExtResource( 1 )]
+next_level = "level12"
+
+[node name="Scoreboard" parent="UI" index="4"]
+time_for_rank_100 = 35000.0
+
+[node name="Screenshot" parent="UI" index="5"]
+margin_left = 0.0
+margin_right = 0.0
+
+[node name="MiddleGroundTileMap" parent="." index="7"]
+tile_data = PoolIntArray( -458680, 0, 0, -458679, 0, 1, -458678, 0, 1, -458677, 0, 2, -458665, 0, 0, -458664, 0, 1, -458663, 0, 1, -458662, 0, 1, -458661, 0, 1, -458660, 0, 1, -458659, 0, 2, -393144, 0, 65536, -393143, 0, 65537, -393142, 0, 65537, -393141, 0, 65538, -393129, 0, 65536, -393128, 0, 65537, -393127, 0, 65537, -393126, 0, 65537, -393125, 0, 65537, -393124, 0, 65537, -393123, 0, 65538, -327608, 0, 65536, -327607, 0, 65537, -327606, 0, 65537, -327605, 0, 65538, -327593, 0, 65536, -327592, 0, 65537, -327591, 0, 65537, -327590, 0, 65537, -327589, 0, 65537, -327588, 0, 65537, -327587, 0, 65538, -262072, 0, 65536, -262071, 0, 65537, -262070, 0, 65537, -262069, 0, 65538, -262057, 0, 65536, -262056, 0, 65537, -262055, 0, 65537, -262054, 0, 65537, -262053, 0, 65537, -262052, 0, 65537, -262051, 0, 65538, -196536, 0, 65536, -196535, 0, 65537, -196534, 0, 65537, -196533, 0, 65538, -196521, 0, 65536, -196520, 0, 65537, -196519, 0, 65537, -196518, 0, 65537, -196517, 0, 65537, -196516, 0, 65537, -196515, 0, 65538, -131000, 0, 65536, -130999, 0, 65537, -130998, 0, 65537, -130997, 0, 65538, -130985, 0, 65536, -130984, 0, 65537, -130983, 0, 65537, -130982, 0, 65537, -130981, 0, 65537, -130980, 0, 65537, -130979, 0, 65538, -1, 0, 0, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -65533, 0, 1, -65532, 0, 1, -65531, 0, 1, -65530, 0, 1, -65529, 0, 1, -65528, 0, 1, -65527, 0, 1, -65526, 0, 1, -65525, 0, 1, -65524, 0, 1, -65523, 0, 1, -65522, 0, 1, -65521, 0, 2, -65464, 0, 131072, -65463, 0, 131073, -65462, 0, 131073, -65461, 0, 131074, -65449, 0, 65536, -65448, 0, 65537, -65447, 0, 65537, -65446, 0, 65537, -65445, 0, 65537, -65444, 0, 65537, -65443, 0, 65538, 65535, 0, 65536, 0, 0, 65537, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65537, 7, 0, 65537, 8, 0, 65537, 9, 0, 65537, 10, 0, 65537, 11, 0, 65537, 12, 0, 65537, 13, 0, 65537, 14, 0, 65537, 15, 0, 65538, 72, 45, 0, 74, 11, 0, 75, 11, 1, 87, 0, 65536, 88, 0, 65537, 89, 0, 65537, 90, 0, 65537, 91, 0, 65537, 92, 0, 65537, 93, 0, 65538, 131071, 0, 65536, 65536, 0, 65537, 65537, 0, 65537, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 65544, 0, 65537, 65545, 0, 65537, 65546, 0, 65537, 65547, 0, 65537, 65548, 0, 65537, 65549, 0, 65537, 65550, 0, 65537, 65551, 0, 65538, 65610, 11, 65536, 65611, 11, 65537, 65623, 0, 65536, 65624, 0, 65537, 65625, 0, 65537, 65626, 0, 65537, 65627, 0, 65537, 65628, 0, 65537, 65629, 0, 65538, 196607, 0, 65536, 131072, 0, 65537, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65537, 131078, 0, 65537, 131079, 0, 65537, 131080, 0, 65537, 131081, 0, 65537, 131082, 0, 65537, 131083, 0, 65537, 131084, 0, 65537, 131085, 0, 65537, 131086, 0, 65537, 131087, 0, 65538, 131144, 45, 0, 131146, 45, 0, 131159, 0, 65536, 131160, 0, 65537, 131161, 0, 65537, 131162, 0, 65537, 131163, 0, 65537, 131164, 0, 65537, 131165, 0, 65538, 262143, 0, 65536, 196608, 0, 65537, 196609, 0, 65537, 196610, 0, 65537, 196611, 0, 65537, 196612, 0, 65537, 196613, 0, 65537, 196614, 0, 65537, 196615, 0, 65537, 196616, 0, 65537, 196617, 0, 65537, 196618, 0, 65537, 196619, 0, 65537, 196620, 0, 65537, 196621, 0, 0, 196622, 0, 131073, 196623, 0, 131074, 196695, 0, 65536, 196696, 0, 65537, 196697, 0, 65537, 196698, 0, 65537, 196699, 0, 65537, 196700, 0, 65537, 196701, 0, 65538, 327678, 0, 0, 327679, 0, 65536, 262144, 0, 65537, 262145, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65537, 262149, 0, 0, 262150, 0, 131073, 262151, 0, 0, 262152, 0, 65537, 262153, 0, 65537, 262154, 0, 65537, 262155, 0, 65537, 262156, 0, 65537, 262157, 0, 65538, 262158, 11, 0, 262159, 11, 1, 262231, 0, 131072, 262232, 0, 0, 262233, 0, 65537, 262234, 0, 65537, 262235, 0, 65537, 262236, 0, 65537, 262237, 0, 65538, 393215, 0, 65536, 327680, 0, 65537, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 0, 327684, 0, 131073, 327685, 0, 131074, 327687, 0, 131072, 327688, 0, 131073, 327689, 0, 131073, 327690, 0, 131073, 327691, 0, 131073, 327692, 0, 131073, 327693, 0, 131074, 327694, 11, 65536, 327695, 11, 65537, 327737, 2, 0, 327738, 2, 1, 327739, 2, 1, 327740, 2, 1, 327741, 2, 1, 327742, 2, 2, 327768, 0, 65536, 327769, 0, 65537, 327770, 0, 65537, 327771, 0, 65537, 327772, 0, 65537, 327773, 0, 65538, 458751, 0, 65536, 393216, 0, 65537, 393217, 0, 65537, 393218, 0, 65537, 393219, 0, 65538, 393282, 0, 0, 393283, 0, 1, 393284, 0, 1, 393285, 0, 1, 393286, 0, 2, 393304, 0, 131072, 393305, 0, 0, 393306, 0, 65537, 393307, 0, 65537, 393308, 0, 65537, 393309, 0, 65538, 524287, 0, 65536, 458752, 0, 65537, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65538, 458776, 0, 0, 458777, 0, 2, 458818, 0, 65536, 458819, 0, 65537, 458820, 0, 65537, 458821, 0, 65537, 458822, 0, 65538, 458841, 0, 65536, 458842, 0, 65537, 458843, 0, 65537, 458844, 0, 65537, 458845, 0, 65538, 589823, 0, 65536, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 0, 524291, 0, 131074, 524312, 0, 65536, 524313, 0, 65538, 524354, 0, 65536, 524355, 0, 65537, 524356, 0, 65537, 524357, 0, 65537, 524358, 0, 65538, 524377, 0, 65536, 524378, 0, 65537, 524379, 0, 65537, 524380, 0, 65537, 524381, 0, 65538, 655359, 0, 65536, 589824, 0, 0, 589825, 0, 131073, 589826, 0, 131074, 589848, 0, 65536, 589849, 0, 65538, 589890, 0, 65536, 589891, 0, 65537, 589892, 0, 65537, 589893, 0, 65537, 589894, 0, 65538, 589913, 0, 65536, 589914, 0, 65537, 589915, 0, 65537, 589916, 0, 65537, 589917, 0, 65538, 720895, 0, 65536, 655360, 0, 65538, 655384, 0, 65536, 655385, 0, 65538, 655426, 0, 65536, 655427, 0, 65537, 655428, 0, 65537, 655429, 0, 65537, 655430, 0, 65538, 655449, 0, 65536, 655450, 0, 65537, 655451, 0, 65537, 655452, 0, 65537, 655453, 0, 65538, 786431, 0, 65536, 720896, 0, 65538, 720920, 0, 65536, 720921, 0, 65538, 720962, 0, 131072, 720963, 0, 131073, 720964, 0, 131073, 720965, 0, 131073, 720966, 0, 131074, 720985, 0, 65536, 720986, 0, 65537, 720987, 0, 65537, 720988, 0, 65537, 720989, 0, 65538, 851967, 0, 65536, 786432, 0, 65538, 786442, 0, 0, 786443, 0, 1, 786444, 0, 1, 786445, 0, 1, 786446, 0, 1, 786447, 0, 1, 786448, 0, 2, 786456, 0, 65536, 786457, 0, 65538, 786474, 0, 0, 786475, 0, 2, 786510, 42, 0, 786521, 0, 65536, 786522, 0, 65537, 786523, 0, 65537, 786524, 0, 65537, 786525, 0, 65538, 917503, 0, 65536, 851968, 0, 0, 851969, 0, 1, 851970, 0, 1, 851971, 0, 1, 851972, 0, 1, 851973, 0, 2, 851978, 0, 65536, 851979, 0, 65537, 851980, 0, 65537, 851981, 0, 65537, 851982, 0, 65537, 851983, 0, 65537, 851984, 0, 0, 851985, 0, 1, 851986, 0, 1, 851987, 0, 2, 851992, 0, 65536, 851993, 0, 0, 851994, 0, 1, 851995, 0, 1, 851996, 0, 1, 851997, 0, 1, 851998, 0, 1, 851999, 0, 1, 852000, 0, 1, 852001, 0, 1, 852002, 0, 1, 852003, 0, 2, 852010, 0, 65536, 852011, 0, 65538, 852057, 0, 65536, 852058, 0, 65537, 852059, 0, 65537, 852060, 0, 65537, 852061, 0, 65538, 983039, 0, 65536, 917504, 0, 65537, 917505, 0, 65537, 917506, 0, 65537, 917507, 0, 65537, 917508, 0, 65537, 917509, 0, 0, 917510, 0, 1, 917511, 0, 1, 917512, 0, 1, 917513, 0, 1, 917514, 0, 0, 917515, 0, 65537, 917516, 0, 65537, 917517, 0, 65537, 917518, 0, 65537, 917519, 0, 65537, 917520, 0, 65537, 917521, 0, 65537, 917522, 0, 65537, 917523, 0, 0, 917524, 0, 1, 917525, 0, 1, 917526, 0, 1, 917527, 0, 1, 917528, 0, 0, 917529, 0, 65537, 917530, 0, 65537, 917531, 0, 65537, 917532, 0, 65537, 917533, 0, 65537, 917534, 0, 65537, 917535, 0, 65537, 917536, 0, 65537, 917537, 0, 65537, 917538, 0, 65537, 917539, 0, 65538, 917546, 0, 65536, 917547, 0, 65538, 917582, 11, 0, 917583, 11, 1, 917584, 42, 0, 917593, 0, 65536, 917594, 0, 65537, 917595, 0, 65537, 917596, 0, 65537, 917597, 0, 65538, 1048575, 0, 65536, 983040, 0, 65537, 983041, 0, 65537, 983042, 0, 65537, 983043, 0, 65537, 983044, 0, 65537, 983045, 0, 65537, 983046, 0, 65537, 983047, 0, 65537, 983048, 0, 65537, 983049, 0, 65537, 983050, 0, 65537, 983051, 0, 65537, 983052, 0, 65537, 983053, 0, 65537, 983054, 0, 65537, 983055, 0, 65537, 983056, 0, 65537, 983057, 0, 65537, 983058, 0, 65537, 983059, 0, 65537, 983060, 0, 65537, 983061, 0, 65537, 983062, 0, 65537, 983063, 0, 65537, 983064, 0, 65537, 983065, 0, 65537, 983066, 0, 65537, 983067, 0, 65537, 983068, 0, 65537, 983069, 0, 65537, 983070, 0, 65537, 983071, 0, 65537, 983072, 0, 65537, 983073, 0, 65537, 983074, 0, 65537, 983075, 0, 65538, 983082, 0, 65536, 983083, 0, 65538, 983118, 11, 65536, 983119, 11, 65537, 983129, 0, 65536, 983130, 0, 65537, 983131, 0, 65537, 983132, 0, 65537, 983133, 0, 65538, 1114111, 0, 65536, 1048576, 0, 65537, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65537, 1048580, 0, 65537, 1048581, 0, 65537, 1048582, 0, 65537, 1048583, 0, 65537, 1048584, 0, 65537, 1048585, 0, 65537, 1048586, 0, 65537, 1048587, 0, 65537, 1048588, 0, 65537, 1048589, 0, 65537, 1048590, 0, 65537, 1048591, 0, 65537, 1048592, 0, 65537, 1048593, 0, 65537, 1048594, 0, 65537, 1048595, 0, 65537, 1048596, 0, 65537, 1048597, 0, 65537, 1048598, 0, 65537, 1048599, 0, 65537, 1048600, 0, 65537, 1048601, 0, 65537, 1048602, 0, 65537, 1048603, 0, 65537, 1048604, 0, 65537, 1048605, 0, 65537, 1048606, 0, 65537, 1048607, 0, 65537, 1048608, 0, 65537, 1048609, 0, 65537, 1048610, 0, 65537, 1048611, 0, 0, 1048612, 0, 1, 1048613, 0, 1, 1048614, 0, 1, 1048615, 0, 1, 1048616, 0, 1, 1048617, 0, 1, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 1, 1048621, 0, 1, 1048622, 0, 1, 1048623, 0, 1, 1048624, 0, 1, 1048625, 0, 1, 1048626, 0, 1, 1048627, 0, 1, 1048628, 0, 1, 1048629, 0, 1, 1048630, 0, 1, 1048631, 0, 1, 1048632, 0, 1, 1048633, 0, 1, 1048634, 0, 1, 1048635, 0, 1, 1048636, 0, 1, 1048637, 0, 1, 1048638, 0, 1, 1048639, 0, 1, 1048640, 0, 1, 1048641, 0, 1, 1048642, 0, 1, 1048643, 0, 1, 1048644, 0, 1, 1048645, 0, 1, 1048646, 0, 1, 1048647, 0, 1, 1048648, 0, 1, 1048649, 0, 1, 1048650, 0, 1, 1048651, 0, 1, 1048652, 0, 1, 1048653, 0, 1, 1048654, 0, 1, 1048655, 0, 1, 1048656, 0, 1, 1048657, 0, 1, 1048658, 0, 1, 1048659, 0, 1, 1048660, 0, 2, 1048665, 0, 65536, 1048666, 0, 65537, 1048667, 0, 65537, 1048668, 0, 65537, 1048669, 0, 65538, 1179647, 0, 65536, 1114112, 0, 0, 1114113, 0, 131073, 1114114, 0, 131073, 1114115, 0, 131073, 1114116, 0, 131073, 1114117, 0, 131073, 1114118, 0, 131073, 1114119, 0, 131073, 1114120, 0, 131073, 1114121, 0, 131073, 1114122, 0, 131073, 1114123, 0, 131073, 1114124, 0, 131073, 1114125, 0, 131073, 1114126, 0, 131073, 1114127, 0, 131073, 1114128, 0, 131073, 1114129, 0, 131073, 1114130, 0, 131073, 1114131, 0, 131073, 1114132, 0, 131073, 1114133, 0, 131073, 1114134, 0, 131073, 1114135, 0, 131073, 1114136, 0, 131073, 1114137, 0, 131073, 1114138, 0, 131073, 1114139, 0, 131073, 1114140, 0, 131073, 1114141, 0, 131073, 1114142, 0, 131073, 1114143, 0, 131073, 1114144, 0, 131073, 1114145, 0, 131073, 1114146, 0, 131073, 1114147, 0, 131073, 1114148, 0, 131073, 1114149, 0, 131073, 1114150, 0, 131073, 1114151, 0, 131073, 1114152, 0, 131073, 1114153, 0, 131073, 1114154, 0, 131073, 1114155, 0, 131073, 1114156, 0, 131073, 1114157, 0, 131073, 1114158, 0, 131073, 1114159, 0, 131073, 1114160, 0, 131073, 1114161, 0, 131073, 1114162, 0, 131073, 1114163, 0, 131073, 1114164, 0, 131073, 1114165, 0, 131073, 1114166, 0, 131073, 1114167, 0, 131073, 1114168, 0, 131073, 1114169, 0, 131073, 1114170, 0, 131073, 1114171, 0, 131073, 1114172, 0, 131073, 1114173, 0, 131073, 1114174, 0, 131073, 1114175, 0, 131073, 1114176, 0, 131073, 1114177, 0, 131073, 1114178, 0, 131073, 1114179, 0, 131073, 1114180, 0, 131073, 1114181, 0, 131073, 1114182, 0, 131073, 1114183, 0, 131073, 1114184, 0, 131073, 1114185, 0, 131073, 1114186, 0, 131073, 1114187, 0, 131073, 1114188, 0, 131073, 1114189, 0, 131073, 1114190, 0, 131073, 1114191, 0, 131073, 1114192, 0, 131073, 1114193, 0, 131073, 1114194, 0, 131073, 1114195, 0, 0, 1114196, 0, 65538, 1114201, 0, 65536, 1114202, 0, 65537, 1114203, 0, 65537, 1114204, 0, 65537, 1114205, 0, 65538, 1245183, 0, 65536, 1179648, 0, 65538, 1179731, 0, 65536, 1179732, 0, 65538, 1179737, 0, 65536, 1179738, 0, 65537, 1179739, 0, 65537, 1179740, 0, 65537, 1179741, 0, 65538, 1310719, 0, 65536, 1245184, 0, 65538, 1245267, 0, 65536, 1245268, 0, 65538, 1245273, 0, 65536, 1245274, 0, 65537, 1245275, 0, 65537, 1245276, 0, 65537, 1245277, 0, 65538, 1376255, 0, 65536, 1310720, 0, 65538, 1310803, 0, 65536, 1310804, 0, 65538, 1310809, 0, 65536, 1310810, 0, 65537, 1310811, 0, 65537, 1310812, 0, 65537, 1310813, 0, 65538, 1441791, 0, 65536, 1376256, 0, 65538, 1376339, 0, 65536, 1376340, 0, 65538, 1376345, 0, 65536, 1376346, 0, 65537, 1376347, 0, 65537, 1376348, 0, 65537, 1376349, 0, 65538, 1507327, 0, 65536, 1441792, 0, 65538, 1441875, 0, 65536, 1441876, 0, 65538, 1441881, 0, 65536, 1441882, 0, 65537, 1441883, 0, 65537, 1441884, 0, 65537, 1441885, 0, 65538, 1572863, 0, 65536, 1507328, 0, 65538, 1507356, 2, 0, 1507357, 2, 1, 1507358, 2, 1, 1507359, 2, 2, 1507411, 0, 131072, 1507412, 0, 131074, 1507417, 0, 65536, 1507418, 0, 65537, 1507419, 0, 65537, 1507420, 0, 65537, 1507421, 0, 65538, 1638399, 0, 131072, 1572864, 0, 131074, 1572953, 0, 65536, 1572954, 0, 65537, 1572955, 0, 65537, 1572956, 0, 65537, 1572957, 0, 65538, 1638489, 0, 65536, 1638490, 0, 65537, 1638491, 0, 65537, 1638492, 0, 65537, 1638493, 0, 65538, 1704025, 0, 65536, 1704026, 0, 65537, 1704027, 0, 65537, 1704028, 0, 65537, 1704029, 0, 65538, 1769561, 0, 65536, 1769562, 0, 65537, 1769563, 0, 65537, 1769564, 0, 65537, 1769565, 0, 65538, 1835097, 0, 65536, 1835098, 0, 65537, 1835099, 0, 65537, 1835100, 0, 65537, 1835101, 0, 65538, 1966079, 0, 0, 1900544, 0, 1, 1900545, 0, 1, 1900546, 0, 1, 1900547, 0, 1, 1900548, 0, 1, 1900549, 0, 1, 1900550, 0, 1, 1900551, 0, 2, 1900596, 0, 0, 1900597, 0, 1, 1900598, 0, 1, 1900599, 0, 1, 1900600, 0, 1, 1900601, 0, 1, 1900602, 0, 1, 1900603, 0, 1, 1900604, 0, 1, 1900605, 0, 1, 1900606, 0, 1, 1900607, 0, 1, 1900608, 0, 1, 1900609, 0, 1, 1900610, 0, 1, 1900611, 0, 1, 1900612, 0, 1, 1900613, 0, 2, 1900625, 0, 0, 1900626, 0, 1, 1900627, 0, 1, 1900628, 0, 1, 1900629, 0, 1, 1900630, 0, 1, 1900631, 0, 1, 1900632, 0, 1, 1900633, 0, 0, 1900634, 0, 65537, 1900635, 0, 65537, 1900636, 0, 65537, 1900637, 0, 65538, 2031615, 0, 65536, 1966080, 0, 65537, 1966081, 0, 65537, 1966082, 0, 65537, 1966083, 0, 65537, 1966084, 0, 65537, 1966085, 0, 65537, 1966086, 0, 65537, 1966087, 0, 65538, 1966132, 0, 65536, 1966133, 0, 65537, 1966134, 0, 65537, 1966135, 0, 65537, 1966136, 0, 65537, 1966137, 0, 65537, 1966138, 0, 65537, 1966139, 0, 65537, 1966140, 0, 65537, 1966141, 0, 65537, 1966142, 0, 65537, 1966143, 0, 65537, 1966144, 0, 65537, 1966145, 0, 65537, 1966146, 0, 65537, 1966147, 0, 65537, 1966148, 0, 65537, 1966149, 0, 65538, 1966161, 0, 65536, 1966162, 0, 65537, 1966163, 0, 65537, 1966164, 0, 65537, 1966165, 0, 65537, 1966166, 0, 65537, 1966167, 0, 65537, 1966168, 0, 65537, 1966169, 0, 65537, 1966170, 0, 65537, 1966171, 0, 65537, 1966172, 0, 65537, 1966173, 0, 65538, 2097151, 0, 65536, 2031616, 0, 65537, 2031617, 0, 65537, 2031618, 0, 65537, 2031619, 0, 65537, 2031620, 0, 65537, 2031621, 0, 65537, 2031622, 0, 65537, 2031623, 0, 65538, 2031668, 0, 65536, 2031669, 0, 65537, 2031670, 0, 65537, 2031671, 0, 65537, 2031672, 0, 65537, 2031673, 0, 65537, 2031674, 0, 65537, 2031675, 0, 65537, 2031676, 0, 65537, 2031677, 0, 65537, 2031678, 0, 65537, 2031679, 0, 65537, 2031680, 0, 65537, 2031681, 0, 65537, 2031682, 0, 65537, 2031683, 0, 65537, 2031684, 0, 65537, 2031685, 0, 65538, 2031697, 0, 65536, 2031698, 0, 65537, 2031699, 0, 65537, 2031700, 0, 65537, 2031701, 0, 65537, 2031702, 0, 65537, 2031703, 0, 65537, 2031704, 0, 65537, 2031705, 0, 65537, 2031706, 0, 65537, 2031707, 0, 65537, 2031708, 0, 65537, 2031709, 0, 65538, 2162687, 0, 65536, 2097152, 0, 65537, 2097153, 0, 65537, 2097154, 0, 65537, 2097155, 0, 65537, 2097156, 0, 65537, 2097157, 0, 65537, 2097158, 0, 65537, 2097159, 0, 65538, 2097204, 0, 65536, 2097205, 0, 65537, 2097206, 0, 65537, 2097207, 0, 65537, 2097208, 0, 65537, 2097209, 0, 65537, 2097210, 0, 65537, 2097211, 0, 65537, 2097212, 0, 65537, 2097213, 0, 65537, 2097214, 0, 65537, 2097215, 0, 65537, 2097216, 0, 65537, 2097217, 0, 65537, 2097218, 0, 65537, 2097219, 0, 65537, 2097220, 0, 65537, 2097221, 0, 65538, 2097233, 0, 65536, 2097234, 0, 65537, 2097235, 0, 65537, 2097236, 0, 65537, 2097237, 0, 65537, 2097238, 0, 65537, 2097239, 0, 65537, 2097240, 0, 65537, 2097241, 0, 65537, 2097242, 0, 65537, 2097243, 0, 65537, 2097244, 0, 65537, 2097245, 0, 65538, 2228223, 0, 131072, 2162688, 0, 131073, 2162689, 0, 131073, 2162690, 0, 131073, 2162691, 0, 131073, 2162692, 0, 131073, 2162693, 0, 131073, 2162694, 0, 131073, 2162695, 0, 131074, 2162740, 0, 131072, 2162741, 0, 131073, 2162742, 0, 131073, 2162743, 0, 131073, 2162744, 0, 131073, 2162745, 0, 131073, 2162746, 0, 131073, 2162747, 0, 131073, 2162748, 0, 131073, 2162749, 0, 131073, 2162750, 0, 131073, 2162751, 0, 131073, 2162752, 0, 131073, 2162753, 0, 131073, 2162754, 0, 131073, 2162755, 0, 131073, 2162756, 0, 131073, 2162757, 0, 131074, 2162769, 0, 131072, 2162770, 0, 131073, 2162771, 0, 131073, 2162772, 0, 131073, 2162773, 0, 131073, 2162774, 0, 131073, 2162775, 0, 131073, 2162776, 0, 131073, 2162777, 0, 131073, 2162778, 0, 131073, 2162779, 0, 131073, 2162780, 0, 131073, 2162781, 0, 131074 )
+
+[node name="Player" parent="MiddleGroundTileMap" index="0"]
+position = Vector2( 36, 208 )
+
+[node name="Trampoline" parent="MiddleGroundTileMap/Statics" index="0" instance=ExtResource( 5 )]
+position = Vector2( 688, 192 )
+
+[node name="FallingPlatform" parent="MiddleGroundTileMap/Platforms" index="0" instance=ExtResource( 6 )]
+position = Vector2( 824, 115 )
+
+[node name="FallingPlatform2" parent="MiddleGroundTileMap/Platforms" index="1" instance=ExtResource( 6 )]
+position = Vector2( 308, 480 )
+
+[node name="PlatformWaypoints" parent="MiddleGroundTileMap/Platforms" index="2" instance=ExtResource( 15 )]
+position = Vector2( 1032, 231 )
+points = PoolVector2Array( 0, 0, 190, 0 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints" index="0" instance=ExtResource( 8 )]
+
+[node name="PlatformWaypoints2" parent="MiddleGroundTileMap/Platforms" index="3" instance=ExtResource( 15 )]
+position = Vector2( 552, 472 )
+points = PoolVector2Array( 0, 0, 0, -100 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints2" index="0" instance=ExtResource( 8 )]
+wait_time = 1.25
+
+[node name="PlatformWaypoints3" parent="MiddleGroundTileMap/Platforms" index="4" instance=ExtResource( 15 )]
+position = Vector2( 607, 472 )
+points = PoolVector2Array( 0, 0, 0, -100 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints3" index="0" instance=ExtResource( 8 )]
+wait_time = 1.5
+
+[node name="PlatformWaypoints4" parent="MiddleGroundTileMap/Platforms" index="5" instance=ExtResource( 15 )]
+position = Vector2( 664, 472 )
+points = PoolVector2Array( 0, 0, 0, -100 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints4" index="0" instance=ExtResource( 8 )]
+wait_time = 1.75
+
+[node name="PlatformWaypoints5" parent="MiddleGroundTileMap/Platforms" index="6" instance=ExtResource( 15 )]
+position = Vector2( 720, 472 )
+points = PoolVector2Array( 0, 0, 0, -100 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints5" index="0" instance=ExtResource( 8 )]
+wait_time = 2.0
+
+[node name="PlatformAlt" parent="MiddleGroundTileMap/Platforms" index="7" instance=ExtResource( 14 )]
+position = Vector2( 1215, 466.2 )
+
+[node name="Spikes" parent="MiddleGroundTileMap/Traps" index="0" instance=ExtResource( 4 )]
+position = Vector2( 280, 203 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps/Spikes" index="1" instance=ExtResource( 4 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Spikes" index="2" instance=ExtResource( 4 )]
+position = Vector2( 33, 0 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Spikes" index="3" instance=ExtResource( 4 )]
+position = Vector2( 48, 17 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Spikes" index="4" instance=ExtResource( 4 )]
+position = Vector2( 65, 17 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps/Spikes" index="5" instance=ExtResource( 4 )]
+position = Vector2( 80, 17.5 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps/Spikes" index="6" instance=ExtResource( 4 )]
+position = Vector2( 95, 17 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps" index="1" instance=ExtResource( 4 )]
+position = Vector2( 584, 251 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Spikes2" index="1" instance=ExtResource( 4 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Spikes2" index="2" instance=ExtResource( 4 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Spikes2" index="3" instance=ExtResource( 4 )]
+position = Vector2( 32, 0 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps/Spikes2" index="4" instance=ExtResource( 4 )]
+position = Vector2( 48, 0 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps/Spikes2" index="5" instance=ExtResource( 4 )]
+position = Vector2( 64, 0 )
+
+[node name="Spikes8" parent="MiddleGroundTileMap/Traps/Spikes2" index="6" instance=ExtResource( 4 )]
+position = Vector2( 80, 0 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps" index="2" instance=ExtResource( 4 )]
+position = Vector2( 712, 251.5 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Spikes3" index="1" instance=ExtResource( 4 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Spikes3" index="2" instance=ExtResource( 4 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Spikes3" index="3" instance=ExtResource( 4 )]
+position = Vector2( 32, 0 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps/Spikes3" index="4" instance=ExtResource( 4 )]
+position = Vector2( 48, 0 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps/Spikes3" index="5" instance=ExtResource( 4 )]
+position = Vector2( 64, 0 )
+
+[node name="Spikes8" parent="MiddleGroundTileMap/Traps/Spikes3" index="6" instance=ExtResource( 4 )]
+position = Vector2( 80, 0 )
+
+[node name="Spikes9" parent="MiddleGroundTileMap/Traps/Spikes3" index="7" instance=ExtResource( 4 )]
+position = Vector2( 96, 0 )
+
+[node name="Spikes10" parent="MiddleGroundTileMap/Traps/Spikes3" index="8" instance=ExtResource( 4 )]
+position = Vector2( 96, 0 )
+
+[node name="Spikes11" parent="MiddleGroundTileMap/Traps/Spikes3" index="9" instance=ExtResource( 4 )]
+position = Vector2( 112, 0 )
+
+[node name="Spikes12" parent="MiddleGroundTileMap/Traps/Spikes3" index="10" instance=ExtResource( 4 )]
+position = Vector2( 128, 0 )
+
+[node name="Spikes13" parent="MiddleGroundTileMap/Traps/Spikes3" index="11" instance=ExtResource( 4 )]
+position = Vector2( 144, 0 )
+
+[node name="Spikes14" parent="MiddleGroundTileMap/Traps/Spikes3" index="12" instance=ExtResource( 4 )]
+position = Vector2( 160, 0 )
+
+[node name="Spikes15" parent="MiddleGroundTileMap/Traps/Spikes3" index="13" instance=ExtResource( 4 )]
+position = Vector2( 176, 0 )
+
+[node name="Spikes16" parent="MiddleGroundTileMap/Traps/Spikes3" index="14" instance=ExtResource( 4 )]
+position = Vector2( 176, 0 )
+
+[node name="Spikes17" parent="MiddleGroundTileMap/Traps/Spikes3" index="15" instance=ExtResource( 4 )]
+position = Vector2( 192, 0 )
+
+[node name="Spikes18" parent="MiddleGroundTileMap/Traps/Spikes3" index="16" instance=ExtResource( 4 )]
+position = Vector2( 208, 0 )
+
+[node name="Spikes19" parent="MiddleGroundTileMap/Traps/Spikes3" index="17" instance=ExtResource( 4 )]
+position = Vector2( 224, 0 )
+
+[node name="Spikes20" parent="MiddleGroundTileMap/Traps/Spikes3" index="18" instance=ExtResource( 4 )]
+position = Vector2( 240, 0 )
+
+[node name="Spikes21" parent="MiddleGroundTileMap/Traps/Spikes3" index="19" instance=ExtResource( 4 )]
+position = Vector2( 256, 0 )
+
+[node name="Spikes22" parent="MiddleGroundTileMap/Traps/Spikes3" index="20" instance=ExtResource( 4 )]
+position = Vector2( 256, 0 )
+
+[node name="Spikes23" parent="MiddleGroundTileMap/Traps/Spikes3" index="21" instance=ExtResource( 4 )]
+position = Vector2( 272, 0 )
+
+[node name="Spikes24" parent="MiddleGroundTileMap/Traps/Spikes3" index="22" instance=ExtResource( 4 )]
+position = Vector2( 288, 0 )
+
+[node name="Spikes25" parent="MiddleGroundTileMap/Traps/Spikes3" index="23" instance=ExtResource( 4 )]
+position = Vector2( 304, 0 )
+
+[node name="Spikes26" parent="MiddleGroundTileMap/Traps/Spikes3" index="24" instance=ExtResource( 4 )]
+position = Vector2( 320, 0 )
+
+[node name="Spikes27" parent="MiddleGroundTileMap/Traps/Spikes3" index="25" instance=ExtResource( 4 )]
+position = Vector2( 336, 0 )
+
+[node name="Spikes28" parent="MiddleGroundTileMap/Traps/Spikes3" index="26" instance=ExtResource( 4 )]
+position = Vector2( 336, 0 )
+
+[node name="Spikes29" parent="MiddleGroundTileMap/Traps/Spikes3" index="27" instance=ExtResource( 4 )]
+position = Vector2( 352, 0 )
+
+[node name="Spikes30" parent="MiddleGroundTileMap/Traps/Spikes3" index="28" instance=ExtResource( 4 )]
+position = Vector2( 368, 0 )
+
+[node name="Spikes31" parent="MiddleGroundTileMap/Traps/Spikes3" index="29" instance=ExtResource( 4 )]
+position = Vector2( 384, 0 )
+
+[node name="Spikes32" parent="MiddleGroundTileMap/Traps/Spikes3" index="30" instance=ExtResource( 4 )]
+position = Vector2( 400, 0 )
+
+[node name="Spikes33" parent="MiddleGroundTileMap/Traps/Spikes3" index="31" instance=ExtResource( 4 )]
+position = Vector2( 416, 0 )
+
+[node name="Spikes34" parent="MiddleGroundTileMap/Traps/Spikes3" index="32" instance=ExtResource( 4 )]
+position = Vector2( 416, 0 )
+
+[node name="Spikes35" parent="MiddleGroundTileMap/Traps/Spikes3" index="33" instance=ExtResource( 4 )]
+position = Vector2( 432, 0 )
+
+[node name="Spikes36" parent="MiddleGroundTileMap/Traps/Spikes3" index="34" instance=ExtResource( 4 )]
+position = Vector2( 448, 0 )
+
+[node name="Spikes37" parent="MiddleGroundTileMap/Traps/Spikes3" index="35" instance=ExtResource( 4 )]
+position = Vector2( 464, 0 )
+
+[node name="Spikes38" parent="MiddleGroundTileMap/Traps/Spikes3" index="36" instance=ExtResource( 4 )]
+position = Vector2( 480, 0 )
+
+[node name="Spikes39" parent="MiddleGroundTileMap/Traps/Spikes3" index="37" instance=ExtResource( 4 )]
+position = Vector2( 496, 0.5 )
+
+[node name="Spikes40" parent="MiddleGroundTileMap/Traps/Spikes3" index="38" instance=ExtResource( 4 )]
+position = Vector2( 512, 0.5 )
+
+[node name="Spikes41" parent="MiddleGroundTileMap/Traps/Spikes3" index="39" instance=ExtResource( 4 )]
+position = Vector2( 528, 0.5 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps" index="3" instance=ExtResource( 4 )]
+position = Vector2( 1064, 92 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps" index="4" instance=ExtResource( 4 )]
+position = Vector2( 1080, 92 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps" index="5" instance=ExtResource( 4 )]
+position = Vector2( 1096, 92 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps" index="6" instance=ExtResource( 4 )]
+position = Vector2( 1112, 92 )
+
+[node name="Spikes8" parent="MiddleGroundTileMap/Traps" index="7" instance=ExtResource( 4 )]
+position = Vector2( 1128, 92 )
+
+[node name="Waypoints" parent="MiddleGroundTileMap/Enemies" index="0" instance=ExtResource( 7 )]
+position = Vector2( 1088, 368 )
+points = PoolVector2Array( 0, 0, 130, 0 )
+
+[node name="Gator" parent="MiddleGroundTileMap/Enemies/Waypoints" index="0" instance=ExtResource( 9 )]
+
+[node name="Gem" parent="MiddleGroundTileMap/Collectables" index="0" instance=ExtResource( 12 )]
+position = Vector2( 111, 210 )
+
+[node name="Gem2" parent="MiddleGroundTileMap/Collectables" index="1" instance=ExtResource( 12 )]
+position = Vector2( 136, 210 )
+
+[node name="Gem3" parent="MiddleGroundTileMap/Collectables" index="2" instance=ExtResource( 12 )]
+position = Vector2( 824, 91 )
+
+[node name="Gem4" parent="MiddleGroundTileMap/Collectables" index="3" instance=ExtResource( 12 )]
+position = Vector2( 1032, 151.5 )
+
+[node name="Gem5" parent="MiddleGroundTileMap/Collectables" index="4" instance=ExtResource( 12 )]
+position = Vector2( 1032, 177 )
+
+[node name="Gem6" parent="MiddleGroundTileMap/Collectables" index="5" instance=ExtResource( 12 )]
+position = Vector2( 1032, 201 )
+
+[node name="Carrot" parent="MiddleGroundTileMap/Collectables" index="6" instance=ExtResource( 13 )]
+position = Vector2( 401, 83 )
+
+[node name="Carrot2" parent="MiddleGroundTileMap/Collectables" index="7" instance=ExtResource( 13 )]
+position = Vector2( 1264, 68 )
+
+[node name="Carrot3" parent="MiddleGroundTileMap/Collectables" index="8" instance=ExtResource( 13 )]
+position = Vector2( 639, 352 )
+
+[node name="Carrot4" parent="MiddleGroundTileMap/Collectables" index="9" instance=ExtResource( 13 )]
+position = Vector2( 497, 345 )
+
+[node name="Carrot5" parent="MiddleGroundTileMap/Collectables" index="10" instance=ExtResource( 13 )]
+position = Vector2( 309, 449.2 )
+
+[node name="Carrot6" parent="MiddleGroundTileMap/Collectables" index="11" instance=ExtResource( 13 )]
+position = Vector2( 49, 435 )
+
+[node name="Acorn" parent="MiddleGroundTileMap/Collectables" index="12" instance=ExtResource( 11 )]
+position = Vector2( 1392, 251 )
+
+[node name="Acorn2" parent="MiddleGroundTileMap/Collectables" index="13" instance=ExtResource( 11 )]
+position = Vector2( 1312, 442.2 )
+
+[node name="Acorn3" parent="MiddleGroundTileMap/Collectables" index="14" instance=ExtResource( 11 )]
+position = Vector2( 1215, 442.2 )
+
+[node name="Acorn4" parent="MiddleGroundTileMap/Collectables" index="15" instance=ExtResource( 11 )]
+position = Vector2( 1104, 442.2 )
+
+[node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 10 )]
+position = Vector2( 448, 189 )
+
+[node name="Checkpoint2" parent="MiddleGroundTileMap/Checkpoints" index="1" instance=ExtResource( 10 )]
+position = Vector2( 512, 190 )
+
+[node name="Checkpoint3" parent="MiddleGroundTileMap/Checkpoints" index="2" instance=ExtResource( 10 )]
+position = Vector2( 936, 68 )
+
+[node name="Checkpoint4" parent="MiddleGroundTileMap/Checkpoints" index="3" instance=ExtResource( 10 )]
+position = Vector2( 984, 68 )
+
+[node name="Checkpoint5" parent="MiddleGroundTileMap/Checkpoints" index="4" instance=ExtResource( 10 )]
+position = Vector2( 1336, 240 )
+
+[node name="Checkpoint6" parent="MiddleGroundTileMap/Checkpoints" index="5" instance=ExtResource( 10 )]
+position = Vector2( 1392, 442.2 )
+
+[node name="Checkpoint7" parent="MiddleGroundTileMap/Checkpoints" index="6" instance=ExtResource( 10 )]
+position = Vector2( 992, 442.2 )
+
+[node name="Checkpoint8" parent="MiddleGroundTileMap/Checkpoints" index="7" instance=ExtResource( 10 )]
+position = Vector2( 927, 442.2 )
+
+[node name="Checkpoint9" parent="MiddleGroundTileMap/Checkpoints" index="8" instance=ExtResource( 10 )]
+position = Vector2( 499, 352 )
+
+[node name="Checkpoint10" parent="MiddleGroundTileMap/Checkpoints" index="9" instance=ExtResource( 10 )]
+position = Vector2( 461, 352 )
+
+[node name="EndOfLevel" parent="MiddleGroundTileMap" index="10"]
+position = Vector2( 115, 464 )
+direction = 1
+
+[node name="Area2D" parent="MiddleGroundTileMap/EndOfLevel" index="1"]
+position = Vector2( -113, -48 )
+
+[node name="Sign" parent="MiddleGroundTileMap/EndOfLevel" index="2"]
+position = Vector2( 113, 0 )
+
+[node name="Head" parent="MiddleGroundTileMap/EndOfLevel/Sign" index="1"]
+scale = Vector2( -1, 1 )
+
+[node name="FallLimitArea" parent="FallLimits" index="0" instance=ExtResource( 3 )]
+position = Vector2( 720, 544 )
+
+[node name="Fog" parent="FallLimits/FallLimitArea" index="1"]
+region_rect = Rect2( 0, 0, 1440, 69 )
+
+[node name="Anchor2" parent="Anchors" index="1" instance=ExtResource( 2 )]
+position = Vector2( 720, 135 )
+
+[node name="Anchor3" parent="Anchors" index="2" instance=ExtResource( 2 )]
+position = Vector2( 1200, 135 )
+
+[node name="Anchor4" parent="Anchors" index="3" instance=ExtResource( 2 )]
+position = Vector2( 1200, 405 )
+
+[node name="Anchor5" parent="Anchors" index="4" instance=ExtResource( 2 )]
+position = Vector2( 722, 405 )
+
+[node name="Anchor6" parent="Anchors" index="5" instance=ExtResource( 2 )]
+position = Vector2( 242, 405 )
+
+[editable path="MiddleGroundTileMap/EndOfLevel"]
+[editable path="FallLimits/FallLimitArea"]

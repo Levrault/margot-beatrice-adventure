@@ -11,7 +11,7 @@ radius = 11.0
 height = 12.0
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 122.053
+radius = 97.0464
 
 [node name="Gator" instance=ExtResource( 1 )]
 
