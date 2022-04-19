@@ -7,13 +7,15 @@ var chain_big_scene := preload("res://src/Objects/Platforms/ChainBig.tscn")
 
 func _ready() -> void:
 	._ready()
-	_init_chains_path()
+	if get_child(0) is Platform:
+		_init_chains_path()
 
 
 func _init_chains_path() -> void:
 	var previous_point := points[0]
 	for point in points:
 		# add visual points for each "stop"
+
 		var new_chain_big = chain_big_scene.instance()
 		add_child(new_chain_big)
 		new_chain_big.position = point
