@@ -1,0 +1,648 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://src/Levels/Template/Scene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Objects/Platforms/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Objects/Traps/SpikeBall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Enemies/Statics/Carniplant/Carniplant.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/Interactables/TileMapForSwitch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Interactables/Switch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Waypoints/PlatformWaypoints.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Objects/Traps/Spikes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Levels/Template/FallLimitArea/FallLimitArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Enemies/Patrol/Ant/Ant.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/Traps/Laser.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Objects/Platforms/FallingPlatform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Levels/Template/checkpoints/Checkpoint.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Objects/Collectables/Carrot.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Objects/Collectables/Acorn.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Objects/Collectables/Gem.tscn" type="PackedScene" id=17]
+
+[sub_resource type="Shader" id=1]
+resource_local_to_scene = true
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 lincense. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Shader" id=3]
+resource_local_to_scene = true
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 lincense. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = SubResource( 3 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Shader" id=5]
+resource_local_to_scene = true
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 lincense. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = SubResource( 5 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 1, 1, 1, 1 )
+
+[node name="Level15" instance=ExtResource( 1 )]
+next_level = "level16"
+
+[node name="Scoreboard" parent="UI" index="4"]
+time_for_rank_100 = 50000.0
+time_for_rank_80 = 60000.0
+time_for_rank_60 = 70000.0
+
+[node name="Screenshot" parent="UI" index="5"]
+margin_left = 0.0
+margin_right = 0.0
+
+[node name="MiddleGroundTileMap" parent="." index="7"]
+tile_data = PoolIntArray( -655279, 0, 0, -655278, 0, 2, -589743, 0, 65536, -589742, 0, 65538, -589735, 0, 0, -589734, 0, 2, -524207, 0, 65536, -524206, 0, 65538, -524199, 0, 65536, -524198, 0, 65538, -393217, 0, 0, -458752, 0, 2, -458671, 0, 65536, -458670, 0, 65538, -458663, 0, 65536, -458662, 0, 65538, -327681, 0, 65536, -393216, 0, 65538, -393200, 1, 0, -393199, 1, 2, -393135, 0, 65536, -393134, 0, 65538, -393127, 0, 65536, -393126, 0, 65538, -262145, 0, 65536, -327680, 0, 65538, -327664, 1, 65536, -327663, 1, 65538, -327599, 0, 65536, -327598, 0, 65538, -327591, 0, 65536, -327590, 0, 65538, -196609, 0, 65536, -262144, 0, 65538, -262128, 1, 65536, -262127, 1, 65538, -262063, 0, 65536, -262062, 0, 65538, -262055, 0, 65536, -262054, 0, 65538, -131073, 0, 65536, -196608, 0, 65538, -196592, 1, 65536, -196591, 1, 65538, -196527, 0, 65536, -196526, 0, 65538, -196519, 0, 65536, -196518, 0, 65538, -65537, 0, 65536, -131072, 0, 65538, -131056, 1, 65536, -131055, 1, 65538, -130991, 0, 65536, -130990, 0, 65538, -130983, 0, 65536, -130982, 0, 65538, -1, 0, 65536, -65536, 0, 65538, -65520, 1, 65536, -65519, 1, 65538, -65455, 0, 65536, -65454, 0, 65538, -65447, 0, 65536, -65446, 0, 65538, 65535, 0, 65536, 0, 0, 65538, 16, 1, 65536, 17, 1, 65538, 81, 0, 65536, 82, 0, 65538, 89, 0, 65536, 90, 0, 65538, 131071, 0, 65536, 65536, 0, 65538, 65552, 1, 65536, 65553, 1, 65538, 65617, 0, 65536, 65618, 0, 65538, 65625, 0, 65536, 65626, 0, 65538, 196607, 0, 65536, 131072, 0, 65538, 131088, 1, 131072, 131089, 1, 131074, 131153, 0, 65536, 131154, 0, 65538, 131161, 0, 65536, 131162, 0, 65538, 262143, 0, 65536, 196608, 0, 65538, 196686, 0, 0, 196687, 0, 1, 196688, 0, 1, 196689, 0, 0, 196690, 0, 65538, 196697, 0, 65536, 196698, 0, 65538, 327679, 0, 65536, 262144, 0, 65538, 262222, 0, 65536, 262223, 0, 65537, 262224, 0, 65537, 262225, 0, 65537, 262226, 0, 65538, 262233, 0, 65536, 262234, 0, 65538, 393215, 0, 65536, 327680, 0, 65538, 327758, 0, 65536, 327759, 0, 65537, 327760, 0, 65537, 327761, 0, 65537, 327762, 0, 0, 327763, 0, 1, 327764, 0, 2, 327769, 0, 65536, 327770, 0, 65538, 458751, 0, 65536, 393216, 0, 65538, 393294, 0, 131072, 393295, 0, 131073, 393296, 0, 131073, 393297, 0, 131073, 393298, 0, 131073, 393299, 0, 131073, 393300, 0, 131074, 393301, 28, 0, 393302, 29, 0, 393305, 0, 65536, 393306, 0, 65538, 524287, 0, 65536, 458752, 0, 65538, 458768, 1, 0, 458769, 1, 2, 458809, 2, 0, 458810, 2, 1, 458811, 2, 1, 458812, 2, 1, 458813, 2, 1, 458814, 2, 2, 458841, 0, 65536, 458842, 0, 65538, 589823, 0, 65536, 524288, 0, 65538, 524304, 1, 65536, 524305, 1, 65538, 524377, 0, 65536, 524378, 0, 65538, 655359, 0, 65536, 589824, 0, 65538, 589840, 1, 65536, 589841, 1, 65538, 589913, 0, 65536, 589914, 0, 65538, 720895, 0, 65536, 655360, 0, 65538, 655376, 1, 65536, 655377, 1, 65538, 655449, 0, 65536, 655450, 0, 65538, 786431, 0, 65536, 720896, 0, 65538, 720905, 42, 0, 720912, 1, 65536, 720913, 1, 65538, 720985, 0, 65536, 720986, 0, 65538, 851967, 0, 65536, 786432, 0, 0, 786433, 0, 1, 786434, 0, 2, 786448, 1, 65536, 786449, 1, 65538, 786455, 2, 0, 786456, 2, 1, 786457, 2, 1, 786458, 2, 1, 786459, 2, 1, 786460, 2, 1, 786461, 2, 1, 786462, 2, 1, 786463, 2, 1, 786464, 2, 1, 786465, 2, 1, 786466, 2, 2, 786520, 30, 0, 786521, 0, 65536, 786522, 0, 65538, 917503, 0, 65536, 851968, 0, 65537, 851969, 0, 65537, 851970, 0, 65538, 851977, 42, 0, 851984, 1, 65536, 851985, 1, 65538, 852057, 0, 65536, 852058, 0, 65538, 983039, 0, 65536, 917504, 0, 65537, 917505, 0, 65537, 917506, 0, 0, 917507, 0, 1, 917508, 0, 1, 917509, 0, 2, 917520, 1, 65536, 917521, 1, 65538, 917565, 0, 0, 917566, 0, 1, 917567, 0, 1, 917568, 0, 1, 917569, 0, 2, 917581, 0, 0, 917582, 0, 1, 917583, 0, 1, 917584, 0, 1, 917585, 0, 1, 917586, 0, 1, 917587, 0, 1, 917588, 0, 1, 917589, 0, 2, 917593, 0, 65536, 917594, 0, 65538, 1048575, 0, 65536, 983040, 0, 65537, 983041, 0, 65537, 983042, 0, 65537, 983043, 0, 65537, 983044, 0, 65537, 983045, 0, 65538, 983046, 38, 0, 983047, 38, 0, 983048, 38, 0, 983049, 38, 0, 983050, 38, 0, 983056, 1, 131072, 983057, 1, 131074, 983101, 0, 65536, 983102, 0, 65537, 983103, 0, 65537, 983104, 0, 65537, 983105, 0, 65538, 983117, 0, 65536, 983118, 0, 65537, 983119, 0, 65537, 983120, 0, 65537, 983121, 0, 65537, 983122, 0, 65537, 983123, 0, 65537, 983124, 0, 65537, 983125, 0, 65538, 983129, 0, 65536, 983130, 0, 65538, 1114111, 0, 65536, 1048576, 0, 65537, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65537, 1048580, 0, 65537, 1048581, 0, 0, 1048582, 0, 1, 1048583, 0, 1, 1048584, 0, 1, 1048585, 0, 1, 1048586, 0, 1, 1048587, 0, 1, 1048588, 0, 1, 1048589, 0, 1, 1048590, 0, 1, 1048591, 0, 1, 1048592, 0, 1, 1048593, 0, 1, 1048594, 0, 1, 1048595, 0, 1, 1048596, 0, 1, 1048597, 0, 1, 1048598, 0, 1, 1048599, 0, 1, 1048600, 0, 1, 1048601, 0, 1, 1048602, 0, 1, 1048603, 0, 1, 1048604, 0, 1, 1048605, 0, 1, 1048606, 0, 1, 1048607, 0, 1, 1048608, 0, 1, 1048609, 0, 1, 1048610, 0, 1, 1048611, 0, 1, 1048612, 0, 1, 1048613, 0, 1, 1048614, 0, 1, 1048615, 0, 1, 1048616, 0, 1, 1048617, 0, 1, 1048618, 0, 1, 1048619, 0, 1, 1048620, 0, 1, 1048621, 0, 1, 1048622, 0, 1, 1048623, 0, 1, 1048624, 0, 1, 1048625, 0, 1, 1048626, 0, 1, 1048627, 0, 1, 1048628, 0, 1, 1048629, 0, 1, 1048630, 0, 1, 1048631, 0, 1, 1048632, 0, 1, 1048633, 0, 1, 1048634, 0, 1, 1048635, 0, 1, 1048636, 0, 1, 1048637, 0, 0, 1048638, 0, 65537, 1048639, 0, 65537, 1048640, 0, 65537, 1048641, 0, 0, 1048642, 0, 1, 1048643, 0, 1, 1048644, 0, 1, 1048645, 0, 1, 1048646, 0, 1, 1048647, 0, 1, 1048648, 0, 1, 1048649, 0, 1, 1048650, 0, 1, 1048651, 0, 1, 1048652, 0, 1, 1048653, 0, 0, 1048654, 0, 65537, 1048655, 0, 65537, 1048656, 0, 65537, 1048657, 0, 65537, 1048658, 0, 65537, 1048659, 0, 65537, 1048660, 0, 65537, 1048661, 0, 65538, 1048665, 0, 65536, 1048666, 0, 65538, 1179647, 0, 65536, 1114112, 0, 65537, 1114113, 0, 65537, 1114114, 0, 65537, 1114115, 0, 65537, 1114116, 0, 65537, 1114117, 0, 0, 1114118, 0, 131073, 1114119, 0, 131073, 1114120, 0, 131073, 1114121, 0, 131073, 1114122, 0, 131073, 1114123, 0, 131073, 1114124, 0, 131073, 1114125, 0, 131073, 1114126, 0, 131073, 1114127, 0, 131073, 1114128, 0, 131073, 1114129, 0, 131073, 1114130, 0, 131073, 1114131, 0, 131073, 1114132, 0, 131073, 1114133, 0, 131073, 1114134, 0, 131073, 1114135, 0, 131073, 1114136, 0, 131073, 1114137, 0, 131073, 1114138, 0, 131073, 1114139, 0, 131073, 1114140, 0, 131073, 1114141, 0, 131073, 1114142, 0, 131073, 1114143, 0, 131073, 1114144, 0, 131073, 1114145, 0, 131073, 1114146, 0, 131073, 1114147, 0, 131073, 1114148, 0, 131073, 1114149, 0, 131073, 1114150, 0, 131073, 1114151, 0, 131073, 1114152, 0, 131073, 1114153, 0, 131073, 1114154, 0, 131073, 1114155, 0, 131073, 1114156, 0, 131073, 1114157, 0, 131073, 1114158, 0, 131073, 1114159, 0, 131073, 1114160, 0, 131073, 1114161, 0, 131073, 1114162, 0, 131073, 1114163, 0, 131073, 1114164, 0, 131073, 1114165, 0, 131073, 1114166, 0, 131073, 1114167, 0, 131073, 1114168, 0, 131073, 1114169, 0, 131073, 1114170, 0, 131073, 1114171, 0, 0, 1114172, 0, 65537, 1114173, 0, 0, 1114174, 0, 131073, 1114175, 0, 131073, 1114176, 0, 131073, 1114177, 0, 131073, 1114178, 0, 131073, 1114179, 0, 131073, 1114180, 0, 131073, 1114181, 0, 131073, 1114182, 0, 131073, 1114183, 0, 131073, 1114184, 0, 131073, 1114185, 0, 131073, 1114186, 0, 131073, 1114187, 0, 131073, 1114188, 0, 131073, 1114189, 0, 131073, 1114190, 0, 131073, 1114191, 0, 131073, 1114192, 0, 131073, 1114193, 0, 131073, 1114194, 0, 131073, 1114195, 0, 131073, 1114196, 0, 131073, 1114197, 0, 131074, 1114201, 0, 65536, 1114202, 0, 65538, 1245183, 0, 65536, 1179648, 0, 65537, 1179649, 0, 65537, 1179650, 0, 65537, 1179651, 0, 65537, 1179652, 0, 65537, 1179653, 0, 65538, 1179707, 0, 65536, 1179708, 0, 65537, 1179709, 0, 65538, 1179737, 0, 65536, 1179738, 0, 65538, 1310719, 0, 65536, 1245184, 0, 65537, 1245185, 0, 65537, 1245186, 0, 65537, 1245187, 0, 65537, 1245188, 0, 65537, 1245189, 0, 65538, 1245243, 0, 65536, 1245244, 0, 65537, 1245245, 0, 65538, 1245273, 0, 65536, 1245274, 0, 65538, 1376255, 0, 65536, 1310720, 0, 65537, 1310721, 0, 65537, 1310722, 0, 65537, 1310723, 0, 65537, 1310724, 0, 65537, 1310725, 0, 65538, 1310779, 0, 65536, 1310780, 0, 65537, 1310781, 0, 65538, 1310809, 0, 65536, 1310810, 0, 65538, 1441791, 0, 65536, 1376256, 0, 65537, 1376257, 0, 65537, 1376258, 0, 65537, 1376259, 0, 65537, 1376260, 0, 65537, 1376261, 0, 65538, 1376315, 0, 65536, 1376316, 0, 65537, 1376317, 0, 65538, 1376345, 0, 65536, 1376346, 0, 65538, 1507327, 0, 65536, 1441792, 0, 65537, 1441793, 0, 65537, 1441794, 0, 65537, 1441795, 0, 65537, 1441796, 0, 65537, 1441797, 0, 65538, 1441818, 2, 0, 1441819, 2, 1, 1441820, 2, 1, 1441821, 2, 1, 1441822, 2, 1, 1441823, 2, 1, 1441824, 2, 1, 1441825, 2, 2, 1441845, 45, 0, 1441847, 45, 0, 1441849, 45, 0, 1441851, 0, 65536, 1441852, 0, 65537, 1441853, 0, 65538, 1441881, 0, 65536, 1441882, 0, 65538, 1572863, 0, 65536, 1507328, 0, 65537, 1507329, 0, 65537, 1507330, 0, 65537, 1507331, 0, 65537, 1507332, 0, 65537, 1507333, 0, 65538, 1507356, 0, 0, 1507357, 0, 1, 1507358, 0, 1, 1507359, 0, 2, 1507387, 0, 65536, 1507388, 0, 65537, 1507389, 0, 65538, 1507392, 2, 0, 1507393, 2, 1, 1507394, 2, 1, 1507395, 2, 1, 1507396, 2, 2, 1507413, 2, 0, 1507414, 2, 1, 1507415, 2, 1, 1507416, 2, 2, 1507417, 0, 65536, 1507418, 0, 65538, 1638399, 0, 65536, 1572864, 0, 65537, 1572865, 0, 65537, 1572866, 0, 65537, 1572867, 0, 65537, 1572868, 0, 65537, 1572869, 0, 65538, 1572892, 0, 65536, 1572893, 0, 65537, 1572894, 0, 65537, 1572895, 0, 65538, 1572923, 0, 65536, 1572924, 0, 65537, 1572925, 0, 65538, 1572933, 2, 0, 1572934, 2, 1, 1572935, 2, 1, 1572936, 2, 1, 1572937, 2, 1, 1572938, 2, 1, 1572939, 2, 1, 1572940, 2, 1, 1572941, 2, 1, 1572942, 2, 1, 1572943, 2, 1, 1572944, 2, 1, 1572945, 2, 1, 1572946, 2, 1, 1572947, 2, 1, 1572948, 2, 2, 1572953, 0, 65536, 1572954, 0, 65538, 1703935, 0, 131072, 1638400, 0, 131073, 1638401, 0, 131073, 1638402, 0, 131073, 1638403, 0, 131073, 1638404, 0, 131073, 1638405, 0, 131074, 1638428, 0, 65536, 1638429, 0, 65537, 1638430, 0, 65537, 1638431, 0, 65538, 1638459, 0, 65536, 1638460, 0, 65537, 1638461, 0, 65538, 1638489, 0, 65536, 1638490, 0, 65538, 1703964, 0, 65536, 1703965, 0, 65537, 1703966, 0, 65537, 1703967, 0, 0, 1703968, 0, 1, 1703969, 0, 2, 1703995, 0, 65536, 1703996, 0, 65537, 1703997, 0, 65538, 1704025, 0, 65536, 1704026, 0, 65538, 1769500, 0, 65536, 1769501, 0, 65537, 1769502, 0, 65537, 1769503, 0, 65537, 1769504, 0, 65537, 1769505, 0, 65538, 1769531, 0, 65536, 1769532, 0, 65537, 1769533, 0, 65538, 1769561, 0, 65536, 1769562, 0, 65538, 1835036, 0, 65536, 1835037, 0, 65537, 1835038, 0, 65537, 1835039, 0, 65537, 1835040, 0, 65537, 1835041, 0, 65538, 1835067, 0, 131072, 1835068, 0, 131073, 1835069, 0, 131074, 1835070, 2, 0, 1835071, 2, 1, 1835072, 2, 1, 1835073, 2, 1, 1835074, 2, 1, 1835075, 2, 1, 1835076, 2, 1, 1835077, 2, 1, 1835078, 2, 1, 1835079, 2, 1, 1835080, 2, 1, 1835081, 2, 1, 1835082, 2, 1, 1835083, 2, 1, 1835084, 2, 1, 1835085, 2, 2, 1835097, 0, 65536, 1835098, 0, 65538, 1900572, 0, 65536, 1900573, 0, 65537, 1900574, 0, 65537, 1900575, 0, 65537, 1900576, 0, 65537, 1900577, 0, 0, 1900578, 0, 2, 1900583, 0, 0, 1900584, 0, 1, 1900585, 0, 1, 1900586, 0, 2, 1900633, 0, 65536, 1900634, 0, 65538, 2031615, 0, 0, 1966080, 0, 1, 1966081, 0, 1, 1966082, 0, 1, 1966083, 0, 1, 1966084, 0, 1, 1966085, 0, 1, 1966086, 0, 1, 1966087, 0, 1, 1966088, 0, 1, 1966089, 0, 1, 1966090, 0, 1, 1966091, 0, 1, 1966092, 0, 2, 1966108, 0, 65536, 1966109, 0, 65537, 1966110, 0, 65537, 1966111, 0, 65537, 1966112, 0, 65537, 1966113, 0, 65537, 1966114, 0, 0, 1966115, 0, 1, 1966116, 0, 1, 1966117, 0, 1, 1966118, 0, 1, 1966119, 0, 0, 1966120, 0, 65537, 1966121, 0, 65537, 1966122, 0, 65538, 1966169, 0, 65536, 1966170, 0, 65538, 2097151, 0, 65536, 2031616, 0, 65537, 2031617, 0, 65537, 2031618, 0, 65537, 2031619, 0, 65537, 2031620, 0, 65537, 2031621, 0, 65537, 2031622, 0, 65537, 2031623, 0, 65537, 2031624, 0, 65537, 2031625, 0, 65537, 2031626, 0, 65537, 2031627, 0, 65537, 2031628, 0, 65538, 2031644, 0, 65536, 2031645, 0, 65537, 2031646, 0, 65537, 2031647, 0, 65537, 2031648, 0, 65537, 2031649, 0, 65537, 2031650, 0, 65537, 2031651, 0, 65537, 2031652, 0, 65537, 2031653, 0, 65537, 2031654, 0, 65537, 2031655, 0, 65537, 2031656, 0, 65537, 2031657, 0, 65537, 2031658, 0, 65538, 2031705, 0, 65536, 2031706, 0, 65538, 2162687, 0, 65536, 2097152, 0, 65537, 2097153, 0, 65537, 2097154, 0, 65537, 2097155, 0, 65537, 2097156, 0, 65537, 2097157, 0, 65537, 2097158, 0, 65537, 2097159, 0, 65537, 2097160, 0, 65537, 2097161, 0, 65537, 2097162, 0, 65537, 2097163, 0, 65537, 2097164, 0, 65538, 2097180, 0, 65536, 2097181, 0, 65537, 2097182, 0, 65537, 2097183, 0, 65537, 2097184, 0, 65537, 2097185, 0, 65537, 2097186, 0, 65537, 2097187, 0, 65537, 2097188, 0, 65537, 2097189, 0, 65537, 2097190, 0, 65537, 2097191, 0, 65537, 2097192, 0, 65537, 2097193, 0, 65537, 2097194, 0, 65538, 2097241, 0, 65536, 2097242, 0, 65538, 2228223, 0, 65536, 2162688, 0, 65537, 2162689, 0, 65537, 2162690, 0, 65537, 2162691, 0, 65537, 2162692, 0, 65537, 2162693, 0, 65537, 2162694, 0, 65537, 2162695, 0, 65537, 2162696, 0, 65537, 2162697, 0, 65537, 2162698, 0, 65537, 2162699, 0, 65537, 2162700, 0, 65538, 2162716, 0, 65536, 2162717, 0, 65537, 2162718, 0, 65537, 2162719, 0, 65537, 2162720, 0, 65537, 2162721, 0, 65537, 2162722, 0, 65537, 2162723, 0, 65537, 2162724, 0, 65537, 2162725, 0, 65537, 2162726, 0, 65537, 2162727, 0, 65537, 2162728, 0, 65537, 2162729, 0, 65537, 2162730, 0, 65538, 2162745, 0, 0, 2162746, 0, 1, 2162747, 0, 1, 2162748, 0, 1, 2162749, 0, 1, 2162750, 0, 1, 2162751, 0, 1, 2162752, 0, 1, 2162753, 0, 1, 2162754, 0, 1, 2162755, 0, 1, 2162756, 0, 1, 2162757, 0, 1, 2162758, 0, 1, 2162759, 0, 1, 2162760, 0, 1, 2162761, 0, 1, 2162762, 0, 1, 2162763, 0, 1, 2162764, 0, 1, 2162765, 0, 1, 2162766, 0, 1, 2162767, 0, 1, 2162768, 0, 1, 2162769, 0, 1, 2162770, 0, 1, 2162771, 0, 1, 2162772, 0, 1, 2162773, 0, 1, 2162774, 0, 1, 2162775, 0, 1, 2162776, 0, 1, 2162777, 0, 0, 2162778, 0, 65538, 2293759, 0, 131072, 2228224, 0, 131073, 2228225, 0, 131073, 2228226, 0, 131073, 2228227, 0, 131073, 2228228, 0, 131073, 2228229, 0, 131073, 2228230, 0, 131073, 2228231, 0, 131073, 2228232, 0, 131073, 2228233, 0, 131073, 2228234, 0, 131073, 2228235, 0, 131073, 2228236, 0, 131074, 2228252, 0, 131072, 2228253, 0, 131073, 2228254, 0, 131073, 2228255, 0, 131073, 2228256, 0, 131073, 2228257, 0, 131073, 2228258, 0, 131073, 2228259, 0, 131073, 2228260, 0, 131073, 2228261, 0, 131073, 2228262, 0, 131073, 2228263, 0, 131073, 2228264, 0, 131073, 2228265, 0, 131073, 2228266, 0, 131074, 2228281, 0, 131072, 2228282, 0, 131073, 2228283, 0, 131073, 2228284, 0, 131073, 2228285, 0, 131073, 2228286, 0, 131073, 2228287, 0, 131073, 2228288, 0, 131073, 2228289, 0, 131073, 2228290, 0, 131073, 2228291, 0, 131073, 2228292, 0, 131073, 2228293, 0, 131073, 2228294, 0, 131073, 2228295, 0, 131073, 2228296, 0, 131073, 2228297, 0, 131073, 2228298, 0, 131073, 2228299, 0, 131073, 2228300, 0, 131073, 2228301, 0, 131073, 2228302, 0, 131073, 2228303, 0, 131073, 2228304, 0, 131073, 2228305, 0, 131073, 2228306, 0, 131073, 2228307, 0, 131073, 2228308, 0, 131073, 2228309, 0, 131073, 2228310, 0, 131073, 2228311, 0, 131073, 2228312, 0, 131073, 2228313, 0, 131073, 2228314, 0, 131074 )
+
+[node name="Player" parent="MiddleGroundTileMap" index="0"]
+position = Vector2( 32, 192 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms" index="0" instance=ExtResource( 3 )]
+position = Vector2( 304, 144 )
+
+[node name="Platform2" parent="MiddleGroundTileMap/Platforms" index="1" instance=ExtResource( 3 )]
+position = Vector2( 624, 172 )
+
+[node name="Platform3" parent="MiddleGroundTileMap/Platforms" index="2" instance=ExtResource( 3 )]
+position = Vector2( 808, 172 )
+
+[node name="PlatformWaypoints" parent="MiddleGroundTileMap/Platforms" index="3" instance=ExtResource( 8 )]
+position = Vector2( 1072, 145 )
+points = PoolVector2Array( 0, 0, 140, 0 )
+
+[node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints" index="0" instance=ExtResource( 3 )]
+
+[node name="FallingPlatform" parent="MiddleGroundTileMap/Platforms" index="4" instance=ExtResource( 13 )]
+position = Vector2( 808, 488 )
+
+[node name="FallingPlatform2" parent="MiddleGroundTileMap/Platforms" index="5" instance=ExtResource( 13 )]
+position = Vector2( 600, 390 )
+
+[node name="FallingPlatform3" parent="MiddleGroundTileMap/Platforms" index="6" instance=ExtResource( 13 )]
+position = Vector2( 760, 400 )
+
+[node name="SpikeBall" parent="MiddleGroundTileMap/Traps" index="0" instance=ExtResource( 4 )]
+position = Vector2( 720, 144 )
+
+[node name="SpikeBall2" parent="MiddleGroundTileMap/Traps" index="1" instance=ExtResource( 4 )]
+position = Vector2( 720, 172 )
+
+[node name="SpikeBall3" parent="MiddleGroundTileMap/Traps" index="2" instance=ExtResource( 4 )]
+position = Vector2( 720, 200 )
+
+[node name="SpikeBall4" parent="MiddleGroundTileMap/Traps" index="3" instance=ExtResource( 4 )]
+position = Vector2( 960, 142 )
+
+[node name="SpikeBall5" parent="MiddleGroundTileMap/Traps" index="4" instance=ExtResource( 4 )]
+position = Vector2( 960, 169 )
+
+[node name="SpikeBall6" parent="MiddleGroundTileMap/Traps" index="5" instance=ExtResource( 4 )]
+position = Vector2( 960, 196 )
+
+[node name="SpikeBall7" parent="MiddleGroundTileMap/Traps" index="6" instance=ExtResource( 4 )]
+position = Vector2( 960, 222 )
+
+[node name="SpikeBall8" parent="MiddleGroundTileMap/Traps" index="7" instance=ExtResource( 4 )]
+position = Vector2( 960, 248 )
+
+[node name="Spikes" parent="MiddleGroundTileMap/Traps" index="8" instance=ExtResource( 9 )]
+position = Vector2( 184, 252 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps/Spikes" index="1" instance=ExtResource( 9 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Spikes" index="2" instance=ExtResource( 9 )]
+position = Vector2( 32, 0 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Spikes" index="3" instance=ExtResource( 9 )]
+position = Vector2( 48, 0 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Spikes" index="4" instance=ExtResource( 9 )]
+position = Vector2( 64, 0 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps" index="9" instance=ExtResource( 9 )]
+position = Vector2( 1064, 252 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps/Spikes3" index="1" instance=ExtResource( 9 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Spikes3" index="2" instance=ExtResource( 9 )]
+position = Vector2( 32, 0 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Spikes3" index="3" instance=ExtResource( 9 )]
+position = Vector2( 48, 0 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Spikes3" index="4" instance=ExtResource( 9 )]
+position = Vector2( 64, 0 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps/Spikes3" index="5" instance=ExtResource( 9 )]
+position = Vector2( 80, 0 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps/Spikes3" index="6" instance=ExtResource( 9 )]
+position = Vector2( 96, 0 )
+
+[node name="Spikes8" parent="MiddleGroundTileMap/Traps/Spikes3" index="7" instance=ExtResource( 9 )]
+position = Vector2( 112, 0 )
+
+[node name="Spikes9" parent="MiddleGroundTileMap/Traps/Spikes3" index="8" instance=ExtResource( 9 )]
+position = Vector2( 128, 0 )
+
+[node name="Spikes10" parent="MiddleGroundTileMap/Traps/Spikes3" index="9" instance=ExtResource( 9 )]
+position = Vector2( 144, 0 )
+
+[node name="Spikes11" parent="MiddleGroundTileMap/Traps/Spikes3" index="10" instance=ExtResource( 9 )]
+position = Vector2( 160, 0 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps" index="10" instance=ExtResource( 9 )]
+position = Vector2( 295, 252 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps/Spikes2" index="1" instance=ExtResource( 9 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Spikes2" index="2" instance=ExtResource( 9 )]
+position = Vector2( 32, 0 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Spikes2" index="3" instance=ExtResource( 9 )]
+position = Vector2( 48, 0 )
+
+[node name="Spikes5" parent="MiddleGroundTileMap/Traps/Spikes2" index="4" instance=ExtResource( 9 )]
+position = Vector2( 64, 0 )
+
+[node name="Spikes6" parent="MiddleGroundTileMap/Traps/Spikes2" index="5" instance=ExtResource( 9 )]
+position = Vector2( 81, 0 )
+
+[node name="Spikes7" parent="MiddleGroundTileMap/Traps/Spikes2" index="6" instance=ExtResource( 9 )]
+position = Vector2( 97, 0 )
+
+[node name="Spikes8" parent="MiddleGroundTileMap/Traps/Spikes2" index="7" instance=ExtResource( 9 )]
+position = Vector2( 113, 0 )
+
+[node name="Spikes9" parent="MiddleGroundTileMap/Traps/Spikes2" index="8" instance=ExtResource( 9 )]
+position = Vector2( 129, 0 )
+
+[node name="Spikes10" parent="MiddleGroundTileMap/Traps/Spikes2" index="9" instance=ExtResource( 9 )]
+position = Vector2( 146, 0 )
+
+[node name="Spikes11" parent="MiddleGroundTileMap/Traps/Spikes2" index="10" instance=ExtResource( 9 )]
+position = Vector2( 162, 0 )
+
+[node name="Spikes12" parent="MiddleGroundTileMap/Traps/Spikes2" index="11" instance=ExtResource( 9 )]
+position = Vector2( 178, 0 )
+
+[node name="Spikes13" parent="MiddleGroundTileMap/Traps/Spikes2" index="12" instance=ExtResource( 9 )]
+position = Vector2( 194, 0 )
+
+[node name="Spikes14" parent="MiddleGroundTileMap/Traps/Spikes2" index="13" instance=ExtResource( 9 )]
+position = Vector2( 210, 0 )
+
+[node name="Spikes15" parent="MiddleGroundTileMap/Traps/Spikes2" index="14" instance=ExtResource( 9 )]
+position = Vector2( 226, 0 )
+
+[node name="Spikes16" parent="MiddleGroundTileMap/Traps/Spikes2" index="15" instance=ExtResource( 9 )]
+position = Vector2( 242, 0 )
+
+[node name="Spikes17" parent="MiddleGroundTileMap/Traps/Spikes2" index="16" instance=ExtResource( 9 )]
+position = Vector2( 258, 0 )
+
+[node name="Spikes18" parent="MiddleGroundTileMap/Traps/Spikes2" index="17" instance=ExtResource( 9 )]
+position = Vector2( 273, 0 )
+
+[node name="Spikes19" parent="MiddleGroundTileMap/Traps/Spikes2" index="18" instance=ExtResource( 9 )]
+position = Vector2( 289, 0 )
+
+[node name="Spikes20" parent="MiddleGroundTileMap/Traps/Spikes2" index="19" instance=ExtResource( 9 )]
+position = Vector2( 305, 0 )
+
+[node name="Spikes21" parent="MiddleGroundTileMap/Traps/Spikes2" index="20" instance=ExtResource( 9 )]
+position = Vector2( 321, 0 )
+
+[node name="Spikes22" parent="MiddleGroundTileMap/Traps/Spikes2" index="21" instance=ExtResource( 9 )]
+position = Vector2( 337, 0 )
+
+[node name="Spikes23" parent="MiddleGroundTileMap/Traps/Spikes2" index="22" instance=ExtResource( 9 )]
+position = Vector2( 353, 0 )
+
+[node name="Spikes24" parent="MiddleGroundTileMap/Traps/Spikes2" index="23" instance=ExtResource( 9 )]
+position = Vector2( 369, 0 )
+
+[node name="Spikes25" parent="MiddleGroundTileMap/Traps/Spikes2" index="24" instance=ExtResource( 9 )]
+position = Vector2( 385, 0 )
+
+[node name="Spikes26" parent="MiddleGroundTileMap/Traps/Spikes2" index="25" instance=ExtResource( 9 )]
+position = Vector2( 401, 0 )
+
+[node name="Spikes27" parent="MiddleGroundTileMap/Traps/Spikes2" index="26" instance=ExtResource( 9 )]
+position = Vector2( 417, 0 )
+
+[node name="Spikes28" parent="MiddleGroundTileMap/Traps/Spikes2" index="27" instance=ExtResource( 9 )]
+position = Vector2( 433, 0 )
+
+[node name="Spikes29" parent="MiddleGroundTileMap/Traps/Spikes2" index="28" instance=ExtResource( 9 )]
+position = Vector2( 449, 0 )
+
+[node name="Spikes30" parent="MiddleGroundTileMap/Traps/Spikes2" index="29" instance=ExtResource( 9 )]
+position = Vector2( 465, 0 )
+
+[node name="Spikes31" parent="MiddleGroundTileMap/Traps/Spikes2" index="30" instance=ExtResource( 9 )]
+position = Vector2( 481, 0 )
+
+[node name="Spikes32" parent="MiddleGroundTileMap/Traps/Spikes2" index="31" instance=ExtResource( 9 )]
+position = Vector2( 497, 0 )
+
+[node name="Spikes33" parent="MiddleGroundTileMap/Traps/Spikes2" index="32" instance=ExtResource( 9 )]
+position = Vector2( 513, 0 )
+
+[node name="Spikes34" parent="MiddleGroundTileMap/Traps/Spikes2" index="33" instance=ExtResource( 9 )]
+position = Vector2( 528, 0 )
+
+[node name="Spikes35" parent="MiddleGroundTileMap/Traps/Spikes2" index="34" instance=ExtResource( 9 )]
+position = Vector2( 544, 0 )
+
+[node name="Spikes36" parent="MiddleGroundTileMap/Traps/Spikes2" index="35" instance=ExtResource( 9 )]
+position = Vector2( 560, 0 )
+
+[node name="Spikes37" parent="MiddleGroundTileMap/Traps/Spikes2" index="36" instance=ExtResource( 9 )]
+position = Vector2( 576, 0 )
+
+[node name="Spikes38" parent="MiddleGroundTileMap/Traps/Spikes2" index="37" instance=ExtResource( 9 )]
+position = Vector2( 592, 0 )
+
+[node name="Spikes39" parent="MiddleGroundTileMap/Traps/Spikes2" index="38" instance=ExtResource( 9 )]
+position = Vector2( 608, 0 )
+
+[node name="Spikes40" parent="MiddleGroundTileMap/Traps/Spikes2" index="39" instance=ExtResource( 9 )]
+position = Vector2( 624, 0 )
+
+[node name="Spikes41" parent="MiddleGroundTileMap/Traps/Spikes2" index="40" instance=ExtResource( 9 )]
+position = Vector2( 640, 0 )
+
+[node name="Spikes42" parent="MiddleGroundTileMap/Traps/Spikes2" index="41" instance=ExtResource( 9 )]
+position = Vector2( 657, 0 )
+
+[node name="Spikes43" parent="MiddleGroundTileMap/Traps/Spikes2" index="42" instance=ExtResource( 9 )]
+position = Vector2( 673, 0 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps" index="11" instance=ExtResource( 9 )]
+position = Vector2( 568, 477 )
+
+[node name="Spikes2" parent="MiddleGroundTileMap/Traps/Spikes4" index="1" instance=ExtResource( 9 )]
+position = Vector2( 16, 0 )
+
+[node name="Spikes3" parent="MiddleGroundTileMap/Traps/Spikes4" index="2" instance=ExtResource( 9 )]
+position = Vector2( 32, 0 )
+
+[node name="Spikes4" parent="MiddleGroundTileMap/Traps/Spikes4" index="3" instance=ExtResource( 9 )]
+position = Vector2( 48, 0 )
+
+[node name="Laser" parent="MiddleGroundTileMap/Traps" index="12" instance=ExtResource( 12 )]
+position = Vector2( 1040, 385 )
+rotation = 1.5708
+
+[node name="Laser2" parent="MiddleGroundTileMap/Traps" index="13" instance=ExtResource( 12 )]
+position = Vector2( 1214, 401 )
+rotation = 1.5708
+
+[node name="Laser3" parent="MiddleGroundTileMap/Traps" index="14" instance=ExtResource( 12 )]
+position = Vector2( 1128, 465 )
+rotation = 1.5708
+
+[node name="Carniplant" parent="MiddleGroundTileMap/Enemies" index="0" instance=ExtResource( 5 )]
+position = Vector2( 984, 224 )
+scale = Vector2( -1, 1 )
+
+[node name="Ant" parent="MiddleGroundTileMap/Enemies" index="1" instance=ExtResource( 11 )]
+position = Vector2( 1328, 384 )
+
+[node name="Ant2" parent="MiddleGroundTileMap/Enemies" index="2" instance=ExtResource( 11 )]
+position = Vector2( 1160, 384 )
+
+[node name="Gem" parent="MiddleGroundTileMap/Collectables" index="0" instance=ExtResource( 17 )]
+position = Vector2( 272, 83 )
+
+[node name="Gem2" parent="MiddleGroundTileMap/Collectables" index="1" instance=ExtResource( 17 )]
+position = Vector2( 417, 173 )
+
+[node name="Gem3" parent="MiddleGroundTileMap/Collectables" index="2" instance=ExtResource( 17 )]
+position = Vector2( 1272, 25 )
+
+[node name="Gem4" parent="MiddleGroundTileMap/Collectables" index="3" instance=ExtResource( 17 )]
+position = Vector2( 1096, 424 )
+
+[node name="Gem5" parent="MiddleGroundTileMap/Collectables" index="4" instance=ExtResource( 17 )]
+position = Vector2( 1128, 424 )
+
+[node name="Gem6" parent="MiddleGroundTileMap/Collectables" index="5" instance=ExtResource( 17 )]
+position = Vector2( 1160, 424 )
+
+[node name="Gem7" parent="MiddleGroundTileMap/Collectables" index="6" instance=ExtResource( 17 )]
+position = Vector2( 1096, 497 )
+
+[node name="Gem8" parent="MiddleGroundTileMap/Collectables" index="7" instance=ExtResource( 17 )]
+position = Vector2( 1128, 497 )
+
+[node name="Gem9" parent="MiddleGroundTileMap/Collectables" index="8" instance=ExtResource( 17 )]
+position = Vector2( 1160, 497 )
+
+[node name="Gem10" parent="MiddleGroundTileMap/Collectables" index="9" instance=ExtResource( 17 )]
+position = Vector2( 430, 336 )
+
+[node name="Gem11" parent="MiddleGroundTileMap/Collectables" index="10" instance=ExtResource( 17 )]
+position = Vector2( 166, 464 )
+
+[node name="Carrot2" parent="MiddleGroundTileMap/Collectables" index="11" instance=ExtResource( 15 )]
+position = Vector2( 624, 152 )
+
+[node name="Carrot3" parent="MiddleGroundTileMap/Collectables" index="12" instance=ExtResource( 15 )]
+position = Vector2( 808, 152 )
+
+[node name="Carrot4" parent="MiddleGroundTileMap/Collectables" index="13" instance=ExtResource( 15 )]
+position = Vector2( 1348, 58 )
+
+[node name="Carrot7" parent="MiddleGroundTileMap/Collectables" index="14" instance=ExtResource( 15 )]
+position = Vector2( 1016, 206 )
+
+[node name="Carrot5" parent="MiddleGroundTileMap/Collectables" index="15" instance=ExtResource( 15 )]
+position = Vector2( 1348, 24 )
+
+[node name="Carrot6" parent="MiddleGroundTileMap/Collectables" index="16" instance=ExtResource( 15 )]
+position = Vector2( 879, 333 )
+
+[node name="Acorn" parent="MiddleGroundTileMap/Collectables" index="17" instance=ExtResource( 16 )]
+position = Vector2( 1199, 343 )
+
+[node name="Acorn2" parent="MiddleGroundTileMap/Collectables" index="18" instance=ExtResource( 16 )]
+position = Vector2( 1224, 343 )
+
+[node name="Acorn3" parent="MiddleGroundTileMap/Collectables" index="19" instance=ExtResource( 16 )]
+position = Vector2( 1248, 343 )
+
+[node name="Acorn4" parent="MiddleGroundTileMap/Collectables" index="20" instance=ExtResource( 16 )]
+position = Vector2( 640, 448 )
+
+[node name="Acorn5" parent="MiddleGroundTileMap/Collectables" index="21" instance=ExtResource( 16 )]
+position = Vector2( 664, 448 )
+
+[node name="Switch" parent="MiddleGroundTileMap/Interactables" index="0" instance=ExtResource( 7 )]
+position = Vector2( 1272, 40 )
+object_path = NodePath("../TilmapForSwitch")
+
+[node name="TilmapForSwitch" parent="MiddleGroundTileMap/Interactables" index="1" instance=ExtResource( 6 )]
+material = SubResource( 2 )
+tile_data = PoolIntArray( 458831, 10, 0, 458832, 10, 0, 458833, 10, 0, 458834, 10, 0, 458835, 10, 0, 458836, 10, 0, 524367, 10, 0, 524368, 10, 0, 524369, 10, 0, 524370, 10, 0, 524371, 10, 0, 524372, 10, 0, 589903, 10, 0, 589904, 10, 0, 589905, 10, 0, 589906, 10, 0, 589907, 10, 0, 589908, 10, 0, 655439, 10, 0, 655440, 10, 0, 655441, 10, 0, 655442, 10, 0, 655443, 10, 0, 655444, 10, 0, 720975, 10, 0, 720976, 10, 0, 720977, 10, 0, 720978, 10, 0, 720979, 10, 0, 720980, 10, 0, 786511, 10, 0, 786512, 10, 0, 786513, 10, 0, 786514, 10, 0, 786515, 10, 0, 786516, 10, 0, 852047, 10, 0, 852048, 10, 0, 852049, 10, 0, 852050, 10, 0, 852051, 10, 0, 852052, 10, 0 )
+
+[node name="Switch2" parent="MiddleGroundTileMap/Interactables" index="2" instance=ExtResource( 7 )]
+position = Vector2( 1408, 520 )
+object_path = NodePath("../TilmapForSwitch2")
+
+[node name="TilmapForSwitch2" parent="MiddleGroundTileMap/Interactables" index="3" instance=ExtResource( 6 )]
+material = SubResource( 4 )
+tile_data = PoolIntArray( 1900603, 10, 0, 1900604, 10, 0, 1900605, 10, 0, 1966139, 10, 0, 1966140, 10, 0, 1966141, 10, 0, 2031675, 10, 0, 2031676, 10, 0, 2031677, 10, 0, 2097211, 10, 0, 2097212, 10, 0, 2097213, 10, 0 )
+
+[node name="Switch3" parent="MiddleGroundTileMap/Interactables" index="4" instance=ExtResource( 7 )]
+position = Vector2( 928, 344 )
+object_path = NodePath("../TilmapForSwitch3")
+
+[node name="TilmapForSwitch3" parent="MiddleGroundTileMap/Interactables" index="5" instance=ExtResource( 6 )]
+material = SubResource( 6 )
+tile_data = PoolIntArray( 1179676, 10, 0, 1179677, 10, 0, 1179678, 10, 0, 1179679, 10, 0, 1245212, 10, 0, 1245213, 10, 0, 1245214, 10, 0, 1245215, 10, 0, 1310748, 10, 0, 1310749, 10, 0, 1310750, 10, 0, 1310751, 10, 0, 1376284, 10, 0, 1376285, 10, 0, 1376286, 10, 0, 1376287, 10, 0 )
+
+[node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 14 )]
+position = Vector2( 456, 178 )
+
+[node name="Checkpoint2" parent="MiddleGroundTileMap/Checkpoints" index="1" instance=ExtResource( 14 )]
+position = Vector2( 505, 178 )
+
+[node name="Checkpoint3" parent="MiddleGroundTileMap/Checkpoints" index="2" instance=ExtResource( 14 )]
+position = Vector2( 940, 98 )
+
+[node name="Checkpoint4" parent="MiddleGroundTileMap/Checkpoints" index="3" instance=ExtResource( 14 )]
+position = Vector2( 984, 98 )
+
+[node name="Checkpoint5" parent="MiddleGroundTileMap/Checkpoints" index="4" instance=ExtResource( 14 )]
+position = Vector2( 1368, 212 )
+
+[node name="Checkpoint6" parent="MiddleGroundTileMap/Checkpoints" index="5" instance=ExtResource( 14 )]
+position = Vector2( 1400, 351 )
+
+[node name="Checkpoint7" parent="MiddleGroundTileMap/Checkpoints" index="6" instance=ExtResource( 14 )]
+position = Vector2( 1008, 516 )
+
+[node name="Checkpoint8" parent="MiddleGroundTileMap/Checkpoints" index="7" instance=ExtResource( 14 )]
+position = Vector2( 926, 516 )
+
+[node name="Checkpoint9" parent="MiddleGroundTileMap/Checkpoints" index="8" instance=ExtResource( 14 )]
+position = Vector2( 525, 336 )
+
+[node name="Checkpoint10" parent="MiddleGroundTileMap/Checkpoints" index="9" instance=ExtResource( 14 )]
+position = Vector2( 430, 334 )
+
+[node name="EndOfLevel" parent="MiddleGroundTileMap" index="10"]
+position = Vector2( 117, 480 )
+direction = 1
+
+[node name="CollisionShape2D" parent="MiddleGroundTileMap/EndOfLevel/Area2D" index="0"]
+position = Vector2( -117, 4 )
+
+[node name="Sign" parent="MiddleGroundTileMap/EndOfLevel" index="2"]
+position = Vector2( 143, 0 )
+
+[node name="Head" parent="MiddleGroundTileMap/EndOfLevel/Sign" index="1"]
+scale = Vector2( -1, 1 )
+
+[node name="FallLimitArea" parent="FallLimits" index="0" instance=ExtResource( 10 )]
+position = Vector2( 792, 544 )
+
+[node name="CollisionShape2D" parent="FallLimits/FallLimitArea" index="0"]
+position = Vector2( 0, 4 )
+
+[node name="Fog" parent="FallLimits/FallLimitArea" index="1"]
+position = Vector2( 0, 8 )
+
+[node name="FallLimitArea2" parent="FallLimits" index="1" instance=ExtResource( 10 )]
+position = Vector2( 343, 548 )
+
+[node name="Anchor2" parent="Anchors" index="1" instance=ExtResource( 2 )]
+position = Vector2( 720, 135 )
+
+[node name="Anchor3" parent="Anchors" index="2" instance=ExtResource( 2 )]
+position = Vector2( 1200, 135 )
+
+[node name="Anchor4" parent="Anchors" index="3" instance=ExtResource( 2 )]
+position = Vector2( 1200, 405 )
+
+[node name="Anchor5" parent="Anchors" index="4" instance=ExtResource( 2 )]
+position = Vector2( 720, 405 )
+
+[node name="Anchor6" parent="Anchors" index="5" instance=ExtResource( 2 )]
+position = Vector2( 240, 405 )
+
+[editable path="MiddleGroundTileMap/EndOfLevel"]
+[editable path="FallLimits/FallLimitArea"]
