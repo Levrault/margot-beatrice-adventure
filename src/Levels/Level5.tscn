@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/Levels/Template/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://src/Objects/Collectables/Carrot.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Objects/Collectables/Acorn.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Levels/Template/checkpoints/Checkpoint.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Enemies/Patrol/Ant/Ant.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Shader" id=1]
 resource_local_to_scene = true
@@ -158,22 +159,6 @@ tile_data = PoolIntArray( -655302, 536870912, 0, -655301, 536870912, 1, -655300,
 [node name="Player" parent="MiddleGroundTileMap" index="0"]
 position = Vector2( 32, 208 )
 
-[node name="Switch" parent="MiddleGroundTileMap/Statics" index="0" instance=ExtResource( 4 )]
-position = Vector2( 912, 57 )
-object_path = NodePath("../TilmapForSwitch")
-
-[node name="TilmapForSwitch" parent="MiddleGroundTileMap/Statics" index="1" instance=ExtResource( 5 )]
-material = SubResource( 2 )
-tile_data = PoolIntArray( 655418, 10, 0, 655419, 10, 0, 655420, 10, 0, 720954, 10, 0, 720955, 10, 0, 720956, 10, 0, 786490, 10, 0, 786491, 10, 0, 786492, 10, 0 )
-
-[node name="Switch2" parent="MiddleGroundTileMap/Statics" index="2" instance=ExtResource( 4 )]
-position = Vector2( 1373.35, 56 )
-object_path = NodePath("../TilmapForSwitch2")
-
-[node name="TilmapForSwitch2" parent="MiddleGroundTileMap/Statics" index="3" instance=ExtResource( 5 )]
-material = SubResource( 4 )
-tile_data = PoolIntArray( 655447, 10, 0, 655448, 10, 0, 655449, 10, 0, 655450, 10, 0, 655451, 10, 0, 720983, 10, 0, 720984, 10, 0, 720985, 10, 0, 720986, 10, 0, 720987, 10, 0, 786519, 10, 0, 786520, 10, 0, 786521, 10, 0, 786522, 10, 0, 786523, 10, 0, 852055, 10, 0, 852056, 10, 0, 852057, 10, 0, 852058, 10, 0, 852059, 10, 0 )
-
 [node name="Laser" parent="MiddleGroundTileMap/Traps" index="0" instance=ExtResource( 3 )]
 position = Vector2( 175.5, -74.87 )
 rotation = 1.5708
@@ -217,23 +202,23 @@ position = Vector2( 1856, 239.16 )
 [node name="Opposum" parent="MiddleGroundTileMap/Enemies" index="0" instance=ExtResource( 8 )]
 position = Vector2( 667.103, 223.919 )
 
-[node name="Opposum2" parent="MiddleGroundTileMap/Enemies" index="1" instance=ExtResource( 8 )]
-position = Vector2( 1290.12, 65 )
-
-[node name="Opposum3" parent="MiddleGroundTileMap/Enemies" index="2" instance=ExtResource( 8 )]
+[node name="Opposum3" parent="MiddleGroundTileMap/Enemies" index="1" instance=ExtResource( 8 )]
 position = Vector2( 1696, 368 )
 
-[node name="Opposum4" parent="MiddleGroundTileMap/Enemies" index="3" instance=ExtResource( 8 )]
-position = Vector2( 1808, 432 )
-
-[node name="Opposum5" parent="MiddleGroundTileMap/Enemies" index="4" instance=ExtResource( 8 )]
+[node name="Opposum5" parent="MiddleGroundTileMap/Enemies" index="2" instance=ExtResource( 8 )]
 position = Vector2( 2128, 432 )
 
-[node name="Opposum6" parent="MiddleGroundTileMap/Enemies" index="5" instance=ExtResource( 8 )]
+[node name="Opposum6" parent="MiddleGroundTileMap/Enemies" index="3" instance=ExtResource( 8 )]
 position = Vector2( 2232, 384 )
 
-[node name="Opposum7" parent="MiddleGroundTileMap/Enemies" index="6" instance=ExtResource( 8 )]
-position = Vector2( 2742, 432 )
+[node name="Ant" parent="MiddleGroundTileMap/Enemies" index="4" instance=ExtResource( 14 )]
+position = Vector2( 1807.44, 432 )
+
+[node name="Ant2" parent="MiddleGroundTileMap/Enemies" index="5" instance=ExtResource( 14 )]
+position = Vector2( 2736, 432 )
+
+[node name="Ant3" parent="MiddleGroundTileMap/Enemies" index="6" instance=ExtResource( 14 )]
+position = Vector2( 1288, 64 )
 
 [node name="Gem" parent="MiddleGroundTileMap/Collectables" index="0" instance=ExtResource( 10 )]
 position = Vector2( 325, 41 )
@@ -351,6 +336,22 @@ position = Vector2( 2816, 409.5 )
 
 [node name="Acorn17" parent="MiddleGroundTileMap/Collectables" index="38" instance=ExtResource( 12 )]
 position = Vector2( 2840, 409 )
+
+[node name="Switch" parent="MiddleGroundTileMap/Interactables" index="0" instance=ExtResource( 4 )]
+position = Vector2( 912, 57 )
+object_path = NodePath("../TilmapForSwitch")
+
+[node name="TilmapForSwitch" parent="MiddleGroundTileMap/Interactables" index="1" instance=ExtResource( 5 )]
+material = SubResource( 2 )
+tile_data = PoolIntArray( 655418, 10, 0, 655419, 10, 0, 655420, 10, 0, 720954, 10, 0, 720955, 10, 0, 720956, 10, 0, 786490, 10, 0, 786491, 10, 0, 786492, 10, 0 )
+
+[node name="Switch2" parent="MiddleGroundTileMap/Interactables" index="2" instance=ExtResource( 4 )]
+position = Vector2( 1373.35, 56 )
+object_path = NodePath("../TilmapForSwitch2")
+
+[node name="TilmapForSwitch2" parent="MiddleGroundTileMap/Interactables" index="3" instance=ExtResource( 5 )]
+material = SubResource( 4 )
+tile_data = PoolIntArray( 655447, 10, 0, 655448, 10, 0, 655449, 10, 0, 655450, 10, 0, 655451, 10, 0, 720983, 10, 0, 720984, 10, 0, 720985, 10, 0, 720986, 10, 0, 720987, 10, 0, 786519, 10, 0, 786520, 10, 0, 786521, 10, 0, 786522, 10, 0, 786523, 10, 0, 852055, 10, 0, 852056, 10, 0, 852057, 10, 0, 852058, 10, 0, 852059, 10, 0 )
 
 [node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 13 )]
 position = Vector2( 448, 188 )
