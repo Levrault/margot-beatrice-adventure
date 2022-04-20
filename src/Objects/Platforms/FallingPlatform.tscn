@@ -119,7 +119,7 @@ extents = Vector2( 16, 1 )
 
 [node name="FallingPlatform" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 0
 motion/sync_to_physics = true
 script = ExtResource( 3 )
 

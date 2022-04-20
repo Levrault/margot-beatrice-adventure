@@ -94,6 +94,8 @@ func reset() -> void:
 
 
 func _on_Player_entered(body: Player) -> void:
+	if body == null:
+		return
 	body.is_snapped_to_floor = true
 
 	_has_player = true
@@ -101,6 +103,8 @@ func _on_Player_entered(body: Player) -> void:
 
 
 func _on_Player_exited(body: Player) -> void:
+	if body == null:
+		return
 	body.is_snapped_to_floor = false
 
 	_has_player = false
