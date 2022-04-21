@@ -34,7 +34,6 @@ layer = 2
 
 [node name="IrisShot" parent="FullScreenShader" instance=ExtResource( 7 )]
 visible = false
-playback_speed = 3.0
 auto_start = false
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -53,9 +52,7 @@ margin_bottom = 20.0
 [node name="Scoreboard" parent="UI" instance=ExtResource( 5 )]
 
 [node name="Screenshot" parent="UI" instance=ExtResource( 18 )]
-margin_left = 480.0
 margin_top = 10.0
-margin_right = 480.0
 margin_bottom = 10.0
 
 [node name="GamepadChanged" parent="UI" instance=ExtResource( 20 )]

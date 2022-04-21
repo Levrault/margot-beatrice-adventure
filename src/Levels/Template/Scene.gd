@@ -28,6 +28,7 @@ export (
 
 onready var player: Player = find_node("Player")
 onready var _anchors := $Anchors.get_children()
+onready var iris_shot := $FullScreenShader/IrisShot
 
 
 func _ready() -> void:
@@ -99,9 +100,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func initialize() -> void:
 	if not full_screen_shader:
-		$FullScreenShader.queue_free()
+		iris_shot.get_parent().queue_free()
 	else:
-		$FullScreenShader/IrisShot.play()
+		iris_shot.play()
 	# Camera management
 	SceneManager.anchor = get_nearest_anchor()
 	SceneManager.anchor.update_anchor_limit()
@@ -109,9 +110,9 @@ func initialize() -> void:
 
 	# track player
 	Events.connect("player_moved", self, "_on_Player_moved")
+	Events.connect("player_moved", self, "_on_Level_started")
+	iris_shot.connect("animation_finished", self, "_on_Level_started")
 	Events.emit_signal("room_loaded")
-	Events.emit_signal("level_started")
-
 	MusicPlayer.change_track(music_track)
 
 
@@ -147,3 +148,9 @@ func _on_Player_moved(player: Player) -> void:
 
 	SceneManager.anchor = nearest_anchor
 	Events.emit_signal("camera_anchor_changed")
+
+
+func _on_Level_started() -> void:
+	Events.emit_signal("level_started")
+	iris_shot.disconnect("animation_finished", self, "_on_Level_started")
+	Events.disconnect("player_moved", self, "_on_Level_started")
