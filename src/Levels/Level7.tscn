@@ -21,7 +21,7 @@ extents = Vector2( 868.5, 10 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 312, 10 )
 
-[node name="Scene" instance=ExtResource( 1 )]
+[node name="Level7" instance=ExtResource( 1 )]
 next_level = "level8"
 
 [node name="Scoreboard" parent="UI" index="4"]
@@ -87,24 +87,30 @@ position = Vector2( 880, -12 )
 position = Vector2( 912, -12.0395 )
 
 [node name="Platform6" parent="MiddleGroundTileMap/Platforms" index="16" instance=ExtResource( 2 )]
-position = Vector2( 528, -167.521 )
+position = Vector2( 527.99, -136 )
 
 [node name="Platform7" parent="MiddleGroundTileMap/Platforms" index="17" instance=ExtResource( 2 )]
-position = Vector2( 560, -167.521 )
+position = Vector2( 559.99, -136 )
 
-[node name="Platform8" parent="MiddleGroundTileMap/Platforms" index="18" instance=ExtResource( 2 )]
+[node name="Platform11" parent="MiddleGroundTileMap/Platforms" index="18" instance=ExtResource( 2 )]
+position = Vector2( 526.366, -221.186 )
+
+[node name="Platform12" parent="MiddleGroundTileMap/Platforms" index="19" instance=ExtResource( 2 )]
+position = Vector2( 558.366, -221.186 )
+
+[node name="Platform8" parent="MiddleGroundTileMap/Platforms" index="20" instance=ExtResource( 2 )]
 position = Vector2( 733, -434.964 )
 
-[node name="Platform10" parent="MiddleGroundTileMap/Platforms" index="19" instance=ExtResource( 2 )]
+[node name="Platform10" parent="MiddleGroundTileMap/Platforms" index="21" instance=ExtResource( 2 )]
 position = Vector2( 701, -434.964 )
 
-[node name="PlatformWaypoints" parent="MiddleGroundTileMap/Platforms" index="20" instance=ExtResource( 8 )]
+[node name="PlatformWaypoints" parent="MiddleGroundTileMap/Platforms" index="22" instance=ExtResource( 8 )]
 position = Vector2( 1144, -616 )
 points = PoolVector2Array( 0, 0, 0, -120 )
 
 [node name="Platform" parent="MiddleGroundTileMap/Platforms/PlatformWaypoints" index="0" instance=ExtResource( 2 )]
 
-[node name="PlatformWaypoints2" parent="MiddleGroundTileMap/Platforms" index="21" instance=ExtResource( 8 )]
+[node name="PlatformWaypoints2" parent="MiddleGroundTileMap/Platforms" index="23" instance=ExtResource( 8 )]
 position = Vector2( 1288, -615.521 )
 points = PoolVector2Array( 0, 0, 0, -120 )
 
@@ -414,7 +420,7 @@ position = Vector2( 784.01, 91 )
 position = Vector2( 880, 89 )
 
 [node name="Carrot11" parent="MiddleGroundTileMap/Collectables" index="24" instance=ExtResource( 13 )]
-position = Vector2( 543.993, -197.186 )
+position = Vector2( 543.989, -176 )
 
 [node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 12 )]
 position = Vector2( 456, 76 )
@@ -429,7 +435,7 @@ position = Vector2( 880.007, 20 )
 position = Vector2( 880.007, -34.4244 )
 
 [node name="Checkpoint5" parent="MiddleGroundTileMap/Checkpoints" index="4" instance=ExtResource( 12 )]
-position = Vector2( 542.03, -197.186 )
+position = Vector2( 539.416, -240 )
 
 [node name="Checkpoint6" parent="MiddleGroundTileMap/Checkpoints" index="5" instance=ExtResource( 12 )]
 position = Vector2( 519.416, -292.926 )
