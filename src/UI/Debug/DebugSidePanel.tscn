@@ -39,8 +39,8 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-margin_right = 99.0
-margin_bottom = 139.0
+margin_right = 97.0
+margin_bottom = 154.0
 custom_constants/margin_right = 4
 custom_constants/margin_top = 4
 custom_constants/margin_left = 4
@@ -52,60 +52,12 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 95.0
-margin_bottom = 135.0
-
-[node name="Anchor" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_right = 91.0
-margin_bottom = 11.0
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Anchor"]
-margin_right = 36.0
-margin_bottom = 11.0
-text = "anchor"
-
-[node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Anchor"]
-margin_left = 40.0
-margin_right = 82.0
-margin_bottom = 11.0
-text = "anchor1"
-
-[node name="Gamepad" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 15.0
-margin_right = 91.0
-margin_bottom = 26.0
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Gamepad"]
-margin_right = 42.0
-margin_bottom = 11.0
-text = "gamepad	"
-
-[node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Gamepad"]
-margin_left = 46.0
-margin_right = 60.0
-margin_bottom = 11.0
-text = "0.0"
-
-[node name="GamepadLayout" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 30.0
-margin_right = 91.0
-margin_bottom = 41.0
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GamepadLayout"]
-margin_right = 31.0
-margin_bottom = 11.0
-text = "layout"
-
-[node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GamepadLayout"]
-margin_left = 35.0
-margin_right = 49.0
-margin_bottom = 11.0
-text = "0.0"
+margin_right = 93.0
+margin_bottom = 150.0
 
 [node name="Level" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 45.0
-margin_right = 91.0
-margin_bottom = 56.0
+margin_right = 89.0
+margin_bottom = 11.0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Level"]
 margin_right = 24.0
@@ -114,14 +66,78 @@ text = "level"
 
 [node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Level"]
 margin_left = 28.0
+margin_right = 40.0
+margin_bottom = 11.0
+text = "--"
+
+[node name="Camera" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 15.0
+margin_right = 89.0
+margin_bottom = 26.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Camera"]
+margin_right = 36.0
+margin_bottom = 11.0
+text = "camera"
+
+[node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Camera"]
+margin_left = 40.0
+margin_right = 52.0
+margin_bottom = 11.0
+text = "--"
+
+[node name="Anchor" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 30.0
+margin_right = 89.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Anchor"]
+margin_right = 36.0
+margin_bottom = 11.0
+text = "anchor"
+
+[node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Anchor"]
+margin_left = 40.0
+margin_right = 52.0
+margin_bottom = 11.0
+text = "--"
+
+[node name="Gamepad" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 45.0
+margin_right = 89.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Gamepad"]
 margin_right = 42.0
 margin_bottom = 11.0
-text = "0.0"
+text = "gamepad	"
+
+[node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Gamepad"]
+margin_left = 46.0
+margin_right = 58.0
+margin_bottom = 11.0
+text = "--"
+
+[node name="GamepadLayout" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 89.0
+margin_bottom = 71.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GamepadLayout"]
+margin_right = 31.0
+margin_bottom = 11.0
+text = "layout"
+
+[node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GamepadLayout"]
+margin_left = 35.0
+margin_right = 47.0
+margin_bottom = 11.0
+text = "--"
 
 [node name="PlayerPosition" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 60.0
-margin_right = 91.0
-margin_bottom = 71.0
+margin_top = 75.0
+margin_right = 89.0
+margin_bottom = 86.0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PlayerPosition"]
 margin_right = 73.0
@@ -130,14 +146,14 @@ text = "player position"
 
 [node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PlayerPosition"]
 margin_left = 77.0
-margin_right = 91.0
+margin_right = 89.0
 margin_bottom = 11.0
-text = "0.0"
+text = "--"
 
 [node name="PlayerState" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 75.0
-margin_right = 91.0
-margin_bottom = 86.0
+margin_top = 90.0
+margin_right = 89.0
+margin_bottom = 101.0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PlayerState"]
 margin_right = 61.0
@@ -146,14 +162,14 @@ text = "player state"
 
 [node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PlayerState"]
 margin_left = 65.0
-margin_right = 79.0
+margin_right = 77.0
 margin_bottom = 11.0
-text = "0.0"
+text = "--"
 
 [node name="HitsTaken" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 90.0
-margin_right = 91.0
-margin_bottom = 101.0
+margin_top = 105.0
+margin_right = 89.0
+margin_bottom = 116.0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HitsTaken"]
 margin_right = 47.0
@@ -162,14 +178,14 @@ text = "HitsTaken"
 
 [node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HitsTaken"]
 margin_left = 51.0
-margin_right = 65.0
+margin_right = 63.0
 margin_bottom = 11.0
-text = "0.0"
+text = "--"
 
 [node name="GameOver" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 105.0
-margin_right = 91.0
-margin_bottom = 116.0
+margin_top = 120.0
+margin_right = 89.0
+margin_bottom = 131.0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GameOver"]
 margin_right = 48.0
@@ -178,14 +194,14 @@ text = "GameOver"
 
 [node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GameOver"]
 margin_left = 52.0
-margin_right = 66.0
+margin_right = 64.0
 margin_bottom = 11.0
-text = "0.0"
+text = "--"
 
 [node name="SpawnPoint" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 120.0
-margin_right = 91.0
-margin_bottom = 131.0
+margin_top = 135.0
+margin_right = 89.0
+margin_bottom = 146.0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/SpawnPoint"]
 margin_right = 54.0
@@ -194,6 +210,6 @@ text = "SpawnPoint"
 
 [node name="Value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/SpawnPoint"]
 margin_left = 58.0
-margin_right = 72.0
+margin_right = 70.0
 margin_bottom = 11.0
-text = "0.0"
+text = "--"

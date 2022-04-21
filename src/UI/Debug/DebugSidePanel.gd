@@ -1,9 +1,10 @@
 extends Control
 
+onready var level = $PanelContainer/MarginContainer/VBoxContainer/Level/Value
+onready var camera = $PanelContainer/MarginContainer/VBoxContainer/Camera/Value
 onready var anchor = $PanelContainer/MarginContainer/VBoxContainer/Anchor/Value
 onready var gamepad = $PanelContainer/MarginContainer/VBoxContainer/Gamepad/Value
 onready var gamepad_layout = $PanelContainer/MarginContainer/VBoxContainer/GamepadLayout/Value
-onready var level = $PanelContainer/MarginContainer/VBoxContainer/Level/Value
 onready var player_position = $PanelContainer/MarginContainer/VBoxContainer/PlayerPosition/Value
 onready var player_state = $PanelContainer/MarginContainer/VBoxContainer/PlayerState/Value
 onready var hits_taken = $PanelContainer/MarginContainer/VBoxContainer/HitsTaken/Value
@@ -16,7 +17,9 @@ func _ready() -> void:
 	if not ProjectSettings.get_setting("game/debug"):
 		queue_free()
 	Events.connect("player_moved", self, "_on_Player_moved")
+	Events.connect("camera_changed", self, "_on_Camera_changed")
 	InputManager.connect("device_changed", self, "_on_Device_changed")
+	level.text = Game.current_level
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -44,3 +47,7 @@ func _on_Player_moved(player: Player) -> void:
 func _on_Device_changed(device: String, device_index: int) -> void:
 	gamepad.text = "%s - %s" % [device, String(device_index)]
 	gamepad_layout.text = Config.values.gamepad_layout.gamepad_layout
+
+
+func _on_Camera_changed(name: String) -> void:
+	camera.text = name

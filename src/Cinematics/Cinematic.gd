@@ -6,6 +6,10 @@ onready var anim := $AnimationPlayer
 
 func initialize() -> void:
 	camera.current = true
+
+	if ProjectSettings.get_setting("game/debug"):
+		Events.call_deferred("emit_signal", "camera_changed", camera.get_name())
+
 	anim.play("fade")
 	Events.emit_signal("player_hud_disabled")
 	Events.emit_signal("player_input_disabled")

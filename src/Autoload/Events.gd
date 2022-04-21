@@ -13,6 +13,7 @@ signal screenshot_ended
 ############
 
 # camera
+signal camera_changed(name)
 signal camera_offset_changed(offset)
 signal camera_offset_resetted
 signal camera_anchor_changed

@@ -61,3 +61,5 @@ func _on_Cinematic_started() -> void:
 
 func _on_Cinematic_ended() -> void:
 	camera.current = true
+	if ProjectSettings.get_setting("game/debug"):
+		Events.emit_signal("camera_changed", camera.get_name())

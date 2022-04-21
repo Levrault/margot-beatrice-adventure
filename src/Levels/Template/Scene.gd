@@ -36,12 +36,9 @@ func _ready() -> void:
 		set_process_unhandled_input(false)
 
 	Game.current_level = get_name()
+
 	# start cinematic
 	var introduction_cinematic = get_node_or_null(introduction_cinematic_path)
-
-	if not ProjectSettings.get_setting("game/debug"):
-		set_process_unhandled_input(false)
-
 	if ProjectSettings.get_setting("game/skip_cinematic"):
 		introduction_cinematic.queue_free()
 		introduction_cinematic = null
@@ -150,7 +147,7 @@ func _on_Player_moved(player: Player) -> void:
 	Events.emit_signal("camera_anchor_changed")
 
 
-func _on_Level_started() -> void:
+func _on_Level_started(player: Player) -> void:
 	Events.emit_signal("level_started")
 	iris_shot.disconnect("animation_finished", self, "_on_Level_started")
 	Events.disconnect("player_moved", self, "_on_Level_started")

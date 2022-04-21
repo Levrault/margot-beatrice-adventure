@@ -17,3 +17,8 @@ var rank := {
 	"B": {"value": 1, "text": "B"},
 	"C": {"value": 0, "text": "C"}
 }
+
+
+func reset() -> void:
+	stats.game_over = 0
+	stats.hits_taken = 0
