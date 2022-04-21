@@ -27,8 +27,6 @@
 script = ExtResource( 3 )
 next_level = "level1"
 
-[node name="Debug" type="CanvasLayer" parent="."]
-
 [node name="FullScreenShader" type="CanvasLayer" parent="."]
 layer = 2
 

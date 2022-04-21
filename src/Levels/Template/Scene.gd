@@ -1,6 +1,5 @@
 extends Node2D
 
-export var full_screen_shader := true
 export var introduction_cinematic_path = NodePath()
 export var music_track := "lyonesse"
 export (
@@ -43,6 +42,7 @@ func _ready() -> void:
 		introduction_cinematic.queue_free()
 		introduction_cinematic = null
 	if introduction_cinematic != null:
+		iris_shot.hide()
 		Events.connect("cinematic_intro_ended", self, "initialize")
 		introduction_cinematic.initialize()
 		return
@@ -96,10 +96,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func initialize() -> void:
-	if not full_screen_shader:
-		iris_shot.get_parent().queue_free()
-	else:
-		iris_shot.play()
+	iris_shot.show()
+	iris_shot.play()
 	# Camera management
 	SceneManager.anchor = get_nearest_anchor()
 	SceneManager.anchor.update_anchor_limit()
