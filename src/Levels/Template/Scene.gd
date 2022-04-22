@@ -34,6 +34,8 @@ func _ready() -> void:
 	if not ProjectSettings.get_setting("game/debug"):
 		set_process_unhandled_input(false)
 
+	Character.reset_score()
+	Game.reset()
 	Game.current_level = get_name()
 
 	# start cinematic

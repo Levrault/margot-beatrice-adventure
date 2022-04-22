@@ -172,4 +172,5 @@ func unlock_next_level(profile_name: String, for_level: String) -> void:
 		return
 	var values = profiles[profile_name]
 	values.levels[for_level].locked = false
+	values.progression.last_unlocked_level = for_level
 	save_profile(profile_name, values)

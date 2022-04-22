@@ -70,7 +70,8 @@ func start_tween() -> void:
 			"rank": rank.text,
 			"hits": Game.stats.hits_taken,
 			"game_over": Game.stats.game_over,
-			"best_time": _elapsed_time
+			"best_time": _elapsed_time,
+			"locked": false
 		}
 	)
 	Serialize.unlock_next_level(Game.current_profile, owner.next_level)

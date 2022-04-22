@@ -9,9 +9,9 @@ export (Texture) var preview_texture = null
 export var max_gems := 0
 export var max_acorns := 0
 export var max_carrots := 0
-export var level_path := ""
 
 var data := {}
+var level_path := ""
 
 onready var tween := $Tween
 onready var overlay := $Overlay
@@ -22,6 +22,8 @@ onready var lock := $Lock
 func _ready() -> void:
 	yield(owner, "ready")
 	owner.connect("navigation_finished", self, "_on_Navigation_finished")
+
+	level_path = "res://src/Levels/%s.tscn" % get_name()
 	load_level_button.connect("pressed", self, "_on_Load_level_button_pressed")
 
 	load_level_button.disabled = locked
@@ -79,6 +81,7 @@ func _on_Focus_exited() -> void:
 
 func _on_Navigation_finished() -> void:
 	data = Serialize.profiles[Game.current_profile].levels[get_name().to_lower()]
+	print_debug(data)
 	self.locked = data.locked
 
 	if load_level_button.has_focus():

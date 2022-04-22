@@ -6,7 +6,7 @@ var selected = Playable.FOX
 var score := {
 	Playable.FOX: 0,
 	Playable.RABBIT: 0,
-	Playable.SQUIRREL: 0,
+	Playable.SQUIRREL: 0
 }
 
 var hitboxes = {
@@ -14,6 +14,14 @@ var hitboxes = {
 	Playable.RABBIT: "RabbitCollisionShape",
 	Playable.SQUIRREL: "SquirrelCollisionShape",
 }
+
+
+func reset_score() -> void:
+	score = {
+		Playable.FOX: 0,
+		Playable.RABBIT: 0,
+		Playable.SQUIRREL: 0
+	}
 
 
 func update_score() -> void:

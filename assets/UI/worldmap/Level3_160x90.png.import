@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level1-1649369651.png-0d9db1a314b9982eeede4d0eed7ec2d9.stex"
+path="res://.import/Level3_160x90.png-b05fafe7b27c5743c8b7089307e4b0da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/worldmap/Level1-1649369651.png"
-dest_files=[ "res://.import/Level1-1649369651.png-0d9db1a314b9982eeede4d0eed7ec2d9.stex" ]
+source_file="res://assets/UI/worldmap/Level3_160x90.png"
+dest_files=[ "res://.import/Level3_160x90.png-b05fafe7b27c5743c8b7089307e4b0da.stex" ]
 
 [params]
 

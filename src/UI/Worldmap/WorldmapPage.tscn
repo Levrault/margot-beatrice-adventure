@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
@@ -11,10 +11,14 @@
 [ext_resource path="res://assets/UI/hud/acorn.png" type="Texture" id=9]
 [ext_resource path="res://assets/UI/hud/gem.png" type="Texture" id=10]
 [ext_resource path="res://assets/UI/hud/carrot.png" type="Texture" id=11]
-[ext_resource path="res://assets/UI/worldmap/Level1-1649369083.png" type="Texture" id=12]
-[ext_resource path="res://assets/UI/worldmap/placeholder_160x90_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/worldmap/Level1_160x90.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/worldmap/Level2_160x90.png" type="Texture" id=13]
 [ext_resource path="res://src/UI/Worldmap/LevelName.gd" type="Script" id=14]
 [ext_resource path="res://src/UI/Worldmap/WorldmapCollected.gd" type="Script" id=15]
+[ext_resource path="res://assets/UI/worldmap/Level1_27x48.png" type="Texture" id=16]
+[ext_resource path="res://assets/UI/worldmap/Level2_27x48.png" type="Texture" id=17]
+[ext_resource path="res://assets/UI/worldmap/Level3_160x90.png" type="Texture" id=18]
+[ext_resource path="res://assets/UI/worldmap/Level3_27x48.png" type="Texture" id=19]
 
 [node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
@@ -149,7 +153,7 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
-margin_right = 252.0
+margin_right = 562.0
 margin_bottom = 52.0
 custom_constants/margin_right = 4
 custom_constants/margin_top = 4
@@ -158,17 +162,19 @@ custom_constants/margin_left = 4
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 248.0
+margin_right = 558.0
 margin_bottom = 52.0
 
 [node name="Level1" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 locked = false
-level_title = "level.title0"
+level_title = "level.title1"
 preview_texture = ExtResource( 12 )
 max_gems = 18
 max_acorns = 7
 max_carrots = 10
-level_path = "res://src/Levels/Level1.tscn"
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="1"]
+texture = ExtResource( 16 )
 
 [node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="3"]
 focus_mode = 2
@@ -180,37 +186,101 @@ visible = false
 [node name="Level2" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 31.0
 margin_right = 58.0
-level_title = "level.title1"
+level_title = "level.title2"
 preview_texture = ExtResource( 13 )
 max_gems = 13
 max_acorns = 7
 max_carrots = 14
-level_path = "res://src/Levels/Level2.tscn"
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level2" index="1"]
+texture = ExtResource( 17 )
 
 [node name="Level3" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 62.0
 margin_right = 89.0
-level_title = "level.title2"
+level_title = "level.title3"
+preview_texture = ExtResource( 18 )
+max_gems = 10
+max_acorns = 7
+max_carrots = 8
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level3" index="1"]
+texture = ExtResource( 19 )
 
 [node name="Level4" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 93.0
 margin_right = 120.0
+level_title = "level.title4"
 
 [node name="Level5" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 124.0
 margin_right = 151.0
+level_title = "level.title5"
 
 [node name="Level6" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 155.0
 margin_right = 182.0
+level_title = "level.title6"
 
 [node name="Level7" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 186.0
 margin_right = 213.0
+level_title = "level.title7"
 
 [node name="Level8" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 217.0
 margin_right = 244.0
+level_title = "level.title8"
+
+[node name="Level9" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 248.0
+margin_right = 275.0
+level_title = "level.title9"
+
+[node name="Level10" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 279.0
+margin_right = 306.0
+level_title = "level.title10"
+
+[node name="Level11" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 310.0
+margin_right = 337.0
+level_title = "level.title11"
+
+[node name="Level12" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 341.0
+margin_right = 368.0
+level_title = "level.title12"
+
+[node name="Level13" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 372.0
+margin_right = 399.0
+level_title = "level.title13"
+
+[node name="Level14" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 403.0
+margin_right = 430.0
+level_title = "level.title14"
+
+[node name="Level15" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 434.0
+margin_right = 461.0
+level_title = "level.title15"
+
+[node name="Level16" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 465.0
+margin_right = 492.0
+level_title = "level.title16"
+
+[node name="Level17" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 496.0
+margin_right = 523.0
+level_title = "level.title17"
+
+[node name="Level18" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 527.0
+margin_right = 554.0
+level_title = "level.title18"
 
 [node name="Footer" type="HBoxContainer" parent="."]
 margin_left = 20.0
@@ -239,3 +309,5 @@ __meta__ = {
 }
 
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level1"]
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level2"]
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level3"]
