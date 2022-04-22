@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://assets/UI/worldmap/Level2_27x48.png" type="Texture" id=17]
 [ext_resource path="res://assets/UI/worldmap/Level3_160x90.png" type="Texture" id=18]
 [ext_resource path="res://assets/UI/worldmap/Level3_27x48.png" type="Texture" id=19]
+[ext_resource path="res://assets/UI/worldmap/Level4_27x48.png" type="Texture" id=20]
+[ext_resource path="res://assets/UI/worldmap/Level4_160x90.png" type="Texture" id=21]
 
 [node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
@@ -211,6 +213,13 @@ texture = ExtResource( 19 )
 margin_left = 93.0
 margin_right = 120.0
 level_title = "level.title4"
+preview_texture = ExtResource( 21 )
+max_gems = 6
+max_acorns = 7
+max_carrots = 16
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level4" index="1"]
+texture = ExtResource( 20 )
 
 [node name="Level5" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 124.0
@@ -311,3 +320,4 @@ __meta__ = {
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level1"]
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level2"]
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level3"]
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level4"]

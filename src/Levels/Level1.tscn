@@ -166,9 +166,9 @@ next_level = "level2"
 script = ExtResource( 22 )
 
 [node name="Scoreboard" parent="UI" index="4"]
-time_for_rank_100 = 55000.0
-time_for_rank_80 = 70000.0
-time_for_rank_60 = 90000.0
+time_for_rank_100 = 55.0
+time_for_rank_80 = 70.0
+time_for_rank_60 = 90.0
 
 [node name="Screenshot" parent="UI" index="5"]
 margin_left = 0.0

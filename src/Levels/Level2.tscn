@@ -286,9 +286,9 @@ shader_param/color = Color( 1, 1, 1, 1 )
 next_level = "level3"
 
 [node name="Scoreboard" parent="UI" index="4"]
-time_for_rank_100 = 60000.0
-time_for_rank_80 = 90000.0
-time_for_rank_60 = 120000.0
+time_for_rank_100 = 60.0
+time_for_rank_80 = 90.0
+time_for_rank_60 = 120.0
 
 [node name="Screenshot" parent="UI" index="5"]
 margin_left = 0.0
