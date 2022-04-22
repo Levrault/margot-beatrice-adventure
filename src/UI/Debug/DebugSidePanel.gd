@@ -10,12 +10,17 @@ onready var player_state = $PanelContainer/MarginContainer/VBoxContainer/PlayerS
 onready var hits_taken = $PanelContainer/MarginContainer/VBoxContainer/HitsTaken/Value
 onready var game_over = $PanelContainer/MarginContainer/VBoxContainer/GameOver/Value
 onready var spawn_point = $PanelContainer/MarginContainer/VBoxContainer/SpawnPoint/Value
+onready var max_gems = $PanelContainer/MarginContainer/VBoxContainer/Gems/Value
+onready var max_carrots = $PanelContainer/MarginContainer/VBoxContainer/Carrots/Value
+onready var max_acorns = $PanelContainer/MarginContainer/VBoxContainer/Acorns/Value
 
 
 func _ready() -> void:
-	yield(owner, "ready")
+	Events.connect("collectable_max_value_counted", self, "_on_Collectable_max_value_counted")
 	if not ProjectSettings.get_setting("game/debug"):
 		queue_free()
+
+	yield(owner, "ready")
 	Events.connect("player_moved", self, "_on_Player_moved")
 	Events.connect("camera_changed", self, "_on_Camera_changed")
 	InputManager.connect("device_changed", self, "_on_Device_changed")
@@ -51,3 +56,9 @@ func _on_Device_changed(device: String, device_index: int) -> void:
 
 func _on_Camera_changed(name: String) -> void:
 	camera.text = name
+
+
+func _on_Collectable_max_value_counted(gems: int, acorns: int, carrots: int) -> void:
+	max_gems.text = String(gems)
+	max_carrots.text = String(acorns)
+	max_acorns.text = String(carrots)
