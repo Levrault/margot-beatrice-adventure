@@ -17,9 +17,12 @@ var tilemap: TileMap = null
 
 
 func set_anchor(new_anchor: CameraAnchor) -> void:
-	print_debug("New anchor is %s" % [new_anchor.get_name()])
 	previous_anchor = anchor
 	anchor = new_anchor
+	if new_anchor != null:
+		print_debug("New anchor is %s" % [new_anchor.get_name()])
+	else:
+		print_debug("New anchor is now null")
 
 
 func is_on_screen(object_position: Vector2) -> bool:

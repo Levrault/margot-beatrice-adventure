@@ -10,6 +10,9 @@ func _ready():
 func load_level() -> void:
 	AsyncLoading.goto_scene(go_to_scene_path)
 
+	if get_tree().paused:
+		get_tree().paused = false
+
 
 func _on_Loading_transition_started(go_to_scene: String) -> void:
 	go_to_scene_path = go_to_scene

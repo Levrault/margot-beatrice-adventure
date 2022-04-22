@@ -49,6 +49,11 @@ func _ready() -> void:
 	initialize()
 
 
+func _exit_tree() -> void:
+	SceneManager.anchor = null
+	Game.current_level = ""
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_restart_level"):
 		print_debug("--Level Restarted by debug command--")
