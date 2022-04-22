@@ -1,13 +1,13 @@
 [gd_resource type="TileSet" load_steps=67 format=2]
 
-[ext_resource path="res://assets/tilesets/lands/tileset_sunnyland.png" type="Texture" id=1]
-[ext_resource path="res://assets/environment/land/crate.png" type="Texture" id=2]
-[ext_resource path="res://assets/environment/land/platform-long.png" type="Texture" id=3]
-[ext_resource path="res://assets/environment/land/small-platform.png" type="Texture" id=4]
-[ext_resource path="res://assets/environment/land/big-crate.png" type="Texture" id=5]
-[ext_resource path="res://assets/environment/land/shrooms.png" type="Texture" id=6]
-[ext_resource path="res://assets/environment/land/block-big.png" type="Texture" id=7]
-[ext_resource path="res://assets/environment/land/rock.png" type="Texture" id=8]
+[ext_resource path="res://assets/tilesets/tileset_sunnyland.png" type="Texture" id=1]
+[ext_resource path="res://assets/tilesets/crate.png" type="Texture" id=2]
+[ext_resource path="res://assets/tilesets/platform-long.png" type="Texture" id=3]
+[ext_resource path="res://assets/tilesets/small-platform.png" type="Texture" id=4]
+[ext_resource path="res://assets/tilesets/big-crate.png" type="Texture" id=5]
+[ext_resource path="res://assets/tilesets/shrooms.png" type="Texture" id=6]
+[ext_resource path="res://assets/tilesets/block-big.png" type="Texture" id=7]
+[ext_resource path="res://assets/tilesets/rock.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )

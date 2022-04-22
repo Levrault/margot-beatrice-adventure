@@ -77,7 +77,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "EndOfLevel",
 "language": "GDScript",
-"path": "res://src/Objects/Statics/EndOfLevel.gd"
+"path": "res://src/Objects/Interactables/EndOfLevel.gd"
 }, {
 "base": "Actor",
 "class": "Enemy",

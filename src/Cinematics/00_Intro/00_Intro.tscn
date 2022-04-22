@@ -4,12 +4,12 @@
 [ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=2]
 [ext_resource path="res://src/NPCs/MargotBeatrice/MargotBeatriceSkin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/tilesets/tileset_land_background.tres" type="TileSet" id=4]
-[ext_resource path="res://assets/environment/land/back.png" type="Texture" id=5]
+[ext_resource path="res://assets/tilesets/back.png" type="Texture" id=5]
 [ext_resource path="res://assets/audio/jingles/jingles_HIT11.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/audio/wrap/warp2.ogg" type="AudioStream" id=7]
 [ext_resource path="res://src/Dialogues/CinematicDialogueController.gd" type="Script" id=8]
 [ext_resource path="res://src/Cinematics/Cinematic.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/environment/land/middle.png" type="Texture" id=10]
+[ext_resource path="res://assets/tilesets/middle.png" type="Texture" id=10]
 [ext_resource path="res://assets/particules/IceCast_96x96.png" type="Texture" id=11]
 [ext_resource path="res://src/Objects/Statics/PrisonGem.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Tween/Floating.gd" type="Script" id=13]
@@ -17,7 +17,7 @@
 [ext_resource path="res://src/Player/Fox/SkinFox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Player/Squirrel/SkinSquirrel.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Objects/Statics/Bush.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/Objects/Statics/Tree0.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Objects/Statics/Tree.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Objects/Statics/SacredGem.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=3]
@@ -976,7 +976,9 @@ position = Vector2( 396, -16 )
 [node name="SkinRabbit" parent="Environment/MiddleGround" index="6" instance=ExtResource( 14 )]
 position = Vector2( 394, -16 )
 
-[node name="Tree0" parent="Environment/MiddleGround" index="7" instance=ExtResource( 18 )]
+[node name="Tree" parent="Environment/MiddleGround" index="7" instance=ExtResource( 18 )]
+position = Vector2( 671, -46 )
+z_index = -1
 
 [node name="Bush" parent="Environment/MiddleGround" index="8" instance=ExtResource( 17 )]
 material = SubResource( 10 )

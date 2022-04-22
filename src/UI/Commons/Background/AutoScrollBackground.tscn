@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UI/Commons/Background/AutoScrollInfiniteBackground.gd" type="Script" id=1]
-[ext_resource path="res://assets/environment/land/back.png" type="Texture" id=2]
-[ext_resource path="res://assets/environment/land/middle.png" type="Texture" id=3]
+[ext_resource path="res://assets/tilesets/back.png" type="Texture" id=2]
+[ext_resource path="res://assets/tilesets/middle.png" type="Texture" id=3]
 
 [node name="AutoScrollBackground" type="ParallaxBackground"]
 follow_viewport_enable = true
