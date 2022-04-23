@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dualshock_CROSS.png-2e5b07ba4f70512cda7a6639b3c4eec4.stex"
+path="res://.import/Level7_27x48.png-1338245c561419a552a87a9bad5dcf58.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/dualshock_CROSS.png"
-dest_files=[ "res://.import/dualshock_CROSS.png-2e5b07ba4f70512cda7a6639b3c4eec4.stex" ]
+source_file="res://assets/UI/worldmap/Level7_27x48.png"
+dest_files=[ "res://.import/Level7_27x48.png-1338245c561419a552a87a9bad5dcf58.stex" ]
 
 [params]
 
