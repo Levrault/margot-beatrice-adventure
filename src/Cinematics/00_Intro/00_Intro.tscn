@@ -978,7 +978,6 @@ position = Vector2( 394, -16 )
 
 [node name="Tree" parent="Environment/MiddleGround" index="7" instance=ExtResource( 18 )]
 position = Vector2( 671, -46 )
-z_index = -1
 
 [node name="Bush" parent="Environment/MiddleGround" index="8" instance=ExtResource( 17 )]
 material = SubResource( 10 )

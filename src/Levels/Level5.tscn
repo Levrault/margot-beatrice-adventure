@@ -485,7 +485,7 @@ position = Vector2( 2432, 315 )
 position = Vector2( 2876.09, 527.833 )
 
 [node name="FallLimitArea" parent="FallLimits" index="0" instance=ExtResource( 7 )]
-position = Vector2( 191.502, 272 )
+position = Vector2( 192, 276 )
 
 [node name="Anchor2" parent="Anchors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 720, 135 )
