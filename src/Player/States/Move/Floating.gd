@@ -1,6 +1,6 @@
 extends State
 
-export var max_speed_default := Vector2(200.0, -290.00)
+export var max_speed_default := Vector2(200.0, -240.00)
 export var acceleration_default := Vector2(10000, -350.0)
 export var decceleration_default := Vector2(10000, -350.0)
 

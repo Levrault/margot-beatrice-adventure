@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
@@ -29,6 +29,10 @@
 [ext_resource path="res://assets/UI/worldmap/Level7_160x90.png" type="Texture" id=27]
 [ext_resource path="res://assets/UI/worldmap/Level8_160x90.png" type="Texture" id=28]
 [ext_resource path="res://assets/UI/worldmap/Level8_27x48.png" type="Texture" id=29]
+[ext_resource path="res://assets/UI/worldmap/Level10_160x90.png" type="Texture" id=30]
+[ext_resource path="res://assets/UI/worldmap/Level10_27x48.png" type="Texture" id=31]
+[ext_resource path="res://assets/UI/worldmap/Level9_27x48.png" type="Texture" id=32]
+[ext_resource path="res://assets/UI/worldmap/Level9_160x90.png" type="Texture" id=33]
 
 [node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
@@ -282,11 +286,25 @@ texture = ExtResource( 29 )
 margin_left = 248.0
 margin_right = 275.0
 level_title = "level.title9"
+preview_texture = ExtResource( 33 )
+max_gems = 14
+max_acorns = 8
+max_carrots = 9
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level9" index="1"]
+texture = ExtResource( 32 )
 
 [node name="Level10" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 279.0
 margin_right = 306.0
 level_title = "level.title10"
+preview_texture = ExtResource( 30 )
+max_gems = 10
+max_acorns = 9
+max_carrots = 9
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level10" index="1"]
+texture = ExtResource( 31 )
 
 [node name="Level11" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 310.0
@@ -362,3 +380,5 @@ __meta__ = {
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level6"]
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level7"]
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level8"]
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level9"]
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level10"]

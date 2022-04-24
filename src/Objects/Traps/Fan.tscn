@@ -104,7 +104,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -116,7 +116,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.8 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -155,7 +155,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.8 ),
+"times": PoolRealArray( 1.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -166,11 +166,10 @@ extents = Vector2( 11.5, 42 )
 
 [node name="Fan" type="Node2D"]
 script = ExtResource( 2 )
-on_time = 4.0
+off_time = 2.0
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 0, -11 )
-emitting = false
 lifetime = 3.0
 process_material = SubResource( 7 )
 texture = ExtResource( 3 )
@@ -190,11 +189,9 @@ next/transition_to_on = "on"
 position = Vector2( 0, -4 )
 texture = ExtResource( 1 )
 hframes = 4
-frame = 2
 
 [node name="PlayerDetector" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 0.5, -42 )
 shape = SubResource( 12 )
-disabled = true
