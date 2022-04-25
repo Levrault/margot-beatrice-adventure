@@ -355,7 +355,7 @@ enabled=PoolStringArray(  )
 
 [game]
 
-debug=false
+debug=true
 game_version="0.9.0-alpha"
 skip_cinematic=false
 
