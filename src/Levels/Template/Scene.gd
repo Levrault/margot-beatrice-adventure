@@ -31,7 +31,7 @@ onready var iris_shot := $FullScreenShader/IrisShot
 
 
 func _ready() -> void:
-	if not ProjectSettings.get_setting("game/debug"):
+	if not Project.get_setting("commands"):
 		set_process_unhandled_input(false)
 
 	Character.reset_score()
@@ -40,7 +40,7 @@ func _ready() -> void:
 
 	# start cinematic
 	var introduction_cinematic = get_node_or_null(introduction_cinematic_path)
-	if ProjectSettings.get_setting("game/skip_cinematic"):
+	if Project.get_setting("skip_cinematic"):
 		introduction_cinematic.queue_free()
 		introduction_cinematic = null
 	if introduction_cinematic != null:

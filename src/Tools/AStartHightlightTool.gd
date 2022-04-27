@@ -5,7 +5,7 @@ const DRAW_COLOR = Color('#fff')
 
 
 func _ready() -> void:
-	if not ProjectSettings.get_setting("game/debug"):
+	if not Project.get_setting("astart_highlight"):
 		queue_free()
 		return
 

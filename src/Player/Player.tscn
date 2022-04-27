@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://src/Player/CharacterFactory.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Libraries/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://src/Player/Squirrel/SquirrelCollisionShape.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Player/Momentum.gd" type="Script" id=19]
 [ext_resource path="res://src/Player/HUD/HUD.tscn" type="PackedScene" id=21]
-[ext_resource path="res://src/Player/DebugUtilities.gd" type="Script" id=22]
 [ext_resource path="res://src/Player/CameraDebugUtilities.gd" type="Script" id=23]
 [ext_resource path="res://src/Player/Rabbit/RabbitCollisionShape.tscn" type="PackedScene" id=24]
 [ext_resource path="res://src/Player/Fox/FoxCollisionShape.tscn" type="PackedScene" id=25]
@@ -185,11 +184,6 @@ shape = SubResource( 2 )
 
 [node name="HUD" parent="." instance=ExtResource( 21 )]
 
-[node name="DebugUtilities" type="Node2D" parent="."]
-visible = false
+[node name="CameraDebugUtilities" type="Node2D" parent="."]
 position = Vector2( 0, -12 )
-script = ExtResource( 22 )
-
-[node name="CameraDebugUtilities" type="Node2D" parent="DebugUtilities"]
 script = ExtResource( 23 )
-is_active = false

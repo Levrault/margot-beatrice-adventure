@@ -60,11 +60,6 @@ _global_script_classes=[ {
 "path": "res://src/Dialogues/DialogueController.gd"
 }, {
 "base": "Node2D",
-"class": "Draw",
-"language": "GDScript",
-"path": "res://src/Tools/Draw.gd"
-}, {
-"base": "Node2D",
 "class": "DrawingUtils",
 "language": "GDScript",
 "path": "res://src/Autoload/DrawingUtils.gd"
@@ -270,7 +265,6 @@ _global_script_class_icons={
 "DamageSource": "",
 "DamageSourcePassThrough": "",
 "DialogueController": "",
-"Draw": "",
 "DrawingUtils": "",
 "DropdownField": "",
 "EndOfLevel": "",
@@ -319,6 +313,7 @@ run/main_scene="res://src/UI/MainMenu.tscn"
 
 [autoload]
 
+Project="*res://src/Autoload/Project.gd"
 Events="*res://src/Autoload/Events.gd"
 EngineSettings="*res://src/Autoload/EngineSettings.gd"
 InputManager="*res://src/Autoload/InputManager.gd"
@@ -355,9 +350,16 @@ enabled=PoolStringArray(  )
 
 [game]
 
-debug=false
+debug=true
 game_version="0.9.0-alpha"
-skip_cinematic=false
+debug.sidepanel=true
+debug.screenshot=true
+release.screenshot=true
+debug.astart_highlight=true
+debug.camera_anchor=true
+debug.spawn=true
+debug.commands=true
+debug.skip_cinematic=false
 
 [importer_defaults]
 

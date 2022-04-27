@@ -8,8 +8,8 @@ onready var anim := $AnimationPlayer
 
 
 func _ready() -> void:
-#	if not ProjectSettings.get_setting("game/debug"):
-#		queue_free()
+	if not Project.get_setting("screenshot"):
+		queue_free()
 
 	Events.connect("player_hud_enabled", self, "set", ["should_disable_player_hud", true])
 	Events.connect("player_hud_disabled", self, "set", ["should_disable_player_hud", false])

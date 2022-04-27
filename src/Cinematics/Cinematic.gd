@@ -7,7 +7,7 @@ onready var anim := $AnimationPlayer
 func initialize() -> void:
 	camera.current = true
 
-	if ProjectSettings.get_setting("game/debug"):
+	if Project.get_setting("sidepanel"):
 		Events.call_deferred("emit_signal", "camera_changed", camera.get_name())
 
 	anim.play("fade")

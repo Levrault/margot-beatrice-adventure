@@ -17,7 +17,8 @@ onready var max_acorns = $PanelContainer/MarginContainer/VBoxContainer/Acorns/Va
 
 func _ready() -> void:
 	Events.connect("collectable_max_value_counted", self, "_on_Collectable_max_value_counted")
-	if not ProjectSettings.get_setting("game/debug"):
+
+	if not Project.get_setting("sidepanel"):
 		queue_free()
 
 	yield(owner, "ready")

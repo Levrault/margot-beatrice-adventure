@@ -11,7 +11,7 @@ func _ready():
 	Events.connect("room_transition_ended", self, "_on_Room_transition_ended")
 	Events.connect("player_moved", self, "_on_Player_moved")
 
-	if not ProjectSettings.get_setting("game/debug"):
+	if not Project.get_setting("spawn"):
 		spawn_position.get_node("Control/Label").hide()
 		return
 
