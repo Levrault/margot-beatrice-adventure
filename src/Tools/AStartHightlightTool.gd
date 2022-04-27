@@ -5,6 +5,10 @@ const DRAW_COLOR = Color('#fff')
 
 
 func _ready() -> void:
+	if not ProjectSettings.get_setting("game/debug"):
+		queue_free()
+		return
+
 	yield(get_parent(), "ready")
 	set_as_toplevel(true)
 
