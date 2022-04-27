@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
@@ -45,6 +45,8 @@
 [ext_resource path="res://assets/UI/worldmap/Level15_27x48.png" type="Texture" id=43]
 [ext_resource path="res://assets/UI/worldmap/Level16_160x90.png" type="Texture" id=44]
 [ext_resource path="res://assets/UI/worldmap/Level16_27x48.png" type="Texture" id=45]
+[ext_resource path="res://assets/UI/worldmap/Level17_160x90.png" type="Texture" id=46]
+[ext_resource path="res://assets/UI/worldmap/Level17_27x48.png" type="Texture" id=47]
 
 [node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
@@ -359,6 +361,9 @@ margin_left = 403.0
 margin_right = 430.0
 level_title = "level.title14"
 preview_texture = ExtResource( 41 )
+max_gems = 7
+max_acorns = 13
+max_carrots = 5
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level14" index="1"]
 texture = ExtResource( 40 )
@@ -368,6 +373,9 @@ margin_left = 434.0
 margin_right = 461.0
 level_title = "level.title15"
 preview_texture = ExtResource( 42 )
+max_gems = 11
+max_acorns = 5
+max_carrots = 6
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level15" index="1"]
 texture = ExtResource( 43 )
@@ -377,6 +385,9 @@ margin_left = 465.0
 margin_right = 492.0
 level_title = "level.title16"
 preview_texture = ExtResource( 44 )
+max_gems = 5
+max_acorns = 12
+max_carrots = 5
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level16" index="1"]
 texture = ExtResource( 45 )
@@ -385,6 +396,13 @@ texture = ExtResource( 45 )
 margin_left = 496.0
 margin_right = 523.0
 level_title = "level.title17"
+preview_texture = ExtResource( 46 )
+max_gems = 9
+max_acorns = 12
+max_carrots = 5
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level17" index="1"]
+texture = ExtResource( 47 )
 
 [node name="Level18" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 527.0
@@ -433,3 +451,4 @@ __meta__ = {
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level14"]
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level15"]
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level16"]
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level17"]
