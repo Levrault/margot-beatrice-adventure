@@ -153,6 +153,10 @@ script = ExtResource( 16 )
 shape = SubResource( 1 )
 disabled = true
 
+[node name="Timer" type="Timer" parent="AttackFactory"]
+wait_time = 0.1
+one_shot = true
+
 [node name="Momentum" type="Node2D" parent="."]
 script = ExtResource( 19 )
 DURATION = 0.25
