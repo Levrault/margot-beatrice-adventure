@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
@@ -39,6 +39,8 @@
 [ext_resource path="res://assets/UI/worldmap/Level12_160x90.png" type="Texture" id=37]
 [ext_resource path="res://assets/UI/worldmap/Level13_160x90.png" type="Texture" id=38]
 [ext_resource path="res://assets/UI/worldmap/Level13_27x48.png" type="Texture" id=39]
+[ext_resource path="res://assets/UI/worldmap/Level14_27x48.png" type="Texture" id=40]
+[ext_resource path="res://assets/UI/worldmap/Level14_160x90.png" type="Texture" id=41]
 
 [node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
@@ -352,6 +354,10 @@ texture = ExtResource( 39 )
 margin_left = 403.0
 margin_right = 430.0
 level_title = "level.title14"
+preview_texture = ExtResource( 41 )
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level14" index="1"]
+texture = ExtResource( 40 )
 
 [node name="Level15" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 434.0
@@ -412,3 +418,4 @@ __meta__ = {
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level11"]
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level12"]
 [editable path="ScrollContainer/MarginContainer/HBoxContainer/Level13"]
+[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level14"]
