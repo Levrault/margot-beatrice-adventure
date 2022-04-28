@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://src/UI/CharacterSwitching/OnTheFlyCharacterSwitching.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player/HUD/Content.gd" type="Script" id=2]
 [ext_resource path="res://assets/UI/hud/health_bar_decoration.png" type="Texture" id=3]
 [ext_resource path="res://assets/UI/hud/carrot.png" type="Texture" id=6]
@@ -131,3 +132,7 @@ text = "0"
 valign = 1
 script = ExtResource( 10 )
 character = 1
+
+[node name="OnTheFlyCharacterSwitching" parent="." instance=ExtResource( 1 )]
+margin_top = -37.0
+margin_bottom = 20.0

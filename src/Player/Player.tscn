@@ -187,6 +187,7 @@ collision_mask = 2048
 shape = SubResource( 2 )
 
 [node name="HUD" parent="." instance=ExtResource( 21 )]
+layer = 0
 
 [node name="CameraDebugUtilities" type="Node2D" parent="."]
 position = Vector2( 0, -12 )
