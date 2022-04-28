@@ -40,3 +40,6 @@ shape = SubResource( 3 )
 
 [node name="Patrol" parent="StateMachine" index="1"]
 wait_time = 0.2
+
+[node name="ExclamationPoint" parent="StateMachine/Alert" index="0"]
+position = Vector2( 4, -34 )

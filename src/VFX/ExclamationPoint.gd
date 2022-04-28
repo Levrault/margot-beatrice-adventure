@@ -1,4 +1,3 @@
-# Exclamation point controller
-extends Control
+extends Sprite
 
 onready var anim := $AnimationPlayer

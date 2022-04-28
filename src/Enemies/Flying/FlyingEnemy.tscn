@@ -47,10 +47,6 @@ one_shot = true
 script = ExtResource( 5 )
 
 [node name="ExclamationPoint" parent="StateMachine/Alert" index="0" instance=ExtResource( 3 )]
-margin_left = -30.0
-margin_top = -74.0
-margin_right = 30.0
-margin_bottom = -14.0
 
 [node name="Timer" type="Timer" parent="StateMachine/Alert" index="1"]
 

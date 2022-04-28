@@ -1,13 +1,42 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://src/VFX/ExclamationPoint.gd" type="Script" id=1]
-[ext_resource path="res://assets/theme/fonts/pixelmix.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/enemies/exclamation_point.png" type="Texture" id=1]
+[ext_resource path="res://src/VFX/ExclamationPoint.gd" type="Script" id=2]
+[ext_resource path="res://src/SFX/SFXPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/audio/alert/philstrahl_metal-gear-solid-guard-alert-exclamation.wav" type="AudioStream" id=4]
 
-[sub_resource type="Animation" id=1]
-resource_name = "DEFAULT"
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Label:modulate")
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SFXPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,49 +48,46 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 resource_name = "show"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
-tracks/0/path = NodePath("Label:modulate")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.4, 0.5 ),
+"times": PoolRealArray( 0, 0.1, 0.5, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-
-[sub_resource type="DynamicFont" id=3]
-size = 40
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
-
-[node name="ExclamationPoint" type="Control"]
-margin_right = 60.0
-margin_bottom = 60.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
+tracks/1/type = "value"
+tracks/1/path = NodePath("SFXPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
+
+[node name="ExclamationPoint" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "DEFAULT"
-anims/DEFAULT = SubResource( 1 )
-anims/show = SubResource( 2 )
+autoplay = "default"
+anims/RESET = SubResource( 2 )
+anims/default = SubResource( 3 )
+anims/show = SubResource( 4 )
 
-[node name="Label" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_right = 60.0
-margin_bottom = 60.0
-custom_fonts/font = SubResource( 3 )
-text = "!"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="SFXPlayer" parent="." instance=ExtResource( 3 )]
+stream = ExtResource( 4 )
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+repeat_mode = false
