@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/Levels/Template/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=2]
@@ -75,6 +75,41 @@ shader_param/detail = 1.0
 shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Actor
+class_name Enemy
+
+onready var state_machine: StateMachine = $StateMachine
+onready var damage_source: DamageSource = $DamageSource
+onready var hitbox: Hitbox = $Hitbox
+onready var initial_position := position
+onready var initial_look_direction: int = look_direction
+onready var frustrum_culling := $FrustumCulling
+
+
+func _ready() -> void:
+	stats.connect(\"health_depleted\", self, \"_on_Stats_health_depleated\")
+	skin = get_node_or_null(\"Skin\")
+	assert(skin != null)
+
+
+func _on_Stats_health_depleated():
+	state_machine.transition_to(\"Die\")
+
+
+func flip(direction: int = 0) -> void:
+	if direction == 0:
+		look_direction *= -1
+		scale.x *= -1
+		return
+
+	if look_direction == direction:
+		return
+
+	look_direction = direction
+	scale.x *= -1
+"
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 123, 10 )
@@ -230,6 +265,8 @@ scale = Vector2( -1, 1 )
 
 [node name="Carniplant2" parent="MiddleGroundTileMap/Enemies" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1416, 176 )
+script = SubResource( 4 )
+look_direction = 1
 
 [node name="Carniplant3" parent="MiddleGroundTileMap/Enemies" index="2" instance=ExtResource( 3 )]
 position = Vector2( 1416, 496 )
