@@ -20,7 +20,7 @@ position = Vector2( 1, -5.5 )
 shape = SubResource( 2 )
 
 [node name="DamageSource" parent="." index="2"]
-position = Vector2( -3, 1 )
+position = Vector2( -3, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSource" index="0"]
 position = Vector2( 2, -9 )
@@ -28,7 +28,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Hitbox" parent="." index="3"]
-position = Vector2( -3, 1 )
+position = Vector2( -3, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 2, -9 )
@@ -40,6 +40,9 @@ position = Vector2( -5, -15 )
 
 [node name="Patrol" parent="StateMachine" index="0"]
 max_speed_default = Vector2( 125, 275 )
+
+[node name="RayCastFloor" parent="StateMachine/Patrol" index="1"]
+position = Vector2( -1, 0 )
 
 [node name="Explosion" parent="StateMachine/Die" index="0"]
 position = Vector2( 0, 0 )
