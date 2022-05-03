@@ -1,6 +1,7 @@
 # source https://github.com/GDQuest/godot-demos/blob/master/2018/03-30-astar-pathfinding/pathfind_astar.gd
 extends TileMap
 
+
 export var map_size := Vector2(30, 16)
 
 var path_start_position = Vector2() setget _set_path_start_position
@@ -17,9 +18,8 @@ onready var half_cell_size = cell_size / 2
 func _ready():
 	if not has_node("EndOfLevel"):
 		printerr("EndOfLevel node is missing for %s : %s" % [name, get_path()])
-	yield(owner, "ready")
-	SceneManager.tilemap = self
 	Events.connect("room_transition_ended", self, "_on_Room_transition_ended")
+	SceneManager.tilemap = self
 
 
 # Loops through all cells within the map's bounds and
@@ -102,7 +102,7 @@ func calculate_point_index(point):
 func find_path(world_start, world_end):
 	self.path_start_position = world_to_map(world_start)
 	self.path_end_position = world_to_map(world_end)
-	_recalculate_path()
+	call_deferred("_recalculate_path")
 	var path_world = []
 	for point in _point_path:
 		var point_world = map_to_world(Vector2(point.x, point.y)) + half_cell_size
