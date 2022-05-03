@@ -11,7 +11,7 @@ export var max_acorns := 0
 export var max_carrots := 0
 
 var data := {}
-var level_path := ""
+var level_path := "" 
 
 onready var tween := $Tween
 onready var overlay := $Overlay
@@ -80,7 +80,7 @@ func _on_Focus_exited() -> void:
 
 
 func _on_Navigation_finished() -> void:
-	data = Serialize.profiles[Game.current_profile].levels[get_name().to_lower()]
+	data = Serialize.profiles[Game.current_profile].levels[get_name()]
 	print_debug(data)
 	self.locked = data.locked
 
