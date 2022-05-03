@@ -352,7 +352,14 @@ enabled=PoolStringArray(  )
 
 debug=false
 game_version="0.9.0-alpha"
-skip_cinematic=false
+debug.sidepanel=true
+debug.screenshot=true
+release.screenshot=true
+debug.astart_highlight=true
+debug.camera_anchor=true
+debug.spawn=true
+debug.commands=true
+debug.skip_cinematic=false
 
 [importer_defaults]
 
