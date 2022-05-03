@@ -102,7 +102,8 @@ func calculate_point_index(point):
 func find_path(world_start, world_end):
 	self.path_start_position = world_to_map(world_start)
 	self.path_end_position = world_to_map(world_end)
-	call_deferred("_recalculate_path")
+	_recalculate_path()
+
 	var path_world = []
 	for point in _point_path:
 		var point_world = map_to_world(Vector2(point.x, point.y)) + half_cell_size

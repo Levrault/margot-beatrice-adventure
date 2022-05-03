@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
@@ -49,13 +49,14 @@
 [ext_resource path="res://assets/UI/worldmap/Level17_27x48.png" type="Texture" id=47]
 [ext_resource path="res://assets/UI/worldmap/Level18_27x48.png" type="Texture" id=48]
 [ext_resource path="res://assets/UI/worldmap/Level18_160x90.png" type="Texture" id=49]
+[ext_resource path="res://src/UI/Worldmap/LevelContainer.gd" type="Script" id=50]
 
 [node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 6 )
 script = ExtResource( 2 )
-default_field_to_focus = NodePath("ScrollContainer/MarginContainer/HBoxContainer/Level1/LoadLevelButton")
+default_field_to_focus = NodePath("ScrollContainer/MarginContainer/LevelContainer/Level1/LoadLevelButton")
 
 [node name="Breadcrumb" type="HBoxContainer" parent="."]
 margin_left = 20.0
@@ -190,13 +191,14 @@ custom_constants/margin_right = 4
 custom_constants/margin_top = 4
 custom_constants/margin_left = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer"]
+[node name="LevelContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 558.0
 margin_bottom = 52.0
+script = ExtResource( 50 )
 
-[node name="Level1" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level1" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 locked = false
 level_title = "level.title1"
 preview_texture = ExtResource( 12 )
@@ -204,17 +206,17 @@ max_gems = 18
 max_acorns = 7
 max_carrots = 10
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level1" index="1"]
 texture = ExtResource( 16 )
 
-[node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="3"]
+[node name="LoadLevelButton" parent="ScrollContainer/MarginContainer/LevelContainer/Level1" index="3"]
 focus_mode = 2
 disabled = false
 
-[node name="Lock" parent="ScrollContainer/MarginContainer/HBoxContainer/Level1" index="4"]
+[node name="Lock" parent="ScrollContainer/MarginContainer/LevelContainer/Level1" index="4"]
 visible = false
 
-[node name="Level2" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level2" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 31.0
 margin_right = 58.0
 level_title = "level.title2"
@@ -223,10 +225,10 @@ max_gems = 13
 max_acorns = 7
 max_carrots = 14
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level2" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level2" index="1"]
 texture = ExtResource( 17 )
 
-[node name="Level3" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level3" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 62.0
 margin_right = 89.0
 level_title = "level.title3"
@@ -235,10 +237,10 @@ max_gems = 10
 max_acorns = 7
 max_carrots = 8
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level3" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level3" index="1"]
 texture = ExtResource( 19 )
 
-[node name="Level4" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level4" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 93.0
 margin_right = 120.0
 level_title = "level.title4"
@@ -247,10 +249,10 @@ max_gems = 6
 max_acorns = 7
 max_carrots = 16
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level4" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level4" index="1"]
 texture = ExtResource( 20 )
 
-[node name="Level5" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level5" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 124.0
 margin_right = 151.0
 level_title = "level.title5"
@@ -259,10 +261,10 @@ max_gems = 15
 max_acorns = 17
 max_carrots = 7
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level5" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level5" index="1"]
 texture = ExtResource( 22 )
 
-[node name="Level6" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level6" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 155.0
 margin_right = 182.0
 level_title = "level.title6"
@@ -271,10 +273,10 @@ max_gems = 18
 max_acorns = 11
 max_carrots = 5
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level6" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level6" index="1"]
 texture = ExtResource( 25 )
 
-[node name="Level7" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level7" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 186.0
 margin_right = 213.0
 level_title = "level.title7"
@@ -283,10 +285,10 @@ max_gems = 9
 max_acorns = 6
 max_carrots = 10
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level7" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level7" index="1"]
 texture = ExtResource( 26 )
 
-[node name="Level8" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level8" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 217.0
 margin_right = 244.0
 level_title = "level.title8"
@@ -295,10 +297,10 @@ max_gems = 4
 max_acorns = 4
 max_carrots = 4
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level8" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level8" index="1"]
 texture = ExtResource( 29 )
 
-[node name="Level9" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level9" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 248.0
 margin_right = 275.0
 level_title = "level.title9"
@@ -307,10 +309,10 @@ max_gems = 14
 max_acorns = 8
 max_carrots = 9
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level9" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level9" index="1"]
 texture = ExtResource( 32 )
 
-[node name="Level10" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level10" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 279.0
 margin_right = 306.0
 level_title = "level.title10"
@@ -319,10 +321,10 @@ max_gems = 10
 max_acorns = 9
 max_carrots = 9
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level10" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level10" index="1"]
 texture = ExtResource( 31 )
 
-[node name="Level11" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level11" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 310.0
 margin_right = 337.0
 level_title = "level.title11"
@@ -331,10 +333,10 @@ max_gems = 6
 max_acorns = 7
 max_carrots = 5
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level11" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level11" index="1"]
 texture = ExtResource( 34 )
 
-[node name="Level12" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level12" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 341.0
 margin_right = 368.0
 level_title = "level.title12"
@@ -343,10 +345,10 @@ max_gems = 6
 max_acorns = 4
 max_carrots = 6
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level12" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level12" index="1"]
 texture = ExtResource( 36 )
 
-[node name="Level13" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level13" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 372.0
 margin_right = 399.0
 level_title = "level.title13"
@@ -355,10 +357,10 @@ max_gems = 11
 max_acorns = 10
 max_carrots = 10
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level13" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level13" index="1"]
 texture = ExtResource( 39 )
 
-[node name="Level14" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level14" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 403.0
 margin_right = 430.0
 level_title = "level.title14"
@@ -367,10 +369,10 @@ max_gems = 7
 max_acorns = 13
 max_carrots = 5
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level14" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level14" index="1"]
 texture = ExtResource( 40 )
 
-[node name="Level15" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level15" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 434.0
 margin_right = 461.0
 level_title = "level.title15"
@@ -379,10 +381,10 @@ max_gems = 11
 max_acorns = 5
 max_carrots = 6
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level15" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level15" index="1"]
 texture = ExtResource( 43 )
 
-[node name="Level16" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level16" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 465.0
 margin_right = 492.0
 level_title = "level.title16"
@@ -391,10 +393,10 @@ max_gems = 5
 max_acorns = 12
 max_carrots = 5
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level16" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level16" index="1"]
 texture = ExtResource( 45 )
 
-[node name="Level17" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level17" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 496.0
 margin_right = 523.0
 level_title = "level.title17"
@@ -403,10 +405,10 @@ max_gems = 9
 max_acorns = 12
 max_carrots = 5
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level17" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level17" index="1"]
 texture = ExtResource( 47 )
 
-[node name="Level18" parent="ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Level18" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
 margin_left = 527.0
 margin_right = 554.0
 level_title = "level.title18"
@@ -415,7 +417,7 @@ max_gems = 12
 max_acorns = 9
 max_carrots = 7
 
-[node name="Preview" parent="ScrollContainer/MarginContainer/HBoxContainer/Level18" index="1"]
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level18" index="1"]
 texture = ExtResource( 48 )
 
 [node name="Footer" type="HBoxContainer" parent="."]
@@ -444,21 +446,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level1"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level2"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level3"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level4"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level5"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level6"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level7"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level8"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level9"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level10"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level11"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level12"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level13"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level14"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level15"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level16"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level17"]
-[editable path="ScrollContainer/MarginContainer/HBoxContainer/Level18"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level1"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level2"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level3"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level4"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level5"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level6"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level7"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level8"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level9"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level10"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level11"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level12"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level13"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level14"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level15"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level16"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level17"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Level18"]

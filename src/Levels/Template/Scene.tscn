@@ -48,6 +48,8 @@ visible = false
 [node name="Scoreboard" parent="UI" instance=ExtResource( 5 )]
 
 [node name="Screenshot" parent="UI" instance=ExtResource( 18 )]
+margin_left = 0.0
+margin_right = 0.0
 
 [node name="GamepadChanged" parent="UI" instance=ExtResource( 20 )]
 
@@ -117,6 +119,7 @@ script = ExtResource( 22 )
 __meta__ = {
 "_editor_description_": ""
 }
+map_size = Vector2( 64, 64 )
 
 [node name="Player" parent="MiddleGroundTileMap" instance=ExtResource( 1 )]
 

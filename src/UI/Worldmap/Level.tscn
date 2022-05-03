@@ -21,9 +21,6 @@ rect_min_size = Vector2( 27, 48 )
 rect_pivot_offset = Vector2( 636, 18 )
 theme = SubResource( 1 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tween" type="Tween" parent="."]
 
