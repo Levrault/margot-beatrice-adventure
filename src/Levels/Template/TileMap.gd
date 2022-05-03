@@ -17,9 +17,9 @@ onready var half_cell_size = cell_size / 2
 func _ready():
 	if not has_node("EndOfLevel"):
 		printerr("EndOfLevel node is missing for %s : %s" % [name, get_path()])
-
-	Events.connect("room_transition_ended", self, "_on_Room_transition_ended")
+	yield(owner, "ready")
 	SceneManager.tilemap = self
+	Events.connect("room_transition_ended", self, "_on_Room_transition_ended")
 
 
 # Loops through all cells within the map's bounds and

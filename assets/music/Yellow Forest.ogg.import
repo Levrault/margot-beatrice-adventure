@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Yellow Forest.ogg-0e07f8a4549e6ecfa5fde01889e9ba10.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

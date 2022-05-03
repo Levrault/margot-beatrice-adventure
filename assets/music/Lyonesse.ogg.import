@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Lyonesse.ogg-ca9cb6ca547b5ebad605e22eea5e7494.oggstr
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

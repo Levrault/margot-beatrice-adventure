@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Su Turno.ogg-5b90e6e45088010b69fd37010427fb2f.oggstr
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

@@ -55,7 +55,10 @@ func exit() -> void:
 
 
 func _get_a_star_path() -> void:
+	print_debug(owner.global_position, owner.target.position)
 	path = SceneManager.tilemap.find_path(owner.global_position, owner.target.position)
+	print_debug(SceneManager.tilemap)
+	print_debug(path)
 	if len(path) == 0:
 		_state_machine.transition_to("Idle")
 		return

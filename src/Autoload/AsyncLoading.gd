@@ -19,12 +19,13 @@ func _ready() -> void:
 
 # Catch when a level can't be found
 func show_error() -> void:
-	print("Scene was not loaded")
+	printerr("Scene was not loaded")
 
 
 # load new scene
 # @param {String} path
 func goto_scene(path):  # Game requests to switch to this scene.
+	print_debug("Loading %s" % path)
 	loader = ResourceLoader.load_interactive(path)
 	if loader == null:  # Check for errors.
 		show_error()

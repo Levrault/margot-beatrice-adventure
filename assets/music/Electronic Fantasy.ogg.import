@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Electronic Fantasy.ogg-516f3ce8a3635fafc480d6975b92a
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

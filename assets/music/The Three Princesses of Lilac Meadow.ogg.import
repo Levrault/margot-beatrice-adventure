@@ -11,5 +11,5 @@ dest_files=[ "res://.import/The Three Princesses of Lilac Meadow.ogg-3408dc81207
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

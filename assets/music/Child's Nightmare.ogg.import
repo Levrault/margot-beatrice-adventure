@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Child's Nightmare.ogg-0222bc3a9e1c3167dbcf382180c1d0
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

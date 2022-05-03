@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://docs/tests_assets/pixel-adventure/Traps/Spiked Ball/Spiked Ball.png" type="Texture" id=1]
+[ext_resource path="res://assets/objects/traps/Spiked Ball.png" type="Texture" id=1]
 [ext_resource path="res://src/Combat/DamageSource/DamageSourceEnemy.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CircleShape2D" id=1]

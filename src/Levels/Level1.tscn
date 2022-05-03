@@ -159,8 +159,8 @@ extents = Vector2( 341, 10 )
 
 [node name="Level1" instance=ExtResource( 4 )]
 position = Vector2( -1, 1 )
-next_level = "level2"
 introduction_cinematic_path = NodePath("Cinematics/00_Intro")
+next_level = "Level2"
 
 [node name="FullScreenShader" parent="." index="0"]
 layer = 1
