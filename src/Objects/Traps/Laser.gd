@@ -1,4 +1,5 @@
 extends RayCast2D
+class_name Laser
 
 const MIN_BEAM_WIDTH := 2
 const MAX_BEAM_WIDTH := 4

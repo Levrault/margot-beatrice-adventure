@@ -12,6 +12,9 @@ signal screenshot_ended
 ### Game ###
 ############
 
+# boss
+signal boss_state_changed_to(state, msg)
+
 # camera
 signal camera_changed(name)
 signal camera_offset_changed(offset)
