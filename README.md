@@ -31,6 +31,7 @@ Game made for my niece
 - [Swish - bamboo stick weapon swhoshes](https://opengameart.org/content/swish-bamboo-stick-weapon-swhoshes)
 - [512-sound-effects-8-bit-style](https://opengameart.org/content/512-sound-effects-8-bit-style)
 - [Metal Gear Solid Guard Alert Exclamation](https://freesound.org/people/PhilStrahl/sounds/531750/)
+- [rpg-sound-pack](https://opengameart.org/content/rpg-sound-pack)
 
 ### Music
 

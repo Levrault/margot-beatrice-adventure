@@ -22,6 +22,8 @@ onready var tween := $Tween
 
 
 func change_track(new_music: String) -> void:
+	if new_music == current:
+		return
 	stop()
 	current = playlist[new_music]
 	stream = load(current)

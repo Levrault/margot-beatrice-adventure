@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Libraries/AttackFactory/AttackFactory.gd"
 }, {
+"base": "Node2D",
+"class": "BossSealRoom",
+"language": "GDScript",
+"path": "res://src/Scripts/BossSealRoom.gd"
+}, {
 "base": "Position2D",
 "class": "CameraAnchor",
 "language": "GDScript",
@@ -149,6 +154,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/UI/Settings/Keymap/KeyMapField.gd"
 }, {
+"base": "RayCast2D",
+"class": "Laser",
+"language": "GDScript",
+"path": "res://src/Objects/Traps/Laser.gd"
+}, {
 "base": "Node2D",
 "class": "Momentum",
 "language": "GDScript",
@@ -259,6 +269,7 @@ _global_script_class_icons={
 "ActorSkin": "",
 "AtlasIcon": "",
 "AttackFactory": "res://assets/icons/attack_factory.svg",
+"BossSealRoom": "",
 "CameraAnchor": "",
 "CheckboxField": "res://assets/icons/check-square.svg",
 "Checkpoint": "",
@@ -283,6 +294,7 @@ _global_script_class_icons={
 "Hit": "",
 "Hitbox": "",
 "KeyMapField": "res://assets/icons/keyboard.svg",
+"Laser": "",
 "Momentum": "",
 "Move": "",
 "NavigationButton": "res://assets/icons/navigation.svg",

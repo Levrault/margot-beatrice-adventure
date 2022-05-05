@@ -11,7 +11,7 @@ export var max_acorns := 0
 export var max_carrots := 0
 
 var data := {}
-var level_path := "" 
+var level_path := ""
 
 onready var tween := $Tween
 onready var overlay := $Overlay
