@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/audio/jingles/success-fanfare-trumpets.mp3" type="AudioStream" id=15]
 [ext_resource path="res://src/UI/Commons/Button/NextLevelButton.gd" type="Script" id=16]
 [ext_resource path="res://src/UI/Commons/Button/RestartLevelButton.gd" type="Script" id=17]
-[ext_resource path="res://src/UI/Commons/Button/ReturnToWorldmapButton.gd" type="Script" id=18]
+[ext_resource path="res://src/UI/Commons/Button/ReturnMenuButton.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -746,13 +746,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Worldmap" parent="Footer" instance=ExtResource( 14 )]
+[node name="ReturnToMenu" parent="Footer" instance=ExtResource( 14 )]
 margin_right = 142.0
 margin_bottom = 26.0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 shortcut_in_tooltip = true
-text = "commons.worldmap"
+text = "commons.return_menu"
 script = ExtResource( 18 )
 
 [node name="Restart" parent="Footer" instance=ExtResource( 14 )]
