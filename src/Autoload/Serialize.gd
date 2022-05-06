@@ -164,6 +164,7 @@ func save_best_score(profile_name: String, for_level: String, new_score: Diction
 	var values = profiles[profile_name]
 	values.levels[for_level] = new_score
 	save_profile(profile_name, values)
+	Events.emit_signal("new_high_score_archived")
 
 
 func unlock_next_level(profile_name: String, for_level: String) -> void:

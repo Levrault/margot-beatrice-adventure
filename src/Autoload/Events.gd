@@ -59,6 +59,9 @@ signal game_unpaused
 # game over
 signal game_over
 
+# high score
+signal new_high_score_archived
+
 # notification
 signal notification_started(text, size)
 

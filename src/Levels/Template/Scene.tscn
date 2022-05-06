@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/Levels/Template/ParallaxBackground/InfiniteAutoScrollParralaxBackground.gd" type="Script" id=9]
 [ext_resource path="res://src/Levels/Template/Chronometer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/UI/Dialogues/DialogueBox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/UI/Commons/Notifications/HighScoreArchieved.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/tilesets/back.png" type="Texture" id=13]
 [ext_resource path="res://assets/tilesets/middle.png" type="Texture" id=14]
 [ext_resource path="res://src/Levels/Template/ParallaxBackground/AutoScrollParallaxLayer.gd" type="Script" id=15]
@@ -52,6 +53,8 @@ margin_left = 0.0
 margin_right = 0.0
 
 [node name="GamepadChanged" parent="UI" instance=ExtResource( 20 )]
+
+[node name="HighScoreArchieved" parent="UI" instance=ExtResource( 12 )]
 
 [node name="InGameMenu" parent="UI" instance=ExtResource( 4 )]
 visible = false
