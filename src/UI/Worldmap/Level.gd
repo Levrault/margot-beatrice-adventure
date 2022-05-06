@@ -81,7 +81,6 @@ func _on_Focus_exited() -> void:
 
 func _on_Navigation_finished() -> void:
 	data = Serialize.profiles[Game.current_profile].levels[get_name()]
-	print_debug(data)
 	self.locked = data.locked
 
 	if load_level_button.has_focus():

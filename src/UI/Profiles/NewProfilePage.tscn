@@ -28,9 +28,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 default_field_to_focus = NodePath("Wrapper/Page/Contents/Panel/Keyboard/Row1/A")
 
 [node name="Form" parent="." instance=ExtResource( 6 )]

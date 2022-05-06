@@ -33,7 +33,6 @@ func _interact() -> void:
 	if _state == States.ENDING:
 		_state = States.IDLE
 		Events.emit_signal("dialogue_finished")
-		print(owner)
 		owner.anim.play(dialogue_controller.next_sequence)
 		return
 

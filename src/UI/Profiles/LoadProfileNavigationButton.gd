@@ -20,4 +20,4 @@ func set_data(data: Dictionary) -> void:
 func _on_Pressed() -> void:
 	._on_Pressed()
 	Game.current_profile = Serialize.PROFILE_SLOTS[owner.get_index()]
-	print("%s - %s has been set has current profile" % [Game.current_profile, profile_name.text])
+	print_debug("%s - %s has been set has current profile" % [Game.current_profile, profile_name.text])

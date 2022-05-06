@@ -43,10 +43,13 @@ func _set_profile_name(value: String) -> void:
 		profile_name = value
 	else:
 		profile_name_text_input.emit_signal("blocked")
+
+	confirm_button.disabled = value.empty()
 	profile_name_text_input.text = value
 
 
 func _on_New_profile_page_displayed(for_profile) -> void:
 	profile = for_profile
 	profile_data = Serialize.profiles[for_profile]
+	confirm_button.disabled = true
 	print_debug("Data for %s will be created" % profile)
