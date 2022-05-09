@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/UI/Profiles/Profile.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Button/GenericButton.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/UI/Profiles/LoadProfileNavigationButton.gd" type="Script" id=5]
 [ext_resource path="res://src/UI/Profiles/EraseProfileButton.gd" type="Script" id=6]
 [ext_resource path="res://src/UI/Profiles/Playtime.gd" type="Script" id=7]
+[ext_resource path="res://src/UI/Profiles/Completed.gd" type="Script" id=8]
 
 [node name="Profile" type="HBoxContainer"]
 margin_right = 440.0
@@ -95,6 +96,7 @@ margin_left = 114.0
 margin_right = 228.0
 margin_bottom = 14.0
 text = "profile.completed"
+script = ExtResource( 8 )
 
 [node name="NewProfile" parent="." instance=ExtResource( 3 )]
 margin_left = 162.0
