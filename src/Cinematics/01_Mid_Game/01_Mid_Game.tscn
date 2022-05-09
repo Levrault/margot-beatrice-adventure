@@ -1,0 +1,255 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/Cinematics/Cinematic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tilesets/back.png" type="Texture" id=2]
+[ext_resource path="res://assets/tilesets/middle.png" type="Texture" id=3]
+[ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=4]
+[ext_resource path="res://src/Objects/Statics/Pine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Player/Squirrel/SkinSquirrel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Player/Fox/SkinFox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Player/Rabbit/SkinRabbit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Dialogues/CinematicDialogueController.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "sequence_01"
+length = 1.2
+tracks/0/type = "method"
+tracks/0/path = NodePath("Environment/SkinSquirrel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+}, {
+"args": [ "idle" ],
+"method": "play"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Environment/SkinFox")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+}, {
+"args": [ "idle" ],
+"method": "play"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Environment/SkinRabbit")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+}, {
+"args": [ "idle" ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Environment/SkinSquirrel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -260, 77 ), Vector2( -69, 77 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Environment/SkinFox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -265, 80 ), Vector2( -30, 80 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Environment/SkinRabbit:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -259, 80 ), Vector2( 18, 80 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Dialogues/01_Dialogue_01")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "sequence_02"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Environment/SkinSquirrel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -69, 77 ), Vector2( 269, 76 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Environment/SkinFox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -30, 80 ), Vector2( 260, 80 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Environment/SkinRabbit:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 18, 80 ), Vector2( 260, 80 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Environment/SkinSquirrel")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Environment/SkinFox")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Environment/SkinRabbit")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+} ]
+}
+
+[node name="01_Mid_Game" instance=ExtResource( 1 )]
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "fade"
+anims/sequence_01 = SubResource( 1 )
+anims/sequence_02 = SubResource( 2 )
+next/fade = "sequence_01"
+next/sequence_02 = "skip"
+
+[node name="Sky" type="Sprite" parent="Environment" index="0"]
+position = Vector2( 0, -32 )
+z_index = -3
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 530, 270 )
+
+[node name="Middle" type="Sprite" parent="Environment" index="1"]
+position = Vector2( -21, 100 )
+z_index = -2
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 580, 270 )
+
+[node name="TileMap" type="TileMap" parent="Environment" index="2"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393202, 46, 0, 393203, 46, 0, 393204, 46, 0, 393205, 46, 0, 393214, 44, 0, 327681, 46, 0, 327682, 46, 0, 327683, 46, 0, 327687, 43, 0, 327690, 46, 0, 327691, 46, 0, 327692, 46, 0, 327693, 46, 0, 458736, 0, 0, 458737, 0, 1, 458738, 0, 1, 458739, 0, 1, 458740, 0, 1, 458741, 0, 1, 458742, 0, 1, 458743, 0, 1, 458744, 0, 1, 458745, 0, 1, 458746, 0, 1, 458747, 0, 1, 458748, 0, 1, 458749, 0, 1, 458750, 0, 1, 458751, 0, 1, 393216, 0, 1, 393217, 0, 1, 393218, 0, 1, 393219, 0, 1, 393220, 0, 1, 393221, 0, 1, 393222, 0, 1, 393223, 0, 1, 393224, 0, 1, 393225, 0, 1, 393226, 0, 1, 393227, 0, 1, 393228, 0, 1, 393229, 0, 1, 393230, 0, 1, 393231, 0, 2, 524272, 0, 65536, 524273, 0, 65537, 524274, 0, 65537, 524275, 0, 65537, 524276, 0, 65537, 524277, 0, 65537, 524278, 0, 65537, 524279, 0, 65537, 524280, 0, 65537, 524281, 0, 65537, 524282, 0, 65537, 524283, 0, 65537, 524284, 0, 65537, 524285, 0, 65537, 524286, 0, 65537, 524287, 0, 65537, 458752, 0, 65537, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537, 458761, 0, 65537, 458762, 0, 65537, 458763, 0, 65537, 458764, 0, 65537, 458765, 0, 65537, 458766, 0, 65537, 458767, 0, 65538, 589808, 0, 131072, 589809, 0, 131073, 589810, 0, 131073, 589811, 0, 131073, 589812, 0, 131073, 589813, 0, 131073, 589814, 0, 131073, 589815, 0, 131073, 589816, 0, 131073, 589817, 0, 131073, 589818, 0, 131073, 589819, 0, 131073, 589820, 0, 131073, 589821, 0, 131073, 589822, 0, 131073, 589823, 0, 131073, 524288, 0, 131073, 524289, 0, 131073, 524290, 0, 131073, 524291, 0, 131073, 524292, 0, 131073, 524293, 0, 131073, 524294, 0, 131073, 524295, 0, 131073, 524296, 0, 131073, 524297, 0, 131073, 524298, 0, 131073, 524299, 0, 131073, 524300, 0, 131073, 524301, 0, 131073, 524302, 0, 131073, 524303, 0, 131074 )
+
+[node name="Pine" parent="Environment" index="3" instance=ExtResource( 5 )]
+position = Vector2( -88, 31 )
+
+[node name="Pine2" parent="Environment" index="4" instance=ExtResource( 5 )]
+position = Vector2( 1, 31 )
+
+[node name="Pine3" parent="Environment" index="5" instance=ExtResource( 5 )]
+position = Vector2( 95, 31 )
+
+[node name="Pine4" parent="Environment" index="6" instance=ExtResource( 5 )]
+position = Vector2( 201, 31 )
+
+[node name="Pine5" parent="Environment" index="7" instance=ExtResource( 5 )]
+position = Vector2( -169, 31 )
+
+[node name="SkinSquirrel" parent="Environment" index="8" instance=ExtResource( 6 )]
+position = Vector2( -260, 77 )
+
+[node name="SkinFox" parent="Environment" index="9" instance=ExtResource( 7 )]
+position = Vector2( -260, 80 )
+
+[node name="SkinRabbit" parent="Environment" index="10" instance=ExtResource( 8 )]
+position = Vector2( -259, 80 )
+
+[node name="01_Dialogue_01" type="Node2D" parent="Dialogues" index="0"]
+script = ExtResource( 9 )
+next_sequence = "sequence_02"
