@@ -16,7 +16,7 @@
 [ext_resource path="res://src/Levels/Template/checkpoints/Checkpoint.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Levels/Template/FallLimitArea/FallLimitArea.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Enemies/Flying/Gator/Gator.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/Cinematics/01_Mid_Game/01_Mid_Game.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Cinematics/01_Mid_Game.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1968, 10 )

@@ -1,0 +1,332 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://src/Cinematics/Cinematic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tilesets/back.png" type="Texture" id=2]
+[ext_resource path="res://assets/tilesets/middle.png" type="Texture" id=3]
+[ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=4]
+[ext_resource path="res://src/Objects/Statics/Pine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Player/Squirrel/SkinSquirrel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Player/Fox/SkinFox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Player/Rabbit/SkinRabbit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Dialogues/CinematicDialogueController.gd" type="Script" id=9]
+[ext_resource path="res://src/Objects/Statics/TreeAlt.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Objects/Statics/Tree.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/Statics/Palm.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Objects/Statics/Bush.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "sequence_01"
+length = 1.2
+tracks/0/type = "method"
+tracks/0/path = NodePath("Environment/SkinSquirrel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+}, {
+"args": [ "idle" ],
+"method": "play"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Environment/SkinFox")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+}, {
+"args": [ "idle" ],
+"method": "play"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Environment/SkinRabbit")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+}, {
+"args": [ "idle" ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Environment/SkinSquirrel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -260, 77 ), Vector2( -69, 77 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Environment/SkinFox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -265, 80 ), Vector2( -30, 80 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Environment/SkinRabbit:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -259, 80 ), Vector2( 18, 80 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Dialogues/02_Dialogue_01")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "sequence_02"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Environment/SkinSquirrel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -69, 77 ), Vector2( 269, 76 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Environment/SkinFox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -30, 80 ), Vector2( 260, 80 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Environment/SkinRabbit:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 18, 80 ), Vector2( 260, 80 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Environment/SkinSquirrel")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Environment/SkinFox")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Environment/SkinRabbit")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "run" ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Shader" id=3]
+code = "// Source: https://godotshaders.com/shader/2d-wind-sway/
+// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
+// original script modified by HungryProton so that the assets are moving differently : https://pastebin.com/VL3AfV8D
+//
+// speed - The speed of the wind movement.
+// minStrength - The minimal strength of the wind movement.
+// maxStrength - The maximal strength of the wind movement.
+// strengthScale - Scalefactor for the wind strength.
+// interval - The time between minimal and maximal strength changes.
+// detail - The detail (number of waves) of the wind movement.
+// distortion - The strength of geometry distortion.
+// heightOffset - The height where the wind begins to move. By default 0.0.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+// Wind settings.
+uniform float speed = 1.0;
+uniform float minStrength : hint_range(0.0, 1.0) = 0.05;
+uniform float maxStrength : hint_range(0.0, 1.0) = 0.01;
+uniform float strengthScale = 100.0;
+uniform float interval = 3.5;
+uniform float detail = 1.0;
+uniform float distortion : hint_range(0.0, 1.0);
+uniform float heightOffset : hint_range(0.0, 1.0);
+
+// With the offset value, you can if you want different moves for each asset. Just put a random value (1, 2, 3) in the editor. Don't forget to mark the material as unique if you use this
+uniform float offset = 0; 
+
+
+float getWind(vec2 vertex, vec2 uv, float time){
+    float diff = pow(maxStrength - minStrength, 2.0);
+    float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
+    float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
+    
+    return wind; 
+}
+
+void vertex() {
+    vec4 pos = WORLD_MATRIX * vec4(0.0, 0.0, 0.0, 1.0);
+	float time = TIME * speed + offset;
+	
+    VERTEX.x += getWind(VERTEX.xy, UV, time);
+
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = SubResource( 3 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.02
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 50.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = 0.0
+shader_param/offset = 0.0
+
+[node name="01_Mid_Game" instance=ExtResource( 1 )]
+
+[node name="Up" parent="CanvasLayer/CinematicBar" index="0"]
+margin_right = 0.0
+
+[node name="Down" parent="CanvasLayer/CinematicBar" index="1"]
+margin_top = 0.0399933
+margin_right = 0.0
+margin_bottom = 25.04
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "fade"
+anims/sequence_01 = SubResource( 1 )
+anims/sequence_02 = SubResource( 2 )
+next/fade = "sequence_01"
+next/sequence_02 = "skip"
+
+[node name="Sky" type="Sprite" parent="Environment" index="0"]
+position = Vector2( 0, -32 )
+z_index = -3
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 530, 270 )
+
+[node name="Middle" type="Sprite" parent="Environment" index="1"]
+position = Vector2( -21, 100 )
+z_index = -2
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 580, 270 )
+
+[node name="TileMap" type="TileMap" parent="Environment" index="2"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393205, 46, 0, 393206, 46, 0, 393207, 46, 0, 393208, 46, 0, 393209, 46, 0, 393214, 44, 0, 393215, 46, 0, 327680, 46, 0, 327681, 46, 0, 327687, 43, 0, 327690, 46, 0, 327691, 46, 0, 327692, 46, 0, 327693, 46, 0, 327694, 46, 0, 327695, 46, 0, 458736, 0, 0, 458737, 0, 1, 458738, 0, 1, 458739, 0, 1, 458740, 0, 1, 458741, 0, 1, 458742, 0, 1, 458743, 0, 1, 458744, 0, 1, 458745, 0, 1, 458746, 0, 1, 458747, 0, 1, 458748, 0, 1, 458749, 0, 1, 458750, 0, 1, 458751, 0, 1, 393216, 0, 1, 393217, 0, 1, 393218, 0, 1, 393219, 0, 1, 393220, 0, 1, 393221, 0, 1, 393222, 0, 1, 393223, 0, 1, 393224, 0, 1, 393225, 0, 1, 393226, 0, 1, 393227, 0, 1, 393228, 0, 1, 393229, 0, 1, 393230, 0, 1, 393231, 0, 2, 524272, 0, 65536, 524273, 0, 65537, 524274, 0, 65537, 524275, 0, 65537, 524276, 0, 65537, 524277, 0, 65537, 524278, 0, 65537, 524279, 0, 65537, 524280, 0, 65537, 524281, 0, 65537, 524282, 0, 65537, 524283, 0, 65537, 524284, 0, 65537, 524285, 0, 65537, 524286, 0, 65537, 524287, 0, 65537, 458752, 0, 65537, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537, 458761, 0, 65537, 458762, 0, 65537, 458763, 0, 65537, 458764, 0, 65537, 458765, 0, 65537, 458766, 0, 65537, 458767, 0, 65538, 589808, 0, 131072, 589809, 0, 131073, 589810, 0, 131073, 589811, 0, 131073, 589812, 0, 131073, 589813, 0, 131073, 589814, 0, 131073, 589815, 0, 131073, 589816, 0, 131073, 589817, 0, 131073, 589818, 0, 131073, 589819, 0, 131073, 589820, 0, 131073, 589821, 0, 131073, 589822, 0, 131073, 589823, 0, 131073, 524288, 0, 131073, 524289, 0, 131073, 524290, 0, 131073, 524291, 0, 131073, 524292, 0, 131073, 524293, 0, 131073, 524294, 0, 131073, 524295, 0, 131073, 524296, 0, 131073, 524297, 0, 131073, 524298, 0, 131073, 524299, 0, 131073, 524300, 0, 131073, 524301, 0, 131073, 524302, 0, 131073, 524303, 0, 131074 )
+
+[node name="SkinSquirrel" parent="Environment" index="3" instance=ExtResource( 6 )]
+position = Vector2( -260, 77 )
+
+[node name="SkinFox" parent="Environment" index="4" instance=ExtResource( 7 )]
+position = Vector2( -265, 80 )
+
+[node name="SkinRabbit" parent="Environment" index="5" instance=ExtResource( 8 )]
+position = Vector2( -259, 80 )
+
+[node name="TreeAlt" parent="Environment" index="6" instance=ExtResource( 10 )]
+position = Vector2( -136, 41 )
+
+[node name="Tree" parent="Environment" index="7" instance=ExtResource( 11 )]
+position = Vector2( 4, 50 )
+
+[node name="Pine" parent="Environment" index="8" instance=ExtResource( 5 )]
+position = Vector2( 95, 31 )
+
+[node name="Palm" parent="Environment" index="9" instance=ExtResource( 12 )]
+position = Vector2( 177, 8 )
+
+[node name="Bush" parent="Environment" index="10" instance=ExtResource( 13 )]
+material = SubResource( 4 )
+position = Vector2( -211, 82 )
+
+[node name="Bush2" parent="Environment" index="11" instance=ExtResource( 13 )]
+material = SubResource( 4 )
+position = Vector2( 228, 82 )
+
+[node name="02_Dialogue_01" type="Node2D" parent="Dialogues" index="0"]
+script = ExtResource( 9 )
+next_sequence = "sequence_02"
