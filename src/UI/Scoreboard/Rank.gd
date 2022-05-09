@@ -74,7 +74,9 @@ func start_tween() -> void:
 			"locked": false
 		}
 	)
-	Serialize.unlock_next_level(Game.current_profile, owner.next_level)
+
+	if owner.unlock_next_level:
+		Serialize.unlock_next_level(Game.current_profile, owner.next_level)
 
 
 func compute_percentage(value, max_value) -> int:

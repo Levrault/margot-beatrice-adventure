@@ -256,20 +256,14 @@ tracks/2/keys = {
 
 [node name="Boss" instance=ExtResource( 1 )]
 introduction_cinematic_path = NodePath("Cinematics/01_Mid_Game")
-next_level = "Boss"
+next_level = "03_End"
 
 [node name="Scoreboard" parent="UI" index="3"]
 time_for_rank_100 = 90.0
 time_for_rank_80 = 120.0
 time_for_rank_60 = 180.0
-
-[node name="Screenshot" parent="UI" index="4"]
-margin_left = 0.0
-margin_right = 0.0
-
-[node name="HighScoreArchieved" parent="UI" index="6"]
-margin_left = -77.0
-margin_right = 77.0
+unlock_next_level = false
+scene_path = "res://src/Cinematics/"
 
 [node name="01_Mid_Game" parent="Cinematics" index="0" instance=ExtResource( 13 )]
 position = Vector2( 295, -344 )

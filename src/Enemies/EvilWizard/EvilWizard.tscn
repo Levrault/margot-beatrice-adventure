@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/EvilWizard/EvilWizardSkin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Enemies/EvilWizard/States/Idle.gd" type="Script" id=3]
-[ext_resource path="res://src/Enemies/EvilWizard/States/BossStateDebug.gd" type="Script" id=4]
 [ext_resource path="res://src/VFX/Explosion.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Enemies/EvilWizard/States/Vulnerable.gd" type="Script" id=6]
 [ext_resource path="res://src/Enemies/EvilWizard/States/Die.gd" type="Script" id=7]
@@ -83,12 +82,3 @@ position = Vector2( 7, 0 )
 
 [node name="SFXPlayer" parent="StateMachine/Die" index="1" instance=ExtResource( 13 )]
 stream = ExtResource( 11 )
-
-[node name="BossStateDebug" type="Label" parent="." index="7"]
-margin_left = -10.0
-margin_top = -77.0
-margin_right = 30.0
-margin_bottom = -63.0
-grow_horizontal = 2
-align = 1
-script = ExtResource( 4 )

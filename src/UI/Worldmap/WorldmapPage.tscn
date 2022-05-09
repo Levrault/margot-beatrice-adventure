@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
@@ -50,6 +50,8 @@
 [ext_resource path="res://assets/UI/worldmap/Level18_27x48.png" type="Texture" id=48]
 [ext_resource path="res://assets/UI/worldmap/Level18_160x90.png" type="Texture" id=49]
 [ext_resource path="res://src/UI/Worldmap/LevelContainer.gd" type="Script" id=50]
+[ext_resource path="res://assets/UI/worldmap/Boss_160x90.png" type="Texture" id=51]
+[ext_resource path="res://assets/UI/worldmap/Boss_27x48.png" type="Texture" id=52]
 
 [node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
@@ -185,7 +187,7 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
-margin_right = 562.0
+margin_right = 593.0
 margin_bottom = 52.0
 custom_constants/margin_right = 4
 custom_constants/margin_top = 4
@@ -194,7 +196,7 @@ custom_constants/margin_left = 4
 [node name="LevelContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 558.0
+margin_right = 589.0
 margin_bottom = 52.0
 script = ExtResource( 50 )
 
@@ -420,6 +422,18 @@ max_carrots = 7
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level18" index="1"]
 texture = ExtResource( 48 )
 
+[node name="Boss" parent="ScrollContainer/MarginContainer/LevelContainer" instance=ExtResource( 7 )]
+margin_left = 558.0
+margin_right = 585.0
+level_title = "level.boss"
+preview_texture = ExtResource( 51 )
+max_gems = 12
+max_acorns = 9
+max_carrots = 7
+
+[node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Boss" index="1"]
+texture = ExtResource( 52 )
+
 [node name="Footer" type="HBoxContainer" parent="."]
 margin_left = 20.0
 margin_top = 225.0
@@ -464,3 +478,4 @@ __meta__ = {
 [editable path="ScrollContainer/MarginContainer/LevelContainer/Level16"]
 [editable path="ScrollContainer/MarginContainer/LevelContainer/Level17"]
 [editable path="ScrollContainer/MarginContainer/LevelContainer/Level18"]
+[editable path="ScrollContainer/MarginContainer/LevelContainer/Boss"]

@@ -22,7 +22,8 @@ export (
 	"Level16",
 	"Level17",
 	"Level18",
-	"Boss"
+	"Boss",
+	"03_End"
 ) var next_level
 
 onready var player: Player = find_node("Player")
