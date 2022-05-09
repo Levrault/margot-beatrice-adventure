@@ -263,14 +263,6 @@ time_for_rank_100 = 90.0
 time_for_rank_80 = 120.0
 time_for_rank_60 = 180.0
 
-[node name="Screenshot" parent="UI" index="4"]
-margin_left = 0.0
-margin_right = 0.0
-
-[node name="HighScoreArchieved" parent="UI" index="6"]
-margin_left = -77.0
-margin_right = 77.0
-
 [node name="01_Mid_Game" parent="Cinematics" index="0" instance=ExtResource( 13 )]
 position = Vector2( 295, -344 )
 

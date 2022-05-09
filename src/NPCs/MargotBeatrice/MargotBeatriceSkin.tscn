@@ -187,7 +187,7 @@ position = Vector2( 8, -21 )
 texture = ExtResource( 2 )
 hframes = 6
 vframes = 17
-frame = 6
+frame = 4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 3 )

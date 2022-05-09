@@ -263,14 +263,6 @@ shader_param/offset = 0.0
 
 [node name="01_Mid_Game" instance=ExtResource( 1 )]
 
-[node name="Up" parent="CanvasLayer/CinematicBar" index="0"]
-margin_right = 0.0
-
-[node name="Down" parent="CanvasLayer/CinematicBar" index="1"]
-margin_top = 0.0399933
-margin_right = 0.0
-margin_bottom = 25.04
-
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "fade"
 anims/sequence_01 = SubResource( 1 )
