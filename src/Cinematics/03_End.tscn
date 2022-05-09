@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://src/VFX/ExplosionAir.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/tileset_land_middle.tres" type="TileSet" id=2]
@@ -26,7 +26,7 @@
 [ext_resource path="res://assets/theme/minecraftia_8.tres" type="DynamicFont" id=24]
 [ext_resource path="res://src/Cinematics/RetunToMenu.gd" type="Script" id=25]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("CinematicCamera:zoom")
@@ -343,7 +343,7 @@ tracks/25/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=2]
 resource_name = "ending_credits"
 length = 20.0
 tracks/0/type = "value"
@@ -457,7 +457,97 @@ tracks/8/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/CinematicBar/Up:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -25 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CinematicCamera:current")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/CinematicBar/Down:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 256 ), Vector2( 0, 246 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/IrisShot:material:shader_param/circle_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 1.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/IrisShot:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("MusicController")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
 resource_name = "sequence_01"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Environment/MiddleGround/MargotBeatriceSkin:position")
@@ -536,7 +626,7 @@ tracks/5/keys = {
 "values": [ Vector2( -250, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "sequence_02"
 length = 1.8
 tracks/0/type = "value"
@@ -732,7 +822,7 @@ tracks/13/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 resource_name = "sequence_03"
 length = 5.0
 tracks/0/type = "value"
@@ -866,7 +956,7 @@ tracks/9/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 resource_name = "sequence_04"
 length = 2.4
 tracks/0/type = "value"
@@ -1032,7 +1122,7 @@ tracks/10/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 resource_name = "sequence_05"
 length = 0.7
 tracks/0/type = "value"
@@ -1103,7 +1193,7 @@ tracks/4/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=9]
 resource_name = "sequence_06"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Environment/MiddleGround/EvilWizardSkin:position")
@@ -1176,6 +1266,60 @@ tracks/4/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=10]
+resource_name = "skip"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/CinematicBar/Up:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -25 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/CinematicBar/Down:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 246 ), Vector2( 0, 256 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("ReturnToMenu")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+
 [node name="00_Intro" instance=ExtResource( 9 )]
 
 [node name="UI" type="CanvasLayer" parent="." index="0"]
@@ -1187,8 +1331,6 @@ layer = 2
 visible = false
 
 [node name="Screenshot" parent="UI" index="2" instance=ExtResource( 20 )]
-margin_left = 0.0
-margin_right = 0.0
 
 [node name="GamepadChanged" parent="UI" index="3" instance=ExtResource( 22 )]
 
@@ -1199,12 +1341,12 @@ visible = false
 visible = false
 
 [node name="Up" parent="CanvasLayer/CinematicBar" index="0"]
-margin_top = 0.0
-margin_bottom = 25.0
+margin_top = -25.0
+margin_bottom = 0.0
 
 [node name="Down" parent="CanvasLayer/CinematicBar" index="1"]
-margin_top = -9.96001
-margin_bottom = 15.04
+margin_top = 0.0399933
+margin_bottom = 25.04
 
 [node name="Credits" type="ColorRect" parent="CanvasLayer" index="4"]
 modulate = Color( 1, 1, 1, 0 )
@@ -1331,14 +1473,17 @@ scroll_active = false
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "fade"
-anims/RESET = SubResource( 3 )
-anims/ending_credits = SubResource( 13 )
-anims/sequence_01 = SubResource( 8 )
-anims/sequence_02 = SubResource( 7 )
-anims/sequence_03 = SubResource( 9 )
-anims/sequence_04 = SubResource( 10 )
-anims/sequence_05 = SubResource( 11 )
-anims/sequence_06 = SubResource( 12 )
+anims/RESET = SubResource( 1 )
+anims/ending_credits = SubResource( 2 )
+anims/fade = SubResource( 3 )
+anims/sequence_01 = SubResource( 4 )
+anims/sequence_02 = SubResource( 5 )
+anims/sequence_03 = SubResource( 6 )
+anims/sequence_04 = SubResource( 7 )
+anims/sequence_05 = SubResource( 8 )
+anims/sequence_06 = SubResource( 9 )
+anims/skip = SubResource( 10 )
+next/ending_credits = "skip"
 next/fade = "sequence_01"
 next/sequence_06 = "ending_credits"
 
@@ -1412,7 +1557,6 @@ position = Vector2( -8, -30 )
 
 [node name="CinematicCamera" parent="." index="6"]
 position = Vector2( 0, -8 )
-current = true
 zoom = Vector2( 0.75, 0.75 )
 
 [node name="03_Dialogue_01" type="Node2D" parent="Dialogues" index="0"]
