@@ -167,6 +167,26 @@ func save_best_score(profile_name: String, for_level: String, new_score: Diction
 	Events.emit_signal("new_high_score_archived")
 
 
+func save_global_stats(profile_name: String, stats: Dictionary, time: float) -> void:
+	print_debug(
+		(
+			"%s:save_global_stats - game_over %s | hits_taken %s | time %s"
+			% [
+				profile_name,
+				String(stats.game_over),
+				String(stats.hits_taken),
+				String(time)
+			]
+		)
+	)
+	
+	var values = profiles[profile_name]
+	values.stats.game_over += stats.game_over
+	values.stats.hits += stats.hits_taken
+	values.stats.total_play_time += time
+	save_profile(profile_name, values)
+
+
 func unlock_next_level(profile_name: String, for_level: String) -> void:
 	if not profiles[profile_name].levels[for_level].locked:
 		print_debug("%s:unlock_next_level - level already unlocked")

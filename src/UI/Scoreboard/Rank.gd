@@ -75,6 +75,12 @@ func start_tween() -> void:
 		}
 	)
 
+	Serialize.save_global_stats(
+		Game.current_profile,
+		Game.stats,
+		_elapsed_time
+	)
+
 	if owner.unlock_next_level:
 		Serialize.unlock_next_level(Game.current_profile, owner.next_level)
 
