@@ -1,6 +1,5 @@
 ,en,fr
 profile.completed,"{percentage}% completed","{percentage}% complété"
 profile.erase_profile,"Are you sure you want to delete {profile}? This action cannot be undone","Êtes-vous sûr de vouloir supprimer {profile}? Cette action ne peut être annuler"
-profile.level,"level {level}","niveau {level}"
 profile.new_game,"new game","nouvelle partie"
 profile.playtime,"playtime {time}","temps de jeu {time}"

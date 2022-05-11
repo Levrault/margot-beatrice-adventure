@@ -179,7 +179,7 @@ func save_global_stats(profile_name: String, stats: Dictionary, time: float) -> 
 			]
 		)
 	)
-	
+
 	var values = profiles[profile_name]
 	values.stats.game_over += stats.game_over
 	values.stats.hits += stats.hits_taken

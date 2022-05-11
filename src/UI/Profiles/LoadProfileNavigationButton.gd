@@ -13,7 +13,7 @@ func set_data(data: Dictionary) -> void:
 
 	# TODO: set when real time computing will works
 	playtime.text = tr("profile.playtime").format({time = playtime.seconds2hhmmss(data.stats.total_play_time)})
-	level.text = tr("profile.level").format({level = data.progression.last_unlocked_level})
+	level.text = tr("level.%s" % data.progression.last_unlocked_level.to_lower())
 	completed.text = tr("profile.completed").format({percentage = completed.format_completed(data.levels)})
 
 
