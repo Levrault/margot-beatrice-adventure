@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Enemies/Patrol/Opossum/Opossum.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/Traps/Spikes.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Enemies/Statics/Carniplant/Carniplant.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Levels/Template/Scene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Levels/Template/LevelTemplate.tscn" type="PackedScene" id=5]
 
 [node name="Debug1" instance=ExtResource( 5 )]
 full_screen_shader = false
