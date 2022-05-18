@@ -9,6 +9,9 @@ export (Texture) var preview_texture = null
 export var max_gems := 0
 export var max_acorns := 0
 export var max_carrots := 0
+export var rank_s_time := 0.0
+export var rank_a_time := 0.0
+export var rank_b_time := 0.0
 
 var data := {}
 var level_path := ""
@@ -64,6 +67,9 @@ func _on_Focus_entered() -> void:
 	Events.emit_signal("worldmap_gems_percentage_changed", data.gems, max_gems)
 	Events.emit_signal("worldmap_acorns_percentage_changed", data.acorns, max_acorns)
 	Events.emit_signal("worldmap_carrots_percentage_changed", data.carrots, max_carrots)
+	Events.emit_signal("worldmap_rank_s_time_changed", rank_s_time)
+	Events.emit_signal("worldmap_rank_a_time_changed", rank_a_time)
+	Events.emit_signal("worldmap_rank_b_time_changed", rank_b_time)
 
 
 func _on_Focus_exited() -> void:

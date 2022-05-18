@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationSwitch.gd" type="Script" id=2]
@@ -52,6 +52,7 @@
 [ext_resource path="res://src/UI/Worldmap/LevelContainer.gd" type="Script" id=50]
 [ext_resource path="res://assets/UI/worldmap/Boss_160x90.png" type="Texture" id=51]
 [ext_resource path="res://assets/UI/worldmap/Boss_27x48.png" type="Texture" id=52]
+[ext_resource path="res://src/UI/Worldmap/TimePanel.tscn" type="PackedScene" id=53]
 
 [node name="WorldmapPage" type="Control"]
 anchor_right = 1.0
@@ -94,8 +95,16 @@ __meta__ = {
 }
 
 [node name="Preview" parent="." instance=ExtResource( 4 )]
+margin_left = 106.0
 margin_top = 51.0
+margin_right = -214.0
 margin_bottom = -129.0
+
+[node name="TimePanel" parent="." instance=ExtResource( 53 )]
+margin_left = 273.0
+margin_top = 47.0
+margin_right = 374.0
+margin_bottom = 145.0
 
 [node name="CollectablesContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -108,9 +117,6 @@ margin_right = 74.0
 margin_bottom = 26.0
 grow_horizontal = 2
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="GemsPercentageContainer" type="HBoxContainer" parent="CollectablesContainer"]
 margin_right = 47.0
@@ -176,12 +182,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -89.0
+margin_left = -135.0
 margin_top = 26.0
-margin_right = 89.0
+margin_right = 131.0
 margin_bottom = 86.0
 grow_horizontal = 2
-rect_min_size = Vector2( 178, 60 )
+rect_min_size = Vector2( 266, 60 )
 follow_focus = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -208,6 +214,9 @@ preview_texture = ExtResource( 12 )
 max_gems = 18
 max_acorns = 7
 max_carrots = 10
+rank_s_time = 55.0
+rank_a_time = 70.0
+rank_b_time = 90.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level1" index="1"]
 texture = ExtResource( 16 )
@@ -227,6 +236,9 @@ preview_texture = ExtResource( 13 )
 max_gems = 13
 max_acorns = 7
 max_carrots = 14
+rank_s_time = 60.0
+rank_a_time = 90.0
+rank_b_time = 120.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level2" index="1"]
 texture = ExtResource( 17 )
@@ -239,6 +251,9 @@ preview_texture = ExtResource( 18 )
 max_gems = 10
 max_acorns = 7
 max_carrots = 8
+rank_s_time = 100.0
+rank_a_time = 125.0
+rank_b_time = 180.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level3" index="1"]
 texture = ExtResource( 19 )
@@ -251,6 +266,9 @@ preview_texture = ExtResource( 21 )
 max_gems = 6
 max_acorns = 7
 max_carrots = 16
+rank_s_time = 60.0
+rank_a_time = 75.0
+rank_b_time = 100.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level4" index="1"]
 texture = ExtResource( 20 )
@@ -263,6 +281,9 @@ preview_texture = ExtResource( 23 )
 max_gems = 15
 max_acorns = 17
 max_carrots = 7
+rank_s_time = 60.0
+rank_a_time = 90.0
+rank_b_time = 120.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level5" index="1"]
 texture = ExtResource( 22 )
@@ -275,6 +296,9 @@ preview_texture = ExtResource( 24 )
 max_gems = 18
 max_acorns = 11
 max_carrots = 5
+rank_s_time = 55.0
+rank_a_time = 80.0
+rank_b_time = 95.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level6" index="1"]
 texture = ExtResource( 25 )
@@ -287,6 +311,9 @@ preview_texture = ExtResource( 27 )
 max_gems = 9
 max_acorns = 6
 max_carrots = 10
+rank_s_time = 60.0
+rank_a_time = 90.0
+rank_b_time = 120.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level7" index="1"]
 texture = ExtResource( 26 )
@@ -299,6 +326,9 @@ preview_texture = ExtResource( 28 )
 max_gems = 4
 max_acorns = 4
 max_carrots = 4
+rank_s_time = 40.0
+rank_a_time = 60.0
+rank_b_time = 80.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level8" index="1"]
 texture = ExtResource( 29 )
@@ -311,6 +341,9 @@ preview_texture = ExtResource( 33 )
 max_gems = 14
 max_acorns = 8
 max_carrots = 9
+rank_s_time = 55.0
+rank_a_time = 70.0
+rank_b_time = 85.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level9" index="1"]
 texture = ExtResource( 32 )
@@ -323,6 +356,9 @@ preview_texture = ExtResource( 30 )
 max_gems = 10
 max_acorns = 9
 max_carrots = 9
+rank_s_time = 60.0
+rank_a_time = 90.0
+rank_b_time = 120.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level10" index="1"]
 texture = ExtResource( 31 )
@@ -335,6 +371,9 @@ preview_texture = ExtResource( 35 )
 max_gems = 6
 max_acorns = 7
 max_carrots = 5
+rank_s_time = 50.0
+rank_a_time = 75.0
+rank_b_time = 90.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level11" index="1"]
 texture = ExtResource( 34 )
@@ -347,6 +386,9 @@ preview_texture = ExtResource( 37 )
 max_gems = 6
 max_acorns = 4
 max_carrots = 6
+rank_s_time = 35.0
+rank_a_time = 45.0
+rank_b_time = 60.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level12" index="1"]
 texture = ExtResource( 36 )
@@ -359,6 +401,9 @@ preview_texture = ExtResource( 38 )
 max_gems = 11
 max_acorns = 10
 max_carrots = 10
+rank_s_time = 50.0
+rank_a_time = 60.0
+rank_b_time = 70.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level13" index="1"]
 texture = ExtResource( 39 )
@@ -371,6 +416,9 @@ preview_texture = ExtResource( 41 )
 max_gems = 7
 max_acorns = 13
 max_carrots = 5
+rank_s_time = 50.0
+rank_a_time = 80.0
+rank_b_time = 120.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level14" index="1"]
 texture = ExtResource( 40 )
@@ -383,6 +431,9 @@ preview_texture = ExtResource( 42 )
 max_gems = 11
 max_acorns = 5
 max_carrots = 6
+rank_s_time = 50.0
+rank_a_time = 80.0
+rank_b_time = 110.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level15" index="1"]
 texture = ExtResource( 43 )
@@ -395,6 +446,9 @@ preview_texture = ExtResource( 44 )
 max_gems = 5
 max_acorns = 12
 max_carrots = 5
+rank_s_time = 50.0
+rank_a_time = 70.0
+rank_b_time = 90.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level16" index="1"]
 texture = ExtResource( 45 )
@@ -407,6 +461,9 @@ preview_texture = ExtResource( 46 )
 max_gems = 9
 max_acorns = 12
 max_carrots = 5
+rank_s_time = 40.0
+rank_a_time = 60.0
+rank_b_time = 80.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level17" index="1"]
 texture = ExtResource( 47 )
@@ -419,6 +476,9 @@ preview_texture = ExtResource( 49 )
 max_gems = 12
 max_acorns = 9
 max_carrots = 7
+rank_s_time = 45.0
+rank_a_time = 60.0
+rank_b_time = 75.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Level18" index="1"]
 texture = ExtResource( 48 )
@@ -431,6 +491,9 @@ preview_texture = ExtResource( 51 )
 max_gems = 12
 max_acorns = 9
 max_carrots = 7
+rank_s_time = 90.0
+rank_a_time = 120.0
+rank_b_time = 180.0
 
 [node name="Preview" parent="ScrollContainer/MarginContainer/LevelContainer/Boss" index="1"]
 texture = ExtResource( 52 )

@@ -181,3 +181,6 @@ signal worldmap_preview_animation_activated
 signal worldmap_acorns_percentage_changed(value, max_value)
 signal worldmap_carrots_percentage_changed(value, max_value)
 signal worldmap_gems_percentage_changed(value, max_value)
+signal worldmap_rank_s_time_changed(time_in_sec)
+signal worldmap_rank_a_time_changed(time_in_sec)
+signal worldmap_rank_b_time_changed(time_in_sec)

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/Objects/Moving/Moving.gd" type="Script" id=1]
 [ext_resource path="res://src/Combat/DamageSource/DamageSourceTraps.tscn" type="PackedScene" id=2]
-[ext_resource path="res://docs/tests_assets/GameFXexport-ppeldo/SPRITESHEET_Files/TornadoLoop_96x96.png" type="Texture" id=3]
+[ext_resource path="res://assets/vfx/TornadoLoop_96x96.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 5, 1.5 )
