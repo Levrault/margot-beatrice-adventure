@@ -86,6 +86,7 @@ func enter(msg: Dictionary = {}) -> void:
 		_is_controlled = false
 
 	if owner.character_factory.selected_character == Character.Playable.SQUIRREL:
+		owner.attack_factory.reset()
 		owner.attack_factory.create()
 		return
 
