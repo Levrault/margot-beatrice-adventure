@@ -4,16 +4,13 @@ const TRANSITION_DURATION := 0.5
 
 var playlist := {
 	"assassin": "res://assets/music/Assassin.ogg",
-	"child_nightmare": "res://assets/music/Child\'s Nightmare.ogg",
-	"common_fight": "res://assets/music/Common Fight.ogg",
 	"electronic_fantasy": "res://assets/music/Electronic Fantasy.ogg",
 	"friends": "res://assets/music/Friends.ogg",
 	"lyonesse": "res://assets/music/Lyonesse.ogg",
 	"mall": "res://assets/music/Mall.ogg",
 	"su_turno": "res://assets/music/Su Turno.ogg",
 	"the_three_princesses_of_lilac_meadows":
-	"res://assets/music/The Three Princesses of Lilac Meadow.ogg",
-	"yellow_forest": "res://assets/music/Yellow Forest.ogg",
+	"res://assets/music/The Three Princesses of Lilac Meadow.ogg"
 }
 
 var current: String = "mall"
@@ -22,11 +19,12 @@ onready var tween := $Tween
 
 
 func change_track(new_music: String) -> void:
+	print_debug("track %s has been changed to %s" % [current, new_music])
 	if new_music == current:
 		return
 	stop()
-	current = playlist[new_music]
-	stream = load(current)
+	current = new_music
+	stream = load(playlist[current])
 	transition()
 
 

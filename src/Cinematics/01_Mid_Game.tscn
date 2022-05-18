@@ -114,6 +114,20 @@ tracks/6/keys = {
 "method": "start"
 } ]
 }
+tracks/7/type = "method"
+tracks/7/path = NodePath("MusicController")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "su_turno" ],
+"method": "change_track"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "sequence_02"
@@ -245,7 +259,7 @@ position = Vector2( -169, 31 )
 position = Vector2( -260, 77 )
 
 [node name="SkinFox" parent="Environment" index="9" instance=ExtResource( 7 )]
-position = Vector2( -260, 80 )
+position = Vector2( -265, 80 )
 
 [node name="SkinRabbit" parent="Environment" index="10" instance=ExtResource( 8 )]
 position = Vector2( -259, 80 )
