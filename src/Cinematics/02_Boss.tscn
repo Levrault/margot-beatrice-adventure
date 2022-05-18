@@ -261,7 +261,7 @@ shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
 
-[node name="01_Mid_Game" instance=ExtResource( 1 )]
+[node name="02_Boss" instance=ExtResource( 1 )]
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "fade"

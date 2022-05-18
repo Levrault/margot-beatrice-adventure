@@ -1,5 +1,7 @@
 extends Control
 
+export var active := true
+
 var duration := 1.0
 var default_modulate_alpha := modulate.a
 
@@ -10,6 +12,8 @@ onready var progress_bar := $VBoxContainer/ProgressBar
 
 
 func _ready():
+	if not active:
+		queue_free()
 	Events.connect("screenshot_started", self, "hide")
 	Events.connect("screenshot_ended", self, "show")
 	timer.connect("timeout", self, "_on_Timeout")

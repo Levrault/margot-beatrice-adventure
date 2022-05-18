@@ -342,6 +342,30 @@ tracks/25/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/26/type = "value"
+tracks/26/path = NodePath("MusicController:autoplay_track")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "the_three_princesses_of_lilac_meadows" ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("MusicController:delay")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "ending_credits"
@@ -625,6 +649,20 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( -250, 0 ) ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("MusicController")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "the_three_princesses_of_lilac_meadows" ],
+"method": "change_track"
+} ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "sequence_02"
@@ -824,7 +862,7 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "sequence_03"
-length = 5.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Environment/MiddleGround/MargotBeatriceSkin:position")
 tracks/0/interp = 1
@@ -948,7 +986,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 5 ),
+"times": PoolRealArray( 4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -1119,6 +1157,20 @@ tracks/10/keys = {
 "values": [ {
 "args": [  ],
 "method": "start"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("MusicController")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 2.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "su_turno" ],
+"method": "change_track"
 } ]
 }
 
@@ -1331,13 +1383,12 @@ layer = 2
 visible = false
 
 [node name="Screenshot" parent="UI" index="2" instance=ExtResource( 20 )]
+margin_left = 0.0
+margin_right = 0.0
 
 [node name="GamepadChanged" parent="UI" index="3" instance=ExtResource( 22 )]
 
 [node name="InGameMenu" parent="UI" index="4" instance=ExtResource( 23 )]
-visible = false
-
-[node name="CinematicBar" parent="CanvasLayer" index="1"]
 visible = false
 
 [node name="Up" parent="CanvasLayer/CinematicBar" index="0"]
@@ -1347,6 +1398,9 @@ margin_bottom = 0.0
 [node name="Down" parent="CanvasLayer/CinematicBar" index="1"]
 margin_top = 0.0399933
 margin_bottom = 25.04
+
+[node name="CancelCinematic" parent="CanvasLayer" index="2"]
+active = false
 
 [node name="Credits" type="ColorRect" parent="CanvasLayer" index="4"]
 modulate = Color( 1, 1, 1, 0 )
@@ -1384,7 +1438,7 @@ margin_right = 48.0
 margin_bottom = 7.0
 grow_horizontal = 2
 custom_fonts/font = ExtResource( 21 )
-text = "credits.levrault"
+text = "credits.author"
 
 [node name="Dedicated" type="Label" parent="CanvasLayer/Credits" index="2"]
 visible = false
@@ -1489,6 +1543,10 @@ next/sequence_06 = "ending_credits"
 
 [node name="AudioStreamPlayer" parent="." index="3"]
 stream = ExtResource( 6 )
+
+[node name="MusicController" parent="." index="4"]
+autoplay_track = "the_three_princesses_of_lilac_meadows"
+delay = 2.0
 
 [node name="Environment" parent="." index="5"]
 position = Vector2( 8, 72 )

@@ -16,3 +16,4 @@ func start() -> void:
 	Events.emit_signal("dialogue_started")
 	_current_dialogue = get_next(dialogue_json.root)
 	change()
+	owner.set_process_unhandled_input(true)
