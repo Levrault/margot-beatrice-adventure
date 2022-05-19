@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Enemies/Flying/FlyingEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Flying/Wasp/WaspSkin.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 [sub_resource type="CapsuleShape2D" id=2]
+radius = 16.0
+
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 16.0
 
 [sub_resource type="CircleShape2D" id=3]
@@ -33,7 +36,7 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, 4 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D" parent="PlayerDetector" index="0"]
 shape = SubResource( 3 )

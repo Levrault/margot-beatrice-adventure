@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Enemies/Patrol/Opossum/Opossum.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Waypoints/PlatformWaypoints.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Enemies/Flying/Gator/Gator.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Enemies/Flying/Wasp/Wasp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Objects/Traps/Trampoline.tscn" type="PackedScene" id=9]
 
 [node name="DebugEnemies" instance=ExtResource( 5 )]
 next_level = "level3"
@@ -16,7 +17,10 @@ next_level = "level3"
 tile_data = PoolIntArray( 983053, 0, 0, 983060, 0, 0, 983067, 0, 0, 1048576, 0, 0, 1048577, 0, 1, 1048578, 0, 1, 1048579, 0, 1, 1048580, 0, 1, 1048581, 0, 1, 1048582, 0, 1, 1048583, 0, 1, 1048584, 0, 1, 1048585, 0, 1, 1048586, 0, 1, 1048587, 0, 1, 1048588, 0, 1, 1048589, 0, 1, 1048590, 0, 1, 1048591, 0, 1, 1048592, 0, 1, 1048593, 0, 1, 1048594, 0, 1, 1048595, 0, 1, 1048596, 0, 1, 1048597, 0, 1, 1048598, 0, 1, 1048599, 0, 1, 1048600, 0, 1, 1048601, 0, 1, 1048602, 0, 1, 1048603, 0, 1, 1048604, 0, 1, 1048605, 0, 2, 1048606, 1, 0, 1048607, 1, 1, 1048608, 1, 1, 1048609, 1, 1, 1048610, 1, 1, 1048611, 1, 1, 1048612, 1, 1, 1048613, 1, 1, 1048614, 1, 1, 1048615, 1, 1, 1048616, 1, 1, 1048617, 1, 1, 1048618, 1, 1, 1048619, 1, 1, 1048620, 1, 1, 1048621, 1, 1, 1048622, 1, 1, 1048623, 1, 1, 1048624, 1, 1, 1048625, 1, 1, 1048626, 1, 1, 1048627, 1, 2, 1114112, 0, 131072, 1114113, 0, 131073, 1114114, 0, 131073, 1114115, 0, 131073, 1114116, 0, 131073, 1114117, 0, 131073, 1114118, 0, 131073, 1114119, 0, 131073, 1114120, 0, 131073, 1114121, 0, 131073, 1114122, 0, 131073, 1114123, 0, 131073, 1114124, 0, 131073, 1114125, 0, 131073, 1114126, 0, 131073, 1114127, 0, 131073, 1114128, 0, 131073, 1114129, 0, 131073, 1114130, 0, 131073, 1114131, 0, 131073, 1114132, 0, 131073, 1114133, 0, 131073, 1114134, 0, 131073, 1114135, 0, 131073, 1114136, 0, 131073, 1114137, 0, 131073, 1114138, 0, 131073, 1114139, 0, 131073, 1114140, 0, 131073, 1114141, 0, 131074, 1114142, 1, 131072, 1114143, 1, 131073, 1114144, 1, 131073, 1114145, 1, 131073, 1114146, 1, 131073, 1114147, 1, 131073, 1114148, 1, 131073, 1114149, 1, 131073, 1114150, 1, 131073, 1114151, 1, 131073, 1114152, 1, 131073, 1114153, 1, 131073, 1114154, 1, 131073, 1114155, 1, 131073, 1114156, 1, 131073, 1114157, 1, 131073, 1114158, 1, 131073, 1114159, 1, 131073, 1114160, 1, 131073, 1114161, 1, 131073, 1114162, 1, 131073, 1114163, 1, 131074 )
 
 [node name="Player" parent="MiddleGroundTileMap" index="0"]
-position = Vector2( 216, 240 )
+position = Vector2( 507, 254 )
+
+[node name="Trampoline" parent="MiddleGroundTileMap/Traps" index="0" instance=ExtResource( 9 )]
+position = Vector2( 546, 256 )
 
 [node name="Carniplant" parent="MiddleGroundTileMap/Enemies" index="0" instance=ExtResource( 4 )]
 position = Vector2( 680, 256 )
@@ -35,6 +39,9 @@ points = PoolVector2Array( 0, 0, 0, 50 )
 
 [node name="Wasp" parent="MiddleGroundTileMap/Enemies" index="4" instance=ExtResource( 8 )]
 position = Vector2( 335, 149 )
+
+[node name="Wasp2" parent="MiddleGroundTileMap/Enemies" index="5" instance=ExtResource( 8 )]
+position = Vector2( 551, 112 )
 
 [node name="EndOfLevel" parent="MiddleGroundTileMap" index="10"]
 position = Vector2( 825, 257 )

@@ -11,6 +11,12 @@ func _ready() -> void:
 	yield(owner, "ready")
 
 
+func reset() -> void:
+	if buffering.is_connected("timeout", self, "_on_Timeout"):
+		buffering.disconnect("timeout", self, "_on_Timeout")
+	buffering.stop()
+
+
 func create() -> void:
 	if is_attacking:
 		return
