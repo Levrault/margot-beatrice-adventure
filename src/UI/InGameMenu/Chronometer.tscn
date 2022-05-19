@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/UI/InGameMenu/Chronometer.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme/joystix_10.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/UI/Commons/Time/TimeFormatMinutes.gd" type="Script" id=3]
+[ext_resource path="res://src/UI/Commons/Time/TimeFormatSeconds.gd" type="Script" id=4]
+[ext_resource path="res://src/UI/Commons/Time/TimeFormatMiliSeconds.gd" type="Script" id=5]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+Label/colors/font_color = Color( 0.984314, 0.94902, 0.211765, 1 )
+
+[node name="Chronometer" type="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -89.0
+margin_bottom = 26.0
+theme = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 82.0
+margin_bottom = 19.0
+grow_horizontal = 0
+rect_min_size = Vector2( 75, 0 )
+custom_constants/separation = 0
+alignment = 1
+
+[node name="MM" type="Label" parent="HBoxContainer"]
+margin_left = 1.0
+margin_right = 17.0
+margin_bottom = 12.0
+text = "00"
+valign = 1
+script = ExtResource( 3 )
+
+[node name="Separator" type="Label" parent="HBoxContainer"]
+margin_left = 17.0
+margin_right = 25.0
+margin_bottom = 12.0
+text = ":"
+valign = 1
+script = ExtResource( 3 )
+
+[node name="SS" type="Label" parent="HBoxContainer"]
+margin_left = 25.0
+margin_right = 41.0
+margin_bottom = 12.0
+text = "00"
+valign = 1
+script = ExtResource( 4 )
+
+[node name="Separator2" type="Label" parent="HBoxContainer"]
+margin_left = 41.0
+margin_right = 49.0
+margin_bottom = 12.0
+text = ":"
+valign = 1
+script = ExtResource( 3 )
+
+[node name="MS" type="Label" parent="HBoxContainer"]
+margin_left = 49.0
+margin_right = 73.0
+margin_bottom = 12.0
+text = "000"
+valign = 1
+script = ExtResource( 5 )

@@ -4,7 +4,6 @@ class_name TimeFormat
 const TIME_FORMAT_SS_MS = "{ss}s {ms}ms"
 const TIME_FORMAT_MM_SS_MS = "{mm}m {ss}s {ms}ms"
 
-var _level_started_time := 0.0
 var _elapsed_time := 0.0
 
 onready var _tween := $Tween

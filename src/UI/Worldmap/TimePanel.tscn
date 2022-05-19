@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/theme/generic_box_normal.tres" type="StyleBox" id=1]
-[ext_resource path="res://src/UI/Worldmap/TimePanel.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/Worldmap/RankPanelTime.gd" type="Script" id=3]
 
 [node name="RankPanel" type="Panel"]
@@ -9,7 +8,6 @@ margin_right = 101.0
 margin_bottom = 98.0
 rect_min_size = Vector2( 101, 98 )
 custom_styles/panel = ExtResource( 1 )
-script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5

@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/UI/worldmap/placeholder_160x90.png" type="Texture" id=3]
 [ext_resource path="res://src/UI/Commons/Overlay/Overlay.gd" type="Script" id=4]
 [ext_resource path="res://src/UI/Worldmap/BestTime.gd" type="Script" id=5]
-[ext_resource path="res://src/UI/Scoreboard/TimeFormat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UI/Commons/Time/TimeFormat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/theme/joystick_42.tres" type="DynamicFont" id=7]
 [ext_resource path="res://src/UI/Worldmap/Rank.gd" type="Script" id=8]
 

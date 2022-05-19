@@ -247,7 +247,7 @@ _global_script_classes=[ {
 "base": "Label",
 "class": "TimeFormat",
 "language": "GDScript",
-"path": "res://src/UI/Scoreboard/TimeFormat.gd"
+"path": "res://src/UI/Commons/Time/TimeFormat.gd"
 }, {
 "base": "Control",
 "class": "TutorialPopUp",

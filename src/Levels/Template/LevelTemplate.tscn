@@ -17,7 +17,7 @@
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/UI/Scoreboard/Scoreboard.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Music/MusicController.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/Levels/Template/Chronometer.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/UI/InGameMenu/Chronometer.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/UI/Dialogues/DialogueBox.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/UI/InGameMenu/InGameMenu.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/UI/Commons/Notifications/HighScoreArchieved.tscn" type="PackedScene" id=21]
@@ -49,14 +49,10 @@ visible = false
 [node name="Scoreboard" parent="UI" instance=ExtResource( 16 )]
 
 [node name="Screenshot" parent="UI" instance=ExtResource( 14 )]
-margin_left = 0.0
-margin_right = 0.0
 
 [node name="GamepadChanged" parent="UI" instance=ExtResource( 13 )]
 
 [node name="HighScoreArchieved" parent="UI" instance=ExtResource( 21 )]
-margin_left = -77.0
-margin_right = 77.0
 
 [node name="InGameMenu" parent="UI" instance=ExtResource( 20 )]
 visible = false

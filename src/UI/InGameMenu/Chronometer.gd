@@ -2,7 +2,9 @@ extends Control
 
 var time := 0.0
 
-onready var time_format := $TimeFormat
+onready var mm := $HBoxContainer/MM
+onready var ss := $HBoxContainer/SS
+onready var ms := $HBoxContainer/MS
 
 
 func _ready() -> void:
@@ -15,7 +17,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time += delta
-	time_format.format_time(time)
+	mm.format_time(time)
+	ss.format_time(time)
+	ms.format_time(time)
 
 
 func _on_Level_started() -> void:
