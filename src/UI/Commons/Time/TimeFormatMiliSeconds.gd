@@ -1,6 +1,6 @@
 extends Label
 
-const TIME_FORMAT = "%03d"
+const TIME_FORMAT = "%02d"
 
 
 func format_time(time: float) -> String:
