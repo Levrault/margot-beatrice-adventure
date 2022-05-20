@@ -43,14 +43,11 @@ default_font = ExtResource( 19 )
 [node name="GamepadLayoutPreview" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -100.0
+margin_right = -80.0
 margin_bottom = -160.0
-rect_min_size = Vector2( 380, 110 )
+rect_min_size = Vector2( 410, 110 )
 theme = SubResource( 1 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0

@@ -46,7 +46,10 @@ margin_bottom = 7.0
 [sub_resource type="StyleBoxEmpty" id=29]
 
 [sub_resource type="StyleBoxLine" id=37]
-color = Color( 1, 1, 1, 0.470588 )
+color = Color( 1, 1, 1, 1 )
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
 
 [sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 9 )
