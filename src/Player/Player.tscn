@@ -163,7 +163,7 @@ DURATION = 0.25
 STRENGTH = 0.75
 
 [node name="Stats" parent="." instance=ExtResource( 12 )]
-max_health = 5.0
+max_health = 4.0
 
 [node name="NpcInteraction" parent="." instance=ExtResource( 14 )]
 visible = false

@@ -4,7 +4,7 @@
 [ext_resource path="res://src/UI/Commons/Navigation/NavigationButton.tscn" type="PackedScene" id=2]
 
 [node name="SettingsListPage" instance=ExtResource( 1 )]
-default_field_to_focus = NodePath("Wrapper/Page/CenterContainer/Contents/Accessibility")
+default_field_to_focus = NodePath("Wrapper/Page/CenterContainer/Contents/GamepadLayout")
 
 [node name="Title" parent="Wrapper/Page" index="0"]
 margin_bottom = 22.0
@@ -12,46 +12,53 @@ text = "commons.settings"
 
 [node name="CenterContainer" parent="Wrapper/Page" index="1"]
 margin_top = 26.0
+margin_bottom = 214.0
 
 [node name="Contents" parent="Wrapper/Page/CenterContainer" index="0"]
 margin_left = 135.0
-margin_top = 25.0
+margin_top = 24.0
 margin_right = 305.0
-margin_bottom = 165.0
+margin_bottom = 164.0
 
-[node name="Accessibility" parent="Wrapper/Page/CenterContainer/Contents" index="0" instance=ExtResource( 2 )]
+[node name="GamepadLayout" parent="Wrapper/Page/CenterContainer/Contents" index="0" instance=ExtResource( 2 )]
 margin_right = 170.0
-rect_min_size = Vector2( 170, 0 )
-text = "accessibility.title"
-navigate_to = "AccessibilitySettingsPage"
-is_default_focused = true
+text = "gamepad.title"
+navigate_to = "GamepadLayoutSettingsPage"
 
-[node name="Audio" parent="Wrapper/Page/CenterContainer/Contents" index="1" instance=ExtResource( 2 )]
+[node name="KeyboardLayout" parent="Wrapper/Page/CenterContainer/Contents" index="1" instance=ExtResource( 2 )]
 margin_top = 30.0
 margin_right = 170.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 170, 0 )
-text = "audio.title"
-navigate_to = "AudioSettingsPage"
+text = "keyboard.title"
+navigate_to = "KeyboardRebindPage"
 
-[node name="Display" parent="Wrapper/Page/CenterContainer/Contents" index="2" instance=ExtResource( 2 )]
+[node name="Audio" parent="Wrapper/Page/CenterContainer/Contents" index="2" instance=ExtResource( 2 )]
 margin_top = 60.0
 margin_right = 170.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 170, 0 )
-text = "display.title"
-navigate_to = "DisplaySettingsPage"
+text = "audio.title"
+navigate_to = "AudioSettingsPage"
 
-[node name="GamepadLayout" parent="Wrapper/Page/CenterContainer/Contents" index="3" instance=ExtResource( 2 )]
+[node name="Accessibility" parent="Wrapper/Page/CenterContainer/Contents" index="3" instance=ExtResource( 2 )]
 margin_top = 90.0
 margin_right = 170.0
 margin_bottom = 110.0
-text = "gamepad.title"
-navigate_to = "GamepadLayoutSettingsPage"
+rect_min_size = Vector2( 170, 0 )
+text = "accessibility.title"
+navigate_to = "AccessibilitySettingsPage"
 
-[node name="KeyboardLayout" parent="Wrapper/Page/CenterContainer/Contents" index="4" instance=ExtResource( 2 )]
+[node name="Display" parent="Wrapper/Page/CenterContainer/Contents" index="4" instance=ExtResource( 2 )]
 margin_top = 120.0
 margin_right = 170.0
 margin_bottom = 140.0
-text = "keyboard.title"
-navigate_to = "KeyboardRebindPage"
+rect_min_size = Vector2( 170, 0 )
+text = "display.title"
+navigate_to = "DisplaySettingsPage"
+
+[node name="Footer" parent="Wrapper/Page" index="2"]
+margin_top = 218.0
+
+[node name="MenuBackInput" parent="Wrapper/Page/Footer" index="0"]
+margin_left = 297.0
+margin_bottom = 22.0

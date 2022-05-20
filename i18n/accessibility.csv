@@ -1,8 +1,6 @@
 ,en,fr
-accessibility.invincible_timeframe,"Invincible timeframe","Temps d'invincibilité"
-accessibility.invincible_timeframe_description,"INVINCIBLE TIMEFRAME - to do","TEMPS D'INVINCIBILITÉ - to do"
-accessibility.number_of_lifes,"Number of lifes","Nombre de vie"
-accessibility.number_of_lifes_description,"NUMBER OF LIFES - to do","NOMBRE DE VIE - to do"
-accessibility.player_damage,"Player damage","Dommage du joueur"
-accessibility.player_damage_description,"PLAYER DAMAGE - to do","DOMMAGE DU JOUEUR - to do"
+accessibility.player_health,"Player health","Santé du joueur"
+accessibility.player_health_description,"PLAYER HEALTH - how many time the player can take damage before game over","SANTÉ DU JOUEUR - combien de fois le joueur peut prendre des coups avant le game over"
+accessibility.time_scale,"Time scale","Échelle de temps"
+accessibility.time_scale_description,"TIME SCALE - control the speed of the game","ÉCHELLE DE TEMPS - controle la vitesse du jeu"
 accessibility.title,"Accessibility","Accessibilité"

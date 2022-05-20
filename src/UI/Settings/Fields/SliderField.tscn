@@ -10,8 +10,8 @@ focus_mode = 2
 alignment = 2
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
+"_editor_description_": "if auto_compute_step is false
+nb_of_step will be ignore and step will be take in account instead"
 }
 
 [node name="UiItemSelectedSfx" parent="." instance=ExtResource( 3 )]
