@@ -372,6 +372,7 @@ debug.camera_anchor=false
 debug.spawn=false
 debug.commands=false
 debug.skip_cinematic=false
+debug.skip_irish_shot=false
 
 [importer_defaults]
 

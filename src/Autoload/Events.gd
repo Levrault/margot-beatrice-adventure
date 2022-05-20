@@ -27,12 +27,12 @@ signal cinematic_intro_ended
 signal cinematic_started
 signal cinematic_ended
 
-# controller
-signal controller_changed(controller)
-
 # collectable
 signal collectable_collected(character, score)
 signal collectable_max_value_counted(gems, acorns, carrots)
+
+# controller
+signal controller_changed(controller)
 
 # dialogue
 signal dialogue_started
@@ -49,18 +49,29 @@ signal dialogue_choices_pressed
 signal dialogue_timed_out
 signal dialogue_timed(value)
 
-# serialize
-signal game_saved
-
-# in-game interfaces
-signal game_paused
-signal game_unpaused
+#engine
+signal engine_time_scale_changed(value)
 
 # game over
 signal game_over
 
 # high score
 signal new_high_score_archived
+
+# in-game interfaces
+signal game_paused
+signal game_unpaused
+
+# input
+signal keybinding_started(scancode)
+signal keybinding_canceled
+signal keybinding_resetted
+signal keybinding_key_selected(scancode)
+
+# level
+signal level_started
+signal level_finished
+signal level_completion_time_emitted(time)
 
 # notification
 signal notification_started(text, size)
@@ -75,17 +86,7 @@ signal player_input_disabled
 signal player_input_enabled
 signal player_hud_disabled
 signal player_hud_enabled
-
-# input
-signal keybinding_started(scancode)
-signal keybinding_canceled
-signal keybinding_resetted
-signal keybinding_key_selected(scancode)
-
-# level
-signal level_started
-signal level_finished
-signal level_completion_time_emitted(time)
+signal player_max_health_changed(value)
 
 # room
 signal room_limit_changed(
@@ -97,6 +98,9 @@ signal room_limit_changed(
 signal room_transition_started
 signal room_transition_ended
 signal room_loaded
+
+# serialize
+signal game_saved
 
 # spawn
 signal spawn_position_changed(new_position)

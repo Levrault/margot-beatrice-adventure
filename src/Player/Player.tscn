@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://src/Player/CharacterFactory.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Libraries/StateMachine/StateMachine.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://src/Player/States/Move/Hurt.gd" type="Script" id=17]
 [ext_resource path="res://src/Player/Squirrel/SquirrelCollisionShape.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Player/Momentum.gd" type="Script" id=19]
+[ext_resource path="res://src/Player/PlayerStats.gd" type="Script" id=20]
 [ext_resource path="res://src/Player/HUD/HUD.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/Player/CameraDebugUtilities.gd" type="Script" id=23]
 [ext_resource path="res://src/Player/Rabbit/RabbitCollisionShape.tscn" type="PackedScene" id=24]
@@ -163,7 +164,7 @@ DURATION = 0.25
 STRENGTH = 0.75
 
 [node name="Stats" parent="." instance=ExtResource( 12 )]
-max_health = 4.0
+script = ExtResource( 20 )
 
 [node name="NpcInteraction" parent="." instance=ExtResource( 14 )]
 visible = false

@@ -106,6 +106,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func initialize() -> void:
 	iris_shot.show()
 	iris_shot.play()
+
 	# Camera management
 	SceneManager.anchor = get_nearest_anchor()
 	SceneManager.anchor.update_anchor_limit()
@@ -114,9 +115,16 @@ func initialize() -> void:
 	# track player
 	Events.connect("player_moved", self, "_on_Player_moved")
 	Events.connect("player_moved", self, "_on_Level_started")
+
+	# level event
 	iris_shot.connect("animation_finished", self, "_on_Level_started")
 	Events.emit_signal("room_loaded")
 	MusicPlayer.change_track(music_track)
+
+	# Accessibility
+	print(Config.values.accessibility.time_scale)
+	Events.connect("engine_time_scale_changed", self, "_on_Engine_time_scale_changed")
+	Engine.time_scale = Config.values.accessibility.time_scale
 
 
 func get_nearest_anchor() -> Position2D:
@@ -157,3 +165,7 @@ func _on_Level_started(player: Player) -> void:
 	Events.emit_signal("level_started")
 	iris_shot.disconnect("animation_finished", self, "_on_Level_started")
 	Events.disconnect("player_moved", self, "_on_Level_started")
+
+
+func _on_Engine_time_scale_changed(value: float) -> void:
+	Engine.time_scale = value

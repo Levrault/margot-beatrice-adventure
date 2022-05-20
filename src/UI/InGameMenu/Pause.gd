@@ -19,6 +19,7 @@ func pause() -> void:
 	in_game_screen_page.focus_default_field()
 	set_process_input(false)
 	Events.emit_signal("game_paused")
+	Engine.time_scale = 1.0
 
 
 func unpause() -> void:
@@ -26,3 +27,4 @@ func unpause() -> void:
 	get_tree().paused = false
 	set_process_input(true)
 	Events.emit_signal("game_unpaused")
+	Engine.time_scale = Config.values.accessibility.time_scale

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/UI/Settings/SettingsPageTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Settings/Updater/PlayerHealthUpdater.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/Settings/Updater/TimeScaleUpdater.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/Settings/Fields/FieldSet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI/Commons/Scroll/ScrollContent.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/UI/Settings/Fields/SliderField.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/UI/Settings/Updater/Updater.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -220,7 +221,7 @@ step = 0.1
 placeholder = "1.0"
 
 [node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/TimeScale/MarginContainer/FieldContainer/TimeScale" index="4"]
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 
 [node name="PlayerHealth" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" index="1" instance=ExtResource( 4 )]
 margin_top = 36.0
@@ -256,7 +257,7 @@ rounded = true
 placeholder = "4"
 
 [node name="Updater" type="Node" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PlayerHealth/MarginContainer/FieldContainer/PlayerHealth" index="4"]
-script = ExtResource( 7 )
+script = ExtResource( 2 )
 
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/TimeScale"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PlayerHealth"]
