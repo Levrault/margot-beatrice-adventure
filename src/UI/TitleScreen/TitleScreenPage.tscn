@@ -13,9 +13,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 default_field_to_focus = NodePath("Wrapper/Page/CenterContainer/Contents/Play")
 
 [node name="Wrapper" type="MarginContainer" parent="."]
@@ -115,7 +112,21 @@ margin_left = 297.0
 margin_right = 440.0
 margin_bottom = 22.0
 
-[node name="Gameversion" type="Label" parent="."]
+[node name="Author" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = -30.0
+margin_right = 56.0
+margin_bottom = -16.0
+custom_fonts/font = ExtResource( 7 )
+text = "@Levrault"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gameversion2" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 6.0
@@ -126,6 +137,3 @@ custom_fonts/font = ExtResource( 7 )
 text = "v1.0.0"
 valign = 1
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

@@ -18,6 +18,13 @@ func change_track(track: String) -> void:
 	MusicPlayer.change_track(track)
 
 
+func restart() -> void:
+	MusicPlayer.playing = false
+	if delay > 0:
+		yield(get_tree().create_timer(delay), "timeout")
+	MusicPlayer.change_track(autoplay_track)
+
+
 func play() -> void:
 	MusicPlayer.play()
 
