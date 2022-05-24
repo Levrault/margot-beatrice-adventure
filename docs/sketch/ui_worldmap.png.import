@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui_profile2.png-bddb88874bf2573fbd332ab40247f7e4.stex"
+path="res://.import/ui_worldmap.png-289defbfb478a1f2b4da66252252129a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/interface_design/ui_profile2.png"
-dest_files=[ "res://.import/ui_profile2.png-bddb88874bf2573fbd332ab40247f7e4.stex" ]
+source_file="res://docs/sketch/ui_worldmap.png"
+dest_files=[ "res://.import/ui_worldmap.png-289defbfb478a1f2b4da66252252129a.stex" ]
 
 [params]
 
