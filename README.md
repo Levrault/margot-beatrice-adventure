@@ -16,6 +16,7 @@ Game made for my niece
 - [Gamepads Assets - Pixelart by lightUP](https://julianoferreiradelima.itch.io/gamepads-assets-pixelart)
 - [Laser (glowing circle) by gdquest](https://github.com/GDQuest/godot-visual-effects)
 - [Coin_Gems - La Red Games](https://laredgames.itch.io/gems-coins-free)
+- [squiggles-godot-splash](https://github.com/QueenOfSquiggles/squiggles-godot-splash)
 
 ### Fonts
 

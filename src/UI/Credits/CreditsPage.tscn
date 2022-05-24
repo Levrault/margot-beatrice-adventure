@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://src/UI/Commons/Breadcrumbs/Breadcrumb.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/Commons/Button/PreviousPageButton.tscn" type="PackedScene" id=2]
@@ -1918,6 +1918,165 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=93]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=94]
+resource_name = "fieldset_focus_entered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=95]
+resource_name = "fieldset_focus_exited"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxFocus:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=96]
+resource_name = "fieldset_panel_hidden"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoxNormal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoxFocus:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=41]
 length = 0.001
 tracks/0/type = "value"
@@ -3721,7 +3880,7 @@ margin_bottom = 193.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Wrapper/Page/Contents/ScrollContent"]
 margin_right = 428.0
-margin_bottom = 1004.0
+margin_bottom = 1040.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 4
@@ -3731,7 +3890,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer"]
 margin_right = 424.0
-margin_bottom = 1004.0
+margin_bottom = 1040.0
 size_flags_horizontal = 3
 
 [node name="Author" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
@@ -4073,18 +4232,45 @@ margin_right = 408.0
 margin_bottom = 32.0
 url = "https://laredgames.itch.io/gems-coins-free"
 
-[node name="Fonts" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SquigglesGodotSplash" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 504.0
 margin_right = 424.0
 margin_bottom = 536.0
-text = "Fonts"
 
-[node name="PixelMix" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SquigglesGodotSplash" index="0"]
+anims/RESET = SubResource( 93 )
+anims/fieldset_focus_entered = SubResource( 94 )
+anims/fieldset_focus_exited = SubResource( 95 )
+anims/fieldset_panel_hidden = SubResource( 96 )
+
+[node name="FieldContainer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SquigglesGodotSplash/MarginContainer" index="0"]
+margin_right = 416.0
+
+[node name="Label" type="Label" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SquigglesGodotSplash/MarginContainer/FieldContainer" index="0"]
+margin_top = 9.0
+margin_right = 292.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "squiggles-godot-splash"
+
+[node name="CreditsField" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SquigglesGodotSplash/MarginContainer/FieldContainer" index="1" instance=ExtResource( 8 )]
+margin_left = 296.0
+margin_right = 408.0
+margin_bottom = 32.0
+url = "https://github.com/QueenOfSquiggles/squiggles-godot-splash"
+
+[node name="Fonts" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 540.0
 margin_right = 424.0
 margin_bottom = 572.0
+text = "Fonts"
+
+[node name="PixelMix" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 576.0
+margin_right = 424.0
+margin_bottom = 608.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PixelMix" index="0"]
 anims/RESET = SubResource( 41 )
@@ -4109,9 +4295,9 @@ margin_bottom = 32.0
 url = "https://www.dafont.com/fr/pixelmix.font"
 
 [node name="JoystickMonospace" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 576.0
+margin_top = 612.0
 margin_right = 424.0
-margin_bottom = 608.0
+margin_bottom = 644.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/JoystickMonospace" index="0"]
 anims/RESET = SubResource( 45 )
@@ -4136,9 +4322,9 @@ margin_bottom = 32.0
 url = "https://www.dafont.com/joystix.font"
 
 [node name="MinecraftiaRegular" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 612.0
+margin_top = 648.0
 margin_right = 424.0
-margin_bottom = 644.0
+margin_bottom = 680.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/MinecraftiaRegular" index="0"]
 anims/RESET = SubResource( 49 )
@@ -4165,15 +4351,15 @@ url = "https://www.dafont.com/joystix.font?text=Minecraftia-Regular"
 [node name="SFX" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 648.0
-margin_right = 424.0
-margin_bottom = 680.0
-text = "SFX"
-
-[node name="KenneyAudio" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 684.0
 margin_right = 424.0
 margin_bottom = 716.0
+text = "SFX"
+
+[node name="KenneyAudio" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 720.0
+margin_right = 424.0
+margin_bottom = 752.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/KenneyAudio" index="0"]
 anims/RESET = SubResource( 53 )
@@ -4198,9 +4384,9 @@ margin_bottom = 32.0
 url = "https://www.kenney.nl/assets?q=audio"
 
 [node name="SpellSoundsStarterPack" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 720.0
+margin_top = 756.0
 margin_right = 424.0
-margin_bottom = 752.0
+margin_bottom = 788.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SpellSoundsStarterPack" index="0"]
 anims/RESET = SubResource( 57 )
@@ -4225,9 +4411,9 @@ margin_bottom = 32.0
 url = "https://opengameart.org/content/spell-sounds-starter-pack"
 
 [node name="SuccessFanfareTrumpets" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 756.0
+margin_top = 792.0
 margin_right = 424.0
-margin_bottom = 788.0
+margin_bottom = 824.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SuccessFanfareTrumpets" index="0"]
 anims/RESET = SubResource( 61 )
@@ -4252,9 +4438,9 @@ margin_bottom = 32.0
 url = "https://freesound.org/people/FunWithSound/sounds/456966/"
 
 [node name="SwishBambooStickWeaponSwhoshes" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 792.0
+margin_top = 828.0
 margin_right = 424.0
-margin_bottom = 824.0
+margin_bottom = 860.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SwishBambooStickWeaponSwhoshes" index="0"]
 anims/RESET = SubResource( 65 )
@@ -4279,9 +4465,9 @@ margin_bottom = 32.0
 url = "https://opengameart.org/content/swish-bamboo-stick-weapon-swhoshes"
 
 [node name="512SoundEffects8BitStyle" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 828.0
+margin_top = 864.0
 margin_right = 424.0
-margin_bottom = 860.0
+margin_bottom = 896.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/512SoundEffects8BitStyle" index="0"]
 anims/RESET = SubResource( 81 )
@@ -4306,9 +4492,9 @@ margin_bottom = 32.0
 url = "https://opengameart.org/content/512-sound-effects-8-bit-style"
 
 [node name="MGSAlert" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 864.0
+margin_top = 900.0
 margin_right = 424.0
-margin_bottom = 896.0
+margin_bottom = 932.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/MGSAlert" index="0"]
 anims/RESET = SubResource( 85 )
@@ -4333,9 +4519,9 @@ margin_bottom = 32.0
 url = "https://freesound.org/people/PhilStrahl/sounds/531750/"
 
 [node name="RpgSoundPack" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 900.0
+margin_top = 936.0
 margin_right = 424.0
-margin_bottom = 932.0
+margin_bottom = 968.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/RpgSoundPack" index="0"]
 anims/RESET = SubResource( 89 )
@@ -4362,15 +4548,15 @@ url = "https://opengameart.org/content/rpg-sound-pack"
 [node name="Music" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 936.0
-margin_right = 424.0
-margin_bottom = 968.0
-text = "Music"
-
-[node name="PatrickDeArteaga" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 972.0
 margin_right = 424.0
 margin_bottom = 1004.0
+text = "Music"
+
+[node name="PatrickDeArteaga" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 1008.0
+margin_right = 424.0
+margin_bottom = 1040.0
 
 [node name="AnimationPlayer" parent="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PatrickDeArteaga" index="0"]
 anims/RESET = SubResource( 69 )
@@ -4428,6 +4614,7 @@ __meta__ = {
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/GamepadAssets"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/Laser"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/CoinGems"]
+[editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/SquigglesGodotSplash"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/PixelMix"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/JoystickMonospace"]
 [editable path="Wrapper/Page/Contents/ScrollContent/MarginContainer/VBoxContainer/MinecraftiaRegular"]
