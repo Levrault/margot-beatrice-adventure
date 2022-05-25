@@ -2,6 +2,7 @@ extends Node
 
 var current_profile := "profile0"
 var current_level := ""
+var splash_screen_viewed := false
 
 var unlocked_characters := {
 	"fox": true,

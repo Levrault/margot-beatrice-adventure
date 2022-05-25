@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const TRANSITION_DURATION := .5
+const TRANSITION_DURATION := .75
 
 var playlist := {
 	"assassin": "res://assets/music/Assassin.ogg",
@@ -27,6 +27,7 @@ func change_track(new_music: String) -> void:
 	if new_music == current and playing:
 		return
 	stop()
+	volume_db = linear2db(0)
 	current = new_music
 	stream = load(playlist[current])
 	transition()
@@ -34,7 +35,7 @@ func change_track(new_music: String) -> void:
 
 func transition() -> void:
 	tween.interpolate_property(
-		self, "volume_db", linear2db(0), linear2db(Config.values.audio.music_volume), TRANSITION_DURATION, Tween.EASE_IN, Tween.TRANS_LINEAR
+		self, "volume_db", linear2db(0), linear2db(Config.values.audio.music_volume), TRANSITION_DURATION, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR
 	)
 	tween.start()
 	play()
