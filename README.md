@@ -1,8 +1,12 @@
 # Margot-Béatrice Adventure
+
+![cover](https://raw.githubusercontent.com/Levrault/margot-beatrice-adventure/main/docs/cover.png)
+
 A short game inspired by celeste and super mario. I created it for my the fifth birthday of my niece Magort-Béatrice. It focus on simplicity and has been made for a fifth year old playing his first platformer ever. The game is localize in french and english.
 
 # Preface
 The courageous princess Margot-Béatrice try to re-take the forest gem but she encounter a terrible (in every way) sorcerer that emprison her in a cristal prison. She now forced to call her animal friends to free her and save the forest.
+![intro](https://raw.githubusercontent.com/Levrault/margot-beatrice-adventure/main/docs/Level1-1656525694.png)
 
 # Engine
 The game has been made with Godot 3.X. The dialogues are managed with my custom dialogue editor [Le Dialogue Editor](https://github.com/Levrault/LE-dialogue-editor). The app is kinda ok, could be better. 
