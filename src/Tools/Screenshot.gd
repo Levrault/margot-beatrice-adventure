@@ -1,6 +1,7 @@
 extends Control
 
 export var image_size := Vector2(160, 90)
+export var export_path :=  "res://assets/UI/worldmap/%s-%s.png"
 
 var should_disable_player_hud := true
 
@@ -42,7 +43,7 @@ func screenshot() -> void:
 
 	# save to file
 	img.save_png(
-		"res://assets/UI/worldmap/%s-%s.png" % [owner.get_name(), String(OS.get_unix_time())]
+		"%s/%s-%s.png" % [export_path, owner.get_name(), String(OS.get_unix_time())]
 	)
 
 	anim.play("TransitionIn")

@@ -61,11 +61,11 @@ tracks/1/keys = {
 visible = false
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 480.0
 margin_top = 10.0
-margin_right = 480.0
 margin_bottom = 10.0
 script = ExtResource( 1 )
+image_size = Vector2( 1920, 1080 )
+export_path = "res://"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )

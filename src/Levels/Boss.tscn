@@ -269,10 +269,6 @@ scene_path = "res://src/Cinematics/"
 margin_left = 480.0
 margin_right = 480.0
 
-[node name="HighScoreArchieved" parent="UI" index="6"]
-margin_left = 163.0
-margin_right = 317.0
-
 [node name="02_Boss" parent="Cinematics" index="0" instance=ExtResource( 13 )]
 position = Vector2( 295, -344 )
 
