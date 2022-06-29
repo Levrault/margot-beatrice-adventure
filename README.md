@@ -11,7 +11,12 @@ The courageous princess Margot-Béatrice try to re-take the forest gem but she e
 # Engine
 The game has been made with Godot 3.X. The dialogues are managed with my custom dialogue editor [Le Dialogue Editor](https://github.com/Levrault/LE-dialogue-editor). The app is kinda ok, could be better. 
 
+![screenshot_1](https://raw.githubusercontent.com/Levrault/margot-beatrice-adventure/main/docs/Level1-1656525742.png)
+![screenshot_2](https://raw.githubusercontent.com/Levrault/margot-beatrice-adventure/main/docs/Level3-1656525652.png)
+![screenshot_3](https://raw.githubusercontent.com/Levrault/margot-beatrice-adventure/main/docs/Level4-1656525674.png)
+
 The menu is based on my [Godot-Menu-Template](https://github.com/Levrault/Godot-Menu-Template), feel free to use it for you own project.
+
 
 ## Credits
 
