@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id=1]
 code = "// Source: https://godotshaders.com/shader/2d-wind-sway/
 // original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
 // original script modified by HungryProton so that the assets are moving differently : https://pastebin.com/VL3AfV8D
@@ -49,7 +49,7 @@ void vertex() {
 
 [resource]
 resource_local_to_scene = true
-shader = SubResource( 3 )
+shader = SubResource( 1 )
 shader_param/speed = 1.0
 shader_param/minStrength = 0.02
 shader_param/maxStrength = 0.01

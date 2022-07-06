@@ -13,10 +13,6 @@
 [node name="DebugEnemies" instance=ExtResource( 5 )]
 next_level = "level3"
 
-[node name="Screenshot" parent="UI" index="4"]
-margin_left = 0.0
-margin_right = 0.0
-
 [node name="HighScoreArchieved" parent="UI" index="6"]
 margin_left = -77.0
 margin_right = 77.0

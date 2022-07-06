@@ -68,7 +68,7 @@ void vertex() {
 
 }"
 
-[sub_resource type="ShaderMaterial" id=8]
+[sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/speed = 1.0
@@ -80,69 +80,6 @@ shader_param/detail = 1.0
 shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
-
-[sub_resource type="Shader" id=9]
-resource_local_to_scene = true
-code = "/*
-Shader from Godot Shaders - the free shader library.
-godotshaders.com/shader/teleport-effect
-
-This shader is under CC0 lincense. Feel free to use, improve and 
-change this shader according to your needs and consider sharing 
-the modified result on godotshaders.com.
-*/
-
-shader_type canvas_item;
-
-uniform float progress : hint_range(0.0, 1.0);
-uniform float noise_desnity = 60;
-uniform float beam_size : hint_range(0.01, 0.15);
-uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
-
-// We are generating our own noise here. You could experiment with the 
-// built in SimplexNoise or your own noise texture for other effects.
-vec2 random(vec2 uv){
-    uv = vec2( dot(uv, vec2(127.1,311.7) ),
-               dot(uv, vec2(269.5,183.3) ) );
-    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
-}
-
-float noise(vec2 uv) {
-    vec2 uv_index = floor(uv);
-    vec2 uv_fract = fract(uv);
-
-    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
-
-    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
-                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
-                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
-                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
-}
-
-void fragment()
-{
-	vec4 tex = texture(TEXTURE, UV);
-	
-	float noise = noise(UV * noise_desnity) * UV.y;
-	
-	float d1 = step(progress, noise);
-	float d2 = step(progress - beam_size, noise);
-	
-	vec3 beam = vec3(d2 - d1) * color.rgb;
-	
-	tex.rgb += beam;
-	tex.a *= d2;
-	
-	COLOR = tex;
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-resource_local_to_scene = true
-shader = SubResource( 9 )
-shader_param/progress = 0.0
-shader_param/noise_desnity = 60.0
-shader_param/beam_size = null
-shader_param/color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="Shader" id=3]
 resource_local_to_scene = true
@@ -207,13 +144,76 @@ shader_param/noise_desnity = 60.0
 shader_param/beam_size = null
 shader_param/color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 155.5, 10 )
+[sub_resource type="Shader" id=5]
+resource_local_to_scene = true
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 lincense. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = SubResource( 5 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 60.0
+shader_param/beam_size = null
+shader_param/color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 155.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 183.5, 10 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 212.5, 10 )
 
 [node name="Level3" instance=ExtResource( 1 )]
@@ -244,19 +244,19 @@ position = Vector2( 689, 464 )
 position = Vector2( 625, 400 )
 
 [node name="Bush" parent="MiddleGroundTileMap/Statics" index="2" instance=ExtResource( 19 )]
-material = SubResource( 8 )
+material = SubResource( 2 )
 position = Vector2( 1214, 227 )
 
 [node name="Bush2" parent="MiddleGroundTileMap/Statics" index="3" instance=ExtResource( 19 )]
-material = SubResource( 8 )
+material = SubResource( 2 )
 position = Vector2( 1316, 147 )
 
 [node name="Bush3" parent="MiddleGroundTileMap/Statics" index="4" instance=ExtResource( 19 )]
-material = SubResource( 8 )
+material = SubResource( 2 )
 position = Vector2( 1197, 466 )
 
 [node name="Bush4" parent="MiddleGroundTileMap/Statics" index="5" instance=ExtResource( 19 )]
-material = SubResource( 8 )
+material = SubResource( 2 )
 position = Vector2( 530, 674 )
 
 [node name="TreeAlt" parent="MiddleGroundTileMap/Statics" index="6" instance=ExtResource( 20 )]
@@ -537,7 +537,7 @@ position = Vector2( 1003, 344 )
 object_path = NodePath("../TilmapForSwitch")
 
 [node name="TilmapForSwitch" parent="MiddleGroundTileMap/Interactables" index="1" instance=ExtResource( 10 )]
-material = SubResource( 2 )
+material = SubResource( 4 )
 tile_data = PoolIntArray( 1572928, 10, 0, 1638464, 10, 0, 1704000, 10, 0, 1769536, 10, 0, 1835072, 10, 0, 1900608, 10, 0, 1966144, 10, 0 )
 
 [node name="Switch2" parent="MiddleGroundTileMap/Interactables" index="2" instance=ExtResource( 11 )]
@@ -545,7 +545,7 @@ position = Vector2( 908, 328 )
 object_path = NodePath("../TilmapForSwitch2")
 
 [node name="TilmapForSwitch2" parent="MiddleGroundTileMap/Interactables" index="3" instance=ExtResource( 10 )]
-material = SubResource( 4 )
+material = SubResource( 6 )
 tile_data = PoolIntArray( 2031648, 10, 0, 2031649, 10, 0, 2031650, 10, 0, 2097184, 10, 0, 2097185, 10, 0, 2097186, 10, 0, 2162720, 10, 0, 2162721, 10, 0, 2162722, 10, 0 )
 
 [node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 16 )]
@@ -598,21 +598,21 @@ position = Vector2( 637, 813 )
 
 [node name="CollisionShape2D" parent="FallLimits/FallLimitArea" index="0"]
 position = Vector2( -3.5, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="FallLimitArea2" parent="FallLimits" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1227, 814 )
 
 [node name="CollisionShape2D" parent="FallLimits/FallLimitArea2" index="0"]
 position = Vector2( 2.5, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="FallLimitArea3" parent="FallLimits" index="2" instance=ExtResource( 3 )]
 position = Vector2( 234, 271 )
 
 [node name="CollisionShape2D" parent="FallLimits/FallLimitArea3" index="0"]
 position = Vector2( -18.5, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 9 )
 
 [node name="Fog" parent="FallLimits/FallLimitArea3" index="1"]
 region_rect = Rect2( 0, 0, 504, 69 )

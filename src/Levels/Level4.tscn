@@ -76,7 +76,7 @@ shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=3]
 script/source = "extends Actor
 class_name Enemy
 
@@ -111,7 +111,7 @@ func flip(direction: int = 0) -> void:
 	scale.x *= -1
 "
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 123, 10 )
 
 [node name="Level4" instance=ExtResource( 1 )]
@@ -265,7 +265,7 @@ scale = Vector2( -1, 1 )
 
 [node name="Carniplant2" parent="MiddleGroundTileMap/Enemies" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1416, 176 )
-script = SubResource( 4 )
+script = SubResource( 3 )
 look_direction = 1
 
 [node name="Carniplant3" parent="MiddleGroundTileMap/Enemies" index="2" instance=ExtResource( 3 )]
@@ -416,7 +416,7 @@ position = Vector2( 786, 285 )
 
 [node name="CollisionShape2D" parent="FallLimits/FallLimitArea" index="0"]
 position = Vector2( 56, -8 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Anchor2" parent="Anchors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 720, 135 )

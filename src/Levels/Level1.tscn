@@ -72,7 +72,7 @@ void vertex() {
 
 }"
 
-[sub_resource type="ShaderMaterial" id=55]
+[sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/speed = 1.0
@@ -85,7 +85,7 @@ shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 shader_param/offset = 0.0
 
-[sub_resource type="Shader" id=56]
+[sub_resource type="Shader" id=3]
 resource_local_to_scene = true
 code = "/*
 Shader from Godot Shaders - the free shader library.
@@ -140,21 +140,21 @@ void fragment()
 	COLOR = tex;
 }"
 
-[sub_resource type="ShaderMaterial" id=57]
+[sub_resource type="ShaderMaterial" id=4]
 resource_local_to_scene = true
-shader = SubResource( 56 )
+shader = SubResource( 3 )
 shader_param/progress = 0.0
 shader_param/noise_desnity = 60.0
 shader_param/beam_size = null
 shader_param/color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="RectangleShape2D" id=58]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 3.5, 168.5 )
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 133.5, 10 )
 
-[sub_resource type="RectangleShape2D" id=54]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 341, 10 )
 
 [node name="Level1" instance=ExtResource( 4 )]
@@ -234,23 +234,23 @@ margin_bottom = 5.0
 position = Vector2( 35, 240 )
 
 [node name="Bush" parent="MiddleGroundTileMap/Statics" index="0" instance=ExtResource( 12 )]
-material = SubResource( 55 )
+material = SubResource( 2 )
 position = Vector2( 282, 210 )
 
 [node name="Bush2" parent="MiddleGroundTileMap/Statics" index="1" instance=ExtResource( 12 )]
-material = SubResource( 55 )
+material = SubResource( 2 )
 position = Vector2( 375, 178 )
 
 [node name="Bush3" parent="MiddleGroundTileMap/Statics" index="2" instance=ExtResource( 12 )]
-material = SubResource( 55 )
+material = SubResource( 2 )
 position = Vector2( 777, 226 )
 
 [node name="Bush4" parent="MiddleGroundTileMap/Statics" index="3" instance=ExtResource( 12 )]
-material = SubResource( 55 )
+material = SubResource( 2 )
 position = Vector2( 2254, -94 )
 
 [node name="Bush5" parent="MiddleGroundTileMap/Statics" index="4" instance=ExtResource( 12 )]
-material = SubResource( 55 )
+material = SubResource( 2 )
 position = Vector2( 3589, 226 )
 
 [node name="TreeAlt" parent="MiddleGroundTileMap/Statics" index="5" instance=ExtResource( 19 )]
@@ -397,7 +397,7 @@ position = Vector2( 2721, 152 )
 object_path = NodePath("../TilmapForSwitch")
 
 [node name="TilmapForSwitch" parent="MiddleGroundTileMap/Interactables" index="1" instance=ExtResource( 7 )]
-material = SubResource( 57 )
+material = SubResource( 4 )
 tile_data = PoolIntArray( 65693, 10, 0, 131229, 10, 0, 196765, 10, 0, 262301, 10, 0, 327837, 10, 0 )
 
 [node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 10 )]
@@ -453,7 +453,7 @@ position = Vector2( -13, -49 )
 
 [node name="CollisionShape2D" parent="MiddleGroundTileMap/EndOfLevel/Area2D" index="0"]
 position = Vector2( -0.5, -116.5 )
-shape = SubResource( 58 )
+shape = SubResource( 5 )
 
 [node name="Sign" parent="MiddleGroundTileMap/EndOfLevel" index="2"]
 position = Vector2( 68, 0 )
@@ -477,20 +477,20 @@ position = Vector2( 113, 0 )
 position = Vector2( 1150, 271 )
 
 [node name="CollisionShape2D" parent="FallLimits/FallLimitArea2" index="0"]
-shape = SubResource( 53 )
+shape = SubResource( 6 )
 
 [node name="FallLimitArea3" parent="FallLimits" index="2" instance=ExtResource( 9 )]
 position = Vector2( 1712, 0 )
 
 [node name="CollisionShape2D" parent="FallLimits/FallLimitArea3" index="0"]
-shape = SubResource( 53 )
+shape = SubResource( 6 )
 
 [node name="FallLimitArea4" parent="FallLimits" index="3" instance=ExtResource( 9 )]
 position = Vector2( 2994, 270 )
 
 [node name="CollisionShape2D" parent="FallLimits/FallLimitArea4" index="0"]
 position = Vector2( -18, 0 )
-shape = SubResource( 54 )
+shape = SubResource( 7 )
 
 [node name="Fog" parent="FallLimits/FallLimitArea4" index="1"]
 position = Vector2( 27, -3 )
