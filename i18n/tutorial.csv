@@ -1,9 +1,11 @@
 ,en,fr
+tutorial.edit_control,"Control can be changed in the settings menu","Les contrôles peuvent être modifié dans les paramètres"
 tutorial.dash,"Select Foxy and dash through the laser","Choisi Foxy et travers les lasers avec"
 tutorial.double_jump,"Double press jump to double jump","Appuie deux fois sur saute pour faire un double saut"
 tutorial.jump,"Jump","Sauter"
 tutorial.move,"Move","Bouger"
+tutorial.quick_change,"You can also change character with","Tu peux aussi changer de personnage avec"
 tutorial.switch,"Use switch","Utiliser le levier"
 tutorial.switch_to_fox,"Switch to Foxy","Sélectionner Foxy"
 tutorial.switch_to_rabbit,"Switch to Lapine","Sélectionner Lapine"
-tutorial.switch_to_squirrel,"Switch to Nuts","Sélectionner Nutz"
+tutorial.switch_to_squirrel,"Switch to Nuts and jump to attack","Sélectionner Nutz et saute pour attaquer"
