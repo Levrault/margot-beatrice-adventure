@@ -121,7 +121,9 @@ func save_best_score(profile_name: String, for_level: String, new_score: Diction
 		return
 
 	var previous_score: Dictionary = profiles[profile_name].levels[for_level]
+
 	# it's a new score
+	print_debug("save a new best score for: %s | level %s | new_score %s" % [profile_name, for_level, new_score])
 	if previous_score.rank.empty():
 		print_debug(
 			(

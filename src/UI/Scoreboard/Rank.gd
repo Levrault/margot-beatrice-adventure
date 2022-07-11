@@ -20,28 +20,30 @@ func start_tween() -> void:
 	for key in Character.score:
 		total_collected += Character.score[key]
 
-	var percentage := compute_percentage(total_collected, _max_collected)
+	var percentage_collected := compute_percentage(total_collected, _max_collected)
+
+	print_debug("Time for rank (current is %s): S %s | A %s | B %s" % [String(_elapsed_time), String(owner.time_for_rank_100), String(owner.time_for_rank_80), String(owner.time_for_rank_60)])
 
 	# S is 100%
 	if (
-		percentage == 100
+		percentage_collected == 100
 		and Game.stats.game_over == 0
 		and Game.stats.hits_taken == 0
 		and _elapsed_time <= owner.time_for_rank_100
 	):
 		rank = Game.rank.S
 	elif (
-		percentage >= 80
+		percentage_collected >= 80
 		and Game.stats.game_over <= 1
 		and Game.stats.hits_taken <= 5
 		and _elapsed_time <= owner.time_for_rank_80
 	):
 		rank = Game.rank.A
 	elif (
-		percentage >= 60
+		percentage_collected >= 60
 		and Game.stats.game_over <= 2
 		and Game.stats.hits_taken <= 10
-		and _elapsed_time <= owner.time_for_rank_80
+		and _elapsed_time <= owner.time_for_rank_60
 	):
 		rank = Game.rank.B
 
@@ -52,7 +54,7 @@ func start_tween() -> void:
 			"Level completed: time %s | percentage collected %s | hits_taken %s | gameover %s | rank %s"
 			% [
 				String(_elapsed_time),
-				String(percentage),
+				String(percentage_collected),
 				String(Game.stats.hits_taken),
 				String(Game.stats.game_over),
 				rank.text

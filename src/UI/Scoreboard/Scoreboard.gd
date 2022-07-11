@@ -18,10 +18,6 @@ func _ready():
 	current_level = owner.get_name()
 	next_level = owner.next_level
 
-	time_for_rank_100 *= 1000
-	time_for_rank_80 *= 1000
-	time_for_rank_60 *= 1000
-
 
 func _on_Level_finished() -> void:
 	_anim.play("show")
