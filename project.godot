@@ -545,6 +545,7 @@ toggle_debug_panel={
 2d_physics/layer_11="HitboxEnemies"
 2d_physics/layer_12="Platforms"
 2d_physics/layer_13="DamageSourceTraps"
+2d_physics/layer_14="FallLimitArea"
 
 [locale]
 

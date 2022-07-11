@@ -8,7 +8,7 @@
 extents = Vector2( 246, 10 )
 
 [node name="FallLimitArea" instance=ExtResource( 1 )]
-collision_layer = 4096
+collision_layer = 8192
 is_instakill = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
