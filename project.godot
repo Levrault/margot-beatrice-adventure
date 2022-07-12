@@ -366,7 +366,7 @@ enabled=PoolStringArray(  )
 [game]
 
 debug=false
-game_version="1.0.0"
+game_version="1.0.0-rc6"
 debug.sidepanel=false
 debug.screenshot=true
 release.screenshot=true
