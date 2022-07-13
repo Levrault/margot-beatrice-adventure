@@ -175,6 +175,14 @@ time_for_rank_100 = 55.0
 time_for_rank_80 = 70.0
 time_for_rank_60 = 90.0
 
+[node name="Screenshot" parent="UI" index="4"]
+margin_left = 480.0
+margin_right = 480.0
+
+[node name="HighScoreArchieved" parent="UI" index="6"]
+margin_left = 163.0
+margin_right = 317.0
+
 [node name="00_Intro" parent="Cinematics" index="0" instance=ExtResource( 8 )]
 position = Vector2( 437, -665 )
 
@@ -410,46 +418,49 @@ tile_data = PoolIntArray( 65693, 10, 0, 131229, 10, 0, 196765, 10, 0, 262301, 10
 [node name="Checkpoint" parent="MiddleGroundTileMap/Checkpoints" index="0" instance=ExtResource( 10 )]
 position = Vector2( 514, 176 )
 
-[node name="Checkpoint2" parent="MiddleGroundTileMap/Checkpoints" index="1" instance=ExtResource( 10 )]
+[node name="Checkpoint16" parent="MiddleGroundTileMap/Checkpoints" index="1" instance=ExtResource( 10 )]
+position = Vector2( 452, 176 )
+
+[node name="Checkpoint2" parent="MiddleGroundTileMap/Checkpoints" index="2" instance=ExtResource( 10 )]
 position = Vector2( 935, 210 )
 
-[node name="Checkpoint3" parent="MiddleGroundTileMap/Checkpoints" index="2" instance=ExtResource( 10 )]
+[node name="Checkpoint3" parent="MiddleGroundTileMap/Checkpoints" index="3" instance=ExtResource( 10 )]
 position = Vector2( 984, 210 )
 
-[node name="Checkpoint4" parent="MiddleGroundTileMap/Checkpoints" index="3" instance=ExtResource( 10 )]
+[node name="Checkpoint4" parent="MiddleGroundTileMap/Checkpoints" index="4" instance=ExtResource( 10 )]
 position = Vector2( 1410, 84 )
 
-[node name="Checkpoint5" parent="MiddleGroundTileMap/Checkpoints" index="4" instance=ExtResource( 10 )]
+[node name="Checkpoint5" parent="MiddleGroundTileMap/Checkpoints" index="5" instance=ExtResource( 10 )]
 position = Vector2( 1398, -35 )
 
-[node name="Checkpoint6" parent="MiddleGroundTileMap/Checkpoints" index="5" instance=ExtResource( 10 )]
+[node name="Checkpoint6" parent="MiddleGroundTileMap/Checkpoints" index="6" instance=ExtResource( 10 )]
 position = Vector2( 1472, -101 )
 
-[node name="Checkpoint7" parent="MiddleGroundTileMap/Checkpoints" index="6" instance=ExtResource( 10 )]
+[node name="Checkpoint7" parent="MiddleGroundTileMap/Checkpoints" index="7" instance=ExtResource( 10 )]
 position = Vector2( 1887, -101 )
 
-[node name="Checkpoint8" parent="MiddleGroundTileMap/Checkpoints" index="7" instance=ExtResource( 10 )]
+[node name="Checkpoint8" parent="MiddleGroundTileMap/Checkpoints" index="8" instance=ExtResource( 10 )]
 position = Vector2( 1949, -101 )
 
-[node name="Checkpoint9" parent="MiddleGroundTileMap/Checkpoints" index="8" instance=ExtResource( 10 )]
+[node name="Checkpoint9" parent="MiddleGroundTileMap/Checkpoints" index="9" instance=ExtResource( 10 )]
 position = Vector2( 2321, 72 )
 
-[node name="Checkpoint10" parent="MiddleGroundTileMap/Checkpoints" index="9" instance=ExtResource( 10 )]
+[node name="Checkpoint10" parent="MiddleGroundTileMap/Checkpoints" index="10" instance=ExtResource( 10 )]
 position = Vector2( 2375, 239 )
 
-[node name="Checkpoint11" parent="MiddleGroundTileMap/Checkpoints" index="10" instance=ExtResource( 10 )]
+[node name="Checkpoint11" parent="MiddleGroundTileMap/Checkpoints" index="11" instance=ExtResource( 10 )]
 position = Vector2( 2430, 239 )
 
-[node name="Checkpoint12" parent="MiddleGroundTileMap/Checkpoints" index="11" instance=ExtResource( 10 )]
+[node name="Checkpoint12" parent="MiddleGroundTileMap/Checkpoints" index="12" instance=ExtResource( 10 )]
 position = Vector2( 2864, 82 )
 
-[node name="Checkpoint13" parent="MiddleGroundTileMap/Checkpoints" index="12" instance=ExtResource( 10 )]
+[node name="Checkpoint13" parent="MiddleGroundTileMap/Checkpoints" index="13" instance=ExtResource( 10 )]
 position = Vector2( 2899, 82 )
 
-[node name="Checkpoint14" parent="MiddleGroundTileMap/Checkpoints" index="13" instance=ExtResource( 10 )]
+[node name="Checkpoint14" parent="MiddleGroundTileMap/Checkpoints" index="14" instance=ExtResource( 10 )]
 position = Vector2( 3337, 226 )
 
-[node name="Checkpoint15" parent="MiddleGroundTileMap/Checkpoints" index="14" instance=ExtResource( 10 )]
+[node name="Checkpoint15" parent="MiddleGroundTileMap/Checkpoints" index="15" instance=ExtResource( 10 )]
 position = Vector2( 3388, 226 )
 
 [node name="EndOfLevel" parent="MiddleGroundTileMap" index="11"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Combat/DamageSource/DamageSourcePlayer.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8000, 10 )
+
+[node name="SafeGuardLimitArea" instance=ExtResource( 2 )]
+collision_layer = 4096
+is_instakill = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )

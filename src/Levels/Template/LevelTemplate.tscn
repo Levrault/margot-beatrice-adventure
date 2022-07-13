@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://src/UI/Debug/DebugSidePanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Camera/CameraAnchor.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://src/UI/InGameMenu/InGameMenu.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/UI/Commons/Notifications/HighScoreArchieved.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/Levels/Template/LevelTemplate.gd" type="Script" id=22]
+[ext_resource path="res://src/Levels/Template/FallLimitArea/SafeGuardFallLimitArea.tscn" type="PackedScene" id=23]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 22 )
@@ -156,5 +157,8 @@ format = 1
 
 [node name="Anchor" parent="Anchors" instance=ExtResource( 2 )]
 position = Vector2( 240, 135 )
+
+[node name="SafeGuardLimitArea" parent="." instance=ExtResource( 23 )]
+position = Vector2( 2384, 1712 )
 
 [editable path="MiddleGroundTileMap/EndOfLevel"]
