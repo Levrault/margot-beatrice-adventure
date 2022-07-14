@@ -15,9 +15,6 @@ region = Rect2( 32, 176, 16, 16 )
 [node name="TutorialPopUp" type="Control"]
 theme = ExtResource( 3 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tween" type="Tween" parent="."]
 

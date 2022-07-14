@@ -18,6 +18,7 @@ onready var timer := $Timer
 
 func _ready() -> void:
 	InputManager.connect("device_changed", self, "_on_Device_changed")
+	Events.connect("gamepad_layout_changed", self, "_on_Gamepad_layout_changed")
 	timer.connect("timeout", self, "_on_Timeout")
 	_on_Device_changed(InputManager.device, 0)
 	timer.start()
@@ -57,6 +58,10 @@ func _on_Device_changed(device: String, device_index: int) -> void:
 
 	texture = icon_texture
 	next_icon = Icon.ALT
+
+
+func _on_Gamepad_layout_changed() -> void:
+	_on_Device_changed(InputManager.device, 0)
 
 
 func _on_Timeout() -> void:
