@@ -4,6 +4,7 @@ onready var sfx := $Sfx
 
 
 func enter(msg: Dictionary = {}) -> void:
+	Input.start_joy_vibration(0, Config.values.gamepad_layout.gamepad_vibration, Config.values.gamepad_layout.gamepad_vibration, .450)
 	owner.is_active = false
 	if owner.camera_rig:
 		owner.camera_rig.is_active = false

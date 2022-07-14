@@ -33,6 +33,8 @@ func enter(msg: Dictionary = {}) -> void:
 	owner.momentum.start()
 	Game.stats.hits_taken += 1
 	sfx.play_sound()
+	print(Config.values.gamepad_layout.gamepad_vibration)
+	Input.start_joy_vibration(0, Config.values.gamepad_layout.gamepad_vibration, Config.values.gamepad_layout.gamepad_vibration, .3)
 
 	if "impulse" in msg:
 		throwback()

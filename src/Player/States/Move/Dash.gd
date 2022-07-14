@@ -52,6 +52,7 @@ func enter(msg: Dictionary = {}) -> void:
 	particule.position = owner.position
 	particule.scale = owner.skin.scale
 	_sfx.play_sound()
+	Input.start_joy_vibration(0, Config.values.gamepad_layout.gamepad_vibration, 0, .200)
 
 
 func exit() -> void:
