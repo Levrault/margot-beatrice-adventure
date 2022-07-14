@@ -1,6 +1,6 @@
 ,en,fr
-gamepad.layout,"Gamepad layout","Disposition de la manette"
-gamepad.layout_description,"GAMEPAD LAYOUT - set button layout","DISPOSITION DE LA MANETTE - réglez la disposition des touches de la manette"
+gamepad.layout,"Gamepad layout","Configuration de la manette"
+gamepad.layout_description,"GAMEPAD LAYOUT - set button layout","CONFIGURATION DE LA MANETTE - réglez la disposition des touches de la manette"
 gamepad.stick_layout,"Joysticks Layout","Disposition des joysticks"
 gamepad.stick_layout_description,"JOYSTICKS LAYOUT - set the joysticks order","DISPOSITION DES JOYSTICKS - réglez la disposition des joysticks"
 gamepad.vibration,"Vibration","Vibration"

@@ -550,6 +550,7 @@ script = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "author"
+playback_speed = 10.0
 anims/RESET = SubResource( 1 )
 anims/author = SubResource( 3 )
 anims/splash = SubResource( 2 )
