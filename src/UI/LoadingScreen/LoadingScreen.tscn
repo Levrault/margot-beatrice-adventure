@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/UI/LoadingScreen/LoadingScreen.gd" type="Script" id=1]
+[ext_resource path="res://src/Particules/Dust.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/vfx/iris_shot/level_intro005.png" type="Texture" id=4]
 [ext_resource path="res://assets/vfx/iris_shot/level_intro004.png" type="Texture" id=5]
 [ext_resource path="res://assets/vfx/iris_shot/level_intro002.png" type="Texture" id=6]
@@ -30,14 +31,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 1101, -110 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="IrisShot" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Dust" parent="." instance=ExtResource( 2 )]
+z_index = -1
