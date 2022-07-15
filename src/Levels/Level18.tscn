@@ -366,10 +366,10 @@ scale = Vector2( -1, 1 )
 position = Vector2( 185, 846 )
 
 [node name="CollisionShape2D" parent="FallLimits/FallLimitArea" index="0"]
-position = Vector2( -291, -31 )
+position = Vector2( -7, -29 )
 
 [node name="Fog" parent="FallLimits/FallLimitArea" index="1"]
-position = Vector2( 0, -25 )
+position = Vector2( -4, -26 )
 
 [node name="Anchor2" parent="Anchors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 720, 135 )

@@ -1,5 +1,4 @@
 # Trigger end of level animatino and save player's data
-tool
 extends Node2D
 class_name EndOfLevel
 
@@ -11,7 +10,6 @@ onready var _head = $Sign/Head
 
 
 func _ready() -> void:
-	Events.connect("game_saved", self, "_on_Saved_successfull")
 	$Area2D.connect("body_entered", self, "_on_body_entered")
 
 	if not Engine.editor_hint:
@@ -19,6 +17,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if not _head:
+		return
+
 	if direction == Direction.RIGHT:
 		_head.scale.y = 1
 		_head.scale.x = 1
@@ -43,10 +44,6 @@ func _process(delta: float) -> void:
 		_head.scale.y = -1
 		_head.frame = 1
 		return
-
-
-func _on_Saved_successfull() -> void:
-	print_debug("_on_Saved_successfull")
 
 
 func _on_body_entered(body: Player) -> void:

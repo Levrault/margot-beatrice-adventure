@@ -50,10 +50,14 @@ visible = false
 [node name="Scoreboard" parent="UI" instance=ExtResource( 16 )]
 
 [node name="Screenshot" parent="UI" instance=ExtResource( 14 )]
+margin_left = 0.0
+margin_right = 0.0
 
 [node name="GamepadChanged" parent="UI" instance=ExtResource( 13 )]
 
 [node name="HighScoreArchieved" parent="UI" instance=ExtResource( 21 )]
+margin_left = -77.0
+margin_right = 77.0
 
 [node name="InGameMenu" parent="UI" instance=ExtResource( 20 )]
 visible = false
@@ -121,7 +125,7 @@ script = ExtResource( 11 )
 __meta__ = {
 "_editor_description_": ""
 }
-map_size = Vector2( 64, 64 )
+map_size = Vector2( 30, 17 )
 
 [node name="Player" parent="MiddleGroundTileMap" instance=ExtResource( 15 )]
 

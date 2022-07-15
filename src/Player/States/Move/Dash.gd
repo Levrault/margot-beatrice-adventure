@@ -57,7 +57,9 @@ func enter(msg: Dictionary = {}) -> void:
 
 func exit() -> void:
 	owner.set_collision_mask_bit(Layer.PASS_TROUGHT_LAYER, true)
-	_timer_ghost.disconnect("timeout", self, "_on_Ghost_timeout")
+	
+	if _timer_ghost.is_connected("timeout", self, "_on_Ghost_timeout"):
+		_timer_ghost.disconnect("timeout", self, "_on_Ghost_timeout")
 	_speed = 0.0
 	_direction = Vector2.ZERO
 	_velocity = Vector2.ZERO

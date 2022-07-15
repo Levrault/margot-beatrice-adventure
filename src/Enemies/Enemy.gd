@@ -10,6 +10,7 @@ onready var frustrum_culling := $FrustumCulling
 
 
 func _ready() -> void:
+	Events.connect("level_finished", self, "_on_Level_finished")
 	stats.connect("health_depleted", self, "_on_Stats_health_depleated")
 	skin = get_node_or_null("Skin")
 	assert(skin != null)
@@ -30,3 +31,7 @@ func flip(direction: int = 0) -> void:
 
 	look_direction = direction
 	scale.x *= -1
+
+
+func _on_Level_finished() -> void:
+	queue_free()

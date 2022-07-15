@@ -51,12 +51,14 @@ func exit() -> void:
 	_timer.disconnect("timeout", self, "_get_a_star_path")
 	velocity = Vector2.ZERO
 	target_point_world = Vector2.ZERO
+	print_debug("%s has stopped following the player" % owner.get_name())
 	path = []
 
 
 func _get_a_star_path() -> void:
 	path = SceneManager.tilemap.find_path(owner.global_position, owner.target.position)
 	if len(path) == 0:
-		_state_machine.transition_to("Idle")
+		print_debug("%s a star failed on target position %s" % [owner.get_name(), String(owner.target.position)])
 		return
+	print_debug("%s is following player on %s" % [owner.get_name(), String(path[0])])
 	target_point_world = path[0]

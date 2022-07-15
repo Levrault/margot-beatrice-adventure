@@ -114,7 +114,9 @@ func find_path(world_start, world_end):
 func _recalculate_path():
 	var start_point_index = calculate_point_index(path_start_position)
 	var end_point_index = calculate_point_index(path_end_position)
-	_point_path = astar_node.get_point_path(start_point_index, end_point_index)
+	
+	if astar_node.has_point(start_point_index) and astar_node.has_point(end_point_index):
+		_point_path = astar_node.get_point_path(start_point_index, end_point_index)
 
 
 func _on_Room_transition_ended() -> void:
