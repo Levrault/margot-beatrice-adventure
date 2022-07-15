@@ -265,10 +265,6 @@ time_for_rank_60 = 180.0
 unlock_next_level = false
 scene_path = "res://src/Cinematics/"
 
-[node name="Screenshot" parent="UI" index="4"]
-margin_left = 480.0
-margin_right = 480.0
-
 [node name="02_Boss" parent="Cinematics" index="0" instance=ExtResource( 13 )]
 position = Vector2( 295, -344 )
 

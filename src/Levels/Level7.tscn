@@ -30,14 +30,6 @@ time_for_rank_100 = 60.0
 time_for_rank_80 = 90.0
 time_for_rank_60 = 120.0
 
-[node name="Screenshot" parent="UI" index="4"]
-margin_left = 480.0
-margin_right = 480.0
-
-[node name="HighScoreArchieved" parent="UI" index="6"]
-margin_left = 163.0
-margin_right = 317.0
-
 [node name="Sprite" parent="ParralaxBackground/MiddleGroundParallaxLayer" index="0"]
 position = Vector2( 355.714, 138.571 )
 
