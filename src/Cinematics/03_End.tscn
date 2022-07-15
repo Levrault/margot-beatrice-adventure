@@ -1443,17 +1443,20 @@ text = "credits.author"
 [node name="Dedicated" type="Label" parent="CanvasLayer/Credits" index="2"]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.5
+anchor_left = 0.085
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.917
 anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = -7.0
-margin_right = 80.0
-margin_bottom = 7.0
+margin_left = -0.799999
+margin_top = -6.0
+margin_right = -0.160034
+margin_bottom = 6.0
 grow_horizontal = 2
 custom_fonts/font = ExtResource( 21 )
 text = "credits.for_my_niece"
+align = 1
+valign = 1
+autowrap = true
 
 [node name="Credits" type="RichTextLabel" parent="CanvasLayer/Credits" index="3"]
 margin_top = 271.0
@@ -1496,7 +1499,7 @@ Patrick de Arteaga
 text = "
 Sprites
 Pixel health bar asset pack
-Sunny Land 2D Pixel Art Pack used for Foxy, Jazzy, Mr. Nuts and all the env
+Sunny Land 2D Pixel Art Pack used for Foxy, Jazzy, Bob and all the env
 GameFXexport
 OPP
 Warrior
