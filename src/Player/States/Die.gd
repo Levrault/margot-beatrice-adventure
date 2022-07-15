@@ -4,8 +4,6 @@ onready var sfx := $Sfx
 
 
 func enter(msg: Dictionary = {}) -> void:
-	if InputManager.is_using_gamepad():
-		Input.start_joy_vibration(0, Config.values.gamepad_layout.gamepad_vibration, Config.values.gamepad_layout.gamepad_vibration, .450)
 	owner.is_active = false
 	if owner.camera_rig:
 		owner.camera_rig.is_active = false
@@ -13,6 +11,9 @@ func enter(msg: Dictionary = {}) -> void:
 	sfx.play()
 	owner.skin.play("die")
 	owner.skin.connect("animation_finished", self, "_on_Skin_animation_finished")
+	owner.stats.set_invulnerable_for_seconds(2)
+	if InputManager.is_using_gamepad():
+		Input.start_joy_vibration(0, Config.values.gamepad_layout.gamepad_vibration, Config.values.gamepad_layout.gamepad_vibration, .450)
 
 
 func exit() -> void:
