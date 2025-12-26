@@ -25,6 +25,3 @@ void fragment() {
 
 [resource]
 shader = SubResource( 1 )
-shader_param/target = Vector2( 0.5, 0.5 )
-shader_param/offset = Vector2( 0, -0.05 )
-shader_param/circle_size = 0.0
